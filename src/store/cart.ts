@@ -45,10 +45,14 @@ export function removeFromCart(itemId: string) {
 }
 
 export function updateQuantity(itemId: string, quantity: number) {
+    if (quantity < 1) {
+        removeFromCart(itemId);
+        return;
+    }
     const cart = cartItems.get();
     if (cart[itemId]) {
         const item = JSON.parse(cart[itemId]) as CartItem;
-        item.quantity = Math.max(1, quantity);
+        item.quantity = quantity;
         cartItems.setKey(itemId, JSON.stringify(item));
     }
 }

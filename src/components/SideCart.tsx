@@ -93,8 +93,15 @@ export default function SideCart() {
                                     <p className="item-variant">
                                         Selecciona una Talla: <span>{item.size || 'N/A'}</span>
                                     </p>
-                                    <div className="item-price-qty">
-                                        {item.quantity} × <span>${new Intl.NumberFormat('es-CO').format(item.price)}</span>
+                                    <div className="item-price-qty-row">
+                                        <div className="qty-selector">
+                                            <button onClick={() => updateQuantity(item.key, item.quantity - 1)}>−</button>
+                                            <span className="qty-number">{item.quantity}</span>
+                                            <button onClick={() => updateQuantity(item.key, item.quantity + 1)}>+</button>
+                                        </div>
+                                        <div className="item-price-calc">
+                                            × <span>${new Intl.NumberFormat('es-CO').format(item.price)}</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -261,14 +268,55 @@ export default function SideCart() {
                     margin-left: 2px;
                 }
 
-                .item-price-qty {
-                    margin-top: 0.5rem;
+                .item-price-qty-row {
+                    margin-top: 0.8rem;
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                }
+
+                .qty-selector {
+                    display: flex;
+                    align-items: center;
+                    border: 1px solid #e5e5e5;
+                    border-radius: 2px;
+                    padding: 2px;
+                }
+
+                .qty-selector button {
+                    background: none;
+                    border: none;
+                    width: 24px;
+                    height: 24px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+                    font-size: 1rem;
+                    color: #666;
+                    transition: color 0.2s;
+                }
+
+                .qty-selector button:hover {
+                    color: var(--color-green);
+                }
+
+                .qty-number {
+                    width: 20px;
+                    text-align: center;
                     font-size: 0.85rem;
-                    color: #ccc;
+                    font-family: var(--font-paragraphs);
+                    color: #121212;
+                    font-weight: 500;
+                }
+
+                .item-price-calc {
+                    font-size: 0.85rem;
+                    color: #999;
                     font-family: var(--font-paragraphs);
                 }
 
-                .item-price-qty span {
+                .item-price-calc span {
                     color: var(--color-beige);
                     font-weight: 500;
                 }
