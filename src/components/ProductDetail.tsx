@@ -1,5 +1,6 @@
 import { useState, useEffect, useMemo, useRef } from 'react';
 import ProductCard from './ProductCard';
+import { addToCart } from '../store/cart';
 
 interface Product {
   id: number;
@@ -379,96 +380,42 @@ export default function ProductDetail({ initialProduct }: Props) {
       return false;
     }
 
-    const cartItem = {
-      id: product.id,
-      name: product.name,
-      price: parseInt(product.prices.price) / (10 ** product.prices.currency_minor_unit),
-      color: selectedColor,
-      size: selectedSize,
-      quantity: quantity,
-      image: filteredImages[0]?.src || product.images[0]?.src
-    };
-
-    const cart = JSON.parse(localStorage.getItem('wh_cart') || '[]');
-    const existingItemIndex = cart.findIndex((item: any) =>
-      item.id === cartItem.id && item.color === cartItem.color && item.size === cartItem.size
-    );
-
-    if (existingItemIndex > -1) {
-      cart[existingItemIndex].quantity += quantity;
-    } else {
-      cart.push(cartItem);
+    // Encontrar la ID de la variación si es un producto variable
+    let productIdToCart = product.id;
+    if (product.variations && product.variations.length > 0) {
+      const selectedVar = product.variations.find(v => {
+        const vColor = v.attributes.find(a => a.name.toLowerCase().includes('color') || a.name === 'Pa_selecciona-el-color')?.value.toLowerCase();
+        const vSize = v.attributes.find(a => a.name.toLowerCase().includes('talla') || a.name === 'Pa_selecciona-una-talla')?.value.toLowerCase();
+        return vColor === selectedColor.toLowerCase() && (!hasSize || vSize === selectedSize?.toLowerCase());
+      });
+      if (selectedVar) productIdToCart = selectedVar.id;
     }
 
-    localStorage.setItem('wh_cart', JSON.stringify(cart));
-    window.dispatchEvent(new Event('cart-updated'));
-    window.dispatchEvent(new Event('open-cart-drawer'));
+    addToCart(
+      { ...product, id: productIdToCart },
+      quantity,
+      selectedColor,
+      selectedSize,
+      filteredImages[0]?.src || product.images[0]?.src
+    );
+
     return true;
   };
 
   const handleAddBothToCart = () => {
-    const itemsToAdd: any[] = [];
-
-    // Main product if selected
+    // 1. Añadir el producto principal
     if (selectedFbtIds.includes(product.id)) {
-      if (!selectedColor) {
-        alert('Por favor, selecciona un color para el producto principal.');
-        return;
-      }
-      if (hasSize && !selectedSize) {
-        alert('Por favor, selecciona una talla para el producto principal.');
-        return;
-      }
-      itemsToAdd.push({
-        id: product.id,
-        name: product.name,
-        price: parseInt(product.prices.price) / (10 ** product.prices.currency_minor_unit),
-        color: selectedColor,
-        size: selectedSize,
-        quantity: quantity,
-        image: filteredImages[0]?.src || product.images[0]?.src
-      });
+      if (!handleAddToCart()) return;
     }
 
-    // FBT products if selected
+    // 2. Añadir productos FBT (Si no son variables, es más fácil)
     if (product.fbt_products) {
       product.fbt_products.forEach((p) => {
         if (selectedFbtIds.includes(p.id)) {
-          itemsToAdd.push({
-            id: p.id,
-            name: p.name,
-            price: parseInt(p.prices.price) / (10 ** p.prices.currency_minor_unit),
-            color: null,
-            size: null,
-            quantity: 1,
-            image: p.images[0]?.src
-          });
+          addToCart(p, 1, null, null, p.images[0]?.src);
         }
       });
     }
-
-    if (itemsToAdd.length === 0) {
-      alert('Por favor, selecciona al menos un producto del complemento.');
-      return;
-    }
-
-    const cart = JSON.parse(localStorage.getItem('wh_cart') || '[]');
-
-    itemsToAdd.forEach(newItem => {
-      const existingItemIndex = cart.findIndex((item: any) =>
-        item.id === newItem.id && item.color === newItem.color && item.size === newItem.size
-      );
-
-      if (existingItemIndex > -1) {
-        cart[existingItemIndex].quantity += newItem.quantity;
-      } else {
-        cart.push(newItem);
-      }
-    });
-
-    localStorage.setItem('wh_cart', JSON.stringify(cart));
-    window.dispatchEvent(new Event('cart-updated'));
-    window.dispatchEvent(new Event('open-cart-drawer'));
   };
 
   const fbtTotalPrice = useMemo(() => {
@@ -718,7 +665,10 @@ export default function ProductDetail({ initialProduct }: Props) {
                     className="btn-action btn-outline-thick"
                     onClick={() => {
                       if (handleAddToCart()) {
-                        window.location.href = '/checkout';
+                        // After adding, redirect to WP Checkout directly
+                        // We use the same domain for consistency
+                        const wpDomain = 'https://winstonandharrystore.com';
+                        window.location.href = `${wpDomain}/checkout/`;
                       }
                     }}
                   >

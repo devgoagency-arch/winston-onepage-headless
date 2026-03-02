@@ -464,7 +464,7 @@ export default function ProductCard({ product, isSelected, onSelectionToggle }: 
         /* Si no hay hover activo (cargando o error), la principal se queda */
 
         .product-info { 
-            padding: 10px 1.5rem; 
+            padding: 10px 0.5rem; 
         }
 
         .info-top-row {
@@ -505,7 +505,7 @@ export default function ProductCard({ product, isSelected, onSelectionToggle }: 
 
         .card-colors {
             display: flex;
-            gap: 8px;
+            gap: 2px;
             align-items: center;
         }
 

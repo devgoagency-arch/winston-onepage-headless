@@ -81,7 +81,7 @@ export default function LookSection() {
                     <div className="look-image-container">
                         {data.look_imagen ? (
                             <img
-                                src={data.look_imagen}
+                                src={data.look_imagen + '.webp'}
                                 alt={data.look_titulo}
                                 className="lifestyle-image"
                             />

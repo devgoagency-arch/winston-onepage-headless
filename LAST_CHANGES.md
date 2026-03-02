@@ -1,6 +1,24 @@
-# Últimos Cambios y Contexto del Proyecto
-
 Este archivo resume los últimos cambios realizados para mantener la sincronía entre diferentes estaciones de trabajo.
+
+## Últimos Cambios (27 de Febrero, 2026)
+
+### 1. Parallax de Hero y Estructura de Capas
+- **Efecto Sticky:** Se perfeccionó el efecto parallax haciendo que la sección Hero sea `sticky`.
+- **Sincronización de Header:** Se ajustaron los valores de `top` y `margin-top` (90px desktop / 65px mobile) para que el video empiece exactamente donde termina el header, eliminando el "hueco gris" anterior.
+- **Content Wrapper:** Se envolvió todo el contenido inferior en una clase `.content-wrapper` con `z-index: 10` y `position: relative` para asegurar que las secciones suban y cubran el video de fondo suavemente.
+
+### 2. Rediseño Crítico de "Look de la Semana" (LookSection)
+- **Grid Móvil 2x2:** Se eliminó el slider horizontal por uno de cuadrícula de 2 columnas, igualando la estética de la tienda principal.
+- **Nivelación Inteligente:** Implementación de `grid-auto-rows: 1fr` y flexbox para que todas las tarjetas de una fila midan lo mismo, sin importar la longitud del nombre del producto.
+- **Compactación Visual:**
+    - Nombres de productos alineados a la izquierda.
+    - Colores movidos a la derecha del precio para ahorrar espacio vertical.
+    - Gap de colores reducido a `2px` y padding de info a `0.5rem`.
+    - Eliminación de elementos distractores (icono +) en vistas móviles.
+- **Precio Magnético:** El precio ahora se ancla siempre al borde inferior de la tarjeta (`margin-top: auto`), creando una línea visual limpia en todo el grid.
+
+### 3. Sincronización Post-Pull
+- **Recuperación de Componentes:** Se reinstalaron y configuraron los componentes `FeaturesBanner` (iconos de confianza) y `CategoryGrid` (Ropa, Zapatos, etc.) que se habían perdido en una sincronización de Git incompleta.
 
 ## Últimos Cambios (26 de Febrero, 2026)
 
@@ -46,7 +64,8 @@ Este archivo resume los últimos cambios realizados para mantener la sincronía 
 - **API Optimizada:** Capaz de manejar categorías con altos volúmenes de productos sin errores de servidor.
 - El sistema de venta cruzada ("El Complemento Ideal") sigue activo y funcional.
 - La galería móvil es 100% dinámica y soporta "adivinación" de imágenes.
-- El diseño general mantiene la estética de alta gama Louis Vuitton con enfoque en conversión.
+- El diseño general mantiene la estética de alta gama Winston & Harry (basada en LV) con enfoque en conversión.
+- **Look of the Week:** Ahora es 100% consistente con el grid de la tienda en móviles.
 
 ## Sistema de Diseño y Línea Gráfica (Winston & Harry)
 

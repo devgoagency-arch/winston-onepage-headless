@@ -105,7 +105,7 @@ import { Image } from "astro:assets";
                 </a>
 
                 <button
-                    class="action-btn cart-btn"
+                    class="action-btn cart-btn-new"
                     id="cart-btn-desktop"
                     aria-label="Carrito"
                 >
@@ -163,7 +163,7 @@ import { Image } from "astro:assets";
             >
             <span>Lista de Deseos (<span id="fav-count-mobile">0</span>)</span>
         </a>
-        <button class="mobile-action-item cart-btn" id="cart-btn-mobile">
+        <button class="mobile-action-item cart-btn-new" id="cart-btn-mobile">
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
@@ -187,57 +187,16 @@ import { Image } from "astro:assets";
     </div>
 </div>
 
-<!-- Cart Drawer -->
-<div class="cart-drawer" id="cart-drawer">
-    <div class="cart-drawer-header">
-        <span class="cart-title">SHOPPING CART</span>
-        <button class="cart-close" id="cart-close" aria-label="Cerrar carrito">
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-            >
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
-            <span>Cerrar</span>
-        </button>
-    </div>
-
-    <div class="cart-items" id="cart-drawer-items">
-        <!-- Items populated by JS -->
-    </div>
-
-    <div class="cart-drawer-footer">
-        <div class="subtotal-row">
-            <span class="subtotal-label">Subtotal:</span>
-            <div class="subtotal-price-group">
-                <span class="subtotal-value" id="drawer-subtotal">$0</span>
-                <span class="tax-note">(con impuestos)</span>
-            </div>
-        </div>
-        <div class="cart-actions">
-            <button class="btn-drawer btn-secondary">VER CARRITO</button>
-            <button class="btn-drawer btn-primary">FINALIZAR COMPRA</button>
-        </div>
-    </div>
-</div>
+<!-- Cart Drawer Replaced by SideCart.tsx in Layout -->
 
 <script>
+    import { isCartOpen, cartItems } from "../store/cart";
     const burgerBtn = document.getElementById("burger-menu");
     const menuOverlay = document.getElementById("menu-overlay");
     const mobileNav = document.getElementById("mobile-nav");
     const mobileLinks = document.querySelectorAll(".mobile-link");
 
-    const cartBtns = document.querySelectorAll(".cart-btn");
-    const cartDrawer = document.getElementById("cart-drawer");
-    const cartClose = document.getElementById("cart-close");
+    const cartBtns = document.querySelectorAll(".cart-btn-new");
 
     function toggleMenu(open: boolean) {
         if (!mobileNav || !menuOverlay) return;
@@ -254,19 +213,7 @@ import { Image } from "astro:assets";
         }
     }
 
-    function toggleCart(open: boolean) {
-        if (!cartDrawer || !menuOverlay) return;
-        if (open) {
-            renderCartDrawer();
-            cartDrawer.classList.add("active");
-            menuOverlay.classList.add("active");
-            document.body.style.overflow = "hidden";
-        } else {
-            cartDrawer.classList.remove("active");
-            menuOverlay.classList.remove("active");
-            document.body.style.overflow = "";
-        }
-    }
+    // Cart toggle handled by isCartOpen atom
 
     if (burgerBtn)
         burgerBtn.addEventListener("click", () => {
@@ -276,17 +223,17 @@ import { Image } from "astro:assets";
 
     cartBtns.forEach((btn) => {
         btn.addEventListener("click", () => {
-            toggleMenu(false); // Cerrar menú si está abierto
-            toggleCart(true);
+            toggleMenu(false);
+            isCartOpen.set(true);
         });
     });
 
-    if (cartClose) cartClose.addEventListener("click", () => toggleCart(false));
+    // Close cart via overlay only in Header script (main close is in SideCart.tsx)
 
     if (menuOverlay) {
         menuOverlay.addEventListener("click", () => {
             toggleMenu(false);
-            toggleCart(false);
+            isCartOpen.set(false);
         });
     }
 
@@ -294,70 +241,7 @@ import { Image } from "astro:assets";
         link.addEventListener("click", () => toggleMenu(false));
     });
 
-    function renderCartDrawer() {
-        const itemsContainer = document.getElementById("cart-drawer-items");
-        const subtotalSpan = document.getElementById("drawer-subtotal");
-        if (!itemsContainer || !subtotalSpan) return;
-
-        try {
-            const cart = JSON.parse(localStorage.getItem("wh_cart") || "[]");
-            itemsContainer.innerHTML = "";
-
-            if (cart.length === 0) {
-                itemsContainer.innerHTML =
-                    '<p class="empty-cart-msg">Tu carrito está vacío</p>';
-                subtotalSpan.textContent = "$0";
-                return;
-            }
-
-            let total = 0;
-            cart.forEach((item: any, index: number) => {
-                total += item.price * item.quantity;
-                const itemEl = document.createElement("div");
-                itemEl.className = "cart-item-drawer";
-                itemEl.innerHTML = `
-                    <div class="cart-item-img">
-                        <img src="${item.image}" alt="${item.name}" referrerpolicy="no-referrer" onerror="this.src='https://via.placeholder.com/300x400?text=Sin+Imagen'">
-                    </div>
-                    <div class="cart-item-details">
-                        <div class="cart-item-header">
-                            <span class="cart-item-name">${item.name}</span>
-                            <button class="remove-item" data-index="${index}">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-                            </button>
-                        </div>
-                        <p class="cart-item-variant">Selecciona el Color: <span>${item.color || "N/A"}</span></p>
-                        <p class="cart-item-variant">Selecciona una Talla: <span>${item.size || "N/A"}</span></p>
-                        <p class="cart-item-price-qty">${item.quantity} × <span>$${new Intl.NumberFormat("es-CO").format(item.price)}</span></p>
-                    </div>
-                `;
-                itemsContainer.appendChild(itemEl);
-            });
-
-            subtotalSpan.textContent = `$${new Intl.NumberFormat("es-CO").format(total)}`;
-
-            document.querySelectorAll(".remove-item").forEach((btn) => {
-                btn.addEventListener("click", (e) => {
-                    const target = e.currentTarget as HTMLElement;
-                    const idx = parseInt(
-                        target.getAttribute("data-index") || "0",
-                    );
-                    const currentCart = JSON.parse(
-                        localStorage.getItem("wh_cart") || "[]",
-                    );
-                    currentCart.splice(idx, 1);
-                    localStorage.setItem(
-                        "wh_cart",
-                        JSON.stringify(currentCart),
-                    );
-                    window.dispatchEvent(new Event("cart-updated"));
-                    renderCartDrawer();
-                });
-            });
-        } catch (e) {
-            console.error("Error rendering cart drawer", e);
-        }
-    }
+    // Redundant cart logic removed, now handled by Nanostores
 
     function updateFavCount() {
         const countSpans = [
@@ -395,32 +279,34 @@ import { Image } from "astro:assets";
             document.getElementById("cart-count-mobile"),
         ];
 
-        try {
-            const cart = JSON.parse(localStorage.getItem("wh_cart") || "[]");
-            const count = cart.reduce(
-                (sum: number, item: any) => sum + item.quantity,
-                0,
-            );
+        const cart = cartItems.get();
+        const count = Object.values(cart).reduce(
+            (sum: number, itemStr: string) =>
+                sum + (JSON.parse(itemStr).quantity || 0),
+            0,
+        );
 
-            cartCountSpans.forEach((span) => {
-                if (!span) return;
-                const isMobile = span.id.includes("mobile");
-                if (count > 0) {
-                    span.textContent = count.toString();
-                    span.style.display = isMobile ? "inline" : "flex";
+        cartCountSpans.forEach((span) => {
+            if (!span) return;
+            const isMobile = span.id.includes("mobile");
+            if (count > 0) {
+                span.textContent = count.toString();
+                span.style.display = isMobile ? "inline" : "flex";
+            } else {
+                if (isMobile) {
+                    span.textContent = "0";
+                    span.style.display = "inline";
                 } else {
-                    if (isMobile) {
-                        span.textContent = "0";
-                        span.style.display = "inline";
-                    } else {
-                        span.style.display = "none";
-                    }
+                    span.style.display = "none";
                 }
-            });
-        } catch (e) {
-            console.error("Error updating cart total", e);
-        }
+            }
+        });
     }
+
+    // Subscribe to cart changes
+    cartItems.listen(() => {
+        updateCartTotal();
+    });
 
     window.addEventListener("storage", () => {
         updateFavCount();
@@ -428,7 +314,6 @@ import { Image } from "astro:assets";
     });
 
     window.addEventListener("cart-updated", updateCartTotal);
-    window.addEventListener("open-cart-drawer", () => toggleCart(true));
 
     document.addEventListener("astro:page-load", () => {
         updateFavCount();
