@@ -43,52 +43,64 @@ try {
     
     if (product) {
         // --- FETCH RELATED PRODUCTS & FBT ---
-        // Aquí podemos seguir usando el Store API para el listado masivo o migrar a v3 si es necesario.
-        // Por ahora mantendremos la lógica de pool aleatorio para no sobrecargar la API REST.
-        let relatedProducts = [];
+        let relatedProducts: any[] = [];
         let fbtProducts: any[] = [];
         
         try {
-            const shoeCats = [63, 64, 65, 66, 67, 68, 69, 70]; 
-            const clothingCats = [951, 952, 251, 1022];        
-            const accessoryCats = [250, 126, 172];             
+            // IDs de categorías actualizados según el catálogo actual de W&H
+            const shoeCats = [63, 194, 192, 195, 193, 196, 70]; 
+            const clothingCats = [249, 951, 952, 251, 1022, 250];        
+            const accessoryCats = [126, 172, 190];             
             
             // Pool de productos para recomendaciones
             const res = await fetch(`https://winstonandharrystore.com/wp-json/wc/store/v1/products?per_page=60&orderby=date`);
             if (res.ok) {
-                const relatedData = await res.json();
+                const allStoreProducts = await res.json();
                 
                 const currentCats = product.categories?.map((c: any) => c.id) || [];
-                const pName = product.name.toLowerCase();
+                const pName = (product.name || "").toLowerCase();
                 
                 const isCurrentShoe = currentCats.some((id: any) => shoeCats.includes(id)) || 
-                                      pName.includes('zapato') || pName.includes('mocasín') || pName.includes('tenis');
+                                      pName.includes('zapato') || pName.includes('mocasín') || pName.includes('tenis') || pName.includes('bota');
                 
                 const isCurrentClothing = currentCats.some((id: any) => clothingCats.includes(id)) || 
-                                          pName.includes('chaqueta') || pName.includes('sueter') || pName.includes('suéter') || pName.includes('camisa');
+                                          pName.includes('chaqueta') || pName.includes('sueter') || pName.includes('suéter') || pName.includes('camisa') || pName.includes('pantalon');
 
-                // 1. Completa tu look
-                relatedProducts = relatedData
-                    .filter((p: any) => p.id !== product.id)
-                    .sort(() => Math.random() - 0.5)
-                    .slice(0, 4);
+                // 1. Completa tu look (Preferimos relacionados definidos en WC, si no, aleatorios)
+                const wcRelatedIds = [...(product.upsell_ids || []), ...(product.related_ids || [])];
+                
+                if (wcRelatedIds.length > 0) {
+                    relatedProducts = allStoreProducts.filter((p: any) => wcRelatedIds.includes(p.id)).slice(0, 4);
+                }
+                
+                if (relatedProducts.length < 4) {
+                    const extra = allStoreProducts
+                        .filter((p: any) => p.id !== product.id && !relatedProducts.some(rp => rp.id === p.id))
+                        .sort(() => Math.random() - 0.5)
+                        .slice(0, 4 - relatedProducts.length);
+                    relatedProducts = [...relatedProducts, ...extra];
+                }
 
                 // 2. El Complemento Ideal (FBT)
-                let poolA = relatedData.filter((p: any) => p.id !== product.id && (p.categories?.some((c: any) => shoeCats.includes(c.id))));
-                let poolB = relatedData.filter((p: any) => p.id !== product.id && (p.categories?.some((c: any) => clothingCats.includes(c.id))));
+                // Si es zapato, sugerimos ropa. Si es ropa, sugerimos zapatos.
+                let poolA = allStoreProducts.filter((p: any) => p.id !== product.id && (p.categories?.some((c: any) => shoeCats.includes(c.id))));
+                let poolB = allStoreProducts.filter((p: any) => p.id !== product.id && (p.categories?.some((c: any) => clothingCats.includes(c.id))));
                 
                 if (isCurrentShoe) {
-                   fbtProducts = [poolB[0]].filter(Boolean);
+                   fbtProducts = poolB.length > 0 ? [poolB[0]] : [allStoreProducts.find((p: any) => p.id !== product.id)];
                 } else {
-                   fbtProducts = [poolA[0]].filter(Boolean);
+                   fbtProducts = poolA.length > 0 ? [poolA[0]] : [allStoreProducts.find((p: any) => p.id !== product.id)];
                 }
             }
         } catch (e) {
             console.error("Error fetching related products:", e);
         }
 
+        // Asignamos y optimizamos todo el objeto product para que incluya las imágenes .webp en los relacionados
         product.related_products = relatedProducts;
-        product.fbt_products = fbtProducts.map(p => optimizeImages(p));
+        product.fbt_products = fbtProducts.filter(Boolean);
+        
+        product = optimizeImages(product);
 
     } else {
         error = "Producto no encontrado en el catálogo";

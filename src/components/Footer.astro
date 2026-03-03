@@ -1,11 +1,15 @@
 ---
 import { Image } from "astro:assets";
 import ReviewsSection from "./ReviewsSection";
+import InstagramReels from "./InstagramReels";
 ---
 
 <footer id="footer" class="footer">
     <!-- Reviews Section moved to footer -->
     <ReviewsSection client:visible />
+
+    <!-- Instagram Reels Section -->
+    <InstagramReels client:visible />
 
     <!-- Barra Newsletter -->
     <div class="footer-newsletter-bar">

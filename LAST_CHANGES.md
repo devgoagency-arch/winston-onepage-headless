@@ -1,5 +1,22 @@
 Este archivo resume los últimos cambios realizados para mantener la sincronía entre diferentes estaciones de trabajo.
 
+## Últimos Cambios (3 de Marzo, 2026)
+
+### 1. Integración de Instagram Reels
+- **Nuevo Componente:** Se creó `InstagramReels.tsx` para mostrar los últimos 3 reels/videos de la marca usando el feed de Behold.
+- **Ubicación Estratégica:** Insertado en el footer, exactamente entre la sección de Reviews y el banner de Suscripción (Newsletter).
+- **Estética Pulida:** 
+    - Uso explícito de fuente **Helvetica** en gris suave para descripciones, manteniendo la jerarquía visual frente a los títulos en verde.
+    - Micro-animaciones de hover (elevación suave) y overlays dinámicos con iconos de "engagement" (vistas, pines).
+    - Implementación de Skeleton Loaders para una carga premium sin saltos visuales.
+
+### 2. Restauración de Sugerencias en Detalle de Producto (`[slug].astro`)
+- **Secciones Recuperadas:** Se restauraron "Completa tu look" (Relacionados) y "El Complemento Ideal" (FBT) que se habían perdido en versiones anteriores.
+- **Lógica de Recomendación Inteligente:**
+    - Se priorizan los IDs definidos manualmente en WooCommerce (related/upsell).
+    - **Sugerencias Cruzadas:** Si no hay definidos, el sistema sugiere automáticamente ropa para zapatos y viceversa, usando un mapeo actualizado de categorías (Botas, Mocasines, Suéteres, etc.).
+- **Optimización en Cascada:** Se mejoró la optimización de imágenes recursiva para que todos los productos sugeridos carguen miniaturas `.webp`, reduciendo el tiempo de carga de la página de producto.
+
 ## Últimos Cambios (27 de Febrero, 2026)
 
 ### 1. Parallax de Hero y Estructura de Capas

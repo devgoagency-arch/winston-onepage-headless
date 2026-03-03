@@ -1,0 +1,273 @@
+﻿---
+// src/pages/productos/[slug].astro
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import ProductDetail from "../../components/ProductDetail";
+
+export const isr = {
+    expiration: 86400, // 24 horas de cach├® (Cero esperas de 8s)
+};
+
+const { slug } = Astro.params;
+
+/**
+ * Funci├│n auxiliar para a├▒adir .webp a las URLs de im├ígenes de WordPress de forma recursiva.
+ * Duplicada de api/products.ts para uso en SSR
+ */
+function optimizeImages(data: any): any {
+    if (!data) return data;
+    if (Array.isArray(data)) return data.map(item => optimizeImages(item));
+    if (typeof data === 'object') {
+        const newData = { ...data };
+        for (const key in newData) {
+            if (key === 'src' && typeof newData[key] === 'string') {
+                if (newData[key].includes('wp-content/uploads') && !newData[key].toLowerCase().endsWith('.webp')) {
+                    // Limpieza de sufijos de edici├│n de WordPress (-e1755...)
+                    // Esto evita 404s ya que el .webp se genera sobre el nombre base
+                    let cleanSrc = newData[key].replace(/-e\d+(?=\.(jpg|jpeg|png))/i, '');
+                    newData[key] = `${cleanSrc}.webp`;
+                }
+            } else {
+                newData[key] = optimizeImages(newData[key]);
+            }
+        }
+        return newData;
+    }
+    return data;
+}
+
+let product: any = null;
+let error: any = null;
+
+// Funci├│n de ayuda para reintentar peticiones fallidas (Robustez)
+async function fetchWithRetry(url: string, options = {}, retries = 1) {
+    for (let i = 0; i <= retries; i++) {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 8000); // 8s timeout
+        try {
+            const res = await fetch(url, { ...options, signal: controller.signal });
+            clearTimeout(timeoutId);
+            if (res.ok) return res;
+            if (res.status === 404) return res; // No reintentar si no existe
+            console.warn(`Intento ${i + 1} fallido (${res.status}) para: ${url}`);
+        } catch (e) {
+            clearTimeout(timeoutId);
+            if (i === retries) throw e;
+            console.warn(`Error de red en intento ${i + 1}, reintentando...`);
+        }
+        // Espera corta antes de reintentar
+        await new Promise(r => setTimeout(r, 500 * (i + 1)));
+    }
+    return null;
+}
+
+try {
+    // 1. Fetch directo a WooCommerce con reintentos
+    const response = await fetchWithRetry(
+        `https://winstonandharrystore.com/wp-json/wc/store/v1/products?slug=${slug}`
+    );
+    
+    if (response && response.ok) {
+        const products = await response.json();
+        if (products && products.length > 0) {
+            product = products.find((p: any) => p && p.attributes && p.attributes.length > 0) || products[0];
+
+            // --- FETCH RELATED PRODUCTS & FBT (Completa tu look & Frecuentemente comprados) ---
+            let relatedProducts = [];
+            let fbtProducts: any[] = [];
+            
+            try {
+                // IDs proporcionados por el usuario para complementos
+                const fbtCategoryIds = [951, 952, 250, 251, 126];
+                const shoeCats = [63, 64, 65, 66, 67, 68, 69, 70]; // Zapatos
+                const clothingCats = [951, 952, 251, 1022];        // Su├®teres, Chaquetas, Camisas, Prendas
+                const accessoryCats = [250, 126, 172];             // Medias, Accesorios, Reatas/Correas
+                
+                // Fetching a larger pool AND specifically shoes to guarantee results
+                // Esto asegura que siempre tengamos calzado disponible para recomendar
+                const [relatedRes, shoesRes] = await Promise.all([
+                    fetchWithRetry(`https://winstonandharrystore.com/wp-json/wc/store/v1/products?per_page=60&orderby=date`),
+                    fetchWithRetry(`https://winstonandharrystore.com/wp-json/wc/store/v1/products?category=63&per_page=20`)
+                ]);
+                
+                if (relatedRes && relatedRes.ok) {
+                    const relatedDataRaw = await relatedRes.json();
+                    let shoeDataRaw = [];
+                    if (shoesRes && shoesRes.ok) shoeDataRaw = await shoesRes.json();
+                    
+                    // Combinamos y eliminamos duplicados
+                    const combinedPool = [...relatedDataRaw, ...shoeDataRaw];
+                    const relatedData = Array.from(new Map(combinedPool.map(item => [item.id, item])).values());
+                    
+                    // Detecci├│n robusta de la categor├¡a actual (ID + Nombre)
+                    const currentCats = product.categories?.map((c: any) => c.id) || [];
+                    const pName = product.name.toLowerCase();
+                    
+                    const isCurrentShoe = currentCats.some((id: any) => shoeCats.includes(id)) || 
+                                          pName.includes('zapato') || pName.includes('mocas├¡n') || pName.includes('tenis');
+                    
+                    const isCurrentClothing = currentCats.some((id: any) => clothingCats.includes(id)) || 
+                                              pName.includes('chaqueta') || pName.includes('sueter') || pName.includes('su├®ter') || pName.includes('camisa');
+                    
+                    const isCurrentAccessory = currentCats.some((id: any) => accessoryCats.includes(id)) || 
+                                               pName.includes('media') || pName.includes('accesorio') || pName.includes('reata');
+
+                    // 1. Pool para "Completa tu look" (evitamos zapatos si es calzado)
+                    let lookPool = relatedData.filter((p: any) => {
+                        if (p.id === product.id) return false;
+                        const isZapato = p.categories?.some((c: any) => 
+                            c.name.toLowerCase().includes('zapato') ||
+                            c.slug.toLowerCase().includes('zapato') ||
+                            c.name.toLowerCase().includes('calzado')
+                        ) || p.name.toLowerCase().includes('zapato');
+
+                        if (isCurrentShoe) return !isZapato; 
+                        return true;
+                    });
+
+                    relatedProducts = lookPool
+                        .sort(() => Math.random() - 0.5)
+                        .slice(0, 4);
+
+                    // 2. Selecci├│n para "El Complemento Ideal" (FBT) - L├│gica Contextual Estricta
+                    let poolA: any[] = []; // Slot 1 (Zapatos o Ropa)
+                    let poolB: any[] = []; // Slot 2 (Accesorio/Media)
+
+                    if (isCurrentShoe) {
+                      // CASO ZAPATO -> RECOMENDAR ROPA + ACCESORIO
+                      poolA = relatedData.filter((p: any) => p.id !== product.id && p.images?.[0] && (p.categories?.some((c: any) => clothingCats.includes(c.id)) || p.name.toLowerCase().includes('chaqueta') || p.name.toLowerCase().includes('sueter')));
+                      poolB = relatedData.filter((p: any) => p.id !== product.id && p.images?.[0] && (p.categories?.some((c: any) => accessoryCats.includes(c.id)) || p.name.toLowerCase().includes('media')));
+                    } else {
+                      // CASO ROPA O ACCESORIO -> RECOMENDAR SIEMPRE ZAPATO + (Ropa o Accesorio)
+                      poolA = relatedData.filter((p: any) => p.id !== product.id && p.images?.[0] && (p.categories?.some((c: any) => shoeCats.includes(c.id)) || p.name.toLowerCase().includes('zapato') || p.name.toLowerCase().includes('mocas├¡n')));
+                      
+                      if (isCurrentClothing) {
+                        poolB = relatedData.filter((p: any) => p.id !== product.id && p.images?.[0] && (p.categories?.some((c: any) => accessoryCats.includes(c.id)) || p.name.toLowerCase().includes('media')));
+                      } else {
+                        poolB = relatedData.filter((p: any) => p.id !== product.id && p.images?.[0] && (p.categories?.some((c: any) => clothingCats.includes(c.id)) || p.name.toLowerCase().includes('chaqueta')));
+                      }
+                    }
+
+                    const finalFbt: any[] = [];
+                    // Slot A (Zapato obligatorio si no estoy en calzado)
+                    if (poolA.length > 0) {
+                        finalFbt.push(poolA[Math.floor(Math.random() * poolA.length)]);
+                    }
+                    // Slot B
+                    const poolB_filtered = poolB.filter(p => !finalFbt.some(f => f.id === p.id));
+                    if (poolB_filtered.length > 0) {
+                        finalFbt.push(poolB_filtered[Math.floor(Math.random() * poolB_filtered.length)]);
+                    }
+
+                    // Relleno si no llegamos a 2
+                    if (finalFbt.length < 2) {
+                        const leftover = relatedData.filter(p => p.id !== product.id && p.images?.[0] && !finalFbt.some(f => f.id === p.id));
+                        if (leftover.length > 0) finalFbt.push(leftover[Math.floor(Math.random() * leftover.length)]);
+                    }
+
+                    fbtProducts = finalFbt.slice(0, 1).map((p: any) => optimizeImages(p));
+
+                    // Fallback: Si no hay suficientes complementos para el look, mostramos cualquier otro
+                    if (relatedProducts.length < 2) {
+                        relatedProducts = relatedData
+                            .filter((p: any) => p.id !== product.id)
+                            .sort(() => Math.random() - 0.5)
+                            .slice(0, 4);
+                    }
+                }
+            } catch (e) {
+                console.error("Error fetching related/fbt products:", e);
+            }
+            product.related_products = relatedProducts;
+            product.fbt_products = fbtProducts;
+            // ------------------------------
+
+            // Optimizamos im├ígenes para el producto y sus relacionados
+            product = optimizeImages(product);
+
+            if (product && product.type === 'variable' && product.variations) {
+                const colorAttr = product.attributes.find((a: any) => a.name.toLowerCase().includes('color'));
+                if (colorAttr && colorAttr.terms) {
+                    const variationImages: any = {};
+                    const colors = colorAttr.terms.map((t: any) => t.slug);
+
+                    // Cargamos variaciones de forma m├ís resistente
+                    await Promise.allSettled(colors.map(async (colorSlug: string) => {
+                        const variation = product.variations.find((v: any) =>
+                            v.attributes && v.attributes.some((attr: any) => attr.value.toLowerCase() === colorSlug.toLowerCase())
+                        );
+
+                        if (variation) {
+                            try {
+                                const varRes = await fetchWithRetry(`https://winstonandharrystore.com/wp-json/wc/store/v1/products/${variation.id}`);
+                                if (varRes && varRes.ok) {
+                                    const varData = await varRes.json();
+                                    if (varData.images && varData.images.length > 0) {
+                                        variationImages[colorSlug] = varData.images;
+                                    }
+                                }
+                            } catch (e) { }
+                        }
+                    }));
+                    product.variation_images_map = variationImages;
+                }
+            }
+        } else {
+            error = "Zapato no encontrado en el cat├ílogo";
+        }
+    } else {
+        const status = response ? response.status : 'Timeout';
+        error = `No pudimos conectar con la tienda (Error ${status}). Por favor, refresca la p├ígina.`;
+    }
+} catch (e) {
+    console.error("Error cr├¡tico en [slug].astro:", e);
+    error = "Hubo un problema de conexi├│n. Estamos trabajando en ello.";
+}
+
+if (!product && !error) {
+    return Astro.redirect("/404");
+}
+---
+
+<Layout title={product ? `${product.name} | Winston & Harry` : "Producto"}>
+    <Header />
+
+    <main class="product-page-container">
+        {
+            product ? (
+                <ProductDetail client:load initialProduct={product} />
+            ) : (
+                <div class="container error-msg">
+                    <h1>{error}</h1>
+                    <a href="/#tienda" class="btn">
+                        Volver a la tienda
+                    </a>
+                </div>
+            )
+        }
+    </main>
+
+    <Footer />
+</Layout>
+
+<style>
+    .product-page-container {
+        padding-top: 90px;
+        min-height: 80vh;
+    }
+    .error-msg {
+        text-align: center;
+        padding: 10rem 0;
+    }
+    h1 {
+        margin-bottom: 2rem;
+        color: var(--color-green);
+    }
+
+    @media (max-width: 768px) {
+        .product-page-container {
+            padding-top: 65px; /* Espacio para el header fixed */
+            min-height: 80vh;
+        }
+</style>
