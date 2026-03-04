@@ -7,7 +7,7 @@
   --color-white: #EFEFEF;
   --color-black: #121212;
   --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  --max-width: 1440px;
+  --max-width: 1400px;
 
   /* Font Families */
   --font-titles: 'darkmode-off', 'Antonio', sans-serif;

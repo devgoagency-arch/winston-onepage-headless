@@ -9,16 +9,35 @@ export const GET: APIRoute = async ({ request }) => {
     // para pruebas, o validamos que el origin sea el mismo.
 
     try {
-        console.log('--- Iniciando Calentamiento de Caché (24 productos) ---');
+        console.log('--- Iniciando Calentamiento de Caché (Catálogo Completo) ---');
 
-        // 1. Obtenemos los 24 productos principales (Modo Prueba)
-        const response = await fetch(`https://winstonandharrystore.com/wp-json/wc/store/v1/products?per_page=96`);
-        if (!response.ok) throw new Error('No se pudo obtener el catálogo de WooCommerce');
+        // 1. Obtenemos TODOS los productos paginando (Máximo 100 por página)
+        let allProducts: any[] = [];
+        let page = 1;
+        let hasMore = true;
 
-        const products = await response.json();
-        const slugs = products.map((p: any) => p.slug);
+        console.log('Obteniendo catálogo completo de WooCommerce...');
 
-        console.log(`Páginas de productos a calentar: ${slugs.length}.`);
+        while (hasMore && page <= 15) { // Límite de 15 páginas (1500 productos) por seguridad
+            const response = await fetch(`https://winstonandharrystore.com/wp-json/wc/store/v1/products?per_page=100&page=${page}`);
+            if (!response.ok) {
+                console.error(`Error en página ${page}: ${response.status}`);
+                break;
+            }
+
+            const chunk = await response.json();
+            if (!Array.isArray(chunk) || chunk.length === 0) {
+                hasMore = false;
+            } else {
+                allProducts.push(...chunk);
+                console.log(`Página ${page} cargada: ${chunk.length} productos.`);
+                page++;
+            }
+        }
+
+        const slugs = allProducts.map((p: any) => p.slug);
+
+        console.log(`Total de productos encontrados: ${slugs.length}.`);
 
         // 2. Definimos todas las rutas críticas de la web
         const criticalRoutes = [

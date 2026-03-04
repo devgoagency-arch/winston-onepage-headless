@@ -109,21 +109,20 @@
     }
 
     .hero-title {
-        font-family: var(--font-titles, "Playfair Display", serif);
-        color: #fff;
-        font-size: clamp(1.8rem, 5vw, 3.2rem);
+        font-family: var(--font-titles);
+        color: var(--color-white);
+        font-size: 1.25rem;
         font-weight: 700;
-        line-height: 1.1;
+        line-height: 1.2;
         margin-bottom: 2rem;
         text-transform: uppercase;
         letter-spacing: 2px;
-        text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     }
 
     .hero-subtitle {
-        font-family: var(--font-paragraphs, "Helvetica", sans-serif);
-        color: rgba(255, 255, 255, 0.9);
-        font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+        font-family: var(--font-paragraphs);
+        color: var(--color-white);
+        font-size: 0.8rem;
         max-width: 700px;
         margin: 0 auto 3.5rem;
         line-height: 1.6;
@@ -138,40 +137,52 @@
         flex-wrap: wrap;
     }
 
-    .btn-primary,
-    .btn-secondary {
+    .btn-primary {
+        display: inline-block;
         padding: 1rem 2.5rem;
-        font-family: var(--font-titles, sans-serif);
-        font-size: 0.85rem;
-        font-weight: 700;
+        font-family: var(--font-titles);
+        font-size: 0.9rem;
+        font-weight: 600;
         text-transform: uppercase;
         letter-spacing: 2px;
         text-decoration: none;
         transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-        border-radius: 2px;
+        border: none;
+        cursor: pointer;
         min-width: 240px;
-    }
-
-    .btn-primary {
         background-color: #155338;
-        color: #fff;
-        border: 1px solid #155338;
-    }
-
-    .btn-primary:hover {
-        background-color: transparent;
-        border-color: #fff;
+        color: #efefef;
+        border-radius: 0;
     }
 
     .btn-secondary {
-        background-color: #a98b68;
-        color: #fff;
-        border: 1px solid #a98b68;
+        display: inline-block;
+        padding: 1rem 2.5rem;
+        font-family: var(--font-titles);
+        font-size: 0.9rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        text-decoration: none;
+        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        border: none;
+        cursor: pointer;
+        min-width: 240px;
+        background-color: var(--color-beige);
+        color: #efefef;
+        border-radius: 0;
+    }
+
+    .btn-primary:hover {
+        background-color: var(--color-beige);
+        transform: translateY(-3px);
+        color: #efefef;
     }
 
     .btn-secondary:hover {
-        background-color: transparent;
-        border-color: #fff;
+        background-color: var(--color-green);
+        transform: translateY(-3px);
+        color: #efefef;
     }
 
     @keyframes fadeInUp {
@@ -193,7 +204,7 @@
         }
 
         .hero-title {
-            font-size: 2rem;
+            font-size: 1.25rem;
             margin-bottom: 1.5rem;
         }
 
@@ -210,7 +221,7 @@
 
     @media (max-width: 480px) {
         .hero-title {
-            font-size: 1.6rem;
+            font-size: 1.15rem;
         }
         .hero-content {
             padding: 0 1.5rem;

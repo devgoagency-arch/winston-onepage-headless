@@ -1,5 +1,23 @@
 Este archivo resume los últimos cambios realizados para mantener la sincronía entre diferentes estaciones de trabajo.
 
+## Últimos Cambios (4 de Marzo, 2026)
+
+### 1. Estandarización de Interfaz y Guía de Estilos
+- **Creación de [STYLE_GUIDE.md](file:///c:/Users/Dev/Documents/winston-onepage-headless/STYLE_GUIDE.md):** Se centralizaron todos los tokens de diseño (Colores, Tipografía, Botones, Layout) para asegurar la consistencia premium en todo el proyecto.
+- **Ajustes de Tipografía (Hero & Global):**
+    - Implementación rigurosa de la familia **Antonio** (Weights 600/700) para títulos y botones.
+    - Tipografía de cuerpo en **Helvetica/Arial** con tamaño base de `0.8rem` para una lectura elegante y compacta.
+    - Los títulos ahora respetan el tamaño base de `1.25rem` (20px) con `letter-spacing: 2px` y `uppercase` obligatorio.
+- **Refactor de Botones:** Sincronización de todos los botones `.btn` con el esquema Verde (`#155338`) -> Hover Beige (`#B1915F`) y efecto de elevación suave.
+
+### 2. Optimización de Performance (Warm Cache Completo)
+- **Calentamiento Total del Catálogo:** Se actualizó `warm-cache.ts` para que ya no esté limitado a 96 productos. Ahora realiza una paginación inteligente de 100 en 100 hasta cubrir el 100% de la tienda de forma automática.
+- **Mejora en Grid de Inicio:** El sistema ahora pre-calienta el endpoint `/api/products` y las rutas críticas, eliminando el tiempo de espera de WooCommerce para el primer usuario y mejorando drásticamente el LCP (Largest Contentful Paint).
+
+### 3. Ajustes de UI y Espaciado
+- **Instagram Reels:** Se eliminó el padding superior/inferior en la sección de reels para permitir una integración visual más fluida con el footer.
+- **Layout Max-Width:** Ajuste global del contenedor máximo de `1440px` a `1400px` según los nuevos lineamientos de diseño.
+
 ## Últimos Cambios (3 de Marzo, 2026)
 
 ### 1. Integración de Instagram Reels

@@ -20,13 +20,13 @@ import CategoryGrid from "../components/CategoryGrid.astro";
 		<div class="content-wrapper">
 			<FeaturesBanner />
 			<CategoryGrid />
+			<ProductGrid client:load />
 			<ScrollRevealBanner
 				imageUrl="/images/banner-look-completo.webp"
 				title="Estilo que se construye con intención"
 				description="Cada prenda está pensada para integrarse a tu forma de vestir y a tu ritmo. Descubre ropa que suma, combina y se adapta a tu día. chaquetas, camisas y suéteres."
 				pretitle="Winston & Harry"
 			/>
-			<ProductGrid client:load />
 			<LookOfTheWeek />
 			<About />
 		</div>
