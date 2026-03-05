@@ -39,7 +39,7 @@ function normalizeSlug(text: string): string {
 /**
  * Generic Fetcher with Basic Auth and Retry Logic
  */
-async function wcFetch(path: string, options: RequestInit = {}, retries = 3, delay = 1000) {
+async function wcFetch(path: string, options: RequestInit = {}, retries = 3, delay = 1500) {
     const url = `${BASE_URL}${path}${path.includes('?') ? '&' : '?'}consumer_key=${CK}&consumer_secret=${CS}`;
 
     for (let i = 0; i < retries; i++) {
@@ -52,11 +52,14 @@ async function wcFetch(path: string, options: RequestInit = {}, retries = 3, del
                 }
             });
 
-            if (res.status === 503 || res.status === 429) {
-                // Server overloaded or rate limited, wait and retry
+            // 503 (Server Busy), 429 (Rate Limit), 500 (Internal Error) - Retry these
+            if (res.status === 503 || res.status === 429 || res.status === 500 || res.status === 502) {
+                if (i === retries - 1) {
+                    throw new Error(`WC API Error: ${res.status} ${res.statusText} (After ${retries} attempts)`);
+                }
                 console.warn(`WC API Warning: ${res.status}. Retrying in ${delay}ms... (Attempt ${i + 1}/${retries})`);
                 await new Promise(r => setTimeout(r, delay));
-                delay *= 2; // Exponential backoff
+                delay *= 2;
                 continue;
             }
 
@@ -71,6 +74,31 @@ async function wcFetch(path: string, options: RequestInit = {}, retries = 3, del
             await new Promise(r => setTimeout(r, delay));
             delay *= 2;
         }
+    }
+}
+
+/**
+ * Obtiene un pool de productos para recomendaciones con caché de 10 minutos
+ * para evitar saturar el servidor en visitas masivas.
+ */
+export async function getProductsPool() {
+    const cacheKey = 'products_pool_60';
+    // Usamos un TTL de 10 minutos para este pool pesado
+    const poolTTL = 1000 * 60 * 10;
+    const entry = cache[cacheKey];
+    if (entry && (Date.now() - entry.timestamp < poolTTL)) {
+        return entry.data;
+    }
+
+    try {
+        const products = await wcFetch('/products?per_page=60&orderby=date&status=publish&stock_status=instock');
+        if (products) {
+            cache[cacheKey] = { data: products, timestamp: Date.now() };
+        }
+        return products;
+    } catch (error) {
+        console.error("Error fetching products pool:", error);
+        return [];
     }
 }
 

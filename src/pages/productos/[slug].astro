@@ -3,7 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import ProductDetail from "../../components/ProductDetail";
-import { getProductBySlug } from "../../lib/woocommerce";
+import { getProductBySlug, getProductsPool } from "../../lib/woocommerce";
 
 export const isr = {
     expiration: 86400, // 24 horas de caché
@@ -29,11 +29,10 @@ try {
             const clothingCats = [249, 951, 952, 251, 1022, 250];        
             const accessoryCats = [126, 172, 190];             
             
-            // Pool de productos para recomendaciones (Solo disponibles)
-            const res = await fetch(`https://winstonandharrystore.com/wp-json/wc/v3/products?per_page=60&orderby=date&status=publish&stock_status=instock&consumer_key=ck_28661c4aff0fc02b97a607862895fc40a187e867&consumer_secret=cs_deb208f164b96724a90b64bf0f762a713251b7a2`);
-            if (res.ok) {
-                const rawProducts = await res.json();
-                
+            // Usamos el pool de productos con caché de 10 minutos (Optimizado)
+            const rawProducts = await getProductsPool();
+            
+            if (rawProducts && rawProducts.length > 0) {
                 // Mapear al formato que espera el frontend (Store API style compatible)
                 const allStoreProducts = rawProducts.map((p: any) => {
                     const hasTax = p.tax_status === 'taxable';
