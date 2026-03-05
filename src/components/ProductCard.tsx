@@ -41,9 +41,10 @@ interface Props {
     product: Product;
     isSelected?: boolean;
     onSelectionToggle?: (id: number) => void;
+    onVariationChange?: (id: number, color: string | null, size: string | null) => void;
 }
 
-export default function ProductCard({ product, isSelected, onSelectionToggle }: Props) {
+export default function ProductCard({ product, isSelected, onSelectionToggle, onVariationChange }: Props) {
     const [isFavorite, setIsFavorite] = useState(false);
     const [selectedColor, setSelectedColor] = useState<string | null>(null);
     const [hoveredColor, setHoveredColor] = useState<string | null>(null);
@@ -85,10 +86,13 @@ export default function ProductCard({ product, isSelected, onSelectionToggle }: 
         fetchFullProduct();
     }, [product.slug, product.type, product.variation_images_map]);
 
+    const [selectedSize, setSelectedSize] = useState<string | null>(null);
+
     // Reset state when product changes
     useEffect(() => {
         setFailedSyntheticColors([]);
         setSelectedColor(null);
+        setSelectedSize(null);
         setHoveredColor(null);
         setIsCardHovered(false);
     }, [product.id]);
@@ -97,6 +101,12 @@ export default function ProductCard({ product, isSelected, onSelectionToggle }: 
         const favorites = JSON.parse(localStorage.getItem('wh_favorites') || '[]');
         setIsFavorite(favorites.some((fav: any) => fav.id === product.id));
     }, [product.id]);
+
+    useEffect(() => {
+        if (onVariationChange) {
+            onVariationChange(product.id, selectedColor, selectedSize);
+        }
+    }, [selectedColor, selectedSize, product.id, onVariationChange]);
 
     const toggleFavorite = (e: React.MouseEvent) => {
         e.preventDefault();
@@ -115,7 +125,11 @@ export default function ProductCard({ product, isSelected, onSelectionToggle }: 
 
     // Color Logic
     const colorAttribute = product.attributes?.find(attr =>
-        attr.name.toLowerCase().includes('color')
+        attr.name.toLowerCase().includes('color') || attr.name === 'Pa_selecciona-el-color'
+    );
+
+    const sizeAttribute = product.attributes?.find(attr =>
+        attr.name.toLowerCase().includes('talla') || attr.name === 'Pa_selecciona-una-talla'
     );
 
     const activeColor = hoveredColor || selectedColor;
@@ -451,6 +465,7 @@ export default function ProductCard({ product, isSelected, onSelectionToggle }: 
                         </h3>
                     </div>
 
+
                     <p className="price">
                         {isSale ? (
                             <div className="price-wrapper">
@@ -628,6 +643,34 @@ export default function ProductCard({ product, isSelected, onSelectionToggle }: 
             padding: 5px 10px;
             border-radius: 30px;
             transition: all 0.3s ease;
+        }
+
+        .card-bundle-selectors {
+            display: flex;
+            gap: 5px;
+            margin: 8px 0;
+            padding: 0;
+        }
+
+        .bundle-selector-field {
+            flex: 1;
+        }
+
+        .bundle-selector-field select {
+            width: 100%;
+            padding: 4px 6px;
+            font-size: 0.7rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 2px;
+            font-family: var(--font-paragraphs);
+            background: #fff;
+            color: #333;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .bundle-selector-field select:focus {
+            border-color: var(--color-beige);
         }
 
         .product-card:hover .card-colors-overlay {

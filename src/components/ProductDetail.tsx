@@ -1,6 +1,7 @@
 import { useState, useEffect, useMemo, useRef } from 'react';
 import ProductCard from './ProductCard';
 import { addToCart } from '../store/cart';
+import { redirectToCheckout } from '../utils/checkout';
 
 interface Product {
   id: number;
@@ -41,6 +42,7 @@ interface Product {
   fbt_products?: any[];
   on_sale?: boolean;
   featured?: boolean;
+  type?: string;
 }
 
 interface Props {
@@ -67,6 +69,14 @@ export default function ProductDetail({ initialProduct }: Props) {
   const [isFavorite, setIsFavorite] = useState(false);
   const product = initialProduct;
   const [selectedFbtIds, setSelectedFbtIds] = useState<number[]>([]);
+  const [fbtVariations, setFbtVariations] = useState<Record<number, { color: string | null, size: string | null }>>({});
+
+  const handleFbtVariationChange = (productId: number, color: string | null, size: string | null) => {
+    setFbtVariations(prev => ({
+      ...prev,
+      [productId]: { color, size }
+    }));
+  };
 
   useEffect(() => {
     if (product.fbt_products) {
@@ -428,16 +438,17 @@ export default function ProductDetail({ initialProduct }: Props) {
   const handleAddBothToCart = () => {
     // 1. Añadir el producto principal
     if (selectedFbtIds.includes(product.id)) {
-      if (!handleAddToCart()) return;
+      addToCart(product, 1, selectedColor, selectedSize, filteredImages[0]?.src || product.images[0]?.src);
     }
 
-    // 2. Añadir productos FBT (Si no son variables, es más fácil)
+    // 2. Añadir productos FBT
     if (product.fbt_products) {
-      product.fbt_products.forEach((p) => {
+      for (const p of product.fbt_products) {
         if (selectedFbtIds.includes(p.id)) {
-          addToCart(p, 1, null, null, p.images[0]?.src);
+          const pVar = fbtVariations[p.id];
+          addToCart(p, 1, pVar?.color || null, pVar?.size || null, p.images[0]?.src);
         }
-      });
+      }
     }
   };
 
@@ -715,10 +726,8 @@ export default function ProductDetail({ initialProduct }: Props) {
                     className="btn-action btn-outline-thick"
                     onClick={() => {
                       if (handleAddToCart()) {
-                        // After adding, redirect to WP Checkout directly
-                        // We use the same domain for consistency
-                        const wpDomain = 'https://winstonandharrystore.com';
-                        window.location.href = `${wpDomain}/checkout/`;
+                        // After adding, redirect using our unified utility
+                        redirectToCheckout('/checkout/');
                       }
                     }}
                   >
@@ -801,6 +810,7 @@ export default function ProductDetail({ initialProduct }: Props) {
                       product={product}
                       isSelected={selectedFbtIds.includes(product.id)}
                       onSelectionToggle={toggleFbtSelection}
+                      onVariationChange={handleFbtVariationChange}
                     />
                   </div>
                 </div>
@@ -813,6 +823,7 @@ export default function ProductDetail({ initialProduct }: Props) {
                         product={p}
                         isSelected={selectedFbtIds.includes(p.id)}
                         onSelectionToggle={toggleFbtSelection}
+                        onVariationChange={handleFbtVariationChange}
                       />
                     </div>
                   </div>

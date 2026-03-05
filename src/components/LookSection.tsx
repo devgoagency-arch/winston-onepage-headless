@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import ProductCard from './ProductCard';
+import { addToCart } from '../store/cart';
 
 interface Product {
     id: number;
@@ -10,6 +11,7 @@ interface Product {
         price: string;
         regular_price: string;
         sale_price: string;
+        price_range: any;
         currency_code: string;
         currency_symbol: string;
         currency_minor_unit: number;
@@ -62,6 +64,25 @@ export default function LookSection() {
         );
     };
 
+    const [lookVariations, setLookVariations] = useState<Record<number, { color: string | null, size: string | null }>>({});
+
+    const handleVariationChange = (productId: number, color: string | null, size: string | null) => {
+        setLookVariations(prev => ({
+            ...prev,
+            [productId]: { color, size }
+        }));
+    };
+
+    const handleAddAllToCart = () => {
+        if (!data) return;
+        for (const product of data.products) {
+            if (selectedIds.includes(product.id)) {
+                const variation = lookVariations[product.id];
+                addToCart(product, 1, variation?.color || null, variation?.size || null, product.images[0]?.src);
+            }
+        }
+    };
+
     if (loading || !data) return <div className="look-loading">Cargando look...</div>;
 
     const total = data.products
@@ -112,6 +133,7 @@ export default function LookSection() {
                                                 product={product}
                                                 isSelected={selectedIds.includes(product.id)}
                                                 onSelectionToggle={toggleSelection}
+                                                onVariationChange={handleVariationChange}
                                             />
                                         </div>
                                     </div>
@@ -126,7 +148,7 @@ export default function LookSection() {
                                     </p>
                                     <button
                                         className="add-all-btn"
-                                        onClick={() => alert(`Añadiendo ${selectedIds.length} productos al carrito`)}
+                                        onClick={handleAddAllToCart}
                                     >
                                         AÑADIR SELECCIONADOS AL CARRITO
                                     </button>

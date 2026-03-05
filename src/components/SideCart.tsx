@@ -1,6 +1,7 @@
 import { useStore } from '@nanostores/react';
-import { cartItems, isCartOpen, removeFromCart, updateQuantity, type CartItem } from '../store/cart';
+import { cartItems, isCartOpen, removeFromCart, updateQuantity, updateCartItemVariation, type CartItem } from '../store/cart';
 import { useEffect, useState, useMemo } from 'react';
+import { redirectToCheckout } from '../utils/checkout';
 
 export default function SideCart() {
     const $cartItems = useStore(cartItems);
@@ -18,6 +19,17 @@ export default function SideCart() {
         return items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
     }, [items]);
 
+    useEffect(() => {
+        if ($isCartOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+        return () => {
+            document.body.style.overflow = '';
+        };
+    }, [$isCartOpen]);
+
     const handleClose = () => {
         setIsClosing(true);
         setTimeout(() => {
@@ -27,25 +39,11 @@ export default function SideCart() {
     };
 
     const handleCheckout = () => {
-        if (items.length === 0) return;
-
-        // Dominio limpio de WordPress
-        const wpDomain = 'https://winstonandharrystore.com';
-
-        // Generamos la cadena ID:QTY
-        const itemsQuery = items.map(item => `${item.id}:${item.quantity}`).join(',');
-
-        // Importante: No ponemos /checkout/ al final si WP va a redireccionar, 
-        // lo enviamos a la raiz con el parametro para que el bridge lo capture de inmediato
-        const checkoutUrl = `${wpDomain}/?fill_cart=${itemsQuery}`;
-
-        console.log("Redirecting to:", checkoutUrl);
-        window.location.href = checkoutUrl;
+        redirectToCheckout('/checkout/');
     };
 
     const handleViewCart = () => {
-        // Redirect to WordPress Cart
-        window.location.href = 'https://winstonandharrystore.com/cart/';
+        redirectToCheckout('/cart/');
     };
 
     if (!$isCartOpen && !isClosing) return null;
@@ -59,62 +57,109 @@ export default function SideCart() {
                 <div className="cart-header">
                     <h2>SHOPPING CART</h2>
                     <button className="close-cart" onClick={handleClose}>
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                             <path d="M18 6L6 18M6 6l12 12" />
                         </svg>
                         <span>Cerrar</span>
                     </button>
                 </div>
 
-                <div className="cart-items">
+                <div className="cart-items modern-scroll">
                     {items.length === 0 ? (
                         <div className="empty-cart">
                             <p>Tu carrito está vacío</p>
                             <button className="btn-buy" onClick={handleClose}>Seguir Comprando</button>
                         </div>
                     ) : (
-                        items.map((item) => (
-                            <div key={item.key} className="cart-item">
-                                <div className="item-image">
-                                    <img src={item.image} alt={item.name} />
-                                </div>
-                                <div className="item-details">
-                                    <div className="item-title-row">
-                                        <h3>{item.name}</h3>
-                                        <button className="item-remove-x" onClick={() => removeFromCart(item.key)}>
-                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                                <path d="M18 6L6 18M6 6l12 12" />
-                                            </svg>
-                                        </button>
+                        items.map((item) => {
+                            const colorAttr = item.attributes?.find(a =>
+                                a.name.toLowerCase().includes('color') ||
+                                a.name.toLowerCase().includes('pa_selecciona-el-color')
+                            );
+                            const sizeAttr = item.attributes?.find(a =>
+                                a.name.toLowerCase().includes('talla') ||
+                                a.name.toLowerCase().includes('pa_selecciona-una-talla')
+                            );
+
+                            return (
+                                <div key={item.key} className="cart-item">
+                                    <div className="item-image">
+                                        <img src={item.image} alt={item.name} />
                                     </div>
-                                    <p className="item-variant">
-                                        Selecciona el Color: <span>{item.color || 'N/A'}</span>
-                                    </p>
-                                    <p className="item-variant">
-                                        Selecciona una Talla: <span>{item.size || 'N/A'}</span>
-                                    </p>
-                                    <div className="item-price-qty-row">
-                                        <div className="qty-selector">
-                                            <button onClick={() => updateQuantity(item.key, item.quantity - 1)}>−</button>
-                                            <span className="qty-number">{item.quantity}</span>
-                                            <button onClick={() => updateQuantity(item.key, item.quantity + 1)}>+</button>
+                                    <div className="item-details">
+                                        <div className="item-title-row">
+                                            <h3>{item.name}</h3>
+                                            <button className="item-remove-x" onClick={() => removeFromCart(item.key)}>
+                                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                                                    <path d="M18 6L6 18M6 6l12 12" />
+                                                </svg>
+                                            </button>
                                         </div>
-                                        <div className="item-price-calc">
-                                            × <span>${new Intl.NumberFormat('es-CO').format(item.price)}</span>
+
+                                        <div className="item-variants-selectors">
+                                            <div className="selector-field">
+                                                <label>Selecciona el Color:</label>
+                                                {colorAttr ? (
+                                                    <select
+                                                        value={item.color || ''}
+                                                        onChange={(e) => updateCartItemVariation(item.key, e.target.value, item.size)}
+                                                        className="minimal-select"
+                                                    >
+                                                        <option value="" disabled>Elegir</option>
+                                                        {(colorAttr.terms || colorAttr.options || []).map((term: any) => {
+                                                            const val = typeof term === 'string' ? term : (term.slug || term.name);
+                                                            const lab = typeof term === 'string' ? term : term.name;
+                                                            return <option key={val} value={val}>{lab}</option>;
+                                                        })}
+                                                    </select>
+                                                ) : (
+                                                    <span className="v-value">{item.color || 'N/A'}</span>
+                                                )}
+                                            </div>
+
+                                            <div className="selector-field">
+                                                <label>Selecciona una Talla:</label>
+                                                {sizeAttr ? (
+                                                    <select
+                                                        value={item.size || ''}
+                                                        onChange={(e) => updateCartItemVariation(item.key, item.color, e.target.value)}
+                                                        className="minimal-select"
+                                                    >
+                                                        <option value="" disabled>Elegir</option>
+                                                        {(sizeAttr.terms || sizeAttr.options || []).map((term: any) => {
+                                                            const val = typeof term === 'string' ? term : (term.slug || term.name);
+                                                            const lab = typeof term === 'string' ? term : term.name;
+                                                            return <option key={val} value={val}>{lab}</option>;
+                                                        })}
+                                                    </select>
+                                                ) : (
+                                                    <span className="v-value">{item.size || 'N/A'}</span>
+                                                )}
+                                            </div>
+                                        </div>
+
+                                        <div className="item-price-qty-row">
+                                            <div className="qty-selector">
+                                                <button onClick={() => updateQuantity(item.key, item.quantity - 1)}>−</button>
+                                                <span className="qty-number">{item.quantity}</span>
+                                                <button onClick={() => updateQuantity(item.key, item.quantity + 1)}>+</button>
+                                            </div>
+                                            <div className="item-price-calc">
+                                                × <span>${new Intl.NumberFormat('es-CO').format(item.price)}</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        ))
-                    )
-                    }
+                            );
+                        })
+                    )}
                 </div>
 
                 {items.length > 0 && (
                     <div className="cart-footer">
-                        <div className="subtotal-row">
+                        <div className="footer-top">
                             <span className="subtotal-label">Subtotal:</span>
-                            <div className="subtotal-price-group">
+                            <div className="price-stack">
                                 <span className="subtotal-value">
                                     ${new Intl.NumberFormat('es-CO').format(subtotal)}
                                 </span>
@@ -140,8 +185,7 @@ export default function SideCart() {
                     left: 0;
                     width: 100%;
                     height: 100%;
-                    background: rgba(0,0,0,0.4);
-                    backdrop-filter: blur(4px);
+                    background: rgba(0, 0, 0, 0.4);
                     z-index: 2000;
                     display: flex;
                     justify-content: flex-end;
@@ -152,11 +196,9 @@ export default function SideCart() {
                     max-width: 450px;
                     height: 100%;
                     background: #fff;
-                    box-shadow: -10px 0 30px rgba(0,0,0,0.1);
                     display: flex;
                     flex-direction: column;
-                    padding: 0;
-                    position: relative;
+                    box-shadow: -10px 0 30px rgba(0,0,0,0.1);
                 }
 
                 .cart-header {
@@ -164,17 +206,17 @@ export default function SideCart() {
                     justify-content: space-between;
                     align-items: center;
                     padding: 2.5rem 2rem;
-                    border-bottom: 1px solid #f2f2f2;
+                    background: #fff;
+                    border-bottom: 1px solid #f9f9f9;
                 }
 
                 .cart-header h2 {
-                    font-family: var(--font-titles, sans-serif);
-                    font-size: 1.1rem;
-                    margin: 0;
-                    color: var(--color-green);
-                    text-transform: uppercase;
-                    letter-spacing: 2px;
+                    font-family: var(--font-titles, 'Antonio', sans-serif);
+                    font-size: 1.4rem;
+                    color: var(--color-green, #155338);
+                    letter-spacing: 1px;
                     font-weight: 700;
+                    margin: 0;
                 }
 
                 .close-cart {
@@ -183,37 +225,37 @@ export default function SideCart() {
                     cursor: pointer;
                     display: flex;
                     align-items: center;
-                    gap: 0.5rem;
-                    color: #121212;
-                    font-family: var(--font-paragraphs);
+                    gap: 6px;
                     font-size: 0.9rem;
-                    font-weight: 400;
+                    color: #1a1a1a;
+                    font-family: var(--font-paragraphs, sans-serif);
                 }
 
                 .cart-items {
                     flex: 1;
                     overflow-y: auto;
-                    padding: 1.5rem 2rem;
+                    padding: 0 2rem;
                 }
+
+                .modern-scroll::-webkit-scrollbar { width: 5px; }
+                .modern-scroll::-webkit-scrollbar-track { background: #f9f9f9; }
+                .modern-scroll::-webkit-scrollbar-thumb { background: #bbb; border-radius: 10px; }
 
                 .cart-item {
                     display: flex;
                     gap: 1.2rem;
-                    margin-bottom: 1.5rem;
-                    padding-bottom: 1.5rem;
-                    border-bottom: 1px solid #f2f2f2;
-                    position: relative;
+                    padding: 1.5rem 0;
+                    border-bottom: 1px solid #f0f0f0;
                 }
 
                 .item-image {
-                    width: 80px;
-                    height: 80px;
+                    width: 65px;
+                    height: 65px;
                     flex-shrink: 0;
                     background: #f6f6f6;
                     border-radius: 4px;
                     overflow: hidden;
                 }
-
                 .item-image img {
                     width: 100%;
                     height: 100%;
@@ -224,17 +266,16 @@ export default function SideCart() {
                     flex: 1;
                     display: flex;
                     flex-direction: column;
+                    gap: 0.2rem;
                 }
 
                 .item-title-row {
                     display: flex;
                     justify-content: space-between;
                     align-items: flex-start;
-                    margin-bottom: 0.4rem;
                 }
-
                 .item-details h3 {
-                    font-size: 0.85rem;
+                    font-size: 0.8rem;
                     margin: 0;
                     text-transform: uppercase;
                     font-weight: 400;
@@ -246,177 +287,172 @@ export default function SideCart() {
                 .item-remove-x {
                     background: none;
                     border: none;
-                    color: #999;
                     cursor: pointer;
+                    color: #ccc;
                     padding: 0;
-                    transition: color 0.2s;
+                    font-size: 1.2rem;
                 }
 
-                .item-remove-x:hover {
-                    color: #d32f2f;
+                .item-variants-selectors {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 2px;
+                    margin-bottom: 0.5rem;
                 }
 
-                .item-variant {
+                .selector-field {
                     font-size: 0.8rem;
-                    color: #121212;
-                    margin: 2px 0;
-                    font-family: var(--font-paragraphs);
-                }
-
-                .item-variant span {
-                    color: #999;
-                    margin-left: 2px;
-                }
-
-                .item-price-qty-row {
-                    margin-top: 0.8rem;
+                    color: #1a1a1a;
                     display: flex;
                     align-items: center;
                     gap: 1rem;
                 }
 
+                .selector-field label {
+                    color: #1a1a1a;
+                }
+
+                .minimal-select {
+                    border: none;
+                    padding: 0;
+                    font-size: 0.8rem;
+                    background: transparent;
+                    color: #999;
+                    cursor: pointer;
+                    font-family: var(--font-paragraphs, sans-serif);
+                    text-decoration: none;
+                    opacity: 0.8;
+                }
+                .minimal-select:hover { opacity: 1; }
+
+                .v-value {
+                    color: #999;
+                }
+
+                .item-price-qty-row {
+                    display: flex;
+                    align-items: center;
+                    gap: 15px;
+                    margin-top: 5px;
+                }
+
                 .qty-selector {
                     display: flex;
                     align-items: center;
-                    border: 1px solid #e5e5e5;
-                    border-radius: 2px;
-                    padding: 2px;
+                    border: 1px solid #e0e0e0;
+                    padding: 0;
+                    background: #fff;
                 }
-
                 .qty-selector button {
-                    background: none;
-                    border: none;
                     width: 24px;
-                    height: 24px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
+                    height: 26px;
+                    border: none;
+                    background: none;
                     cursor: pointer;
-                    font-size: 1rem;
+                    font-size: 0.9rem;
                     color: #666;
-                    transition: color 0.2s;
                 }
-
-                .qty-selector button:hover {
-                    color: var(--color-green);
-                }
-
                 .qty-number {
-                    width: 20px;
+                    width: 24px;
                     text-align: center;
-                    font-size: 0.85rem;
-                    font-family: var(--font-paragraphs);
-                    color: #121212;
-                    font-weight: 500;
+                    font-size: 0.8rem;
+                    font-family: var(--font-paragraphs, sans-serif);
                 }
 
                 .item-price-calc {
-                    font-size: 0.85rem;
+                    font-size: 0.8rem;
                     color: #999;
                     font-family: var(--font-paragraphs);
                 }
-
                 .item-price-calc span {
-                    color: var(--color-beige);
+                    color: #B1915F; /* Tono dorado/beige de la imagen */
                     font-weight: 500;
+                    margin-left: 5px;
+                    font-size: 1rem;
+                    font-family: var(--font-paragraphs, sans-serif);
                 }
 
                 .cart-footer {
-                    border-top: 1px solid #eee;
                     padding: 2.5rem 2rem;
+                    background: #fff;
+                    border-top: 1px solid #f0f0f0;
                 }
 
-                .subtotal-row {
+                .footer-top {
                     display: flex;
                     justify-content: space-between;
-                    align-items: center;
-                    margin-bottom: 2rem;
+                    align-items: flex-start;
+                    margin-bottom: 2.5rem;
                 }
 
                 .subtotal-label {
                     font-size: 1.2rem;
-                    font-weight: 600;
-                    color: #333;
-                    font-family: var(--font-paragraphs);
+                    font-weight: 700;
+                    color: #1a1a1a;
+                    font-family: var(--font-paragraphs, sans-serif);
                 }
 
-                .subtotal-price-group {
+                .price-stack {
                     text-align: right;
                 }
 
                 .subtotal-value {
                     display: block;
-                    font-size: 1.4rem;
-                    font-weight: 700;
-                    color: var(--color-beige);
-                    font-family: var(--font-paragraphs);
+                    font-size: 1.2rem;
+                    font-weight: 600;
+                    color: #B1915F;
+                    line-height: 1;
+                    font-family: var(--font-paragraphs, sans-serif);
                 }
 
                 .tax-note {
+                    display: block;
                     font-size: 0.75rem;
-                    color: #999;
-                    font-family: var(--font-paragraphs);
+                    color: #aaa;
+                    margin-top: 5px;
                 }
 
                 .cart-actions {
                     display: flex;
                     flex-direction: column;
-                    gap: 0.8rem;
+                    gap: 12px;
                 }
 
-                .btn-action {
+                .btn-action, .btn-buy {
                     width: 100%;
-                    border: none;
                     padding: 1.2rem;
-                    font-family: var(--font-paragraphs);
-                    font-weight: 600;
+                    font-family: var(--font-titles, 'Antonio', sans-serif);
+                    font-weight: 700;
                     text-transform: uppercase;
-                    letter-spacing: 1px;
+                    letter-spacing: 2px;
+                    border: none;
                     cursor: pointer;
-                    transition: var(--transition-smooth);
-                    font-size: 0.85rem;
+                    font-size: 0.95rem;
+                    transition: all 0.3s ease;
                 }
 
                 .btn-beige {
-                    background: var(--color-beige);
+                    background-color: #B1915F;
                     color: #fff;
                 }
-
-                .btn-beige:hover {
-                    opacity: 0.9;
-                }
-
-                .btn-green {
-                    background: var(--color-green);
+                .btn-green, .btn-buy {
+                    background-color: #155338;
                     color: #fff;
                 }
-
-                .btn-green:hover {
-                    background: #000;
+                .btn-action:hover {
+                    filter: brightness(1.1);
+                    transform: translateY(-1px);
                 }
 
-                .empty-cart {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    justify-content: center;
-                    height: 50%;
-                    gap: 1.5rem;
-                }
-
-                .slide-in { animation: slideIn 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
-                .slide-out { animation: slideOut 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards; }
-                .fade-in { animation: fadeIn 0.4s ease-out; }
-                .fade-out { animation: fadeOut 0.4s ease-in forwards; }
+                .slide-in { animation: slideIn 0.3s cubic-bezier(0.25, 1, 0.5, 1) forwards; }
+                .slide-out { animation: slideOut 0.3s cubic-bezier(0.25, 1, 0.5, 1) forwards; }
+                .fade-in { animation: fadeIn 0.3s ease forwards; }
+                .fade-out { animation: fadeOut 0.3s ease forwards; }
 
                 @keyframes slideIn { from { transform: translateX(100%); } to { transform: translateX(0); } }
                 @keyframes slideOut { from { transform: translateX(0); } to { transform: translateX(100%); } }
                 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
                 @keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } }
-
-                @media (max-width: 480px) {
-                    .side-cart { max-width: 100%; }
-                }
             `}</style>
         </div>
     );
