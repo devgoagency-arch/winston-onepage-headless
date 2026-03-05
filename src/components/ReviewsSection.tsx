@@ -221,7 +221,7 @@ export default function ReviewsSection() {
 
             <style>{`
                 .reviews-section {
-                    padding: 5rem 0;
+                    padding: 4rem 0;
                     background-color: #fff;
                     overflow: hidden;
                     width: 100%;

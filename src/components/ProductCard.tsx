@@ -31,6 +31,10 @@ interface Product {
         attributes: { name: string; value: string }[];
     }[];
     variation_images_map?: Record<string, any[]>;
+    type?: string;
+    variation_ids?: number[];
+    on_sale?: boolean;
+    featured?: boolean;
 }
 
 interface Props {
@@ -50,22 +54,26 @@ export default function ProductCard({ product, isSelected, onSelectionToggle }: 
     const [enrichedProduct, setEnrichedProduct] = useState<any>(null);
     const [isFetchingVariations, setIsFetchingVariations] = useState(false);
 
-    // Efecto para cargar variaciones ON-DEMAND cuando el usuario interactúa
+    // Efecto para cargar variaciones PROACTIVAMENTE para productos variables
     useEffect(() => {
-        const active = hoveredColor || selectedColor;
-        if (!active || enrichedProduct || isFetchingVariations) return;
+        // Solo cargar si es variable y no tenemos datos aún
+        if (product.type !== 'variable' || enrichedProduct || isFetchingVariations) return;
 
-        // Si el producto ya tiene mapa de variaciones, no hacemos nada
-        if (product.variation_images_map && Object.keys(product.variation_images_map).length > 0) return;
+        // Si ya tenemos el precio regular y las imágenes de variaciones, no es urgente cargar más
+        const hasRegularPrice = Number(product.prices.regular_price) > 0;
+        const hasVariationImages = product.variation_images_map && Object.keys(product.variation_images_map).length > 0;
+
+        if (hasRegularPrice && hasVariationImages) return;
 
         const fetchFullProduct = async () => {
             setIsFetchingVariations(true);
             try {
-                // El endpoint individual devuelve variaciones completas
-                const res = await fetch(`/api/products?slug=${product.slug}`);
+
+                // Add timestamp to bypass cache and ensure fresh price data
+                const res = await fetch(`/api/products?slug=${product.slug}&t=${Date.now()}`);
                 if (res.ok) {
                     const fullData = await res.json();
-                    if (fullData && fullData.variation_images_map) {
+                    if (fullData && fullData.prices) {
                         setEnrichedProduct(fullData);
                     }
                 }
@@ -75,7 +83,7 @@ export default function ProductCard({ product, isSelected, onSelectionToggle }: 
         };
 
         fetchFullProduct();
-    }, [hoveredColor, selectedColor, product.slug, product.variation_images_map]);
+    }, [product.slug, product.type, product.variation_images_map]);
 
     // Reset state when product changes
     useEffect(() => {
@@ -125,12 +133,15 @@ export default function ProductCard({ product, isSelected, onSelectionToggle }: 
                 key => {
                     const k = key.toLowerCase().trim();
                     return k === colorSlug ||
+                        k.includes(colorSlug) ||
+                        colorSlug.includes(k) ||
                         (colorSlug === 'vinotinto' && k === 'vino') ||
                         (colorSlug === 'vino' && k === 'vinotinto');
                 }
             );
             if (matchedKey && currentProduct.variation_images_map[matchedKey]) {
-                return currentProduct.variation_images_map[matchedKey];
+                const varImages = currentProduct.variation_images_map[matchedKey];
+                if (varImages && varImages.length > 0) return varImages;
             }
         }
 
@@ -143,14 +154,22 @@ export default function ProductCard({ product, isSelected, onSelectionToggle }: 
             const alt = (img.alt || "").toLowerCase();
             const name = (img.name || "").toLowerCase();
 
-            return src.includes(`-${colorSlug}`) ||
-                src.includes(`_${colorSlug}`) ||
-                src.includes(`-${colorName}`) ||
-                src.includes(`_${colorName}`) ||
-                alt.includes(colorName) ||
-                name.includes(colorName) ||
+            // Búsqueda más agresiva: el color como palabra independiente o sufijo
+            const patterns = [
+                `-${colorSlug}`, `_${colorSlug}`, ` ${colorSlug}`,
+                `-${colorName}`, `_${colorName}`, ` ${colorName}`
+            ];
+
+            const matchesPattern = patterns.some(p => src.includes(p) || alt.includes(p) || name.includes(p));
+
+            // Caso especial: si el colorSlug está al final del nombre de archivo (ej: zapato-negro.jpg)
+            const isSuffix = new RegExp(`[-_ ]${colorSlug}\\.(jpg|jpeg|png|webp)$`, 'i').test(src) ||
+                new RegExp(`[-_ ]${colorName}\\.(jpg|jpeg|png|webp)$`, 'i').test(src);
+
+            return matchesPattern || isSuffix ||
                 (colorSlug.includes('vino') && src.includes('vino')) ||
-                (colorSlug.includes('vinotinto') && src.includes('vinotinto'));
+                (colorSlug.includes('cafe') && (src.includes('miel') || src.includes('marron'))) ||
+                (colorSlug.includes('piel') && src.includes('cuero'));
         });
 
         if (matches.length > 0) return matches;
@@ -239,13 +258,17 @@ export default function ProductCard({ product, isSelected, onSelectionToggle }: 
     // Si no, usamos guessedHoverSrc que predice la URL -2
     const isHoverActive = isCardHovered && !!effectiveHoverSrc;
 
-    const regularPrice = parseInt(product.prices.regular_price);
-    const price = parseInt(product.prices.price);
-    const currencyMinorUnit = product.prices.currency_minor_unit || 0;
-    const isSale = regularPrice > price;
+    const priceData = enrichedProduct?.prices || product.prices;
+    const currencyMinorUnit = priceData.currency_minor_unit || 0;
+
+    const regularPrice = Number(priceData.regular_price || 0);
+    const price = Number(priceData.price || 0);
+
+    const isSale = product.on_sale || (regularPrice > price && price > 0);
+
     const renderRegularPrice = regularPrice / (10 ** currencyMinorUnit);
     const renderPrice = price / (10 ** currencyMinorUnit);
-    const currencySymbol = product.prices.currency_prefix || product.prices.currency_symbol;
+    const currencySymbol = priceData.currency_prefix || priceData.currency_symbol;
 
     return (
         <div
@@ -258,9 +281,20 @@ export default function ProductCard({ product, isSelected, onSelectionToggle }: 
                     <div className={`product-image ${isHoverActive ? 'hover-active' : ''}`}>
                         <div className="badges-container">
                             {isSale && (
-                                <span className="badge badge-sale">
-                                    -{Math.round(((renderRegularPrice - renderPrice) / renderRegularPrice) * 100)}%
-                                </span>
+                                <div className="badge discount-badge">
+                                    {(() => {
+                                        const discount = (renderRegularPrice > renderPrice)
+                                            ? Math.round(((renderRegularPrice - renderPrice) / renderRegularPrice) * 100)
+                                            : 0;
+
+                                        return discount > 0 ? `-${discount}%` : 'OFERTA';
+                                    })()}
+                                </div>
+                            )}
+                            {product.featured && (
+                                <div className="badge hot-badge">
+                                    HOT
+                                </div>
                             )}
                         </div>
 
@@ -340,26 +374,52 @@ export default function ProductCard({ product, isSelected, onSelectionToggle }: 
 
                         {colorAttribute && (
                             <div className="card-colors-overlay">
-                                {colorAttribute.terms.map((term) => (
-                                    <button
-                                        key={term.id}
-                                        type="button"
-                                        className={`color-swatch-btn ${selectedColor === term.slug ? 'active' : ''}`}
-                                        onClick={(e) => {
-                                            e.preventDefault();
-                                            e.stopPropagation();
-                                            setSelectedColor(term.slug);
-                                        }}
-                                        onMouseEnter={() => setHoveredColor(term.slug)}
-                                        onMouseLeave={() => setHoveredColor(null)}
-                                        title={term.name}
-                                    >
-                                        <span
-                                            className="color-circle"
-                                            style={{ backgroundColor: getColorCode(term.slug) }}
-                                        />
-                                    </button>
-                                ))}
+                                {(() => {
+                                    const currentVariations = enrichedProduct?.variations || product.variations;
+
+                                    // 1. Si es un producto VARIABLE, NO mostramos nada hasta tener la "verdad" de las variaciones.
+                                    // Esto evita el FOUC (Flash of Unstyled/Incorrect Content) donde aparecen 10 puntos y luego 2.
+                                    if (product.type === 'variable' && (!currentVariations || currentVariations.length === 0)) {
+                                        return null;
+                                    }
+
+                                    // 2. Filtramos la realidad si tenemos los datos (SSR o Enriquecidos)
+                                    let termsToDisplay = colorAttribute.terms;
+                                    if (currentVariations && currentVariations.length > 0) {
+                                        termsToDisplay = colorAttribute.terms.filter(term =>
+                                            currentVariations.some((v: any) =>
+                                                v.attributes.some((a: any) =>
+                                                    (a.name.toLowerCase().includes('color') || a.name === 'Pa_selecciona-el-color') &&
+                                                    a.value.toLowerCase() === term.slug.toLowerCase()
+                                                )
+                                            )
+                                        );
+                                    }
+
+                                    // 3. Mostrar siempre que haya algo real que mostrar
+                                    if (termsToDisplay.length === 0) return null;
+
+                                    return termsToDisplay.map((term: any) => (
+                                        <button
+                                            key={term.id}
+                                            type="button"
+                                            className={`color-swatch-btn ${selectedColor === term.slug ? 'active' : ''}`}
+                                            onClick={(e) => {
+                                                e.preventDefault();
+                                                e.stopPropagation();
+                                                setSelectedColor(term.slug);
+                                            }}
+                                            onMouseEnter={() => setHoveredColor(term.slug)}
+                                            onMouseLeave={() => setHoveredColor(null)}
+                                            title={term.name}
+                                        >
+                                            <span
+                                                className="color-circle"
+                                                style={{ backgroundColor: getColorCode(term.slug) }}
+                                            />
+                                        </button>
+                                    ));
+                                })()}
                             </div>
                         )}
                     </div>
@@ -393,16 +453,16 @@ export default function ProductCard({ product, isSelected, onSelectionToggle }: 
 
                     <p className="price">
                         {isSale ? (
-                            <>
+                            <div className="price-wrapper">
                                 <span className="old-price">
                                     {currencySymbol}{new Intl.NumberFormat('es-CO').format(renderRegularPrice)}
                                 </span>
-                                <span className="sale-price">
+                                <span className="sale-price highlight">
                                     {currencySymbol}{new Intl.NumberFormat('es-CO').format(renderPrice)}
                                 </span>
-                            </>
+                            </div>
                         ) : (
-                            <span>
+                            <span className="current-price">
                                 {currencySymbol}{new Intl.NumberFormat('es-CO').format(renderPrice)}
                             </span>
                         )}
@@ -471,16 +531,30 @@ export default function ProductCard({ product, isSelected, onSelectionToggle }: 
             top: 10px;
             left: 10px;
             z-index: 10;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
         }
 
         .badge {
-            color: #fff;
-            font-size: 0.75rem;
+            font-size: 0.65rem;
             font-weight: 700;
             padding: 4px 8px;
             text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-radius: 1px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            color: #fff;
+            width: fit-content;
         }
-        .badge-sale { background-color: #A98B68; }
+
+        .hot-badge {
+            background-color: #E63946; /* Hot red badge */
+        }
+
+        .discount-badge {
+            background-color: #A98B68; /* Sandy gold discount badge */
+        }
 
         .product-card:hover .product-image img { transform: scale(1.05); }
         .product-image.hover-active .hover-image { opacity: 1; }
@@ -514,18 +588,33 @@ export default function ProductCard({ product, isSelected, onSelectionToggle }: 
         }
 
         .price { 
-            color: #a3a3a3; 
-            font-weight: 400; 
-            font-size: 0.85rem; 
-            font-family: var(--font-products);
-            margin: 0;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+            margin-top: 5px;
         }
 
-        .old-price { text-decoration: line-through; color: #ccc; }
-        .sale-price { color: var(--color-beige); font-weight: 500; }
+        .price-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .old-price { 
+            text-decoration: line-through; 
+            color: #b5b5b5; 
+            font-size: 0.8rem;
+            font-weight: 300;
+        }
+
+        .sale-price.highlight { 
+            color: #A98B68; 
+            font-weight: 600; 
+            font-size: 0.95rem;
+        }
+
+        .current-price {
+            color: #666666;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
 
         .card-colors-overlay {
             position: absolute;
@@ -574,12 +663,17 @@ export default function ProductCard({ product, isSelected, onSelectionToggle }: 
         .color-swatch-btn.active::after {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
             border: 1.5px solid #121212;
             border-radius: 50%;
+        }
+        
+        .color-swatch-btn.active .color-circle {
+            border-color: #fff;
+            box-shadow: 0 0 0 1px #fff;
         }
 
         .selection-overlay {
@@ -645,7 +739,20 @@ function getColorCode(slug: string): string {
         'gold': '#D4AF37',
         'beige': '#F5F5DC',
         'arena': '#E2CBA4',
-        'tabac': '#8B5A2B'
+        'tabac': '#8B5A2B',
+        'mostaza': '#E1AD01',
+        'azul-claro': '#ADD8E6',
+        'light-blue': '#ADD8E6',
+        'morado': '#800080',
+        'purple': '#800080',
+        'cafe-claro': '#A67B5B',
+        'rosa': '#FFC0CB',
+        'rosado': '#FFC0CB',
+        'rosada': '#FFC0CB',
+        'pink': '#FFC0CB',
+        'camel': '#C19A6B',
+        'marron': '#6F4E37',
+        'marrón': '#6F4E37'
     };
-    return colors[slug.toLowerCase()] || '#ddd';
+    return colors[slug.toLowerCase()] || colors[slug.toLowerCase().replace(/-/g, '')] || '#ddd';
 }

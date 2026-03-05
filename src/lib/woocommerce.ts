@@ -74,7 +74,7 @@ function mapV3ToStore(p: any) {
     const rawPrice = parseFloat(p.price || "0");
     const inclusivePrice = hasTax ? Math.round(rawPrice * 1.19) : Math.round(rawPrice);
 
-    return {
+    const mapped = {
         id: p.id,
         name: p.name,
         slug: p.slug,
@@ -84,14 +84,16 @@ function mapV3ToStore(p: any) {
         description: p.description,
         short_description: p.short_description,
         prices: {
-            price: inclusivePrice.toString(),
-            regular_price: p.regular_price ? Math.round(parseFloat(p.regular_price) * (hasTax ? 1.19 : 1)).toString() : "",
+            price: (inclusivePrice || 0).toString(),
+            regular_price: p.regular_price
+                ? Math.round(parseFloat(p.regular_price) * (hasTax ? 1.19 : 1)).toString()
+                : (p.on_sale ? "" : (inclusivePrice || 0).toString()),
             sale_price: p.sale_price ? Math.round(parseFloat(p.sale_price) * (hasTax ? 1.19 : 1)).toString() : "",
-            currency_code: "COP", // Winston & Harry is COP
+            currency_code: "COP",
             currency_symbol: "$",
-            currency_minor_unit: 0, // We use 0 for COP as per Store API check
+            currency_minor_unit: 0,
             currency_prefix: "$",
-            price_range: null // Optional
+            price_range: null
         },
         images: p.images.map((img: any) => ({
             id: img.id,
@@ -104,21 +106,47 @@ function mapV3ToStore(p: any) {
             name: attr.name,
             slug: attr.slug,
             terms: attr.options.map((opt: string, idx: number) => ({
-                id: idx, // Dummy ID as slugs are not in main product object in v3
+                id: idx,
                 name: opt,
-                slug: normalizeSlug(opt) // Generate normalized slug
+                slug: normalizeSlug(opt)
             }))
         })),
-        categories: p.categories.map((cat: any) => ({
+        categories: p.categories?.map((cat: any) => ({
             id: cat.id,
             name: cat.name,
             slug: cat.slug
-        })),
-        // Placeholders for relational data if needed
-        upsell_ids: p.upsell_ids,
-        cross_sell_ids: p.cross_sell_ids,
-        variations: p.variations_data || null
+        })) || [],
+        category_ids: p.categories?.map((cat: any) => cat.id) || [],
+        variation_ids: p.variations || [],
+        on_sale: p.on_sale || false,
+        featured: p.featured || false,
+        upsell_ids: p.upsell_ids || [],
+        cross_sell_ids: p.cross_sell_ids || [],
+        variations: p.variations_data || null,
+        variation_images_map: p.variation_images_map || null
     };
+
+    // Para productos variables, si tenemos datos de variaciones, intentamos extraer los precios reales
+    if (p.type === 'variable' && p.variations_data && p.variations_data.length > 0) {
+        let maxRegular = 0;
+        let minPrice = Infinity;
+
+        p.variations_data.forEach((v: any) => {
+            const vPrice = parseFloat(v.price || "0");
+            const vRegular = parseFloat(v.regular_price || v.price || "0");
+            if (vRegular > maxRegular) maxRegular = vRegular;
+            if (vPrice > 0 && vPrice < minPrice) minPrice = vPrice;
+        });
+
+        if (maxRegular > 0) {
+            mapped.prices.regular_price = Math.round(maxRegular * (hasTax ? 1.19 : 1)).toString();
+        }
+        if (minPrice !== Infinity) {
+            mapped.prices.price = Math.round(minPrice * (hasTax ? 1.19 : 1)).toString();
+        }
+    }
+
+    return mapped;
 }
 
 /**
@@ -161,6 +189,8 @@ export async function getProductById(id: number | string) {
                     value: normalizeSlug(a.option)
                 })),
                 price: v.price,
+                regular_price: v.regular_price,
+                sale_price: v.sale_price,
                 stock_status: v.stock_status,
                 image: v.image
             }));
@@ -224,6 +254,8 @@ export async function getProductBySlug(slug: string) {
                     value: normalizeSlug(a.option) // Normalize for frontend slug match
                 })),
                 price: v.price,
+                regular_price: v.regular_price,
+                sale_price: v.sale_price,
                 stock_status: v.stock_status,
                 image: v.image
             }));
@@ -243,13 +275,13 @@ export async function getProductBySlug(slug: string) {
 /**
  * Fetch List of Products by Category for Grid
  */
-export async function getProductsByCategory(categoryId: string, perPage = 100, page = 1) {
-    const cacheKey = `cat_${categoryId}_${perPage}_${page}`;
+export async function getProductsByCategory(categoryId: string | number, perPage = 100, page = 1, orderBy: any = 'date', order: any = 'desc') {
+    const cacheKey = `cat_${categoryId}_${perPage}_${page}_${orderBy}_${order}`;
     const cached = getCached(cacheKey);
     if (cached) return cached;
 
     try {
-        const products = await wcFetch(`/products?category=${categoryId}&per_page=${perPage}&page=${page}&status=publish`);
+        const products = await wcFetch(`/products?category=${categoryId}&per_page=${perPage}&page=${page}&status=publish&stock_status=instock&orderby=${orderBy}&order=${order}`);
         const result = products.map(mapV3ToStore);
         setCached(cacheKey, result);
         return result;

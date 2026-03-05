@@ -33,14 +33,14 @@ interface Product {
 }
 
 const CATEGORIES = [
-  { id: 63, name: 'Zapatos', slug: 'zapatos' },
-  { id: 249, name: 'Ropa', slug: 'ropa' },
-  { id: 190, name: 'Maletas', slug: 'maletas' }
+  { id: '63,205,206,207', name: 'Zapatos', slug: 'zapatos' },
+  { id: '249,250,251,252', name: 'Ropa', slug: 'ropa' },
+  { id: '190,443', name: 'Maletas', slug: 'maletas' }
 ];
 
 export default function ProductGrid() {
   const [products, setProducts] = useState<Product[]>([]);
-  const [categoryCache, setCategoryCache] = useState<Record<number, Product[]>>({});
+  const [categoryCache, setCategoryCache] = useState<Record<string | number, Product[]>>({});
   const [activeCategory, setActiveCategory] = useState(CATEGORIES[0]);
   const [visibleCount, setVisibleCount] = useState(12);
   const [loading, setLoading] = useState(true);
@@ -57,7 +57,7 @@ export default function ProductGrid() {
         // Hacemos las peticiones en paralelo
         const results = await Promise.all(
           CATEGORIES.map(async (cat) => {
-            const res = await fetch(`/api/products?category=${cat.id}`);
+            const res = await fetch(`/api/products?category=${cat.id}&orderby=popularity`);
             if (!res.ok) return { id: cat.id, data: [] };
             const data: Product[] = await res.json();
 
@@ -74,7 +74,7 @@ export default function ProductGrid() {
         );
 
         // Guardamos todo en el cache local
-        const newCache: Record<number, Product[]> = {};
+        const newCache: Record<string | number, Product[]> = {};
         results.forEach(res => {
           newCache[res.id] = res.data;
         });
@@ -112,13 +112,13 @@ export default function ProductGrid() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const fetchProducts = async (categoryId: number) => {
+  const fetchProducts = async (categoryId: string | number) => {
     // Esta función ahora solo se usa para reintentos o refrescos manuales
     try {
       setLoading(true);
       setError(null);
 
-      const response = await fetch(`/api/products?category=${categoryId}`);
+      const response = await fetch(`/api/products?category=${categoryId}&orderby=popularity`);
       if (!response.ok) throw new Error('Error al cargar productos');
 
       const data: Product[] = await response.json();

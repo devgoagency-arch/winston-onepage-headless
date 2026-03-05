@@ -11,29 +11,6 @@ export const isr = {
 
 const { slug } = Astro.params;
 
-/**
- * Función auxiliar para añadir .webp a las URLs de imágenes de WordPress de forma recursiva.
- */
-function optimizeImages(data: any): any {
-    if (!data) return data;
-    if (Array.isArray(data)) return data.map(item => optimizeImages(item));
-    if (typeof data === 'object') {
-        const newData = { ...data };
-        for (const key in newData) {
-            if (key === 'src' && typeof newData[key] === 'string') {
-                if (newData[key].includes('wp-content/uploads') && !newData[key].toLowerCase().endsWith('.webp')) {
-                    let cleanSrc = newData[key].replace(/-e\d+(?=\.(jpg|jpeg|png))/i, '');
-                    newData[key] = `${cleanSrc}.webp`;
-                }
-            } else {
-                newData[key] = optimizeImages(newData[key]);
-            }
-        }
-        return newData;
-    }
-    return data;
-}
-
 let product: any = null;
 let error: any = null;
 
@@ -52,10 +29,47 @@ try {
             const clothingCats = [249, 951, 952, 251, 1022, 250];        
             const accessoryCats = [126, 172, 190];             
             
-            // Pool de productos para recomendaciones
-            const res = await fetch(`https://winstonandharrystore.com/wp-json/wc/store/v1/products?per_page=60&orderby=date`);
+            // Pool de productos para recomendaciones (Solo disponibles)
+            const res = await fetch(`https://winstonandharrystore.com/wp-json/wc/v3/products?per_page=60&orderby=date&status=publish&stock_status=instock&consumer_key=ck_28661c4aff0fc02b97a607862895fc40a187e867&consumer_secret=cs_deb208f164b96724a90b64bf0f762a713251b7a2`);
             if (res.ok) {
-                const allStoreProducts = await res.json();
+                const rawProducts = await res.json();
+                
+                // Mapear al formato que espera el frontend (Store API style compatible)
+                const allStoreProducts = rawProducts.map((p: any) => {
+                    const hasTax = p.tax_status === 'taxable';
+                    const rawPrice = parseFloat(p.price || "0");
+                    const inclusivePrice = hasTax ? Math.round(rawPrice * 1.19) : Math.round(rawPrice);
+                    
+                    return {
+                        id: p.id,
+                        name: p.name,
+                        slug: p.slug,
+                        permalink: p.permalink,
+                        prices: {
+                            price: inclusivePrice.toString(),
+                            regular_price: p.regular_price ? Math.round(parseFloat(p.regular_price) * (hasTax ? 1.19 : 1)).toString() : "",
+                            sale_price: p.sale_price ? Math.round(parseFloat(p.sale_price) * (hasTax ? 1.19 : 1)).toString() : "",
+                            currency_prefix: "$",
+                            currency_minor_unit: 0
+                        },
+                        images: p.images.map((img: any) => ({
+                            src: img.src,
+                            alt: img.alt || p.name
+                        })),
+                        attributes: p.attributes.map((attr: any) => ({
+                            id: attr.id,
+                            name: attr.name,
+                            terms: attr.options ? attr.options.map((opt: string, idx: number) => ({
+                                id: idx,
+                                name: opt,
+                                slug: opt.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, '-').replace(/[^\w-]+/g, '')
+                            })) : []
+                        })),
+                        categories: p.categories,
+                        variations: null,
+                        variation_images_map: null
+                    };
+                });
                 
                 const currentCats = product.categories?.map((c: any) => c.id) || [];
                 const pName = (product.name || "").toLowerCase();
@@ -96,11 +110,7 @@ try {
             console.error("Error fetching related products:", e);
         }
 
-        // Asignamos y optimizamos todo el objeto product para que incluya las imágenes .webp en los relacionados
-        product.related_products = relatedProducts;
         product.fbt_products = fbtProducts.filter(Boolean);
-        
-        product = optimizeImages(product);
 
     } else {
         error = "Producto no encontrado en el catálogo";

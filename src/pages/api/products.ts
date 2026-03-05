@@ -15,9 +15,6 @@ export const GET: APIRoute = async ({ url }) => {
                 return new Response(JSON.stringify({ error: 'Not found' }), { status: 404 });
             }
 
-            // Optimizamos las imágenes del producto (añadimos .webp)
-            product = optimizeImages(product);
-
             return new Response(JSON.stringify(product), {
                 status: 200,
                 headers: {
@@ -30,10 +27,10 @@ export const GET: APIRoute = async ({ url }) => {
 
         // 2. LISTADO POR CATEGORÍA
         const category = url.searchParams.get('category') || '63';
-        let allProducts = await getProductsByCategory(category, 100, page);
-
-        // Optimizamos las imágenes de toda la lista
-        allProducts = optimizeImages(allProducts);
+        const orderBy = url.searchParams.get('orderby') || 'date';
+        const order = url.searchParams.get('order') || 'desc';
+        // category can be a comma-separated list of IDs like "63,249"
+        let allProducts = await getProductsByCategory(category, 100, page, orderBy, order);
 
         return new Response(JSON.stringify(allProducts), {
             status: 200,
@@ -49,33 +46,3 @@ export const GET: APIRoute = async ({ url }) => {
         return new Response(JSON.stringify({ error: 'Internal Server Error' }), { status: 500 });
     }
 };
-
-/**
- * Función auxiliar para añadir .webp a las URLs de imágenes de WordPress de forma recursiva.
- */
-function optimizeImages(data: any): any {
-    if (!data) return data;
-
-    if (Array.isArray(data)) {
-        return data.map(item => optimizeImages(item));
-    }
-
-    if (typeof data === 'object') {
-        const newData = { ...data };
-        for (const key in newData) {
-            if (key === 'src' && typeof newData[key] === 'string') {
-                // Solo si es una URL de WordPress y no tiene ya .webp
-                if (newData[key].includes('wp-content/uploads') && !newData[key].toLowerCase().endsWith('.webp')) {
-                    // Limpieza de sufijos de edición de WordPress (-e1755...)
-                    let cleanSrc = newData[key].replace(/-e\d+(?=\.(jpg|jpeg|png))/i, '');
-                    newData[key] = `${cleanSrc}.webp`;
-                }
-            } else {
-                newData[key] = optimizeImages(newData[key]);
-            }
-        }
-        return newData;
-    }
-
-    return data;
-}

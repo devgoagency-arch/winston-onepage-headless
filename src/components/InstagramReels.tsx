@@ -106,7 +106,7 @@ export default function InstagramReels() {
 
             <style>{`
                 .instagram-reels-section {
-                    padding: 0;
+                    padding: 0px 0px 4rem 0px;
                     background-color: #fff;
                     width: 100%;
                 }

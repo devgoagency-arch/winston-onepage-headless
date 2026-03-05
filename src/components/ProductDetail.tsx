@@ -39,6 +39,8 @@ interface Product {
   variation_images_map?: Record<string, any[]>;
   related_products?: any[];
   fbt_products?: any[];
+  on_sale?: boolean;
+  featured?: boolean;
 }
 
 interface Props {
@@ -180,10 +182,21 @@ export default function ProductDetail({ initialProduct }: Props) {
     const colorSlug = selectedColor.toLowerCase();
 
     // 1. Prioridad: Mapa de imágenes de variaciones (API)
-    if (product.variation_images_map && product.variation_images_map[colorSlug]) {
-      const specificImages = product.variation_images_map[colorSlug];
-      // Si la variante tiene imágenes, las usamos.
-      if (specificImages.length > 0) return specificImages;
+    if (product.variation_images_map) {
+      const matchedKey = Object.keys(product.variation_images_map).find(
+        key => {
+          const k = key.toLowerCase().trim();
+          return k === colorSlug ||
+            k.includes(colorSlug) ||
+            colorSlug.includes(k) ||
+            (colorSlug === 'vinotinto' && k === 'vino') ||
+            (colorSlug === 'vino' && k === 'vinotinto');
+        }
+      );
+      if (matchedKey && product.variation_images_map[matchedKey]) {
+        const specificImages = product.variation_images_map[matchedKey];
+        if (specificImages.length > 0) return specificImages;
+      }
     }
 
     // 2. Fallback: Filtrado por nombre/alt
@@ -195,12 +208,22 @@ export default function ProductDetail({ initialProduct }: Props) {
       const alt = (img.alt || "").toLowerCase();
       const name = (img.name || "").toLowerCase();
 
-      return src.includes(`-${colorSlug}`) ||
-        src.includes(`_${colorSlug}`) ||
-        src.includes(`-${colorName}`) ||
-        src.includes(`_${colorName}`) ||
-        alt.includes(colorName) ||
-        name.includes(colorName);
+      // Búsqueda más agresiva: el color como palabra independiente o sufijo
+      const patterns = [
+        `-${colorSlug}`, `_${colorSlug}`, ` ${colorSlug}`,
+        `-${colorName}`, `_${colorName}`, ` ${colorName}`
+      ];
+
+      const matchesPattern = patterns.some(p => src.includes(p) || alt.includes(p) || name.includes(p));
+
+      // Caso especial: si el colorSlug está al final del nombre de archivo
+      const isSuffix = new RegExp(`[-_ ]${colorSlug}\\.(jpg|jpeg|png|webp)$`, 'i').test(src) ||
+        new RegExp(`[-_ ]${colorName}\\.(jpg|jpeg|png|webp)$`, 'i').test(src);
+
+      return matchesPattern || isSuffix ||
+        (colorSlug.includes('vino') && src.includes('vino')) ||
+        (colorSlug.includes('cafe') && (src.includes('miel') || src.includes('marron'))) ||
+        (colorSlug.includes('piel') && src.includes('cuero'));
     });
 
     if (matches.length > 0) return matches;
@@ -571,32 +594,59 @@ export default function ProductDetail({ initialProduct }: Props) {
               </div>
 
 
-              <h1 className="product-title">{product.name}</h1>
-              <p className="product-price">{formatPrice(product.prices.price)}</p>
+              <div className="product-title-row">
+                <h1 className="product-title">{product.name}</h1>
+                <div className="detail-badges">
+                  {product.featured && <span className="badge hot-badge">HOT</span>}
+                  {product.on_sale && Number(product.prices.regular_price || 0) > Number(product.prices.price || 0) && (
+                    <span className="badge discount-badge">
+                      -{Math.round(((Number(product.prices.regular_price) - Number(product.prices.price)) / Number(product.prices.regular_price)) * 100)}%
+                    </span>
+                  )}
+                </div>
+              </div>
+
+              <div className="product-price-container">
+                {product.on_sale ? (
+                  <div className="price-wrapper">
+                    {Number(product.prices.regular_price || 0) > Number(product.prices.price || 0) && (
+                      <span className="old-price">{formatPrice(product.prices.regular_price)}</span>
+                    )}
+                    <span className="sale-price highlight">{formatPrice(product.prices.price)}</span>
+                  </div>
+                ) : (
+                  <p className="product-price">{formatPrice(product.prices.price)}</p>
+                )}
+              </div>
 
               <div className="product-short-description" dangerouslySetInnerHTML={{ __html: product.short_description }} />
 
               <div className="product-selectors">
-                {colorAttribute && (
-                  <div className="selector-group">
-                    <label>Color: <strong>{colorAttribute.terms.find(t => t.slug === selectedColor)?.name || ''}</strong></label>
-                    <div className="color-options">
-                      {colorAttribute.terms.map((term) => {
-                        const isAvailable = isCombinationAvailable(term.slug, null);
-                        return (
-                          <button
-                            key={term.id}
-                            className={`color-dot-btn ${selectedColor === term.slug ? 'active' : ''} ${!isAvailable ? 'out-of-stock' : ''}`}
-                            onClick={() => setSelectedColor(term.slug)}
-                          >
-                            <span className="color-dot" style={{ backgroundColor: getColorCode(term.slug) }}></span>
-                            {!isAvailable && <span className="x-mark">✕</span>}
-                          </button>
-                        );
-                      })}
+                {colorAttribute && (() => {
+                  const filteredTerms = colorAttribute.terms.filter(term => isCombinationAvailable(term.slug, null));
+                  if (filteredTerms.length === 0) return null;
+
+                  return (
+                    <div className="selector-group">
+                      <label>Color: <strong>{colorAttribute.terms.find(t => t.slug === selectedColor)?.name || ''}</strong></label>
+                      <div className="color-options">
+                        {filteredTerms.map((term) => {
+                          const isAvailable = isCombinationAvailable(term.slug, null);
+                          return (
+                            <button
+                              key={term.id}
+                              className={`color-dot-btn ${selectedColor === term.slug ? 'active' : ''} ${!isAvailable ? 'out-of-stock' : ''}`}
+                              onClick={() => setSelectedColor(term.slug)}
+                            >
+                              <span className="color-dot" style={{ backgroundColor: getColorCode(term.slug) }}></span>
+                              {!isAvailable && <span className="x-mark">✕</span>}
+                            </button>
+                          );
+                        })}
+                      </div>
                     </div>
-                  </div>
-                )}
+                  );
+                })()}
 
                 {hasSize && (
                   <div className="selector-group">
@@ -973,8 +1023,71 @@ export default function ProductDetail({ initialProduct }: Props) {
         }
         .sidebar-content::-webkit-scrollbar { display: none; }
         .product-category { display: block; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; color: #888; margin-bottom: 0rem; }
-        .product-title { font-family: var(--font-products); font-size: 1.5rem; color: #000; margin-bottom: 0rem; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 500; }
-        .product-price { font-size: 1.8rem; color: #A98B68; margin-bottom: 0rem; font-weight: 400;}
+        .product-title-row {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .product-title { 
+            font-family: var(--font-products); 
+            font-size: 1.5rem; 
+            color: #000; 
+            margin: 0; 
+            text-transform: uppercase; 
+            letter-spacing: 1.5px; 
+            font-weight: 500; 
+        }
+
+        .detail-badges {
+            display: flex;
+            gap: 8px;
+        }
+
+        .product-price-container {
+            margin-bottom: 1rem;
+        }
+
+        .price-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: #b5b5b5;
+            font-size: 1.2rem;
+            font-weight: 300;
+        }
+
+        .sale-price.highlight {
+            color: #A98B68;
+            font-weight: 500;
+            font-size: 1.8rem;
+        }
+
+        .product-price { 
+            font-size: 1.8rem; 
+            color: #A98B68; 
+            margin: 0; 
+            font-weight: 400;
+        }
+
+        .badge {
+            font-size: 0.65rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-radius: 2px;
+            color: #fff;
+        }
+
+        .hot-badge { background-color: #E63946; }
+        .discount-badge { background-color: #A98B68; }
 
         .product-purchase-row {
             display: flex;
@@ -1601,12 +1714,32 @@ function getColorCode(slug: string): string {
     'vino': '#722F37',
     'vinotinto': '#722F37',
     'vino-tinto': '#722F37',
-    'vino tinto': '#722F37',
     'burgundy': '#722F37',
     'tabaco': '#8B5A2B',
     'cognac': '#9A463D',
     'rojo': '#C41E3A',
-    'beige': '#F5F5DC'
+    'blanco': '#FFFFFF',
+    'gris': '#888888',
+    'plata': '#C0C0C0',
+    'silver': '#C0C0C0',
+    'oro': '#D4AF37',
+    'gold': '#D4AF37',
+    'beige': '#F5F5DC',
+    'arena': '#E2CBA4',
+    'tabac': '#8B5A2B',
+    'mostaza': '#E1AD01',
+    'azul-claro': '#ADD8E6',
+    'light-blue': '#ADD8E6',
+    'morado': '#800080',
+    'purple': '#800080',
+    'cafe-claro': '#A67B5B',
+    'rosa': '#FFC0CB',
+    'rosado': '#FFC0CB',
+    'rosada': '#FFC0CB',
+    'pink': '#FFC0CB',
+    'camel': '#C19A6B',
+    'marron': '#6F4E37',
+    'marrón': '#6F4E37'
   };
-  return colors[slug.toLowerCase()] || '#ddd';
+  return colors[slug.toLowerCase()] || colors[slug.toLowerCase().replace(/-/g, '')] || '#ddd';
 }
