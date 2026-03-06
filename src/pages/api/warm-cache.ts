@@ -56,11 +56,16 @@ export const GET: APIRoute = async ({ request }) => {
         console.log(`Iniciando visita a ${allUrlsToWarm.length} enlaces en paralelo total...`);
 
         // 4. Ejecutamos las visitas en lotes MUY controlados para no saturar WordPress
-        const CHUNK_SIZE = 5;
+        const CHUNK_SIZE = 20;
         const results = [];
 
         for (let i = 0; i < allUrlsToWarm.length; i += CHUNK_SIZE) {
             const chunk = allUrlsToWarm.slice(i, i + CHUNK_SIZE);
+
+            if (i % (CHUNK_SIZE * 5) === 0) {
+                console.log(`Procesando lote ${i} de ${allUrlsToWarm.length}...`);
+            }
+
             const chunkResults = await Promise.allSettled(
                 chunk.map(url => fetch(url, {
                     method: 'HEAD',
@@ -69,9 +74,9 @@ export const GET: APIRoute = async ({ request }) => {
             );
             results.push(...chunkResults);
 
-            // Pausa generosa para dejar respirar al servidor
+            // Pausa más corta para mantener el flujo sin saturar
             if (i + CHUNK_SIZE < allUrlsToWarm.length) {
-                await new Promise(r => setTimeout(r, 500));
+                await new Promise(r => setTimeout(r, 100));
             }
         }
 
