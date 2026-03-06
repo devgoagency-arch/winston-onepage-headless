@@ -56,7 +56,7 @@ export const GET: APIRoute = async ({ request }) => {
         console.log(`Iniciando visita a ${allUrlsToWarm.length} enlaces en paralelo total...`);
 
         // 4. Ejecutamos las visitas en lotes MUY controlados para no saturar WordPress
-        const CHUNK_SIZE = 20;
+        const CHUNK_SIZE = 6;
         const results = [];
 
         for (let i = 0; i < allUrlsToWarm.length; i += CHUNK_SIZE) {
@@ -74,17 +74,20 @@ export const GET: APIRoute = async ({ request }) => {
             );
             results.push(...chunkResults);
 
-            // Pausa más corta para mantener el flujo sin saturar
+            // Pausa más moderada para no saturar el SSR y WordPress
             if (i + CHUNK_SIZE < allUrlsToWarm.length) {
-                await new Promise(r => setTimeout(r, 100));
+                await new Promise(r => setTimeout(r, 800));
             }
         }
+
+        const failed = results.filter(r => r.status === 'rejected' || (r.status === 'fulfilled' && !r.value.ok)).length;
 
         return new Response(JSON.stringify({
             success: true,
             total_links: allUrlsToWarm.length,
             products: slugs.length,
-            message: `Cache warming completed for ${slugs.length} products and critical routes.`,
+            failed: failed,
+            message: `Cache warming completed. Total: ${allUrlsToWarm.length}, Failed: ${failed}.`,
             timestamp: new Date().toISOString()
         }), {
             status: 200,
