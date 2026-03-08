@@ -5,7 +5,7 @@
 
 const CK = import.meta.env.WC_CONSUMER_KEY || "ck_28661c4aff0fc02b97a607862895fc40a187e867";
 const CS = import.meta.env.WC_CONSUMER_SECRET || "cs_deb208f164b96724a90b64bf0f762a713251b7a2";
-const WP_BASE = import.meta.env.WC_URL || "https://tienda.winstonandharrystore.com";
+const WP_BASE = (import.meta.env.WC_URL || "https://tienda.winstonandharrystore.com").replace(/\/$/, "");
 const BASE_URL = `${WP_BASE}/wp-json/wc/v3`;
 const STORE_URL = `${WP_BASE}/wp-json/wc/store/v1`;
 
@@ -165,18 +165,21 @@ export async function getProductsPool() {
 function mapV3ToStore(p: any) {
     if (!p) return null;
 
-    // If it already looks like a Store API product, return it directly
-    // Store API products have 'prices' object with 'currency_code', 'price', 'regular_price', etc.
-    // and 'images' as an array of objects with 'src', 'alt', etc.
-    if (p.prices && p.prices.currency_code && p.images && Array.isArray(p.images) && p.images[0]?.src) {
+    // Detect if it's a Store API product (v1 or similar)
+    // Store API puts prices inside a 'prices' object.
+    const isStoreApi = !!(p.prices && p.prices.currency_code);
+
+    if (isStoreApi) {
+        // Ensure images is an array
+        if (!p.images || !Array.isArray(p.images)) {
+            p.images = [];
+        }
+        // Store API is already formatted for our frontend
         return p;
     }
 
-    // WooCommerce v3 doesn't return tax-inclusive price by default in some setups.
-    // We detect if we need to add IVA (19% in Colombia usually) or use the display price.
-    // Actually, Store API returns 825000 while v3 returns 693277.3109.
-    // This confirms v3 is returning base price.
-    // We will calculate the inclusive price for consistency with Store API which our frontend uses.
+    // Fallback for WooCommerce standard API (v3)
+    // We calculate inclusive price (19% IVA) because v3 usually returns base price.
     const hasTax = p.tax_status === 'taxable';
     const rawPrice = parseFloat(p.price || "0");
     const inclusivePrice = hasTax ? Math.round(rawPrice * 1.19) : Math.round(rawPrice);
