@@ -62,17 +62,16 @@ function normalizeSlug(text: string): string {
  * Generic Fetcher with Basic Auth and Retry Logic
  */
 async function wcFetch(path: string, options: RequestInit = {}, retries = 3, delay = 1500) {
-    const url = `${BASE_URL}${path}`;
+    const url = `${BASE_URL}${path}${path.includes('?') ? '&' : '?'}consumer_key=${CK}&consumer_secret=${CS}`;
 
     for (let i = 0; i < retries; i++) {
         try {
             console.log(`[WC API] Fetching: ${path} (Attempt ${i + 1}/${retries})`);
             const startTime = Date.now();
-            const res = await fetch(url.toString(), {
+            const res = await fetch(url, {
                 ...options,
                 headers: {
                     'Accept': 'application/json',
-                    'Authorization': wcAuthHeader,
                     ...(options.headers || {})
                 }
             });
@@ -84,7 +83,7 @@ async function wcFetch(path: string, options: RequestInit = {}, retries = 3, del
                 throw new Error(`WC API Error: 404 Not Found`);
             }
 
-            // 503 (Server Busy), 429 (Rate Limit), 500 (Internal Error) - Retry these
+            // 503 (Server Busy), 429 (Rate Limit), 500 (Internal Error), 502 (Bad Gateway) - Retry these
             if (res.status === 503 || res.status === 429 || res.status === 500 || res.status === 502) {
                 if (i === retries - 1) {
                     throw new Error(`WC API Error: ${res.status} (After ${retries} attempts)`);
@@ -415,26 +414,29 @@ export async function getProductsByCategory(
 
         const ids = categoryId.toString().split(',').map(id => id.trim()).filter(Boolean);
 
-        const combined = [];
-        const seenIds = new Set();
-
-        // Fetch sequentially to avoid rate-limiting or security blocks on the server
-        for (const id of ids) {
+        const fetchCategory = async (id: string) => {
             try {
                 const data = await wcFetch(
                     `/products?category=${id}&per_page=${perPage}&page=${page}&status=publish&stock_status=instock&orderby=${orderBy}&order=${order}${onSaleParam}${attrParam}${termParam}`
                 );
-
-                if (Array.isArray(data)) {
-                    for (const p of data) {
-                        if (p && p.id && !seenIds.has(p.id)) {
-                            seenIds.add(p.id);
-                            combined.push(mapV3ToStore(p));
-                        }
-                    }
-                }
+                return Array.isArray(data) ? data : [];
             } catch (err) {
-                console.error(`[getProductsByCategory] Cat ${id} failed:`, err);
+                console.error(`[getProductsByCategory] Error cat ${id}:`, err);
+                return [];
+            }
+        };
+
+        // Parallel fetch for speed on Vercel
+        const results = await Promise.all(ids.map(fetchCategory));
+
+        const combined = [];
+        const seenIds = new Set();
+        for (const list of results) {
+            for (const p of list) {
+                if (p && p.id && !seenIds.has(p.id)) {
+                    seenIds.add(p.id);
+                    combined.push(mapV3ToStore(p));
+                }
             }
         }
 
