@@ -62,7 +62,7 @@ function normalizeSlug(text: string): string {
  * Generic Fetcher with Basic Auth and Retry Logic
  */
 async function wcFetch(path: string, options: RequestInit = {}, retries = 3, delay = 1500) {
-    const url = `${BASE_URL}${path}${path.includes('?') ? '&' : '?'}consumer_key=${CK}&consumer_secret=${CS}`;
+    const url = `${BASE_URL}${path}`;
 
     for (let i = 0; i < retries; i++) {
         try {
@@ -72,6 +72,7 @@ async function wcFetch(path: string, options: RequestInit = {}, retries = 3, del
                 ...options,
                 headers: {
                     'Accept': 'application/json',
+                    'Authorization': wcAuthHeader,
                     ...(options.headers || {})
                 }
             });
@@ -412,37 +413,36 @@ export async function getProductsByCategory(
         const attrParam = attribute ? `&attribute=${attribute}` : '';
         const termParam = attributeTerm ? `&attribute_term=${attributeTerm}` : '';
 
-        // Handle multiple categories if passed as "ID1,ID2,..."
         const ids = categoryId.toString().split(',').map(id => id.trim()).filter(Boolean);
 
-        const fetchCategory = async (id: string) => {
-            return await wcFetch(
-                `/products?category=${id}&per_page=${perPage}&page=${page}&status=publish&stock_status=instock&orderby=${orderBy}&order=${order}${onSaleParam}${attrParam}${termParam}`
-            );
-        };
-
-        const results = await Promise.all(ids.map(fetchCategory));
-
-        // Merge and de-duplicate
-        const seenIds = new Set();
         const combined = [];
-        for (const list of results) {
-            for (const p of list) {
-                if (!seenIds.has(p.id)) {
-                    seenIds.add(p.id);
-                    combined.push(mapV3ToStore(p));
+        const seenIds = new Set();
+
+        // Fetch sequentially to avoid rate-limiting or security blocks on the server
+        for (const id of ids) {
+            try {
+                const data = await wcFetch(
+                    `/products?category=${id}&per_page=${perPage}&page=${page}&status=publish&stock_status=instock&orderby=${orderBy}&order=${order}${onSaleParam}${attrParam}${termParam}`
+                );
+
+                if (Array.isArray(data)) {
+                    for (const p of data) {
+                        if (p && p.id && !seenIds.has(p.id)) {
+                            seenIds.add(p.id);
+                            combined.push(mapV3ToStore(p));
+                        }
+                    }
                 }
+            } catch (err) {
+                console.error(`[getProductsByCategory] Cat ${id} failed:`, err);
             }
         }
-
-        // Re-sort because merged results might lose the global order if categories overlap
-        // but for popularity/date it's usually fine per category.
 
         setCached(cacheKey, combined);
         return combined;
     } catch (error) {
         console.error("Error fetching products by category:", error);
-        throw error;
+        return [];
     }
 }
 /**
@@ -457,7 +457,8 @@ export async function getPageById(id: number | string) {
         const wpBase = `${import.meta.env.WC_URL || "https://tienda.winstonandharrystore.com"}/wp-json/wp/v2`;
         const res = await fetch(`${wpBase}/pages/${id}`, {
             headers: {
-                'Accept': 'application/json'
+                'Accept': 'application/json',
+                'Authorization': wpAppAuthHeader
             }
         });
 
@@ -486,7 +487,8 @@ export async function getMenu(slug: string) {
         const wpBase = `${import.meta.env.WC_URL || "https://tienda.winstonandharrystore.com"}/wp-json/wh/v1`;
         const res = await fetch(`${wpBase}/menu/${slug}`, {
             headers: {
-                'Accept': 'application/json'
+                'Accept': 'application/json',
+                'Authorization': wpAppAuthHeader
             }
         });
 
