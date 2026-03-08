@@ -7,8 +7,6 @@ const CK = import.meta.env.WC_CONSUMER_KEY || "ck_28661c4aff0fc02b97a607862895fc
 const CS = import.meta.env.WC_CONSUMER_SECRET || "cs_deb208f164b96724a90b64bf0f762a713251b7a2";
 const BASE_URL = `${import.meta.env.WC_URL || "https://tienda.winstonandharrystore.com"}/wp-json/wc/v3`;
 
-const WP_APP_USER = import.meta.env.WP_APP_USER || "Astro Headless";
-const WP_APP_PASS = import.meta.env.WP_APP_PASS || "fyWY ELGb lMsk XtlY y4Gy e18p";
 
 // SSR Safe base64 helper
 const safeBtoa = (str: string) => {
@@ -24,10 +22,8 @@ const safeBtoa = (str: string) => {
 };
 
 const wcAuthHeader = `Basic ${safeBtoa(`${CK}:${CS}`)}`;
-const wpAppAuthHeader = `Basic ${safeBtoa(`${WP_APP_USER}:${WP_APP_PASS}`)}`;
 
 console.log(`[WC Auth] Header generated (length: ${wcAuthHeader.length})`);
-console.log(`[WP Auth] Header generated (length: ${wpAppAuthHeader.length})`);
 
 // Sistema de Cache en Memoria (SSR & API)
 const cache: Record<string, { data: any, timestamp: number }> = {};
@@ -459,8 +455,7 @@ export async function getPageById(id: number | string) {
         const wpBase = `${import.meta.env.WC_URL || "https://tienda.winstonandharrystore.com"}/wp-json/wp/v2`;
         const res = await fetch(`${wpBase}/pages/${id}`, {
             headers: {
-                'Accept': 'application/json',
-                'Authorization': wpAppAuthHeader
+                'Accept': 'application/json'
             }
         });
 
@@ -489,8 +484,7 @@ export async function getMenu(slug: string) {
         const wpBase = `${import.meta.env.WC_URL || "https://tienda.winstonandharrystore.com"}/wp-json/wh/v1`;
         const res = await fetch(`${wpBase}/menu/${slug}`, {
             headers: {
-                'Accept': 'application/json',
-                'Authorization': wpAppAuthHeader
+                'Accept': 'application/json'
             }
         });
 
