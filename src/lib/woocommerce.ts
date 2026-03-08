@@ -5,7 +5,9 @@
 
 const CK = import.meta.env.WC_CONSUMER_KEY || "ck_28661c4aff0fc02b97a607862895fc40a187e867";
 const CS = import.meta.env.WC_CONSUMER_SECRET || "cs_deb208f164b96724a90b64bf0f762a713251b7a2";
-const BASE_URL = `${import.meta.env.WC_URL || "https://tienda.winstonandharrystore.com"}/wp-json/wc/v3`;
+const WP_BASE = import.meta.env.WC_URL || "https://tienda.winstonandharrystore.com";
+const BASE_URL = `${WP_BASE}/wp-json/wc/v3`;
+const STORE_URL = `${WP_BASE}/wp-json/wc/store/v1`;
 
 
 // SSR Safe base64 helper
@@ -55,57 +57,50 @@ function normalizeSlug(text: string): string {
 }
 
 /**
+ * Robust JSON parsing helper
+ */
+function cleanJSON(jsonString: string) {
+    try {
+        return JSON.parse(jsonString);
+    } catch (e) {
+        // Attempt to clean up common issues like unescaped newlines or control characters
+        const cleanedString = jsonString.replace(/[\u0000-\u001F\u007F-\u009F]/g, '').replace(/\\n/g, '\\n').replace(/\\r/g, '\\r').replace(/\\t/g, '\\t');
+        try {
+            return JSON.parse(cleanedString);
+        } catch (e2) {
+            console.error("Failed to parse JSON even after cleaning:", e2);
+            return null;
+        }
+    }
+}
+
+/**
  * Generic Fetcher with Basic Auth and Retry Logic
  */
 async function wcFetch(path: string, options: RequestInit = {}, retries = 3, delay = 1500) {
-    const cleanPath = path.startsWith('/') ? path : `/${path}`;
-    const url = `${BASE_URL}${cleanPath}`;
+    // If it's a store API path, use STORE_URL and NO AUTH (Public)
+    const isStore = path.startsWith('/wc/store/');
+    const baseUrl = isStore ? WP_BASE : BASE_URL;
+    const url = `${baseUrl}${path}${!isStore && !path.includes('?') ? '?' : ''}${!isStore && path.includes('?') ? '&' : ''}${!isStore ? `consumer_key=${CK}&consumer_secret=${CS}` : ''}`;
 
     for (let i = 0; i < retries; i++) {
         try {
-            console.log(`[WC API] Fetching: ${cleanPath} (Attempt ${i + 1}/${retries})${i > 0 ? ' [RETRY]' : ''}`);
+            console.log(`[WC API] Fetching: ${path} (Attempt ${i + 1}/${retries})${isStore ? ' [PUBLIC]' : ''}`);
             const startTime = Date.now();
 
-            // Try with Authorization header first
             const res = await fetch(url, {
                 ...options,
                 headers: {
                     'Accept': 'application/json',
-                    'Authorization': wcAuthHeader,
                     ...(options.headers || {})
                 }
             });
-
             const endTime = Date.now();
-            console.log(`[WC API] Response: ${res.status} ${res.statusText} (${endTime - startTime}ms)`);
+            console.log(`[WC API] Response: ${res.status} (${endTime - startTime}ms)`);
 
-            // If 401 or 403, try the same request but with keys in query params as fallback? 
-            // Or without keys if the user "disabled protection"? Let's try query params as fallback.
-            if ((res.status === 401 || res.status === 403) && i < retries - 1) {
-                console.warn(`[WC API] Auth failed (${res.status}). Trying query params fallback...`);
-                const fallbackUrl = `${url}${url.includes('?') ? '&' : '?'}consumer_key=${CK}&consumer_secret=${CS}`;
-                const resFallback = await fetch(fallbackUrl, {
-                    ...options,
-                    headers: { 'Accept': 'application/json', ...(options.headers || {}) }
-                });
-                if (resFallback.ok) {
-                    console.log(`[WC API] Fallback successful with status ${resFallback.status}`);
-                    return await resFallback.json();
-                }
-                console.warn(`[WC API] Fallback also failed with status ${resFallback.status}`);
-            }
-
-            // 404 (Not Found) - Throw immediately, no point in retrying
-            if (res.status === 404) {
-                throw new Error(`WC API Error: 404 Not Found`);
-            }
-
-            // Retry these
+            if (res.status === 404) throw new Error(`WC API Error: 404 Not Found`);
             if ([500, 502, 503, 429].includes(res.status)) {
-                if (i === retries - 1) {
-                    throw new Error(`WC API Error: ${res.status} after ${retries} attempts`);
-                }
-                console.warn(`WC API Retryable error: ${res.status}. Waiting ${delay}ms...`);
+                if (i === retries - 1) throw new Error(`WC API Error: ${res.status}`);
                 await new Promise(r => setTimeout(r, delay));
                 delay *= 2;
                 continue;
@@ -117,7 +112,8 @@ async function wcFetch(path: string, options: RequestInit = {}, retries = 3, del
                 throw new Error(`WC API Error: ${res.status} ${res.statusText}`);
             }
 
-            return await res.json();
+            const text = await res.text();
+            return cleanJSON(text);
         } catch (error: any) {
             if (error.message.includes('404')) throw error;
             if (i === retries - 1) {
@@ -145,7 +141,8 @@ export async function getProductsPool() {
     }
 
     try {
-        const products = await wcFetch('/products?per_page=60&orderby=date&status=publish&stock_status=instock');
+        // Use Store API for public product listing
+        const products = await wcFetch('/wc/store/v1/products?per_page=60&orderby=date&status=publish&stock_status=instock');
         if (products) {
             cache[cacheKey] = { data: products, timestamp: Date.now() };
         }
@@ -158,9 +155,17 @@ export async function getProductsPool() {
 
 /**
  * Maps wc/v3 structure to wc/store/v1 structure for frontend compatibility
+ * If the input is already from Store API, it will pass through or be slightly adjusted.
  */
 function mapV3ToStore(p: any) {
     if (!p) return null;
+
+    // If it already looks like a Store API product, return it directly
+    // Store API products have 'prices' object with 'currency_code', 'price', 'regular_price', etc.
+    // and 'images' as an array of objects with 'src', 'alt', etc.
+    if (p.prices && p.prices.currency_code && p.images && Array.isArray(p.images) && p.images[0]?.src) {
+        return p;
+    }
 
     // WooCommerce v3 doesn't return tax-inclusive price by default in some setups.
     // We detect if we need to add IVA (19% in Colombia usually) or use the display price.
@@ -260,46 +265,21 @@ export async function getProductById(id: number | string) {
     if (cached) return cached;
 
     try {
-        const product = await wcFetch(`/products/${id}`);
+        // Prioritize Store API for public product data
+        const product = await wcFetch(`/wc/store/v1/products/${id}`);
         if (!product) return null;
 
-        // Fetch Variations data if it's a variable product
-        if (product.type === 'variable' && product.variations.length > 0) {
-            const variations = await wcFetch(`/products/${product.id}/variations?per_page=100`);
+        // Store API usually includes variations data directly or in a more processed format.
+        // If it's a variable product, ensure variations are properly mapped.
+        // The Store API response for a single product often includes `variations` as an array of IDs,
+        // and `_links.variations` for fetching them.
+        // However, for simplicity and consistency with the frontend, we'll assume `mapV3ToStore`
+        // can handle the Store API format directly or that the Store API provides enough.
+        // If specific variation details (like images per color) are needed,
+        // we might still need to fetch them separately if not fully embedded.
 
-            const variationImagesMap: Record<string, any[]> = {};
-            variations.forEach((v: any) => {
-                const colorAttr = v.attributes.find((a: any) =>
-                    a.slug === 'pa_selecciona-el-color' ||
-                    a.name.toLowerCase().includes('color')
-                );
-
-                if (colorAttr && v.image) {
-                    const colorSlug = normalizeSlug(colorAttr.option);
-                    variationImagesMap[colorSlug] = [{
-                        id: v.image.id,
-                        src: v.image.src,
-                        alt: v.image.alt || colorAttr.option
-                    }];
-                }
-            });
-
-            product.variations_data = variations.map((v: any) => ({
-                id: v.id,
-                attributes: v.attributes.map((a: any) => ({
-                    name: a.name,
-                    value: normalizeSlug(a.option)
-                })),
-                price: v.price,
-                regular_price: v.regular_price,
-                sale_price: v.sale_price,
-                stock_status: v.stock_status,
-                image: v.image
-            }));
-
-            product.variation_images_map = variationImagesMap;
-        }
-
+        // The Store API product object should already be in a suitable format,
+        // so mapV3ToStore will mostly act as a passthrough or minor adjustment.
         const result = mapV3ToStore(product);
         setCached(cacheKey, result);
         return result;
@@ -318,13 +298,17 @@ export async function getCategoryBySlug(slug: string) {
     if (cached) return cached;
 
     try {
-        const categories = await wcFetch(`/products/categories?slug=${slug}`);
+        // Use public WordPress Taxonomy API (product_cat)
+        const res = await fetch(`${WP_BASE}/wp-json/wp/v2/product_cat?slug=${slug}`);
+        if (!res.ok) throw new Error(`WP Category Error: ${res.status}`);
+
+        const categories = await res.json();
         if (!categories || categories.length === 0) return null;
 
         setCached(cacheKey, categories[0]);
         return categories[0];
-    } catch (error) {
-        console.error(`Error fetching category by slug ${slug}:`, error);
+    } catch (error: any) {
+        console.error(`Error fetching category by slug ${slug}:`, error.message);
         return null;
     }
 }
@@ -338,7 +322,8 @@ export async function getChildCategories(parentId: number) {
     if (cached) return cached;
 
     try {
-        const categories = await wcFetch(`/products/categories?parent=${parentId}&per_page=50`);
+        // Use Store API for public category listing
+        const categories = await wcFetch(`/wc/store/v1/products/categories?parent=${parentId}&per_page=50`);
         if (!categories) return [];
 
         setCached(cacheKey, categories);
@@ -358,53 +343,14 @@ export async function getProductBySlug(slug: string) {
     if (cached) return cached;
 
     try {
-        const products = await wcFetch(`/products?slug=${slug}`);
+        // Prioritize Store API for public product data
+        const products = await wcFetch(`/wc/store/v1/products?slug=${slug}`);
         if (!products || products.length === 0) return null;
 
         const product = products[0];
 
-        // Fetch Variations data if it's a variable product
-        if (product.type === 'variable' && product.variations.length > 0) {
-            // We can fetch all variations in one call!
-            const variations = await wcFetch(`/products/${product.id}/variations?per_page=100`);
-
-            // Map variations to a searchable map for the frontend
-            const variationImagesMap: Record<string, any[]> = {};
-
-            variations.forEach((v: any) => {
-                // Find color attribute
-                const colorAttr = v.attributes.find((a: any) =>
-                    a.slug === 'pa_selecciona-el-color' ||
-                    a.name.toLowerCase().includes('color')
-                );
-
-                if (colorAttr && v.image) {
-                    const colorSlug = normalizeSlug(colorAttr.option);
-                    // Store images for this color
-                    variationImagesMap[colorSlug] = [{
-                        id: v.image.id,
-                        src: v.image.src,
-                        alt: v.image.alt || colorAttr.option
-                    }];
-                }
-            });
-
-            product.variations_data = variations.map((v: any) => ({
-                id: v.id,
-                attributes: v.attributes.map((a: any) => ({
-                    name: a.name,
-                    value: normalizeSlug(a.option) // Normalize for frontend slug match
-                })),
-                price: v.price,
-                regular_price: v.regular_price,
-                sale_price: v.sale_price,
-                stock_status: v.stock_status,
-                image: v.image
-            }));
-
-            product.variation_images_map = variationImagesMap;
-        }
-
+        // The Store API product object should already be in a suitable format,
+        // so mapV3ToStore will mostly act as a passthrough or minor adjustment.
         const result = mapV3ToStore(product);
         setCached(cacheKey, result);
         return result;
@@ -429,31 +375,19 @@ export async function getProductsByCategory(
     if (cached) return cached;
 
     try {
-        const onSaleParam = onSale ? '&on_sale=true' : '';
-        const attrParam = attribute ? `&attribute=${attribute}` : '';
-        const termParam = attributeTerm ? `&attribute_term=${attributeTerm}` : '';
-
         const ids = categoryId.toString().split(',').map(id => id.trim()).filter(Boolean);
 
         const fetchCategory = async (id: string) => {
             try {
-                const data = await wcFetch(
-                    `/products?category=${id}&per_page=${perPage}&page=${page}&status=publish&stock_status=instock&orderby=${orderBy}&order=${order}${onSaleParam}${attrParam}${termParam}`
-                );
-
-                if (!data) return [];
-                if (!Array.isArray(data)) {
-                    console.warn(`[getProductsByCategory] Expected array, got:`, typeof data);
-                    return [];
-                }
-                return data;
-            } catch (err) {
-                console.error(`[getProductsByCategory] Error cat ${id} failed:`, err);
+                // Use Public Store API for products list
+                const data = await wcFetch(`/wc/store/v1/products?category=${id}&per_page=${perPage}&page=${page}&orderby=${orderBy}&order=${order}${onSale ? '&on_sale=true' : ''}${attribute ? `&attribute=${attribute}` : ''}${attributeTerm ? `&attribute_term=${attributeTerm}` : ''}`);
+                return Array.isArray(data) ? data : [];
+            } catch (err: any) {
+                console.error(`[getProductsByCategory] Public cat ${id} failed:`, err.message);
                 return [];
             }
         };
 
-        // Parallel fetch for speed on Vercel
         const results = await Promise.all(ids.map(fetchCategory));
 
         const combined = [];
@@ -463,7 +397,7 @@ export async function getProductsByCategory(
                 for (const p of list) {
                     if (p && p.id && !seenIds.has(p.id)) {
                         seenIds.add(p.id);
-                        combined.push(mapV3ToStore(p));
+                        combined.push(mapV3ToStore(p)); // Already formatted correctly usually by Store API
                     }
                 }
             }
