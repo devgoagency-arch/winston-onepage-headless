@@ -29,8 +29,12 @@ export const GET: APIRoute = async ({ url }) => {
         const category = url.searchParams.get('category') || '63';
         const orderBy = url.searchParams.get('orderby') || 'date';
         const order = url.searchParams.get('order') || 'desc';
+        const onSale = url.searchParams.get('on_sale') === 'true';
+        const attribute = url.searchParams.get('attribute') || undefined;
+        const attributeTerm = url.searchParams.get('attribute_term') || undefined;
+
         // category can be a comma-separated list of IDs like "63,249"
-        let allProducts = await getProductsByCategory(category, 100, page, orderBy, order);
+        let allProducts = await getProductsByCategory(category, 100, page, orderBy, order, onSale, attribute, attributeTerm);
 
         return new Response(JSON.stringify(allProducts), {
             status: 200,

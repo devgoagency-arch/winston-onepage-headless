@@ -466,7 +466,7 @@ export default function ProductCard({ product, isSelected, onSelectionToggle, on
                     </div>
 
 
-                    <p className="price">
+                    <div className="price">
                         {isSale ? (
                             <div className="price-wrapper">
                                 <span className="old-price">
@@ -481,7 +481,7 @@ export default function ProductCard({ product, isSelected, onSelectionToggle, on
                                 {currencySymbol}{new Intl.NumberFormat('es-CO').format(renderPrice)}
                             </span>
                         )}
-                    </p>
+                    </div>
                 </div>
             </div>
 

@@ -57,10 +57,15 @@ async function wcFetch(path: string, options: RequestInit = {}, retries = 3, del
                 }
             });
 
+            // 404 (Not Found) - Throw immediately, no point in retrying
+            if (res.status === 404) {
+                throw new Error(`WC API Error: 404 Not Found`);
+            }
+
             // 503 (Server Busy), 429 (Rate Limit), 500 (Internal Error) - Retry these
             if (res.status === 503 || res.status === 429 || res.status === 500 || res.status === 502) {
                 if (i === retries - 1) {
-                    throw new Error(`WC API Error: ${res.status} ${res.statusText} (After ${retries} attempts)`);
+                    throw new Error(`WC API Error: ${res.status} (After ${retries} attempts)`);
                 }
                 console.warn(`WC API Warning: ${res.status}. Retrying in ${delay}ms... (Attempt ${i + 1}/${retries})`);
                 await new Promise(r => setTimeout(r, delay));
@@ -74,6 +79,8 @@ async function wcFetch(path: string, options: RequestInit = {}, retries = 3, del
 
             return await res.json();
         } catch (error: any) {
+            // Don't retry 404 caught in error block
+            if (error.message.includes('404')) throw error;
             if (i === retries - 1) throw error;
             console.warn(`WC API Error: ${error.message}. Retrying in ${delay}ms... (Attempt ${i + 1}/${retries})`);
             await new Promise(r => setTimeout(r, delay));
@@ -165,6 +172,11 @@ function mapV3ToStore(p: any) {
             slug: cat.slug
         })) || [],
         category_ids: p.categories?.map((cat: any) => cat.id) || [],
+        tags: p.tags?.map((t: any) => ({
+            id: t.id,
+            name: t.name,
+            slug: t.slug
+        })) || [],
         variation_ids: p.variations || [],
         on_sale: p.on_sale || false,
         featured: p.featured || false,
@@ -256,6 +268,46 @@ export async function getProductById(id: number | string) {
 }
 
 /**
+ * Fetch Category by Slug
+ */
+export async function getCategoryBySlug(slug: string) {
+    const cacheKey = `cat_slug_${slug}`;
+    const cached = getCached(cacheKey);
+    if (cached) return cached;
+
+    try {
+        const categories = await wcFetch(`/products/categories?slug=${slug}`);
+        if (!categories || categories.length === 0) return null;
+
+        setCached(cacheKey, categories[0]);
+        return categories[0];
+    } catch (error) {
+        console.error(`Error fetching category by slug ${slug}:`, error);
+        return null;
+    }
+}
+
+/**
+ * Fetch child categories of a parent category
+ */
+export async function getChildCategories(parentId: number) {
+    const cacheKey = `cat_children_${parentId}`;
+    const cached = getCached(cacheKey);
+    if (cached) return cached;
+
+    try {
+        const categories = await wcFetch(`/products/categories?parent=${parentId}&per_page=50`);
+        if (!categories) return [];
+
+        setCached(cacheKey, categories);
+        return categories;
+    } catch (error) {
+        console.error(`Error fetching child categories for parent ${parentId}:`, error);
+        return [];
+    }
+}
+
+/**
  * Fetch Product by Slug with all its variations in one go!
  */
 export async function getProductBySlug(slug: string) {
@@ -320,16 +372,28 @@ export async function getProductBySlug(slug: string) {
     }
 }
 
-/**
- * Fetch List of Products by Category for Grid
- */
-export async function getProductsByCategory(categoryId: string | number, perPage = 100, page = 1, orderBy: any = 'date', order: any = 'desc') {
-    const cacheKey = `cat_${categoryId}_${perPage}_${page}_${orderBy}_${order}`;
+export async function getProductsByCategory(
+    categoryId: string | number,
+    perPage = 100,
+    page = 1,
+    orderBy: any = 'date',
+    order: any = 'desc',
+    onSale = false,
+    attribute?: string,
+    attributeTerm?: string | number
+) {
+    const cacheKey = `cat_${categoryId}_${perPage}_${page}_${orderBy}_${order}_${onSale}_${attribute}_${attributeTerm}`;
     const cached = getCached(cacheKey);
     if (cached) return cached;
 
     try {
-        const products = await wcFetch(`/products?category=${categoryId}&per_page=${perPage}&page=${page}&status=publish&stock_status=instock&orderby=${orderBy}&order=${order}`);
+        const onSaleParam = onSale ? '&on_sale=true' : '';
+        const attrParam = attribute ? `&attribute=${attribute}` : '';
+        const termParam = attributeTerm ? `&attribute_term=${attributeTerm}` : '';
+
+        const products = await wcFetch(
+            `/products?category=${categoryId}&per_page=${perPage}&page=${page}&status=publish&stock_status=instock&orderby=${orderBy}&order=${order}${onSaleParam}${attrParam}${termParam}`
+        );
         const result = products.map(mapV3ToStore);
         setCached(cacheKey, result);
         return result;
@@ -396,6 +460,42 @@ export async function getMenu(slug: string) {
         return menu;
     } catch (error) {
         console.error(`Error fetching menu ${slug}:`, error);
+        return [];
+    }
+}
+
+/**
+ * Fetch WooCommerce Product Attributes
+ */
+export async function getAttributes() {
+    const cacheKey = "wc_attributes";
+    const cached = getCached(cacheKey);
+    if (cached) return cached;
+
+    try {
+        const attributes = await wcFetch("/products/attributes");
+        setCached(cacheKey, attributes);
+        return attributes;
+    } catch (error) {
+        console.error("Error fetching attributes:", error);
+        return [];
+    }
+}
+
+/**
+ * Fetch WooCommerce Attribute Terms
+ */
+export async function getAttributeTerms(attributeId: number | string) {
+    const cacheKey = `wc_attr_terms_${attributeId}`;
+    const cached = getCached(cacheKey);
+    if (cached) return cached;
+
+    try {
+        const terms = await wcFetch(`/products/attributes/${attributeId}/terms?per_page=100`);
+        setCached(cacheKey, terms);
+        return terms;
+    } catch (error) {
+        console.error(`Error fetching terms for attribute ${attributeId}:`, error);
         return [];
     }
 }
