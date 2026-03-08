@@ -9,11 +9,23 @@ const BASE_URL = `${import.meta.env.WC_URL || "https://tienda.winstonandharrysto
 
 const WP_APP_USER = import.meta.env.WP_APP_USER || "Astro Headless";
 const WP_APP_PASS = import.meta.env.WP_APP_PASS || "fyWY ELGb lMsk XtlY y4Gy e18p";
-const basicAuthHeader = `Basic ${btoa(`${WP_APP_USER}:${WP_APP_PASS}`)}`;
+
+// SSR Safe base64 helper
+const safeBtoa = (str: string) => {
+    try {
+        if (typeof window !== 'undefined' && window.btoa) return window.btoa(str);
+        if (typeof Buffer !== 'undefined') return Buffer.from(str).toString('base64');
+        return btoa(str); // Fallback
+    } catch (e) {
+        return "";
+    }
+};
+
+const basicAuthHeader = `Basic ${safeBtoa(`${WP_APP_USER}:${WP_APP_PASS}`)}`;
 
 // Sistema de Cache en Memoria (SSR & API)
 const cache: Record<string, { data: any, timestamp: number }> = {};
-const DEFAULT_TTL = 1000 * 60 * 60; // 1 Hora por defecto
+const DEFAULT_TTL = 1000 * 60 * 5; // 5 minutos para ver cambios rápido
 
 function getCached(key: string) {
     const entry = cache[key];

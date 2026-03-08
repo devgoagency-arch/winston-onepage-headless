@@ -61,6 +61,9 @@ let error: string | null = null;
 let colorTerms: any[] = [];
 let tallaTerms: any[] = [];
 
+let subcategories: any[] = [];
+let dropdownCategories: any[] = [];
+
 try {
     category = await getCategoryBySlug(slug as string);
     if (category) {
@@ -82,10 +85,25 @@ try {
             .toLowerCase()
             .includes("accesorios");
 
-        [colorTerms, tallaTerms] = await Promise.all([
+        [colorTerms, tallaTerms, subcategories] = await Promise.all([
             safeGetTerms(2),
             isAccesorios ? Promise.resolve([]) : safeGetTerms(1),
+            getChildCategories(category.id),
         ]);
+
+        dropdownCategories =
+            subcategories.length > 0
+                ? subcategories.map((c: any) => ({
+                      name: c.name,
+                      slug: c.slug,
+                  }))
+                : [
+                      { name: "Zapatos", slug: "zapatos" },
+                      { name: "Ropa", slug: "ropa" },
+                      { name: "Accesorios", slug: "accesorios" },
+                      { name: "Maletas", slug: "maletas" },
+                      { name: "Mascotas", slug: "mascotas" },
+                  ];
 
         products = await getProductsByCategory(
             category.id.toString(),
@@ -115,7 +133,8 @@ try {
     }
 } catch (e) {
     console.error("Error en categoria/[slug].astro:", e);
-    error = "Hubo un problema de conexión al extraer la categoría.";
+    error =
+        "Hubo un problema al cargar los productos. Por favor intenta de nuevo.";
 }
 
 if (!category && !error) {
@@ -125,23 +144,6 @@ if (!category && !error) {
 const bannerImage = category?.image?.src || null;
 const categoryTitle = category?.name || "Categoría";
 const categoryDesc = category?.description?.replace(/<[^>]+>/g, "") || "";
-
-// Subcategorias de la categoria actual (para el dropdown de filtros)
-const subcategories: any[] = category
-    ? await getChildCategories(category.id)
-    : [];
-
-// Si hay subcategorias las usamos, si no mostramos las categorias raiz
-const dropdownCategories =
-    subcategories.length > 0
-        ? subcategories.map((c: any) => ({ name: c.name, slug: c.slug }))
-        : [
-              { name: "Zapatos", slug: "zapatos" },
-              { name: "Ropa", slug: "ropa" },
-              { name: "Accesorios", slug: "accesorios" },
-              { name: "Maletas", slug: "maletas" },
-              { name: "Mascotas", slug: "mascotas" },
-          ];
 ---
 
 <Layout title={`${categoryTitle} | Winston & Harry`}>
@@ -168,16 +170,25 @@ const dropdownCategories =
             </div>
         </section>
 
-        <!-- Componente React de Filtros y Productos -->
-        <FilteredProductList
-            client:load
-            initialProducts={products}
-            category={category}
-            subcategories={dropdownCategories}
-            colorTerms={colorTerms}
-            tallaTerms={tallaTerms}
-            initialSort={activeSort}
-        />
+        {error && (
+            <div class="error-container">
+                <p class="error-msg">{error}</p>
+                <a href="/" class="btn-retry">Volver al inicio</a>
+            </div>
+        )}
+
+        {!error && (
+            <!-- Componente React de Filtros y Productos -->
+            <FilteredProductList
+                client:load
+                initialProducts={products}
+                category={category}
+                subcategories={dropdownCategories}
+                colorTerms={colorTerms}
+                tallaTerms={tallaTerms}
+                initialSort={activeSort}
+            />
+        )}
     </main>
 
     <Footer />
@@ -187,6 +198,35 @@ const dropdownCategories =
     .category-page {
         min-height: 80vh;
         background-color: #fff;
+    }
+
+    .error-container {
+        text-align: center;
+        padding: 5rem 2rem;
+    }
+
+    .error-msg {
+        color: #721c24;
+        background-color: #f8d7da;
+        border: 1px solid #f5c6cb;
+        padding: 1rem 2rem;
+        border-radius: 4px;
+        display: inline-block;
+        margin-bottom: 2rem;
+        font-family: var(--font-paragraphs);
+    }
+
+    .btn-retry {
+        display: block;
+        width: max-content;
+        margin: 0 auto;
+        padding: 0.8rem 2rem;
+        background: var(--color-green);
+        color: #fff;
+        text-decoration: none;
+        font-family: var(--font-titles);
+        text-transform: uppercase;
+        font-size: 0.8rem;
     }
 
     /* Breadcrumbs */
