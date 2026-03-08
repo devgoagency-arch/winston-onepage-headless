@@ -62,7 +62,7 @@ function normalizeSlug(text: string): string {
  * Generic Fetcher with Basic Auth and Retry Logic
  */
 async function wcFetch(path: string, options: RequestInit = {}, retries = 3, delay = 1500) {
-    const url = `${BASE_URL}${path}`;
+    const url = `${BASE_URL}${path}${path.includes('?') ? '&' : '?'}consumer_key=${CK}&consumer_secret=${CS}`;
 
     for (let i = 0; i < retries; i++) {
         try {
@@ -72,7 +72,6 @@ async function wcFetch(path: string, options: RequestInit = {}, retries = 3, del
                 ...options,
                 headers: {
                     'Accept': 'application/json',
-                    'Authorization': wcAuthHeader,
                     ...(options.headers || {})
                 }
             });
@@ -458,8 +457,7 @@ export async function getPageById(id: number | string) {
         const wpBase = `${import.meta.env.WC_URL || "https://tienda.winstonandharrystore.com"}/wp-json/wp/v2`;
         const res = await fetch(`${wpBase}/pages/${id}`, {
             headers: {
-                'Accept': 'application/json',
-                'Authorization': wpAppAuthHeader
+                'Accept': 'application/json'
             }
         });
 
@@ -488,8 +486,7 @@ export async function getMenu(slug: string) {
         const wpBase = `${import.meta.env.WC_URL || "https://tienda.winstonandharrystore.com"}/wp-json/wh/v1`;
         const res = await fetch(`${wpBase}/menu/${slug}`, {
             headers: {
-                'Accept': 'application/json',
-                'Authorization': wpAppAuthHeader
+                'Accept': 'application/json'
             }
         });
 

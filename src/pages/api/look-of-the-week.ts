@@ -24,30 +24,12 @@ export const GET: APIRoute = async () => {
             });
         }
 
-        const WP_APP_USER = import.meta.env.WP_APP_USER || "Astro Headless";
-        const WP_APP_PASS = import.meta.env.WP_APP_PASS || "fyWY ELGb lMsk XtlY y4Gy e18p";
-
-        // SSR Safe base64 helper
-        const safeBase64 = (str: string) => {
-            try {
-                if (typeof (globalThis as any).Buffer !== 'undefined') {
-                    return (globalThis as any).Buffer.from(str).toString('base64');
-                }
-                if (typeof btoa !== 'undefined') return btoa(str);
-                return "";
-            } catch (e) {
-                return "";
-            }
-        };
-
-        const basicAuthHeader = `Basic ${safeBase64(`${WP_APP_USER}:${WP_APP_PASS}`)}`;
-
         const wpBase = import.meta.env.WC_URL || "https://tienda.winstonandharrystore.com";
         console.log(`[API Look] Fetching from: ${wpBase}/wp-json/wp/v2/look-semana`);
 
         const response = await fetch(`${wpBase}/wp-json/wp/v2/look-semana?per_page=1&_embed`, {
             headers: {
-                'Authorization': basicAuthHeader
+                'Accept': 'application/json'
             }
         });
 
