@@ -58,48 +58,73 @@ function normalizeSlug(text: string): string {
  * Generic Fetcher with Basic Auth and Retry Logic
  */
 async function wcFetch(path: string, options: RequestInit = {}, retries = 3, delay = 1500) {
-    const url = `${BASE_URL}${path}${path.includes('?') ? '&' : '?'}consumer_key=${CK}&consumer_secret=${CS}`;
+    const cleanPath = path.startsWith('/') ? path : `/${path}`;
+    const url = `${BASE_URL}${cleanPath}`;
 
     for (let i = 0; i < retries; i++) {
         try {
-            console.log(`[WC API] Fetching: ${path} (Attempt ${i + 1}/${retries})`);
+            console.log(`[WC API] Fetching: ${cleanPath} (Attempt ${i + 1}/${retries})${i > 0 ? ' [RETRY]' : ''}`);
             const startTime = Date.now();
+
+            // Try with Authorization header first
             const res = await fetch(url, {
                 ...options,
                 headers: {
                     'Accept': 'application/json',
+                    'Authorization': wcAuthHeader,
                     ...(options.headers || {})
                 }
             });
+
             const endTime = Date.now();
             console.log(`[WC API] Response: ${res.status} ${res.statusText} (${endTime - startTime}ms)`);
+
+            // If 401 or 403, try the same request but with keys in query params as fallback? 
+            // Or without keys if the user "disabled protection"? Let's try query params as fallback.
+            if ((res.status === 401 || res.status === 403) && i < retries - 1) {
+                console.warn(`[WC API] Auth failed (${res.status}). Trying query params fallback...`);
+                const fallbackUrl = `${url}${url.includes('?') ? '&' : '?'}consumer_key=${CK}&consumer_secret=${CS}`;
+                const resFallback = await fetch(fallbackUrl, {
+                    ...options,
+                    headers: { 'Accept': 'application/json', ...(options.headers || {}) }
+                });
+                if (resFallback.ok) {
+                    console.log(`[WC API] Fallback successful with status ${resFallback.status}`);
+                    return await resFallback.json();
+                }
+                console.warn(`[WC API] Fallback also failed with status ${resFallback.status}`);
+            }
 
             // 404 (Not Found) - Throw immediately, no point in retrying
             if (res.status === 404) {
                 throw new Error(`WC API Error: 404 Not Found`);
             }
 
-            // 503 (Server Busy), 429 (Rate Limit), 500 (Internal Error), 502 (Bad Gateway) - Retry these
-            if (res.status === 503 || res.status === 429 || res.status === 500 || res.status === 502) {
+            // Retry these
+            if ([500, 502, 503, 429].includes(res.status)) {
                 if (i === retries - 1) {
-                    throw new Error(`WC API Error: ${res.status} (After ${retries} attempts)`);
+                    throw new Error(`WC API Error: ${res.status} after ${retries} attempts`);
                 }
-                console.warn(`WC API Warning: ${res.status}. Retrying in ${delay}ms... (Attempt ${i + 1}/${retries})`);
+                console.warn(`WC API Retryable error: ${res.status}. Waiting ${delay}ms...`);
                 await new Promise(r => setTimeout(r, delay));
                 delay *= 2;
                 continue;
             }
 
             if (!res.ok) {
+                const errorBody = await res.text().catch(() => "No body");
+                console.error(`[WC API] Error details: ${errorBody.substring(0, 200)}`);
                 throw new Error(`WC API Error: ${res.status} ${res.statusText}`);
             }
 
             return await res.json();
         } catch (error: any) {
-            // Don't retry 404 caught in error block
             if (error.message.includes('404')) throw error;
-            if (i === retries - 1) throw error;
-            console.warn(`WC API Error: ${error.message}. Retrying in ${delay}ms... (Attempt ${i + 1}/${retries})`);
+            if (i === retries - 1) {
+                console.error(`[WC API] Final catch fail:`, error.message);
+                throw error;
+            }
+            console.warn(`[WC API] Catch Error: ${error.message}. Retrying in ${delay}ms...`);
             await new Promise(r => setTimeout(r, delay));
             delay *= 2;
         }
@@ -415,9 +440,15 @@ export async function getProductsByCategory(
                 const data = await wcFetch(
                     `/products?category=${id}&per_page=${perPage}&page=${page}&status=publish&stock_status=instock&orderby=${orderBy}&order=${order}${onSaleParam}${attrParam}${termParam}`
                 );
-                return Array.isArray(data) ? data : [];
+
+                if (!data) return [];
+                if (!Array.isArray(data)) {
+                    console.warn(`[getProductsByCategory] Expected array, got:`, typeof data);
+                    return [];
+                }
+                return data;
             } catch (err) {
-                console.error(`[getProductsByCategory] Error cat ${id}:`, err);
+                console.error(`[getProductsByCategory] Error cat ${id} failed:`, err);
                 return [];
             }
         };
@@ -428,18 +459,20 @@ export async function getProductsByCategory(
         const combined = [];
         const seenIds = new Set();
         for (const list of results) {
-            for (const p of list) {
-                if (p && p.id && !seenIds.has(p.id)) {
-                    seenIds.add(p.id);
-                    combined.push(mapV3ToStore(p));
+            if (Array.isArray(list)) {
+                for (const p of list) {
+                    if (p && p.id && !seenIds.has(p.id)) {
+                        seenIds.add(p.id);
+                        combined.push(mapV3ToStore(p));
+                    }
                 }
             }
         }
 
         setCached(cacheKey, combined);
         return combined;
-    } catch (error) {
-        console.error("Error fetching products by category:", error);
+    } catch (error: any) {
+        console.error("Error fetching products by category:", error.message);
         return [];
     }
 }
