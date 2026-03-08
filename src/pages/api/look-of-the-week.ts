@@ -8,10 +8,12 @@ const LOOK_CACHE_DURATION = 1000 * 60 * 60; // 1 Hora
 
 export const GET: APIRoute = async () => {
     try {
+        console.log("[API Look] Starting fetch...");
         const now = Date.now();
 
         // Check Cache
         if (cachedLook && (now - lastLookFetch < LOOK_CACHE_DURATION)) {
+            console.log("[API Look] Returning cached data");
             return new Response(JSON.stringify(cachedLook), {
                 status: 200,
                 headers: {
@@ -37,6 +39,8 @@ export const GET: APIRoute = async () => {
         const basicAuthHeader = `Basic ${safeBase64(`${WP_APP_USER}:${WP_APP_PASS}`)}`;
 
         const wpBase = import.meta.env.WC_URL || "https://tienda.winstonandharrystore.com";
+        console.log(`[API Look] Fetching from: ${wpBase}/wp-json/wp/v2/look-semana`);
+
         const response = await fetch(`${wpBase}/wp-json/wp/v2/look-semana?per_page=1&_embed`, {
             headers: {
                 'Authorization': basicAuthHeader
@@ -44,7 +48,8 @@ export const GET: APIRoute = async () => {
         });
 
         if (!response.ok) {
-            return new Response(JSON.stringify({ error: 'Failed to fetch look of the week' }), {
+            console.error(`[API Look] WP Error: ${response.status}`);
+            return new Response(JSON.stringify({ error: 'Failed to fetch look of the week', wpStatus: response.status }), {
                 status: response.status,
                 headers: { 'Content-Type': 'application/json' }
             });
@@ -54,6 +59,7 @@ export const GET: APIRoute = async () => {
         const look = data[0];
 
         if (!look) {
+            console.warn("[API Look] No look post found");
             return new Response(JSON.stringify({ error: 'No look found' }), {
                 status: 404,
                 headers: { 'Content-Type': 'application/json' }
@@ -65,6 +71,7 @@ export const GET: APIRoute = async () => {
         const product2Id = look.custom_fields?.look_producto_2;
 
         const productIds = [product1Id, product2Id].filter(id => !!id);
+        console.log(`[API Look] Found post ID: ${look.id}, Products: ${productIds.join(', ')}`);
 
         // Procesamos los productos para extraer variaciones e imágenes (Mapa de colores)
         const products = await Promise.all(productIds.map(async (id) => {
@@ -86,6 +93,7 @@ export const GET: APIRoute = async () => {
         // Guardar en cache local
         cachedLook = result;
         lastLookFetch = now;
+        console.log("[API Look] Cache updated and returning data");
 
         return new Response(JSON.stringify(result), {
             status: 200,
@@ -96,9 +104,9 @@ export const GET: APIRoute = async () => {
             }
         });
 
-    } catch (error) {
-        console.error('API Error:', error);
-        return new Response(JSON.stringify({ error: 'Internal Server Error' }), {
+    } catch (error: any) {
+        console.error('[API Look] Exception:', error.message);
+        return new Response(JSON.stringify({ error: 'Internal Server Error', details: error.message }), {
             status: 500,
             headers: { 'Content-Type': 'application/json' }
         });

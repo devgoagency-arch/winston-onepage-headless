@@ -7,11 +7,13 @@ export const GET: APIRoute = async ({ url }) => {
     const slug = url.searchParams.get('slug');
 
     try {
+        console.log(`[API Products] Request: category=${url.searchParams.get('category')}, slug=${url.searchParams.get('slug')}`);
         // 1. DETALLE DEL PRODUCTO INDIVIDUAL
         if (slug) {
             let product = await getProductBySlug(slug);
 
             if (!product) {
+                console.warn(`[API Products] Slug not found: ${slug}`);
                 return new Response(JSON.stringify({ error: 'Not found' }), { status: 404 });
             }
 
@@ -33,8 +35,8 @@ export const GET: APIRoute = async ({ url }) => {
         const attribute = url.searchParams.get('attribute') || undefined;
         const attributeTerm = url.searchParams.get('attribute_term') || undefined;
 
-        // category can be a comma-separated list of IDs like "63,249"
         let allProducts = await getProductsByCategory(category, 100, page, orderBy, order, onSale, attribute, attributeTerm);
+        console.log(`[API Products] Returning ${allProducts?.length || 0} products`);
 
         return new Response(JSON.stringify(allProducts), {
             status: 200,
@@ -45,8 +47,8 @@ export const GET: APIRoute = async ({ url }) => {
             }
         });
 
-    } catch (error) {
-        console.error('API Error:', error);
-        return new Response(JSON.stringify({ error: 'Internal Server Error' }), { status: 500 });
+    } catch (error: any) {
+        console.error('[API Products] Server Error:', error.message);
+        return new Response(JSON.stringify({ error: 'Internal Server Error', details: error.message }), { status: 500 });
     }
 };

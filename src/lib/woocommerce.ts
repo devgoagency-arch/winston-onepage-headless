@@ -63,6 +63,8 @@ async function wcFetch(path: string, options: RequestInit = {}, retries = 3, del
 
     for (let i = 0; i < retries; i++) {
         try {
+            console.log(`[WC API] Fetching: ${path} (Attempt ${i + 1}/${retries})`);
+            const startTime = Date.now();
             const res = await fetch(url, {
                 ...options,
                 headers: {
@@ -70,6 +72,8 @@ async function wcFetch(path: string, options: RequestInit = {}, retries = 3, del
                     ...(options.headers || {})
                 }
             });
+            const endTime = Date.now();
+            console.log(`[WC API] Response: ${res.status} ${res.statusText} (${endTime - startTime}ms)`);
 
             // 404 (Not Found) - Throw immediately, no point in retrying
             if (res.status === 404) {
@@ -425,8 +429,6 @@ export async function getPageById(id: number | string) {
     if (cached) return cached;
 
     try {
-        // En este caso usamos el endpoint nativo de WP para páginas, no el de WC
-        // El dominio es el mismo: winstonandharrystore.com/wp-json/wp/v2/pages
         const wpBase = `${import.meta.env.WC_URL || "https://tienda.winstonandharrystore.com"}/wp-json/wp/v2`;
         const res = await fetch(`${wpBase}/pages/${id}`, {
             headers: {
