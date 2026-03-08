@@ -13,18 +13,21 @@ const WP_APP_PASS = import.meta.env.WP_APP_PASS || "fyWY ELGb lMsk XtlY y4Gy e18
 // SSR Safe base64 helper
 const safeBtoa = (str: string) => {
     try {
-        if (typeof btoa !== 'undefined') return btoa(str);
         if (typeof (globalThis as any).Buffer !== 'undefined') {
             return (globalThis as any).Buffer.from(str).toString('base64');
         }
+        if (typeof btoa !== 'undefined') return btoa(str);
         return "";
     } catch (e) {
-        console.error("safeBtoa error:", e);
         return "";
     }
 };
 
+const wcAuthHeader = `Basic ${safeBtoa(`${CK}:${CS}`)}`;
 const wpAppAuthHeader = `Basic ${safeBtoa(`${WP_APP_USER}:${WP_APP_PASS}`)}`;
+
+console.log(`[WC Auth] Header generated (length: ${wcAuthHeader.length})`);
+console.log(`[WP Auth] Header generated (length: ${wpAppAuthHeader.length})`);
 
 // Sistema de Cache en Memoria (SSR & API)
 const cache: Record<string, { data: any, timestamp: number }> = {};
@@ -59,16 +62,17 @@ function normalizeSlug(text: string): string {
  * Generic Fetcher with Basic Auth and Retry Logic
  */
 async function wcFetch(path: string, options: RequestInit = {}, retries = 3, delay = 1500) {
-    const url = `${BASE_URL}${path}${path.includes('?') ? '&' : '?'}consumer_key=${CK}&consumer_secret=${CS}`;
+    const url = `${BASE_URL}${path}`;
 
     for (let i = 0; i < retries; i++) {
         try {
             console.log(`[WC API] Fetching: ${path} (Attempt ${i + 1}/${retries})`);
             const startTime = Date.now();
-            const res = await fetch(url, {
+            const res = await fetch(url.toString(), {
                 ...options,
                 headers: {
                     'Accept': 'application/json',
+                    'Authorization': wcAuthHeader,
                     ...(options.headers || {})
                 }
             });
@@ -409,12 +413,34 @@ export async function getProductsByCategory(
         const attrParam = attribute ? `&attribute=${attribute}` : '';
         const termParam = attributeTerm ? `&attribute_term=${attributeTerm}` : '';
 
-        const products = await wcFetch(
-            `/products?category=${categoryId}&per_page=${perPage}&page=${page}&status=publish&stock_status=instock&orderby=${orderBy}&order=${order}${onSaleParam}${attrParam}${termParam}`
-        );
-        const result = products.map(mapV3ToStore);
-        setCached(cacheKey, result);
-        return result;
+        // Handle multiple categories if passed as "ID1,ID2,..."
+        const ids = categoryId.toString().split(',').map(id => id.trim()).filter(Boolean);
+
+        const fetchCategory = async (id: string) => {
+            return await wcFetch(
+                `/products?category=${id}&per_page=${perPage}&page=${page}&status=publish&stock_status=instock&orderby=${orderBy}&order=${order}${onSaleParam}${attrParam}${termParam}`
+            );
+        };
+
+        const results = await Promise.all(ids.map(fetchCategory));
+
+        // Merge and de-duplicate
+        const seenIds = new Set();
+        const combined = [];
+        for (const list of results) {
+            for (const p of list) {
+                if (!seenIds.has(p.id)) {
+                    seenIds.add(p.id);
+                    combined.push(mapV3ToStore(p));
+                }
+            }
+        }
+
+        // Re-sort because merged results might lose the global order if categories overlap
+        // but for popularity/date it's usually fine per category.
+
+        setCached(cacheKey, combined);
+        return combined;
     } catch (error) {
         console.error("Error fetching products by category:", error);
         throw error;

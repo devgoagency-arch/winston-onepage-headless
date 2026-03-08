@@ -29,11 +29,15 @@ export const GET: APIRoute = async () => {
 
         // SSR Safe base64 helper
         const safeBase64 = (str: string) => {
-            if (typeof btoa !== 'undefined') return btoa(str);
-            if (typeof (globalThis as any).Buffer !== 'undefined') {
-                return (globalThis as any).Buffer.from(str).toString('base64');
+            try {
+                if (typeof (globalThis as any).Buffer !== 'undefined') {
+                    return (globalThis as any).Buffer.from(str).toString('base64');
+                }
+                if (typeof btoa !== 'undefined') return btoa(str);
+                return "";
+            } catch (e) {
+                return "";
             }
-            return "";
         };
 
         const basicAuthHeader = `Basic ${safeBase64(`${WP_APP_USER}:${WP_APP_PASS}`)}`;
