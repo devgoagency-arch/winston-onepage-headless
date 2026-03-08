@@ -78,10 +78,15 @@ function cleanJSON(jsonString: string) {
  * Generic Fetcher with Basic Auth and Retry Logic
  */
 async function wcFetch(path: string, options: RequestInit = {}, retries = 3, delay = 1500) {
-    // If it's a store API path, use STORE_URL and NO AUTH (Public)
-    const isStore = path.startsWith('/wc/store/');
-    const baseUrl = isStore ? WP_BASE : BASE_URL;
-    const url = `${baseUrl}${path}${!isStore && !path.includes('?') ? '?' : ''}${!isStore && path.includes('?') ? '&' : ''}${!isStore ? `consumer_key=${CK}&consumer_secret=${CS}` : ''}`;
+    // If it's a store API path, use WP_BASE + /wp-json/ and NO AUTH (Public)
+    const isStore = path.includes('/wc/store/');
+    const baseUrl = isStore ? `${WP_BASE}/wp-json` : BASE_URL;
+
+    // Construct the URL
+    // If it's NOT store, we add CK/CS. If it already has ?, we use &.
+    const url = isStore
+        ? `${baseUrl}${path.startsWith('/') ? '' : '/'}${path}`
+        : `${baseUrl}${path.startsWith('/') ? '' : '/'}${path}${path.includes('?') ? '&' : '?'}consumer_key=${CK}&consumer_secret=${CS}`;
 
     for (let i = 0; i < retries; i++) {
         try {
