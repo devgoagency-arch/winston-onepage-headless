@@ -321,12 +321,12 @@ const FilteredProductList: React.FC<FilteredProductListProps> = ({
                     </div>
 
                     <div className="filter-right">
-                        <div className="sort-dropdown" style={{ width: '195px' }}>
+                        <div className="sort-dropdown">
                             <span className="sort-label">Ordenar por: {sort.label}</span>
                             <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" strokeWidth="1.5" fill="none">
                                 <polyline points="6 9 12 15 18 9"></polyline>
                             </svg>
-                            <ul className="sort-list" style={{ minWidth: '195px' }}>
+                            <ul className="sort-list">
                                 {SORT_OPTIONS.map(opt => (
                                     <li key={opt.key}>
                                         <button
@@ -550,17 +550,34 @@ const FilteredProductList: React.FC<FilteredProductListProps> = ({
                 .dropdown-list li a { display: block; padding: 0.5rem 1.5rem; color: #666; text-decoration: none; font-family: var(--font-paragraphs); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; transition: all 0.2s; }
                 .dropdown-list li a:hover { color: var(--color-green, #155338); background-color: #f9f9f9; }
 
-                .sort-dropdown { display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; border: 1px solid #e0e0e0; cursor: pointer; position: relative; }
+                .sort-dropdown { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; padding: 0.5rem 1rem; border: 1px solid #e0e0e0; cursor: pointer; position: relative; width: 240px; }
                 .sort-dropdown:hover .sort-list { opacity: 1; visibility: visible; pointer-events: auto; }
-                .sort-label { font-family: var(--font-paragraphs); font-size: 0.8rem; color: #333; white-space: nowrap; }
-                .sort-list { position: absolute; top: 100%; right: 0; background: #fff; list-style: none; padding: 0.5rem 0 1rem; margin: 0; min-width: 195px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08); border: 1px solid #e8e8e8; border-top: none; opacity: 0; visibility: hidden; pointer-events: none; transition: all 0.2s; z-index: 100; }
+                .sort-label { font-family: var(--font-paragraphs); font-size: 0.8rem; color: #333; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; flex: 1; }
+                .sort-list { position: absolute; top: calc(100% + 1px); right: -1px; background: #fff; list-style: none; padding: 0.5rem 0 1rem; margin: 0; width: calc(100% + 2px); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08); border: 1px solid #e8e8e8; border-top: none; opacity: 0; visibility: hidden; pointer-events: none; transition: all 0.2s; z-index: 110; }
                 .sort-list li button { width: 100%; text-align: left; background: none; border: none; display: block; padding: 0.6rem 1.5rem; color: #666; font-family: var(--font-paragraphs); font-size: 0.8rem; letter-spacing: 0.5px; transition: all 0.2s; cursor: pointer; }
                 .sort-list li button:hover, .sort-list li button.active { color: var(--color-green, #155338); background-color: #f9f9f9; font-weight: 600; }
 
                 .filter-btn { display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1.2rem; background: transparent; border: 1px solid #e0e0e0; font-family: var(--font-paragraphs); font-size: 0.8rem; color: #333; cursor: pointer; transition: all 0.2s; }
                 .filter-btn:hover { border-color: #121212; background: #f9f9f9; }
 
-                .loading { opacity: 0.6; pointer-events: none; }
+                .products-grid-container { position: relative; min-height: 400px; }
+                .loading-overlay { 
+                    position: absolute; 
+                    top: 0; left: 0; right: 0; bottom: 0; 
+                    background: rgba(255,255,255,0.7); 
+                    backdrop-filter: blur(2px); 
+                    z-index: 50; 
+                    display: flex; 
+                    align-items: center; 
+                    justify-content: center; 
+                    font-family: var(--font-titles); 
+                    letter-spacing: 2px; 
+                    color: var(--color-green);
+                    animation: fadeInOverlay 0.3s ease;
+                }
+                @keyframes fadeInOverlay { from { opacity: 0; } to { opacity: 1; } }
+
+                .loading { pointer-events: none; }
                 
                 .checklist { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.8rem; }
                 .checklist.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 0.5rem; }

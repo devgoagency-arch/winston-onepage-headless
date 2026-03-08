@@ -166,22 +166,36 @@ function mapV3ToStore(p: any) {
     if (!p) return null;
 
     // Detect if it's a Store API product (v1 or similar)
-    // Store API puts prices inside a 'prices' object.
     const isStoreApi = !!(p.prices && p.prices.currency_code);
 
     if (isStoreApi) {
         // Ensure images is an array
-        if (!p.images || !Array.isArray(p.images)) {
-            p.images = [];
+        if (!p.images || !Array.isArray(p.images)) p.images = [];
+
+        // If price is "0", try to find a better one in price_range or other fields
+        if ((!p.prices.price || p.prices.price === "0") && p.prices.price_range) {
+            const min = p.prices.price_range.min_amount;
+            if (min && min !== "0") p.prices.price = min;
         }
-        // Store API is already formatted for our frontend
+
+        // Final fallback: if still "0", use regular_price
+        if ((!p.prices.price || p.prices.price === "0") && p.prices.regular_price && p.prices.regular_price !== "0") {
+            p.prices.price = p.prices.regular_price;
+        }
+
         return p;
     }
 
     // Fallback for WooCommerce standard API (v3)
-    // We calculate inclusive price (19% IVA) because v3 usually returns base price.
     const hasTax = p.tax_status === 'taxable';
-    const rawPrice = parseFloat(p.price || "0");
+    let rawPrice = parseFloat(p.price || p.regular_price || "0");
+
+    // If still 0, check variations if available
+    if (rawPrice === 0 && p.variations_data && p.variations_data.length > 0) {
+        const prices = p.variations_data.map((v: any) => parseFloat(v.price || "0")).filter((pr: number) => pr > 0);
+        if (prices.length > 0) rawPrice = Math.min(...prices);
+    }
+
     const inclusivePrice = hasTax ? Math.round(rawPrice * 1.19) : Math.round(rawPrice);
 
     const mapped = {
@@ -205,21 +219,21 @@ function mapV3ToStore(p: any) {
             currency_prefix: "$",
             price_range: null
         },
-        images: p.images.map((img: any) => ({
-            id: img.id,
-            src: img.src,
+        images: (p.images || []).map((img: any) => ({
+            id: img.id || 0,
+            src: img.src || 'https://via.placeholder.com/600x600?text=Sin+Imagen',
             alt: img.alt || p.name,
-            name: img.name
+            name: img.name || ""
         })),
-        attributes: p.attributes.map((attr: any) => ({
+        attributes: (p.attributes || []).map((attr: any) => ({
             id: attr.id,
             name: attr.name,
             slug: attr.slug,
-            terms: attr.options.map((opt: string, idx: number) => ({
+            terms: attr.options?.map((opt: string, idx: number) => ({
                 id: idx,
                 name: opt,
                 slug: normalizeSlug(opt)
-            }))
+            })) || []
         })),
         categories: p.categories?.map((cat: any) => ({
             id: cat.id,
