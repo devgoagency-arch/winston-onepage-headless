@@ -13,15 +13,18 @@ const WP_APP_PASS = import.meta.env.WP_APP_PASS || "fyWY ELGb lMsk XtlY y4Gy e18
 // SSR Safe base64 helper
 const safeBtoa = (str: string) => {
     try {
-        if (typeof window !== 'undefined' && window.btoa) return window.btoa(str);
-        if (typeof Buffer !== 'undefined') return Buffer.from(str).toString('base64');
-        return btoa(str); // Fallback
+        if (typeof btoa !== 'undefined') return btoa(str);
+        if (typeof (globalThis as any).Buffer !== 'undefined') {
+            return (globalThis as any).Buffer.from(str).toString('base64');
+        }
+        return "";
     } catch (e) {
+        console.error("safeBtoa error:", e);
         return "";
     }
 };
 
-const basicAuthHeader = `Basic ${safeBtoa(`${WP_APP_USER}:${WP_APP_PASS}`)}`;
+const wpAppAuthHeader = `Basic ${safeBtoa(`${WP_APP_USER}:${WP_APP_PASS}`)}`;
 
 // Sistema de Cache en Memoria (SSR & API)
 const cache: Record<string, { data: any, timestamp: number }> = {};
@@ -64,7 +67,6 @@ async function wcFetch(path: string, options: RequestInit = {}, retries = 3, del
                 ...options,
                 headers: {
                     'Accept': 'application/json',
-                    'Authorization': basicAuthHeader,
                     ...(options.headers || {})
                 }
             });
@@ -429,7 +431,7 @@ export async function getPageById(id: number | string) {
         const res = await fetch(`${wpBase}/pages/${id}`, {
             headers: {
                 'Accept': 'application/json',
-                'Authorization': basicAuthHeader
+                'Authorization': wpAppAuthHeader
             }
         });
 
@@ -459,7 +461,7 @@ export async function getMenu(slug: string) {
         const res = await fetch(`${wpBase}/menu/${slug}`, {
             headers: {
                 'Accept': 'application/json',
-                'Authorization': basicAuthHeader
+                'Authorization': wpAppAuthHeader
             }
         });
 
