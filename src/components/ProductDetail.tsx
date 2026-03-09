@@ -378,13 +378,17 @@ export default function ProductDetail({ initialProduct }: Props) {
     if (!product.variations || product.variations.length === 0) return true;
 
     return product.variations.some(variation => {
-      const vColor = variation.attributes.find(a =>
+      const vColor = (variation.attributes.find(a =>
         a.name.toLowerCase().includes('color') || a.name === 'Pa_selecciona-el-color'
-      )?.value.toLowerCase();
+      )?.value || variation.attributes.find(a =>
+        a.name.toLowerCase().includes('color') || a.name === 'Pa_selecciona-el-color'
+      )?.option || '').toLowerCase();
 
-      const vSize = variation.attributes.find(a =>
+      const vSize = (variation.attributes.find(a =>
         a.name.toLowerCase().includes('talla') || a.name === 'Pa_selecciona-una-talla'
-      )?.value.toLowerCase();
+      )?.value || variation.attributes.find(a =>
+        a.name.toLowerCase().includes('talla') || a.name === 'Pa_selecciona-una-talla'
+      )?.option || '').toLowerCase();
 
       const matchesColor = !color || vColor === color.toLowerCase();
       const matchesSize = !size || vSize === size.toLowerCase();
@@ -417,8 +421,8 @@ export default function ProductDetail({ initialProduct }: Props) {
     let productIdToCart = product.id;
     if (product.variations && product.variations.length > 0) {
       const selectedVar = product.variations.find(v => {
-        const vColor = v.attributes.find(a => a.name.toLowerCase().includes('color') || a.name === 'Pa_selecciona-el-color')?.value.toLowerCase();
-        const vSize = v.attributes.find(a => a.name.toLowerCase().includes('talla') || a.name === 'Pa_selecciona-una-talla')?.value.toLowerCase();
+        const vColor = (v.attributes.find(a => a.name.toLowerCase().includes('color') || a.name === 'Pa_selecciona-el-color')?.value || v.attributes.find(a => a.name.toLowerCase().includes('color') || a.name === 'Pa_selecciona-el-color')?.option || '').toLowerCase();
+        const vSize = (v.attributes.find(a => a.name.toLowerCase().includes('talla') || a.name === 'Pa_selecciona-una-talla')?.value || v.attributes.find(a => a.name.toLowerCase().includes('talla') || a.name === 'Pa_selecciona-una-talla')?.option || '').toLowerCase();
         return vColor === selectedColor.toLowerCase() && (!hasSize || vSize === selectedSize?.toLowerCase());
       });
       if (selectedVar) productIdToCart = selectedVar.id;

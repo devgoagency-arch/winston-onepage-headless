@@ -146,12 +146,14 @@ export async function getProductsPool() {
     }
 
     try {
-        // Use Store API for public product listing
-        const products = await wcFetch('/wc/store/v1/products?per_page=60&orderby=date&status=publish&stock_status=instock');
-        if (products) {
-            cache[cacheKey] = { data: products, timestamp: Date.now() };
+        // Use v3 API for reliable prices
+        const products = await wcFetch('/products?per_page=60&orderby=date&status=publish&stock_status=instock');
+        if (products && Array.isArray(products)) {
+            const mapped = products.map((p: any) => mapV3ToStore(p));
+            cache[cacheKey] = { data: mapped, timestamp: Date.now() };
+            return mapped;
         }
-        return products;
+        return [];
     } catch (error) {
         console.error("Error fetching products pool:", error);
         return [];
@@ -172,16 +174,36 @@ function mapV3ToStore(p: any) {
         // Ensure images is an array
         if (!p.images || !Array.isArray(p.images)) p.images = [];
 
-        // If price is "0", try to find a better one in price_range or other fields
-        if ((!p.prices.price || p.prices.price === "0") && p.prices.price_range) {
+        // The Store API returns prices in minor units (centavos).
+        // currency_minor_unit tells us the exponent (e.g., 2 means divide by 100).
+        // We normalize all prices to whole units and set currency_minor_unit to 0
+        // so that ProductCard doesn't divide again.
+        const minorUnit = p.prices?.currency_minor_unit || 0;
+        const divisor = Math.pow(10, minorUnit);
+
+        const normalizePriceStr = (val: string | undefined | null): string => {
+            if (!val || val === "0") return "0";
+            const num = Number(val);
+            if (isNaN(num)) return "0";
+            return Math.round(num / divisor).toString();
+        };
+
+        // If price is "0", try price_range first
+        let rawPrice = p.prices.price;
+        if ((!rawPrice || rawPrice === "0") && p.prices.price_range) {
             const min = p.prices.price_range.min_amount;
-            if (min && min !== "0") p.prices.price = min;
+            if (min && min !== "0") rawPrice = min;
         }
 
-        // Final fallback: if still "0", use regular_price
-        if ((!p.prices.price || p.prices.price === "0") && p.prices.regular_price && p.prices.regular_price !== "0") {
-            p.prices.price = p.prices.regular_price;
+        // Fallback to regular_price
+        if (!rawPrice || rawPrice === "0") {
+            rawPrice = p.prices.regular_price;
         }
+
+        p.prices.price = normalizePriceStr(rawPrice);
+        p.prices.regular_price = normalizePriceStr(p.prices.regular_price);
+        p.prices.sale_price = normalizePriceStr(p.prices.sale_price);
+        p.prices.currency_minor_unit = 0; // Already normalized
 
         return p;
     }
@@ -287,21 +309,32 @@ export async function getProductById(id: number | string) {
     if (cached) return cached;
 
     try {
-        // Prioritize Store API for public product data
-        const product = await wcFetch(`/wc/store/v1/products/${id}`);
+        // Use v3 API instead of Store API to get correct variable product prices
+        const product = await wcFetch(`/products/${id}`);
         if (!product) return null;
 
-        // Store API usually includes variations data directly or in a more processed format.
-        // If it's a variable product, ensure variations are properly mapped.
-        // The Store API response for a single product often includes `variations` as an array of IDs,
-        // and `_links.variations` for fetching them.
-        // However, for simplicity and consistency with the frontend, we'll assume `mapV3ToStore`
-        // can handle the Store API format directly or that the Store API provides enough.
-        // If specific variation details (like images per color) are needed,
-        // we might still need to fetch them separately if not fully embedded.
+        // For variable products, fetch variations to get real prices + images
+        if (product.type === 'variable' && product.id) {
+            const variations = await getProductVariations(product.id);
+            product.variations_data = variations;
 
-        // The Store API product object should already be in a suitable format,
-        // so mapV3ToStore will mostly act as a passthrough or minor adjustment.
+            // Build variation_images_map by color
+            if (variations.length > 0) {
+                const imgMap: Record<string, any[]> = {};
+                variations.forEach((v: any) => {
+                    const colorAttr = v.attributes?.find((a: any) =>
+                        a.name.toLowerCase().includes('color') || a.slug?.includes('color')
+                    );
+                    if (colorAttr?.option && v.image?.src) {
+                        const colorKey = colorAttr.option.toLowerCase().trim();
+                        if (!imgMap[colorKey]) imgMap[colorKey] = [];
+                        imgMap[colorKey].push({ src: v.image.src, alt: v.image.alt || '' });
+                    }
+                });
+                product.variation_images_map = imgMap;
+            }
+        }
+
         const result = mapV3ToStore(product);
         setCached(cacheKey, result);
         return result;
@@ -359,20 +392,52 @@ export async function getChildCategories(parentId: number) {
 /**
  * Fetch Product by Slug with all its variations in one go!
  */
+/**
+ * Fetch variations for a variable product (v3 API, authenticated)
+ */
+async function getProductVariations(productId: number) {
+    try {
+        const vars = await wcFetch(`/products/${productId}/variations?per_page=100`);
+        return Array.isArray(vars) ? vars : [];
+    } catch (e) {
+        return [];
+    }
+}
+
 export async function getProductBySlug(slug: string) {
     const cacheKey = `p_slug_${slug}`;
     const cached = getCached(cacheKey);
     if (cached) return cached;
 
     try {
-        // Prioritize Store API for public product data
-        const products = await wcFetch(`/wc/store/v1/products?slug=${slug}`);
+        // Use v3 API (authenticated) to get correct price data
+        const products = await wcFetch(`/products?slug=${slug}&status=publish`);
         if (!products || products.length === 0) return null;
 
         const product = products[0];
 
-        // The Store API product object should already be in a suitable format,
-        // so mapV3ToStore will mostly act as a passthrough or minor adjustment.
+        // For variable products, fetch variations to get real prices + images
+        if (product.type === 'variable' && product.id) {
+            const variations = await getProductVariations(product.id);
+            product.variations_data = variations;
+
+            // Build variation_images_map by color
+            if (variations.length > 0) {
+                const imgMap: Record<string, any[]> = {};
+                variations.forEach((v: any) => {
+                    const colorAttr = v.attributes?.find((a: any) =>
+                        a.name.toLowerCase().includes('color') || a.slug?.includes('color')
+                    );
+                    if (colorAttr?.option && v.image?.src) {
+                        const colorKey = colorAttr.option.toLowerCase().trim();
+                        if (!imgMap[colorKey]) imgMap[colorKey] = [];
+                        imgMap[colorKey].push({ src: v.image.src, alt: v.image.alt || '' });
+                    }
+                });
+                product.variation_images_map = imgMap;
+            }
+        }
+
         const result = mapV3ToStore(product);
         setCached(cacheKey, result);
         return result;
@@ -401,11 +466,11 @@ export async function getProductsByCategory(
 
         const fetchCategory = async (id: string) => {
             try {
-                // Use Public Store API for products list
-                const data = await wcFetch(`/wc/store/v1/products?category=${id}&per_page=${perPage}&page=${page}&orderby=${orderBy}&order=${order}${onSale ? '&on_sale=true' : ''}${attribute ? `&attribute=${attribute}` : ''}${attributeTerm ? `&attribute_term=${attributeTerm}` : ''}`);
+                // Use authenticated v3 API — the public Store API returns price:"0" for variable products
+                const data = await wcFetch(`/products?category=${id}&per_page=${perPage}&page=${page}&orderby=${orderBy}&order=${order}&status=publish${onSale ? '&on_sale=true' : ''}${attribute ? `&attribute=${attribute}` : ''}${attributeTerm ? `&attribute_term=${attributeTerm}` : ''}`);
                 return Array.isArray(data) ? data : [];
             } catch (err: any) {
-                console.error(`[getProductsByCategory] Public cat ${id} failed:`, err.message);
+                console.error(`[getProductsByCategory] v3 cat ${id} failed:`, err.message);
                 return [];
             }
         };
@@ -419,7 +484,7 @@ export async function getProductsByCategory(
                 for (const p of list) {
                     if (p && p.id && !seenIds.has(p.id)) {
                         seenIds.add(p.id);
-                        combined.push(mapV3ToStore(p)); // Already formatted correctly usually by Store API
+                        combined.push(mapV3ToStore(p));
                     }
                 }
             }

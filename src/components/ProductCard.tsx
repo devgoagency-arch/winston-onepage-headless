@@ -404,7 +404,7 @@ export default function ProductCard({ product, isSelected, onSelectionToggle, on
                                             currentVariations.some((v: any) =>
                                                 v.attributes.some((a: any) =>
                                                     (a.name.toLowerCase().includes('color') || a.name === 'Pa_selecciona-el-color') &&
-                                                    a.value.toLowerCase() === term.slug.toLowerCase()
+                                                    (a.value || a.option || '').toLowerCase() === term.slug.toLowerCase()
                                                 )
                                             )
                                         );
