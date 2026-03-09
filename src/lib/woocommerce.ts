@@ -377,12 +377,21 @@ export async function getChildCategories(parentId: number) {
     if (cached) return cached;
 
     try {
-        // Use Store API for public category listing
-        const categories = await wcFetch(`/wc/store/v1/products/categories?parent=${parentId}&per_page=50`);
-        if (!categories) return [];
+        // Use v3 authenticated API — public Store API was not returning subcategories reliably
+        const categories = await wcFetch(`/products/categories?parent=${parentId}&per_page=50`);
+        if (!categories || !Array.isArray(categories)) return [];
 
-        setCached(cacheKey, categories);
-        return categories;
+        // Normalize: map v3 fields to the shape the components expect (name, slug, id, image)
+        const normalized = categories.map((c: any) => ({
+            id: c.id,
+            name: c.name,
+            slug: c.slug,
+            count: c.count,
+            image: c.image ? { src: c.image.src, alt: c.image.alt || c.name } : null,
+        }));
+
+        setCached(cacheKey, normalized);
+        return normalized;
     } catch (error) {
         console.error(`Error fetching child categories for parent ${parentId}:`, error);
         return [];

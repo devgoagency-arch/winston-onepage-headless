@@ -3,8 +3,7 @@
 ---
 
 <section id="inicio" class="hero">
-    <div class="video-background">
-        <!-- New Background Image (Fallback for video) -->
+    <div class="image-background">
         <img
             src="/images/banner-winston-and-harry-maletas.png"
             alt="Winston & Harry - Ropa y Zapatos de Cuero"
@@ -12,16 +11,6 @@
             loading="eager"
             fetchpriority="high"
         />
-        <video
-            autoplay
-            muted
-            loop
-            playsinline
-            poster="/images/banner-winston-and-harry-maletas.png"
-            preload="metadata"
-        >
-            <source src="/videos/hero-video.mp4" type="video/mp4" />
-        </video>
         <div class="overlay"></div>
     </div>
 
@@ -63,7 +52,7 @@
         top: 0;
     }
 
-    .video-background {
+    .image-background {
         position: absolute;
         top: 0;
         left: 0;
@@ -89,13 +78,7 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        z-index: -1;
-    }
-
-    .video-background video {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+        z-index: 0;
     }
 
     .hero-content {

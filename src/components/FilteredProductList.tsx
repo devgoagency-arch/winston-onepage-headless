@@ -169,6 +169,14 @@ const FilteredProductList: React.FC<FilteredProductListProps> = ({
             const found = SORT_OPTIONS.find(o => o.key === sortParam);
             if (found) setSort(found);
         }
+
+        // Auto-fetch if SSR returned no products (e.g. stale cache or timeout)
+        const ssrProducts = Array.isArray(initialProducts) ? initialProducts : [];
+        if (ssrProducts.length === 0 && category?.id) {
+            const activeSort = sortParam ? (SORT_OPTIONS.find(o => o.key === sortParam) || SORT_OPTIONS[0]) : SORT_OPTIONS[0];
+            fetchBaseProducts(activeSort);
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const fetchBaseProducts = async (currentSort: any) => {
@@ -297,7 +305,8 @@ const FilteredProductList: React.FC<FilteredProductListProps> = ({
         window.history.pushState({}, '', url.toString());
     }, [selectedColors, selectedTallas, selectedSubcats, selectedTags, sort]);
 
-    const catNameUpper = (category?.name || "").toUpperCase();
+    const isZapatos = (category?.slug || "").toLowerCase() === 'zapatos';
+    const displayCategoryTitle = isZapatos ? 'TODOS LOS ZAPATOS' : 'TODOS LOS PRODUCTOS';
 
     return (
         <>
@@ -306,7 +315,7 @@ const FilteredProductList: React.FC<FilteredProductListProps> = ({
                 <div className="filter-bar">
                     <div className="filter-left">
                         <div className="category-dropdown">
-                            <span className="current-category">TODOS LOS {catNameUpper}</span>
+                            <span className="current-category">{displayCategoryTitle}</span>
                             <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" strokeWidth="1.5" fill="none" className="dropdown-icon">
                                 <polyline points="6 9 12 15 18 9"></polyline>
                             </svg>
