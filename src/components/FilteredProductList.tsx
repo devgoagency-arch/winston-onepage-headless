@@ -394,28 +394,36 @@ const FilteredProductList: React.FC<FilteredProductListProps> = ({
 
             {/* Grid de Productos */}
             <section className={`products-grid-container container-full ${loading ? 'loading' : ''}`}>
-                {loading && <div className="loading-overlay">Cargando...</div>}
-                {error && <div className="error-msg">{error}</div>}
-
-                {filteredProducts && filteredProducts.length > 0 ? (
-                    <div className="grid-4x3">
-                        {filteredProducts.map((product) => (
-                            <ProductCard key={product.id} product={product} />
-                        ))}
-                    </div>
-                ) : !loading && !error && (
-                    <div className="empty-state">
-                        <div className="empty-icon">
-                            <svg viewBox="0 0 24 24" width="48" height="48" stroke="#ccc" strokeWidth="1" fill="none">
-                                <circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle>
-                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                            </svg>
-                        </div>
-                        <h2>No se encontraron productos</h2>
-                        <p>Intenta ajustar tus filtros o selecciona una categoría diferente.</p>
-                        <a href="/tienda" className="btn-outline">Ver toda la tienda</a>
+                {loading && (
+                    <div className="loading-indicator">
+                        <span className="spinner"></span> Cargando...
                     </div>
                 )}
+                {error && <div className="error-msg">{error}</div>}
+
+                <div className="grid-wrapper">
+                    {loading ? (
+                        <div className="grid-loading-placeholder"></div>
+                    ) : filteredProducts && filteredProducts.length > 0 ? (
+                        <div className="grid-4x3">
+                            {filteredProducts.map((product) => (
+                                <ProductCard key={product.id} product={product} />
+                            ))}
+                        </div>
+                    ) : !error && (
+                        <div className="empty-state">
+                            <div className="empty-icon">
+                                <svg viewBox="0 0 24 24" width="48" height="48" stroke="#ccc" strokeWidth="1" fill="none">
+                                    <circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle>
+                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                                </svg>
+                            </div>
+                            <h2>No se encontraron productos</h2>
+                            <p>Intenta ajustar tus filtros o selecciona una categoría diferente.</p>
+                            <a href="/tienda" className="btn-outline">Ver toda la tienda</a>
+                        </div>
+                    )}
+                </div>
             </section>
 
             {/* Drawer */}
@@ -569,22 +577,41 @@ const FilteredProductList: React.FC<FilteredProductListProps> = ({
                 .filter-btn { display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1.2rem; background: transparent; border: 1px solid #e0e0e0; font-family: var(--font-paragraphs); font-size: 0.8rem; color: #333; cursor: pointer; transition: all 0.2s; }
                 .filter-btn:hover { border-color: #121212; background: #f9f9f9; }
 
-                .products-grid-container { position: relative; min-height: 400px; }
-                .loading-overlay { 
-                    position: absolute; 
-                    top: 0; left: 0; right: 0; bottom: 0; 
-                    background: rgba(255,255,255,0.7); 
-                    backdrop-filter: blur(2px); 
-                    z-index: 50; 
-                    display: flex; 
-                    align-items: center; 
-                    justify-content: center; 
-                    font-family: var(--font-titles); 
-                    letter-spacing: 2px; 
-                    color: var(--color-green);
-                    animation: fadeInOverlay 0.3s ease;
+                .products-grid-container { position: relative; min-height: 400px; display: flex; flex-direction: column; }
+                .grid-wrapper { flex-grow: 1; }
+                .grid-loading-placeholder { height: 100%; min-height: 400px; width: 100%; }
+                
+                .loading-indicator {
+                    position: absolute;
+                    top: 100px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    z-index: 10;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    background: #fff;
+                    padding: 12px 24px;
+                    border: 1px solid #eee;
+                    border-radius: 30px;
+                    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+                    font-family: var(--font-paragraphs);
+                    font-size: 0.9rem;
+                    color: var(--color-green, #155338);
+                    animation: fadeInIndicator 0.3s ease;
                 }
-                @keyframes fadeInOverlay { from { opacity: 0; } to { opacity: 1; } }
+                
+                .spinner {
+                    width: 18px;
+                    height: 18px;
+                    border: 2px solid rgba(21, 83, 56, 0.2);
+                    border-top-color: var(--color-green, #155338);
+                    border-radius: 50%;
+                    animation: spin 0.8s linear infinite;
+                }
+
+                @keyframes fadeInIndicator { from { opacity: 0; transform: translate(-50%, 10px); } to { opacity: 1; transform: translate(-50%, 0); } }
+                @keyframes spin { 100% { transform: rotate(360deg); } }
 
                 .loading { pointer-events: none; }
                 
