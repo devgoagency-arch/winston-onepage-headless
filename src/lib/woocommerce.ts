@@ -420,7 +420,7 @@ export async function getProductBySlug(slug: string) {
 
     try {
         // Use v3 API (authenticated) to get correct price data
-        const products = await wcFetch(`/products?slug=${slug}&status=publish`);
+        const products = await wcFetch(`/products?slug=${slug}&status=publish&stock_status=instock`);
         if (!products || products.length === 0) return null;
 
         const product = products[0];
@@ -476,7 +476,7 @@ export async function getProductsByCategory(
         const fetchCategory = async (id: string) => {
             try {
                 // Use authenticated v3 API — the public Store API returns price:"0" for variable products
-                const data = await wcFetch(`/products?category=${id}&per_page=${perPage}&page=${page}&orderby=${orderBy}&order=${order}&status=publish${onSale ? '&on_sale=true' : ''}${attribute ? `&attribute=${attribute}` : ''}${attributeTerm ? `&attribute_term=${attributeTerm}` : ''}`);
+                const data = await wcFetch(`/products?category=${id}&per_page=${perPage}&page=${page}&orderby=${orderBy}&order=${order}&status=publish&stock_status=instock${onSale ? '&on_sale=true' : ''}${attribute ? `&attribute=${attribute}` : ''}${attributeTerm ? `&attribute_term=${attributeTerm}` : ''}`);
                 return Array.isArray(data) ? data : [];
             } catch (err: any) {
                 console.error(`[getProductsByCategory] v3 cat ${id} failed:`, err.message);

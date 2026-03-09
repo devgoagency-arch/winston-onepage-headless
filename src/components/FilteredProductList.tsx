@@ -681,7 +681,7 @@ function getColorHex(slug: string | undefined): string {
     const s = slug.toLowerCase();
     const colors: Record<string, string> = {
         'negro': '#121212', 'black': '#121212',
-        'cafe': '#6F4E37', 'brown': '#6F4E37', 'chocolate': '#3E2723',
+        'cafe': '#6F4E37', 'café': '#6F4E37', 'marron': '#6F4E37', 'marrón': '#6F4E37', 'brown': '#6F4E37', 'chocolate': '#3E2723',
         'miel': '#D4A373', 'honey': '#D4A373',
         'azul': '#1B3F8B', 'blue': '#1B3F8B', 'marino': '#000080',
         'verde': '#155338', 'green': '#155338',
@@ -692,7 +692,11 @@ function getColorHex(slug: string | undefined): string {
         'blanco': '#FFFFFF', 'white': '#FFFFFF',
         'gris': '#888888', 'gray': '#888888',
         'beige': '#F5F5DC', 'arena': '#E2CBA4',
-        'tan': '#D2B48C', 'camel': '#C19A6B'
+        'tan': '#D2B48C', 'camel': '#C19A6B',
+        'rosa': '#E91E63', 'pink': '#E91E63',
+        'mostaza': '#E1AD01', 'mustard': '#E1AD01',
+        'morado': '#9C27B0', 'purple': '#9C27B0', 'violeta': '#7B1FA2',
+        'naranja': '#FF6600', 'orange': '#FF6600', 'naranaja': '#FF6600'
     };
 
     if (colors[s]) return colors[s];
@@ -702,6 +706,8 @@ function getColorHex(slug: string | undefined): string {
     // Intento de detección por palabras clave en nombres compuestos
     if (s.includes('negro')) return colors['negro'];
     if (s.includes('cafe')) return colors['cafe'];
+    if (s.includes('café')) return colors['café'];
+    if (s.includes('marron') || s.includes('marrón')) return colors['marron'];
     if (s.includes('azul')) return colors['azul'];
     if (s.includes('miel')) return colors['miel'];
     if (s.includes('tabaco')) return colors['tabaco'];
@@ -711,6 +717,12 @@ function getColorHex(slug: string | undefined): string {
     if (s.includes('gris')) return colors['gris'];
     if (s.includes('vino')) return colors['vino'];
     if (s.includes('chocolate')) return colors['chocolate'];
+    if (s.includes('rosa')) return colors['rosa'];
+    if (s.includes('mostaza')) return colors['mostaza'];
+    if (s.includes('morado')) return colors['morado'];
+    if (s.includes('purple')) return colors['morado'];
+    if (s.includes('naranja')) return colors['naranja'];
+    if (s.includes('orange')) return colors['naranja'];
 
     return '#ddd';
 }

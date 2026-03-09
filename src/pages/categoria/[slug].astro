@@ -23,6 +23,13 @@ const tallaParam = Astro.url.searchParams.get("talla") || null;
 // Mapeo del param de URL a los parámetros de la API WooCommerce
 const SORT_OPTIONS = [
     {
+        key: "recientes",
+        label: "Más recientes",
+        orderBy: "modified",
+        order: "desc",
+        onSale: false,
+    },
+    {
         key: "destacado",
         label: "Destacado",
         orderBy: "popularity",
@@ -233,7 +240,7 @@ const categoryDesc = category?.description?.replace(/<[^>]+>/g, "") || "";
     .breadcrumbs-container {
         max-width: var(--container-max-width);
         margin: 0 auto;
-        padding: 4rem 2rem 1.5rem; /* Ajustado para el header fixed */
+        padding: 2rem 2rem 1.5rem; /* Ajustado para el header fixed */
     }
 
     .breadcrumbs {

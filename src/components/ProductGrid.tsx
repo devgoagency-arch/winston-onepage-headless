@@ -57,7 +57,7 @@ export default function ProductGrid() {
         // Hacemos las peticiones en paralelo
         const results = await Promise.all(
           CATEGORIES.map(async (cat) => {
-            const res = await fetch(`/api/products?category=${cat.id}&orderby=popularity`);
+            const res = await fetch(`/api/products?category=${cat.id}&orderby=modified`);
             if (!res.ok) return { id: cat.id, data: [] };
             const data: Product[] = await res.json();
 
