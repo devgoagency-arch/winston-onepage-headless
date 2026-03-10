@@ -1,4 +1,5 @@
 import type { APIRoute } from 'astro';
+import crypto from 'node:crypto';
 
 export const GET: APIRoute = async () => {
     return new Response(JSON.stringify({ status: "CONECTADO", message: "Listo para recibir Webhooks de Winston" }), {
@@ -10,33 +11,36 @@ export const GET: APIRoute = async () => {
 export const POST: APIRoute = async ({ request }) => {
     try {
         const topic = request.headers.get('x-wc-webhook-topic');
+        const signature = request.headers.get('x-wc-webhook-signature');
         const userAgent = request.headers.get('user-agent');
-        const url = new URL(request.url);
-        const origin = url.origin;
+        const secret = import.meta.env.WC_WEBHOOK_SECRET;
         
-        console.log(`[Sync Webhook] RECIBIDO: ${request.method} ${url.pathname}`);
-        console.log(`[Sync Webhook] Headers - Topic: ${topic}, UA: ${userAgent}`);
+        const rawBody = await request.text();
+        
+        // 1. Verificación de Seguridad (HMAC)
+        if (secret && signature) {
+            const hmac = crypto.createHmac('sha256', secret);
+            const digest = hmac.update(rawBody).digest('base64');
+            
+            if (digest !== signature) {
+                console.error('[Sync Webhook] Firma inválida detectada.');
+                return new Response(JSON.stringify({ error: "Invalid signature" }), { status: 401 });
+            }
+        }
 
         let body;
         try {
-            const rawBody = await request.text();
-            console.log(`[Sync Webhook] Raw Body Length: ${rawBody.length}`);
             body = JSON.parse(rawBody);
         } catch (err: any) {
             console.log(`[Sync Webhook] Error parseando JSON: ${err.message}`);
             body = {}; 
         }
 
-        console.log(`[Sync Webhook] Body keys: ${Object.keys(body).join(', ')}`);
+        console.log(`[Sync Webhook] RECIBIDO Topic: ${topic} | Body: ${Object.keys(body).join(', ')}`);
 
-        // Handshake inicial de WooCommerce (obligatorio para vincular)
-        if (topic === 'webhook.test' || topic === 'action.ping' || (!body.slug && !body.id)) {
-            console.log(`[Sync Webhook] Respondiendo Handshake OK para: ${topic}`);
-            return new Response(JSON.stringify({ 
-                success: true, 
-                message: "Handshake OK",
-                received_topic: topic 
-            }), { 
+        // Handshake inicial de WooCommerce
+        if (topic === 'webhook.test' || topic === 'action.ping') {
+            return new Response(JSON.stringify({ success: true, message: "Handshake OK" }), { 
                 status: 200,
                 headers: { "Content-Type": "application/json" }
             });
@@ -44,33 +48,51 @@ export const POST: APIRoute = async ({ request }) => {
 
         const slug = body.slug;
         const id = body.id;
-        console.log(`[Sync Webhook] Procesando actualización: Slug=${slug}, ID=${id}`);
-
-        const routesToRefresh = [`${origin}/`];
-        if (slug) routesToRefresh.push(`${origin}/productos/${slug}`);
-
-        if (body.categories && Array.isArray(body.categories)) {
-            body.categories.forEach((cat: any) => {
-                if (cat.slug) routesToRefresh.push(`${origin}/categoria/${cat.slug}`);
+        
+        if (!slug && !id) {
+            return new Response(JSON.stringify({ success: false, message: "No post identifier found" }), { 
+                status: 200,
+                headers: { "Content-Type": "application/json" }
             });
         }
 
-        console.log(`[Sync Webhook] Intentando refrescar rutas: ${routesToRefresh.join(', ')}`);
+        const origin = new URL(request.url).origin;
+        const pathsToRevalidate = ['/'];
+        if (slug) pathsToRevalidate.push(`/productos/${slug}`);
 
-        // Forzamos regeneración en segundo plano
-        Promise.allSettled(
-            routesToRefresh.map(u => fetch(u, { 
-                method: 'GET', 
-                headers: { 'Cache-Control': 'no-cache' } 
-            }))
-        ).then(results => {
-            const successCount = results.filter(r => r.status === 'fulfilled').length;
-            console.log(`[Sync Webhook] Refresco completado: ${successCount}/${routesToRefresh.length} exitosos`);
-        }).catch(e => console.error('[Sync Webhook] Error en fetch de refresco:', e));
+        if (body.categories && Array.isArray(body.categories)) {
+            body.categories.forEach((cat: any) => {
+                if (cat.slug) pathsToRevalidate.push(`/categoria/${cat.slug}`);
+            });
+        }
+
+        console.log(`[Sync Webhook] Revalidando rutas: ${pathsToRevalidate.join(', ')}`);
+
+        // 2. Revalidación On-Demand (Vercel)
+        // Intentamos usar el bypass token de revalidación si está configurado
+        const revalidateToken = import.meta.env.VERCEL_REVALIDATE_TOKEN;
+        
+        if (revalidateToken) {
+            Promise.allSettled(
+                pathsToRevalidate.map(path => {
+                    const purgeUrl = `${origin}${path}${path.includes('?') ? '&' : '?'}revalidate=${revalidateToken}`;
+                    return fetch(purgeUrl, { method: 'GET' });
+                })
+            ).then(() => console.log('[Sync Webhook] Revalidación vía token enviada.'));
+        } else {
+            // Fallback: Si no hay token, al menos intentamos el fetch simple (menos efectivo en Edge)
+            Promise.allSettled(
+                pathsToRevalidate.map(path => fetch(`${origin}${path}`, { 
+                    method: 'GET',
+                    headers: { 'x-prerender-revalidate': '1' } 
+                }))
+            );
+        }
 
         return new Response(JSON.stringify({ 
             success: true, 
-            refreshed: routesToRefresh.length 
+            topic,
+            revalidated: pathsToRevalidate.length 
         }), { 
             status: 200,
             headers: { "Content-Type": "application/json" }
@@ -78,9 +100,6 @@ export const POST: APIRoute = async ({ request }) => {
 
     } catch (e: any) {
         console.error('[Sync Webhook Error Critico]', e.message);
-        return new Response(JSON.stringify({ error: e.message }), { 
-            status: 200, // Seguimos devolviendo 200 para evitar que WooCommerce desactive el hook
-            headers: { "Content-Type": "application/json" }
-        });
+        return new Response(JSON.stringify({ error: e.message }), { status: 200 });
     }
 };

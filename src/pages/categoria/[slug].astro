@@ -12,7 +12,7 @@ import {
 import FilteredProductList from "../../components/FilteredProductList";
 
 export const isr = {
-    expiration: 31536000, // 1 año (revalidación bajo demanda)
+    expiration: 86400, // 24 horas (revalidación bajo demanda)
 };
 
 const { slug } = Astro.params;

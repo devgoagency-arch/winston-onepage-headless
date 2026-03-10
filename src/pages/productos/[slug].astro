@@ -6,7 +6,7 @@ import ProductDetail from "../../components/ProductDetail";
 import { getProductBySlug, getProductsPool } from "../../lib/woocommerce";
 
 export const isr = {
-    expiration: 31536000, // 1 año (la revalidación es ahora bajo demanda vía Webhook)
+    expiration: 86400, // 24 horas (revalidación forzada vía Webhook)
 };
 
 const { slug } = Astro.params;

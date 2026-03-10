@@ -3,9 +3,9 @@
  * Using ck/cs credentials for full access and better data processing.
  */
 
-const CK = import.meta.env.WC_CONSUMER_KEY || "ck_28661c4aff0fc02b97a607862895fc40a187e867";
-const CS = import.meta.env.WC_CONSUMER_SECRET || "cs_deb208f164b96724a90b64bf0f762a713251b7a2";
-const WP_BASE = (import.meta.env.WC_URL || "https://tienda.winstonandharrystore.com").replace(/\/$/, "");
+const CK = import.meta.env.WC_CONSUMER_KEY;
+const CS = import.meta.env.WC_CONSUMER_SECRET;
+const WP_BASE = (import.meta.env.WC_URL || "").replace(/\/$/, "");
 const BASE_URL = `${WP_BASE}/wp-json/wc/v3`;
 const STORE_URL = `${WP_BASE}/wp-json/wc/store/v1`;
 
