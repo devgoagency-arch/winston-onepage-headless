@@ -1,11 +1,8 @@
 import type { APIRoute } from 'astro';
-import crypto from 'node:crypto';
+import crypto from 'crypto';
 
-/**
- * Endpoint para Revalidación Bajo Demanda (On-Demand Revalidation)
- */
 export const GET: APIRoute = async () => {
-    return new Response(JSON.stringify({ message: "Revalidate endpoint is live. Use POST with WooCommerce webhooks." }), {
+    return new Response(JSON.stringify({ message: "Revalidate endpoint is live." }), {
         status: 200,
         headers: { "Content-Type": "application/json" }
     });
@@ -15,15 +12,24 @@ export const POST: APIRoute = async ({ request }) => {
     try {
         const bodyText = await request.text();
         const signature = request.headers.get('x-wc-webhook-signature');
+        const topic = request.headers.get('x-wc-webhook-topic');
         const secret = import.meta.env.WC_WEBHOOK_SECRET || 'winston_revalidate_2024';
 
-        // Verificación de firma HMAC-SHA256
+        // 1. Responder con éxito al "Ping" de prueba de WooCommerce
+        if (topic === 'webhook.test' || topic === 'action.ping') {
+            console.log('[Webhook] Ping de prueba recibido con éxito');
+            return new Response(JSON.stringify({ message: 'Ping successful' }), { status: 200 });
+        }
+
+        // 2. Verificación de firma (Solo si hay firma presente)
         if (signature) {
             const hmac = crypto.createHmac('sha256', secret);
             const digest = hmac.update(bodyText).digest('base64');
             
             if (digest !== signature) {
-                console.error('[Webhook Revalidate] Firma inválida');
+                console.error('[Webhook] Firma inválida detectada');
+                // Devolvemos 200 en lugar de 401/403 durante la depuración si es necesario, 
+                // pero por ahora probemos con 401 para ser correctos.
                 return new Response(JSON.stringify({ message: 'Invalid signature' }), { status: 401 });
             }
         }
