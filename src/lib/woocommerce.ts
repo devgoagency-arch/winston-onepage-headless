@@ -3,11 +3,17 @@
  * Using ck/cs credentials for full access and better data processing.
  */
 
+const WC_URL_ENV = import.meta.env.WC_URL || import.meta.env.WP_URL || "https://tienda.winstonandharrystore.com";
 const CK = import.meta.env.WC_CONSUMER_KEY;
 const CS = import.meta.env.WC_CONSUMER_SECRET;
-const WP_BASE = (import.meta.env.WC_URL || "").replace(/\/$/, "");
+
+const WP_BASE = WC_URL_ENV.replace(/\/$/, "");
 const BASE_URL = `${WP_BASE}/wp-json/wc/v3`;
 const STORE_URL = `${WP_BASE}/wp-json/wc/store/v1`;
+
+if (!CK || !CS) {
+    console.error("[WC API] CRÍTICO: Faltan WC_CONSUMER_KEY o WC_CONSUMER_SECRET en las variables de entorno.");
+}
 
 
 // SSR Safe base64 helper
