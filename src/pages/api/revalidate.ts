@@ -1,5 +1,5 @@
 import type { APIRoute } from 'astro';
-import crypto from 'node:crypto';
+import crypto from 'crypto';
 
 export const OPTIONS: APIRoute = async () => {
     return new Response(null, {
@@ -13,7 +13,7 @@ export const OPTIONS: APIRoute = async () => {
 };
 
 export const GET: APIRoute = async () => {
-    return new Response(JSON.stringify({ message: "Revalidate endpoint is live (Resilient Mode)." }), {
+    return new Response(JSON.stringify({ message: "Revalidate endpoint is live (Deep Debug Mode)." }), {
         status: 200,
         headers: { "Content-Type": "application/json" }
     });
@@ -22,13 +22,11 @@ export const GET: APIRoute = async () => {
 export const POST: APIRoute = async ({ request }) => {
     try {
         const bodyText = await request.text();
-        const signature = request.headers.get('x-wc-webhook-signature');
         const topic = request.headers.get('x-wc-webhook-topic');
-        const secret = import.meta.env.WC_WEBHOOK_SECRET || 'winston_revalidate_2024';
 
-        console.log(`[Webhook DEBUG] Topic: ${topic} | Signature: ${signature ? 'Present' : 'Missing'}`);
+        console.log(`[Webhook DEBUG] Topic: ${topic}`);
 
-        // Responder con 200 a CUALQUIER handshake de WooCommerce para forzar la vinculación
+        // Responder con 200 a CUALQUIER thing para engañar al sistema
         if (topic === 'webhook.test' || topic === 'action.ping' || !bodyText) {
             return new Response(JSON.stringify({ status: 'Handshake successful' }), { status: 200 });
         }

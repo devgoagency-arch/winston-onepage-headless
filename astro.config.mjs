@@ -10,6 +10,7 @@ export default defineConfig({
   adapter: vercel({
     maxDuration: 300
   }),
+  trailingSlash: 'ignore',
   prefetch: {
     prefetchAll: true,
     defaultStrategy: 'hover'
