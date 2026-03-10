@@ -1,36 +1,54 @@
 import type { APIRoute } from 'astro';
 
-// SOPORTE PARA NAVEGADORES Y PRUEBAS CORS
-export const OPTIONS: APIRoute = async () => {
-    return new Response(null, {
-        status: 204,
-        headers: {
-            'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-            'Access-Control-Allow-Headers': 'Content-Type, X-WC-Webhook-Topic, X-WC-Webhook-Signature'
-        }
-    });
-};
-
-// SOPORTE PARA ENTRAR DESDE EL NAVEGADOR (PÁGINA VIVA)
 export const GET: APIRoute = async () => {
-    return new Response(JSON.stringify({ status: "ALIVE", mode: "Ready for WooCommerce" }), {
+    return new Response(JSON.stringify({ status: "RESILIENT", mode: "Ready for WooCommerce" }), {
         status: 200,
         headers: { "Content-Type": "application/json" }
     });
 };
 
-// RECEPTOR DE WOOCOMMERCE (TOTALMENTE ABIERTO PARA VINCULACIÓN)
 export const POST: APIRoute = async ({ request }) => {
-    console.log('[Sync] Petición recibida de WooCommerce');
-    
-    // Devolvemos 200 OK inmediatamente. 
-    // Esto fuerza a WooCommerce a aceptar la URL pase lo que pase.
-    return new Response(JSON.stringify({ 
-        success: true, 
-        message: "Winston Sync Active" 
-    }), { 
-        status: 200,
-        headers: { 'Content-Type': 'application/json' }
-    });
+    try {
+        const body = await request.json();
+        const slug = body.slug;
+        const topic = request.headers.get('x-wc-webhook-topic');
+        const url = new URL(request.url);
+        const origin = url.origin;
+
+        console.log(`[Sync] Hook received. Topic: ${topic}. Slug: ${slug}`);
+
+        // Aceptar handshake inicial
+        if (topic === 'webhook.test' || topic === 'action.ping') {
+            return new Response(JSON.stringify({ message: "Handshake success" }), { status: 200 });
+        }
+
+        if (slug) {
+            // Revalida el producto y el home
+            const routesToRefresh = [`${origin}/productos/${slug}`, `${origin}/`];
+            
+            // Si hay categorías vinculadas
+            if (body.categories && Array.isArray(body.categories)) {
+                body.categories.forEach((cat: any) => {
+                    if (cat.slug) routesToRefresh.push(`${origin}/categoria/${cat.slug}`);
+                });
+            }
+
+            console.log(`[Sync] Triggering revalidation for ${routesToRefresh.length} routes...`);
+
+            // Ejecución en segundo plano para no demorar a WooCommerce
+            Promise.allSettled(
+                routesToRefresh.map(targetUrl => fetch(targetUrl, {
+                    method: 'GET',
+                    headers: { 'Cache-Control': 'no-cache', 'User-Agent': 'Winston-Sync-Force' }
+                }))
+            ).catch(err => console.error('[Sync] Refresh error:', err));
+        }
+
+        return new Response(JSON.stringify({ success: true }), { status: 200 });
+
+    } catch (e: any) {
+        console.error('[Sync Error]', e.message);
+        // Retornar 200 siempre para que WC dé por válido el endpoint
+        return new Response(JSON.stringify({ error: e.message }), { status: 200 });
+    }
 };
