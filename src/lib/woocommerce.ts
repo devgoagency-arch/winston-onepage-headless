@@ -353,11 +353,8 @@ export async function getCategoryBySlug(slug: string) {
     if (cached) return cached;
 
     try {
-        // Use public WordPress Taxonomy API (product_cat)
-        const res = await fetch(`${WP_BASE}/wp-json/wp/v2/product_cat?slug=${slug}`);
-        if (!res.ok) throw new Error(`WP Category Error: ${res.status}`);
-
-        const categories = await res.json();
+        // Use WooCommerce API to get category data including its image
+        const categories = await wcFetch(`/products/categories?slug=${slug}`);
         if (!categories || categories.length === 0) return null;
 
         setCached(cacheKey, categories[0]);

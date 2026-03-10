@@ -56,27 +56,26 @@ export const GET: APIRoute = async ({ request }) => {
         console.log(`Iniciando visita a ${allUrlsToWarm.length} enlaces en paralelo total...`);
 
         // 4. Ejecutamos las visitas en lotes MUY controlados para no saturar WordPress
-        const CHUNK_SIZE = 6;
+        const CHUNK_SIZE = 2; // Reducido para proteger la DB
         const results = [];
 
         for (let i = 0; i < allUrlsToWarm.length; i += CHUNK_SIZE) {
             const chunk = allUrlsToWarm.slice(i, i + CHUNK_SIZE);
 
-            if (i % (CHUNK_SIZE * 5) === 0) {
-                console.log(`Procesando lote ${i} de ${allUrlsToWarm.length}...`);
+            if (i % 10 === 0) {
+                console.log(`[Cache Warmer] Lote ${i}/${allUrlsToWarm.length}.`);
             }
 
             const chunkResults = await Promise.allSettled(
                 chunk.map(url => fetch(url, {
-                    method: 'HEAD',
-                    headers: { 'User-Agent': 'Vercel-Cache-Warmer' }
+                    method: 'GET',
+                    headers: { 'User-Agent': 'Batch-Stabilizer' }
                 }))
             );
             results.push(...chunkResults);
 
-            // Pausa más moderada para no saturar el SSR y WordPress
             if (i + CHUNK_SIZE < allUrlsToWarm.length) {
-                await new Promise(r => setTimeout(r, 800));
+                await new Promise(r => setTimeout(r, 1500));
             }
         }
 

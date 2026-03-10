@@ -10,7 +10,10 @@ export default defineConfig({
   adapter: vercel({
     maxDuration: 300
   }),
-  prefetch: true,
+  prefetch: {
+    prefetchAll: true,
+    defaultStrategy: 'hover'
+  },
   image: {
     domains: ["winstonandharrystore.com"],
   },
