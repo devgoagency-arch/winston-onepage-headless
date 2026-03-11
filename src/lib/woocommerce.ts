@@ -555,21 +555,21 @@ export async function getProductsByCategory(
 
         const fetchCategory = async (id: string) => {
             try {
-                // Intentamos con v3 (Autenticada)
+                // PRIORIDAD: Store API (Pública, mucho más rápida y cacheable en el server de WP)
+                const storeUrl = `${PUBLIC_WP_URL}/wp-json/wc/store/v1/products?category=${id}&per_page=${perPage}&page=${page}&orderby=${orderBy}&order=${order}${onSale ? '&on_sale=true' : ''}`;
+                const storeRes = await fetch(storeUrl);
+                
+                if (storeRes.ok) {
+                    const data = await storeRes.json();
+                    return Array.isArray(data) ? data : [];
+                }
+                
+                // Fallback: Si Store API falla, usamos v3 (Autenticada)
                 const data = await wcFetch(`/products?category=${id}&per_page=${perPage}&page=${page}&orderby=${orderBy}&order=${order}&status=publish${onSale ? '&on_sale=true' : ''}${attribute ? `&attribute=${attribute}` : ''}${attributeTerm ? `&attribute_term=${attributeTerm}` : ''}`);
                 return Array.isArray(data) ? data : [];
             } catch (err: any) {
-                console.warn(`[getProductsByCategory] Falló v3, intentando pública:`, err.message);
-                // Fallback: Si v3 falla, intentamos con la API de Store (Pública)
-                try {
-                    const fallbackRes = await fetch(`${PUBLIC_WP_URL}/wp-json/wc/store/v1/products?category=${id}&per_page=${perPage}`);
-                    if (fallbackRes.ok) {
-                        return await fallbackRes.json();
-                    }
-                    return [];
-                } catch (err2) {
-                    return [];
-                }
+                console.warn(`[getProductsByCategory] Error en fetch para id ${id}:`, err.message);
+                return [];
             }
         };
 
@@ -580,10 +580,9 @@ export async function getProductsByCategory(
         for (const list of results) {
             if (Array.isArray(list)) {
                 for (const p of list) {
-                    if (p && p.id && !seenIds.has(p.id)) {
+                    if (p && (p.id || p.id === 0) && !seenIds.has(p.id)) {
                         const mapped = mapV3ToStore(p);
-                        // Filtro de seguridad: Precio > 0 y Stock Real
-                        if (mapped && mapped.prices.price !== "0" && mapped.stock_status !== 'outofstock') {
+                        if (mapped) {
                             seenIds.add(p.id);
                             combined.push(mapped);
                         }

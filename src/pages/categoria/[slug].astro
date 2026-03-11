@@ -72,41 +72,24 @@ let subcategories: any[] = [];
 let dropdownCategories: any[] = [];
 
 try {
+    // 1. Buscamos la categoría PRIMERO (Necesitamos el ID para casi todo lo demás)
     category = await getCategoryBySlug(slug as string);
+    
     if (category) {
-        // Fetch attribute terms (ID 2 = Color, ID 1 = Talla)
-        // Wrapped in catch to prevent breaking if an attribute ID doesn't exist (404)
-        const safeGetTerms = async (id: number) => {
-            try {
-                return await getAttributeTerms(id);
-            } catch (e) {
-                console.warn(
-                    `Could not fetch terms for attribute ${id}, falling back to extraction.`,
-                );
-                return [];
-            }
-        };
+        const isAccesorios = slug?.toString().toLowerCase().includes("accesorios");
 
-        const isAccesorios = slug
-            ?.toString()
-            .toLowerCase()
-            .includes("accesorios");
-
-        // Lanzamos TODO en paralelo: Filtros, Subcategorías y la primera carga de PRODUCTOS (100)
-        // Esto evita que una consulta lenta bloquee a las demás.
+        // 2. Lanzamos el resto en paralelo YA con el ID de la categoría
         const [rawColorTerms, rawTallaTerms, rawSubcategories, fetchedProducts] = await Promise.all([
-            safeGetTerms(2),
-            isAccesorios ? Promise.resolve([]) : safeGetTerms(1),
+            getAttributeTerms(2),
+            isAccesorios ? Promise.resolve([]) : getAttributeTerms(1),
             getChildCategories(category.id),
             getProductsByCategory(
-                category.id.toString(),
+                category.id, // Pasamos el ID directamente para evitar que la función tenga que buscarlo de nuevo
                 16,
                 1,
                 activeSort.orderBy,
                 activeSort.order,
-                activeSort.onSale,
-                colorParam ? "pa_color" : undefined,
-                colorParam || undefined,
+                activeSort.onSale
             )
         ]);
 
@@ -114,28 +97,15 @@ try {
         tallaTerms = rawTallaTerms;
         subcategories = rawSubcategories;
         products = fetchedProducts;
+        
+        dropdownCategories = subcategories.length > 0 
+            ? subcategories.map(c => ({ name: c.name, slug: c.slug }))
+            : [{ name: "Zapatos", slug: "zapatos" }, { name: "Ropa", slug: "ropa" }, { name: "Accesorios", slug: "accesorios" }, { name: "Maletas", slug: "maletas" }, { name: "Mascotas", slug: "mascotas" }];
 
-        dropdownCategories =
-            subcategories.length > 0
-                ? subcategories.map((c: any) => ({
-                      name: c.name,
-                      slug: c.slug,
-                  }))
-                : [
-                      { name: "Zapatos", slug: "zapatos" },
-                      { name: "Ropa", slug: "ropa" },
-                      { name: "Accesorios", slug: "accesorios" },
-                      { name: "Maletas", slug: "maletas" },
-                      { name: "Mascotas", slug: "mascotas" },
-                  ];
-
-        // Filtro manual local solo si se requiere talla (ya tenemos los 100 productos en memoria)
         if (tallaParam) {
             products = products.filter((p) =>
                 p.attributes?.some(
-                    (a: any) =>
-                        a.name.toLowerCase() === "talla" &&
-                        a.options.includes(tallaParam),
+                    (a: any) => a.name.toLowerCase() === "talla" && a.options.includes(tallaParam),
                 ),
             );
         }
@@ -144,8 +114,7 @@ try {
     }
 } catch (e) {
     console.error("Error en categoria/[slug].astro:", e);
-    error =
-        "Hubo un problema al cargar los productos. Por favor intenta de nuevo.";
+    error = "Hubo un problema al cargar los productos.";
 }
 
 if (!category && !error) {
