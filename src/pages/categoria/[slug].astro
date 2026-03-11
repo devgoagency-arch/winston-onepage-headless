@@ -92,11 +92,28 @@ try {
             .toLowerCase()
             .includes("accesorios");
 
-        [colorTerms, tallaTerms, subcategories] = await Promise.all([
+        // Lanzamos TODO en paralelo: Filtros, Subcategorías y la primera carga de PRODUCTOS (100)
+        // Esto evita que una consulta lenta bloquee a las demás.
+        const [rawColorTerms, rawTallaTerms, rawSubcategories, fetchedProducts] = await Promise.all([
             safeGetTerms(2),
             isAccesorios ? Promise.resolve([]) : safeGetTerms(1),
             getChildCategories(category.id),
+            getProductsByCategory(
+                category.id.toString(),
+                100,
+                1,
+                activeSort.orderBy,
+                activeSort.order,
+                activeSort.onSale,
+                colorParam ? "pa_color" : undefined,
+                colorParam || undefined,
+            )
         ]);
+
+        colorTerms = rawColorTerms;
+        tallaTerms = rawTallaTerms;
+        subcategories = rawSubcategories;
+        products = fetchedProducts;
 
         dropdownCategories =
             subcategories.length > 0
@@ -112,20 +129,7 @@ try {
                       { name: "Mascotas", slug: "mascotas" },
                   ];
 
-        products = await getProductsByCategory(
-            category.id.toString(),
-            100,
-            1,
-            activeSort.orderBy,
-            activeSort.order,
-            activeSort.onSale,
-            colorParam ? "pa_color" : undefined,
-            colorParam || undefined,
-        );
-
-        // Manual filter for Talla if both are present or if only Talla is present
-        // Note: WC API filter by multiple attributes is tricky, usually we fetch and filter or use query params correctly.
-        // For simplicity and since we fetch 100, we can filter locally if talla is present.
+        // Filtro manual local solo si se requiere talla (ya tenemos los 100 productos en memoria)
         if (tallaParam) {
             products = products.filter((p) =>
                 p.attributes?.some(

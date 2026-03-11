@@ -78,9 +78,9 @@ export const GET: APIRoute = async ({ request }) => {
                     finalUrl = `${finalUrl}${connector}vercel-protection-bypass-token=${adminToken}`;
                 }
 
-                // Timeout de 6s: si no responde, lo damos por lanzado.
+                // Timeout de 25s: WooCommerce es lento, hay que darle tiempo.
                 const controller = new AbortController();
-                const timeoutId = setTimeout(() => controller.abort(), 6000);
+                const timeoutId = setTimeout(() => controller.abort(), 25000);
 
                 try {
                     const r = await fetch(finalUrl, { headers, signal: controller.signal });
