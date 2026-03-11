@@ -62,6 +62,14 @@ async function wcFetch(path: string, options: RequestInit = {}, retries = 3, del
     const CK = (import.meta.env.WC_CONSUMER_KEY || import.meta.env.WP_CONSUMER_KEY || "").trim();
     const CS = (import.meta.env.WC_CONSUMER_SECRET || import.meta.env.WP_CONSUMER_SECRET || "").trim();
 
+    if (import.meta.env.SSR) {
+        if (!CK.startsWith('ck_')) console.error(`[WC API] ALERTA: La Key no empieza por 'ck_' (actual: ${CK.substring(0, 4)}...)`);
+        if (!CS.startsWith('cs_')) console.error(`[WC API] ALERTA: El Secret no empieza por 'cs_' (actual: ${CS.substring(0, 4)}...)`);
+    }
+
+    if (!CK || !CS) {
+        console.error("[WC API] ERROR: Claves no encontradas en el request.");
+    }
     // 1. Normalizar el path: quitar barras iniciales y el texto 'wp-json/' si viene incluido
     let cleanPath = path.replace(/^\/+/, '').replace('wp-json/', '');
     
