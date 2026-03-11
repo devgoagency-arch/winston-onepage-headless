@@ -52,31 +52,33 @@ function normalizeSlug(text: string): string {
         .replace(/[^\w-]+/g, '');       // Quitar caracteres especiales
 }
 
-/**
- * Generic Fetcher with OAuth via URL Params (Most compatible method)
- */
 async function wcFetch(path: string, options: RequestInit = {}, retries = 3, delay = 1500) {
-    // Leemos las claves en RUNTIME, no en el build
+    // Leemos las claves en RUNTIME
     const CK = (import.meta.env.WC_CONSUMER_KEY || import.meta.env.WP_CONSUMER_KEY || "").trim();
     const CS = (import.meta.env.WC_CONSUMER_SECRET || import.meta.env.WP_CONSUMER_SECRET || "").trim();
 
-    if (!CK || !CS) {
-        console.error("[WC API] ERROR: Claves no encontradas en el request.");
-    }
-
-    // 1. Limpiar el path para evitar dobles barras o prefijos repetidos
-    let cleanPath = path.startsWith('/') ? path.substring(1) : path;
+    // 1. Normalizar el path: quitar barras iniciales y el texto 'wp-json/' si viene incluido
+    let cleanPath = path.replace(/^\/+/, '').replace('wp-json/', '');
     
-    // Si el path ya incluye wp-json lo quitamos para normalizar
-    cleanPath = cleanPath.replace('wp-json/', '');
-
-    // 2. Determinar la URL final
+    // 2. Determinar la URL final con el Namespace correcto
     let url = "";
     if (path.startsWith('http')) {
         url = path;
     } else {
-        url = `${WP_JSON_BASE}/${cleanPath}`;
+        const namespaces = ['wc/', 'wp/', 'wh/'];
+        const hasNamespace = namespaces.some(ns => cleanPath.startsWith(ns));
+        
+        if (hasNamespace) {
+            // Ya tiene namespace (ej: wh/v1/menu)
+            url = `${PUBLIC_WP_URL}/wp-json/${cleanPath}`;
+        } else {
+            // Es una ruta de WooCommerce puro (ej: products), añadimos wc/v3/
+            url = `${PUBLIC_WP_URL}/wp-json/wc/v3/${cleanPath}`;
+        }
     }
+
+    // Limpieza de dobles barras (excepto las de http://)
+    url = url.replace(/([^:]\/)\/+/g, "$1");
 
     // 3. Añadir Auth solo si NO es Store API (que es público)
     const isStore = cleanPath.includes('wc/store/');
@@ -104,7 +106,7 @@ async function wcFetch(path: string, options: RequestInit = {}, retries = 3, del
                 throw new Error(`WC API 401: ${errText.substring(0, 100)}`);
             }
             
-            if (res.status === 404) throw new Error("WC API Error: 404 Not Found");
+            if (res.status === 404) throw new Error(`WC API 404 en: ${url.split('?')[0]}`);
             
             if (!res.ok) {
                 if ([500, 502, 503, 429].includes(res.status) && i < retries - 1) {
@@ -119,13 +121,12 @@ async function wcFetch(path: string, options: RequestInit = {}, retries = 3, del
             try {
                 return JSON.parse(text);
             } catch (e) {
-                // Si falla el parseo, el servidor quizás mandó basura antes del JSON
                 const cleaned = text.substring(text.indexOf('{'));
                 return JSON.parse(cleaned);
             }
         } catch (error: any) {
             if (i === retries - 1) throw error;
-            console.warn(`[WC API] Intento ${i+1} fallido: ${error.message}. Reintentando...`);
+            console.warn(`[WC API] Intento ${i+1} fallido: ${error.message}`);
             await new Promise(r => setTimeout(r, delay));
             delay *= 2;
         }
