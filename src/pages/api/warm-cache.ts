@@ -81,13 +81,14 @@ export const GET: APIRoute = async ({ request }) => {
                 chunk.map(url => {
                     const headers: Record<string, string> = {
                         'Cache-Control': 'no-cache',
-                        'User-Agent': 'WH-CacheWarmer/4.0'
+                        'User-Agent': 'WH-CacheWarmer/5.0'
                     };
                     
-                    // Si tenemos token de revalidación, lo pasamos para bypass de auth en staging
+                    // Si tenemos token, lo usamos para bypass de revalidación Y protección de Vercel
                     if (adminToken) {
                         headers['x-prerender-revalidate'] = adminToken;
                         headers['x-revalidate-auth'] = adminToken;
+                        headers['x-vercel-protection-bypass'] = adminToken;
                     }
 
                     return fetch(url, { headers });
