@@ -28,20 +28,22 @@ interface Product {
     }[];
     variations?: {
         id: number;
-        attributes: { name: string; value: string }[];
+        attributes: { name: string; value?: string; option?: string; id?: string }[];
+        stock_status?: string;
     }[];
     variation_images_map?: Record<string, any[]>;
     type?: string;
     variation_ids?: number[];
     on_sale?: boolean;
     featured?: boolean;
+    stock_status?: string;
 }
 
 interface Props {
     product: Product;
     isSelected?: boolean;
     onSelectionToggle?: (id: number) => void;
-    onVariationChange?: (id: number, color: string | null, size: string | null) => void;
+    onVariationChange?: (id: number, color: string | null, size: string | null, variationId?: number | null) => void;
 }
 
 export default function ProductCard({ product, isSelected, onSelectionToggle, onVariationChange }: Props) {
@@ -102,11 +104,37 @@ export default function ProductCard({ product, isSelected, onSelectionToggle, on
         setIsFavorite(favorites.some((fav: any) => fav.id === product.id));
     }, [product.id]);
 
+    // Calcular el ID de la variación actual basándose en los datos enriquecidos o los originales
+    const currentVariationId = useMemo(() => {
+        const currentVariations = enrichedProduct?.variations || product.variations;
+        if (!currentVariations || currentVariations.length === 0) return null;
+        if (!selectedColor && !selectedSize) return null;
+
+        const found = currentVariations.find((v: any) => {
+            const vColor = v.attributes?.find((a: any) => 
+                a.name.toLowerCase().includes('color') || a.name === 'Pa_selecciona-el-color'
+            );
+            const vSize = v.attributes?.find((a: any) => 
+                a.name.toLowerCase().includes('talla') || a.name === 'Pa_selecciona-una-talla'
+            );
+
+            const colorValue = (vColor?.value || vColor?.option || '').toLowerCase().trim();
+            const sizeValue = (vSize?.value || vSize?.option || '').toLowerCase().trim();
+
+            const matchesColor = !selectedColor || colorValue === selectedColor.toLowerCase().trim();
+            const matchesSize = !selectedSize || sizeValue === selectedSize.toLowerCase().trim();
+
+            return matchesColor && matchesSize;
+        });
+
+        return found ? found.id : null;
+    }, [enrichedProduct, product.variations, selectedColor, selectedSize]);
+
     useEffect(() => {
         if (onVariationChange) {
-            onVariationChange(product.id, selectedColor, selectedSize);
+            onVariationChange(product.id, selectedColor, selectedSize, currentVariationId);
         }
-    }, [selectedColor, selectedSize, product.id, onVariationChange]);
+    }, [selectedColor, selectedSize, product.id, onVariationChange, currentVariationId]);
 
     const toggleFavorite = (e: React.MouseEvent) => {
         e.preventDefault();

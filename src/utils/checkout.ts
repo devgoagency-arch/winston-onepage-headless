@@ -19,14 +19,25 @@ export function redirectToCheckout(path: string = '/') {
     }
 
     // Generamos la cadena ID:QTY para el plugin bridge de WooCommerce
-    const itemsQuery = items.map(item => `${item.id}:${item.quantity}`).join(',');
+    // Usamos un Map para evitar IDs duplicados y consolidar cantidades
+    const itemsMap = new Map<number, number>();
+    items.forEach((item: any) => {
+        if (item.id && item.id > 0) {
+            const currentQty = itemsMap.get(item.id) || 0;
+            itemsMap.set(item.id, currentQty + item.quantity);
+        }
+    });
+
+    const itemsQuery = Array.from(itemsMap.entries())
+        .map(([id, qty]) => `${id}:${qty}`)
+        .join(',');
 
     // Redirección con el parámetro fill_cart que sincroniza el carrito en WP
-    // Usamos URLSearchParams para asegurar que el path sea correcto
     const baseUrl = `${wpDomain}${path}`;
     const separator = baseUrl.includes('?') ? '&' : '?';
     const finalUrl = `${baseUrl}${separator}fill_cart=${itemsQuery}`;
 
-    console.log("Sincronizando carrito y redirigiendo a:", finalUrl);
+    console.log("[Checkout Bridge] Sincronizando items:", Array.from(itemsMap.keys()));
+    console.log("URL Final:", finalUrl);
     window.location.href = finalUrl;
 }

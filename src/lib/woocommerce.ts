@@ -287,8 +287,14 @@ function mapV3ToStore(p: any) {
         featured: p.featured || false,
         upsell_ids: p.upsell_ids || [],
         cross_sell_ids: p.cross_sell_ids || [],
-        variations: p.variations_data || null,
-        variation_images_map: p.variation_images_map || null
+        variations: p.variations_data?.map((v: any) => ({
+            ...v,
+            stock_status: v.stock_status || 'instock'
+        })) || null,
+        variation_images_map: p.variation_images_map || null,
+        stock_status: p.stock_status || 'instock',
+        manage_stock: p.manage_stock || false,
+        stock_quantity: p.stock_quantity || null
     };
 
     // Para productos variables, si tenemos datos de variaciones, intentamos extraer los precios reales

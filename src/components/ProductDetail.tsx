@@ -34,8 +34,12 @@ interface Product {
   categories: { id: number; name: string; slug: string }[];
   variations?: {
     id: number;
-    attributes: { name: string; value: string }[];
+    // WooCommerce v3 usa 'option', Store API puede usar 'value'. Aceptamos ambos.
+    attributes: { name: string; value?: string; option?: string; id?: string }[];
     image?: { id: number; src: string; alt: string };
+    stock_status?: string;
+    manage_stock?: boolean;
+    stock_quantity?: number | null;
   }[];
   variation_images_map?: Record<string, any[]>;
   related_products?: any[];
@@ -43,6 +47,9 @@ interface Product {
   on_sale?: boolean;
   featured?: boolean;
   type?: string;
+  stock_status?: string;
+  manage_stock?: boolean;
+  stock_quantity?: number | null;
 }
 
 interface Props {
@@ -69,13 +76,18 @@ export default function ProductDetail({ initialProduct }: Props) {
   const [isFavorite, setIsFavorite] = useState(false);
   const product = initialProduct;
   const [selectedFbtIds, setSelectedFbtIds] = useState<number[]>([]);
-  const [fbtVariations, setFbtVariations] = useState<Record<number, { color: string | null, size: string | null }>>({});
+  const [fbtVariations, setFbtVariations] = useState<Record<number, { color: string | null, size: string | null, variationId?: number | null }>>({});
 
-  const handleFbtVariationChange = (productId: number, color: string | null, size: string | null) => {
-    setFbtVariations(prev => ({
-      ...prev,
-      [productId]: { color, size }
-    }));
+  const handleFbtVariationChange = (productId: number, color: string | null, size: string | null, variationId?: number | null) => {
+    setFbtVariations(prev => {
+      const current = prev[productId];
+      if (current?.color === color && current?.size === size && current?.variationId === variationId) return prev;
+      
+      return {
+        ...prev,
+        [productId]: { color, size, variationId }
+      };
+    });
   };
 
   useEffect(() => {
@@ -375,27 +387,61 @@ export default function ProductDetail({ initialProduct }: Props) {
 
 
   const isCombinationAvailable = (color: string | null, size: string | null) => {
-    if (!product.variations || product.variations.length === 0) return true;
+    if (!product.variations || product.variations.length === 0) {
+      return product.stock_status !== 'outofstock';
+    }
 
     return product.variations.some(variation => {
       const vColor = (variation.attributes.find(a =>
-        a.name.toLowerCase().includes('color') || a.name === 'Pa_selecciona-el-color'
+        a.name.toLowerCase().includes('color') || a.name === 'Pa_selecciona-el-color' || a.id === 'pa_color'
       )?.value || variation.attributes.find(a =>
-        a.name.toLowerCase().includes('color') || a.name === 'Pa_selecciona-el-color'
+        a.name.toLowerCase().includes('color') || a.name === 'Pa_selecciona-el-color' || a.id === 'pa_color'
       )?.option || '').toLowerCase();
 
       const vSize = (variation.attributes.find(a =>
-        a.name.toLowerCase().includes('talla') || a.name === 'Pa_selecciona-una-talla'
+        a.name.toLowerCase().includes('talla') || a.name === 'Pa_selecciona-una-talla' || a.id === 'pa_talla'
       )?.value || variation.attributes.find(a =>
-        a.name.toLowerCase().includes('talla') || a.name === 'Pa_selecciona-una-talla'
+        a.name.toLowerCase().includes('talla') || a.name === 'Pa_selecciona-una-talla' || a.id === 'pa_talla'
       )?.option || '').toLowerCase();
 
       const matchesColor = !color || vColor === color.toLowerCase();
       const matchesSize = !size || vSize === size.toLowerCase();
 
-      return matchesColor && matchesSize;
+      // Crucial: También verificar stock_status de la variación
+      const isInstock = variation.stock_status !== 'outofstock';
+
+      return matchesColor && matchesSize && isInstock;
     });
   };
+
+  const selectedVariation = useMemo(() => {
+    if (!product.variations || product.variations.length === 0) return null;
+    if (!selectedColor && !selectedSize) return null;
+
+    return product.variations.find((v: any) => {
+      const vColor = (v.attributes.find((a: any) => a.name.toLowerCase().includes('color') || a.name === 'Pa_selecciona-el-color' || a.id === 'pa_color')?.value || v.attributes.find((a: any) => a.name.toLowerCase().includes('color') || a.name === 'Pa_selecciona-el-color' || a.id === 'pa_color')?.option || '').toLowerCase();
+      const vSize = (v.attributes.find((a: any) => a.name.toLowerCase().includes('talla') || a.name === 'Pa_selecciona-una-talla' || a.id === 'pa_talla')?.value || v.attributes.find((a: any) => a.name.toLowerCase().includes('talla') || a.name === 'Pa_selecciona-una-talla' || a.id === 'pa_talla')?.option || '').toLowerCase();
+      
+      const matchesColor = !selectedColor || vColor === selectedColor.toLowerCase();
+      const matchesSize = !selectedSize || vSize === selectedSize?.toLowerCase();
+      
+      return matchesColor && matchesSize;
+    });
+  }, [product.variations, selectedColor, selectedSize]);
+
+  const isOutOfStock = useMemo(() => {
+    if (product.type === 'simple') {
+      return product.stock_status === 'outofstock';
+    }
+    if (product.type === 'variable') {
+      // Si no hay variación seleccionada todavía, solo es outofstock si TODAS las variaciones lo están
+      if (!selectedColor || (hasSize && !selectedSize)) {
+        return product.variations?.every((v: any) => v.stock_status === 'outofstock') || false;
+      }
+      return selectedVariation?.stock_status === 'outofstock';
+    }
+    return product.stock_status === 'outofstock';
+  }, [product, selectedVariation, selectedColor, selectedSize, hasSize]);
 
   const formatPrice = (price: string) => {
     return new Intl.NumberFormat('es-CO', {
@@ -450,7 +496,8 @@ export default function ProductDetail({ initialProduct }: Props) {
       for (const p of product.fbt_products) {
         if (selectedFbtIds.includes(p.id)) {
           const pVar = fbtVariations[p.id];
-          addToCart(p, 1, pVar?.color || null, pVar?.size || null, p.images[0]?.src);
+          const finalId = pVar?.variationId || p.id;
+          addToCart({ ...p, id: finalId }, 1, pVar?.color || null, pVar?.size || null, p.images[0]?.src);
         }
       }
     }
@@ -721,21 +768,23 @@ export default function ProductDetail({ initialProduct }: Props) {
 
                 <div className="product-actions-grid">
                   <button
-                    className="btn-action btn-fill"
+                    className={`btn-action btn-fill ${isOutOfStock ? 'disabled' : ''}`}
                     onClick={handleAddToCart}
+                    disabled={isOutOfStock}
                   >
-                    Añadir al Carrito
+                    {isOutOfStock ? 'Producto Agotado' : 'Añadir al Carrito'}
                   </button>
                   <button
-                    className="btn-action btn-outline-thick"
+                    className={`btn-action btn-outline-thick ${isOutOfStock ? 'disabled' : ''}`}
                     onClick={() => {
-                      if (handleAddToCart()) {
+                      if (!isOutOfStock && handleAddToCart()) {
                         // After adding, redirect using our unified utility
                         redirectToCheckout('/checkout/');
                       }
                     }}
+                    disabled={isOutOfStock}
                   >
-                    Comprar Ahora
+                    {isOutOfStock ? 'Sin Stock' : 'Comprar Ahora'}
                   </button>
                 </div>
               </div>

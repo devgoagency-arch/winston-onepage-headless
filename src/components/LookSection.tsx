@@ -24,6 +24,7 @@ interface Product {
     attributes: any[];
     variations?: any[];
     variation_images_map?: any;
+    type?: string;
 }
 
 interface LookData {
@@ -64,13 +65,19 @@ export default function LookSection() {
         );
     };
 
-    const [lookVariations, setLookVariations] = useState<Record<number, { color: string | null, size: string | null }>>({});
+    const [lookVariations, setLookVariations] = useState<Record<number, { color: string | null, size: string | null, variationId?: number | null }>>({});
 
-    const handleVariationChange = (productId: number, color: string | null, size: string | null) => {
-        setLookVariations(prev => ({
-            ...prev,
-            [productId]: { color, size }
-        }));
+    const handleVariationChange = (productId: number, color: string | null, size: string | null, variationId?: number | null) => {
+        setLookVariations(prev => {
+            const current = prev[productId];
+            // Solo actualizar si realmente cambió algo para evitar re-renders infinitos si ProductCard emite mucho
+            if (current?.color === color && current?.size === size && current?.variationId === variationId) return prev;
+            
+            return {
+                ...prev,
+                [productId]: { color, size, variationId }
+            };
+        });
     };
 
     const handleAddAllToCart = () => {
@@ -78,7 +85,9 @@ export default function LookSection() {
         for (const product of data.products) {
             if (selectedIds.includes(product.id)) {
                 const variation = lookVariations[product.id];
-                addToCart(product, 1, variation?.color || null, variation?.size || null, product.images[0]?.src);
+                // Importante: Usar el variationId detectado por ProductCard para que WooCommerce no pida elegir opciones
+                const finalProductId = variation?.variationId || product.id;
+                addToCart({ ...product, id: finalProductId }, 1, variation?.color || null, variation?.size || null, product.images[0]?.src);
             }
         }
     };
@@ -140,20 +149,32 @@ export default function LookSection() {
                                 ))}
                             </div>
 
-                            {selectedIds.length > 0 && (
-                                <div className="total-summary-card">
-                                    <p className="summary-label">TOTAL POR LO SELECCIONADOS:</p>
-                                    <p className="total-amount">
-                                        {currencySymbol} {new Intl.NumberFormat('es-CO').format(total)}
-                                    </p>
-                                    <button
-                                        className="add-all-btn"
-                                        onClick={handleAddAllToCart}
-                                    >
-                                        AÑADIR SELECCIONADOS AL CARRITO
-                                    </button>
-                                </div>
-                            )}
+                            {selectedIds.length > 0 && (() => {
+                                // ¿Faltan variaciones por cargar?
+                                const isWaitingVariations = data.products.some(p => {
+                                    if (!selectedIds.includes(p.id)) return false;
+                                    // Si es variable, necesitamos que ProductCard haya informado el variationId
+                                    return p.type === 'variable' && !lookVariations[p.id]?.variationId;
+                                });
+
+                                const isDisabled = selectedIds.length === 0 || isWaitingVariations;
+
+                                return (
+                                    <div className="total-summary-card">
+                                        <p className="summary-label">TOTAL POR LO SELECCIONADOS:</p>
+                                        <p className="total-amount">
+                                            {currencySymbol} {new Intl.NumberFormat('es-CO').format(total)}
+                                        </p>
+                                        <button
+                                            className={`add-all-btn ${isDisabled ? 'disabled' : ''}`}
+                                            onClick={handleAddAllToCart}
+                                            disabled={isDisabled}
+                                        >
+                                            {isWaitingVariations ? 'CARGANDO OPCIONES...' : 'AÑADIR SELECCIONADOS AL CARRITO'}
+                                        </button>
+                                    </div>
+                                );
+                            })()}
                         </div>
                     </div>
                 </div>

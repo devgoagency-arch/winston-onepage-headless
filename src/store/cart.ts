@@ -18,6 +18,39 @@ export interface CartItem {
 export const cartItems = persistentMap<Record<string, string>>('wh_cart_v2', {});
 export const isCartOpen = atom(false);
 
+// Función auxiliar robusta para encontrar variaciones de WooCommerce
+function findVariation(variations: any[], color: string | null, size: string | null): any | null {
+    if (!variations || variations.length === 0) return null;
+    
+    return variations.find((v: any) => {
+        // Buscamos atributos de color y talla de forma flexible
+        const vColorAttr = v.attributes?.find((a: any) => 
+            a.name.toLowerCase().includes('color') || 
+            a.name.toLowerCase().includes('pa_selecciona-el-color') || 
+            a.id === 'pa_color' ||
+            a.name === 'Pa_selecciona-el-color'
+        );
+        const vSizeAttr = v.attributes?.find((a: any) => 
+            a.name.toLowerCase().includes('talla') || 
+            a.name.toLowerCase().includes('pa_selecciona-una-talla') || 
+            a.id === 'pa_talla' ||
+            a.name === 'Pa_selecciona-una-talla'
+        );
+
+        // Extraer valores ( WooCommerce puede usar 'option' o 'value' dependiendo de la versión de la API )
+        const vColorValue = (vColorAttr?.option || vColorAttr?.value || '').toLowerCase().trim();
+        const vSizeValue = (vSizeAttr?.option || vSizeAttr?.value || '').toLowerCase().trim();
+
+        const targetColor = (color || '').toLowerCase().trim();
+        const targetSize = (size || '').toLowerCase().trim();
+
+        const matchesColor = !color || vColorValue === targetColor;
+        const matchesSize = !size || vSizeValue === targetSize;
+
+        return matchesColor && matchesSize;
+    });
+}
+
 export function addToCart(product: any, quantity: number, color: string | null, size: string | null, image: string) {
     try {
         const cart = cartItems.get();
@@ -30,23 +63,13 @@ export function addToCart(product: any, quantity: number, color: string | null, 
         // Si es un producto variable, intentamos encontrar el ID de la variación específica
         let finalId = product.id;
         if (product.variations && product.variations.length > 0 && (color || size)) {
-            const found = product.variations.find((v: any) => {
-                const vColor = v.attributes?.find((a: any) => 
-                    a.name.toLowerCase().includes('color') || a.name === 'Pa_selecciona-el-color'
-                );
-                const vSize = v.attributes?.find((a: any) => 
-                    a.name.toLowerCase().includes('talla') || a.name === 'Pa_selecciona-una-talla'
-                );
-
-                const colorValue = (vColor?.value || vColor?.option || '').toLowerCase().trim();
-                const sizeValue = (vSize?.value || vSize?.option || '').toLowerCase().trim();
-
-                const matchesColor = !color || colorValue === color.toLowerCase().trim();
-                const matchesSize = !size || sizeValue === size.toLowerCase().trim();
-
-                return matchesColor && matchesSize;
-            });
-            if (found) finalId = found.id;
+            const found = findVariation(product.variations, color, size);
+            if (found) {
+                finalId = found.id;
+                console.log(`[Cart Store] Variación detectada: ${finalId} para ${color}/${size}`);
+            } else {
+                console.warn(`[Cart Store] No se encontró variación para ${color}/${size} en el producto ${product.id}`);
+            }
         }
 
         const itemId = `${product.id}-${(color || 'no-color').toLowerCase()}-${(size || 'no-size').toLowerCase()}`;
@@ -59,9 +82,10 @@ export function addToCart(product: any, quantity: number, color: string | null, 
             try {
                 const item = JSON.parse(cart[itemId]) as CartItem;
                 item.quantity += quantity;
+                // Actualizamos el ID por si acaso
+                item.id = finalId;
                 cartItems.setKey(itemId, JSON.stringify(item));
             } catch (e) {
-                // Si el JSON estaba corrupto, lo sobreescribimos
                 const newItem = createCartItem(finalId, product, processedPrice, color, size, quantity, image);
                 cartItems.setKey(itemId, JSON.stringify(newItem));
             }
@@ -76,7 +100,6 @@ export function addToCart(product: any, quantity: number, color: string | null, 
     }
 }
 
-// Función auxiliar para crear el objeto de item
 function createCartItem(id: number, product: any, price: number, color: string | null, size: string | null, quantity: number, image: string): CartItem {
     return {
         id,
@@ -103,9 +126,11 @@ export function updateQuantity(itemId: string, quantity: number) {
     }
     const cart = cartItems.get();
     if (cart[itemId]) {
-        const item = JSON.parse(cart[itemId]) as CartItem;
-        item.quantity = quantity;
-        cartItems.setKey(itemId, JSON.stringify(item));
+        try {
+            const item = JSON.parse(cart[itemId]) as CartItem;
+            item.quantity = quantity;
+            cartItems.setKey(itemId, JSON.stringify(item));
+        } catch(e) {}
     }
 }
 
@@ -113,36 +138,32 @@ export function updateCartItemVariation(oldKey: string, newColor: string | null,
     const cart = cartItems.get();
     if (!cart[oldKey]) return;
 
-    const item = JSON.parse(cart[oldKey]) as CartItem;
-    const baseProductId = oldKey.split('-')[0];
-    const newKey = `${baseProductId}-${newColor || 'no-color'}-${newSize || 'no-size'}`;
+    try {
+        const item = JSON.parse(cart[oldKey]) as CartItem;
+        const baseProductId = oldKey.split('-')[0];
+        const newKey = `${baseProductId}-${(newColor || 'no-color').toLowerCase()}-${(newSize || 'no-size').toLowerCase()}`;
 
-    // Si la nueva combinación ya existe, sumamos las cantidades
-    if (cart[newKey] && newKey !== oldKey) {
-        const existingItem = JSON.parse(cart[newKey]) as CartItem;
-        existingItem.quantity += item.quantity;
-        cartItems.setKey(newKey, JSON.stringify(existingItem));
-        cartItems.setKey(oldKey, undefined as any);
-    } else {
-        // Si no existe, actualizamos los datos y cambiamos el ID si es necesario
-        item.color = newColor;
-        item.size = newSize;
-
-        // Intentar encontrar el nuevo ID de variación si tenemos los datos
-        if (item.variations && item.variations.length > 0 && newColor && newSize) {
-            const found = item.variations.find((v: any) => {
-                const vColor = v.attributes?.find((a: any) => a.name.toLowerCase().includes('color') || a.name === 'Pa_selecciona-el-color')?.value.toLowerCase();
-                const vSize = v.attributes?.find((a: any) => a.name.toLowerCase().includes('talla') || a.name === 'Pa_selecciona-una-talla')?.value.toLowerCase();
-                return vColor === newColor.toLowerCase() && vSize === newSize.toLowerCase();
-            });
-            if (found) item.id = found.id;
-        }
-
-        if (newKey !== oldKey) {
+        // Si la nueva combinación ya existe, sumamos las cantidades
+        if (cart[newKey] && newKey !== oldKey) {
+            const existingItem = JSON.parse(cart[newKey]) as CartItem;
+            existingItem.quantity += item.quantity;
+            cartItems.setKey(newKey, JSON.stringify(existingItem));
             cartItems.setKey(oldKey, undefined as any);
+        } else {
+            item.color = newColor;
+            item.size = newSize;
+
+            if (item.variations && item.variations.length > 0 && (newColor || newSize)) {
+                const found = findVariation(item.variations, newColor, newSize);
+                if (found) item.id = found.id;
+            }
+
+            if (newKey !== oldKey) {
+                cartItems.setKey(oldKey, undefined as any);
+            }
+            cartItems.setKey(newKey, JSON.stringify(item));
         }
-        cartItems.setKey(newKey, JSON.stringify(item));
-    }
+    } catch(e) {}
 }
 
 export function clearCart() {
@@ -153,15 +174,19 @@ export function clearCart() {
 export function getCartTotal() {
     const cart = cartItems.get();
     return Object.values(cart).reduce((total, itemStr) => {
-        const item = JSON.parse(itemStr) as CartItem;
-        return total + (item.price * item.quantity);
+        try {
+            const item = JSON.parse(itemStr) as CartItem;
+            return total + (item.price * item.quantity);
+        } catch(e) { return total; }
     }, 0);
 }
 
 export function getCartCount() {
     const cart = cartItems.get();
     return Object.values(cart).reduce((total, itemStr) => {
-        const item = JSON.parse(itemStr) as CartItem;
-        return total + item.quantity;
+        try {
+            const item = JSON.parse(itemStr) as CartItem;
+            return total + item.quantity;
+        } catch(e) { return total; }
     }, 0);
 }
