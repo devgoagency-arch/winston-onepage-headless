@@ -3,13 +3,14 @@
  * Using ck/cs credentials for full access and better data processing.
  */
 
-const WC_URL_ENV = import.meta.env.WC_URL || import.meta.env.WP_URL || "https://tienda.winstonandharrystore.com";
+const WC_URL_ENV = import.meta.env.WC_URL || import.meta.env.WP_URL || "https://staging.winstonandharrystore.com";
+export const PUBLIC_WP_URL = WC_URL_ENV.replace(/\/$/, "");
+
 const CK = import.meta.env.WC_CONSUMER_KEY;
 const CS = import.meta.env.WC_CONSUMER_SECRET;
 
-const WP_BASE = WC_URL_ENV.replace(/\/$/, "");
-const BASE_URL = `${WP_BASE}/wp-json/wc/v3`;
-const STORE_URL = `${WP_BASE}/wp-json/wc/store/v1`;
+const BASE_URL = `${PUBLIC_WP_URL}/wp-json/wc/v3`;
+const STORE_URL = `${PUBLIC_WP_URL}/wp-json/wc/store/v1`;
 
 if (!CK || !CS) {
     console.error("[WC API] CRÍTICO: Faltan WC_CONSUMER_KEY o WC_CONSUMER_SECRET en las variables de entorno.");
@@ -84,9 +85,9 @@ function cleanJSON(jsonString: string) {
  * Generic Fetcher with Basic Auth and Retry Logic
  */
 async function wcFetch(path: string, options: RequestInit = {}, retries = 3, delay = 1500) {
-    // If it's a store API path, use WP_BASE + /wp-json/ and NO AUTH (Public)
+    // If it's a store API path, use PUBLIC_WP_URL + /wp-json/ and NO AUTH (Public)
     const isStore = path.includes('/wc/store/');
-    const baseUrl = isStore ? `${WP_BASE}/wp-json` : BASE_URL;
+    const baseUrl = isStore ? `${PUBLIC_WP_URL}/wp-json` : BASE_URL;
 
     // Construct the URL
     // If it's NOT store, we add CK/CS. If it already has ?, we use &.
@@ -518,7 +519,7 @@ export async function getPageById(id: number | string) {
     if (cached) return cached;
 
     try {
-        const wpBase = `${import.meta.env.WC_URL || "https://tienda.winstonandharrystore.com"}/wp-json/wp/v2`;
+        const wpBase = `${PUBLIC_WP_URL}/wp-json/wp/v2`;
         const res = await fetch(`${wpBase}/pages/${id}`, {
             headers: {
                 'Accept': 'application/json'
@@ -547,7 +548,7 @@ export async function getMenu(slug: string) {
     if (cached) return cached;
 
     try {
-        const wpBase = `${import.meta.env.WC_URL || "https://tienda.winstonandharrystore.com"}/wp-json/wh/v1`;
+        const wpBase = `${PUBLIC_WP_URL}/wp-json/wh/v1`;
         const res = await fetch(`${wpBase}/menu/${slug}`, {
             headers: {
                 'Accept': 'application/json'

@@ -1,5 +1,6 @@
 ---
 import LegalLayout from "../layouts/LegalLayout.astro";
+import { PUBLIC_WP_URL } from "../lib/woocommerce";
 ---
 
 <LegalLayout
@@ -9,13 +10,14 @@ import LegalLayout from "../layouts/LegalLayout.astro";
     <div class="wp-content">
         <p>
             Bienvenido al sitio web <strong
-                >www.tienda.winstonandharrystore.com</strong
+                >{PUBLIC_WP_URL.replace("https://", "")}</strong
             > (en adelante el “Sitio Web”). Al ingresar a este sitio web usted asume
             la obligación de respetar los términos y condiciones de uso (en adelante
             los T&C), notificaciones legales, Política de Privacidad y Tratamiento
             de Datos Personales así como todas las cláusulas de exención de responsabilidad
             explicados a continuación que figuran en el sitio web de Winston and Harry.
         </p>
+
 
         <p>
             El presente Sitio Web es una página web dedicada al comercio
@@ -30,7 +32,7 @@ import LegalLayout from "../layouts/LegalLayout.astro";
         <h2>ACEPTACIÓN DE LOS TÉRMINOS Y CONDICIONES DE USO.</h2>
         <p>
             Al ingresar y/o usar este Sitio Web
-            (tienda.winstonandharrystore.com), el usuario admite haber leído y
+            ({PUBLIC_WP_URL.replace("https://", "")}), el usuario admite haber leído y
             entendido estos T&C y está de acuerdo con acogerse a los mismos y
             cumplir con todas las leyes y los reglamentos aplicables que hagan
             parte de la legislación colombiana.

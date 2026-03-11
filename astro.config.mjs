@@ -16,6 +16,6 @@ export default defineConfig({
     defaultStrategy: 'hover'
   },
   image: {
-    domains: ["winstonandharrystore.com"],
+    domains: ["winstonandharrystore.com", "staging.winstonandharrystore.com", "tienda.winstonandharrystore.com"],
   },
 });

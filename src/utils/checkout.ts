@@ -1,4 +1,5 @@
 import { cartItems } from '../store/cart';
+import { PUBLIC_WP_URL } from '../lib/woocommerce';
 
 /**
  * Redirecciona al usuario a una página de WordPress (WooCommerce) 
@@ -10,7 +11,7 @@ export function redirectToCheckout(path: string = '/') {
     const items = Object.values($cartItems).map(value => JSON.parse(value));
 
     // Dominio de WordPress donde está el WooCommerce real
-    const wpDomain = 'https://tienda.winstonandharrystore.com';
+    const wpDomain = PUBLIC_WP_URL;
 
     if (items.length === 0) {
         window.location.href = `${wpDomain}${path}`;

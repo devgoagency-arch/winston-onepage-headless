@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import SideCart from "../components/SideCart";
 import CookieBanner from "../components/CookieBanner.astro";
+import { PUBLIC_WP_URL } from "../lib/woocommerce";
 
 interface Props {
     title: string;
@@ -23,7 +24,7 @@ const { title } = Astro.props;
         <link rel="preconnect" href="https://use.typekit.net" crossorigin />
         <link
             rel="dns-prefetch"
-            href="https://tienda.winstonandharrystore.com"
+            href={PUBLIC_WP_URL}
         />
         <link rel="stylesheet" href="https://use.typekit.net/lpl0lgn.css" />
         <link

@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import { getMenu } from "../lib/woocommerce";
+import { getMenu, PUBLIC_WP_URL } from "../lib/woocommerce";
 
 // El slug de WordPress para "Menú principal" comúnmente es "menu-principal"
 const menuItems = await getMenu("menu-principal");
@@ -76,7 +76,7 @@ const menuTree = buildMenuTree(menuItems);
         <!-- Parte Central: Logo -->
         <a href="/" class="logo">
             <img
-                src="https://tienda.winstonandharrystore.com/wp-content/uploads/2020/12/logo-w-h-vertical.png"
+                src={`${PUBLIC_WP_URL}/wp-content/uploads/2020/12/logo-w-h-vertical.png`}
                 alt="Winston & Harry Logo"
                 width="400"
                 height="400"
@@ -173,7 +173,7 @@ const menuTree = buildMenuTree(menuItems);
                             <a
                                 href={item.url
                                     .replace(
-                                        "https://tienda.winstonandharrystore.com",
+                                        PUBLIC_WP_URL,
                                         "",
                                     )
                                     .replace(
@@ -211,7 +211,7 @@ const menuTree = buildMenuTree(menuItems);
                                         <a
                                             href={child.url
                                                 .replace(
-                                                    "https://tienda.winstonandharrystore.com",
+                                                    "${PUBLIC_WP_URL}",
                                                     "",
                                                 )
                                                 .replace(

@@ -1,4 +1,5 @@
 import type { APIRoute } from 'astro';
+import { PUBLIC_WP_URL } from '../../lib/woocommerce';
 import { getProductById } from "../../lib/woocommerce";
 
 // Cache in-memory
@@ -24,7 +25,7 @@ export const GET: APIRoute = async () => {
             });
         }
 
-        const wpBase = import.meta.env.WC_URL || "https://tienda.winstonandharrystore.com";
+        const wpBase = PUBLIC_WP_URL;
         console.log(`[API Look] Fetching from: ${wpBase}/wp-json/wp/v2/look-semana`);
 
         const response = await fetch(`${wpBase}/wp-json/wp/v2/look-semana?per_page=1&_embed`, {

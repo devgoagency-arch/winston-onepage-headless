@@ -1,4 +1,5 @@
 import type { APIRoute } from 'astro';
+import { PUBLIC_WP_URL } from '../../lib/woocommerce';
 
 export const GET: APIRoute = async ({ request }) => {
     const url = new URL(request.url);
@@ -9,7 +10,7 @@ export const GET: APIRoute = async ({ request }) => {
 
         // 1. Obtenemos la primera página para saber el total
         console.log('Obteniendo catálogo de WooCommerce...');
-        const firstResponse = await fetch(`https://tienda.winstonandharrystore.com/wp-json/wc/store/v1/products?per_page=100&page=1`);
+        const firstResponse = await fetch(`${PUBLIC_WP_URL}/wp-json/wc/store/v1/products?per_page=100&page=1`);
 
         if (!firstResponse.ok) {
             throw new Error(`Error obteniendo productos: ${firstResponse.status}`);
@@ -26,7 +27,7 @@ export const GET: APIRoute = async ({ request }) => {
             const pageRequests = [];
             for (let p = 2; p <= totalPages; p++) {
                 pageRequests.push(
-                    fetch(`https://tienda.winstonandharrystore.com/wp-json/wc/store/v1/products?per_page=100&page=${p}`)
+                    fetch(`${PUBLIC_WP_URL}/wp-json/wc/store/v1/products?per_page=100&page=${p}`)
                         .then(res => res.ok ? res.json() : [])
                         .catch(() => [])
                 );
