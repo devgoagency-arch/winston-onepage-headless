@@ -289,7 +289,15 @@ function mapV3ToStore(p: any) {
         cross_sell_ids: p.cross_sell_ids || [],
         variations: p.variations_data?.map((v: any) => ({
             ...v,
-            stock_status: v.stock_status || 'instock'
+            stock_status: v.stock_status || 'instock',
+            // Normalizamos los atributos para que siempre tengan 'option' Y 'value'
+            // WC v3 usa 'option', Store API usa 'value'. Esto permite búsqueda flexible.
+            attributes: (v.attributes || []).map((a: any) => ({
+                ...a,
+                // Aseguramos que ambos campos estén disponibles
+                option: a.option || a.value || '',
+                value: a.value || a.option || '',
+            }))
         })) || null,
         variation_images_map: p.variation_images_map || null,
         stock_status: p.stock_status || 'instock',

@@ -454,24 +454,73 @@ export default function ProductDetail({ initialProduct }: Props) {
   const isSelectionComplete = selectedColor && (!hasSize || selectedSize);
 
   const handleAddToCart = () => {
-    if (!selectedColor) {
-      alert('Por favor, selecciona un color.');
-      return false;
-    }
-    if (hasSize && !selectedSize) {
-      alert('Por favor, selecciona una talla.');
-      return false;
+    if (product.type === 'variable' || (product.variations && product.variations.length > 0)) {
+      if (!selectedColor) {
+        alert('Por favor, selecciona un color.');
+        return false;
+      }
+      if (hasSize && !selectedSize) {
+        alert('Por favor, selecciona una talla.');
+        return false;
+      }
     }
 
     // Encontrar la ID de la variación si es un producto variable
     let productIdToCart = product.id;
+    let foundVariation = false;
+
     if (product.variations && product.variations.length > 0) {
+      console.log('[Cart Debug] Buscando variación para:', { selectedColor, selectedSize });
+      console.log('[Cart Debug] Variaciones disponibles:', product.variations.map(v => ({
+        id: v.id,
+        attrs: v.attributes
+      })));
+
       const selectedVar = product.variations.find(v => {
-        const vColor = (v.attributes.find(a => a.name.toLowerCase().includes('color') || a.name === 'Pa_selecciona-el-color')?.value || v.attributes.find(a => a.name.toLowerCase().includes('color') || a.name === 'Pa_selecciona-el-color')?.option || '').toLowerCase();
-        const vSize = (v.attributes.find(a => a.name.toLowerCase().includes('talla') || a.name === 'Pa_selecciona-una-talla')?.value || v.attributes.find(a => a.name.toLowerCase().includes('talla') || a.name === 'Pa_selecciona-una-talla')?.option || '').toLowerCase();
-        return vColor === selectedColor.toLowerCase() && (!hasSize || vSize === selectedSize?.toLowerCase());
+        const vColor = (
+          v.attributes.find(a =>
+            a.name.toLowerCase().includes('color') ||
+            a.name === 'Pa_selecciona-el-color' ||
+            a.id === 'pa_color'
+          )?.option ||
+          v.attributes.find(a =>
+            a.name.toLowerCase().includes('color') ||
+            a.name === 'Pa_selecciona-el-color' ||
+            a.id === 'pa_color'
+          )?.value || ''
+        ).toLowerCase().trim();
+
+        const vSize = (
+          v.attributes.find(a =>
+            a.name.toLowerCase().includes('talla') ||
+            a.name === 'Pa_selecciona-una-talla' ||
+            a.id === 'pa_talla'
+          )?.option ||
+          v.attributes.find(a =>
+            a.name.toLowerCase().includes('talla') ||
+            a.name === 'Pa_selecciona-una-talla' ||
+            a.id === 'pa_talla'
+          )?.value || ''
+        ).toLowerCase().trim();
+
+        const colorMatch = !selectedColor || vColor === selectedColor.toLowerCase().trim();
+        const sizeMatch = !hasSize || !selectedSize || vSize === selectedSize.toLowerCase().trim();
+
+        console.log(`[Cart Debug] Variación ${v.id}: color="${vColor}" vs "${selectedColor?.toLowerCase()}" → ${colorMatch}, talla="${vSize}" vs "${selectedSize?.toLowerCase()}" → ${sizeMatch}`);
+        return colorMatch && sizeMatch;
       });
-      if (selectedVar) productIdToCart = selectedVar.id;
+
+      if (selectedVar) {
+        productIdToCart = selectedVar.id;
+        foundVariation = true;
+        console.log('[Cart Debug] ✅ Variación encontrada:', productIdToCart);
+      } else {
+        // Es un producto variable pero no encontramos la variación exacta
+        // Verificamos si no hay variaciones cargadas aún (puede ser un timing issue)
+        console.warn('[Cart Debug] ❌ No se encontró variación para:', { selectedColor, selectedSize });
+        alert('No se pudo identificar la variación exacta. Por favor, intenta nuevamente o visita la página del producto.');
+        return false;
+      }
     }
 
     addToCart(
