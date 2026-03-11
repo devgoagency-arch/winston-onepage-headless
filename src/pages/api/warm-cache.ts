@@ -86,9 +86,19 @@ export const GET: APIRoute = async ({ request }) => {
                 }))
             );
             
-            results.forEach(r => {
-                if (r.status === 'fulfilled' && r.value.ok) okCount++;
-                else errCount++;
+            results.forEach((r, idx) => {
+                const url = chunk[idx];
+                if (r.status === 'fulfilled') {
+                    if (r.value.ok) {
+                        okCount++;
+                    } else {
+                        console.error(`[WarmCache] ❌ Falló: ${url} | Status: ${r.value.status} ${r.value.statusText}`);
+                        errCount++;
+                    }
+                } else {
+                    console.error(`[WarmCache] ❌ Error de red: ${url} | Motivo: ${r.reason}`);
+                    errCount++;
+                }
             });
             
             // Pausa de 500ms entre lotes
@@ -96,8 +106,11 @@ export const GET: APIRoute = async ({ request }) => {
         }
 
         const elapsed = (Date.now() - t0) / 1000;
+        console.log(`[WarmCache] ✅ Finalizado. OK: ${okCount}, Errores: ${errCount}, Tiempo: ${elapsed.toFixed(1)}s`);
+
         return new Response(JSON.stringify({
             success: true,
+            origin,
             results: {
                 total: urlsToWarm.length,
                 ok: okCount,
