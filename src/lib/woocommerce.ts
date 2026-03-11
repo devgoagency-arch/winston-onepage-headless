@@ -92,26 +92,25 @@ async function wcFetch(path: string, options: RequestInit = {}, retries = 3, del
     const baseUrl = isStore ? `${PUBLIC_WP_URL}/wp-json` : BASE_URL;
     const authHeader = getAuthHeader();
 
-    // Construct the URL
-    const url = path.startsWith('http') ? path : `${baseUrl}${path.startsWith('/') ? '' : '/'}${path}`;
-
     // Headers base
     const headers: Record<string, string> = {
         'Accept': 'application/json',
         ...(options.headers as Record<string, string> || {})
     };
 
-    // Solo añadimos Auth si no es el Store API (que es público)
-    if (!isStore && authHeader) {
-        headers['Authorization'] = authHeader;
-    } else if (!isStore && !authHeader && import.meta.env.DEV) {
-        console.warn("[WC API] No se añadió Auth Header para una ruta no-Store API porque no se pudo generar.");
+    // Construct the URL with credentials for non-store API
+    let url = path.startsWith('http') ? path : `${baseUrl}${path.startsWith('/') ? '' : '/'}${path}`;
+    
+    if (!isStore && CK && CS) {
+        const separator = url.includes('?') ? '&' : '?';
+        url = `${url}${separator}consumer_key=${CK}&consumer_secret=${CS}`;
+    } else if (!isStore && (!CK || !CS)) {
+        console.error("[WC API] No se pudo añadir Auth: Faltan CK o CS.");
     }
-
 
     for (let i = 0; i < retries; i++) {
         try {
-            console.log(`[WC API] Fetching: ${path} (Attempt ${i + 1}/${retries})${isStore ? ' [PUBLIC]' : ''}`);
+            console.log(`[WC API] Fetching: ${url.split('?')[0]}${isStore ? ' [PUBLIC]' : ' [AUTH]'}`);
             const startTime = Date.now();
 
             const res = await fetch(url, {
