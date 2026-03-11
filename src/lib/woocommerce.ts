@@ -116,10 +116,7 @@ async function wcFetch(path: string, options: RequestInit = {}, retries = 3, del
 
             const res = await fetch(url, {
                 ...options,
-                headers: {
-                    'Accept': 'application/json',
-                    ...(options.headers || {})
-                }
+                headers
             });
             const endTime = Date.now();
             console.log(`[WC API] Response: ${res.status} (${endTime - startTime}ms)`);
