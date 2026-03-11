@@ -458,13 +458,75 @@ export default function ProductCard({ product, isSelected, onSelectionToggle, on
                     </div>
                 )}
 
-                <div className="product-info">
+                    <div className="product-info">
                     <div className="info-top-row">
                         <h3>
                             <a href={`/productos/${product.slug}${selectedColor ? `?color=${selectedColor}` : ''}`}>{product.name}</a>
                         </h3>
                     </div>
 
+                    {/* NUEVOS SELECTORES PARA BUNDLES / LOOK DE LA SEMANA */}
+                    {onSelectionToggle && (
+                        <div className="card-bundle-selectors">
+                            {colorAttribute && (
+                                <div className="bundle-selector-field">
+                                    <select 
+                                        value={selectedColor || ''} 
+                                        onChange={(e) => setSelectedColor(e.target.value)}
+                                        className="variation-select"
+                                    >
+                                        <option value="">Color</option>
+                                        {(() => {
+                                            const currentVariations = enrichedProduct?.variations || product.variations;
+                                            let termsToDisplay = colorAttribute.terms;
+                                            if (product.type === 'variable' && currentVariations && currentVariations.length > 0) {
+                                                termsToDisplay = colorAttribute.terms.filter(term =>
+                                                    currentVariations.some((v: any) =>
+                                                        v.attributes.some((a: any) =>
+                                                            (a.name.toLowerCase().includes('color') || a.name === 'Pa_selecciona-el-color') &&
+                                                            (a.value || a.option || '').toLowerCase() === term.slug.toLowerCase()
+                                                        )
+                                                    )
+                                                );
+                                            }
+                                            return termsToDisplay.map(term => (
+                                                <option key={term.id} value={term.slug}>{term.name}</option>
+                                            ));
+                                        })()}
+                                    </select>
+                                </div>
+                            )}
+
+                            {sizeAttribute && (
+                                <div className="bundle-selector-field">
+                                    <select 
+                                        value={selectedSize || ''} 
+                                        onChange={(e) => setSelectedSize(e.target.value)}
+                                        className="variation-select"
+                                    >
+                                        <option value="">Talla</option>
+                                        {(() => {
+                                            const currentVariations = enrichedProduct?.variations || product.variations;
+                                            let termsToDisplay = sizeAttribute.terms;
+                                            if (product.type === 'variable' && currentVariations && currentVariations.length > 0) {
+                                                termsToDisplay = sizeAttribute.terms.filter(term =>
+                                                    currentVariations.some((v: any) =>
+                                                        v.attributes.some((a: any) =>
+                                                            (a.name.toLowerCase().includes('talla') || a.name === 'Pa_selecciona-una-talla') &&
+                                                            (a.value || a.option || '').toLowerCase() === term.slug.toLowerCase()
+                                                        )
+                                                    )
+                                                );
+                                            }
+                                            return termsToDisplay.map(term => (
+                                                <option key={term.id} value={term.slug}>{term.name}</option>
+                                            ));
+                                        })()}
+                                    </select>
+                                </div>
+                            )}
+                        </div>
+                    )}
 
                     <div className="price">
                         {isSale ? (

@@ -605,11 +605,10 @@ class WH_Walker_Nav_Menu extends Walker_Nav_Menu {
 // ─── CONFIGURACIÓN ───────────────────────────────────────────────────────────
 
 // URL del frontend Astro en Vercel (cambiar a producción cuando corresponda)
-define('WH_FRONTEND_URL', 'https://winstonandharrystore.com');
+define('WH_FRONTEND_URL', 'https://staging.winstonandharrystore.com');
 
 // Token secreto compartido entre WordPress y Vercel
-// Debe coincidir con VERCEL_RELAY_TOKEN en las variables de entorno de Vercel
-define('WH_RELAY_TOKEN', getenv('WH_RELAY_TOKEN') ?: 'wh_relay_secret_token_2026');
+define('WH_RELAY_TOKEN', 'wh_relay_secret_token_2026');
 
 // Secreto para validar la firma de los webhooks de WooCommerce
 define('WC_WEBHOOK_SECRET', 'winston_revalidate_2024');
@@ -703,4 +702,41 @@ function wh_notify_vercel(string $path, ?string $topic = '') {
             'User-Agent' => 'WinstonHarry-Relay/1.0',
         ],
     ]);
+}
+
+/**
+ * ─── AUTOMATIZACIÓN TOTAL (HOOKS DIRECTOS) ──────────────────────────────────
+ * Dispara la sincronización instantánea al guardar productos o looks
+ * sin depender del sistema de webhooks de WooCommerce.
+ */
+
+// 1. Al guardar un Producto de WooCommerce
+add_action('woocommerce_update_product', 'wh_sync_on_product_save', 10, 1);
+function wh_sync_on_product_save($product_id) {
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
+    
+    $product = wc_get_product($product_id);
+    if (!$product) return;
+
+    $slug = $product->get_slug();
+    wh_notify_vercel('/', 'direct_sync'); // Home
+    wh_notify_vercel('/productos/' . $slug, 'direct_sync'); // Ficha de producto
+    
+    // También categorías del producto
+    $categories = $product->get_category_ids();
+    foreach ($categories as $cat_id) {
+        $term = get_term($cat_id, 'product_cat');
+        if ($term && !is_wp_error($term)) {
+            wh_notify_vercel('/categoria/' . $term->slug, 'direct_sync');
+        }
+    }
+}
+
+// 2. Al guardar un Look de la Semana (CPT)
+add_action('save_post_look_semana', 'wh_sync_on_look_save', 10, 3);
+function wh_sync_on_look_save($post_id, $post, $update) {
+    if (!$update || (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE)) return;
+    if (wp_is_post_revision($post_id)) return;
+    
+    wh_notify_vercel('/', 'look_updated');
 }

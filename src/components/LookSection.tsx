@@ -374,12 +374,17 @@ export default function LookSection() {
                         display: grid !important;
                         grid-template-areas: 
                             "name name"
+                            "selectors selectors"
                             "price colors";
                         grid-template-columns: 1fr auto;
                         align-items: stretch;
                         text-align: left;
                         padding: 10px 0.8rem !important;
-                        gap: 0px !important;
+                        gap: 8px !important;
+                    }
+                    .look-product-card-container .card-bundle-selectors {
+                        grid-area: selectors;
+                        margin: 5px 0;
                     }
                     .look-product-card-container .info-top-row {
                         display: contents !important; /* Permite que h3 y colores sean hermanos directos del precio en el grid */
