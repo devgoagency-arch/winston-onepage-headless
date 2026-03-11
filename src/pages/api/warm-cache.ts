@@ -38,20 +38,31 @@ export const GET: APIRoute = async ({ request }) => {
     console.log('[WarmCache] 🚀 Iniciando calentamiento de caché...');
 
     try {
-        // ─── 1. Obtener slugs de productos (v3 Auth) ────────────────────────
+        // ─── 1. Obtener TODOS los productos (Paginado) ──────────────────────
         const productSlugs: string[] = [];
-        const productRes = await fetch(`${PUBLIC_WP_URL}/wp-json/wc/v3/products?per_page=100&status=publish&stock_status=instock&consumer_key=${CK}&consumer_secret=${CS}`);
+        let page = 1;
+        let hasMore = true;
+
+        console.log('[WarmCache] 📦 Obteniendo lista completa de productos...');
         
-        if (productRes.ok) {
-            const products = await productRes.json();
-            if (Array.isArray(products)) {
+        while (hasMore && productSlugs.length < 500) {
+            const res = await fetch(`${PUBLIC_WP_URL}/wp-json/wc/v3/products?per_page=100&page=${page}&status=publish&consumer_key=${CK}&consumer_secret=${CS}`);
+            if (!res.ok) break;
+            
+            const products = await res.json();
+            if (Array.isArray(products) && products.length > 0) {
                 products.forEach((p: any) => { if (p.slug) productSlugs.push(p.slug); });
+                page++;
+                // Si recibimos menos de 100, es que era la última página
+                if (products.length < 100) hasMore = false;
+            } else {
+                hasMore = false;
             }
         }
 
-        // ─── 2. Obtener slugs de categorías ──────────────────────────────────
+        // ─── 2. Obtener categorías ──────────────────────────────────────────
         const categorySlugs: string[] = [];
-        const catRes = await fetch(`${PUBLIC_WP_URL}/wp-json/wc/v3/products/categories?per_page=100&hide_empty=true&consumer_key=${CK}&consumer_secret=${CS}`);
+        const catRes = await fetch(`${PUBLIC_WP_URL}/wp-json/wc/v3/products/categories?per_page=100&hide_empty=false&consumer_key=${CK}&consumer_secret=${CS}`);
         
         if (catRes.ok) {
             const cats = await catRes.json();
