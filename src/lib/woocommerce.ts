@@ -197,8 +197,12 @@ function mapV3ToStore(p: any) {
         // Ensure images is an array
         if (!p.images || !Array.isArray(p.images)) p.images = [];
 
-        // Normalize stock status
-        p.stock_status = p.is_in_stock ? 'instock' : 'outofstock';
+        // Normalize stock status only if coming from Store API raw
+        if (p.is_in_stock !== undefined) {
+            p.stock_status = p.is_in_stock ? 'instock' : 'outofstock';
+        } else if (!p.stock_status) {
+            p.stock_status = 'instock';
+        }
 
         // The Store API returns prices in minor units (centavos).
         const minorUnit = p.prices?.currency_minor_unit || 0;
@@ -231,7 +235,9 @@ function mapV3ToStore(p: any) {
         if (p.variations && Array.isArray(p.variations)) {
             p.variations = p.variations.map((v: any) => ({
                 ...v,
-                stock_status: v.is_in_stock ? 'instock' : 'outofstock',
+                stock_status: v.is_in_stock !== undefined 
+                    ? (v.is_in_stock ? 'instock' : 'outofstock') 
+                    : (v.stock_status || 'instock'),
                 attributes: (v.attributes || []).map((a: any) => ({
                     ...a,
                     option: a.value || a.option || '',
