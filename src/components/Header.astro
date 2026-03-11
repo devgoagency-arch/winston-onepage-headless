@@ -211,7 +211,7 @@ const menuTree = buildMenuTree(menuItems);
                                         <a
                                             href={child.url
                                                 .replace(
-                                                    "${PUBLIC_WP_URL}",
+                                                    PUBLIC_WP_URL,
                                                     "",
                                                 )
                                                 .replace(
@@ -303,7 +303,7 @@ const menuTree = buildMenuTree(menuItems);
     const burgerBtn = document.getElementById("burger-menu");
     const menuOverlay = document.getElementById("menu-overlay");
     const mobileNav = document.getElementById("mobile-nav");
-    const mobileLinks = document.querySelectorAll(".mobile-link");
+    const mobileLinks = document.querySelectorAll(".mobile-link, .mobile-sublink");
 
     const cartBtns = document.querySelectorAll(".cart-btn-new");
 

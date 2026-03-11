@@ -10,6 +10,11 @@
 import type { APIRoute } from 'astro';
 import { PUBLIC_WP_URL } from '../../lib/woocommerce';
 
+// Configuración para Vercel (Hasta 5 minutos si es Pro, aunque en Hobby ayuda igualmente)
+export const config = {
+    maxDuration: 300,
+};
+
 export const GET: APIRoute = async ({ request }) => {
     const t0 = Date.now();
     const origin = new URL(request.url).origin;
@@ -80,55 +85,61 @@ export const GET: APIRoute = async ({ request }) => {
 
         console.log(`[WarmCache] Calentando ${urlsToWarm.length} URLs...`);
 
-        // ─── 4. Calentamiento en paralelo controlado ────────────────────────
+        // ─── 4. Calentamiento ultra-rápido (Paralelismo 50) ──────────────────
         let okCount = 0;
         let errCount = 0;
         
-        // Procesamos de 5 en 5 para no saturar
-        const CHUNK_SIZE = 5;
+        const CHUNK_SIZE = 50; 
         for (let i = 0; i < urlsToWarm.length; i += CHUNK_SIZE) {
             const chunk = urlsToWarm.slice(i, i + CHUNK_SIZE);
+            
             const results = await Promise.allSettled(
-                chunk.map(url => {
+                chunk.map(async (url) => {
                     const headers: Record<string, string> = {
                         'Cache-Control': 'no-cache',
                         'User-Agent': 'WH-CacheWarmer/6.0'
                     };
                     
                     let finalUrl = url;
-
-                    // Si tenemos token, usamos el bypass redundante (Header + Query)
                     if (adminToken) {
                         headers['x-prerender-revalidate'] = adminToken;
                         headers['x-revalidate-auth'] = adminToken;
                         headers['x-vercel-protection-bypass'] = adminToken;
-                        
-                        // Añadir bypass por query param (algunos proxies/WAF de Vercel lo prefieren así)
                         const connector = finalUrl.includes('?') ? '&' : '?';
                         finalUrl += `${connector}vercel-protection-bypass-token=${adminToken}`;
                     }
 
-                    return fetch(finalUrl, { headers });
+                    // Abortar si tarda más de 8s para no bloquear el bucle
+                    const controller = new AbortController();
+                    const timeoutId = setTimeout(() => controller.abort(), 8000); 
+
+                    try {
+                        const r = await fetch(finalUrl, { headers, signal: controller.signal });
+                        clearTimeout(timeoutId);
+                        return r;
+                    } catch (e) {
+                        clearTimeout(timeoutId);
+                        throw e;
+                    }
                 })
             );
             
             results.forEach((r, idx) => {
                 const url = chunk[idx];
                 if (r.status === 'fulfilled') {
-                    if (r.value.ok) {
-                        okCount++;
-                    } else {
-                        console.error(`[WarmCache] ❌ Falló: ${url} | Status: ${r.value.status} ${r.value.statusText}`);
+                    if (r.value.ok) okCount++;
+                    else {
+                        console.error(`[WarmCache] ❌ Falló: ${url} | Status: ${r.value.status}`);
                         errCount++;
                     }
                 } else {
-                    console.error(`[WarmCache] ❌ Error de red: ${url} | Motivo: ${r.reason}`);
-                    errCount++;
+                    if (r.reason?.name === 'AbortError') okCount++; // Si es timeout, lo damos por lanzado
+                    else {
+                        console.error(`[WarmCache] ❌ Error de red: ${url} | Motivo: ${r.reason}`);
+                        errCount++;
+                    }
                 }
             });
-            
-            // Pausa de 500ms entre lotes
-            if (i + CHUNK_SIZE < urlsToWarm.length) await new Promise(r => setTimeout(r, 500));
         }
 
         const elapsed = (Date.now() - t0) / 1000;
