@@ -17,14 +17,22 @@ export const GET: APIRoute = async ({ request }) => {
     // Auth vars
     const CK = (import.meta.env.WC_CONSUMER_KEY || import.meta.env.WP_CONSUMER_KEY || "").trim();
     const CS = (import.meta.env.WC_CONSUMER_SECRET || import.meta.env.WP_CONSUMER_SECRET || "").trim();
-    const adminToken = import.meta.env.VERCEL_REVALIDATE_TOKEN || '';
-    const queryToken = new URL(request.url).searchParams.get('token') || '';
+    const adminToken = (import.meta.env.VERCEL_REVALIDATE_TOKEN || '').trim();
     const cronHeader = request.headers.get('x-vercel-cron') || '';
+    
+    // Obtener token de la query de forma flexible
+    const searchParams = new URL(request.url).searchParams;
+    const queryToken = searchParams.get('token') || '';
+    // También aceptamos el token como una "flag" sin valor (ej: ?MiToken)
+    const hasTokenAsFlag = adminToken !== '' && searchParams.has(adminToken);
 
-    // Seguridad: solo cron de Vercel o token de admin
-    if (!cronHeader && queryToken !== adminToken) {
-        console.warn('[WarmCache] ❌ Intento de acceso no autorizado.');
-        return new Response(JSON.stringify({ error: 'Unauthorized' }), { status: 401 });
+    // Seguridad: solo cron de Vercel o token de admin válido
+    if (!cronHeader && (adminToken === '' || (queryToken !== adminToken && !hasTokenAsFlag))) {
+        console.warn('[WarmCache] ❌ Intento de acceso no autorizado. Token recibido:', queryToken ? 'presente' : 'ausente');
+        return new Response(JSON.stringify({ 
+            error: 'Unauthorized', 
+            hint: 'Asegúrate de incluir ?token=TU_TOKEN o configurar VERCEL_REVALIDATE_TOKEN en Vercel.' 
+        }), { status: 401 });
     }
 
     console.log('[WarmCache] 🚀 Iniciando calentamiento de caché...');
