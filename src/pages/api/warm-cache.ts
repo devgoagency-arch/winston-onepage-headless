@@ -81,17 +81,23 @@ export const GET: APIRoute = async ({ request }) => {
                 chunk.map(url => {
                     const headers: Record<string, string> = {
                         'Cache-Control': 'no-cache',
-                        'User-Agent': 'WH-CacheWarmer/5.0'
+                        'User-Agent': 'WH-CacheWarmer/6.0'
                     };
                     
-                    // Si tenemos token, lo usamos para bypass de revalidación Y protección de Vercel
+                    let finalUrl = url;
+
+                    // Si tenemos token, usamos el bypass redundante (Header + Query)
                     if (adminToken) {
                         headers['x-prerender-revalidate'] = adminToken;
                         headers['x-revalidate-auth'] = adminToken;
                         headers['x-vercel-protection-bypass'] = adminToken;
+                        
+                        // Añadir bypass por query param (algunos proxies/WAF de Vercel lo prefieren así)
+                        const connector = finalUrl.includes('?') ? '&' : '?';
+                        finalUrl += `${connector}vercel-protection-bypass-token=${adminToken}`;
                     }
 
-                    return fetch(url, { headers });
+                    return fetch(finalUrl, { headers });
                 })
             );
             
