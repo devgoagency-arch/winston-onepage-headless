@@ -9,8 +9,8 @@ export const PUBLIC_WP_URL = WC_URL_ENV.replace(/\/$/, "");
 const CK = import.meta.env.WC_CONSUMER_KEY;
 const CS = import.meta.env.WC_CONSUMER_SECRET;
 
-const BASE_URL = `${PUBLIC_WP_URL}/wp-json/wc/v3`;
-const STORE_URL = `${PUBLIC_WP_URL}/wp-json/wc/store/v1`;
+const BASE_URL = `${PUBLIC_WP_URL}/wp-json/wc/v3/`;
+const STORE_URL = `${PUBLIC_WP_URL}/wp-json/wc/store/v1/`;
 
 // Solo validamos las claves en el servidor
 if (import.meta.env.SSR && (!CK || !CS)) {
@@ -99,7 +99,9 @@ async function wcFetch(path: string, options: RequestInit = {}, retries = 3, del
     };
 
     // Construct the URL with credentials for non-store API
-    let url = path.startsWith('http') ? path : `${baseUrl}${path.startsWith('/') ? '' : '/'}${path}`;
+    // Quitamos la barra inicial del path si existe, porque la base ya tiene una al final
+    const cleanPath = path.startsWith('/') ? path.substring(1) : path;
+    let url = path.startsWith('http') ? path : `${baseUrl}${cleanPath}`;
     
     if (!isStore && CK && CS) {
         const separator = url.includes('?') ? '&' : '?';
@@ -501,12 +503,18 @@ export async function getProductsByCategory(
 
         const fetchCategory = async (id: string) => {
             try {
-                // Use authenticated v3 API — the public Store API returns price:"0" for variable products
+                // Intentamos con v3 (Autenticada para mejores precios)
                 const data = await wcFetch(`/products?category=${id}&per_page=${perPage}&page=${page}&orderby=${orderBy}&order=${order}&status=publish&stock_status=instock${onSale ? '&on_sale=true' : ''}${attribute ? `&attribute=${attribute}` : ''}${attributeTerm ? `&attribute_term=${attributeTerm}` : ''}`);
                 return Array.isArray(data) ? data : [];
             } catch (err: any) {
-                console.error(`[getProductsByCategory] v3 cat ${id} failed:`, err.message);
-                return [];
+                console.warn(`[getProductsByCategory] Falló v3, intentando pública:`, err.message);
+                // Fallback: Si v3 falla (401), intentamos con la API de Store (Pública)
+                try {
+                    const fallbackData = await wcFetch(`/wc/store/v1/products?category=${id}&per_page=${perPage}`);
+                    return Array.isArray(fallbackData) ? fallbackData : [];
+                } catch (err2) {
+                    return [];
+                }
             }
         };
 
