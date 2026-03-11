@@ -10,6 +10,9 @@ export default defineConfig({
   adapter: vercel({
     maxDuration: 300
   }),
+  security: {
+    checkOrigin: false
+  },
   trailingSlash: 'ignore',
   prefetch: {
     prefetchAll: true,
