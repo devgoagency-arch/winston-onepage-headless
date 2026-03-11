@@ -13,16 +13,16 @@ export const GET: APIRoute = async ({ request, url }) => {
     const path  = url.searchParams.get('path') || '/';
     const topic = url.searchParams.get('topic') || '';
 
-    // 1. Verificar token secreto
-    const expectedToken = import.meta.env.VERCEL_RELAY_TOKEN;
+    const receivedToken = (token || '').trim();
+    const expectedToken = (import.meta.env.VERCEL_RELAY_TOKEN || '').trim();
 
     if (!expectedToken) {
         console.error('[Sync Relay] VERCEL_RELAY_TOKEN no configurado en Vercel.');
         return new Response(JSON.stringify({ error: 'Server misconfigured' }), { status: 500 });
     }
 
-    if (token !== expectedToken) {
-        console.error('[Sync Relay] Token inválido recibido:', token?.substring(0, 8));
+    if (receivedToken !== expectedToken) {
+        console.error('[Sync Relay] Token inválido recibido:', receivedToken.substring(0, 8));
         return new Response(JSON.stringify({ error: 'Unauthorized' }), { status: 401 });
     }
 

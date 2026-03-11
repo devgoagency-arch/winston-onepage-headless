@@ -1,5 +1,214 @@
 <?php
 /**
+ * Recommended way to include parent theme styles.
+ * (Please see http://codex.wordpress.org/Child_Themes#How_to_Create_a_Child_Theme)
+ *
+ */  
+
+// Cambiamos la prioridad a 999 para que sea de lo último en cargar
+add_action( 'wp_enqueue_scripts', 'winston_and_harry_style', 999 );
+
+function winston_and_harry_style() {
+    // 1. Cargamos el estilo del tema padre (Storefront)
+    wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
+
+    // 2. Cargamos tu estilo de Astro (Child Theme)
+    wp_enqueue_style( 
+        'child-style', 
+        get_stylesheet_directory_uri() . '/style.css', 
+        array('parent-style'), 
+        time() 
+    );
+
+    // 3. Cargamos estilos específicos para el carrito
+    if ( is_cart() ) {
+        wp_enqueue_style( 
+            'custom-cart-style', 
+            get_stylesheet_directory_uri() . '/custom-cart-styles.css', 
+            array('child-style'), 
+            time() 
+        );
+    }
+
+    // 4. Cargamos estilos específicos para el checkout
+    if ( is_checkout() ) {
+        wp_enqueue_style( 
+            'custom-checkout-style', 
+            get_stylesheet_directory_uri() . '/custom-checkout-styles.css', 
+            array('child-style'), 
+            time() 
+        );
+    }
+}
+
+// Envolver el formulario de checkout en un contenedor con clase .checkout-wrapper
+add_action( 'woocommerce_before_checkout_form', 'wh_checkout_wrapper_start', 5 );
+function wh_checkout_wrapper_start() {
+    echo '<div class="checkout-wrapper">';
+}
+
+add_action( 'woocommerce_after_checkout_form', 'wh_checkout_wrapper_end', 30 );
+function wh_checkout_wrapper_end() {
+    echo '</div>';
+}
+
+function winston_and_harry_scripts() {
+    // Encolar el JS de tu menú
+    wp_enqueue_script( 
+        'wh-navigation', 
+        get_stylesheet_directory_uri() . '/js/main.js', 
+        array(), // Si usas jQuery aquí pondrías array('jquery')
+        time(),  // Versión basada en tiempo para evitar caché en desarrollo
+        true     // Cargar en el footer
+    );
+}
+add_action( 'wp_enqueue_scripts', 'winston_and_harry_scripts' );
+
+add_action( 'wp_enqueue_scripts', function() {
+    wp_enqueue_style( 'font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css' );
+});
+
+add_action( 'wp_enqueue_scripts', function() {
+    // Sustituye EL_ID_DE_TU_PROYECTO por el código de Adobe
+    wp_enqueue_style( 'adobe-fonts', 'https://use.typekit.net/lpl0lgn.css' );
+});
+
+/**
+ * Your code goes below.
+ */
+ 
+ 
+ add_action( 'init', 'remove_storefront_header_styles' );
+function remove_storefront_header_styles() {
+    remove_action( 'storefront_header', 'storefront_header_container', 0 );
+    remove_action( 'storefront_header', 'storefront_skip_links', 5 );
+    remove_action( 'storefront_header', 'storefront_site_branding', 20 );
+    remove_action( 'storefront_header', 'storefront_secondary_navigation', 30 );
+    remove_action( 'storefront_header', 'storefront_product_search', 40 );
+    remove_action( 'storefront_header', 'storefront_header_container_close', 41 );
+    remove_action( 'storefront_header', 'storefront_primary_navigation_wrapper', 42 );
+    remove_action( 'storefront_header', 'storefront_primary_navigation', 50 );
+    remove_action( 'storefront_header', 'storefront_header_cart', 60 );
+    remove_action( 'storefront_header', 'storefront_primary_navigation_wrapper_close', 68 );
+}
+
+// Remover sidebar en páginas de WooCommerce para layout limpio
+add_action( 'get_header', 'wh_remove_sidebars' );
+function wh_remove_sidebars() {
+    if ( is_checkout() || is_cart() ) {
+        remove_action( 'storefront_sidebar', 'storefront_get_sidebar', 10 );
+    }
+}
+
+// Forzar layout de ancho completo en Storefront
+add_filter( 'body_class', 'wh_full_width_body_class' );
+function wh_full_width_body_class( $classes ) {
+    if ( is_checkout() || is_cart() ) {
+        $classes[] = 'storefront-full-width-content';
+    }
+    return $classes;
+}
+ 
+ /**
+ * RECEPTOR DE CARRITO PARA HEADLESS (Astro -> WooCommerce)
+ * Colocar en functions.php del tema activo o en un plugin de fragmentos de código.
+ */
+add_action('template_redirect', function() {
+    // 1. Detectar si el parámetro existe
+    if (!isset($_GET['fill_cart']) || empty($_GET['fill_cart'])) {
+        return;
+    }
+
+    // 2. Asegurar que WooCommerce esté disponible
+    if (!function_exists('WC') || !WC()->cart) {
+        return;
+    }
+
+    // 3. Limpiar carrito actual para evitar duplicados
+    WC()->cart->empty_cart();
+
+    // 4. Procesar productos (ID1:QTY1,ID2:QTY2)
+    $raw_items = sanitize_text_field($_GET['fill_cart']);
+    $items = explode(',', $raw_items);
+    
+    $added_any = false;
+    foreach ($items as $item) {
+        $parts = explode(':', $item);
+        $id = intval($parts[0]);
+        $qty = isset($parts[1]) ? intval($parts[1]) : 1;
+
+        if ($id > 0) {
+            // Intentamos añadir al carrito
+            $added = WC()->cart->add_to_cart($id, $qty);
+            if ($added) $added_any = true;
+        }
+    }
+
+    // 5. Redirigir al Checkout si añadimos algo, sino al Carrito para ver errores
+    if ($added_any) {
+        wp_safe_redirect(wc_get_checkout_url());
+    } else {
+        wp_safe_redirect(wc_get_cart_url());
+    }
+    exit;
+});
+/*Fin del receptor*/
+ 
+
+add_action('template_redirect', function() {
+    // 1. Definimos las rutas que SÍ deben funcionar en el subdominio de WordPress
+    $allowed_endpoints = [
+        'checkout',
+        'order-received',
+        'wc-api',
+        'wp-json', // ¡Fundamental para que Astro pueda pedir datos!
+        'my-account',
+        'cart'
+    ];
+
+    $current_uri = $_SERVER['REQUEST_URI'];
+    $is_allowed = false;
+
+    foreach ($allowed_endpoints as $endpoint) {
+        if (strpos($current_uri, $endpoint) !== false) {
+            $is_allowed = true;
+            break;
+        }
+    }
+
+    // 2. Si no es una ruta permitida, ni el admin, y es la home o un producto...
+    if (!is_admin() && !defined('REST_REQUEST') && !$is_allowed) {
+        
+        // Si entran a la raíz: tienda.winstonandharrystore.com -> winstonandharrystore.com
+        if (is_front_page() || is_home()) {
+            wp_redirect('https://winstonandharrystore.com/', 301);
+            exit;
+        }
+
+        // Si entran a un producto individual en WP, los mandamos a su versión en Astro
+        if (is_product()) {
+            global $post;
+            wp_redirect('https://winstonandharrystore.com/productos/' . $post->post_name, 301);
+            exit;
+        }
+
+        // Cualquier otra página (categorías, etiquetas, etc.) a la home de Astro
+        wp_redirect('https://winstonandharrystore.com/', 301);
+        exit;
+    }
+});
+
+// En functions.php para sincronizar el contador del carrito
+add_filter( 'woocommerce_add_to_cart_fragments', function( $fragments ) {
+    ob_start();
+    ?>
+    <span class="cart-count" id="cart-count"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
+    <?php
+    $fragments['#cart-count'] = ob_get_clean();
+    return $fragments;
+});
+
+/**
  * Post Type: Look de la semana.
  * Add this code to your theme's functions.php or a custom plugin.
  */
@@ -269,3 +478,229 @@ add_action('rest_api_init', function () {
         'permission_callback' => '__return_true'
     ));
 });
+
+/**
+ * Actualizar contador de carrito vía AJAX
+ */
+
+add_filter( 'woocommerce_add_to_cart_fragments', function( $fragments ) {
+    ob_start();
+    ?>
+    <span class="cart-count"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
+    <?php
+    $fragments['span.cart-count'] = ob_get_clean();
+    return $fragments;
+});
+
+/**
+ * WooCommerce Quantity Buttons (+/-)
+ */
+add_action( 'woocommerce_after_quantity_input_field', 'wh_add_quantity_plus_button' );
+function wh_add_quantity_plus_button() {
+    echo '<button type="button" class="plus">+</button>';
+}
+
+add_action( 'woocommerce_before_quantity_input_field', 'wh_add_quantity_minus_button' );
+function wh_add_quantity_minus_button() {
+    echo '<button type="button" class="minus">-</button>';
+}
+
+// Script para que funcionen los botones +/-
+add_action( 'wp_footer', 'wh_quantity_buttons_script' );
+function wh_quantity_buttons_script() {
+    if ( ! is_cart() && ! is_product() && ! is_checkout() ) return;
+    ?>
+    <script type="text/javascript">
+    document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('plus') || e.target.classList.contains('minus')) {
+            const qtyInput = e.target.closest('.quantity').querySelector('input.qty');
+            if (qtyInput) {
+                let currentVal = parseFloat(qtyInput.value) || 0;
+                let step = parseFloat(qtyInput.step) || 1;
+                let min = parseFloat(qtyInput.min) || 0;
+                let max = parseFloat(qtyInput.max) || Infinity;
+
+                if (e.target.classList.contains('plus')) {
+                    if (currentVal < max) {
+                        qtyInput.value = (currentVal + step).toFixed(qtyInput.step.toString().split('.')[1] ? qtyInput.step.toString().split('.')[1].length : 0);
+                    }
+                } else {
+                    if (currentVal > min) {
+                        qtyInput.value = (currentVal - step).toFixed(qtyInput.step.toString().split('.')[1] ? qtyInput.step.toString().split('.')[1].length : 0);
+                    }
+                }
+                
+                // Trigger change event to update cart via AJAX
+                const event = new Event('change', { bubbles: true });
+                qtyInput.dispatchEvent(event);
+            }
+        }
+    });
+    </script>
+    <?php
+}
+
+/**
+ * Replica la estructura de Astro: <li class="has-submenu"> <div class="menu-link-wrapper"> <a...> <button class="submenu-toggle"> </div> <ul class="submenu">...</ul>
+ */
+class WH_Walker_Nav_Menu extends Walker_Nav_Menu {
+    function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
+        $classes = empty( $item->classes ) ? array() : (array) $item->classes;
+        $has_children = in_array( 'menu-item-has-children', $classes );
+        
+        if ( $has_children ) {
+            $classes[] = 'has-submenu';
+        }
+        
+        $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
+        $output .= '<li class="' . esc_attr( $class_names ) . '">';
+        
+        $output .= '<div class="menu-link-wrapper">';
+
+        $attributes = '';
+        if ( ! empty( $item->url ) ) {
+            // Reemplazar URLs para que apunten a Astro si es necesario
+            $url = $item->url;
+            $url = str_replace('https://tienda.winstonandharrystore.com', 'https://winstonandharrystore.com', $url);
+            $url = str_replace('/product-category/', '/categoria/', $url);
+            $attributes .= ' href="' . esc_url( $url ) . '"';
+        }
+        
+        $item_output = $args->before;
+        $item_output .= '<a class="mobile-link" ' . $attributes . '>';
+        $item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
+        $item_output .= '</a>';
+        
+        if ( $has_children ) {
+            $item_output .= '<button class="submenu-toggle" aria-expanded="false">';
+            $item_output .= '<svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>';
+            $item_output .= '</button>';
+        }
+        
+        $item_output .= '</div>';
+        $item_output .= $args->after;
+
+        $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
+    }
+
+    function start_lvl( &$output, $depth = 0, $args = array() ) {
+        $output .= '<ul class="submenu">';
+    }
+}
+
+/**
+ * Winston & Harry — Webhook Relay
+ * 
+ * WooCommerce no puede hacer POST directo a Vercel (bloqueado por infraestructura).
+ * Este relay recibe el webhook en WordPress y lo reenvía a Vercel como GET con token.
+ * 
+ * Flujo:
+ *   WooCommerce → POST /wp-json/wh/v1/sync → este relay → GET /api/sync-relay?token=X&slug=Y → Vercel
+ * 
+ * INSTALACIÓN:
+ *   Pegar este código al final de functions.php del tema activo,
+ *   o en un plugin personalizado en wp-content/plugins/wh-relay/wh-relay.php
+ */
+
+// ─── CONFIGURACIÓN ───────────────────────────────────────────────────────────
+
+// URL del frontend Astro en Vercel (cambiar a producción cuando corresponda)
+define('WH_FRONTEND_URL', 'https://winstonandharrystore.com');
+
+// Token secreto compartido entre WordPress y Vercel
+// Debe coincidir con VERCEL_RELAY_TOKEN en las variables de entorno de Vercel
+define('WH_RELAY_TOKEN', getenv('WH_RELAY_TOKEN') ?: 'wh_relay_secret_token_2026');
+
+// Secreto para validar la firma de los webhooks de WooCommerce
+define('WC_WEBHOOK_SECRET', 'winston_revalidate_2024');
+
+// ─── REGISTRO DEL ENDPOINT REST ──────────────────────────────────────────────
+
+add_action('rest_api_init', function () {
+    register_rest_route('wh/v1', '/sync', [
+        'methods'             => ['POST', 'GET'],
+        'callback'            => 'wh_webhook_relay',
+        'permission_callback' => '__return_true', // WooCommerce firma con HMAC, no necesita auth WP
+    ]);
+});
+
+// ─── HANDLER PRINCIPAL ───────────────────────────────────────────────────────
+
+function wh_webhook_relay(WP_REST_Request $request) {
+    $topic     = (string)$request->get_header('x-wc-webhook-topic');
+    $signature = $request->get_header('x-wc-webhook-signature');
+    $body      = $request->get_body();
+
+    // 1. Verificar firma HMAC de WooCommerce
+    $secret = defined('WC_WEBHOOK_SECRET') ? WC_WEBHOOK_SECRET : get_option('wh_webhook_secret', '');
+    if ($secret && $signature) {
+        $expected = base64_encode(hash_hmac('sha256', $body, $secret, true));
+        if (!hash_equals($expected, $signature)) {
+            return new WP_REST_Response(['error' => 'Invalid signature'], 401);
+        }
+    }
+
+    // 2. Parsear payload
+    $data = json_decode($body, true) ?: [];
+    $slug = $data['slug'] ?? '';
+    $id   = $data['id']   ?? '';
+
+    // 3. Handshake de WooCommerce (ping inicial para activar el webhook)
+    if ($topic === 'webhook.test' || $topic === 'action.ping' || (!$slug && !$id)) {
+        wh_notify_vercel('/', $topic);
+        return new WP_REST_Response(['success' => true, 'message' => 'Handshake OK'], 200);
+    }
+
+    // 4. Construir rutas a revalidar
+    $paths = ['/'];
+    if ($slug) $paths[] = '/productos/' . $slug;
+
+    if (!empty($data['categories']) && is_array($data['categories'])) {
+        foreach ($data['categories'] as $cat) {
+            if (!empty($cat['slug'])) {
+                $paths[] = '/categoria/' . $cat['slug'];
+            }
+        }
+    }
+
+    // 5. Notificar a Vercel de forma asíncrona (no bloquea la respuesta a WooCommerce)
+    foreach ($paths as $path) {
+        wh_notify_vercel($path, $topic);
+    }
+
+    error_log('[WH Relay] Revalidando ' . count($paths) . ' rutas para: ' . $slug);
+
+    return new WP_REST_Response([
+        'success'    => true,
+        'topic'      => $topic,
+        'slug'       => $slug,
+        'revalidated'=> count($paths),
+    ], 200);
+}
+
+// ─── FUNCIÓN DE NOTIFICACIÓN A VERCEL ────────────────────────────────────────
+
+function wh_notify_vercel(string $path, ?string $topic = '') {
+    $token    = defined('WH_RELAY_TOKEN') ? WH_RELAY_TOKEN : '';
+    $frontend = defined('WH_FRONTEND_URL') ? WH_FRONTEND_URL : '';
+
+    if (!$frontend || !$token) {
+        error_log('[WH Relay] ERROR: WH_FRONTEND_URL o WH_RELAY_TOKEN no configurados.');
+        return;
+    }
+
+    $url = $frontend . '/api/sync-relay'
+         . '?token=' . urlencode($token)
+         . '&path='  . urlencode($path)
+         . '&topic=' . urlencode($topic);
+
+    // wp_remote_get es no bloqueante con timeout corto
+    wp_remote_get($url, [
+        'timeout'   => 5,
+        'blocking'  => false, // Fire and forget — no esperamos respuesta
+        'sslverify' => true,
+        'headers'   => [
+            'User-Agent' => 'WinstonHarry-Relay/1.0',
+        ],
+    ]);
+}
