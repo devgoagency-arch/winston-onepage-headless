@@ -4,5 +4,21 @@
             "path": "/api/warm-cache",
             "schedule": "0 5 * * *"
         }
-    ]
+    ],
+    "headers": [
+        {
+            "source": "/api/sync",
+            "headers": [
+                {
+                    "key": "x-vercel-protection-bypass",
+                    "value": "true"
+                }
+            ]
+        }
+    ],
+    "functions": {
+        "src/pages/api/sync/index.ts": {
+            "maxDuration": 30
+        }
+    }
 }
