@@ -6,17 +6,17 @@
 const WC_URL_ENV = import.meta.env.WC_URL || import.meta.env.WP_URL || "https://tienda.winstonandharrystore.com";
 export const PUBLIC_WP_URL = WC_URL_ENV.replace(/\/$/, "");
 
-const CK = import.meta.env.WC_CONSUMER_KEY;
-const CS = import.meta.env.WC_CONSUMER_SECRET;
+const CK = (import.meta.env.WC_CONSUMER_KEY || "").trim();
+const CS = (import.meta.env.WC_CONSUMER_SECRET || "").trim();
 
-const BASE_URL = `${PUBLIC_WP_URL}/wp-json/wc/v3/`;
-const STORE_URL = `${PUBLIC_WP_URL}/wp-json/wc/store/v1/`;
+const WP_JSON_BASE = `${PUBLIC_WP_URL}/wp-json`;
 
 // Solo validamos las claves en el servidor
 if (import.meta.env.SSR && (!CK || !CS)) {
     console.error("[WC API] CRÍTICO: Faltan WC_CONSUMER_KEY o WC_CONSUMER_SECRET en las variables de entorno.");
+} else if (import.meta.env.SSR) {
+    console.log(`[WC API] Claves cargadas: CK=${CK.substring(0, 6)}... CS=${CS.substring(0, 6)}...`);
 }
-
 
 // SSR Safe base64 helper
 const safeBtoa = (str: string) => {
@@ -31,12 +31,9 @@ const safeBtoa = (str: string) => {
     }
 };
 
-const getAuthHeader = () => {
-    if (!CK || !CS) return null;
-    return `Basic ${safeBtoa(`${CK}:${CS}`)}`;
-};
-
-// Sistema de Cache en Memoria (SSR & API)
+/**
+ * Sistema de Cache en Memoria (SSR & API)
+ */
 const cache: Record<string, { data: any, timestamp: number }> = {};
 const DEFAULT_TTL = 1000 * 60 * 5; // 5 minutos para ver cambios rápido
 
@@ -66,96 +63,71 @@ function normalizeSlug(text: string): string {
 }
 
 /**
- * Robust JSON parsing helper
- */
-function cleanJSON(jsonString: string) {
-    try {
-        return JSON.parse(jsonString);
-    } catch (e) {
-        // Attempt to clean up common issues like unescaped newlines or control characters
-        const cleanedString = jsonString.replace(/[\u0000-\u001F\u007F-\u009F]/g, '').replace(/\\n/g, '\\n').replace(/\\r/g, '\\r').replace(/\\t/g, '\\t');
-        try {
-            return JSON.parse(cleanedString);
-        } catch (e2) {
-            console.error("Failed to parse JSON even after cleaning:", e2);
-            return null;
-        }
-    }
-}
-
-/**
- * Generic Fetcher with Basic Auth and Retry Logic
+ * Generic Fetcher with OAuth via URL Params (Most compatible method)
  */
 async function wcFetch(path: string, options: RequestInit = {}, retries = 3, delay = 1500) {
-    // If it's a store API path, use PUBLIC_WP_URL + /wp-json/ and NO AUTH (Public)
-    const isStore = path.includes('/wc/store/');
-    const baseUrl = isStore ? `${PUBLIC_WP_URL}/wp-json` : BASE_URL;
-    const authHeader = getAuthHeader();
+    // 1. Limpiar el path para evitar dobles barras o prefijos repetidos
+    let cleanPath = path.startsWith('/') ? path.substring(1) : path;
+    
+    // Si el path ya incluye wp-json lo quitamos para normalizar
+    cleanPath = cleanPath.replace('wp-json/', '');
 
-    // Headers base
-    const headers: Record<string, string> = {
-        'Accept': 'application/json',
-        ...(options.headers as Record<string, string> || {})
-    };
-
-    // Si ya es un http completo no hacemos nada
+    // 2. Determinar la URL final
+    let url = "";
     if (path.startsWith('http')) {
         url = path;
     } else {
-        // En base a la ruta decidimos el prefijo
-        const cleanPath = path.startsWith('/') ? path.substring(1) : path;
-        
-        if (cleanPath.startsWith('wp/v2') || cleanPath.startsWith('wh/v1')) {
-            // Rutas de WP nativas (menu, páginas)
-            url = `${PUBLIC_WP_URL}/wp-json/${cleanPath}`;
-        } else {
-            // Rutas de WooCommerce (V3 o Store API)
-            url = `${baseUrl}${cleanPath}`;
-        }
+        url = `${WP_JSON_BASE}/${cleanPath}`;
     }
-    
+
+    // 3. Añadir Auth solo si NO es Store API (que es público)
+    const isStore = cleanPath.includes('wc/store/');
     if (!isStore && CK && CS) {
         const separator = url.includes('?') ? '&' : '?';
         url = `${url}${separator}consumer_key=${CK}&consumer_secret=${CS}`;
-    } else if (!isStore && (!CK || !CS)) {
-        console.error("[WC API] No se pudo añadir Auth: Faltan CK o CS.");
     }
+
+    // 4. Headers base
+    const headers = {
+        'Accept': 'application/json',
+        ...(options.headers || {})
+    };
 
     for (let i = 0; i < retries; i++) {
         try {
-            console.log(`[WC API] Fetching: ${url.split('?')[0]}${isStore ? ' [PUBLIC]' : ' [AUTH]'}`);
             const startTime = Date.now();
-
-            const res = await fetch(url, {
-                ...options,
-                headers
-            });
+            const res = await fetch(url, { ...options, headers });
             const endTime = Date.now();
-            console.log(`[WC API] Response: ${res.status} (${endTime - startTime}ms)`);
+            
+            console.log(`[WC API] ${res.status} | ${url.split('?')[0]} (${endTime - startTime}ms)`);
 
-            if (res.status === 404) throw new Error(`WC API Error: 404 Not Found`);
-            if ([500, 502, 503, 429].includes(res.status)) {
-                if (i === retries - 1) throw new Error(`WC API Error: ${res.status}`);
-                await new Promise(r => setTimeout(r, delay));
-                delay *= 2;
-                continue;
+            if (res.status === 401) {
+                const errText = await res.text();
+                throw new Error(`WC API 401: ${errText.substring(0, 100)}`);
             }
-
+            
+            if (res.status === 404) throw new Error("WC API Error: 404 Not Found");
+            
             if (!res.ok) {
-                const errorBody = await res.text().catch(() => "No body");
-                console.error(`[WC API] Error details: ${errorBody.substring(0, 200)}`);
-                throw new Error(`WC API Error: ${res.status} ${res.statusText}`);
+                if ([500, 502, 503, 429].includes(res.status) && i < retries - 1) {
+                    await new Promise(r => setTimeout(r, delay));
+                    delay *= 2;
+                    continue;
+                }
+                throw new Error(`WC API Error: ${res.status}`);
             }
 
             const text = await res.text();
-            return cleanJSON(text);
-        } catch (error: any) {
-            if (error.message.includes('404')) throw error;
-            if (i === retries - 1) {
-                console.error(`[WC API] Final catch fail:`, error.message);
-                throw error;
+            try {
+                return JSON.parse(text);
+            } catch (e) {
+                // Si falla el parseo, el servidor quizás mandó basura antes del JSON
+                const cleaned = text.substring(text.indexOf('{'));
+                return JSON.parse(cleaned);
             }
-            console.warn(`[WC API] Catch Error: ${error.message}. Retrying in ${delay}ms...`);
+        } catch (error: any) {
+            if (i === retries - 1) throw error;
+            console.warn(`[WC API] Intento ${i+1} fallido: ${error.message}. Reintentando...`);
             await new Promise(r => setTimeout(r, delay));
             delay *= 2;
         }
