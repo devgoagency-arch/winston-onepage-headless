@@ -1,111 +1,110 @@
+/**
+ * /api/warm-cache — Cron diario 5AM
+ *
+ * NIVEL 3: Cache warming optimizado
+ * - Precalienta productos, categorías y rutas críticas
+ * - Lotes de 3 con 1s de pausa (más rápido que antes sin saturar WP)
+ * - Usa la API autenticada (v3) para obtener slugs reales
+ * - Registra tiempo total y fallos para diagnóstico
+ */
 import type { APIRoute } from 'astro';
 import { PUBLIC_WP_URL } from '../../lib/woocommerce';
 
 export const GET: APIRoute = async ({ request }) => {
-    const url = new URL(request.url);
-    const origin = url.origin;
+    const t0 = Date.now();
+    const origin = new URL(request.url).origin;
+    const CK = (import.meta.env.WC_CONSUMER_KEY || "").trim();
+    const CS = (import.meta.env.WC_CONSUMER_SECRET || "").trim();
+
+    // Solo permitir desde cron de Vercel o con token de admin
+    const authHeader = request.headers.get('authorization') || '';
+    const cronHeader = request.headers.get('x-vercel-cron') || '';
+    const adminToken = import.meta.env.VERCEL_REVALIDATE_TOKEN || '';
+    const queryToken = new URL(request.url).searchParams.get('token') || '';
+
+    if (!cronHeader && queryToken !== adminToken) {
+        return new Response(JSON.stringify({ error: 'Unauthorized' }), { status: 401 });
+    }
+
+    console.log('[WarmCache] Iniciando calentamiento de caché...');
 
     try {
-        console.log('--- Iniciando Calentamiento de Caché (Optimizado) ---');
-
-        // 1. Obtenemos la primera página para saber el total
-        console.log('Obteniendo catálogo de WooCommerce...');
-        const firstResponse = await fetch(`${PUBLIC_WP_URL}/wp-json/wc/store/v1/products?per_page=100&page=1`);
-
-        if (!firstResponse.ok) {
-            throw new Error(`Error obteniendo productos: ${firstResponse.status}`);
+        // ─── 1. Obtener todos los slugs de productos ─────────────────────────
+        const productSlugs: string[] = [];
+        let page = 1;
+        while (true) {
+            const url = `${PUBLIC_WP_URL}/wp-json/wc/v3/products?per_page=100&page=${page}&status=publish&stock_status=instock&fields=slug&consumer_key=${CK}&consumer_secret=${CS}`;
+            const res = await fetch(url).catch(() => null);
+            if (!res?.ok) break;
+            const data = await res.json();
+            if (!Array.isArray(data) || data.length === 0) break;
+            data.forEach((p: any) => { if (p.slug) productSlugs.push(p.slug); });
+            const totalPages = parseInt(res.headers.get('X-WP-TotalPages') || '1');
+            if (page >= totalPages || page >= 10) break; // máximo 1000 productos
+            page++;
         }
+        console.log(`[WarmCache] ${productSlugs.length} productos encontrados.`);
 
-        const totalPagesHeader = firstResponse.headers.get('X-WP-TotalPages');
-        const totalPages = Math.min(parseInt(totalPagesHeader || '1'), 10); // Limitamos a 10 páginas (1000 productos) para velocidad
-
-        let allProducts = await firstResponse.json();
-        console.log(`Página 1 cargada. Total páginas detectadas: ${totalPagesHeader}.`);
-
-        // 2. Cargamos el resto de páginas en PARALELO
-        if (totalPages > 1) {
-            const pageRequests = [];
-            for (let p = 2; p <= totalPages; p++) {
-                pageRequests.push(
-                    fetch(`${PUBLIC_WP_URL}/wp-json/wc/store/v1/products?per_page=100&page=${p}`)
-                        .then(res => res.ok ? res.json() : [])
-                        .catch(() => [])
-                );
-            }
-            const otherPages = await Promise.all(pageRequests);
-            otherPages.forEach(chunk => {
-                if (Array.isArray(chunk)) allProducts.push(...chunk);
-            });
+        // ─── 2. Obtener slugs de categorías ──────────────────────────────────
+        const categorySlugs: string[] = [];
+        const catRes = await fetch(`${PUBLIC_WP_URL}/wp-json/wc/v3/products/categories?per_page=100&hide_empty=true&consumer_key=${CK}&consumer_secret=${CS}`).catch(() => null);
+        if (catRes?.ok) {
+            const cats = await catRes.json();
+            if (Array.isArray(cats)) cats.forEach((c: any) => { if (c.slug) categorySlugs.push(c.slug); });
         }
+        console.log(`[WarmCache] ${categorySlugs.length} categorías encontradas.`);
 
-        const slugs = allProducts.map((p: any) => p.slug);
-        console.log(`Total de productos encontrados: ${slugs.length}.`);
-
-        // 3. Definimos todas las rutas críticas
-        const criticalRoutes = [
-            '/',
-            '/lista-de-deseos',
-            '/api/products',
-            '/api/reviews',
+        // ─── 3. Construir lista de URLs a calentar ───────────────────────────
+        const urlsToWarm = [
+            `${origin}/`,
+            `${origin}/lista-de-deseos`,
+            ...productSlugs.map(slug => `${origin}/productos/${slug}`),
+            ...categorySlugs.map(slug => `${origin}/categoria/${slug}`),
         ];
 
-        const allUrlsToWarm = [
-            ...criticalRoutes.map(route => `${origin}${route}`),
-            ...slugs.map((slug: string) => `${origin}/productos/${slug}`)
-        ];
+        console.log(`[WarmCache] Calentando ${urlsToWarm.length} URLs en lotes de 3...`);
 
-        console.log(`Iniciando visita a ${allUrlsToWarm.length} enlaces en paralelo total...`);
+        // ─── 4. Calentar en lotes de 3 con 1s de pausa ──────────────────────
+        const CHUNK = 3;
+        let ok = 0, failed = 0;
 
-        // 4. Ejecutamos las visitas en lotes MUY controlados para no saturar WordPress
-        const CHUNK_SIZE = 2; // Reducido para proteger la DB
-        const results = [];
-
-        for (let i = 0; i < allUrlsToWarm.length; i += CHUNK_SIZE) {
-            const chunk = allUrlsToWarm.slice(i, i + CHUNK_SIZE);
-
-            if (i % 10 === 0) {
-                console.log(`[Cache Warmer] Lote ${i}/${allUrlsToWarm.length}.`);
-            }
-
-            const chunkResults = await Promise.allSettled(
+        for (let i = 0; i < urlsToWarm.length; i += CHUNK) {
+            const chunk = urlsToWarm.slice(i, i + CHUNK);
+            const results = await Promise.allSettled(
                 chunk.map(url => fetch(url, {
-                    method: 'GET',
-                    headers: { 'User-Agent': 'Batch-Stabilizer' }
+                    headers: {
+                        'User-Agent': 'WH-CacheWarmer/2.0',
+                        'Cache-Control': 'no-cache', // Forzar regeneración
+                    }
                 }))
             );
-            results.push(...chunkResults);
-
-            if (i + CHUNK_SIZE < allUrlsToWarm.length) {
-                await new Promise(r => setTimeout(r, 1500));
-            }
+            results.forEach(r => {
+                if (r.status === 'fulfilled' && r.value.ok) ok++;
+                else failed++;
+            });
+            if (i % 30 === 0) console.log(`[WarmCache] Progreso: ${i}/${urlsToWarm.length}`);
+            if (i + CHUNK < urlsToWarm.length) await new Promise(r => setTimeout(r, 1000));
         }
 
-        const failed = results.filter(r => r.status === 'rejected' || (r.status === 'fulfilled' && !r.value.ok)).length;
+        const elapsed = ((Date.now() - t0) / 1000).toFixed(1);
+        console.log(`[WarmCache] ✅ Completado en ${elapsed}s — OK: ${ok}, Fallidos: ${failed}`);
 
         return new Response(JSON.stringify({
             success: true,
-            total_links: allUrlsToWarm.length,
-            products: slugs.length,
-            failed: failed,
-            message: `Cache warming completed. Total: ${allUrlsToWarm.length}, Failed: ${failed}.`,
+            products: productSlugs.length,
+            categories: categorySlugs.length,
+            total_urls: urlsToWarm.length,
+            ok,
+            failed,
+            elapsed_seconds: parseFloat(elapsed),
             timestamp: new Date().toISOString()
         }), {
             status: 200,
-            headers: {
-                'Content-Type': 'application/json',
-                'Cache-Control': 'no-store'
-            }
+            headers: { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' }
         });
 
     } catch (error: any) {
-        console.error('Error en Cache Warmer:', error);
-        return new Response(JSON.stringify({
-            success: false,
-            error: error.message
-        }), {
-            status: 500,
-            headers: { 'Content-Type': 'application/json' }
-        });
+        console.error('[WarmCache] Error:', error.message);
+        return new Response(JSON.stringify({ success: false, error: error.message }), { status: 500 });
     }
 };
-

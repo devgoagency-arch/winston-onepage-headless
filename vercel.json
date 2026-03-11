@@ -7,12 +7,35 @@
     ],
     "headers": [
         {
+            "source": "/api/(.*)",
+            "headers": [
+                { "key": "Cache-Control", "value": "no-store" }
+            ]
+        },
+        {
+            "source": "/_astro/(.*)",
+            "headers": [
+                { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+            ]
+        },
+        {
+            "source": "/images/(.*)",
+            "headers": [
+                { "key": "Cache-Control", "value": "public, max-age=2592000, stale-while-revalidate=86400" }
+            ]
+        },
+        {
+            "source": "/fonts/(.*)",
+            "headers": [
+                { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+            ]
+        },
+        {
             "source": "/api/sync",
             "headers": [
-                { "key": "Access-Control-Allow-Credentials", "value": "true" },
                 { "key": "Access-Control-Allow-Origin", "value": "*" },
-                { "key": "Access-Control-Allow-Methods", "value": "GET,OPTIONS,PATCH,DELETE,POST,PUT" },
-                { "key": "Access-Control-Allow-Headers", "value": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, X-WC-Webhook-Source, X-WC-Webhook-Topic, X-WC-Webhook-Resource, X-WC-Webhook-Event, X-WC-Webhook-Signature, X-WC-Webhook-ID" }
+                { "key": "Access-Control-Allow-Methods", "value": "GET, POST, OPTIONS" },
+                { "key": "Access-Control-Allow-Headers", "value": "Content-Type, x-wc-webhook-signature, x-wc-webhook-topic, x-wc-webhook-resource, x-wc-webhook-event, x-wc-webhook-id" }
             ]
         }
     ]
