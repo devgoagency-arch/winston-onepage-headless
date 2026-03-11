@@ -29,14 +29,15 @@ export const GET: APIRoute = async ({ url }) => {
 
         // 2. LISTADO POR CATEGORÍA
         const category = url.searchParams.get('category') || '63';
+        const perPage = parseInt(url.searchParams.get('per_page') || '16');
         const orderBy = url.searchParams.get('orderby') || 'date';
         const order = url.searchParams.get('order') || 'desc';
         const onSale = url.searchParams.get('on_sale') === 'true';
         const attribute = url.searchParams.get('attribute') || undefined;
         const attributeTerm = url.searchParams.get('attribute_term') || undefined;
 
-        let allProducts = await getProductsByCategory(category, 100, page, orderBy, order, onSale, attribute, attributeTerm);
-        console.log(`[API Products] Returning ${allProducts?.length || 0} products`);
+        let allProducts = await getProductsByCategory(category, perPage, page, orderBy, order, onSale, attribute, attributeTerm);
+        console.log(`[API Products] Returning ${allProducts?.length || 0} products (Page: ${page}, PerPage: ${perPage})`);
 
         return new Response(JSON.stringify(allProducts), {
             status: 200,

@@ -35,6 +35,9 @@ const FilteredProductList: React.FC<FilteredProductListProps> = ({
     const [error, setError] = useState<string | null>(null);
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
     const [isHeaderHidden, setIsHeaderHidden] = useState(false);
+    const [page, setPage] = useState(1);
+    const [hasMore, setHasMore] = useState(true);
+    const [loadingMore, setLoadingMore] = useState(false);
     const [openSections, setOpenSections] = useState<Record<string, boolean>>({
         categories: (category?.slug || "").toLowerCase().includes('accesorios'),
         color: false,
@@ -174,38 +177,86 @@ const FilteredProductList: React.FC<FilteredProductListProps> = ({
         const ssrProducts = Array.isArray(initialProducts) ? initialProducts : [];
         if (ssrProducts.length === 0 && category?.id) {
             const activeSort = sortParam ? (SORT_OPTIONS.find(o => o.key === sortParam) || SORT_OPTIONS[0]) : SORT_OPTIONS[0];
-            fetchBaseProducts(activeSort);
+            fetchBaseProducts(activeSort, 1);
+        } else if (ssrProducts.length > 0) {
+            // Si ya tenemos productos de SSR, asumimos que estamos en la página 1
+            setPage(1);
+            if (ssrProducts.length < 16) setHasMore(false);
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-    const fetchBaseProducts = async (currentSort: any) => {
+    const fetchBaseProducts = async (currentSort: any, pageNum: number, append = false) => {
         if (!category?.id) return;
-        setLoading(true);
+        if (append) setLoadingMore(true); else setLoading(true);
         setError(null);
+        
         try {
             const params = new URLSearchParams();
             params.append('category', category.id.toString());
             params.append('orderby', currentSort.orderBy);
             params.append('order', currentSort.order);
+            params.append('page', pageNum.toString());
+            params.append('per_page', '16');
             if (currentSort.onSale) params.append('on_sale', 'true');
 
             const response = await fetch(`/api/products?${params.toString()}`);
             if (!response.ok) throw new Error('Error al cargar productos');
 
             const data = await response.json();
-            setAllFetchedProducts(Array.isArray(data) ? data : []);
+            const newProducts = Array.isArray(data) ? data : [];
+            
+            if (append) {
+                setAllFetchedProducts(prev => [...prev, ...newProducts]);
+            } else {
+                setAllFetchedProducts(newProducts);
+            }
+
+            if (newProducts.length < 16) {
+                setHasMore(false);
+            } else {
+                setHasMore(true);
+            }
         } catch (err) {
             console.error("Fetch Error:", err);
             setError('No pudimos actualizar la lista de productos.');
         } finally {
             setLoading(false);
+            setLoadingMore(false);
         }
     };
 
+    const loadMore = () => {
+        if (loadingMore || !hasMore) return;
+        const nextPage = page + 1;
+        setPage(nextPage);
+        fetchBaseProducts(sort, nextPage, true);
+    };
+
+    // Intersection Observer for Infinite Scroll
+    const observerTarget = useRef(null);
+
+    useEffect(() => {
+        const target = observerTarget.current;
+        if (!target || !hasMore || loading) return;
+
+        const observer = new IntersectionObserver(
+            entries => {
+                if (entries[0].isIntersecting && hasMore && !loadingMore) {
+                    loadMore();
+                }
+            },
+            { threshold: 0.1 }
+        );
+
+        observer.observe(target);
+        return () => observer.disconnect();
+    }, [hasMore, loadingMore, loading, page, sort]);
+
     const handleSortChange = (newSort: any) => {
         setSort(newSort);
-        fetchBaseProducts(newSort);
+        setPage(1);
+        fetchBaseProducts(newSort, 1, false);
     };
 
     const toggleColor = (slug: string) => {
@@ -424,6 +475,15 @@ const FilteredProductList: React.FC<FilteredProductListProps> = ({
                         </div>
                     )}
                 </div>
+
+                {/* Marcador para Infinite Scroll */}
+                <div ref={observerTarget} style={{ height: '20px', margin: '20px 0' }}>
+                    {loadingMore && (
+                        <div className="loading-more">
+                            <span className="spinner"></span> Cargando más productos...
+                        </div>
+                    )}
+                </div>
             </section>
 
             {/* Drawer */}
@@ -581,6 +641,17 @@ const FilteredProductList: React.FC<FilteredProductListProps> = ({
                 .grid-wrapper { flex-grow: 1; }
                 .grid-loading-placeholder { height: 100%; min-height: 400px; width: 100%; }
                 
+                .loading-more {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 10px;
+                    padding: 2rem;
+                    font-family: var(--font-paragraphs);
+                    color: #888;
+                    font-size: 0.9rem;
+                }
+
                 .loading-indicator {
                     position: absolute;
                     top: 100px;
