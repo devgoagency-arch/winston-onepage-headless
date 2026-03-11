@@ -31,9 +31,10 @@ const safeBtoa = (str: string) => {
     }
 };
 
-const wcAuthHeader = `Basic ${safeBtoa(`${CK}:${CS}`)}`;
-
-console.log(`[WC Auth] Header generated (length: ${wcAuthHeader.length})`);
+const getAuthHeader = () => {
+    if (!CK || !CS) return null;
+    return `Basic ${safeBtoa(`${CK}:${CS}`)}`;
+};
 
 // Sistema de Cache en Memoria (SSR & API)
 const cache: Record<string, { data: any, timestamp: number }> = {};
@@ -89,12 +90,24 @@ async function wcFetch(path: string, options: RequestInit = {}, retries = 3, del
     // If it's a store API path, use PUBLIC_WP_URL + /wp-json/ and NO AUTH (Public)
     const isStore = path.includes('/wc/store/');
     const baseUrl = isStore ? `${PUBLIC_WP_URL}/wp-json` : BASE_URL;
+    const authHeader = getAuthHeader();
 
     // Construct the URL
-    // If it's NOT store, we add CK/CS. If it already has ?, we use &.
-    const url = isStore
-        ? `${baseUrl}${path.startsWith('/') ? '' : '/'}${path}`
-        : `${baseUrl}${path.startsWith('/') ? '' : '/'}${path}${path.includes('?') ? '&' : '?'}consumer_key=${CK}&consumer_secret=${CS}`;
+    const url = path.startsWith('http') ? path : `${baseUrl}${path.startsWith('/') ? '' : '/'}${path}`;
+
+    // Headers base
+    const headers: Record<string, string> = {
+        'Accept': 'application/json',
+        ...(options.headers as Record<string, string> || {})
+    };
+
+    // Solo añadimos Auth si no es el Store API (que es público)
+    if (!isStore && authHeader) {
+        headers['Authorization'] = authHeader;
+    } else if (!isStore && !authHeader && import.meta.env.DEV) {
+        console.warn("[WC API] No se añadió Auth Header para una ruta no-Store API porque no se pudo generar.");
+    }
+
 
     for (let i = 0; i < retries; i++) {
         try {
