@@ -28,18 +28,25 @@ export const GET: APIRoute = async ({ request, url }) => {
 
     console.log(`[Sync Relay] Revalidando: ${path} (topic: ${topic})`);
 
-    // 2. Forzar regeneración de la ruta visitándola sin caché
+    // 2. Forzar regeneración de la ruta
     try {
         const origin = new URL(request.url).origin;
         const revalidateUrl = `${origin}${path}`;
+        const revalidateToken = import.meta.env.VERCEL_REVALIDATE_TOKEN;
 
-        // Fire and forget — no bloqueamos la respuesta
+        const headers: Record<string, string> = {
+            'Cache-Control': 'no-cache, no-store'
+        };
+
+        if (revalidateToken) {
+            headers['x-prerender-revalidate'] = revalidateToken;
+            headers['x-revalidate-auth'] = revalidateToken;
+        }
+
+        // Fire and forget
         fetch(revalidateUrl, {
             method: 'GET',
-            headers: {
-                'Cache-Control': 'no-cache, no-store',
-                'x-vercel-revalidate': '1',
-            }
+            headers
         }).catch(e => console.error('[Sync Relay] Error revalidando:', e.message));
 
     } catch (e: any) {

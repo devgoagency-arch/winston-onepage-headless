@@ -27,22 +27,14 @@ const safeBtoa = (str: string) => {
 };
 
 /**
- * Sistema de Cache en Memoria (SSR & API)
+ * Configuración de Caché (Nivel 2 - On Demand ISR)
  */
-const cache: Record<string, { data: any, timestamp: number }> = {};
-const DEFAULT_TTL = 1000 * 60 * 5; // 5 minutos para ver cambios rápido
-
-function getCached(key: string) {
-    const entry = cache[key];
-    if (entry && (Date.now() - entry.timestamp < DEFAULT_TTL)) {
-        return entry.data;
-    }
-    return null;
-}
-
-function setCached(key: string, data: any) {
-    cache[key] = { data, timestamp: Date.now() };
-}
+export const CACHE_TAGS = {
+    all: 'products-all',
+    product: (slug: string) => `product-${slug}`,
+    category: (slug: string) => `category-${slug}`,
+    home: 'home'
+};
 
 /**
  * Normaliza un texto para generar un slug válido (sin acentos, espacios -> guiones)
@@ -159,13 +151,6 @@ export async function wcFetch(path: string, options: RequestInit = {}, retries =
  * para evitar saturar el servidor en visitas masivas.
  */
 export async function getProductsPool() {
-    const cacheKey = 'products_pool_v2_60';
-    const poolTTL = 1000 * 60 * 10;
-    const entry = cache[cacheKey];
-    if (entry && (Date.now() - entry.timestamp < poolTTL)) {
-        return entry.data;
-    }
-
     try {
         // Usamos la Store API para obtener variaciones y precios formateados sin necesidad de auth
         const url = `${PUBLIC_WP_URL}/wp-json/wc/store/v1/products?per_page=60&stock_status=instock`;
@@ -174,10 +159,7 @@ export async function getProductsPool() {
         
         const products = await res.json();
         if (products && Array.isArray(products)) {
-            // mapV3ToStore ya detecta si es Store API
-            const mapped = products.map((p: any) => mapV3ToStore(p));
-            cache[cacheKey] = { data: mapped, timestamp: Date.now() };
-            return mapped;
+            return products.map((p: any) => mapV3ToStore(p));
         }
         return [];
     } catch (error) {
@@ -355,9 +337,6 @@ function mapV3ToStore(p: any) {
  * Fetch Product by ID with all its variations
  */
 export async function getProductById(id: number | string) {
-    const cacheKey = `p_id_${id}`;
-    const cached = getCached(cacheKey);
-    if (cached) return cached;
 
     try {
         // Use v3 API instead of Store API to get correct variable product prices
@@ -387,7 +366,6 @@ export async function getProductById(id: number | string) {
         }
 
         const result = mapV3ToStore(product);
-        setCached(cacheKey, result);
         return result;
     } catch (error) {
         console.error(`Error fetching product by ID ${id}:`, error);
@@ -399,16 +377,12 @@ export async function getProductById(id: number | string) {
  * Fetch Category by Slug
  */
 export async function getCategoryBySlug(slug: string) {
-    const cacheKey = `cat_slug_${slug}`;
-    const cached = getCached(cacheKey);
-    if (cached) return cached;
 
     try {
         // Use WooCommerce API to get category data including its image
         const categories = await wcFetch(`/products/categories?slug=${slug}`);
         if (!categories || categories.length === 0) return null;
 
-        setCached(cacheKey, categories[0]);
         return categories[0];
     } catch (error: any) {
         console.error(`Error fetching category by slug ${slug}:`, error.message);
@@ -420,9 +394,6 @@ export async function getCategoryBySlug(slug: string) {
  * Fetch child categories of a parent category
  */
 export async function getChildCategories(parentId: number) {
-    const cacheKey = `cat_children_${parentId}`;
-    const cached = getCached(cacheKey);
-    if (cached) return cached;
 
     try {
         // Use v3 authenticated API — public Store API was not returning subcategories reliably
@@ -438,7 +409,6 @@ export async function getChildCategories(parentId: number) {
             image: c.image ? { src: c.image.src, alt: c.image.alt || c.name } : null,
         }));
 
-        setCached(cacheKey, normalized);
         return normalized;
     } catch (error) {
         console.error(`Error fetching child categories for parent ${parentId}:`, error);
@@ -462,9 +432,6 @@ async function getProductVariations(productId: number) {
 }
 
 export async function getProductBySlug(slug: string) {
-    const cacheKey = `p_slug_v2_${slug}`;
-    const cached = getCached(cacheKey);
-    if (cached) return cached;
 
     try {
         console.log(`[WC API] Fetching product by slug: ${slug}`);
@@ -490,8 +457,7 @@ export async function getProductBySlug(slug: string) {
                 if (storeRes.ok) {
                     const storeProduct = await storeRes.json();
                     const result = mapV3ToStore(storeProduct);
-                    setCached(cacheKey, result);
-                    return result;
+                            return result;
                 }
             } catch (e) {
                 console.warn(`[WC API] Store API fetch failed for ID ${productId}, falling back to v3.`);
@@ -529,7 +495,6 @@ export async function getProductBySlug(slug: string) {
         }
 
         const result = mapV3ToStore(product);
-        setCached(cacheKey, result);
         return result;
     } catch (error: any) {
         console.error(`[WC API] Error crítico en getProductBySlug "${slug}":`, error.message);
@@ -559,9 +524,6 @@ export async function getProductsByCategory(
         }
     }
 
-    const cacheKey = `cat_${finalId}_${perPage}_${page}_${orderBy}_${order}_${onSale}_${attribute}_${attributeTerm}`;
-    const cached = getCached(cacheKey);
-    if (cached) return cached;
 
     try {
         const ids = finalId.toString().split(',').map(id => id.trim()).filter(Boolean);
@@ -601,7 +563,6 @@ export async function getProductsByCategory(
             }
         }
 
-        setCached(cacheKey, combined);
         return combined;
     } catch (error: any) {
         console.error("Error fetching products by category:", error.message);
@@ -612,14 +573,10 @@ export async function getProductsByCategory(
  * Fetch a WordPress Page by ID
  */
 export async function getPageById(id: number | string) {
-    const cacheKey = `page_id_${id}`;
-    const cached = getCached(cacheKey);
-    if (cached) return cached;
 
     try {
         // Usamos wcFetch para mantener consistencia de dominio y rutas
         const page = await wcFetch(`/wp/v2/pages/${id}`);
-        setCached(cacheKey, page);
         return page;
     } catch (error) {
         console.error(`Error fetching page by ID ${id}:`, error);
@@ -631,14 +588,10 @@ export async function getPageById(id: number | string) {
  * Fetch a WordPress Menu by Slug
  */
 export async function getMenu(slug: string) {
-    const cacheKey = `menu_${slug}`;
-    const cached = getCached(cacheKey);
-    if (cached) return cached;
 
     try {
         // Usamos wcFetch para que use PUBLIC_WP_URL correctamente
         const menu = await wcFetch(`/wh/v1/menu/${slug}`);
-        setCached(cacheKey, menu);
         return menu;
     } catch (error) {
         console.error(`Error fetching menu ${slug}:`, error);
@@ -650,13 +603,9 @@ export async function getMenu(slug: string) {
  * Fetch WooCommerce Product Attributes
  */
 export async function getAttributes() {
-    const cacheKey = "wc_attributes";
-    const cached = getCached(cacheKey);
-    if (cached) return cached;
 
     try {
         const attributes = await wcFetch("/products/attributes");
-        setCached(cacheKey, attributes);
         return attributes;
     } catch (error) {
         console.error("Error fetching attributes:", error);
@@ -668,13 +617,9 @@ export async function getAttributes() {
  * Fetch WooCommerce Attribute Terms
  */
 export async function getAttributeTerms(attributeId: number | string) {
-    const cacheKey = `wc_attr_terms_${attributeId}`;
-    const cached = getCached(cacheKey);
-    if (cached) return cached;
 
     try {
         const terms = await wcFetch(`/products/attributes/${attributeId}/terms?per_page=100`);
-        setCached(cacheKey, terms);
         return terms;
     } catch (error) {
         console.error(`Error fetching terms for attribute ${attributeId}:`, error);

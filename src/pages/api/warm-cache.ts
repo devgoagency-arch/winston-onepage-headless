@@ -13,98 +13,93 @@ import { PUBLIC_WP_URL } from '../../lib/woocommerce';
 export const GET: APIRoute = async ({ request }) => {
     const t0 = Date.now();
     const origin = new URL(request.url).origin;
-    const CK = (import.meta.env.WC_CONSUMER_KEY || "").trim();
-    const CS = (import.meta.env.WC_CONSUMER_SECRET || "").trim();
-
-    // Solo permitir desde cron de Vercel o con token de admin
-    const authHeader = request.headers.get('authorization') || '';
-    const cronHeader = request.headers.get('x-vercel-cron') || '';
+    
+    // Auth vars
+    const CK = (import.meta.env.WC_CONSUMER_KEY || import.meta.env.WP_CONSUMER_KEY || "").trim();
+    const CS = (import.meta.env.WC_CONSUMER_SECRET || import.meta.env.WP_CONSUMER_SECRET || "").trim();
     const adminToken = import.meta.env.VERCEL_REVALIDATE_TOKEN || '';
     const queryToken = new URL(request.url).searchParams.get('token') || '';
+    const cronHeader = request.headers.get('x-vercel-cron') || '';
 
+    // Seguridad: solo cron de Vercel o token de admin
     if (!cronHeader && queryToken !== adminToken) {
+        console.warn('[WarmCache] ❌ Intento de acceso no autorizado.');
         return new Response(JSON.stringify({ error: 'Unauthorized' }), { status: 401 });
     }
 
-    console.log('[WarmCache] Iniciando calentamiento de caché...');
+    console.log('[WarmCache] 🚀 Iniciando calentamiento de caché...');
 
     try {
-        // ─── 1. Obtener todos los slugs de productos ─────────────────────────
+        // ─── 1. Obtener slugs de productos (v3 Auth) ────────────────────────
         const productSlugs: string[] = [];
-        let page = 1;
-        while (true) {
-            const url = `${PUBLIC_WP_URL}/wp-json/wc/v3/products?per_page=100&page=${page}&status=publish&stock_status=instock&fields=slug&consumer_key=${CK}&consumer_secret=${CS}`;
-            const res = await fetch(url).catch(() => null);
-            if (!res?.ok) break;
-            const data = await res.json();
-            if (!Array.isArray(data) || data.length === 0) break;
-            data.forEach((p: any) => { if (p.slug) productSlugs.push(p.slug); });
-            const totalPages = parseInt(res.headers.get('X-WP-TotalPages') || '1');
-            if (page >= totalPages || page >= 10) break; // máximo 1000 productos
-            page++;
+        const productRes = await fetch(`${PUBLIC_WP_URL}/wp-json/wc/v3/products?per_page=100&status=publish&stock_status=instock&consumer_key=${CK}&consumer_secret=${CS}`);
+        
+        if (productRes.ok) {
+            const products = await productRes.json();
+            if (Array.isArray(products)) {
+                products.forEach((p: any) => { if (p.slug) productSlugs.push(p.slug); });
+            }
         }
-        console.log(`[WarmCache] ${productSlugs.length} productos encontrados.`);
 
         // ─── 2. Obtener slugs de categorías ──────────────────────────────────
         const categorySlugs: string[] = [];
-        const catRes = await fetch(`${PUBLIC_WP_URL}/wp-json/wc/v3/products/categories?per_page=100&hide_empty=true&consumer_key=${CK}&consumer_secret=${CS}`).catch(() => null);
-        if (catRes?.ok) {
+        const catRes = await fetch(`${PUBLIC_WP_URL}/wp-json/wc/v3/products/categories?per_page=100&hide_empty=true&consumer_key=${CK}&consumer_secret=${CS}`);
+        
+        if (catRes.ok) {
             const cats = await catRes.json();
-            if (Array.isArray(cats)) cats.forEach((c: any) => { if (c.slug) categorySlugs.push(c.slug); });
+            if (Array.isArray(cats)) {
+                cats.forEach((c: any) => { if (c.slug) categorySlugs.push(c.slug); });
+            }
         }
-        console.log(`[WarmCache] ${categorySlugs.length} categorías encontradas.`);
 
-        // ─── 3. Construir lista de URLs a calentar ───────────────────────────
+        // ─── 3. URLs críticas y dinámicas ───────────────────────────────────
         const urlsToWarm = [
             `${origin}/`,
-            `${origin}/lista-de-deseos`,
-            ...productSlugs.map(slug => `${origin}/productos/${slug}`),
             ...categorySlugs.map(slug => `${origin}/categoria/${slug}`),
+            ...productSlugs.map(slug => `${origin}/productos/${slug}`)
         ];
 
-        console.log(`[WarmCache] Calentando ${urlsToWarm.length} URLs en lotes de 3...`);
+        console.log(`[WarmCache] Calentando ${urlsToWarm.length} URLs...`);
 
-        // ─── 4. Calentar en lotes de 3 con 1s de pausa ──────────────────────
-        const CHUNK = 3;
-        let ok = 0, failed = 0;
-
-        for (let i = 0; i < urlsToWarm.length; i += CHUNK) {
-            const chunk = urlsToWarm.slice(i, i + CHUNK);
+        // ─── 4. Calentamiento en paralelo controlado ────────────────────────
+        let okCount = 0;
+        let errCount = 0;
+        
+        // Procesamos de 5 en 5 para no saturar
+        const CHUNK_SIZE = 5;
+        for (let i = 0; i < urlsToWarm.length; i += CHUNK_SIZE) {
+            const chunk = urlsToWarm.slice(i, i + CHUNK_SIZE);
             const results = await Promise.allSettled(
                 chunk.map(url => fetch(url, {
-                    headers: {
-                        'User-Agent': 'WH-CacheWarmer/2.0',
-                        'Cache-Control': 'no-cache', // Forzar regeneración
+                    headers: { 
+                        'Cache-Control': 'no-cache',
+                        'User-Agent': 'WH-CacheWarmer/3.0'
                     }
                 }))
             );
+            
             results.forEach(r => {
-                if (r.status === 'fulfilled' && r.value.ok) ok++;
-                else failed++;
+                if (r.status === 'fulfilled' && r.value.ok) okCount++;
+                else errCount++;
             });
-            if (i % 30 === 0) console.log(`[WarmCache] Progreso: ${i}/${urlsToWarm.length}`);
-            if (i + CHUNK < urlsToWarm.length) await new Promise(r => setTimeout(r, 1000));
+            
+            // Pausa de 500ms entre lotes
+            if (i + CHUNK_SIZE < urlsToWarm.length) await new Promise(r => setTimeout(r, 500));
         }
 
-        const elapsed = ((Date.now() - t0) / 1000).toFixed(1);
-        console.log(`[WarmCache] ✅ Completado en ${elapsed}s — OK: ${ok}, Fallidos: ${failed}`);
-
+        const elapsed = (Date.now() - t0) / 1000;
         return new Response(JSON.stringify({
             success: true,
-            products: productSlugs.length,
-            categories: categorySlugs.length,
-            total_urls: urlsToWarm.length,
-            ok,
-            failed,
-            elapsed_seconds: parseFloat(elapsed),
-            timestamp: new Date().toISOString()
-        }), {
-            status: 200,
-            headers: { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' }
-        });
+            results: {
+                total: urlsToWarm.length,
+                ok: okCount,
+                errors: errCount,
+                time: `${elapsed.toFixed(1)}s`
+            }
+        }), { status: 200, headers: { 'Content-Type': 'application/json' } });
 
-    } catch (error: any) {
-        console.error('[WarmCache] Error:', error.message);
-        return new Response(JSON.stringify({ success: false, error: error.message }), { status: 500 });
+    } catch (e: any) {
+        console.error('[WarmCache] Error fatal:', e.message);
+        return new Response(JSON.stringify({ error: e.message }), { status: 500 });
     }
 };

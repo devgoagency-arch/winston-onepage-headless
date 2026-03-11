@@ -32,24 +32,15 @@ export const POST: APIRoute = async ({ request }) => {
         console.log(`[Sync] Topic: ${topic} | Signature: ${!!signature} | Secret: ${!!secret}`);
 
         // ─── 1. Verificar firma HMAC ─────────────────────────────────────────
-        if (!secret) {
-            console.error('[Sync] WC_WEBHOOK_SECRET no definido.');
-            if (topic !== 'webhook.test' && topic !== 'action.ping') {
-                return new Response(JSON.stringify({ error: "Server misconfiguration" }), { status: 500 });
-            }
-        } else if (signature) {
+        if (secret && signature) {
             const digest = crypto.createHmac('sha256', secret).update(rawBody).digest('base64');
             if (!crypto.timingSafeEqual(Buffer.from(digest), Buffer.from(signature))) {
                 console.error('[Sync] ❌ Firma inválida.');
                 return new Response(JSON.stringify({ error: "Invalid signature" }), { status: 401 });
             }
-            console.log('[Sync] ✅ Firma válida.');
-        } else if (topic !== 'webhook.test' && topic !== 'action.ping') {
-            console.error('[Sync] Petición sin firma rechazada.');
-            return new Response(JSON.stringify({ error: "Missing signature" }), { status: 401 });
         }
 
-        // ─── 2. Handshake ────────────────────────────────────────────────────
+        // ─── 2. Handshake / Test ─────────────────────────────────────────────
         if (topic === 'webhook.test' || topic === 'action.ping') {
             return new Response(JSON.stringify({ success: true, message: "Handshake OK" }), { status: 200 });
         }
@@ -61,67 +52,57 @@ export const POST: APIRoute = async ({ request }) => {
         const slug = body.slug || '';
         const id   = body.id || '';
 
-        if (!slug && !id) {
+        if (!slug && !id && !topic.includes('deleted')) {
             return new Response(JSON.stringify({ success: false, message: "No identifier" }), { status: 200 });
         }
 
-        // ─── 4. Revalidación por Cache Tags (Nivel 2) ────────────────────────
-        // Tags afectados: el producto específico + todas sus categorías + home
-        const tagsToInvalidate: string[] = ['home', 'products-all'];
-        if (slug) tagsToInvalidate.push(`product-${slug}`);
+        // ─── 4. Revalidación Granular (Nivel 2) ──────────────────────────────
+        const pathsToRevalidate = ['/'];
+        if (slug) pathsToRevalidate.push(`/productos/${slug}`);
+        
         if (body.categories && Array.isArray(body.categories)) {
             body.categories.forEach((cat: any) => {
-                if (cat.slug) tagsToInvalidate.push(`category-${cat.slug}`);
+                if (cat.slug) pathsToRevalidate.push(`/categoria/${cat.slug}`);
             });
         }
 
-        // Llamar al endpoint de revalidación de Vercel por tag
         const revalidateToken = import.meta.env.VERCEL_REVALIDATE_TOKEN;
         const origin = new URL(request.url).origin;
 
-        if (revalidateToken) {
-            // Método preferido: revalidar por token (Vercel on-demand ISR)
-            const pathsToRevalidate = ['/'];
-            if (slug) pathsToRevalidate.push(`/productos/${slug}`);
-            if (body.categories && Array.isArray(body.categories)) {
-                body.categories.forEach((cat: any) => {
-                    if (cat.slug) pathsToRevalidate.push(`/categoria/${cat.slug}`);
-                });
-            }
+        console.log(`[Sync] Revalidando ${pathsToRevalidate.length} rutas para: ${slug || id}`);
 
-            Promise.allSettled(
-                pathsToRevalidate.map(path =>
-                    fetch(`${origin}${path}?revalidate=${revalidateToken}`, {
-                        headers: { 'x-prerender-revalidate': revalidateToken }
-                    })
-                )
-            ).then(results => {
-                const ok = results.filter(r => r.status === 'fulfilled').length;
-                console.log(`[Sync] ✅ Revalidadas ${ok}/${pathsToRevalidate.length} rutas.`);
-            });
-        } else {
-            // Fallback: visitar las páginas sin caché para que Vercel las regenere
-            const pathsToRevalidate = ['/'];
-            if (slug) pathsToRevalidate.push(`/productos/${slug}`);
-            if (body.categories && Array.isArray(body.categories)) {
-                body.categories.forEach((cat: any) => {
-                    if (cat.slug) pathsToRevalidate.push(`/categoria/${cat.slug}`);
-                });
-            }
+        if (revalidateToken) {
+            // Revalidación On-Demand real vía middleware/Vercel
             Promise.allSettled(
                 pathsToRevalidate.map(path =>
                     fetch(`${origin}${path}`, {
-                        headers: { 'Cache-Control': 'no-store', 'x-prerender-revalidate': '1' }
+                        method: 'GET',
+                        headers: { 
+                            'x-prerender-revalidate': revalidateToken,
+                            'x-revalidate-auth': revalidateToken
+                        }
                     })
                 )
-            ).then(() => console.log(`[Sync] Revalidación fallback enviada para ${pathsToRevalidate.length} rutas.`));
+            ).then(results => {
+                const ok = results.filter(r => r.status === 'fulfilled' && (r as any).value.ok).length;
+                console.log(`[Sync] ✅ Revalidación finalizada: ${ok}/${pathsToRevalidate.length} OK`);
+            });
+        } else {
+            // Fallback: Visita con bypass de caché
+            Promise.allSettled(
+                pathsToRevalidate.map(path =>
+                    fetch(`${origin}${path}`, {
+                        headers: { 'Cache-Control': 'no-store' }
+                    })
+                )
+            ).then(() => console.log(`[Sync] Fallback de visita enviado.`));
         }
 
         return new Response(JSON.stringify({
             success: true,
             topic,
             slug,
-            tags: tagsToInvalidate,
+            revalidated_paths: pathsToRevalidate.length
         }), { status: 200, headers: { "Content-Type": "application/json" } });
 
     } catch (e: any) {
