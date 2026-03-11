@@ -175,7 +175,9 @@ export async function getProductsPool() {
         
         const products = await res.json();
         if (products && Array.isArray(products)) {
-            return products.map((p: any) => mapV3ToStore(p));
+            return products
+                .map((p: any) => mapV3ToStore(p))
+                .filter(p => p && p.prices.price !== "0" && p.stock_status !== 'outofstock');
         }
         return [];
     } catch (error) {
@@ -579,8 +581,12 @@ export async function getProductsByCategory(
             if (Array.isArray(list)) {
                 for (const p of list) {
                     if (p && p.id && !seenIds.has(p.id)) {
-                        seenIds.add(p.id);
-                        combined.push(mapV3ToStore(p));
+                        const mapped = mapV3ToStore(p);
+                        // Filtro de seguridad: Precio > 0 y Stock Real
+                        if (mapped && mapped.prices.price !== "0" && mapped.stock_status !== 'outofstock') {
+                            seenIds.add(p.id);
+                            combined.push(mapped);
+                        }
                     }
                 }
             }
