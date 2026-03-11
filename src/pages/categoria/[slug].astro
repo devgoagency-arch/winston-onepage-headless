@@ -151,6 +151,10 @@ if (!category && !error) {
 const bannerImage = category?.image?.src || null;
 const categoryTitle = category?.name || "Categoría";
 const categoryDesc = category?.description?.replace(/<[^>]+>/g, "") || "";
+
+// Header de depuración para verificar el tiempo de generación en Vercel
+Astro.response.headers.set('X-Generated-At', new Date().toISOString());
+Astro.response.headers.set('Cache-Control', 'public, s-maxage=86400, stale-while-revalidate=43200');
 ---
 
 <Layout title={`${categoryTitle} | Winston & Harry`}>
