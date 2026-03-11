@@ -3,7 +3,7 @@
  * Using ck/cs credentials for full access and better data processing.
  */
 
-const WC_URL_ENV = import.meta.env.WC_URL || import.meta.env.WP_URL || "https://staging.winstonandharrystore.com";
+const WC_URL_ENV = import.meta.env.WC_URL || import.meta.env.WP_URL || "https://tienda.winstonandharrystore.com";
 export const PUBLIC_WP_URL = WC_URL_ENV.replace(/\/$/, "");
 
 const CK = import.meta.env.WC_CONSUMER_KEY;
@@ -12,7 +12,8 @@ const CS = import.meta.env.WC_CONSUMER_SECRET;
 const BASE_URL = `${PUBLIC_WP_URL}/wp-json/wc/v3`;
 const STORE_URL = `${PUBLIC_WP_URL}/wp-json/wc/store/v1`;
 
-if (!CK || !CS) {
+// Solo validamos las claves en el servidor
+if (import.meta.env.SSR && (!CK || !CS)) {
     console.error("[WC API] CRÍTICO: Faltan WC_CONSUMER_KEY o WC_CONSUMER_SECRET en las variables de entorno.");
 }
 
