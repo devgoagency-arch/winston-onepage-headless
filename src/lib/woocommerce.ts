@@ -6,17 +6,7 @@
 const WC_URL_ENV = import.meta.env.WC_URL || import.meta.env.WP_URL || "https://tienda.winstonandharrystore.com";
 export const PUBLIC_WP_URL = WC_URL_ENV.replace(/\/$/, "");
 
-const CK = (import.meta.env.WC_CONSUMER_KEY || "").trim();
-const CS = (import.meta.env.WC_CONSUMER_SECRET || "").trim();
-
 const WP_JSON_BASE = `${PUBLIC_WP_URL}/wp-json`;
-
-// Solo validamos las claves en el servidor
-if (import.meta.env.SSR && (!CK || !CS)) {
-    console.error("[WC API] CRÍTICO: Faltan WC_CONSUMER_KEY o WC_CONSUMER_SECRET en las variables de entorno.");
-} else if (import.meta.env.SSR) {
-    console.log(`[WC API] Claves cargadas: CK=${CK.substring(0, 6)}... CS=${CS.substring(0, 6)}...`);
-}
 
 // SSR Safe base64 helper
 const safeBtoa = (str: string) => {
@@ -66,6 +56,14 @@ function normalizeSlug(text: string): string {
  * Generic Fetcher with OAuth via URL Params (Most compatible method)
  */
 async function wcFetch(path: string, options: RequestInit = {}, retries = 3, delay = 1500) {
+    // Leemos las claves en RUNTIME, no en el build
+    const CK = (import.meta.env.WC_CONSUMER_KEY || import.meta.env.WP_CONSUMER_KEY || "").trim();
+    const CS = (import.meta.env.WC_CONSUMER_SECRET || import.meta.env.WP_CONSUMER_SECRET || "").trim();
+
+    if (!CK || !CS) {
+        console.error("[WC API] ERROR: Claves no encontradas en el request.");
+    }
+
     // 1. Limpiar el path para evitar dobles barras o prefijos repetidos
     let cleanPath = path.startsWith('/') ? path.substring(1) : path;
     
