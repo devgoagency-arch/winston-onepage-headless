@@ -419,12 +419,26 @@ export default function ProductDetail({ initialProduct }: Props) {
     if (!selectedColor && !selectedSize) return null;
 
     return product.variations.find((v: any) => {
-      const vColor = (v.attributes.find((a: any) => a.name.toLowerCase().includes('color') || a.name === 'Pa_selecciona-el-color' || a.id === 'pa_color')?.value || v.attributes.find((a: any) => a.name.toLowerCase().includes('color') || a.name === 'Pa_selecciona-el-color' || a.id === 'pa_color')?.option || '').toLowerCase();
-      const vSize = (v.attributes.find((a: any) => a.name.toLowerCase().includes('talla') || a.name === 'Pa_selecciona-una-talla' || a.id === 'pa_talla')?.value || v.attributes.find((a: any) => a.name.toLowerCase().includes('talla') || a.name === 'Pa_selecciona-una-talla' || a.id === 'pa_talla')?.option || '').toLowerCase();
-      
-      const matchesColor = !selectedColor || vColor === selectedColor.toLowerCase();
-      const matchesSize = !selectedSize || vSize === selectedSize?.toLowerCase();
-      
+      const vColorAttr = v.attributes?.find((a: any) => 
+        a.name.toLowerCase().includes('color') || 
+        a.name.toLowerCase().includes('pa_selecciona-el-color') || 
+        a.id === 'pa_color'
+      );
+      const vSizeAttr = v.attributes?.find((a: any) => 
+        a.name.toLowerCase().includes('talla') || 
+        a.name.toLowerCase().includes('pa_selecciona-una-talla') || 
+        a.id === 'pa_talla'
+      );
+
+      const vColorValue = (vColorAttr?.value || vColorAttr?.option || '').toLowerCase().trim();
+      const vSizeValue = (vSizeAttr?.value || vSizeAttr?.option || '').toLowerCase().trim();
+
+      const targetColor = (selectedColor || '').toLowerCase().trim();
+      const targetSize = (selectedSize || '').toLowerCase().trim();
+
+      const matchesColor = !selectedColor || vColorValue === targetColor;
+      const matchesSize = !selectedSize || vSizeValue === targetSize;
+
       return matchesColor && matchesSize;
     });
   }, [product.variations, selectedColor, selectedSize]);
@@ -535,12 +549,32 @@ export default function ProductDetail({ initialProduct }: Props) {
   };
 
   const handleAddBothToCart = () => {
-    // 1. Añadir el producto principal
+    // 1. Añadir el producto principal (con variación correcta)
     if (selectedFbtIds.includes(product.id)) {
-      addToCart(product, 1, selectedColor, selectedSize, filteredImages[0]?.src || product.images[0]?.src);
+      let mainProductId = product.id;
+      // Resolver ID de variación para el producto principal
+      if (product.variations && product.variations.length > 0 && (selectedColor || selectedSize)) {
+        const mainVar = product.variations.find((v: any) => {
+          const vColor = (v.attributes.find((a: any) =>
+            a.name.toLowerCase().includes('color') || a.name === 'Pa_selecciona-el-color' || a.id === 'pa_color'
+          )?.option || v.attributes.find((a: any) =>
+            a.name.toLowerCase().includes('color') || a.name === 'Pa_selecciona-el-color' || a.id === 'pa_color'
+          )?.value || '').toLowerCase().trim();
+          const vSize = (v.attributes.find((a: any) =>
+            a.name.toLowerCase().includes('talla') || a.name === 'Pa_selecciona-una-talla' || a.id === 'pa_talla'
+          )?.option || v.attributes.find((a: any) =>
+            a.name.toLowerCase().includes('talla') || a.name === 'Pa_selecciona-una-talla' || a.id === 'pa_talla'
+          )?.value || '').toLowerCase().trim();
+          const colorMatch = !selectedColor || vColor === selectedColor.toLowerCase().trim();
+          const sizeMatch = !selectedSize || vSize === selectedSize.toLowerCase().trim();
+          return colorMatch && sizeMatch;
+        });
+        if (mainVar) mainProductId = mainVar.id;
+      }
+      addToCart({ ...product, id: mainProductId }, 1, selectedColor, selectedSize, filteredImages[0]?.src || product.images[0]?.src);
     }
 
-    // 2. Añadir productos FBT
+    // 2. Añadir productos FBT (ya usan variationId de ProductCard)
     if (product.fbt_products) {
       for (const p of product.fbt_products) {
         if (selectedFbtIds.includes(p.id)) {
@@ -551,6 +585,7 @@ export default function ProductDetail({ initialProduct }: Props) {
       }
     }
   };
+
 
   const fbtTotalPrice = useMemo(() => {
     let total = 0;

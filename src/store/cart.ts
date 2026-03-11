@@ -22,33 +22,41 @@ export const isCartOpen = atom(false);
 function findVariation(variations: any[], color: string | null, size: string | null): any | null {
     if (!variations || variations.length === 0) return null;
     
-    return variations.find((v: any) => {
-        // Buscamos atributos de color y talla de forma flexible
+    const targetColor = (color || '').toLowerCase().trim();
+    const targetSize = (size || '').toLowerCase().trim();
+
+    console.log(`[Cart Store] Buscando variación para: color="${targetColor}", talla="${targetSize}"`);
+
+    // Prioridad 1: Coincidencia exacta de ambos (si están presentes)
+    const found = variations.find((v: any) => {
         const vColorAttr = v.attributes?.find((a: any) => 
             a.name.toLowerCase().includes('color') || 
             a.name.toLowerCase().includes('pa_selecciona-el-color') || 
-            a.id === 'pa_color' ||
-            a.name === 'Pa_selecciona-el-color'
+            a.id === 'pa_color'
         );
         const vSizeAttr = v.attributes?.find((a: any) => 
             a.name.toLowerCase().includes('talla') || 
             a.name.toLowerCase().includes('pa_selecciona-una-talla') || 
-            a.id === 'pa_talla' ||
-            a.name === 'Pa_selecciona-una-talla'
+            a.id === 'pa_talla'
         );
 
-        // Extraer valores ( WooCommerce puede usar 'option' o 'value' dependiendo de la versión de la API )
-        const vColorValue = (vColorAttr?.option || vColorAttr?.value || '').toLowerCase().trim();
-        const vSizeValue = (vSizeAttr?.option || vSizeAttr?.value || '').toLowerCase().trim();
+        const vColorValue = (vColorAttr?.value || vColorAttr?.option || '').toLowerCase().trim();
+        const vSizeValue = (vSizeAttr?.value || vSizeAttr?.option || '').toLowerCase().trim();
 
-        const targetColor = (color || '').toLowerCase().trim();
-        const targetSize = (size || '').toLowerCase().trim();
-
-        const matchesColor = !color || vColorValue === targetColor;
-        const matchesSize = !size || vSizeValue === targetSize;
+        // Si la variación no tiene el atributo, lo tratamos como "cualquier" (any)
+        const matchesColor = !color || !vColorValue || vColorValue === targetColor;
+        const matchesSize = !size || !vSizeValue || vSizeValue === targetSize;
 
         return matchesColor && matchesSize;
     });
+
+    if (found) {
+        console.log(`[Cart Store] ✅ Variación encontrada: ${found.id}`);
+    } else {
+        console.warn(`[Cart Store] ❌ No se encontró variación para los atributos seleccionados.`);
+    }
+
+    return found;
 }
 
 export function addToCart(product: any, quantity: number, color: string | null, size: string | null, image: string) {

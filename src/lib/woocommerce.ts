@@ -57,7 +57,7 @@ function normalizeSlug(text: string): string {
         .replace(/[^\w-]+/g, '');       // Quitar caracteres especiales
 }
 
-async function wcFetch(path: string, options: RequestInit = {}, retries = 3, delay = 1500) {
+export async function wcFetch(path: string, options: RequestInit = {}, retries = 3, delay = 1500) {
     // Leemos las claves en RUNTIME
     const CK = (import.meta.env.WC_CONSUMER_KEY || import.meta.env.WP_CONSUMER_KEY || "").trim();
     const CS = (import.meta.env.WC_CONSUMER_SECRET || import.meta.env.WP_CONSUMER_SECRET || "").trim();
@@ -95,16 +95,23 @@ async function wcFetch(path: string, options: RequestInit = {}, retries = 3, del
 
     // 3. Añadir Auth solo si NO es Store API (que es público)
     const isStore = cleanPath.includes('wc/store/');
-    if (!isStore && CK && CS) {
-        const separator = url.includes('?') ? '&' : '?';
-        url = `${url}${separator}consumer_key=${CK}&consumer_secret=${CS}`;
-    }
-
+    
     // 4. Headers base
-    const headers = {
+    const headers: any = {
         'Accept': 'application/json',
         ...(options.headers || {})
     };
+
+    if (!isStore && CK && CS) {
+        // Probamos ambos métodos por seguridad: Header y Query Params
+        if (url.includes('?')) {
+            url += `&consumer_key=${CK}&consumer_secret=${CS}`;
+        } else {
+            url += `?consumer_key=${CK}&consumer_secret=${CS}`;
+        }
+        // También mantenemos el header por si el servidor lo prefiere
+        headers['Authorization'] = `Basic ${safeBtoa(`${CK}:${CS}`)}`;
+    }
 
     for (let i = 0; i < retries; i++) {
         try {
@@ -115,8 +122,9 @@ async function wcFetch(path: string, options: RequestInit = {}, retries = 3, del
             console.log(`[WC API] ${res.status} | ${url.split('?')[0]} (${endTime - startTime}ms)`);
 
             if (res.status === 401) {
-                const errText = await res.text();
-                throw new Error(`WC API 401: ${errText.substring(0, 100)}`);
+                console.error(`[WC API] 401 Unauthorized en ${url.split('?')[0]}. Revisa las claves WC_CONSUMER_KEY/SECRET.`);
+                // No lanzamos error fatal aquí para permitir que la app siga si hay caché
+                return null;
             }
             
             if (res.status === 404) throw new Error(`WC API 404 en: ${url.split('?')[0]}`);
@@ -151,8 +159,7 @@ async function wcFetch(path: string, options: RequestInit = {}, retries = 3, del
  * para evitar saturar el servidor en visitas masivas.
  */
 export async function getProductsPool() {
-    const cacheKey = 'products_pool_60';
-    // Usamos un TTL de 10 minutos para este pool pesado
+    const cacheKey = 'products_pool_v2_60';
     const poolTTL = 1000 * 60 * 10;
     const entry = cache[cacheKey];
     if (entry && (Date.now() - entry.timestamp < poolTTL)) {
@@ -160,16 +167,21 @@ export async function getProductsPool() {
     }
 
     try {
-        // Use v3 API for reliable prices
-        const products = await wcFetch('/products?per_page=60&orderby=date&status=publish&stock_status=instock');
+        // Usamos la Store API para obtener variaciones y precios formateados sin necesidad de auth
+        const url = `${PUBLIC_WP_URL}/wp-json/wc/store/v1/products?per_page=60&stock_status=instock`;
+        const res = await fetch(url);
+        if (!res.ok) throw new Error(`Store API error: ${res.status}`);
+        
+        const products = await res.json();
         if (products && Array.isArray(products)) {
+            // mapV3ToStore ya detecta si es Store API
             const mapped = products.map((p: any) => mapV3ToStore(p));
             cache[cacheKey] = { data: mapped, timestamp: Date.now() };
             return mapped;
         }
         return [];
     } catch (error) {
-        console.error("Error fetching products pool:", error);
+        console.error("Error fetching products pool via Store API:", error);
         return [];
     }
 }
@@ -183,15 +195,14 @@ function mapV3ToStore(p: any) {
 
     // Detect if it's a Store API product (v1 or similar)
     const isStoreApi = !!(p.prices && p.prices.currency_code);
-
     if (isStoreApi) {
         // Ensure images is an array
         if (!p.images || !Array.isArray(p.images)) p.images = [];
 
+        // Normalize stock status
+        p.stock_status = p.is_in_stock ? 'instock' : 'outofstock';
+
         // The Store API returns prices in minor units (centavos).
-        // currency_minor_unit tells us the exponent (e.g., 2 means divide by 100).
-        // We normalize all prices to whole units and set currency_minor_unit to 0
-        // so that ProductCard doesn't divide again.
         const minorUnit = p.prices?.currency_minor_unit || 0;
         const divisor = Math.pow(10, minorUnit);
 
@@ -209,7 +220,6 @@ function mapV3ToStore(p: any) {
             if (min && min !== "0") rawPrice = min;
         }
 
-        // Fallback to regular_price
         if (!rawPrice || rawPrice === "0") {
             rawPrice = p.prices.regular_price;
         }
@@ -218,6 +228,19 @@ function mapV3ToStore(p: any) {
         p.prices.regular_price = normalizePriceStr(p.prices.regular_price);
         p.prices.sale_price = normalizePriceStr(p.prices.sale_price);
         p.prices.currency_minor_unit = 0; // Already normalized
+
+        // Deep mapping for variations if they exist in Store API
+        if (p.variations && Array.isArray(p.variations)) {
+            p.variations = p.variations.map((v: any) => ({
+                ...v,
+                stock_status: v.is_in_stock ? 'instock' : 'outofstock',
+                attributes: (v.attributes || []).map((a: any) => ({
+                    ...a,
+                    option: a.value || a.option || '',
+                    value: a.value || a.option || ''
+                }))
+            }));
+        }
 
         return p;
     }
@@ -439,28 +462,61 @@ async function getProductVariations(productId: number) {
 }
 
 export async function getProductBySlug(slug: string) {
-    const cacheKey = `p_slug_${slug}`;
+    const cacheKey = `p_slug_v2_${slug}`;
     const cached = getCached(cacheKey);
     if (cached) return cached;
 
     try {
-        // Use v3 API (authenticated) to get correct price data
-        const products = await wcFetch(`/products?slug=${slug}&status=publish&stock_status=instock`);
-        if (!products || products.length === 0) return null;
+        console.log(`[WC API] Fetching product by slug: ${slug}`);
+        
+        // 1. Intento vía Public WP API (para obtener el ID desde el slug sin auth)
+        let productId = null;
+        try {
+            const wpRes = await fetch(`${PUBLIC_WP_URL}/wp-json/wp/v2/product?slug=${slug}`);
+            if (wpRes.ok) {
+                const wpData = await wpRes.json();
+                if (Array.isArray(wpData) && wpData.length > 0) {
+                    productId = wpData[0].id;
+                }
+            }
+        } catch (e) {
+            console.warn(`[WC API] WP API lookup failed for slug ${slug}, falling back.`);
+        }
+
+        // 2. Si tenemos ID, usamos Store API (pública y completa con variaciones)
+        if (productId) {
+            try {
+                const storeRes = await fetch(`${PUBLIC_WP_URL}/wp-json/wc/store/v1/products/${productId}`);
+                if (storeRes.ok) {
+                    const storeProduct = await storeRes.json();
+                    const result = mapV3ToStore(storeProduct);
+                    setCached(cacheKey, result);
+                    return result;
+                }
+            } catch (e) {
+                console.warn(`[WC API] Store API fetch failed for ID ${productId}, falling back to v3.`);
+            }
+        }
+
+        // 3. Fallback final: REST API v3 (con Auth)
+        const path = `/products?slug=${slug}&status=publish`;
+        const products = await wcFetch(path);
+        
+        if (!products || products.length === 0) {
+            console.warn(`[WC API] No products found for slug: ${slug} in all APIs.`);
+            return null;
+        }
 
         const product = products[0];
-
-        // For variable products, fetch variations to get real prices + images
         if (product.type === 'variable' && product.id) {
             const variations = await getProductVariations(product.id);
             product.variations_data = variations;
-
-            // Build variation_images_map by color
+            
             if (variations.length > 0) {
                 const imgMap: Record<string, any[]> = {};
                 variations.forEach((v: any) => {
                     const colorAttr = v.attributes?.find((a: any) =>
-                        a.name.toLowerCase().includes('color') || a.slug?.includes('color')
+                        (a.name || "").toLowerCase().includes('color') || a.id === 'pa_color'
                     );
                     if (colorAttr?.option && v.image?.src) {
                         const colorKey = colorAttr.option.toLowerCase().trim();
@@ -475,9 +531,9 @@ export async function getProductBySlug(slug: string) {
         const result = mapV3ToStore(product);
         setCached(cacheKey, result);
         return result;
-    } catch (error) {
-        console.error("Error fetching product by slug:", error);
-        throw error;
+    } catch (error: any) {
+        console.error(`[WC API] Error crítico en getProductBySlug "${slug}":`, error.message);
+        return null;
     }
 }
 
@@ -512,15 +568,18 @@ export async function getProductsByCategory(
 
         const fetchCategory = async (id: string) => {
             try {
-                // Intentamos con v3 (Autenticada para mejores precios)
-                const data = await wcFetch(`/products?category=${id}&per_page=${perPage}&page=${page}&orderby=${orderBy}&order=${order}&status=publish&stock_status=instock${onSale ? '&on_sale=true' : ''}${attribute ? `&attribute=${attribute}` : ''}${attributeTerm ? `&attribute_term=${attributeTerm}` : ''}`);
+                // Intentamos con v3 (Autenticada)
+                const data = await wcFetch(`/products?category=${id}&per_page=${perPage}&page=${page}&orderby=${orderBy}&order=${order}&status=publish${onSale ? '&on_sale=true' : ''}${attribute ? `&attribute=${attribute}` : ''}${attributeTerm ? `&attribute_term=${attributeTerm}` : ''}`);
                 return Array.isArray(data) ? data : [];
             } catch (err: any) {
                 console.warn(`[getProductsByCategory] Falló v3, intentando pública:`, err.message);
-                // Fallback: Si v3 falla (401), intentamos con la API de Store (Pública)
+                // Fallback: Si v3 falla, intentamos con la API de Store (Pública)
                 try {
-                    const fallbackData = await wcFetch(`/wc/store/v1/products?category=${id}&per_page=${perPage}`);
-                    return Array.isArray(fallbackData) ? fallbackData : [];
+                    const fallbackRes = await fetch(`${PUBLIC_WP_URL}/wp-json/wc/store/v1/products?category=${id}&per_page=${perPage}`);
+                    if (fallbackRes.ok) {
+                        return await fallbackRes.json();
+                    }
+                    return [];
                 } catch (err2) {
                     return [];
                 }
