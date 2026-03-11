@@ -78,12 +78,20 @@ export const GET: APIRoute = async ({ request }) => {
         for (let i = 0; i < urlsToWarm.length; i += CHUNK_SIZE) {
             const chunk = urlsToWarm.slice(i, i + CHUNK_SIZE);
             const results = await Promise.allSettled(
-                chunk.map(url => fetch(url, {
-                    headers: { 
+                chunk.map(url => {
+                    const headers: Record<string, string> = {
                         'Cache-Control': 'no-cache',
-                        'User-Agent': 'WH-CacheWarmer/3.0'
+                        'User-Agent': 'WH-CacheWarmer/4.0'
+                    };
+                    
+                    // Si tenemos token de revalidación, lo pasamos para bypass de auth en staging
+                    if (adminToken) {
+                        headers['x-prerender-revalidate'] = adminToken;
+                        headers['x-revalidate-auth'] = adminToken;
                     }
-                }))
+
+                    return fetch(url, { headers });
+                })
             );
             
             results.forEach((r, idx) => {
