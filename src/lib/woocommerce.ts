@@ -36,6 +36,22 @@ export const CACHE_TAGS = {
     home: 'home'
 };
 
+// ─── CACHÉ ESTÁTICA (Menús, Atributos, Categorías) ─────────────────────────
+// TTL de 5 minutos para evitar saturar WC en ráfagas de tráfico
+const STATIC_CACHE: Record<string, { data: any, timestamp: number }> = {};
+const STATIC_TTL = 1000 * 60 * 5;
+
+function getStaticCached(key: string) {
+    const entry = STATIC_CACHE[key];
+    if (entry && (Date.now() - entry.timestamp < STATIC_TTL)) return entry.data;
+    return null;
+}
+
+function setStaticCached(key: string, data: any) {
+    if (data) STATIC_CACHE[key] = { data, timestamp: Date.now() };
+}
+// ───────────────────────────────────────────────────────────────────────────
+
 /**
  * Normaliza un texto para generar un slug válido (sin acentos, espacios -> guiones)
  */
@@ -373,17 +389,18 @@ export async function getProductById(id: number | string) {
     }
 }
 
-/**
- * Fetch Category by Slug
- */
 export async function getCategoryBySlug(slug: string) {
+    const cacheKey = `cat_slug_${slug}`;
+    const cached = getStaticCached(cacheKey);
+    if (cached) return cached;
 
     try {
-        // Use WooCommerce API to get category data including its image
         const categories = await wcFetch(`/products/categories?slug=${slug}`);
         if (!categories || categories.length === 0) return null;
-
-        return categories[0];
+        
+        const result = categories[0];
+        setStaticCached(cacheKey, result);
+        return result;
     } catch (error: any) {
         console.error(`Error fetching category by slug ${slug}:`, error.message);
         return null;
@@ -573,9 +590,7 @@ export async function getProductsByCategory(
  * Fetch a WordPress Page by ID
  */
 export async function getPageById(id: number | string) {
-
     try {
-        // Usamos wcFetch para mantener consistencia de dominio y rutas
         const page = await wcFetch(`/wp/v2/pages/${id}`);
         return page;
     } catch (error) {
@@ -585,13 +600,16 @@ export async function getPageById(id: number | string) {
 }
 
 /**
- * Fetch a WordPress Menu by Slug
+ * Menús y Atributos: Caché de 5 min (Datos casi estáticos)
  */
 export async function getMenu(slug: string) {
+    const cacheKey = `menu_${slug}`;
+    const cached = getStaticCached(cacheKey);
+    if (cached) return cached;
 
     try {
-        // Usamos wcFetch para que use PUBLIC_WP_URL correctamente
         const menu = await wcFetch(`/wh/v1/menu/${slug}`);
+        setStaticCached(cacheKey, menu);
         return menu;
     } catch (error) {
         console.error(`Error fetching menu ${slug}:`, error);
@@ -599,13 +617,14 @@ export async function getMenu(slug: string) {
     }
 }
 
-/**
- * Fetch WooCommerce Product Attributes
- */
 export async function getAttributes() {
+    const cacheKey = "wc_attributes";
+    const cached = getStaticCached(cacheKey);
+    if (cached) return cached;
 
     try {
         const attributes = await wcFetch("/products/attributes");
+        setStaticCached(cacheKey, attributes);
         return attributes;
     } catch (error) {
         console.error("Error fetching attributes:", error);
@@ -613,13 +632,14 @@ export async function getAttributes() {
     }
 }
 
-/**
- * Fetch WooCommerce Attribute Terms
- */
 export async function getAttributeTerms(attributeId: number | string) {
+    const cacheKey = `wc_attr_terms_${attributeId}`;
+    const cached = getStaticCached(cacheKey);
+    if (cached) return cached;
 
     try {
         const terms = await wcFetch(`/products/attributes/${attributeId}/terms?per_page=100`);
+        setStaticCached(cacheKey, terms);
         return terms;
     } catch (error) {
         console.error(`Error fetching terms for attribute ${attributeId}:`, error);
