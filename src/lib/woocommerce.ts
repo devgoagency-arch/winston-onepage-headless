@@ -98,10 +98,21 @@ async function wcFetch(path: string, options: RequestInit = {}, retries = 3, del
         ...(options.headers as Record<string, string> || {})
     };
 
-    // Construct the URL with credentials for non-store API
-    // Quitamos la barra inicial del path si existe, porque la base ya tiene una al final
-    const cleanPath = path.startsWith('/') ? path.substring(1) : path;
-    let url = path.startsWith('http') ? path : `${baseUrl}${cleanPath}`;
+    // Si ya es un http completo no hacemos nada
+    if (path.startsWith('http')) {
+        url = path;
+    } else {
+        // En base a la ruta decidimos el prefijo
+        const cleanPath = path.startsWith('/') ? path.substring(1) : path;
+        
+        if (cleanPath.startsWith('wp/v2') || cleanPath.startsWith('wh/v1')) {
+            // Rutas de WP nativas (menu, páginas)
+            url = `${PUBLIC_WP_URL}/wp-json/${cleanPath}`;
+        } else {
+            // Rutas de WooCommerce (V3 o Store API)
+            url = `${baseUrl}${cleanPath}`;
+        }
+    }
     
     if (!isStore && CK && CS) {
         const separator = url.includes('?') ? '&' : '?';
@@ -549,18 +560,8 @@ export async function getPageById(id: number | string) {
     if (cached) return cached;
 
     try {
-        const wpBase = `${PUBLIC_WP_URL}/wp-json/wp/v2`;
-        const res = await fetch(`${wpBase}/pages/${id}`, {
-            headers: {
-                'Accept': 'application/json'
-            }
-        });
-
-        if (!res.ok) {
-            throw new Error(`WP API Error: ${res.status}`);
-        }
-
-        const page = await res.json();
+        // Usamos wcFetch para mantener consistencia de dominio y rutas
+        const page = await wcFetch(`/wp/v2/pages/${id}`);
         setCached(cacheKey, page);
         return page;
     } catch (error) {
@@ -578,18 +579,8 @@ export async function getMenu(slug: string) {
     if (cached) return cached;
 
     try {
-        const wpBase = `${PUBLIC_WP_URL}/wp-json/wh/v1`;
-        const res = await fetch(`${wpBase}/menu/${slug}`, {
-            headers: {
-                'Accept': 'application/json'
-            }
-        });
-
-        if (!res.ok) {
-            throw new Error(`WP Menu API Error: ${res.status}`);
-        }
-
-        const menu = await res.json();
+        // Usamos wcFetch para que use PUBLIC_WP_URL correctamente
+        const menu = await wcFetch(`/wh/v1/menu/${slug}`);
         setCached(cacheKey, menu);
         return menu;
     } catch (error) {
