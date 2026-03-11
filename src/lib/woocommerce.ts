@@ -471,7 +471,7 @@ export async function getProductBySlug(slug: string) {
 }
 
 export async function getProductsByCategory(
-    categoryId: string | number,
+    categoryIdOrSlug: string | number,
     perPage = 100,
     page = 1,
     orderBy: any = 'date',
@@ -480,12 +480,24 @@ export async function getProductsByCategory(
     attribute?: string,
     attributeTerm?: string | number
 ) {
-    const cacheKey = `cat_${categoryId}_${perPage}_${page}_${orderBy}_${order}_${onSale}_${attribute}_${attributeTerm}`;
+    let finalId = categoryIdOrSlug;
+
+    // Si recibimos un slug (ej: "zapatos") en lugar de un ID numérico
+    if (typeof categoryIdOrSlug === 'string' && isNaN(Number(categoryIdOrSlug))) {
+        try {
+            const cat = await getCategoryBySlug(categoryIdOrSlug);
+            if (cat) finalId = cat.id;
+        } catch (e) {
+            console.error(`[getProductsByCategory] No se pudo encontrar ID para el slug: ${categoryIdOrSlug}`);
+        }
+    }
+
+    const cacheKey = `cat_${finalId}_${perPage}_${page}_${orderBy}_${order}_${onSale}_${attribute}_${attributeTerm}`;
     const cached = getCached(cacheKey);
     if (cached) return cached;
 
     try {
-        const ids = categoryId.toString().split(',').map(id => id.trim()).filter(Boolean);
+        const ids = finalId.toString().split(',').map(id => id.trim()).filter(Boolean);
 
         const fetchCategory = async (id: string) => {
             try {
