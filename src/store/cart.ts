@@ -19,42 +19,77 @@ export const cartItems = persistentMap<Record<string, string>>('wh_cart_v2', {})
 export const isCartOpen = atom(false);
 
 export function addToCart(product: any, quantity: number, color: string | null, size: string | null, image: string) {
-    const cart = cartItems.get();
+    try {
+        const cart = cartItems.get();
 
-    // Si es un producto variable, intentamos encontrar el ID de la variación específica
-    let finalId = product.id;
-    if (product.variations && product.variations.length > 0 && color && size) {
-        const found = product.variations.find((v: any) => {
-            const vColor = v.attributes?.find((a: any) => a.name.toLowerCase().includes('color') || a.name === 'Pa_selecciona-el-color')?.value.toLowerCase();
-            const vSize = v.attributes?.find((a: any) => a.name.toLowerCase().includes('talla') || a.name === 'Pa_selecciona-una-talla')?.value.toLowerCase();
-            return vColor === color.toLowerCase() && vSize === size.toLowerCase();
-        });
-        if (found) finalId = found.id;
+        if (!product || !product.prices) {
+            console.error('[Cart Store] Producto inválido:', product);
+            return;
+        }
+
+        // Si es un producto variable, intentamos encontrar el ID de la variación específica
+        let finalId = product.id;
+        if (product.variations && product.variations.length > 0 && (color || size)) {
+            const found = product.variations.find((v: any) => {
+                const vColor = v.attributes?.find((a: any) => 
+                    a.name.toLowerCase().includes('color') || a.name === 'Pa_selecciona-el-color'
+                );
+                const vSize = v.attributes?.find((a: any) => 
+                    a.name.toLowerCase().includes('talla') || a.name === 'Pa_selecciona-una-talla'
+                );
+
+                const colorValue = (vColor?.value || vColor?.option || '').toLowerCase().trim();
+                const sizeValue = (vSize?.value || vSize?.option || '').toLowerCase().trim();
+
+                const matchesColor = !color || colorValue === color.toLowerCase().trim();
+                const matchesSize = !size || sizeValue === size.toLowerCase().trim();
+
+                return matchesColor && matchesSize;
+            });
+            if (found) finalId = found.id;
+        }
+
+        const itemId = `${product.id}-${(color || 'no-color').toLowerCase()}-${(size || 'no-size').toLowerCase()}`;
+
+        const rawPrice = product.prices.price || '0';
+        const currencyMinorUnit = product.prices.currency_minor_unit || 0;
+        const processedPrice = (typeof rawPrice === 'string' ? parseFloat(rawPrice) : rawPrice) / (10 ** currencyMinorUnit);
+
+        if (cart[itemId]) {
+            try {
+                const item = JSON.parse(cart[itemId]) as CartItem;
+                item.quantity += quantity;
+                cartItems.setKey(itemId, JSON.stringify(item));
+            } catch (e) {
+                // Si el JSON estaba corrupto, lo sobreescribimos
+                const newItem = createCartItem(finalId, product, processedPrice, color, size, quantity, image);
+                cartItems.setKey(itemId, JSON.stringify(newItem));
+            }
+        } else {
+            const newItem = createCartItem(finalId, product, processedPrice, color, size, quantity, image);
+            cartItems.setKey(itemId, JSON.stringify(newItem));
+        }
+
+        isCartOpen.set(true);
+    } catch (error) {
+        console.error('[Cart Store] Error fatal en addToCart:', error);
     }
+}
 
-    const itemId = `${product.id}-${color || 'no-color'}-${size || 'no-size'}`;
-
-    if (cart[itemId]) {
-        const item = JSON.parse(cart[itemId]) as CartItem;
-        item.quantity += quantity;
-        cartItems.setKey(itemId, JSON.stringify(item));
-    } else {
-        const newItem: CartItem = {
-            id: finalId,
-            name: product.name,
-            price: (typeof product.prices.price === 'string' ? parseInt(product.prices.price) : product.prices.price) / (10 ** (product.prices.currency_minor_unit || 0)),
-            color,
-            size,
-            quantity,
-            image,
-            slug: product.slug,
-            attributes: product.attributes,
-            variations: product.variations
-        };
-        cartItems.setKey(itemId, JSON.stringify(newItem));
-    }
-
-    isCartOpen.set(true);
+// Función auxiliar para crear el objeto de item
+function createCartItem(id: number, product: any, price: number, color: string | null, size: string | null, quantity: number, image: string): CartItem {
+    return {
+        id,
+        name: product.name,
+        price,
+        color,
+        size,
+        quantity,
+        image,
+        slug: product.slug,
+        attributes: product.attributes,
+        variations: product.variations
+    };
 }
 
 export function removeFromCart(itemId: string) {
