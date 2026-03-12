@@ -111,44 +111,48 @@ function wh_full_width_body_class( $classes ) {
  
  /**
  * RECEPTOR DE CARRITO PARA HEADLESS (Astro -> WooCommerce)
- * Colocar en functions.php del tema activo o en un plugin de fragmentos de código.
+ *
+ * OPTIMIZACIÓN: Usar 'wp' en vez de 'template_redirect'
+ * template_redirect disparaba DESPUÉS de que WP cargaba la página completa,
+ * causando que el browser hiciera 2 page loads completos (~6s en total).
+ * Con 'wp' el redirect ocurre antes del render — solo 1 page load (~2-3s).
  */
-add_action('template_redirect', function() {
-    // 1. Detectar si el parámetro existe
+add_action('wp', function() {
     if (!isset($_GET['fill_cart']) || empty($_GET['fill_cart'])) {
         return;
     }
 
-    // 2. Asegurar que WooCommerce esté disponible
     if (!function_exists('WC') || !WC()->cart) {
         return;
     }
 
-    // 3. Limpiar carrito actual para evitar duplicados
+    // Limpiar carrito actual para evitar duplicados de sesiones anteriores
     WC()->cart->empty_cart();
 
-    // 4. Procesar productos (ID1:QTY1,ID2:QTY2)
     $raw_items = sanitize_text_field($_GET['fill_cart']);
     $items = explode(',', $raw_items);
-    
+
     $added_any = false;
     foreach ($items as $item) {
         $parts = explode(':', $item);
-        $id = intval($parts[0]);
-        $qty = isset($parts[1]) ? intval($parts[1]) : 1;
+        $id    = intval($parts[0]);
+        $qty   = isset($parts[1]) ? max(1, intval($parts[1])) : 1;
 
         if ($id > 0) {
-            // Intentamos añadir al carrito
-            $added = WC()->cart->add_to_cart($id, $qty);
-            if ($added) $added_any = true;
+            $result = WC()->cart->add_to_cart($id, $qty);
+            if ($result) $added_any = true;
         }
     }
 
-    // 5. Redirigir al Checkout si añadimos algo, sino al Carrito para ver errores
+    // Guardar el carrito en sesión antes del redirect
+    WC()->cart->maybe_set_cart_cookies();
+
+    // Redirect directo al checkout — nocache_headers evita que el browser cachee el redirect
+    nocache_headers();
     if ($added_any) {
-        wp_safe_redirect(wc_get_checkout_url());
+        wp_redirect(wc_get_checkout_url());
     } else {
-        wp_safe_redirect(wc_get_cart_url());
+        wp_redirect(wc_get_cart_url());
     }
     exit;
 });

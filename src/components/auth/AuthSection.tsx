@@ -52,9 +52,9 @@ const AuthSection: React.FC = () => {
                         justify-content: center;
                     }
                     .account-dashboard {
-                        max-width: 900px;
+                        max-width: 1400px;
                         margin: 0 auto;
-                        padding: 4rem 2rem;
+                        padding: 4rem 0rem;
                     }
                     .dashboard-header {
                         text-align: center;
@@ -77,7 +77,7 @@ const AuthSection: React.FC = () => {
                     }
                     .dashboard-card {
                         background: white;
-                        padding: 2.5rem;
+                        padding: 1rem 2rem;
                         border-radius: 12px;
                         box-shadow: 0 4px 20px rgba(0,0,0,0.05);
                         text-align: center;
