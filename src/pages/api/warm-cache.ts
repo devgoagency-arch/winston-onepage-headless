@@ -55,6 +55,11 @@ export const GET: APIRoute = async ({ request }) => {
 
         const urlsToWarm = [
             `${origin}/`,
+            `${origin}/contacto`,
+            `${origin}/guia-de-tallas`,
+            `${origin}/politica-cookies`,
+            `${origin}/politica-privacidad-proteccion-datos`,
+            `${origin}/terminos-condiciones`,
             ...categories.map((c: any) => `${origin}/categoria/${c.slug}`),
             ...products.map((p: any) => `${origin}/productos/${p.slug}`)
         ].filter(url => !url.includes('undefined') && url.startsWith('http'));

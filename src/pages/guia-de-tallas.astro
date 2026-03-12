@@ -1,0 +1,70 @@
+---
+import LegalLayout from "../layouts/LegalLayout.astro";
+import { getPageById, PUBLIC_WP_URL } from "../lib/woocommerce";
+
+let page = await getPageById(14662);
+
+if (!page) {
+    try {
+        const url = `https://winstonandharrystore.com/wp-json/wp/v2/pages/14662`;
+        const res = await fetch(url);
+        if (res.ok) page = await res.json();
+    } catch(e: any) {
+        console.error("[DEBUG] Main domain fetch failed:", e.message);
+    }
+}
+
+let title = "GUÍA DE TALLAS";
+let subtitle = "";
+let content = "";
+
+if (page) {
+    title = page.title?.rendered || title;
+    const rawContent = page.content?.rendered || "";
+
+    if (rawContent.includes('</p>')) {
+        const parts = rawContent.split(/<\/p>/);
+        subtitle = parts[0].replace(/<p[^>]*>/g, "").trim();
+        content = parts.slice(1).join("</p>");
+    } else {
+        content = rawContent;
+    }
+} else {
+    content = "<p>DEBUG: No se pudo obtener la página 14662 de ninguna fuente.</p>";
+}
+---
+
+<LegalLayout title={title} subtitle={subtitle}>
+    <div class="wp-content" set:html={content} />
+</LegalLayout>
+
+<style is:global>
+    /* Ajustes específicos para las tablas de tallas si vienen de WordPress */
+    .wp-content table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 2rem 0;
+        font-family: var(--font-paragraphs);
+        font-size: 0.85rem;
+    }
+
+    .wp-content table th {
+        background-color: var(--color-green);
+        color: white;
+        padding: 1rem;
+        text-align: left;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .wp-content table td {
+        padding: 1rem;
+        border-bottom: 1px solid #eee;
+        color: #555;
+    }
+
+    .wp-content table tr:hover td {
+        background-color: #f9f9f9;
+        color: var(--color-green);
+    }
+</style>
