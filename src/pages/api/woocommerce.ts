@@ -61,8 +61,9 @@ async function wcFetch(path: string, options: RequestInit = {}, retries = 3, del
 
     url = url.replace(/([^:]\/)\/+/g, "$1");
 
-    const isWcNamespace = cleanPath.startsWith('wc/');
-    const isStore = cleanPath.includes('wc/store/');
+    const finalCleanPath = url.split('wp-json/')[1] || "";
+    const isWcNamespace = finalCleanPath.startsWith('wc/');
+    const isStore = finalCleanPath.includes('wc/store/');
     const needsAuth = isWcNamespace && !isStore;
 
     if (needsAuth && CK && CS) {

@@ -102,8 +102,9 @@ export async function wcFetch(path: string, options: RequestInit = {}, retries =
     url = url.replace(/([^:]\/)\/+/g, "$1");
 
     // 3. Determinar si requiere Auth (Solo para el namespace 'wc' que no sea 'store')
-    const isWcNamespace = cleanPath.startsWith('wc/');
-    const isStore = cleanPath.includes('wc/store/');
+    const finalCleanPath = url.split('wp-json/')[1] || "";
+    const isWcNamespace = finalCleanPath.startsWith('wc/');
+    const isStore = finalCleanPath.includes('wc/store/');
     const needsAuth = isWcNamespace && !isStore;
     
     // 4. Headers base
@@ -113,14 +114,14 @@ export async function wcFetch(path: string, options: RequestInit = {}, retries =
     };
 
     if (needsAuth && CK && CS) {
-        // Método 1: Header Authorization (Basic Auth)
-        headers['Authorization'] = `Basic ${safeBtoa(`${CK}:${CS}`)}`;
-        
-        // Método 2: Query Params (Solo para WooCommerce /wc/v3)
-        // Algunos servidores son estrictos y prefieren uno u otro, enviar ambos suele ser más compatible
-        if (cleanPath.startsWith('wc/')) {
+        // En WordPress/WooCommerce, los Query Params son mucho más confiables que el Header Basic Auth
+        // (que a menudo es bloqueado por Apache/Nginx o el .htaccess si no está bien configurado)
+        if (isWcNamespace) {
             const connector = url.includes('?') ? '&' : '?';
             url += `${connector}consumer_key=${CK}&consumer_secret=${CS}`;
+        } else {
+            // Para otros namespaces que requieran auth, usamos Basic Auth como fallback
+            headers['Authorization'] = `Basic ${safeBtoa(`${CK}:${CS}`)}`;
         }
     }
 
