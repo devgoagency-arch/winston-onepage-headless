@@ -8,6 +8,7 @@ import {
     getProductsByCategory,
     getChildCategories,
     getAttributeTerms,
+    PUBLIC_WP_URL,
 } from "../../lib/woocommerce";
 import FilteredProductList from "../../components/FilteredProductList";
 
@@ -117,8 +118,40 @@ if (!category && !error) {
 }
 
 const bannerImage = category?.image?.src || null;
-const desktopBanner = category?.meta_data?.find((m: any) => m.key === 'banner_categoria_desktop')?.value || bannerImage;
-const mobileBanner = category?.meta_data?.find((m: any) => m.key === 'imagen_categoria_movil')?.value || desktopBanner;
+const metaData = category?.meta_data || [];
+
+// Función para extraer la URL de una imagen desde meta_data (soporta ID, URL y Objeto)
+async function getBannerUrl(key: string) {
+    const meta = metaData.find((m: any) => m.key === key);
+    if (!meta || !meta.value) return null;
+    
+    // 1. Es una URL directa
+    if (typeof meta.value === 'string' && (meta.value.startsWith('http') || meta.value.includes('/wp-content/'))) {
+        return meta.value;
+    }
+    
+    // 2. Es un objeto ACF (Image Object)
+    if (typeof meta.value === 'object' && meta.value.url) {
+        return meta.value.url;
+    }
+    
+    // 3. Es un ID numérico (ACF Image ID) - Intentamos resolverlo
+    if (!isNaN(Number(meta.value))) {
+        try {
+            const mediaRes = await fetch(`${PUBLIC_WP_URL}/wp-json/wp/v2/media/${meta.value}`);
+            if (mediaRes.ok) {
+                const mediaData = await mediaRes.json();
+                return mediaData.source_url;
+            }
+        } catch (e) {
+            console.error(`Error resolviendo ID de imagen ${meta.value}:`, e);
+        }
+    }
+    return null;
+}
+
+const desktopBanner = (await getBannerUrl('banner_categoria_desktop')) || bannerImage;
+const mobileBanner = (await getBannerUrl('imagen_categoria_movil')) || desktopBanner;
 
 const categoryTitle = category?.name || "Categoría";
 const categoryDesc = category?.description?.replace(/<[^>]+>/g, "") || "";
