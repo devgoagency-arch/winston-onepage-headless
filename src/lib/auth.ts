@@ -17,13 +17,20 @@ export async function login(username: string, password: string) {
         const data = await response.json();
 
         if (response.ok && data.token) {
+            // Obtenemos datos extra del usuario (como el ID real) usando el token
+            const userRes = await fetch(`${WP_URL}/wp-json/wp/v2/users/me`, {
+                headers: { 'Authorization': `Bearer ${data.token}` }
+            });
+            const userData = await userRes.json();
+
             setUserSession({
                 token: data.token,
                 user_email: data.user_email,
                 user_nicename: data.user_nicename,
                 user_display_name: data.user_display_name,
+                id: userData.id?.toString() || '',
             });
-            return { success: true, user: data };
+            return { success: true, user: { ...data, id: userData.id } };
         } else {
             return { 
                 success: false, 

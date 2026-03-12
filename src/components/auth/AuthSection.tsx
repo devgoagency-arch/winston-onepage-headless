@@ -27,7 +27,7 @@ const AuthSection: React.FC = () => {
                     <div className="dashboard-card">
                         <h3>Mis Pedidos</h3>
                         <p>Consulta el estado de tus compras y descarga tus facturas.</p>
-                        <a href="https://tienda.winstonandharrystore.com/mi-cuenta/orders/" target="_blank" className="btn-outline">Ver Pedidos</a>
+                        <a href="/mi-cuenta/pedidos" className="btn-outline">Ver Pedidos</a>
                     </div>
                     <div className="dashboard-card">
                         <h3>Mis Favoritos</h3>
@@ -67,8 +67,13 @@ const AuthSection: React.FC = () => {
                     }
                     .dashboard-grid {
                         display: grid;
-                        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                        grid-template-columns: repeat(3, 1fr);
                         gap: 2rem;
+                    }
+                    @media (max-width: 992px) {
+                        .dashboard-grid {
+                            grid-template-columns: 1fr;
+                        }
                     }
                     .dashboard-card {
                         background: white;
@@ -77,6 +82,10 @@ const AuthSection: React.FC = () => {
                         box-shadow: 0 4px 20px rgba(0,0,0,0.05);
                         text-align: center;
                         transition: transform 0.3s;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        height: 100%;
                     }
                     .dashboard-card:hover {
                         transform: translateY(-5px);
