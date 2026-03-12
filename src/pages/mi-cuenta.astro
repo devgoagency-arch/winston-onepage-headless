@@ -1,0 +1,27 @@
+
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import AuthSection from "../components/auth/AuthSection";
+---
+
+<Layout title="Mi Cuenta | Winston & Harry">
+    <Header />
+
+    <main class="account-page-container">
+        <AuthSection client:load />
+    </main>
+
+    <Footer />
+</Layout>
+
+<style>
+    .account-page-container {
+        padding-top: 100px;
+        min-height: 80vh;
+        background-color: #f9f9f9;
+        display: flex;
+        align-items: center;
+    }
+</style>
