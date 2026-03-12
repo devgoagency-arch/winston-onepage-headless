@@ -1,0 +1,626 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { PUBLIC_WP_URL } from "../lib/woocommerce";
+
+const stores = [
+    {
+        name: "C.C. Unicentro",
+        address: "Local 2-99. Bogotá, Colombia.",
+        phone: "+57 314 5453177",
+        phoneUrl: "tel:+573145453177",
+        mapUrl: "https://maps.app.goo.gl/SEm6LxGMjWuCCfQc6",
+        hours: [
+            "Lunes a Sábado: 10:00 am - 8:00 pm",
+            "Domingos: 11:00 am - 6:30 pm"
+        ],
+        image: "/images/store-unicentro.avif"
+    },
+    {
+        name: "C.C. El Retiro",
+        address: "Local 1-115. Bogotá, Colombia.",
+        phone: "+57 310 3075540",
+        phoneUrl: "tel:+573103075540",
+        mapUrl: "https://maps.app.goo.gl/T44a5ifgj7QBpQG69",
+        hours: [
+            "Lunes a Sábado: 10:00 am - 8:00 pm",
+            "Domingos: 11:00 am - 6:30 pm"
+        ],
+        image: "/images/store-retiro.avif"
+    },
+    {
+        name: "C.C. Hacienda Santa Bárbara",
+        address: "Local 2-28 D. Bogotá, Colombia.",
+        phone: "+57 314 2426124",
+        phoneUrl: "tel:+573142426124",
+        mapUrl: "https://maps.app.goo.gl/9kjEpbfGN39Sy9xV8",
+        hours: [
+            "Lunes a Sábado: 10:00 am - 8:00 pm",
+            "Domingos: 11:00 am - 7:00 pm",
+            "Festivos: Cerrado"
+        ],
+        image: "/images/store-hacienda.avif"
+    },
+    {
+        name: "C.C. Palatino",
+        address: "Local 211, Cra. 7 #138-33, Bogotá, Colombia.",
+        phone: "+57 321 6940612",
+        phoneUrl: "tel:+573216940612",
+        mapUrl: "https://maps.app.goo.gl/ArwB2aRxPYy6nFnU8",
+        hours: [
+            "Lunes a Jueves: 10:00 am - 8:00 pm",
+            "Viernes y Sábado: 10:00 am - 9:00 pm",
+            "Domingos: 11:00 am - 7:00 pm"
+        ],
+        image: "/images/store-palatino.avif"
+    }
+];
+---
+
+<Layout title="Contáctanos | Winston & Harry">
+    <Header />
+
+    <main class="stores-page">
+        <!-- Hero Section -->
+        <section class="stores-hero">
+            <div class="hero-bg">
+                <img src="/images/banner-tiendas.png" alt="Boutique Winston & Harry" class="hero-img" />
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="hero-content container">
+                <span class="pre-title reveal-on-scroll">Donde nace la elegancia</span>
+                <h1 class="reveal-on-scroll">Puntos de Venta y Ubicaciones</h1>
+                <p class="reveal-on-scroll">Visítenos en nuestras exclusivas boutiques en Bogotá y descubra la maestría del calzado artesanal.</p>
+            </div>
+        </section>
+
+        <!-- Stores Grid -->
+        <section class="stores-grid-section container">
+            <div class="grid-controls reveal-on-scroll">
+                <div class="city-badge">BOGOTÁ, COLOMBIA</div>
+            </div>
+
+            <div class="stores-grid">
+                {stores.map((store) => (
+                    <div class="store-card reveal-on-scroll">
+                        <div class="store-image">
+                            <img src={store.image} alt={store.name} />
+                        </div>
+                        <div class="store-info">
+                            <h2 class="store-name">{store.name}</h2>
+                            <div class="store-details">
+                                <div class="detail-item">
+                                    <span class="detail-label">Dirección</span>
+                                    <p class="detail-value">{store.address}</p>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Teléfono</span>
+                                    <a href={store.phoneUrl} class="detail-value link">{store.phone}</a>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Horarios</span>
+                                    <div class="hours-list">
+                                        {store.hours.map(hour => (
+                                            <p class="hour-line">{hour}</p>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="store-actions">
+                                <a href={store.mapUrl} target="_blank" rel="noopener noreferrer" class="btn-map">
+                                    <span>Ver en Google Maps</span>
+                                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                        <polyline points="15 3 21 3 21 9"></polyline>
+                                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </section>
+
+        <!-- General Contact Info -->
+        <section class="contact-footer-section">
+            <div class="container contact-box reveal-on-scroll">
+                <div class="contact-header-content">
+                    <div class="contact-column">
+                        <h3>Atención al Cliente</h3>
+                        <p>Para consultas especiales, ventas corporativas o asistencia personalizada, contáctenos o complete el formulario.</p>
+                    </div>
+                    <div class="contact-links">
+                        <div class="contact-method">
+                            <span class="label">Email</span>
+                            <a href="mailto:info@winstonandharrystore.com">info@winstonandharrystore.com</a>
+                        </div>
+                        <div class="contact-method">
+                            <span class="label">WhatsApp</span>
+                            <a href="https://wa.me/573145453177" target="_blank">+57 314 5453177</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group-contact">
+                                <label for="contact-name">Nombre completo</label>
+                                <input type="text" id="contact-name" name="name" required placeholder="Ej. Juan Pérez" />
+                            </div>
+                            <div class="form-group-contact">
+                                <label for="contact-email">Correo electrónico</label>
+                                <input type="email" id="contact-email" name="email" required placeholder="juan@ejemplo.com" />
+                            </div>
+                        </div>
+                        <div class="form-group-contact">
+                            <label for="contact-subject">Asunto</label>
+                            <input type="text" id="contact-subject" name="subject" required placeholder="¿En qué podemos ayudarle?" />
+                        </div>
+                        <div class="form-group-contact">
+                            <label for="contact-message">Mensaje</label>
+                            <textarea id="contact-message" name="message" rows="4" required placeholder="Escriba su mensaje aquí..."></textarea>
+                        </div>
+                        <div class="form-footer">
+                            <button type="submit" class="btn-submit-contact">Enviar Mensaje</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <Footer />
+</Layout>
+
+<script is:inline>
+    const contactForm = document.getElementById("contact-form");
+    if (contactForm) {
+        contactForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const btn = contactForm.querySelector(".btn-submit-contact");
+            const originalText = btn.textContent;
+            btn.textContent = "ENVIANDO...";
+            btn.disabled = true;
+
+            // Simulación de envío
+            setTimeout(() => {
+                alert("¡Gracias por contactarnos! Hemos recibido su mensaje y nos comunicaremos pronto.");
+                contactForm.reset();
+                btn.textContent = originalText;
+                btn.disabled = false;
+            }, 2000);
+        });
+    }
+</script>
+
+<style>
+    .stores-page {
+        background-color: #fff;
+        padding-top: 0;
+    }
+
+    /* Hero Section */
+    .stores-hero {
+        position: relative;
+        height: 60vh;
+        min-height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        overflow: hidden;
+        padding: 0;
+    }
+
+    .hero-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+    }
+
+    .hero-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, rgba(21, 83, 56, 0.7), rgba(0, 0, 0, 0.4));
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 10;
+        color: #fff;
+    }
+
+    .hero-content .pre-title {
+        display: block;
+        font-family: var(--font-paragraphs);
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        margin-bottom: 1rem;
+        opacity: 0.9;
+    }
+
+    .hero-content h1 {
+        font-size: 3.5rem;
+        color: #fff;
+        margin-bottom: 1.5rem;
+        letter-spacing: 5px;
+    }
+
+    .hero-content p {
+        font-family: var(--font-paragraphs);
+        max-width: 600px;
+        margin: 0 auto;
+        font-size: 1rem;
+        line-height: 1.6;
+        opacity: 0.8;
+    }
+
+    /* Stores Grid */
+    .stores-grid-section {
+        padding: 6rem 2rem;
+    }
+
+    .grid-controls {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 4rem;
+    }
+
+    .city-badge {
+        font-family: var(--font-titles);
+        font-size: 0.8rem;
+        padding: 0.5rem 2rem;
+        border: 1px solid var(--color-beige);
+        color: var(--color-beige);
+        letter-spacing: 2px;
+    }
+
+    .stores-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4rem 2rem;
+    }
+
+    .store-card {
+        background: #fff;
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        border: 1px solid #f0f0f0;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        overflow: hidden;
+    }
+
+    .store-image {
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .store-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    .store-card:hover .store-image img {
+        transform: scale(1.05);
+    }
+
+    .store-info {
+        padding: 2.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .store-name {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+        color: var(--color-green);
+        position: relative;
+    }
+
+    .store-name::after {
+        content: "";
+        position: absolute;
+        bottom: -0.8rem;
+        left: 0;
+        width: 40px;
+        height: 1px;
+        background-color: var(--color-beige);
+    }
+
+    .store-details {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .detail-item {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+    }
+
+    .detail-label {
+        font-family: var(--font-titles);
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        color: #999;
+        letter-spacing: 1px;
+    }
+
+    .detail-value {
+        font-family: var(--font-paragraphs);
+        font-size: 0.85rem;
+        color: #333;
+        line-height: 1.5;
+    }
+
+    .detail-value.link {
+        color: var(--color-green);
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.2s;
+    }
+
+    .detail-value.link:hover {
+        color: var(--color-beige);
+    }
+
+    .hours-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+    }
+
+    .hour-line {
+        font-family: var(--font-paragraphs);
+        font-size: 0.8rem;
+        color: #666;
+    }
+
+    .btn-map {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.2rem;
+        border: 1px solid #eee;
+        font-family: var(--font-titles);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #121212;
+        transition: all 0.3s;
+    }
+
+    .btn-map:hover {
+        background-color: var(--color-green);
+        color: #fff;
+        border-color: var(--color-green);
+    }
+
+    /* Contact Footer */
+    .contact-footer-section {
+        background-color: #f9f9f9;
+        padding: 6rem 2rem;
+    }
+
+    .contact-box {
+        background-color: var(--color-green);
+        color: #fff;
+        padding: 5rem;
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+        gap: 6rem;
+        align-items: flex-start;
+    }
+
+    .contact-header-content {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+    }
+
+    .contact-column h3 {
+        color: #fff;
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .contact-column p {
+        font-family: var(--font-paragraphs);
+        opacity: 0.8;
+        font-size: 0.95rem;
+        line-height: 1.8;
+    }
+
+    .contact-links {
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+
+    .contact-method {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .contact-method .label {
+        font-family: var(--font-titles);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 2.5px;
+        color: var(--color-beige);
+    }
+
+    .contact-method a {
+        font-family: var(--font-titles);
+        font-size: 1.4rem;
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+    .contact-method a:hover {
+        color: var(--color-beige);
+    }
+
+    /* Contact Form Styles */
+    .contact-form-wrapper {
+        background: rgba(255, 255, 255, 0.03);
+        padding: 3rem;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
+
+    .form-group-contact {
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+    }
+
+    .form-group-contact label {
+        font-family: var(--font-titles);
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: var(--color-beige);
+        font-weight: 600;
+    }
+
+    .form-group-contact input,
+    .form-group-contact textarea {
+        background: rgba(255, 255, 255, 0.95);
+        border: 1px solid transparent;
+        padding: 1rem;
+        font-family: var(--font-paragraphs);
+        font-size: 0.9rem;
+        color: #121212;
+        transition: all 0.3s;
+    }
+
+    .form-group-contact input:focus,
+    .form-group-contact textarea:focus {
+        outline: none;
+        background: #fff;
+        border-color: var(--color-beige);
+    }
+
+    .btn-submit-contact {
+        background-color: var(--color-beige);
+        color: #fff;
+        border: none;
+        padding: 1.2rem 3rem;
+        font-family: var(--font-titles);
+        font-weight: 700;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        cursor: pointer;
+        transition: all 0.4s;
+        width: 100%;
+    }
+
+    .btn-submit-contact:hover {
+        background-color: #fff;
+        color: var(--color-green);
+        transform: translateY(-3px);
+    }
+
+    .btn-submit-contact:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+
+    /* Media Queries */
+    @media (max-width: 1100px) {
+        .contact-box {
+            grid-template-columns: 1fr;
+            gap: 4rem;
+            padding: 4rem 2rem;
+        }
+
+        .contact-header-content {
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .store-card {
+            grid-template-columns: 1fr;
+        }
+
+        .store-image {
+            height: 300px;
+        }
+    }
+
+    @media (max-width: 992px) {
+        .hero-content h1 {
+            font-size: 2.5rem;
+        }
+
+        .stores-grid {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .form-row {
+            grid-template-columns: 1fr;
+        }
+
+        .contact-form-wrapper {
+            padding: 1.5rem;
+        }
+
+        .contact-method a {
+            font-size: 1.1rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .stores-hero {
+            height: 50vh;
+        }
+
+        .hero-content h1 {
+            font-size: 2rem;
+            letter-spacing: 2px;
+        }
+
+        .store-info {
+            padding: 2rem;
+        }
+    }
+</style>

@@ -186,6 +186,16 @@ const FilteredProductList: React.FC<FilteredProductListProps> = ({
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
+    // Si el servidor no envió términos de color o talla (para ahorrar tiempo),
+    // los extraemos de los productos o el cliente los gestiona dinámicamente.
+    useEffect(() => {
+        // This effect runs after the initial products are set and memoized values are calculated.
+        // If initialColorTerms or initialTallaTerms were empty from SSR,
+        // the useMemo hooks for colorTerms and tallaTerms will have populated them from allFetchedProducts.
+        // No explicit fetch is needed here, as the memoized values handle the dynamic extraction.
+    }, [allFetchedProducts, initialColorTerms, initialTallaTerms]);
+
+
     const fetchBaseProducts = async (currentSort: any, pageNum: number, append = false) => {
         if (!category?.id) return;
         if (append) setLoadingMore(true); else setLoading(true);

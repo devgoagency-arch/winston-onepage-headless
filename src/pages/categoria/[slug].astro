@@ -72,35 +72,30 @@ let subcategories: any[] = [];
 let dropdownCategories: any[] = [];
 
 try {
-    // 1. Buscamos la categoría PRIMERO (Necesitamos el ID para casi todo lo demás)
+    // 1. Buscamos la categoría (ID o Slug)
     category = await getCategoryBySlug(slug as string);
     
     if (category) {
-        const isAccesorios = slug?.toString().toLowerCase().includes("accesorios");
+        // 2. SOLO cargamos los productos iniciales (16). 
+        // NO cargamos términos de atributos ni subcategorías aquí, 
+        // el componente React se encarga de extraerlos o pedirlos si los necesita.
+        products = await getProductsByCategory(
+            category.id,
+            16,
+            1,
+            activeSort.orderBy,
+            activeSort.order,
+            activeSort.onSale
+        );
 
-        // 2. Lanzamos el resto en paralelo YA con el ID de la categoría
-        const [rawColorTerms, rawTallaTerms, rawSubcategories, fetchedProducts] = await Promise.all([
-            getAttributeTerms(2),
-            isAccesorios ? Promise.resolve([]) : getAttributeTerms(1),
-            getChildCategories(category.id),
-            getProductsByCategory(
-                category.id, // Pasamos el ID directamente para evitar que la función tenga que buscarlo de nuevo
-                16,
-                1,
-                activeSort.orderBy,
-                activeSort.order,
-                activeSort.onSale
-            )
-        ]);
-
-        colorTerms = rawColorTerms;
-        tallaTerms = rawTallaTerms;
-        subcategories = rawSubcategories;
-        products = fetchedProducts;
-        
-        dropdownCategories = subcategories.length > 0 
-            ? subcategories.map(c => ({ name: c.name, slug: c.slug }))
-            : [{ name: "Zapatos", slug: "zapatos" }, { name: "Ropa", slug: "ropa" }, { name: "Accesorios", slug: "accesorios" }, { name: "Maletas", slug: "maletas" }, { name: "Mascotas", slug: "mascotas" }];
+        // Fallback para el menú de navegación de categorías si no hay subcategorías
+        dropdownCategories = [
+            { name: "Zapatos", slug: "zapatos" },
+            { name: "Ropa", slug: "ropa" },
+            { name: "Accesorios", slug: "accesorios" },
+            { name: "Maletas", slug: "maletas" },
+            { name: "Mascotas", slug: "mascotas" },
+        ];
 
         if (tallaParam) {
             products = products.filter((p) =>
