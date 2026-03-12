@@ -37,7 +37,7 @@ const AuthSection: React.FC = () => {
                     <div className="dashboard-card">
                         <h3>Detalles de la cuenta</h3>
                         <p>Actualiza tu dirección de envío y contraseña.</p>
-                        <a href={`https://tienda.winstonandharrystore.com/mi-cuenta/edit-account/?autologin=${session.token}`} target="_blank" className="btn-outline">Editar Perfil</a>
+                        <a href="/mi-cuenta/perfil" className="btn-outline">Editar Perfil</a>
                     </div>
                 </div>
 

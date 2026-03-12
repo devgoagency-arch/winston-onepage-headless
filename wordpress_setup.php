@@ -169,6 +169,7 @@ add_action('template_redirect', function() {
         'wc-api',
         'wp-json', // ¡Fundamental para que Astro pueda pedir datos!
         'my-account',
+        'mi-cuenta',
         'cart'
     ];
 
@@ -748,29 +749,53 @@ function wh_sync_on_look_save($post_id, $post, $update) {
 }
 
 /**
- * AUTO-LOGIN PARA HEADLESS
- * Permite entrar a WordPress logueado desde Astro usando el Token JWT
+ * SERVICIO DE AUTOLOGIN PARA HEADLESS
+ * Permite que un usuario logueado en Astro entre a WordPress sin pedir contraseña.
  */
-add_action('init', function() {
-    // Solo actuamos si viene el parámetro 'autologin' y estamos en la página de cuenta
-    if (isset($_GET['autologin']) && !empty($_GET['autologin']) && strpos($_SERVER['REQUEST_URI'], 'my-account') !== false) {
-        $token = sanitize_text_field($_GET['autologin']);
-        
-        // Usamos el validador del plugin JWT que ya instalaste
-        $auth = new Jwt_Auth_Public('jwt-auth', '1.1.0');
-        $user_data = $auth->validate_token($token);
 
-        if (!is_wp_error($user_data)) {
-            $user_id = $user_data->data->user->id;
-            
-            // Logueamos al usuario en WordPress (creamos la cookie)
-            wp_set_current_user($user_id);
-            wp_set_auth_cookie($user_id);
-            
-            // Redirigimos a la misma URL pero sin el token para limpiar la barra de direcciones
-            $redirect_url = remove_query_arg('autologin');
-            wp_redirect($redirect_url);
-            exit;
+// 1. Relajar seguridad de cookies para permitir el salto entre subdominios
+add_filter('wp_auth_cookie_options', function($options) {
+    if (isset($_GET['autologin'])) {
+        $options['samesite'] = 'None';
+    }
+    return $options;
+}, 10, 1);
+
+add_action('set_auth_cookie', function($auth_cookie, $expire, $expiration, $user_id, $scheme) {
+    if (isset($_GET['autologin'])) {
+        // Forzamos el header para asegurar SameSite=None y Secure
+        header('Set-Cookie: ' . $auth_cookie . '; expires=' . gmdate('D, d-M-Y H:i:s', $expire) . ' GMT; path=' . COOKIEPATH . '; domain=' . COOKIE_DOMAIN . '; Secure; SameSite=None', false);
+    }
+}, 10, 5);
+
+// 2. Lógica de Autologin mediante Token JWT
+add_action('init', function() {
+    $is_account_page = (strpos($_SERVER['REQUEST_URI'], 'my-account') !== false || strpos($_SERVER['REQUEST_URI'], 'mi-cuenta') !== false);
+    
+    if (isset($_GET['autologin']) && !empty($_GET['autologin']) && $is_account_page) {
+        $token = sanitize_text_field($_GET['autologin']);
+
+        try {
+            $secret_key = defined('JWT_AUTH_SECRET_KEY') ? JWT_AUTH_SECRET_KEY : '';
+            if (class_exists('Firebase\JWT\JWT') && $secret_key) {
+                // Decodificamos el token para validar su firma y obtener el ID
+                $decoded = Firebase\JWT\JWT::decode($token, new Firebase\JWT\Key($secret_key, 'HS256'));
+                $user_id = $decoded->data->user->id;
+
+                if ($user_id > 0) {
+                    wp_set_current_user($user_id);
+                    wp_set_auth_cookie($user_id, true, is_ssl());
+                    
+                    // Limpiamos la URL y entramos
+                    $redirect_url = remove_query_arg('autologin');
+                    wp_redirect($redirect_url);
+                    exit;
+                }
+            }
+        } catch (Exception $e) {
+            // Error en token, dejamos que WP pida login normal
         }
     }
 });
+
+
