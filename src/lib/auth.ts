@@ -1,7 +1,7 @@
 
 import { setUserSession, clearUserSession } from '../store/user';
 
-const WP_URL = import.meta.env.PUBLIC_WP_URL || 'https://tienda.winstonandharrystore.com';
+export const WP_URL = import.meta.env.PUBLIC_WP_URL || 'https://tienda.winstonandharrystore.com';
 const JWT_ENDPOINT = `${WP_URL}/wp-json/jwt-auth/v1/token`;
 
 export async function login(username: string, password: string) {
