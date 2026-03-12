@@ -147,10 +147,12 @@ add_action('wp', function() {
     // Guardar el carrito en sesión antes del redirect
     WC()->cart->maybe_set_cart_cookies();
 
-    // Redirect directo al checkout — nocache_headers evita que el browser cachee el redirect
+    // Redirect al destino solicitado o al checkout por defecto
     nocache_headers();
     if ($added_any) {
-        wp_redirect(wc_get_checkout_url());
+        // Si el usuario quería ir al carrito, respetamos eso. Si no, al checkout.
+        $target = (strpos($_SERVER['REQUEST_URI'], '/cart') !== false) ? wc_get_cart_url() : wc_get_checkout_url();
+        wp_redirect($target);
     } else {
         wp_redirect(wc_get_cart_url());
     }
@@ -744,3 +746,31 @@ function wh_sync_on_look_save($post_id, $post, $update) {
     
     wh_notify_vercel('/', 'look_updated');
 }
+
+/**
+ * AUTO-LOGIN PARA HEADLESS
+ * Permite entrar a WordPress logueado desde Astro usando el Token JWT
+ */
+add_action('init', function() {
+    // Solo actuamos si viene el parámetro 'autologin' y estamos en la página de cuenta
+    if (isset($_GET['autologin']) && !empty($_GET['autologin']) && strpos($_SERVER['REQUEST_URI'], 'my-account') !== false) {
+        $token = sanitize_text_field($_GET['autologin']);
+        
+        // Usamos el validador del plugin JWT que ya instalaste
+        $auth = new Jwt_Auth_Public('jwt-auth', '1.1.0');
+        $user_data = $auth->validate_token($token);
+
+        if (!is_wp_error($user_data)) {
+            $user_id = $user_data->data->user->id;
+            
+            // Logueamos al usuario en WordPress (creamos la cookie)
+            wp_set_current_user($user_id);
+            wp_set_auth_cookie($user_id);
+            
+            // Redirigimos a la misma URL pero sin el token para limpiar la barra de direcciones
+            $redirect_url = remove_query_arg('autologin');
+            wp_redirect($redirect_url);
+            exit;
+        }
+    }
+});
