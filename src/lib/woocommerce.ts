@@ -101,8 +101,10 @@ export async function wcFetch(path: string, options: RequestInit = {}, retries =
     // Limpieza de dobles barras (excepto las de http://)
     url = url.replace(/([^:]\/)\/+/g, "$1");
 
-    // 3. Añadir Auth solo si NO es Store API (que es público)
+    // 3. Determinar si requiere Auth (Solo para el namespace 'wc' que no sea 'store')
+    const isWcNamespace = cleanPath.startsWith('wc/');
     const isStore = cleanPath.includes('wc/store/');
+    const needsAuth = isWcNamespace && !isStore;
     
     // 4. Headers base
     const headers: any = {
@@ -110,7 +112,7 @@ export async function wcFetch(path: string, options: RequestInit = {}, retries =
         ...(options.headers || {})
     };
 
-    if (!isStore && CK && CS) {
+    if (needsAuth && CK && CS) {
         // Método 1: Header Authorization (Basic Auth)
         headers['Authorization'] = `Basic ${safeBtoa(`${CK}:${CS}`)}`;
         

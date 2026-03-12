@@ -61,8 +61,11 @@ async function wcFetch(path: string, options: RequestInit = {}, retries = 3, del
 
     url = url.replace(/([^:]\/)\/+/g, "$1");
 
+    const isWcNamespace = cleanPath.startsWith('wc/');
     const isStore = cleanPath.includes('wc/store/');
-    if (!isStore && CK && CS) {
+    const needsAuth = isWcNamespace && !isStore;
+
+    if (needsAuth && CK && CS) {
         const sep = url.includes('?') ? '&' : '?';
         url = `${url}${sep}consumer_key=${CK}&consumer_secret=${CS}`;
     }
