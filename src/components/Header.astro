@@ -24,6 +24,18 @@ function buildMenuTree(items: any[]) {
 }
 
 const menuTree = buildMenuTree(menuItems);
+
+function flattenCategoryUrl(url: string) {
+    if (!url) return "";
+    let clean = url.replace(PUBLIC_WP_URL, "");
+    if (clean.includes("/product-category/")) {
+        // Extraemos solo el último segmento (el slug de la categoría hija)
+        const segments = clean.split("/").filter(Boolean);
+        const lastSegment = segments[segments.length - 1];
+        return `/categoria/${lastSegment}/`;
+    }
+    return clean;
+}
 ---
 
 <header class="header">
@@ -171,15 +183,7 @@ const menuTree = buildMenuTree(menuItems);
                     >
                         <div class="menu-link-wrapper">
                             <a
-                                href={item.url
-                                    .replace(
-                                        PUBLIC_WP_URL,
-                                        "",
-                                    )
-                                    .replace(
-                                        "/product-category/",
-                                        "/categoria/",
-                                    )}
+                                href={flattenCategoryUrl(item.url)}
                                 class="mobile-link"
                                 set:html={item.title}
                             />
@@ -209,15 +213,7 @@ const menuTree = buildMenuTree(menuItems);
                                 {item.children.map((child: any) => (
                                     <li>
                                         <a
-                                            href={child.url
-                                                .replace(
-                                                    PUBLIC_WP_URL,
-                                                    "",
-                                                )
-                                                .replace(
-                                                    "/product-category/",
-                                                    "/categoria/",
-                                                )}
+                                            href={flattenCategoryUrl(child.url)}
                                             class="mobile-sublink"
                                             set:html={child.title}
                                         />
