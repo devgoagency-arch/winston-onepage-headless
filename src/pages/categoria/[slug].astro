@@ -64,6 +64,7 @@ const activeSort =
     SORT_OPTIONS.find((o) => o.key === sortParam) || SORT_OPTIONS[0];
 
 let category: any = null;
+let wpCategory: any = null;
 let products: any[] = [];
 let error: string | null = null;
 let colorTerms: any[] = [];
@@ -73,13 +74,24 @@ let subcategories: any[] = [];
 let dropdownCategories: any[] = [];
 
 try {
-    // 1. Buscamos la categoría (ID o Slug)
+    // 1. Buscamos la categoría en WooCommerce (para productos e ID)
     category = await getCategoryBySlug(slug as string);
     
     if (category) {
-        // 2. SOLO cargamos los productos iniciales (16). 
-        // NO cargamos términos de atributos ni subcategorías aquí, 
-        // el componente React se encarga de extraerlos o pedirlos si los necesita.
+        // 2. Buscamos la categoría en WP API pública (para obtener ACF/Banners sin problemas de Auth)
+        try {
+            const wpRes = await fetch(`${PUBLIC_WP_URL}/wp-json/wp/v2/product_cat?slug=${slug}`);
+            if (wpRes.ok) {
+                const wpData = await wpRes.json();
+                if (Array.isArray(wpData) && wpData.length > 0) {
+                    wpCategory = wpData[0];
+                }
+            }
+        } catch (e) {
+            console.warn("Error fetching public WP category:", e);
+        }
+
+        // 3. Cargamos los productos iniciales
         products = await getProductsByCategory(
             category.id,
             16,
@@ -119,31 +131,28 @@ if (!category && !error) {
 
 const bannerImage = category?.image?.src || null;
 const metaData = category?.meta_data || [];
-
-// Log de depuración (solo visible en consola de servidor)
-// console.log(`[DEBUG] Metas para ${slug}:`, metaData.map(m => m.key));
+const acfData = wpCategory?.acf || {};
 
 async function getBannerUrl(keys: string[]) {
-    // 1. Intentar buscar en el objeto acf directo (si ACF está configurado para mostrarse así)
-    if (category?.acf) {
-        for (const key of keys) {
-            const val = category.acf[key];
-            if (!val) continue;
-            if (typeof val === 'string' && val.startsWith('http')) return val;
-            if (typeof val === 'object' && val.url) return val.url;
-            if (!isNaN(Number(val)) && Number(val) > 0) {
-                try {
-                    const res = await fetch(`${PUBLIC_WP_URL}/wp-json/wp/v2/media/${val}`);
-                    if (res.ok) {
-                        const data = await res.json();
-                        return data.source_url;
-                    }
-                } catch (e) {}
-            }
+    // 1. Prioridad: Buscar en ACF (traído de la API pública)
+    for (const key of keys) {
+        const val = acfData[key];
+        if (!val) continue;
+
+        if (typeof val === 'string' && val.startsWith('http')) return val;
+        if (typeof val === 'object' && val.url) return val.url;
+        if (!isNaN(Number(val)) && Number(val) > 0) {
+            try {
+                const res = await fetch(`${PUBLIC_WP_URL}/wp-json/wp/v2/media/${val}`);
+                if (res.ok) {
+                    const data = await res.json();
+                    return data.source_url;
+                }
+            } catch (e) {}
         }
     }
 
-    // 2. Buscar en meta_data (estándar de WooCommerce)
+    // 2. Fallback: Buscar en meta_data de WooCommerce
     for (const key of keys) {
         const meta = metaData.find((m: any) => m.key === key);
         if (!meta || !meta.value) continue;
