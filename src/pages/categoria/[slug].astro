@@ -117,6 +117,9 @@ if (!category && !error) {
 }
 
 const bannerImage = category?.image?.src || null;
+const desktopBanner = category?.meta_data?.find((m: any) => m.key === 'banner_categoria_desktop')?.value || bannerImage;
+const mobileBanner = category?.meta_data?.find((m: any) => m.key === 'imagen_categoria_movil')?.value || desktopBanner;
+
 const categoryTitle = category?.name || "Categoría";
 const categoryDesc = category?.description?.replace(/<[^>]+>/g, "") || "";
 
@@ -140,7 +143,7 @@ Astro.response.headers.set('Cache-Control', 'public, s-maxage=86400, stale-while
     <main class="category-page">
         <section
             class="category-banner"
-            style={bannerImage ? `background-image: url('${bannerImage}')` : ""}
+            style={`--desktop-banner: url('${desktopBanner}'); --mobile-banner: url('${mobileBanner}');`}
         >
             <div class="banner-overlay"></div>
             <div class="banner-content">
@@ -245,12 +248,20 @@ Astro.response.headers.set('Cache-Control', 'public, s-maxage=86400, stale-while
         position: relative;
         height: 500px;
         background-color: var(--color-green);
+        background-image: var(--desktop-banner);
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
         display: flex;
         align-items: center;
         overflow: hidden;
+    }
+
+    @media (max-width: 768px) {
+        .category-banner {
+            background-image: var(--mobile-banner);
+            height: 400px;
+        }
     }
 
     .banner-overlay {
