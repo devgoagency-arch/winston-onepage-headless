@@ -46,6 +46,11 @@ const AuthSection: React.FC = () => {
                 </div>
 
                 <style>{`
+                    .auth-wrapper {
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                    }
                     .account-dashboard {
                         max-width: 900px;
                         margin: 0 auto;
