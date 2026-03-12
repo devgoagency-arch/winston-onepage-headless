@@ -633,7 +633,7 @@ const FilteredProductList: React.FC<FilteredProductListProps> = ({
                 .category-dropdown:hover .dropdown-list { opacity: 1; visibility: visible; pointer-events: auto; }
                 .current-category { font-family: var(--font-paragraphs); font-size: 0.8rem; font-weight: 500; letter-spacing: 1px; color: #121212; }
                 .dropdown-icon { transition: transform 0.3s ease; }
-                .dropdown-list { position: absolute; top: 100%; left: 0; background: #fff; list-style: none; padding: 0.5rem 0 1rem; margin: 0; min-width: 200px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08); border: 1px solid #e8e8e8; border-top: none; opacity: 0; visibility: hidden; pointer-events: none; transition: all 0.2s; z-index: 100; }
+                .dropdown-list { position: absolute; top: 100%; left: 0; background: #fff; list-style: none; padding: 0.5rem 0 1rem; margin: 0; min-width: 200px; max-height: 400px; overflow-y: auto; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08); border: 1px solid #e8e8e8; border-top: none; opacity: 0; visibility: hidden; pointer-events: none; transition: all 0.2s; z-index: 100; }
                 .dropdown-list li a { display: block; padding: 0.5rem 1.5rem; color: #666; text-decoration: none; font-family: var(--font-paragraphs); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; transition: all 0.2s; }
                 .dropdown-list li a:hover { color: var(--color-green, #155338); background-color: #f9f9f9; }
 
@@ -742,6 +742,84 @@ const FilteredProductList: React.FC<FilteredProductListProps> = ({
                     .filter-bar { flex-direction: column; gap: 1.5rem; align-items: flex-start; }
                     .filter-right { width: 100%; justify-content: space-between; }
                     .grid-4x3 { grid-template-columns: repeat(2, 1fr); }
+                }
+
+                /* Drawer Styles */
+                .filter-drawer-overlay {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0, 0, 0, 0.4);
+                    z-index: 9998;
+                    opacity: 0;
+                    visibility: hidden;
+                    transition: all 0.4s ease;
+                    pointer-events: none;
+                }
+
+                .filter-drawer-overlay.active {
+                    opacity: 1;
+                    visibility: visible;
+                    pointer-events: auto;
+                }
+
+                .filter-drawer {
+                    position: fixed;
+                    top: 0;
+                    right: -400px;
+                    width: 400px;
+                    height: 100%;
+                    background: #fff;
+                    z-index: 9999;
+                    display: flex;
+                    flex-direction: column;
+                    transition: right 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+                    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+                    pointer-events: auto;
+                }
+
+                .filter-drawer.active {
+                    right: 0;
+                }
+
+                .drawer-header {
+                    padding: 1.5rem 2rem;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    border-bottom: 1px solid #eee;
+                }
+
+                .drawer-header h3 {
+                    font-family: var(--font-titles);
+                    font-size: 1.25rem;
+                    color: var(--color-green);
+                    margin: 0;
+                }
+
+                .close-drawer {
+                    background: none;
+                    border: none;
+                    font-size: 2rem;
+                    cursor: pointer;
+                    padding: 0;
+                    line-height: 1;
+                    color: #888;
+                }
+
+                .drawer-content {
+                    flex: 1;
+                    overflow-y: auto;
+                    padding: 2rem;
+                }
+
+                @media (max-width: 480px) {
+                    .filter-drawer {
+                        width: 100%;
+                        right: -100%;
+                    }
                 }
             `}</style>
         </>

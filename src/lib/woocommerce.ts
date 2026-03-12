@@ -181,7 +181,7 @@ export async function getProductsPool() {
         if (products && Array.isArray(products)) {
             return products
                 .map((p: any) => mapV3ToStore(p))
-                .filter(p => p && p.prices.price !== "0" && p.stock_status !== 'outofstock');
+                .filter(p => p && p.prices.price !== "0" && p.prices.price !== "0.00" && p.stock_status !== 'outofstock');
         }
         return [];
     } catch (error) {
@@ -233,6 +233,10 @@ function mapV3ToStore(p: any) {
         }
 
         p.prices.price = normalizePriceStr(rawPrice);
+        
+        // Final sanity check: if price is still 0, it's invalid for display
+        if (p.prices.price === "0" || p.prices.price === "0.00") return null;
+
         p.prices.regular_price = normalizePriceStr(p.prices.regular_price);
         p.prices.sale_price = normalizePriceStr(p.prices.sale_price);
         p.prices.currency_minor_unit = 0; // Already normalized
@@ -556,7 +560,7 @@ export async function getAllProducts(
 
         if (storeRes.ok) {
             const data = await storeRes.json();
-            return Array.isArray(data) ? data.map(p => mapV3ToStore(p)) : [];
+            return Array.isArray(data) ? data.map(p => mapV3ToStore(p)).filter(p => p !== null) : [];
         }
 
         // Fallback: v3
@@ -611,7 +615,7 @@ export async function getProductsByCategory(
                 
                 if (storeRes.ok) {
                     const data = await storeRes.json();
-                    return Array.isArray(data) ? data : [];
+                    return Array.isArray(data) ? data.map((p: any) => mapV3ToStore(p)).filter(p => p !== null) : [];
                 }
                 
                 // Fallback: Si Store API falla, usamos v3 (Autenticada)

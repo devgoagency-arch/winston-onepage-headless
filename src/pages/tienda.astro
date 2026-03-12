@@ -1,13 +1,8 @@
-
 ---
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import {
-    getAllProducts,
-    getAttributeTerms,
-    wcFetch
-} from "../lib/woocommerce";
+import { getAllProducts, getAttributeTerms, wcFetch } from "../lib/woocommerce";
 import FilteredProductList from "../components/FilteredProductList";
 
 export const isr = {
@@ -17,13 +12,38 @@ export const isr = {
 const sortParam = Astro.url.searchParams.get("sort") || "destacado";
 
 const SORT_OPTIONS = [
-    { key: "destacado", label: "Destacado", orderBy: "popularity", order: "desc", onSale: false },
-    { key: "precio_asc", label: "Menor a mayor precio", orderBy: "price", order: "asc", onSale: false },
-    { key: "precio_desc", label: "Mayor a menor precio", orderBy: "price", order: "desc", onSale: false },
-    { key: "descuentos", label: "Descuentos", orderBy: "popularity", order: "desc", onSale: true },
+    {
+        key: "destacado",
+        label: "Destacado",
+        orderBy: "popularity",
+        order: "desc",
+        onSale: false,
+    },
+    {
+        key: "precio_asc",
+        label: "Menor a mayor precio",
+        orderBy: "price",
+        order: "asc",
+        onSale: false,
+    },
+    {
+        key: "precio_desc",
+        label: "Mayor a menor precio",
+        orderBy: "price",
+        order: "desc",
+        onSale: false,
+    },
+    {
+        key: "descuentos",
+        label: "Descuentos",
+        orderBy: "popularity",
+        order: "desc",
+        onSale: true,
+    },
 ];
 
-const activeSort = SORT_OPTIONS.find((o) => o.key === sortParam) || SORT_OPTIONS[0];
+const activeSort =
+    SORT_OPTIONS.find((o) => o.key === sortParam) || SORT_OPTIONS[0];
 
 let products: any[] = [];
 let error: string | null = null;
@@ -34,28 +54,31 @@ let allCategories: any[] = [];
 try {
     // 1. Cargamos productos iniciales para toda la tienda
     products = await getAllProducts(
-        16, 
-        1, 
-        activeSort.orderBy, 
-        activeSort.order, 
-        activeSort.onSale
+        16,
+        1,
+        activeSort.orderBy,
+        activeSort.order,
+        activeSort.onSale,
     );
 
     // 2. Cargamos términos para filtros (Color y Talla)
     const [colors, sizes, categories] = await Promise.all([
         getAttributeTerms(2).catch(() => []), // ID 2 suele ser Color
         getAttributeTerms(1).catch(() => []), // ID 1 suele ser Talla
-        wcFetch('/products/categories?per_page=100&hide_empty=true').catch(() => [])
+        wcFetch("/products/categories?per_page=100&hide_empty=true").catch(
+            () => [],
+        ),
     ]);
 
     colorTerms = Array.isArray(colors) ? colors : [];
     tallaTerms = Array.isArray(sizes) ? sizes : [];
-    allCategories = Array.isArray(categories) ? categories.map((c: any) => ({
-        id: c.id,
-        name: c.name,
-        slug: c.slug
-    })) : [];
-
+    allCategories = Array.isArray(categories)
+        ? categories.map((c: any) => ({
+              id: c.id,
+              name: c.name,
+              slug: c.slug,
+          }))
+        : [];
 } catch (e: any) {
     console.error("Error en Tienda:", e.message);
     error = "No se pudieron cargar los productos.";
@@ -71,28 +94,35 @@ const shopBanner = "/images/banner-tienda-default.jpg"; // Fallback o imagen gen
         <section class="category-banner shop-banner">
             <div class="banner-overlay"></div>
             <div class="banner-content">
-                <h1>Nuestra Tienda</h1>
-                <p>Explora nuestra colección completa de moda masculina artesanal.</p>
+                <h1>Estilo con intención</h1>
+                <p>
+                    Maestros de la Tradición, explora nuestra colección completa
+                    de moda masculina artesanal.
+                </p>
             </div>
         </section>
 
-        {error && (
-            <div class="error-container">
-                <p class="error-msg">{error}</p>
-            </div>
-        )}
+        {
+            error && (
+                <div class="error-container">
+                    <p class="error-msg">{error}</p>
+                </div>
+            )
+        }
 
-        {!error && (
-            <FilteredProductList
-                client:load
-                initialProducts={products}
-                category={{ id: 'all', name: 'Tienda', slug: 'tienda' }}
-                subcategories={allCategories}
-                colorTerms={colorTerms}
-                tallaTerms={tallaTerms}
-                initialSort={activeSort}
-            />
-        )}
+        {
+            !error && (
+                <FilteredProductList
+                    client:load
+                    initialProducts={products}
+                    category={{ id: "all", name: "Tienda", slug: "tienda" }}
+                    subcategories={allCategories}
+                    colorTerms={colorTerms}
+                    tallaTerms={tallaTerms}
+                    initialSort={activeSort}
+                />
+            )
+        }
     </main>
 
     <Footer />
@@ -104,7 +134,7 @@ const shopBanner = "/images/banner-tienda-default.jpg"; // Fallback o imagen gen
         /* Si tienes una imagen general para la tienda, puedes ponerla aquí */
         /* background-image: url('/images/banner-tienda.jpg'); */
     }
-    
+
     .category-page {
         min-height: 80vh;
         background-color: #fff;
@@ -143,6 +173,7 @@ const shopBanner = "/images/banner-tienda-default.jpg"; // Fallback o imagen gen
         text-transform: uppercase;
         letter-spacing: 4px;
         margin: 0;
+        color: #fff !important;
     }
 
     .banner-content p {
@@ -153,8 +184,16 @@ const shopBanner = "/images/banner-tienda-default.jpg"; // Fallback o imagen gen
     }
 
     @media (max-width: 768px) {
-        .category-banner { height: 300px; text-align: center; justify-content: center; }
-        .banner-content { padding-left: 0; }
-        .banner-content h1 { font-size: 2.5rem; }
+        .category-banner {
+            height: 300px;
+            text-align: center;
+            justify-content: center;
+        }
+        .banner-content {
+            padding-left: 0;
+        }
+        .banner-content h1 {
+            font-size: 2.5rem;
+        }
     }
 </style>
