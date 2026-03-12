@@ -120,38 +120,55 @@ if (!category && !error) {
 const bannerImage = category?.image?.src || null;
 const metaData = category?.meta_data || [];
 
-// Función para extraer la URL de una imagen desde meta_data (soporta ID, URL y Objeto)
-async function getBannerUrl(key: string) {
-    const meta = metaData.find((m: any) => m.key === key);
-    if (!meta || !meta.value) return null;
-    
-    // 1. Es una URL directa
-    if (typeof meta.value === 'string' && (meta.value.startsWith('http') || meta.value.includes('/wp-content/'))) {
-        return meta.value;
-    }
-    
-    // 2. Es un objeto ACF (Image Object)
-    if (typeof meta.value === 'object' && meta.value.url) {
-        return meta.value.url;
-    }
-    
-    // 3. Es un ID numérico (ACF Image ID) - Intentamos resolverlo
-    if (!isNaN(Number(meta.value))) {
-        try {
-            const mediaRes = await fetch(`${PUBLIC_WP_URL}/wp-json/wp/v2/media/${meta.value}`);
-            if (mediaRes.ok) {
-                const mediaData = await mediaRes.json();
-                return mediaData.source_url;
+// Log de depuración (solo visible en consola de servidor)
+// console.log(`[DEBUG] Metas para ${slug}:`, metaData.map(m => m.key));
+
+async function getBannerUrl(keys: string[]) {
+    // 1. Intentar buscar en el objeto acf directo (si ACF está configurado para mostrarse así)
+    if (category?.acf) {
+        for (const key of keys) {
+            const val = category.acf[key];
+            if (!val) continue;
+            if (typeof val === 'string' && val.startsWith('http')) return val;
+            if (typeof val === 'object' && val.url) return val.url;
+            if (!isNaN(Number(val)) && Number(val) > 0) {
+                try {
+                    const res = await fetch(`${PUBLIC_WP_URL}/wp-json/wp/v2/media/${val}`);
+                    if (res.ok) {
+                        const data = await res.json();
+                        return data.source_url;
+                    }
+                } catch (e) {}
             }
-        } catch (e) {
-            console.error(`Error resolviendo ID de imagen ${meta.value}:`, e);
+        }
+    }
+
+    // 2. Buscar en meta_data (estándar de WooCommerce)
+    for (const key of keys) {
+        const meta = metaData.find((m: any) => m.key === key);
+        if (!meta || !meta.value) continue;
+        
+        const val = meta.value;
+        if (typeof val === 'string' && val.startsWith('http')) return val;
+        if (typeof val === 'object' && val.url) return val.url;
+        if (!isNaN(Number(val)) && Number(val) > 0) {
+            try {
+                const res = await fetch(`${PUBLIC_WP_URL}/wp-json/wp/v2/media/${val}`);
+                if (res.ok) {
+                    const data = await res.json();
+                    return data.source_url;
+                }
+            } catch (e) {}
         }
     }
     return null;
 }
 
-const desktopBanner = (await getBannerUrl('banner_categoria_desktop')) || bannerImage;
-const mobileBanner = (await getBannerUrl('imagen_categoria_movil')) || desktopBanner;
+// Desktop: Prioridad al campo de banner, luego a la imagen principal de WC
+const desktopBanner = (await getBannerUrl(['banner_categoria_desktop', 'banner_desktop', 'banner_categoria'])) || bannerImage;
+
+// Móvil: Prioridad al campo de móvil, si no existe usa la de desktop
+const mobileBanner = (await getBannerUrl(['imagen_categoria_movil', 'banner_mobile', 'banner_movil'])) || desktopBanner;
 
 const categoryTitle = category?.name || "Categoría";
 const categoryDesc = category?.description?.replace(/<[^>]+>/g, "") || "";
