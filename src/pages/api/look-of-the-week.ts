@@ -1,6 +1,5 @@
 import type { APIRoute } from 'astro';
-import { PUBLIC_WP_URL } from '../../lib/woocommerce';
-import { getProductById } from "../../lib/woocommerce";
+import { PUBLIC_WP_URL, wcFetch, getProductById } from '../../lib/woocommerce';
 
 // Cache in-memory
 let cachedLook: any = null;
@@ -28,21 +27,16 @@ export const GET: APIRoute = async () => {
         const wpBase = PUBLIC_WP_URL;
         console.log(`[API Look] Fetching from: ${wpBase}/wp-json/wp/v2/look-semana`);
 
-        const response = await fetch(`${wpBase}/wp-json/wp/v2/look-semana?per_page=1&_embed`, {
-            headers: {
-                'Accept': 'application/json'
-            }
-        });
+        // Usamos wcFetch para heredar la lógica de autenticación (Header/Query Params)
+        const data = await wcFetch('wp/v2/look-semana?per_page=1&_embed');
 
-        if (!response.ok) {
-            console.error(`[API Look] WP Error: ${response.status}`);
-            return new Response(JSON.stringify({ error: 'Failed to fetch look of the week', wpStatus: response.status }), {
-                status: response.status,
+        if (!data || !Array.isArray(data) || data.length === 0) {
+            console.warn("[API Look] No look post found or fetch failed");
+            return new Response(JSON.stringify({ error: 'No look found' }), {
+                status: 404,
                 headers: { 'Content-Type': 'application/json' }
             });
         }
-
-        const data = await response.json();
         const look = data[0];
 
         if (!look) {

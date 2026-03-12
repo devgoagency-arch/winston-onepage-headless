@@ -72,7 +72,7 @@ export default function LookSection() {
             const current = prev[productId];
             // Solo actualizar si realmente cambió algo para evitar re-renders infinitos si ProductCard emite mucho
             if (current?.color === color && current?.size === size && current?.variationId === variationId) return prev;
-            
+
             return {
                 ...prev,
                 [productId]: { color, size, variationId }
@@ -253,7 +253,7 @@ export default function LookSection() {
                     align-items: center;
                     justify-content: center;
                     gap: 0.5rem;
-                    margin-bottom: 4rem;
+                    margin-bottom: 2rem;
                     width: 100%;
                 }
                 .look-product-item-wrapper {

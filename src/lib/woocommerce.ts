@@ -101,13 +101,8 @@ export async function wcFetch(path: string, options: RequestInit = {}, retries =
     // Limpieza de dobles barras (excepto las de http://)
     url = url.replace(/([^:]\/)\/+/g, "$1");
 
-    // 3. Obtener credenciales de WordPress (App Password) si están disponibles
-    const WP_USER = (import.meta.env.WP_APP_USER || "").trim();
-    const WP_PASS = (import.meta.env.WP_APP_PASS || "").trim();
-
+    // 3. Añadir Auth solo si NO es Store API (que es público)
     const isStore = cleanPath.includes('wc/store/');
-    const isWc = cleanPath.startsWith('wc/');
-    const isWpOrWh = cleanPath.startsWith('wp/') || cleanPath.startsWith('wh/');
     
     // 4. Headers base
     const headers: any = {
@@ -115,24 +110,15 @@ export async function wcFetch(path: string, options: RequestInit = {}, retries =
         ...(options.headers || {})
     };
 
-    if (!isStore) {
-        if (isWpOrWh && WP_USER && WP_PASS) {
-            // Para wp/v2 y wh/v1 usamos Application Passwords (más fiable en custom endpoints)
-            headers['Authorization'] = `Basic ${safeBtoa(`${WP_USER}:${WP_PASS}`)}`;
-            console.log(`[WC API] Usando WP App Auth para: ${cleanPath}`);
-        } else if (CK && CS) {
-            // Para wc/v3 usamos las claves de WooCommerce
-            if (isWc) {
-                // WooCommerce acepta keys por query params o Basic Auth
-                if (url.includes('?')) {
-                    url += `&consumer_key=${CK}&consumer_secret=${CS}`;
-                } else {
-                    url += `?consumer_key=${CK}&consumer_secret=${CS}`;
-                }
-            } else {
-                // Fallback para otros si no hay WP_PASS
-                headers['Authorization'] = `Basic ${safeBtoa(`${CK}:${CS}`)}`;
-            }
+    if (!isStore && CK && CS) {
+        // Método 1: Header Authorization (Basic Auth)
+        headers['Authorization'] = `Basic ${safeBtoa(`${CK}:${CS}`)}`;
+        
+        // Método 2: Query Params (Solo para WooCommerce /wc/v3)
+        // Algunos servidores son estrictos y prefieren uno u otro, enviar ambos suele ser más compatible
+        if (cleanPath.startsWith('wc/')) {
+            const connector = url.includes('?') ? '&' : '?';
+            url += `${connector}consumer_key=${CK}&consumer_secret=${CS}`;
         }
     }
 
