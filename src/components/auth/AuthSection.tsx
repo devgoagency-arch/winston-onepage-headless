@@ -61,7 +61,7 @@ const AuthSection: React.FC = () => {
                         margin-bottom: 4rem;
                     }
                     .dashboard-header h1 {
-                        font-family: var(--font-fancy, serif);
+                        font-family: var(--font-titles, serif);
                         font-size: 3rem;
                         color: var(--color-green);
                     }
