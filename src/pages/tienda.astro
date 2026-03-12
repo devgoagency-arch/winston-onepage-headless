@@ -1,0 +1,160 @@
+
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import {
+    getAllProducts,
+    getAttributeTerms,
+    wcFetch
+} from "../lib/woocommerce";
+import FilteredProductList from "../components/FilteredProductList";
+
+export const isr = {
+    expiration: 3600, // 1 hora
+};
+
+const sortParam = Astro.url.searchParams.get("sort") || "destacado";
+
+const SORT_OPTIONS = [
+    { key: "destacado", label: "Destacado", orderBy: "popularity", order: "desc", onSale: false },
+    { key: "precio_asc", label: "Menor a mayor precio", orderBy: "price", order: "asc", onSale: false },
+    { key: "precio_desc", label: "Mayor a menor precio", orderBy: "price", order: "desc", onSale: false },
+    { key: "descuentos", label: "Descuentos", orderBy: "popularity", order: "desc", onSale: true },
+];
+
+const activeSort = SORT_OPTIONS.find((o) => o.key === sortParam) || SORT_OPTIONS[0];
+
+let products: any[] = [];
+let error: string | null = null;
+let colorTerms: any[] = [];
+let tallaTerms: any[] = [];
+let allCategories: any[] = [];
+
+try {
+    // 1. Cargamos productos iniciales para toda la tienda
+    products = await getAllProducts(
+        16, 
+        1, 
+        activeSort.orderBy, 
+        activeSort.order, 
+        activeSort.onSale
+    );
+
+    // 2. Cargamos términos para filtros (Color y Talla)
+    const [colors, sizes, categories] = await Promise.all([
+        getAttributeTerms(2).catch(() => []), // ID 2 suele ser Color
+        getAttributeTerms(1).catch(() => []), // ID 1 suele ser Talla
+        wcFetch('/products/categories?per_page=100&hide_empty=true').catch(() => [])
+    ]);
+
+    colorTerms = Array.isArray(colors) ? colors : [];
+    tallaTerms = Array.isArray(sizes) ? sizes : [];
+    allCategories = Array.isArray(categories) ? categories.map((c: any) => ({
+        id: c.id,
+        name: c.name,
+        slug: c.slug
+    })) : [];
+
+} catch (e: any) {
+    console.error("Error en Tienda:", e.message);
+    error = "No se pudieron cargar los productos.";
+}
+
+const shopBanner = "/images/banner-tienda-default.jpg"; // Fallback o imagen general
+---
+
+<Layout title="Tienda Online | Winston & Harry">
+    <Header />
+
+    <main class="category-page">
+        <section class="category-banner shop-banner">
+            <div class="banner-overlay"></div>
+            <div class="banner-content">
+                <h1>Nuestra Tienda</h1>
+                <p>Explora nuestra colección completa de moda masculina artesanal.</p>
+            </div>
+        </section>
+
+        {error && (
+            <div class="error-container">
+                <p class="error-msg">{error}</p>
+            </div>
+        )}
+
+        {!error && (
+            <FilteredProductList
+                client:load
+                initialProducts={products}
+                category={{ id: 'all', name: 'Tienda', slug: 'tienda' }}
+                subcategories={allCategories}
+                colorTerms={colorTerms}
+                tallaTerms={tallaTerms}
+                initialSort={activeSort}
+            />
+        )}
+    </main>
+
+    <Footer />
+</Layout>
+
+<style is:global>
+    .shop-banner {
+        background-color: var(--color-green);
+        /* Si tienes una imagen general para la tienda, puedes ponerla aquí */
+        /* background-image: url('/images/banner-tienda.jpg'); */
+    }
+    
+    .category-page {
+        min-height: 80vh;
+        background-color: #fff;
+    }
+
+    .category-banner {
+        position: relative;
+        height: 400px;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .banner-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.3);
+        z-index: 1;
+    }
+
+    .banner-content {
+        position: relative;
+        z-index: 2;
+        padding-left: 8%;
+        color: #fff;
+    }
+
+    .banner-content h1 {
+        font-family: var(--font-titles);
+        font-size: 3.5rem;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        margin: 0;
+    }
+
+    .banner-content p {
+        font-family: var(--font-paragraphs);
+        font-size: 1rem;
+        opacity: 0.9;
+        max-width: 600px;
+    }
+
+    @media (max-width: 768px) {
+        .category-banner { height: 300px; text-align: center; justify-content: center; }
+        .banner-content { padding-left: 0; }
+        .banner-content h1 { font-size: 2.5rem; }
+    }
+</style>

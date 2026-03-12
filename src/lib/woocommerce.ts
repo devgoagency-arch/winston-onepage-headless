@@ -531,6 +531,52 @@ export async function getProductBySlug(slug: string) {
     }
 }
 
+/**
+ * Fetch all products (Generic Shop Page)
+ */
+export async function getAllProducts(
+    perPage = 16,
+    page = 1,
+    orderBy = "popularity",
+    order = "desc",
+    onSale = false
+) {
+    try {
+        // Prioridad: Store API
+        const storeParams = new URLSearchParams({
+            per_page: perPage.toString(),
+            page: page.toString(),
+            orderby: orderBy,
+            order: order
+        });
+        if (onSale) storeParams.append('on_sale', 'true');
+
+        const storeUrl = `${PUBLIC_WP_URL}/wp-json/wc/store/v1/products?${storeParams.toString()}`;
+        const storeRes = await fetch(storeUrl);
+
+        if (storeRes.ok) {
+            const data = await storeRes.json();
+            return Array.isArray(data) ? data.map(p => mapV3ToStore(p)) : [];
+        }
+
+        // Fallback: v3
+        const v3Params = new URLSearchParams({
+            per_page: perPage.toString(),
+            page: page.toString(),
+            orderby: orderBy,
+            order: order,
+            status: 'publish'
+        });
+        if (onSale) v3Params.append('on_sale', 'true');
+
+        const data = await wcFetch(`/products?${v3Params.toString()}`);
+        return Array.isArray(data) ? data.map(p => mapV3ToStore(p)) : [];
+    } catch (error: any) {
+        console.error("[getAllProducts] Error:", error.message);
+        return [];
+    }
+}
+
 export async function getProductsByCategory(
     categoryIdOrSlug: string | number,
     perPage = 100,
