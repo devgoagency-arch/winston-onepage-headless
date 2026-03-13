@@ -90,11 +90,11 @@ export default function SideCart() {
                             const sizeAttr = item.attributes?.find(a => {
                                 const name = String(a.name || '').toLowerCase();
                                 const id = String(a.id || '').toLowerCase();
-                                return name.includes('talla') || id.includes('talla') || 
-                                       name.includes('size') || id.includes('size') ||
-                                       name.includes('tamano') || name.includes('tamaño') ||
-                                       name.includes('numero') || name.includes('nmero') ||
-                                       name.includes('selecciona-una-talla');
+                                return name.includes('talla') || id.includes('talla') ||
+                                    name.includes('size') || id.includes('size') ||
+                                    name.includes('tamano') || name.includes('tamaño') ||
+                                    name.includes('numero') || name.includes('nmero') ||
+                                    name.includes('selecciona-una-talla');
                             });
 
                             return (
