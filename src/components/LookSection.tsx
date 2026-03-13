@@ -168,7 +168,7 @@ export default function LookSection() {
                     .look-content-col { padding: 3rem 1.5rem; }
                     .look-products-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
                     .look-plus { display: none; }
-                    .look-card-inner { width: 100%; }
+                    .look-card-inner { width: 95%; }
                     .look-summary-box { width: 100%; padding: 2rem 1rem; }
                     .look-wrapper { box-shadow: none; }
                 }
