@@ -30,11 +30,11 @@ function winston_and_harry_style() {
         );
     }
 
-    // 4. Cargamos estilos específicos para el checkout
-    if ( is_checkout() ) {
+    // 5. Cargamos estilos específicos para la cuenta
+    if ( is_account_page() ) {
         wp_enqueue_style( 
-            'custom-checkout-style', 
-            get_stylesheet_directory_uri() . '/custom-checkout-styles.css', 
+            'custom-account-style', 
+            get_stylesheet_directory_uri() . '/custom-account-styles.css', 
             array('child-style'), 
             time() 
         );
@@ -95,7 +95,7 @@ function remove_storefront_header_styles() {
 // Remover sidebar en páginas de WooCommerce para layout limpio
 add_action( 'get_header', 'wh_remove_sidebars' );
 function wh_remove_sidebars() {
-    if ( is_checkout() || is_cart() ) {
+    if ( is_checkout() || is_cart() || is_account_page() ) {
         remove_action( 'storefront_sidebar', 'storefront_get_sidebar', 10 );
     }
 }
