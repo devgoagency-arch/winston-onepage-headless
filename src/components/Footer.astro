@@ -23,16 +23,36 @@ import InstagramReels from "./InstagramReels";
                 >
             </div>
             <div class="newsletter-social">
-                <a href="#" class="social-square" aria-label="Instagram">
+                <a
+                    href="https://www.instagram.com/winstonandharrystore/"
+                    class="social-square"
+                    aria-label="Instagram"
+                    target="_blank"
+                >
                     <i class="fa-brands fa-instagram"></i>
                 </a>
-                <a href="#" class="social-square" aria-label="TikTok">
+                <a
+                    href="https://www.tiktok.com/@winstonandharrystore"
+                    class="social-square"
+                    aria-label="TikTok"
+                    target="_blank"
+                >
                     <i class="fa-brands fa-tiktok"></i>
                 </a>
-                <a href="#" class="social-square" aria-label="Facebook">
+                <a
+                    href="https://www.facebook.com/winstonandharrystore"
+                    class="social-square"
+                    aria-label="Facebook"
+                    target="_blank"
+                >
                     <i class="fa-brands fa-facebook-f"></i>
                 </a>
-                <a href="#" class="social-square" aria-label="Threads">
+                <a
+                    href="https://www.threads.com/@winstonandharrystore"
+                    class="social-square"
+                    aria-label="Threads"
+                    target="_blank"
+                >
                     <i class="fa-brands fa-threads"></i>
                 </a>
             </div>
@@ -129,9 +149,9 @@ import InstagramReels from "./InstagramReels";
                 conservado a lo largo de varias generaciones.
             </p>
             <div class="brand-contact">
-                <p>Bogotá, Colombia</p>
-                <p>Teléfono: +57 310 3075540</p>
-                <p>info@winstonandharrystore.com</p>
+                <p><a href="/contacto" class="contact-link">Bogotá, Colombia</a></p>
+                <p>Teléfono: <a href="tel:+573103075540" class="contact-link">+57 310 3075540</a></p>
+                <p><a href="mailto:info@winstonandharrystore.com" class="contact-link">info@winstonandharrystore.com</a></p>
             </div>
         </div>
 
@@ -237,24 +257,75 @@ import InstagramReels from "./InstagramReels";
 
     const subscribeForm = document.getElementById("subscribe-form");
     if (subscribeForm) {
-        subscribeForm.addEventListener("submit", (e) => {
+        subscribeForm.addEventListener("submit", async (e) => {
             e.preventDefault();
-            // Simulación de envío
+
             const btn = subscribeForm.querySelector(".form-submit");
             const originalText = btn.textContent;
             btn.textContent = "ENVIANDO...";
             btn.disabled = true;
 
-            setTimeout(() => {
-                alert(
-                    "¡Gracias por suscribirte! Pronto recibirás nuestras novedades.",
-                );
-                subscribeForm.reset();
-                newsletterForm.classList.remove("open");
-                newsletterToggle.textContent = "SUSCRIBIRME";
+            const data = new FormData(subscribeForm);
+            const email = data.get("email")?.toString().trim() || "";
+            const phone = data.get("phone")?.toString().trim() || "";
+            const first_name = data.get("first_name")?.toString().trim() || "";
+            const last_name = data.get("last_name")?.toString().trim() || "";
+
+            const PORTAL_ID = "22727126";
+            const FORM_ID = "0723b68c-0294-4e45-aa9f-4fa00a102f50";
+            const HS_URL = `https://api.hsforms.com/submissions/v3/integration/submit/${PORTAL_ID}/${FORM_ID}`;
+
+            const payload = {
+                fields: [
+                    { objectTypeId: "0-1", name: "email", value: email },
+                    { objectTypeId: "0-1", name: "mobilephone", value: phone },
+                    {
+                        objectTypeId: "0-1",
+                        name: "firstname",
+                        value: first_name,
+                    },
+                    { objectTypeId: "0-1", name: "lastname", value: last_name },
+                ],
+                context: {
+                    pageUri: window.location.href,
+                    pageName: document.title,
+                },
+                legalConsentOptions: {
+                    consent: {
+                        consentToProcess: true,
+                        text: "Autorizo el tratamiento de mis datos personales teniendo en cuenta la Política de Tratamiento de Datos de Winston & Harry.",
+                    },
+                },
+            };
+
+            try {
+                const res = await fetch(HS_URL, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(payload),
+                });
+
+                if (res.ok) {
+                    // Éxito — mostrar mensaje inline sin alert()
+                    subscribeForm.innerHTML = `
+                        <p style="color:#155338;font-weight:600;text-align:center;padding:1.5rem 0;font-size:1rem;letter-spacing:0.05em;">
+                            ¡Gracias por suscribirte! Pronto recibirás nuestras novedades.
+                        </p>`;
+                    setTimeout(() => {
+                        newsletterForm.classList.remove("open");
+                        newsletterToggle.textContent = "SUSCRIBIRME";
+                    }, 3000);
+                } else {
+                    const err = await res.json().catch(() => ({}));
+                    console.error("HubSpot Integration Error:", err);
+                    throw new Error("Error en la suscripción");
+                }
+            } catch (err) {
+                console.error(err);
+                alert("Hubo un problema. Por favor, inténtalo de nuevo.");
                 btn.textContent = originalText;
                 btn.disabled = false;
-            }, 1500);
+            }
         });
     }
 </script>
@@ -371,6 +442,16 @@ import InstagramReels from "./InstagramReels";
         margin: 0.5rem 0;
         font-size: 0.9rem;
         color: #999;
+    }
+
+    .contact-link {
+        color: inherit;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .contact-link:hover {
+        color: var(--color-green, #155338);
     }
 
     .footer-title {
@@ -544,14 +625,18 @@ import InstagramReels from "./InstagramReels";
     }
 
     .form-group input {
-        background: rgba(255, 255, 255);
+        background: #fff;
         border: 1px solid rgba(255, 255, 255, 0.2);
         padding: 1rem;
-        color: #fff;
+        color: #000;
         font-family: var(--font-paragraphs);
         font-size: 0.9rem;
         transition: all 0.3s ease;
         border-radius: 0;
+    }
+
+    .form-group input::placeholder {
+        color: #999;
     }
 
     .form-group input:focus {

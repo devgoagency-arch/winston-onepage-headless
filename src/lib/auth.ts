@@ -49,6 +49,28 @@ export function logout() {
     window.location.reload();
 }
 
+export async function register(email: string, password: string, firstName: string, lastName: string) {
+    try {
+        const response = await fetch('/api/auth/register', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, password, firstName, lastName }),
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+            // Después de registrar, hacemos login automático
+            return await login(email, password);
+        } else {
+            return { success: false, message: data.message };
+        }
+    } catch (error) {
+        console.error('Register error:', error);
+        return { success: false, message: 'No se pudo completar el registro.' };
+    }
+}
+
 /**
  * Valida si el token actual sigue siendo válido
  */

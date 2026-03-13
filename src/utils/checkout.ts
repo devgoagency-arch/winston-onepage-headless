@@ -6,15 +6,24 @@ import { PUBLIC_WP_URL } from '../lib/woocommerce';
  * pasando todos los items actuales del carrito para sincronizar la sesión.
  * @param path - La ruta de destino (ej: '/checkout/' o '/cart/')
  */
-export function redirectToCheckout(path: string = '/') {
+export async function redirectToCheckout(path: string = '/') {
     const $cartItems = cartItems.get();
     const items = Object.values($cartItems).map(value => JSON.parse(value));
 
     // Dominio de WordPress donde está el WooCommerce real
     const wpDomain = PUBLIC_WP_URL;
 
+    // Obtener token de sesión para autologin si existe
+    const { userSession } = await import('../store/user');
+    const token = userSession.get().token;
+
     if (items.length === 0) {
-        window.location.href = `${wpDomain}${path}`;
+        let finalUrl = `${wpDomain}${path}`;
+        if (token) {
+            const separator = finalUrl.includes('?') ? '&' : '?';
+            finalUrl += `${separator}autologin=${token}`;
+        }
+        window.location.href = finalUrl;
         return;
     }
 
@@ -35,7 +44,12 @@ export function redirectToCheckout(path: string = '/') {
     // Redirección con el parámetro fill_cart que sincroniza el carrito en WP
     const baseUrl = `${wpDomain}${path}`;
     const separator = baseUrl.includes('?') ? '&' : '?';
-    const finalUrl = `${baseUrl}${separator}fill_cart=${itemsQuery}`;
+    let finalUrl = `${baseUrl}${separator}fill_cart=${itemsQuery}`;
+
+    // Añadir autologin si hay token
+    if (token) {
+        finalUrl += `&autologin=${token}`;
+    }
 
     console.log("[Checkout Bridge] Sincronizando items:", Array.from(itemsMap.keys()));
     console.log("URL Final:", finalUrl);

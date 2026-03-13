@@ -9,10 +9,20 @@ export default function SideCart() {
     const [isClosing, setIsClosing] = useState(false);
 
     const items = useMemo(() => {
-        return Object.entries($cartItems).map(([key, value]) => ({
-            key,
-            ...(JSON.parse(value) as CartItem)
-        }));
+        return Object.entries($cartItems)
+            .filter(([_, value]) => !!value) // Filtrar nulos o undefined para evitar errores de JSON.parse
+            .map(([key, value]) => {
+                try {
+                    return {
+                        key,
+                        ...(JSON.parse(value) as CartItem)
+                    };
+                } catch (e) {
+                    console.error("Error parsing cart item:", key, e);
+                    return null;
+                }
+            })
+            .filter((item): item is (CartItem & { key: string }) => item !== null);
     }, [$cartItems]);
 
     const subtotal = useMemo(() => {
@@ -72,14 +82,20 @@ export default function SideCart() {
                         </div>
                     ) : (
                         items.map((item) => {
-                            const colorAttr = item.attributes?.find(a =>
-                                a.name.toLowerCase().includes('color') ||
-                                a.name.toLowerCase().includes('pa_selecciona-el-color')
-                            );
-                            const sizeAttr = item.attributes?.find(a =>
-                                a.name.toLowerCase().includes('talla') ||
-                                a.name.toLowerCase().includes('pa_selecciona-una-talla')
-                            );
+                            const colorAttr = item.attributes?.find(a => {
+                                const name = String(a.name || '').toLowerCase();
+                                const id = String(a.id || '').toLowerCase();
+                                return name.includes('color') || id.includes('color') || name.includes('selecciona-el-color');
+                            });
+                            const sizeAttr = item.attributes?.find(a => {
+                                const name = String(a.name || '').toLowerCase();
+                                const id = String(a.id || '').toLowerCase();
+                                return name.includes('talla') || id.includes('talla') || 
+                                       name.includes('size') || id.includes('size') ||
+                                       name.includes('tamano') || name.includes('tamaño') ||
+                                       name.includes('numero') || name.includes('nmero') ||
+                                       name.includes('selecciona-una-talla');
+                            });
 
                             return (
                                 <div key={item.key} className="cart-item">

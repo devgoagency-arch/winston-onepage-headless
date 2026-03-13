@@ -79,6 +79,12 @@ export default function ProductDetail({ initialProduct }: Props) {
   const [fbtVariations, setFbtVariations] = useState<Record<number, { color: string | null, size: string | null, variationId?: number | null }>>({});
 
   const handleFbtVariationChange = (productId: number, color: string | null, size: string | null, variationId?: number | null) => {
+    // Sincronizar con el estado principal si es el mismo producto
+    if (productId === product.id) {
+      if (color && color !== selectedColor) setSelectedColor(color);
+      if (size && size !== selectedSize) setSelectedSize(size);
+    }
+
     setFbtVariations(prev => {
       const current = prev[productId];
       if (current?.color === color && current?.size === size && current?.variationId === variationId) return prev;
@@ -493,34 +499,32 @@ export default function ProductDetail({ initialProduct }: Props) {
       const selectedVar = product.variations.find(v => {
         const vColor = (
           v.attributes.find(a =>
-            a.name.toLowerCase().includes('color') ||
-            a.name === 'Pa_selecciona-el-color' ||
-            a.id === 'pa_color'
+            String(a.name || '').toLowerCase().includes('color') ||
+            String(a.name || '') === 'Pa_selecciona-el-color' ||
+            String(a.id || '') === 'pa_color'
           )?.option ||
           v.attributes.find(a =>
-            a.name.toLowerCase().includes('color') ||
-            a.name === 'Pa_selecciona-el-color' ||
-            a.id === 'pa_color'
+            String(a.name || '').toLowerCase().includes('color') ||
+            String(a.name || '') === 'Pa_selecciona-el-color' ||
+            String(a.id || '') === 'pa_color'
           )?.value || ''
         ).toLowerCase().trim();
 
         const vSize = (
           v.attributes.find(a =>
-            a.name.toLowerCase().includes('talla') ||
-            a.name === 'Pa_selecciona-una-talla' ||
-            a.id === 'pa_talla'
+            String(a.name || '').toLowerCase().includes('talla') ||
+            String(a.name || '') === 'Pa_selecciona-una-talla' ||
+            String(a.id || '') === 'pa_talla'
           )?.option ||
           v.attributes.find(a =>
-            a.name.toLowerCase().includes('talla') ||
-            a.name === 'Pa_selecciona-una-talla' ||
-            a.id === 'pa_talla'
+            String(a.name || '').toLowerCase().includes('talla') ||
+            String(a.name || '') === 'Pa_selecciona-una-talla' ||
+            String(a.id || '') === 'pa_talla'
           )?.value || ''
         ).toLowerCase().trim();
 
         const colorMatch = !selectedColor || vColor === selectedColor.toLowerCase().trim();
         const sizeMatch = !hasSize || !selectedSize || vSize === selectedSize.toLowerCase().trim();
-
-        console.log(`[Cart Debug] Variación ${v.id}: color="${vColor}" vs "${selectedColor?.toLowerCase()}" → ${colorMatch}, talla="${vSize}" vs "${selectedSize?.toLowerCase()}" → ${sizeMatch}`);
         return colorMatch && sizeMatch;
       });
 
@@ -556,14 +560,14 @@ export default function ProductDetail({ initialProduct }: Props) {
       if (product.variations && product.variations.length > 0 && (selectedColor || selectedSize)) {
         const mainVar = product.variations.find((v: any) => {
           const vColor = (v.attributes.find((a: any) =>
-            a.name.toLowerCase().includes('color') || a.name === 'Pa_selecciona-el-color' || a.id === 'pa_color'
+            String(a.name || '').toLowerCase().includes('color') || String(a.name || '') === 'Pa_selecciona-el-color' || String(a.id || '') === 'pa_color'
           )?.option || v.attributes.find((a: any) =>
-            a.name.toLowerCase().includes('color') || a.name === 'Pa_selecciona-el-color' || a.id === 'pa_color'
+            String(a.name || '').toLowerCase().includes('color') || String(a.name || '') === 'Pa_selecciona-el-color' || String(a.id || '') === 'pa_color'
           )?.value || '').toLowerCase().trim();
           const vSize = (v.attributes.find((a: any) =>
-            a.name.toLowerCase().includes('talla') || a.name === 'Pa_selecciona-una-talla' || a.id === 'pa_talla'
+            String(a.name || '').toLowerCase().includes('talla') || String(a.name || '') === 'Pa_selecciona-una-talla' || String(a.id || '') === 'pa_talla'
           )?.option || v.attributes.find((a: any) =>
-            a.name.toLowerCase().includes('talla') || a.name === 'Pa_selecciona-una-talla' || a.id === 'pa_talla'
+            String(a.name || '').toLowerCase().includes('talla') || String(a.name || '') === 'Pa_selecciona-una-talla' || String(a.id || '') === 'pa_talla'
           )?.value || '').toLowerCase().trim();
           const colorMatch = !selectedColor || vColor === selectedColor.toLowerCase().trim();
           const sizeMatch = !selectedSize || vSize === selectedSize.toLowerCase().trim();
@@ -948,6 +952,8 @@ export default function ProductDetail({ initialProduct }: Props) {
                       isSelected={selectedFbtIds.includes(product.id)}
                       onSelectionToggle={toggleFbtSelection}
                       onVariationChange={handleFbtVariationChange}
+                      initialColor={selectedColor}
+                      initialSize={selectedSize}
                     />
                   </div>
                 </div>

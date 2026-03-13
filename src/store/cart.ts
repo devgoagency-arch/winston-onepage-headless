@@ -18,30 +18,46 @@ export interface CartItem {
 export const cartItems = persistentMap<Record<string, string>>('wh_cart_v2', {});
 export const isCartOpen = atom(false);
 
+// Función de normalización para comparar slugs/nombres de forma robusta
+function normalizeAttr(str: any): string {
+    if (!str) return '';
+    const s = String(str);
+    return s.toLowerCase()
+        .trim()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "") // Quitar acentos
+        .replace(/[^a-z0-9]/g, '');      // Quitar todo lo que no sea alfanumérico
+}
+
 // Función auxiliar robusta para encontrar variaciones de WooCommerce
 function findVariation(variations: any[], color: string | null, size: string | null): any | null {
     if (!variations || variations.length === 0) return null;
     
-    const targetColor = (color || '').toLowerCase().trim();
-    const targetSize = (size || '').toLowerCase().trim();
+    const targetColor = normalizeAttr(color || '');
+    const targetSize = normalizeAttr(size || '');
 
     console.log(`[Cart Store] Buscando variación para: color="${targetColor}", talla="${targetSize}"`);
 
     // Prioridad 1: Coincidencia exacta de ambos (si están presentes)
     const found = variations.find((v: any) => {
-        const vColorAttr = v.attributes?.find((a: any) => 
-            a.name.toLowerCase().includes('color') || 
-            a.name.toLowerCase().includes('pa_selecciona-el-color') || 
-            a.id === 'pa_color'
-        );
-        const vSizeAttr = v.attributes?.find((a: any) => 
-            a.name.toLowerCase().includes('talla') || 
-            a.name.toLowerCase().includes('pa_selecciona-una-talla') || 
-            a.id === 'pa_talla'
-        );
+        const vColorAttr = v.attributes?.find((a: any) => {
+            const name = String(a.name || '').toLowerCase();
+            const id = String(a.id || '').toLowerCase();
+            return name.includes('color') || id.includes('color') || name.includes('selecciona-el-color');
+        });
 
-        const vColorValue = (vColorAttr?.value || vColorAttr?.option || '').toLowerCase().trim();
-        const vSizeValue = (vSizeAttr?.value || vSizeAttr?.option || '').toLowerCase().trim();
+        const vSizeAttr = v.attributes?.find((a: any) => {
+            const name = String(a.name || '').toLowerCase();
+            const id = String(a.id || '').toLowerCase();
+            return name.includes('talla') || id.includes('talla') || 
+                   name.includes('size') || id.includes('size') ||
+                   name.includes('tamano') || name.includes('tamaño') ||
+                   name.includes('numero') || name.includes('nmero') ||
+                   name.includes('selecciona-una-talla');
+        });
+
+        const vColorValue = normalizeAttr(vColorAttr?.value || vColorAttr?.option || '');
+        const vSizeValue = normalizeAttr(vSizeAttr?.value || vSizeAttr?.option || '');
 
         // Si la variación no tiene el atributo, lo tratamos como "cualquier" (any)
         const matchesColor = !color || !vColorValue || vColorValue === targetColor;
@@ -80,7 +96,7 @@ export function addToCart(product: any, quantity: number, color: string | null, 
             }
         }
 
-        const itemId = `${product.id}-${(color || 'no-color').toLowerCase()}-${(size || 'no-size').toLowerCase()}`;
+        const itemId = `${product.id}-${String(color || 'no-color').toLowerCase()}-${String(size || 'no-size').toLowerCase()}`;
 
         const rawPrice = product.prices.price || '0';
         const currencyMinorUnit = product.prices.currency_minor_unit || 0;
@@ -149,7 +165,7 @@ export function updateCartItemVariation(oldKey: string, newColor: string | null,
     try {
         const item = JSON.parse(cart[oldKey]) as CartItem;
         const baseProductId = oldKey.split('-')[0];
-        const newKey = `${baseProductId}-${(newColor || 'no-color').toLowerCase()}-${(newSize || 'no-size').toLowerCase()}`;
+        const newKey = `${baseProductId}-${String(newColor || 'no-color').toLowerCase()}-${String(newSize || 'no-size').toLowerCase()}`;
 
         // Si la nueva combinación ya existe, sumamos las cantidades
         if (cart[newKey] && newKey !== oldKey) {

@@ -366,8 +366,16 @@ const FilteredProductList: React.FC<FilteredProductListProps> = ({
         window.history.pushState({}, '', url.toString());
     }, [selectedColors, selectedTallas, selectedSubcats, selectedTags, sort]);
 
-    const isZapatos = (category?.slug || "").toLowerCase() === 'zapatos';
-    const displayCategoryTitle = isZapatos ? 'TODOS LOS ZAPATOS' : 'TODOS LOS PRODUCTOS';
+    const displayCategoryTitle = useMemo(() => {
+        if (!category?.slug || category.slug === 'tienda') return 'TODOS LOS PRODUCTOS';
+        const slug = category.slug.toLowerCase();
+        if (slug === 'zapatos') return 'TODOS LOS ZAPATOS';
+        if (slug === 'ropa') return 'TODA LA ROPA';
+        if (slug === 'accesorios') return 'TODOS LOS ACCESORIOS';
+        if (slug === 'maletas') return 'TODAS LAS MALETAS';
+        if (slug === 'mascotas') return 'TODO PARA MASCOTAS';
+        return `COLECCIÓN ${category.name?.toUpperCase() || ''}`;
+    }, [category]);
 
     return (
         <>

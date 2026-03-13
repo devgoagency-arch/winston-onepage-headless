@@ -1,14 +1,16 @@
 
 import React, { useState } from 'react';
-import { login } from '../../lib/auth';
+import { register } from '../../lib/auth';
 
-interface LoginFormProps {
-    onSwitchToRegister: () => void;
+interface RegisterFormProps {
+    onSwitchToLogin: () => void;
 }
 
-const LoginForm: React.FC<LoginFormProps> = ({ onSwitchToRegister }) => {
-    const [username, setUsername] = useState('');
+const RegisterForm: React.FC<RegisterFormProps> = ({ onSwitchToLogin }) => {
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
 
@@ -17,33 +19,56 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSwitchToRegister }) => {
         setLoading(true);
         setError(null);
 
-        const result = await login(username, password);
+        const result = await register(email, password, firstName, lastName);
 
         if (result.success) {
-            // Éxito: El store se actualiza automáticamente en lib/auth
-            // Redirigimos o refrescamos
             window.location.href = '/mi-cuenta';
         } else {
-            setError(result.message || 'Error al iniciar sesión');
+            setError(result.message || 'Error al crear la cuenta');
             setLoading(false);
         }
     };
 
     return (
-        <div className="login-form-container">
-            <h2>Bienvenido a Winston & Harry</h2>
-            <p className="subtitle">Identifícate para acceder a tus pedidos y favoritos.</p>
+        <div className="login-form-container register-form-container">
+            <h2>Crea tu Cuenta</h2>
+            <p className="subtitle">Únete a la familia Winston & Harry y disfruta de una experiencia única.</p>
 
             <form onSubmit={handleSubmit} className="auth-form">
                 {error && <div className="error-message">{error}</div>}
+                
+                <div className="name-row">
+                    <div className="form-group">
+                        <label htmlFor="firstName">Nombre</label>
+                        <input
+                            type="text"
+                            id="firstName"
+                            value={firstName}
+                            onChange={(e) => setFirstName(e.target.value)}
+                            required
+                            placeholder="Tu nombre"
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="lastName">Apellido</label>
+                        <input
+                            type="text"
+                            id="lastName"
+                            value={lastName}
+                            onChange={(e) => setLastName(e.target.value)}
+                            required
+                            placeholder="Tu apellido"
+                        />
+                    </div>
+                </div>
 
                 <div className="form-group">
-                    <label htmlFor="username">Usuario o Email</label>
+                    <label htmlFor="email">Correo Electrónico</label>
                     <input
-                        type="text"
-                        id="username"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
+                        type="email"
+                        id="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                         required
                         placeholder="ej. juan@correo.com"
                     />
@@ -57,32 +82,25 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSwitchToRegister }) => {
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         required
-                        placeholder="••••••••"
+                        placeholder="Mínimo 8 caracteres"
+                        minLength={8}
                     />
                 </div>
 
                 <button type="submit" disabled={loading} className="btn-primary">
-                    {loading ? 'Iniciando sesión...' : 'Iniciar Sesión'}
+                    {loading ? 'Creando cuenta...' : 'Registrarse'}
                 </button>
 
                 <div className="form-footer">
-                    <a href="https://tienda.winstonandharrystore.com/mi-cuenta/lost-password/" target="_blank" rel="noopener noreferrer">
-                        ¿Olvidaste tu contraseña?
-                    </a>
-                </div>
-
-                <div className="form-divider"> O </div>
-
-                <div className="register-promo">
-                    <p>¿No tienes una cuenta aún?</p>
-                    <button type="button" onClick={onSwitchToRegister} className="btn-secondary">
-                        Crea una Cuenta Nueva
+                    <span>¿Ya tienes una cuenta? </span>
+                    <button type="button" onClick={onSwitchToLogin} className="switch-btn">
+                        Inicia Sesión
                     </button>
                 </div>
             </form>
 
             <style>{`
-                .login-form-container {
+                .register-form-container {
                     padding: 3rem 2.5rem;
                     background: white;
                     border-radius: 8px;
@@ -92,52 +110,6 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSwitchToRegister }) => {
                     display: flex;
                     flex-direction: column;
                     align-items: center;
-                }
-                .form-divider {
-                    text-align: center;
-                    margin: 1.5rem 0;
-                    color: #ccc;
-                    position: relative;
-                    width: 100%;
-                }
-                .form-divider::before, .form-divider::after {
-                    content: '';
-                    position: absolute;
-                    top: 50%;
-                    width: 42%;
-                    height: 1px;
-                    background: #eee;
-                }
-                .form-divider::before { left: 0; }
-                .form-divider::after { right: 0; }
-                
-                .register-promo {
-                    text-align: center;
-                    width: 100%;
-                }
-                .register-promo p {
-                    font-size: 0.95rem;
-                    color: #666;
-                    margin-bottom: 1.2rem;
-                }
-                .btn-secondary {
-                    background: white;
-                    color: var(--color-green);
-                    border: 1px solid var(--color-green);
-                    padding: 1rem 1.5rem;
-                    border-radius: 4px;
-                    font-weight: 700;
-                    text-transform: uppercase;
-                    letter-spacing: 1.5px;
-                    cursor: pointer;
-                    transition: all 0.3s;
-                    width: 100%;
-                    font-family: var(--font-titles);
-                }
-                .btn-secondary:hover {
-                    background: #f0f4f2;
-                    border-color: var(--color-beige);
-                    color: var(--color-beige);
                 }
                 h2 {
                     font-family: var(--font-titles);
@@ -220,16 +192,43 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSwitchToRegister }) => {
                 }
                 .form-footer {
                     text-align: center;
-                    margin-top: 1rem;
-                }
-                .form-footer a {
+                    margin-top: 2rem;
+                    font-size: 0.9rem;
                     color: #666;
-                    font-size: 0.85rem;
+                }
+                .name-row {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 1.5rem;
+                }
+                .switch-btn {
+                    background: none;
+                    border: none;
+                    color: var(--color-green);
+                    font-weight: 700;
                     text-decoration: underline;
+                    cursor: pointer;
+                    font-size: 0.9rem;
+                    padding: 0;
+                    margin-left: 5px;
+                    transition: color 0.3s;
+                }
+                .switch-btn:hover {
+                    color: var(--color-beige);
+                }
+                @media (max-width: 580px) {
+                    .register-form-container {
+                        margin: 1rem;
+                        padding: 2rem 1.5rem;
+                    }
+                    .name-row {
+                        grid-template-columns: 1fr;
+                        gap: 1.5rem;
+                    }
                 }
             `}</style>
         </div>
     );
 };
 
-export default LoginForm;
+export default RegisterForm;

@@ -101,14 +101,24 @@ try {
             activeSort.onSale
         );
 
-        // Fallback para el menú de navegación de categorías si no hay subcategorías
-        dropdownCategories = [
-            { name: "Zapatos", slug: "zapatos" },
-            { name: "Ropa", slug: "ropa" },
-            { name: "Accesorios", slug: "accesorios" },
-            { name: "Maletas", slug: "maletas" },
-            { name: "Mascotas", slug: "mascotas" },
-        ];
+        // 4. Cargamos subcategorías reales para el dropdown
+        const children = await getChildCategories(category.id);
+        
+        if (children && children.length > 0) {
+            dropdownCategories = children;
+        } else if (category.parent !== 0) {
+            // Si no hay subcategorías pero tiene un padre, mostramos las categorías hermanas
+            dropdownCategories = await getChildCategories(category.parent);
+        } else {
+            // Si es una categoría principal sin subcategorías, mostramos las categorías principales
+            dropdownCategories = [
+                { name: "Zapatos", slug: "zapatos" },
+                { name: "Ropa", slug: "ropa" },
+                { name: "Accesorios", slug: "accesorios" },
+                { name: "Maletas", slug: "maletas" },
+                { name: "Mascotas", slug: "mascotas" },
+            ];
+        }
 
         if (tallaParam) {
             products = products.filter((p) =>

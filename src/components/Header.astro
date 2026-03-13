@@ -400,11 +400,15 @@ function flattenCategoryUrl(url: string) {
         ];
 
         const cart = cartItems.get();
-        const count = Object.values(cart).reduce(
-            (sum: number, itemStr: string) =>
-                sum + (JSON.parse(itemStr).quantity || 0),
-            0,
-        );
+        const count = Object.values(cart).reduce((sum: number, itemStr: any) => {
+            if (!itemStr) return sum;
+            try {
+                const item = JSON.parse(itemStr);
+                return sum + (item.quantity || 0);
+            } catch (e) {
+                return sum;
+            }
+        }, 0);
 
         cartCountSpans.forEach((span) => {
             if (!span) return;

@@ -770,9 +770,15 @@ add_action('set_auth_cookie', function($auth_cookie, $expire, $expiration, $user
 
 // 2. Lógica de Autologin mediante Token JWT
 add_action('init', function() {
-    $is_account_page = (strpos($_SERVER['REQUEST_URI'], 'my-account') !== false || strpos($_SERVER['REQUEST_URI'], 'mi-cuenta') !== false);
+    $is_sync_page = (
+        strpos($_SERVER['REQUEST_URI'], 'my-account') !== false || 
+        strpos($_SERVER['REQUEST_URI'], 'mi-cuenta') !== false ||
+        strpos($_SERVER['REQUEST_URI'], 'checkout') !== false ||
+        strpos($_SERVER['REQUEST_URI'], 'finalizar-compra') !== false ||
+        strpos($_SERVER['REQUEST_URI'], 'cart') !== false
+    );
     
-    if (isset($_GET['autologin']) && !empty($_GET['autologin']) && $is_account_page) {
+    if (isset($_GET['autologin']) && !empty($_GET['autologin']) && $is_sync_page) {
         $token = sanitize_text_field($_GET['autologin']);
 
         try {

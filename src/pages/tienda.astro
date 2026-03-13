@@ -73,11 +73,13 @@ try {
     colorTerms = Array.isArray(colors) ? colors : [];
     tallaTerms = Array.isArray(sizes) ? sizes : [];
     allCategories = Array.isArray(categories)
-        ? categories.map((c: any) => ({
-              id: c.id,
-              name: c.name,
-              slug: c.slug,
-          }))
+        ? categories
+              .filter((c: any) => c.parent === 0)
+              .map((c: any) => ({
+                  id: c.id,
+                  name: c.name,
+                  slug: c.slug,
+              }))
         : [];
 } catch (e: any) {
     console.error("Error en Tienda:", e.message);

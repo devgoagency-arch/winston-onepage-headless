@@ -44,14 +44,26 @@ interface Props {
     isSelected?: boolean;
     onSelectionToggle?: (id: number) => void;
     onVariationChange?: (id: number, color: string | null, size: string | null, variationId?: number | null) => void;
+    initialColor?: string | null;
+    initialSize?: string | null;
 }
 
-export default function ProductCard({ product, isSelected, onSelectionToggle, onVariationChange }: Props) {
+export default function ProductCard({ product, isSelected, onSelectionToggle, onVariationChange, initialColor, initialSize }: Props) {
     const [isFavorite, setIsFavorite] = useState(false);
-    const [selectedColor, setSelectedColor] = useState<string | null>(null);
+    const [selectedColor, setSelectedColor] = useState<string | null>(initialColor || null);
     const [hoveredColor, setHoveredColor] = useState<string | null>(null);
     const [isCardHovered, setIsCardHovered] = useState(false);
     const [failedSyntheticColors, setFailedSyntheticColors] = useState<string[]>([]);
+    const [selectedSize, setSelectedSize] = useState<string | null>(initialSize || null);
+
+    // Update state when initial props change
+    useEffect(() => {
+        if (initialColor && !selectedColor) setSelectedColor(initialColor);
+    }, [initialColor]);
+
+    useEffect(() => {
+        if (initialSize && !selectedSize) setSelectedSize(initialSize);
+    }, [initialSize]);
 
     // Estado para datos enriquecidos (variaciones) cargados bajo demanda
     const [enrichedProduct, setEnrichedProduct] = useState<any>(null);
@@ -88,7 +100,7 @@ export default function ProductCard({ product, isSelected, onSelectionToggle, on
         fetchFullProduct();
     }, [product.slug, product.type, product.variation_images_map]);
 
-    const [selectedSize, setSelectedSize] = useState<string | null>(null);
+
 
     // Reset state when product changes
     useEffect(() => {
@@ -104,25 +116,50 @@ export default function ProductCard({ product, isSelected, onSelectionToggle, on
         setIsFavorite(favorites.some((fav: any) => fav.id === product.id));
     }, [product.id]);
 
+    // Función de normalización para comparar slugs/nombres de forma robusta
+    const normalizeAttr = (str: any): string => {
+        if (!str) return '';
+        const s = String(str);
+        return s.toLowerCase()
+            .trim()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "") // Quitar acentos
+            .replace(/[^a-z0-9]/g, '');      // Quitar todo lo que no sea alfanumérico
+    };
+
     // Calcular el ID de la variación actual basándose en los datos enriquecidos o los originales
     const currentVariationId = useMemo(() => {
         const currentVariations = enrichedProduct?.variations || product.variations;
         if (!currentVariations || currentVariations.length === 0) return null;
         if (!selectedColor && !selectedSize) return null;
 
+        const targetColor = normalizeAttr(selectedColor || '');
+        const targetSize = normalizeAttr(selectedSize || '');
+
         const found = currentVariations.find((v: any) => {
-            const vColor = v.attributes?.find((a: any) => 
-                a.name.toLowerCase().includes('color') || a.name === 'Pa_selecciona-el-color'
-            );
-            const vSize = v.attributes?.find((a: any) => 
-                a.name.toLowerCase().includes('talla') || a.name === 'Pa_selecciona-una-talla'
-            );
+            if (!v || !v.attributes) return false;
 
-            const colorValue = (vColor?.value || vColor?.option || '').toLowerCase().trim();
-            const sizeValue = (vSize?.value || vSize?.option || '').toLowerCase().trim();
+            const vColor = v.attributes.find((a: any) => {
+                const name = String(a.name || '').toLowerCase();
+                const id = String(a.id || '').toLowerCase();
+                return name.includes('color') || id.includes('color') || name.includes('selecciona-el-color');
+            });
 
-            const matchesColor = !selectedColor || colorValue === selectedColor.toLowerCase().trim();
-            const matchesSize = !selectedSize || sizeValue === selectedSize.toLowerCase().trim();
+            const vSize = v.attributes.find((a: any) => {
+                const name = String(a.name || '').toLowerCase();
+                const id = String(a.id || '').toLowerCase();
+                return name.includes('talla') || id.includes('talla') || 
+                       name.includes('size') || id.includes('size') ||
+                       name.includes('tamano') || name.includes('tamaño') ||
+                       name.includes('numero') || name.includes('nmero') ||
+                       name.includes('selecciona-una-talla');
+            });
+
+            const colorValue = normalizeAttr(vColor?.value || vColor?.option || '');
+            const sizeValue = normalizeAttr(vSize?.value || vSize?.option || '');
+
+            const matchesColor = !selectedColor || !colorValue || colorValue === targetColor;
+            const matchesSize = !selectedSize || !sizeValue || sizeValue === targetSize;
 
             return matchesColor && matchesSize;
         });

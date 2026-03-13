@@ -3,11 +3,13 @@ import React, { useEffect, useState } from 'react';
 import { useStore } from '@nanostores/react';
 import { userSession } from '../../store/user';
 import LoginForm from './LoginForm';
+import RegisterForm from './RegisterForm';
 import { logout } from '../../lib/auth';
 
 const AuthSection: React.FC = () => {
     const session = useStore(userSession);
     const [isLoaded, setIsLoaded] = useState(false);
+    const [view, setView] = useState<'login' | 'register'>('login');
 
     useEffect(() => {
         setIsLoaded(true);
@@ -54,7 +56,7 @@ const AuthSection: React.FC = () => {
                     .account-dashboard {
                         max-width: 1400px;
                         margin: 0 auto;
-                        padding: 4rem 0rem;
+                        padding: 4rem 1.5rem;
                     }
                     .dashboard-header {
                         text-align: center;
@@ -77,7 +79,7 @@ const AuthSection: React.FC = () => {
                     }
                     .dashboard-card {
                         background: white;
-                        padding: 1rem 2rem;
+                        padding: 2rem;
                         border-radius: 12px;
                         box-shadow: 0 4px 20px rgba(0,0,0,0.05);
                         text-align: center;
@@ -93,7 +95,7 @@ const AuthSection: React.FC = () => {
                     .dashboard-card h3 {
                         margin-bottom: 1rem;
                         color: var(--color-green);
-                        font-family: var(--font-fancy, serif);
+                        font-family: var(--font-titles);
                         font-size: 1.5rem;
                     }
                     .dashboard-card p {
@@ -138,7 +140,11 @@ const AuthSection: React.FC = () => {
 
     return (
         <div className="auth-wrapper">
-            <LoginForm />
+            {view === 'login' ? (
+                <LoginForm onSwitchToRegister={() => setView('register')} />
+            ) : (
+                <RegisterForm onSwitchToLogin={() => setView('login')} />
+            )}
         </div>
     );
 };
