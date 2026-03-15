@@ -26,7 +26,7 @@ const OrderHistory: React.FC = () => {
         return (
             <div className="empty-orders">
                 <p>Aún no has realizado ningún pedido.</p>
-                <a href="/#tienda" className="btn-primary">Ir a la tienda</a>
+                <a href="/tienda" className="btn" style={{ marginTop: '2rem', display: 'inline-block' }}>Ir a la tienda</a>
             </div>
         );
     }

@@ -17,8 +17,13 @@ export async function redirectToCheckout(path: string = '/') {
     const { userSession } = await import('../store/user');
     const token = userSession.get().token;
 
+    if (path === '/cart/') {
+        window.location.href = '/carrito';
+        return;
+    }
+
     if (items.length === 0) {
-        let finalUrl = `${wpDomain}${path}`;
+        let finalUrl = path;
         if (token) {
             const separator = finalUrl.includes('?') ? '&' : '?';
             finalUrl += `${separator}autologin=${token}`;
@@ -42,7 +47,7 @@ export async function redirectToCheckout(path: string = '/') {
         .join(',');
 
     // Redirección con el parámetro fill_cart que sincroniza el carrito en WP
-    const baseUrl = `${wpDomain}${path}`;
+    const baseUrl = path;
     const separator = baseUrl.includes('?') ? '&' : '?';
     let finalUrl = `${baseUrl}${separator}fill_cart=${itemsQuery}`;
 

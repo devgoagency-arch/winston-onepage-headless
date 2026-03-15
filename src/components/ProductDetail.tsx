@@ -1187,7 +1187,7 @@ export default function ProductDetail({ initialProduct }: Props) {
 
         .product-title { 
             font-family: var(--font-products); 
-            font-size: 1.5rem; 
+            font-size: 1.25rem; 
             color: #000; 
             margin: 0; 
             text-transform: uppercase; 

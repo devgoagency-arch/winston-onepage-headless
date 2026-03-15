@@ -49,11 +49,12 @@ export default function SideCart() {
     };
 
     const handleCheckout = () => {
-        redirectToCheckout('/checkout/');
+        window.location.href = '/checkout';
     };
 
     const handleViewCart = () => {
-        redirectToCheckout('/cart/');
+        console.log("[SideCart] Navegando a /carrito");
+        window.location.href = '/carrito';
     };
 
     if (!$isCartOpen && !isClosing) return null;

@@ -1,0 +1,14 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import CheckoutPage from "../components/CheckoutPage";
+---
+
+<Layout title="Finalizar Compra | Winston & Harry">
+    <Header />
+    <main>
+        <CheckoutPage client:load />
+    </main>
+    <Footer />
+</Layout>

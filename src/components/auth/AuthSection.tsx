@@ -64,7 +64,7 @@ const AuthSection: React.FC = () => {
                     }
                     .dashboard-header h1 {
                         font-family: var(--font-titles, serif);
-                        font-size: 3rem;
+                        font-size: 1.25rem;
                         color: var(--color-green);
                     }
                     .dashboard-grid {
@@ -96,7 +96,7 @@ const AuthSection: React.FC = () => {
                         margin-bottom: 1rem;
                         color: var(--color-green);
                         font-family: var(--font-titles);
-                        font-size: 1.5rem;
+                        font-size: 1.1rem;
                     }
                     .dashboard-card p {
                         color: #666;
