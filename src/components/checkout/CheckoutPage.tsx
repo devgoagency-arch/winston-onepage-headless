@@ -35,6 +35,35 @@ const INITIAL_FORM: FormData = {
     payment_method: 'mercadopago',
 };
 
+interface FieldProps {
+    label: string;
+    field: keyof FormData;
+    form: FormData;
+    errors: Partial<FormData>;
+    set: (field: keyof FormData, value: string) => void;
+    type?: string;
+    required?: boolean;
+    placeholder?: string;
+}
+
+const Field = ({
+    label, field, form, errors, set, type = 'text', required = false, placeholder = ''
+}: FieldProps) => (
+    <div className={`field ${errors[field] ? 'field-error' : ''}`}>
+        <label>
+            {label}
+            {required && <span className="required"> *</span>}
+        </label>
+        <input
+            type={type}
+            value={form[field] as string}
+            onChange={e => set(field, e.target.value)}
+            placeholder={placeholder}
+        />
+        {errors[field] && <span className="error-msg">{errors[field]}</span>}
+    </div>
+);
+
 export default function CheckoutPage() {
     const $cartItems = useStore(cartItems);
     const session = useStore(userSession);
@@ -144,29 +173,6 @@ export default function CheckoutPage() {
         }
     };
 
-    const Field = ({
-        label, field, type = 'text', required = false, placeholder = ''
-    }: {
-        label: string;
-        field: keyof FormData;
-        type?: string;
-        required?: boolean;
-        placeholder?: string;
-    }) => (
-        <div className={`field ${errors[field] ? 'field-error' : ''}`}>
-            <label>
-                {label}
-                {required && <span className="required"> *</span>}
-            </label>
-            <input
-                type={type}
-                value={form[field] as string}
-                onChange={e => set(field, e.target.value)}
-                placeholder={placeholder}
-            />
-            {errors[field] && <span className="error-msg">{errors[field]}</span>}
-        </div>
-    );
 
     return (
         <>
@@ -187,28 +193,28 @@ export default function CheckoutPage() {
                             <h2>Detalles de facturación</h2>
 
                             <div className="fields-grid">
-                                <Field label="Nombre" field="first_name" required />
-                                <Field label="Apellidos" field="last_name" required />
+                                <Field label="Nombre" field="first_name" form={form} errors={errors} set={set} required />
+                                <Field label="Apellidos" field="last_name" form={form} errors={errors} set={set} required />
                             </div>
 
-                            <Field label="Documento de identidad" field="document_id" required placeholder="CC / NIT" />
-                            <Field label="Correo electrónico" field="email" type="email" required />
-                            <Field label="Teléfono / WhatsApp" field="phone" type="tel" required placeholder="+57 300 000 0000" />
+                            <Field label="Documento de identidad" field="document_id" form={form} errors={errors} set={set} required placeholder="CC / NIT" />
+                            <Field label="Correo electrónico" field="email" form={form} errors={errors} set={set} type="email" required />
+                            <Field label="Teléfono / WhatsApp" field="phone" form={form} errors={errors} set={set} type="tel" required placeholder="+57 300 000 0000" />
                         </section>
 
                         {/* Dirección de envío */}
                         <section className="checkout-section">
                             <h2>Dirección de envío</h2>
 
-                            <Field label="Dirección" field="address_1" required placeholder="Calle, número, barrio" />
-                            <Field label="Apartamento / Oficina (opcional)" field="address_2" placeholder="Apto 101, Torre B..." />
+                            <Field label="Dirección" field="address_1" form={form} errors={errors} set={set} required placeholder="Calle, número, barrio" />
+                            <Field label="Apartamento / Oficina (opcional)" field="address_2" form={form} errors={errors} set={set} placeholder="Apto 101, Torre B..." />
 
                             <div className="fields-grid">
-                                <Field label="Ciudad" field="city" required />
-                                <Field label="Departamento" field="state" />
+                                <Field label="Ciudad" field="city" form={form} errors={errors} set={set} required />
+                                <Field label="Departamento" field="state" form={form} errors={errors} set={set} />
                             </div>
 
-                            <Field label="Código postal (opcional)" field="postcode" />
+                            <Field label="Código postal (opcional)" field="postcode" form={form} errors={errors} set={set} />
                         </section>
 
                         {/* Notas */}
@@ -311,7 +317,7 @@ export default function CheckoutPage() {
                                 onClick={handleSubmit}
                                 disabled={submitting}
                             >
-                                {submitting ? 'Procesando...' : 'Realizar pedido'}
+                                {submitting ? 'PROCESANDO...' : 'FINALIZAR COMPRA'}
                             </button>
 
                             <p className="privacy-note">
@@ -616,20 +622,24 @@ export default function CheckoutPage() {
                 /* Botón */
                 .btn-place-order {
                     width: 100%;
-                    padding: 18px;
+                    padding: 1.2rem;
                     background: var(--green);
                     color: #fff;
                     font-family: var(--font-titles, sans-serif);
-                    font-size: 0.95rem;
+                    font-size: 1.1rem;
                     font-weight: 700;
                     text-transform: uppercase;
                     letter-spacing: 2px;
                     border: none;
                     cursor: pointer;
-                    transition: filter 0.2s;
-                    margin-bottom: 12px;
+                    transition: all 0.3s ease;
+                    margin-bottom: 15px;
+                    margin-top: 10px;
                 }
-                .btn-place-order:hover:not(:disabled) { filter: brightness(1.1); }
+                .btn-place-order:hover:not(:disabled) {
+                    background: var(--beige);
+                    transform: translateY(-2px);
+                }
                 .btn-place-order:disabled {
                     opacity: 0.6;
                     cursor: not-allowed;
