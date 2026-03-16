@@ -40,7 +40,8 @@
     }
   ],
   "redirects": [
-    { "source": "/([sS])hop/?", "destination": "/tienda", "permanent": true },
+    { "source": "/shop/?", "destination": "/tienda", "permanent": true },
+    { "source": "/Shop/?", "destination": "/tienda", "permanent": true },
     { "source": "/telefonos-ubicacion-tiendas/?", "destination": "/contacto", "permanent": true },
     { "source": "/guia-tallas/?", "destination": "/guia-de-tallas", "permanent": true },
     { "source": "/politica-privacidad-proteccion-datos/?", "destination": "/politica-privacidad-proteccion-datos", "permanent": true },
