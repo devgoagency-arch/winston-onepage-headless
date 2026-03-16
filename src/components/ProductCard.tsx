@@ -285,20 +285,49 @@ export default function ProductCard({ product, isSelected, onSelectionToggle, on
             const baseImg = currentProduct.images[0];
             const baseSrc = baseImg.src;
 
+            const getSynonyms = (c: string) => {
+                const s = String(c).toLowerCase().trim();
+                const dict: Record<string, string[]> = {
+                    'negro': ['black'],
+                    'blanco': ['white'],
+                    'azul': ['blue', 'navy'],
+                    'rojo': ['red'],
+                    'cafe': ['brown', 'marron', 'marrón', 'coffee', 'miel', 'tan', 'camel', 'tabaco', 'tabac', 'cognac'],
+                    'miel': ['tan', 'honey', 'camel', 'cafe', 'brown', 'marron', 'cognac'],
+                    'verde': ['green'],
+                    'gris': ['grey', 'gray'],
+                    'vino': ['vinotinto', 'burgundy', 'wine', 'rojo'],
+                    'vinotinto': ['vino', 'burgundy', 'wine', 'rojo'],
+                    'beige': ['arena', 'sand', 'cream', 'crema'],
+                    'camel': ['tan', 'miel', 'cafe', 'brown', 'cognac'],
+                    'piel': ['cuero', 'leather', 'tan']
+                };
+                return [s, ...(dict[s] || [])].filter(x => x.length > 2);
+            };
+
             // Detectar qué color tiene la imagen base buscando en TODAS las fotos si es necesario
-            let colorInUrl = colorAttribute.terms.find(t => {
-                const ts = t.slug.toLowerCase();
-                const tn = t.name.toLowerCase();
+            let colorInUrl = colorAttribute.terms.find((t: any) => {
+                const targetSyns = getSynonyms(t.slug);
+                const targetNames = getSynonyms(t.name);
                 const s = baseSrc.toLowerCase();
-                return s.includes(ts) || s.includes(tn) || (ts.includes('vino') && s.includes('vino'));
+                return targetSyns.some(syn => s.includes(`-${syn}`)) ||
+                       targetSyns.some(syn => s.includes(`_${syn}`)) ||
+                       targetSyns.some(syn => s.includes(syn)) ||
+                       targetNames.some(syn => s.includes(`-${syn}`)) ||
+                       targetNames.some(syn => s.includes(syn));
             });
 
-            // Si la base no tiene color, buscar en el resto de la galería para identificar el color "base" del modelo
             if (!colorInUrl) {
                 for (const img of currentProduct.images) {
-                    const found = colorAttribute.terms.find(t => {
+                    const found = colorAttribute.terms.find((t: any) => {
+                        const targetSyns = getSynonyms(t.slug);
+                        const targetNames = getSynonyms(t.name);
                         const s = img.src.toLowerCase();
-                        return s.includes(t.slug.toLowerCase()) || s.includes(t.name.toLowerCase());
+                        return targetSyns.some(syn => s.includes(`-${syn}`)) ||
+                               targetSyns.some(syn => s.includes(`_${syn}`)) ||
+                               targetSyns.some(syn => s.includes(syn)) ||
+                               targetNames.some(syn => s.includes(`-${syn}`)) ||
+                               targetNames.some(syn => s.includes(syn));
                     });
                     if (found) {
                         colorInUrl = found;
@@ -310,33 +339,41 @@ export default function ProductCard({ product, isSelected, onSelectionToggle, on
             if (colorInUrl) {
                 if (colorInUrl.slug === active) {
                    return currentProduct.images.filter((img: { src: string }) => {
+                       const targetSyns = getSynonyms(colorInUrl!.slug);
                        const s = img.src.toLowerCase();
-                       return s.includes(colorInUrl!.slug) || s.includes(colorInUrl!.name.toLowerCase());
+                       return targetSyns.some(syn => s.includes(syn)) || s.includes(colorInUrl!.name.toLowerCase());
                    });
                 }
 
-                const match = baseSrc.match(new RegExp(colorInUrl.slug, 'i')) ||
-                    baseSrc.match(new RegExp(colorInUrl.name, 'i')) ||
-                    baseSrc.match(/vino/i);
+                const targetSyns = getSynonyms(colorInUrl.slug);
+                const targetNames = getSynonyms(colorInUrl.name);
+                let match = null;
+                for (const syn of [...targetSyns, ...targetNames]) {
+                    const m = baseSrc.match(new RegExp(`[-_]${syn}`, 'i')) || baseSrc.match(new RegExp(syn, 'i'));
+                    if (m) { match = m; break; }
+                }
 
                 if (match) {
                     const matchedText = match[0];
-                    const isCapitalized = matchedText[0] === matchedText[0].toUpperCase();
+                    const cleanMatchedText = matchedText.replace(/^[-_]/, '');
+                    const isCapitalized = cleanMatchedText[0] && cleanMatchedText[0] === cleanMatchedText[0].toUpperCase();
 
-                    let replacement = active;
-                    if (active === 'vinotinto' && matchedText.toLowerCase() === 'vino') {
-                        replacement = isCapitalized ? 'Vino' : 'vino';
+                    let replacementCore = active;
+                    if (active === 'vinotinto' && cleanMatchedText.toLowerCase() === 'vino') {
+                        replacementCore = isCapitalized ? 'Vino' : 'vino';
                     } else if (isCapitalized) {
-                        replacement = active.charAt(0).toUpperCase() + active.slice(1).toLowerCase();
+                        replacementCore = active.charAt(0).toUpperCase() + active.slice(1).toLowerCase();
                     }
+
+                    const replacement = matchedText.replace(cleanMatchedText, replacementCore);
 
                     try {
                         const regex = new RegExp(matchedText, 'g');
                         // Intentar predecir TODA la galería
-                        const syntheticGallery = currentProduct.images.map((img: { src: string; alt: string }) => {
+                        const syntheticGallery = currentProduct.images.map((img: { src: string; alt: string; id?: number }) => {
                             const newSrc = img.src.replace(regex, replacement);
                             if (newSrc !== img.src) {
-                                return { ...img, isSynthetic: true, src: newSrc };
+                                return { ...img, isSynthetic: true, src: newSrc, id: img.id ? -999 - img.id : -999 };
                             }
                             return null;
                         }).filter((img: any): img is any => img !== null);
@@ -344,7 +381,7 @@ export default function ProductCard({ product, isSelected, onSelectionToggle, on
                         if (syntheticGallery.length > 0) return syntheticGallery;
 
                         const newSrc = baseSrc.replace(regex, replacement);
-                        if (newSrc !== baseSrc) return [{ ...baseImg, isSynthetic: true, src: newSrc }];
+                        if (newSrc !== baseSrc) return [{ ...baseImg, isSynthetic: true, src: newSrc, id: -999 }];
                     } catch (e) { }
                 }
             }
