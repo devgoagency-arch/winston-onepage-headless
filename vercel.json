@@ -102,7 +102,7 @@
       "permanent": true
     },
     {
-      "source": "/product-category/zapatos/page/(?<page>\\d+)",
+      "source": "/product-category/zapatos/page/:page",
       "destination": "/categoria/zapatos-cuero-hombre?page=$page",
       "permanent": true
     },
@@ -112,7 +112,7 @@
       "permanent": true
     },
     {
-      "source": "/product-category/zapatos/zapatos-de-cordon/page/(?<page>\\d+)",
+      "source": "/product-category/zapatos/zapatos-de-cordon/page/:page",
       "destination": "/categoria/zapatos-cordon-hombre?page=$page",
       "permanent": true
     },
@@ -122,7 +122,7 @@
       "permanent": true
     },
     {
-      "source": "/product-category/zapatos/mocasin/page/(?<page>\\d+)",
+      "source": "/product-category/zapatos/mocasin/page/:page",
       "destination": "/categoria/mocasines-cuero-hombre?page=$page",
       "permanent": true
     },
@@ -132,7 +132,7 @@
       "permanent": true
     },
     {
-      "source": "/product-category/zapatos/botas/page/(?<page>\\d+)",
+      "source": "/product-category/zapatos/botas/page/:page",
       "destination": "/categoria/botas-cuero-hombre?page=$page",
       "permanent": true
     },
@@ -147,7 +147,7 @@
       "permanent": true
     },
     {
-      "source": "/product-category/zapatos/tenis/page/(?<page>\\d+)",
+      "source": "/product-category/zapatos/tenis/page/:page",
       "destination": "/categoria/tenis-hombre?page=$page",
       "permanent": true
     },
@@ -177,7 +177,7 @@
       "permanent": true
     },
     {
-      "source": "/product-category/ropa/page/(?<page>\\d+)",
+      "source": "/product-category/ropa/page/:page",
       "destination": "/categoria/ropa-hombre-colombia?page=$page",
       "permanent": true
     },
@@ -217,7 +217,7 @@
       "permanent": true
     },
     {
-      "source": "/product-category/maletas/page/(?<page>\\d+)",
+      "source": "/product-category/maletas/page/:page",
       "destination": "/categoria/maletas-morrales-cuero?page=$page",
       "permanent": true
     },
@@ -232,7 +232,7 @@
       "permanent": true
     },
     {
-      "source": "/product-category/accesorios/page/(?<page>\\d+)",
+      "source": "/product-category/accesorios/page/:page",
       "destination": "/categoria/accesorios-hombre?page=$page",
       "permanent": true
     },
