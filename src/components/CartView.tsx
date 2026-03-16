@@ -23,9 +23,25 @@ export default function CartView() {
             .filter((item): item is (CartItem & { key: string }) => item !== null);
     }, [$cartItems]);
 
+    const [shippingSettings, setShippingSettings] = React.useState({ flat_rate: 21008, free_shipping_threshold: 100000 });
+
+    React.useEffect(() => {
+        fetch('/api/shipping-settings')
+            .then(res => res.json())
+            .then(data => {
+                if (data.flat_rate !== undefined) setShippingSettings(data);
+            })
+            .catch(err => console.error("Error fetching shipping settings:", err));
+    }, []);
+
     const subtotal = useMemo(() => {
         return items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
     }, [items]);
+
+    const FREE_SHIPPING_THRESHOLD = shippingSettings.free_shipping_threshold;
+    const SHIPPING_COST = shippingSettings.flat_rate;
+    const shippingCost = subtotal >= FREE_SHIPPING_THRESHOLD ? 0 : SHIPPING_COST;
+    const total = subtotal + shippingCost;
 
     const handleCheckout = () => {
         window.location.href = '/checkout';
@@ -161,10 +177,23 @@ export default function CartView() {
                                 <span>Subtotal</span>
                                 <span>${new Intl.NumberFormat('es-CO').format(subtotal)}</span>
                             </div>
+                            <div className="summary-row">
+                                <span>Envío</span>
+                                {shippingCost === 0 ? (
+                                    <span className="shipping-free">Gratis</span>
+                                ) : (
+                                    <span className="shipping-cost">${new Intl.NumberFormat('es-CO').format(shippingCost)}</span>
+                                )}
+                            </div>
+                            {shippingCost > 0 && (
+                                <div className="shipping-notice">
+                                    Agrega ${new Intl.NumberFormat('es-CO').format(FREE_SHIPPING_THRESHOLD - subtotal)} más para envío gratis
+                                </div>
+                            )}
                             <div className="summary-row total">
                                 <span>Total</span>
                                 <div className="total-stack">
-                                    <span className="total-amount">${new Intl.NumberFormat('es-CO').format(subtotal)}</span>
+                                    <span className="total-amount">${new Intl.NumberFormat('es-CO').format(total)}</span>
                                     <span className="tax-info">(IVA incluido)</span>
                                 </div>
                             </div>
@@ -378,6 +407,18 @@ export default function CartView() {
                 .total-stack { text-align: right; }
                 .total-amount { display: block; color: var(--color-beige) !important; font-size: 1.4rem !important; }
                 .tax-info { font-size: 0.7rem; color: #999; font-weight: 400 !important; }
+                .shipping-free { color: var(--color-green); font-weight: 600; }
+                .shipping-cost { color: #c0392b; font-weight: 600; }
+                .shipping-notice {
+                    font-size: 0.72rem;
+                    color: var(--color-green);
+                    background: #f0f7f3;
+                    border: 1px solid #c3e0d0;
+                    border-radius: 4px;
+                    padding: 8px 10px;
+                    margin-bottom: 1rem;
+                    text-align: center;
+                }
 
                 .btn-checkout {
                     width: 100%;

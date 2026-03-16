@@ -22,6 +22,12 @@ export const POST: APIRoute = async ({ request }) => {
                 country: 'CO',
                 email: body.email,
                 phone: body.phone,
+                // Claves adicionales en billing por si el plugin de Addi las busca ahí directamente
+                billing_cedula: body.document_id || '',
+                _billing_cedula: body.document_id || '',
+                billing_dni: body.document_id || '',
+                billing_documento: body.document_id || '',
+                cedula: body.document_id || '',
             },
             shipping: {
                 first_name: body.first_name,
@@ -39,7 +45,15 @@ export const POST: APIRoute = async ({ request }) => {
                 quantity: item.quantity,
             })),
             meta_data: [
+                { key: '_billing_cedula', value: body.document_id || '' },
+                { key: 'billing_cedula', value: body.document_id || '' },
+                { key: '_billing_dni', value: body.document_id || '' },
+                { key: 'billing_dni', value: body.document_id || '' },
+                { key: '_billing_documento', value: body.document_id || '' },
+                { key: 'billing_documento', value: body.document_id || '' },
                 { key: '_billing_cpf', value: body.document_id || '' },
+                { key: 'billing_identification_number', value: body.document_id || '' },
+                { key: '_billing_identification_number', value: body.document_id || '' },
             ],
             customer_note: body.order_notes || '',
         };
@@ -60,7 +74,7 @@ export const POST: APIRoute = async ({ request }) => {
 
         // Obtener el link de pago según el método
         // WooCommerce genera la URL de pago en order.payment_url
-        const paymentUrl = order.payment_url || 
+        const paymentUrl = order.payment_url ||
             `${import.meta.env.WC_URL}/checkout/order-pay/${order.id}/?pay_for_order=true&key=${order.order_key}`;
 
         return new Response(

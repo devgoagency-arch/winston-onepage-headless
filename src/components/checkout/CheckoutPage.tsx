@@ -93,19 +93,35 @@ export default function CheckoutPage() {
         }));
     }, [$cartItems]);
 
+    const [shippingSettings, setShippingSettings] = useState({ flat_rate: 21008, free_shipping_threshold: 100000 });
+
+    useEffect(() => {
+        fetch('/api/shipping-settings')
+            .then(res => res.json())
+            .then(data => {
+                if (data.flat_rate !== undefined) setShippingSettings(data);
+            })
+            .catch(err => console.error("Error fetching shipping settings:", err));
+    }, []);
+
     const subtotal = useMemo(
         () => items.reduce((s, i) => s + i.price * i.quantity, 0),
         [items]
     );
 
+    const FREE_SHIPPING_THRESHOLD = shippingSettings.free_shipping_threshold;
+    const SHIPPING_COST = shippingSettings.flat_rate;
+    const shippingCost = subtotal >= FREE_SHIPPING_THRESHOLD ? 0 : SHIPPING_COST;
+    const total = subtotal + shippingCost;
+
     const fmt = (n: number) => '$' + new Intl.NumberFormat('es-CO').format(n);
 
-    // Redirigir si carrito vacío
+    // Redirigir si carrito vacío (pero no si estamos procesando el pago)
     useEffect(() => {
         if (Object.keys($cartItems).length === 0 && step === 'form') {
             window.location.href = '/carrito';
         }
-    }, [$cartItems]);
+    }, [$cartItems, step]);
 
     const set = (field: keyof FormData, value: string) => {
         setForm(f => ({ ...f, [field]: value }));
@@ -133,6 +149,7 @@ export default function CheckoutPage() {
         try {
             const payload = {
                 ...form,
+                shipping_cost: shippingCost,
                 items: items.map(item => ({
                     product_id: Number(String(item.key).split('-')[0]),
                     variation_id: item.id,
@@ -160,6 +177,10 @@ export default function CheckoutPage() {
                 number: data.order_number,
                 email: form.email,
             }));
+
+            // Cambiar step a 'processing' ANTES de limpiar el carrito
+            // para evitar que el guard de carrito vacío redirija a /carrito
+            setStep('processing');
 
             // Limpiar carrito
             clearCart();
@@ -302,11 +323,20 @@ export default function CheckoutPage() {
                                 </div>
                                 <div className="summary-row">
                                     <span>Envío</span>
-                                    <span className="free-shipping">Gratis</span>
+                                    {shippingCost === 0 ? (
+                                        <span className="free-shipping">Gratis</span>
+                                    ) : (
+                                        <span className="cost-shipping">{fmt(shippingCost)}</span>
+                                    )}
                                 </div>
+                                {shippingCost > 0 && (
+                                    <div className="shipping-threshold-notice">
+                                        Agrega {fmt(FREE_SHIPPING_THRESHOLD - subtotal)} más para envío gratis
+                                    </div>
+                                )}
                                 <div className="summary-row summary-total-row">
                                     <span>Total</span>
-                                    <span>{fmt(subtotal)}</span>
+                                    <span>{fmt(total)}</span>
                                 </div>
                                 <p className="tax-note">Incluye impuestos</p>
                             </div>
@@ -596,6 +626,16 @@ export default function CheckoutPage() {
                     letter-spacing: 0.5px;
                 }
                 .free-shipping { color: var(--green) !important; font-weight: 600; }
+                .cost-shipping { color: #c0392b !important; font-weight: 600; }
+                .shipping-threshold-notice {
+                    font-size: 0.72rem;
+                    color: var(--green);
+                    background: #f0f7f3;
+                    border: 1px solid #c3e0d0;
+                    padding: 8px 10px;
+                    margin: 4px 0 8px;
+                    text-align: center;
+                }
 
                 .summary-total-row {
                     border-bottom: none !important;
