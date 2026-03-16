@@ -88,9 +88,13 @@ try {
 if (!product && !error) {
     return Astro.redirect("/404");
 }
+const seoData = product?.yoast_head_json || null;
 ---
 
-<Layout title={product ? `${product.name} | Winston & Harry` : "Producto"}>
+<Layout 
+    title={product ? `${product.name} | Winston & Harry` : "Producto"}
+    seoData={seoData}
+>
     <Header />
 
     <main class="product-page-container">

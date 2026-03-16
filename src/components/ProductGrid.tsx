@@ -33,9 +33,9 @@ interface Product {
 }
 
 const CATEGORIES = [
-  { id: 'zapatos', name: 'Zapatos', slug: 'zapatos' },
-  { id: 'ropa', name: 'Ropa', slug: 'ropa' },
-  { id: 'maletas', name: 'Maletas', slug: 'maletas' }
+  { id: '63', name: 'Zapatos', slug: 'zapatos' },
+  { id: '249', name: 'Ropa', slug: 'ropa' },
+  { id: '190', name: 'Maletas', slug: 'maletas' }
 ];
 
 export default function ProductGrid() {

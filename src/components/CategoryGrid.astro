@@ -1,5 +1,30 @@
 ---
+import { wcFetch } from '../lib/woocommerce';
 
+// Lista de categorías que queremos mostrar con su imagen local fija
+const targetCategories = [
+    { id: 'ropa', image: '/images/ropa.jpg', fallbackName: 'Ropa' },
+    { id: 'zapatos', image: '/images/zapatos.jpg', fallbackName: 'Zapatos' },
+    { id: 'maletas', image: '/images/maletas.jpg', fallbackName: 'Maletas' },
+    { id: 'accesorios', image: '/images/accesorios.jpg', fallbackName: 'Accesorios' }
+];
+
+// Obtenemos todas las categorías para poder encontrarlas incluso si cambia el slug
+const allCategories = await wcFetch('/products/categories?per_page=100') || [];
+
+const categoriesData = targetCategories.map(target => {
+    // Buscamos la categoría que coincida con el slug original o con el nombre
+    const cat = allCategories.find((c: { slug: string; name: string }) => 
+        c.slug === target.id || 
+        c.name.toLowerCase() === target.id.toLowerCase()
+    );
+
+    return {
+        slug: cat?.slug || target.id,
+        name: cat?.name || target.fallbackName,
+        image: target.image
+    };
+});
 ---
 
 <section class="category-grid">
@@ -13,49 +38,19 @@
         </div>
 
         <div class="grid-layout">
-            <a href="/categoria/ropa" class="category-item">
-                <div class="category-image-wrapper">
-                    <img
-                        src="/images/ropa.jpg"
-                        alt="Ropa para hombre"
-                        class="category-image"
-                    />
-                </div>
-                <h3 class="category-label">Ropa</h3>
-            </a>
-
-            <a href="/categoria/zapatos" class="category-item">
-                <div class="category-image-wrapper">
-                    <img
-                        src="/images/zapatos.jpg"
-                        alt="Zapatos de cuero artesanal"
-                        class="category-image"
-                    />
-                </div>
-                <h3 class="category-label">Zapatos</h3>
-            </a>
-
-            <a href="/categoria/maletas" class="category-item">
-                <div class="category-image-wrapper">
-                    <img
-                        src="/images/maletas.jpg"
-                        alt="Maletas y bolsos de cuero"
-                        class="category-image"
-                    />
-                </div>
-                <h3 class="category-label">Maletas</h3>
-            </a>
-
-            <a href="/categoria/accesorios" class="category-item">
-                <div class="category-image-wrapper">
-                    <img
-                        src="/images/accesorios.jpg"
-                        alt="Accesorios para hombre"
-                        class="category-image"
-                    />
-                </div>
-                <h3 class="category-label">Accesorios</h3>
-            </a>
+            {categoriesData.map((category) => (
+                <a href={`/categoria/${category.slug}`} class="category-item">
+                    <div class="category-image-wrapper">
+                        <img
+                            src={category.image}
+                            alt={category.name}
+                            class="category-image"
+                            loading="lazy"
+                        />
+                    </div>
+                    <h3 class="category-label">{category.name}</h3>
+                </a>
+            ))}
         </div>
     </div>
 </section>

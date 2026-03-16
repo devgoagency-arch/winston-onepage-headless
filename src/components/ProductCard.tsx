@@ -199,14 +199,44 @@ export default function ProductCard({ product, isSelected, onSelectionToggle, on
 
     const activeColor = hoveredColor || selectedColor;
 
+    const colorSynonyms = useMemo(() => {
+        if (!activeColor) return [];
+        const colorLower = activeColor.toLowerCase().trim();
+        const synonyms: Record<string, string[]> = {
+            'negro': ['black'],
+            'blanco': ['white'],
+            'azul': ['blue', 'navy'],
+            'rojo': ['red'],
+            'cafe': ['brown', 'marron', 'marrón', 'coffee', 'miel', 'tan', 'camel', 'tabaco', 'tabac', 'cognac'],
+            'miel': ['tan', 'honey', 'camel', 'cafe', 'brown', 'marron', 'cognac'],
+            'verde': ['green'],
+            'gris': ['grey', 'gray'],
+            'vino': ['vinotinto', 'burgundy', 'wine', 'rojo'],
+            'vinotinto': ['vino', 'burgundy', 'wine', 'rojo'],
+            'beige': ['arena', 'sand', 'cream', 'crema'],
+            'camel': ['tan', 'miel', 'cafe', 'brown', 'cognac'],
+            'piel': ['cuero', 'leather', 'tan']
+        };
+        const words = colorLower.split(/[\s-]+/);
+        const results = new Set([colorLower, ...words]);
+        words.forEach(w => {
+            if (synonyms[w]) synonyms[w].forEach(s => results.add(s));
+        });
+        if (synonyms[colorLower]) synonyms[colorLower].forEach(s => results.add(s));
+        return Array.from(results).filter(s => s.length > 2);
+    }, [activeColor]);
+
     const displayImages = useMemo(() => {
         const currentProduct = enrichedProduct || product;
         const active = hoveredColor || selectedColor;
         if (!active) return currentProduct.images;
 
         const colorSlug = active.toLowerCase().trim();
+        const colorTerm = colorAttribute?.terms.find(t => t.slug === active);
+        const colorName = colorTerm?.name.toLowerCase().trim() || "";
 
-        // 1. Prioridad: Mapa de imágenes de variaciones (API Enriquecida)
+        // --- 1. Obtener imágenes de la Variación (API) ---
+        let varImages: any[] = [];
         if (currentProduct.variation_images_map) {
             const matchedKey = Object.keys(currentProduct.variation_images_map).find(
                 key => {
@@ -219,57 +249,72 @@ export default function ProductCard({ product, isSelected, onSelectionToggle, on
                 }
             );
             if (matchedKey && currentProduct.variation_images_map[matchedKey]) {
-                const varImages = currentProduct.variation_images_map[matchedKey];
-                if (varImages && varImages.length > 0) return varImages;
+                varImages = currentProduct.variation_images_map[matchedKey];
             }
         }
 
-        // 2. Fallback: Filtrado robusto
-        const colorTerm = colorAttribute?.terms.find(t => t.slug === active);
-        const colorName = colorTerm?.name.toLowerCase() || "";
+        // --- 2. Obtener imágenes de la Galería (Filtrado Robusto) ---
+        const patterns = [
+            `-${colorSlug}`, `_${colorSlug}`, ` ${colorSlug}`,
+            `-${colorName}`, `_${colorName}`, ` ${colorName}`,
+            ...colorSynonyms.flatMap(s => [`-${s}`, `_${s}`, ` ${s}`])
+        ];
 
-        const matches = currentProduct.images.filter((img: any) => {
+        const galleryMatches = currentProduct.images.filter((img: { src: string; alt: string; name?: string }) => {
             const src = (img.src || "").toLowerCase();
             const alt = (img.alt || "").toLowerCase();
             const name = (img.name || "").toLowerCase();
 
-            // Búsqueda más agresiva: el color como palabra independiente o sufijo
-            const patterns = [
-                `-${colorSlug}`, `_${colorSlug}`, ` ${colorSlug}`,
-                `-${colorName}`, `_${colorName}`, ` ${colorName}`
-            ];
+            const hasPattern = patterns.some(p => src.includes(p) || alt.includes(p) || name.includes(p));
+            const isSuffix = new RegExp(`[-_ ](${colorSlug}|${colorName})\\.(jpg|jpeg|png|webp)$`, 'i').test(src);
+            const isFuzzy = colorSynonyms.some(s => src.includes(s) || alt.includes(s));
 
-            const matchesPattern = patterns.some(p => src.includes(p) || alt.includes(p) || name.includes(p));
-
-            // Caso especial: si el colorSlug está al final del nombre de archivo (ej: zapato-negro.jpg)
-            const isSuffix = new RegExp(`[-_ ]${colorSlug}\\.(jpg|jpeg|png|webp)$`, 'i').test(src) ||
-                new RegExp(`[-_ ]${colorName}\\.(jpg|jpeg|png|webp)$`, 'i').test(src);
-
-            return matchesPattern || isSuffix ||
-                (colorSlug.includes('vino') && src.includes('vino')) ||
-                (colorSlug.includes('cafe') && (src.includes('miel') || src.includes('marron'))) ||
-                (colorSlug.includes('piel') && src.includes('cuero'));
+            return hasPattern || isSuffix || isFuzzy;
         });
 
-        if (matches.length > 0) return matches;
+        // Combinar y de-duplicar
+        const combined = [...varImages];
+        galleryMatches.forEach((img: { src: string; alt: string; name?: string }) => {
+            if (!combined.some(c => c.src === img.src)) combined.push(img);
+        });
 
-        // 3. Fallback Avanzado: Predicción de URL
+        if (combined.length > 0) return combined;
+
+        // --- 3. Fallback: Predicción Sintética (Mejorada) ---
         if (currentProduct.images.length > 0 && colorAttribute && !failedSyntheticColors.includes(active)) {
             const baseImg = currentProduct.images[0];
             const baseSrc = baseImg.src;
 
-            // Detección Fuzzy del color en el URL
-            const colorInUrl = colorAttribute.terms.find(t => {
+            // Detectar qué color tiene la imagen base buscando en TODAS las fotos si es necesario
+            let colorInUrl = colorAttribute.terms.find(t => {
                 const ts = t.slug.toLowerCase();
                 const tn = t.name.toLowerCase();
                 const s = baseSrc.toLowerCase();
                 return s.includes(ts) || s.includes(tn) || (ts.includes('vino') && s.includes('vino'));
             });
 
-            if (colorInUrl) {
-                if (colorInUrl.slug === active) return currentProduct.images;
+            // Si la base no tiene color, buscar en el resto de la galería para identificar el color "base" del modelo
+            if (!colorInUrl) {
+                for (const img of currentProduct.images) {
+                    const found = colorAttribute.terms.find(t => {
+                        const s = img.src.toLowerCase();
+                        return s.includes(t.slug.toLowerCase()) || s.includes(t.name.toLowerCase());
+                    });
+                    if (found) {
+                        colorInUrl = found;
+                        break;
+                    }
+                }
+            }
 
-                // Intentamos encontrar el color en el URL para ver qué casing usa
+            if (colorInUrl) {
+                if (colorInUrl.slug === active) {
+                   return currentProduct.images.filter((img: { src: string }) => {
+                       const s = img.src.toLowerCase();
+                       return s.includes(colorInUrl!.slug) || s.includes(colorInUrl!.name.toLowerCase());
+                   });
+                }
+
                 const match = baseSrc.match(new RegExp(colorInUrl.slug, 'i')) ||
                     baseSrc.match(new RegExp(colorInUrl.name, 'i')) ||
                     baseSrc.match(/vino/i);
@@ -287,18 +332,26 @@ export default function ProductCard({ product, isSelected, onSelectionToggle, on
 
                     try {
                         const regex = new RegExp(matchedText, 'g');
-                        const newSrc = baseSrc.replace(regex, replacement);
+                        // Intentar predecir TODA la galería
+                        const syntheticGallery = currentProduct.images.map((img: { src: string; alt: string }) => {
+                            const newSrc = img.src.replace(regex, replacement);
+                            if (newSrc !== img.src) {
+                                return { ...img, isSynthetic: true, src: newSrc };
+                            }
+                            return null;
+                        }).filter((img: any): img is any => img !== null);
 
-                        if (newSrc !== baseSrc) {
-                            return [{ ...baseImg, isSynthetic: true, src: newSrc }];
-                        }
+                        if (syntheticGallery.length > 0) return syntheticGallery;
+
+                        const newSrc = baseSrc.replace(regex, replacement);
+                        if (newSrc !== baseSrc) return [{ ...baseImg, isSynthetic: true, src: newSrc }];
                     } catch (e) { }
                 }
             }
         }
 
-        return currentProduct.images;
-    }, [selectedColor, hoveredColor, product, enrichedProduct, colorAttribute, failedSyntheticColors]);
+        return [currentProduct.images[0]];
+    }, [selectedColor, hoveredColor, product, enrichedProduct, colorAttribute, failedSyntheticColors, colorSynonyms]);
 
     const mainImage = displayImages[0] || product.images[0];
     const hoverImageRaw = displayImages[1];

@@ -100,6 +100,33 @@ function flattenCategoryUrl(url: string) {
 
         <!-- Parte Derecha: Acciones -->
         <div class="header-right">
+            <button
+                class="action-btn cart-btn-new header-cart-mobile"
+                id="cart-btn-desktop"
+                aria-label="Carrito"
+            >
+                <div class="cart-icon-wrapper">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <path
+                            d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"
+                        ></path>
+                        <path d="M3 6h18"></path>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
+                    <span class="cart-count" id="cart-count">0</span>
+                </div>
+            </button>
+
             <UserStatus client:load />
 
             <div class="header-actions-desktop">
@@ -125,33 +152,6 @@ function flattenCategoryUrl(url: string) {
                     </svg>
                     <span class="fav-count" id="fav-count">0</span>
                 </a>
-
-                <button
-                    class="action-btn cart-btn-new"
-                    id="cart-btn-desktop"
-                    aria-label="Carrito"
-                >
-                    <div class="cart-icon-wrapper">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="20"
-                            height="20"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="1.2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                        >
-                            <path
-                                d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"
-                            ></path>
-                            <path d="M3 6h18"></path>
-                            <path d="M16 10a4 4 0 0 1-8 0"></path>
-                        </svg>
-                        <span class="cart-count" id="cart-count">0</span>
-                    </div>
-                </button>
             </div>
         </div>
     </div>
@@ -285,7 +285,9 @@ function flattenCategoryUrl(url: string) {
     const burgerBtn = document.getElementById("burger-menu");
     const menuOverlay = document.getElementById("menu-overlay");
     const mobileNav = document.getElementById("mobile-nav");
-    const mobileLinks = document.querySelectorAll(".mobile-link, .mobile-sublink");
+    const mobileLinks = document.querySelectorAll(
+        ".mobile-link, .mobile-sublink",
+    );
 
     const cartBtns = document.querySelectorAll(".cart-btn-new");
 
@@ -400,15 +402,18 @@ function flattenCategoryUrl(url: string) {
         ];
 
         const cart = cartItems.get();
-        const count = Object.values(cart).reduce((sum: number, itemStr: any) => {
-            if (!itemStr) return sum;
-            try {
-                const item = JSON.parse(itemStr);
-                return sum + (item.quantity || 0);
-            } catch (e) {
-                return sum;
-            }
-        }, 0);
+        const count = Object.values(cart).reduce(
+            (sum: number, itemStr: any) => {
+                if (!itemStr) return sum;
+                try {
+                    const item = JSON.parse(itemStr);
+                    return sum + (item.quantity || 0);
+                } catch (e) {
+                    return sum;
+                }
+            },
+            0,
+        );
 
         cartCountSpans.forEach((span) => {
             if (!span) return;
@@ -542,7 +547,7 @@ function flattenCategoryUrl(url: string) {
         background: none;
         border: none;
         cursor: pointer;
-        display: flex;
+        display: none !important;
         align-items: center;
         gap: 0.8rem;
         color: #333;
@@ -601,6 +606,11 @@ function flattenCategoryUrl(url: string) {
         cursor: pointer;
         padding: 0;
         gap: 0.5rem;
+        transition: opacity 0.3s ease;
+    }
+
+    .header-cart-mobile {
+        display: flex;
     }
 
     .fav-count {
@@ -813,6 +823,9 @@ function flattenCategoryUrl(url: string) {
         }
         .header-actions-desktop {
             display: none;
+        }
+        .header-cart-mobile {
+            display: flex;
         }
     }
 

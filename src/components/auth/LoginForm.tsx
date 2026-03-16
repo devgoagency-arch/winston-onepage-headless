@@ -141,7 +141,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSwitchToRegister }) => {
                 }
                 h2 {
                     font-family: var(--font-titles);
-                    font-size: 2.5rem;
+                    font-size: 1.25rem;
                     color: var(--color-green);
                     margin-bottom: 0.5rem;
                     text-align: center;

@@ -23,6 +23,19 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 .vercel
+# WordPress Theme (Internal - Do not deploy to Vercel/Astro)
 winston-and-harry/
 winton-and-harry/
 winton-and-harry.zip
+
+# Debug and Diagnostic Files
+src/pages/api/debug-env.ts
+src/pages/api/debug-variations.ts
+src/pages/api/search-debug.ts
+src/pages/api/store-api-debug.ts
+debug-auth.ts
+debug-auth.js
+*.json
+!package.json
+!tsconfig.json
+!vercel.json

@@ -69,7 +69,7 @@ export default function Wishlist() {
         return (
             <div className="empty-wishlist">
                 <p>Tu lista de deseos está vacía.</p>
-                <a href="/#tienda" className="btn-shop">Ir a la tienda</a>
+                <a href="/tienda" className="btn" style={{ marginTop: '2rem' }}>Ir a la tienda</a>
             </div>
         );
     }

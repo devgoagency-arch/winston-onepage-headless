@@ -1,0 +1,30 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import CartView from "../components/CartView";
+
+// SEO Metadata para el carrito
+const seoData = {
+    title: "Carrito de Compras | Winston & Harry",
+    description: "Revisa los productos en tu carrito de compras antes de finalizar tu pedido en Winston & Harry.",
+    opengraph_title: "Carrito de Compras | Winston & Harry",
+    opengraph_type: "website"
+};
+---
+
+<Layout seoData={seoData}>
+    <Header />
+    
+    <main>
+        <CartView client:load />
+    </main>
+
+    <Footer />
+</Layout>
+
+<style is:global>
+    main {
+        min-height: 80vh;
+    }
+</style>

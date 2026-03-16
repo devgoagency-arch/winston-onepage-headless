@@ -5,22 +5,58 @@ import CookieBanner from "../components/CookieBanner.astro";
 import { PUBLIC_WP_URL } from "../lib/woocommerce";
 
 interface Props {
-    title: string;
+    title?: string;
+    description?: string;
+    image?: string;
+    canonical?: string;
+    seoData?: any;
 }
 
-const { title } = Astro.props;
+const { 
+    title, 
+    description, 
+    image, 
+    canonical: customCanonical,
+    seoData 
+} = Astro.props;
+
+import { sanitizeSEO } from "../lib/seo";
+// IMPORTANTE: Cambia esta URL por tu dominio real de producción cuando lo tengas
+const SITE_URL = "https://winston-onepage-headless.vercel.app";
+const currentPath = Astro.url.pathname;
+
+const rawSeo = seoData 
+    ? sanitizeSEO(seoData, currentPath, SITE_URL)
+    : {
+        title: title || "Winston & Harry - Calzado Artesanal de Lujo",
+        description: description || "Winston & Harry - Calzado Artesanal de Lujo. Compra online ropa, maletas, zapatos de cuero colombianos para hombre.",
+        canonical: customCanonical || `${SITE_URL}${currentPath === '/' ? '' : currentPath}`,
+        ogTitle: title || "Winston & Harry - Calzado Artesanal de Lujo",
+        ogDescription: description || "Winston & Harry - Calzado Artesanal de Lujo. Compra online ropa, maletas, zapatos de cuero colombianos para hombre.",
+        ogImage: image || `${SITE_URL}/images/hero-poster.webp`,
+        ogType: 'website'
+    };
+
+// Asegurar que seo nunca sea null para TS
+const seo = rawSeo || {
+    title: "Winston & Harry",
+    description: "Calzado Artesanal",
+    canonical: SITE_URL,
+    ogTitle: "Winston & Harry",
+    ogDescription: "Calzado Artesanal",
+    ogImage: `${SITE_URL}/favicon.png`,
+    ogType: 'website'
+};
 ---
 
 <!doctype html>
 <html lang="es">
     <head>
-        <meta charset="UTF-8" />
-        <meta
-            name="description"
-            content="Winston & Harry - Calzado Artesanal de Lujo"
-        />
+        <meta name="description" content={seo.description} />
         <meta name="viewport" content="width=device-width" />
         <link rel="icon" type="image/png" href="/favicon.png" />
+        <link rel="canonical" href={seo.canonical} />
+        
         <link rel="preconnect" href="https://use.typekit.net" crossorigin />
         <link
             rel="dns-prefetch"
@@ -36,38 +72,38 @@ const { title } = Astro.props;
         />
 
         <meta name="generator" content={Astro.generator} />
-        <title>{title}</title>
+        <title>{seo.title}</title>
 
         <!-- Open Graph / Facebook -->
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content={seo.ogType} />
         <meta
             property="og:url"
-            content="https://winston-onepage-headless.vercel.app/"
+            content={seo.canonical}
         />
-        <meta property="og:title" content={title} />
+        <meta property="og:title" content={seo.ogTitle || seo.title} />
         <meta
             property="og:description"
-            content="Winston & Harry - Calzado Artesanal de Lujo. Compra online ropa, maletas, zapatos de cuero colombianos para hombre."
+            content={seo.ogDescription || seo.description}
         />
         <meta
             property="og:image"
-            content="https://winston-onepage-headless.vercel.app/images/hero-poster.webp"
+            content={seo.ogImage}
         />
 
         <!-- Twitter -->
         <meta property="twitter:card" content="summary_large_image" />
         <meta
             property="twitter:url"
-            content="https://winston-onepage-headless.vercel.app/"
+            content={seo.canonical}
         />
-        <meta property="twitter:title" content={title} />
+        <meta property="twitter:title" content={seo.ogTitle || seo.title} />
         <meta
             property="twitter:description"
-            content="Winston & Harry - Calzado Artesanal de Lujo. Compra online ropa, maletas, zapatos de cuero colombianos para hombre."
+            content={seo.ogDescription || seo.description}
         />
         <meta
             property="twitter:image"
-            content="https://winston-onepage-headless.vercel.app/images/hero-poster.webp"
+            content={seo.ogImage}
         />
     </head>
     <body>
