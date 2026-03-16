@@ -1,5 +1,5 @@
 import type { APIRoute } from 'astro';
-import { wcFetch } from '../../../lib/woocommerce';
+import { wcFetch } from '../../lib/woocommerce';
 
 export const POST: APIRoute = async ({ request }) => {
     try {
