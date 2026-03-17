@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import SideCart from "../components/SideCart";
+import SearchDrawer from "../components/SearchDrawer";
 import CookieBanner from "../components/CookieBanner.astro";
 import { PUBLIC_WP_URL } from "../lib/woocommerce";
 
@@ -109,6 +110,7 @@ const seo = rawSeo || {
     </head>
     <body>
         <SideCart client:load />
+        <SearchDrawer client:load />
         <slot />
         <CookieBanner />
     </body>

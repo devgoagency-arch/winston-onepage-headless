@@ -1,13 +1,27 @@
 import type { APIRoute } from 'astro';
-import { getProductBySlug, getProductsByCategory, getAllProducts } from '../../lib/woocommerce';
+import { getProductBySlug, getProductsByCategory, getAllProducts, searchProducts } from '../../lib/woocommerce';
 
 export const GET: APIRoute = async ({ url }) => {
     const pageStr = url.searchParams.get('p') || url.searchParams.get('page') || '1';
     const page = parseInt(pageStr);
     const slug = url.searchParams.get('slug');
+    const search = url.searchParams.get('search');
 
     try {
-        console.log(`[API Products] Request: category=${url.searchParams.get('category')}, slug=${url.searchParams.get('slug')}`);
+        console.log(`[API Products] Request: category=${url.searchParams.get('category')}, slug=${url.searchParams.get('slug')}, search=${search}`);
+        
+        // 0. BÚSQUEDA
+        if (search) {
+            const results = await searchProducts(search, parseInt(url.searchParams.get('per_page') || '20'));
+            return new Response(JSON.stringify(results), {
+                status: 200,
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin': '*',
+                    'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=300'
+                }
+            });
+        }
         // 1. DETALLE DEL PRODUCTO INDIVIDUAL
         if (slug) {
             let product = await getProductBySlug(slug);

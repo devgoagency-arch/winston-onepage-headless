@@ -17,6 +17,7 @@ export interface CartItem {
 
 export const cartItems = persistentMap<Record<string, string>>('wh_cart_v2', {});
 export const isCartOpen = atom(false);
+export const isSearchOpen = atom(false);
 
 // Función de normalización para comparar slugs/nombres de forma robusta
 function normalizeAttr(str: any): string {

@@ -697,6 +697,64 @@ export async function getAllProducts(
     }
 }
 
+export async function searchProducts(query: string, perPage = 20) {
+    if (!query || query.length < 2) return [];
+
+    // Normalizado de términos comunes y typos
+    const normalizeQuery = (q: string) => {
+        const lower = q.toLowerCase().trim();
+        // Diccionario de "Deseo decir" (Fuzzy simple)
+        const commonTypos: Record<string, string> = {
+            'roap': 'ropa', 'rospa': 'ropa', 'ropps': 'ropa',
+            'zapato': 'zapatos', 'sapato': 'zapatos', 'zapatoz': 'zapatos',
+            'mcltas': 'maletas', 'maleta': 'maletas',
+            'cinturon': 'cinturones', 'sinturon': 'cinturones',
+            'moka': 'mocasines', 'moccasin': 'mocasines',
+            'oxford': 'oxford', 'oxfor': 'oxford',
+            'bota': 'botas', 'vota': 'botas'
+        };
+        return commonTypos[lower] || lower;
+    };
+
+    const term = normalizeQuery(query);
+
+    try {
+        // 1. Intento de búsqueda por texto (Título/Descripción)
+        let results: any[] = [];
+        const storeUrl = `${PUBLIC_WP_URL}/wp-json/wc/store/v1/products?search=${encodeURIComponent(term)}&per_page=${perPage}`;
+        const storeRes = await fetch(storeUrl);
+        
+        if (storeRes.ok) {
+            const data = await storeRes.json();
+            results = Array.isArray(data) ? data.map(p => mapV3ToStore(p)).filter(p => p !== null) : [];
+        } else {
+            const data = await wcFetch(`/products?search=${encodeURIComponent(term)}&per_page=${perPage}&status=publish`);
+            results = Array.isArray(data) ? data.map(p => mapV3ToStore(p)) : [];
+        }
+
+        // 2. Inteligencia extra: Si no hay resultados o buscamos un "término categoría"
+        // Intentamos ver si el término coincide con una categoría de producto
+        if (results.length === 0 || ['ropa', 'zapatos', 'calzado', 'maletas', 'cinturones', 'botas'].includes(term)) {
+            const categories = await wcFetch(`/products/categories?search=${encodeURIComponent(term)}&per_page=5`);
+            if (Array.isArray(categories) && categories.length > 0) {
+                // Si encontramos una categoría exacta, traemos sus productos
+                const bestCat = categories.find(c => c.slug.includes(term) || term.includes(c.slug)) || categories[0];
+                const catProducts = await getProductsByCategory(bestCat.id, perPage);
+                
+                // Combinamos respetando duplicados
+                const catIds = new Set(results.map(r => r.id));
+                const uniqueCatProducts = catProducts.filter(p => !catIds.has(p.id));
+                results = [...results, ...uniqueCatProducts].slice(0, perPage);
+            }
+        }
+
+        return results;
+    } catch (error) {
+        console.error("[searchProducts] Error:", error);
+        return [];
+    }
+}
+
 export async function getProductsByCategory(
     categoryIdOrSlug: string | number,
     perPage = 100,
