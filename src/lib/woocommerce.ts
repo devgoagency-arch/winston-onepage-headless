@@ -243,17 +243,45 @@ function mapV3ToStore(p: any) {
 
         // Deep mapping for variations if they exist in Store API
         if (p.variations && Array.isArray(p.variations)) {
-            p.variations = p.variations.map((v: any) => ({
-                ...v,
-                stock_status: v.is_in_stock !== undefined 
-                    ? (v.is_in_stock ? 'instock' : 'outofstock') 
-                    : (v.stock_status || 'instock'),
-                attributes: (v.attributes || []).map((a: any) => ({
-                    ...a,
-                    option: a.value || a.option || '',
-                    value: a.value || a.option || ''
-                }))
-            }));
+            p.variations = p.variations.map((v: any) => {
+                const vPrices = v.prices || {};
+                return {
+                    ...v,
+                    stock_status: v.is_in_stock !== undefined 
+                        ? (v.is_in_stock ? 'instock' : 'outofstock') 
+                        : (v.stock_status || 'instock'),
+                    // Normalize variation prices
+                    price: (vPrices.price && normalizePriceStr(vPrices.price) !== "0") ? normalizePriceStr(vPrices.price) : p.prices.price,
+                    regular_price: (vPrices.regular_price && normalizePriceStr(vPrices.regular_price) !== "0") ? normalizePriceStr(vPrices.regular_price) : (vPrices.price ? normalizePriceStr(vPrices.price) : p.prices.regular_price),
+                    sale_price: vPrices.sale_price ? normalizePriceStr(vPrices.sale_price) : "",
+                    attributes: (v.attributes || []).map((a: any) => ({
+                        ...a,
+                        option: a.value || a.option || '',
+                        value: a.value || a.option || ''
+                    }))
+                };
+            });
+
+            // Construir variation_images_map para Store API
+            const imgMap: Record<string, any[]> = {};
+            p.variations.forEach((v: any) => {
+                const colorAttr = v.attributes?.find((a: any) => 
+                     (a.name || "").toLowerCase().includes('color') || 
+                     (a.id || "").toString().includes('color') ||
+                     a.name === 'Pa_selecciona-el-color'
+                );
+                if (colorAttr && (colorAttr.value || colorAttr.option) && v.image?.src) {
+                     const colorKey = String(colorAttr.value || colorAttr.option).toLowerCase().trim();
+                     if (!imgMap[colorKey]) imgMap[colorKey] = [];
+                     
+                     if (!imgMap[colorKey].some(img => img.src === v.image.src)) {
+                         imgMap[colorKey].push({ src: v.image.src, alt: v.image.alt || '' });
+                     }
+                }
+            });
+            if (Object.keys(imgMap).length > 0) {
+                p.variation_images_map = imgMap;
+            }
         }
 
         return p;
@@ -324,19 +352,50 @@ function mapV3ToStore(p: any) {
         featured: p.featured || false,
         upsell_ids: p.upsell_ids || [],
         cross_sell_ids: p.cross_sell_ids || [],
-        variations: p.variations_data?.map((v: any) => ({
-            ...v,
-            stock_status: v.stock_status || 'instock',
-            // Normalizamos los atributos para que siempre tengan 'option' Y 'value'
-            // WC v3 usa 'option', Store API usa 'value'. Esto permite búsqueda flexible.
-            attributes: (v.attributes || []).map((a: any) => ({
-                ...a,
-                // Aseguramos que ambos campos estén disponibles
-                option: a.option || a.value || '',
-                value: a.value || a.option || '',
-            }))
-        })) || null,
-        variation_images_map: p.variation_images_map || null,
+        variations: p.variations_data?.map((v: any) => {
+            const vRawPrice = parseFloat(v.price || v.regular_price || "0");
+            const vIncPrice = hasTax ? Math.round(vRawPrice * 1.19) : Math.round(vRawPrice);
+            const vRegRaw = parseFloat(v.regular_price || v.price || "0");
+            const vIncRegPrice = hasTax ? Math.round(vRegRaw * 1.19) : Math.round(vRegRaw);
+
+            return {
+                ...v,
+                price: vIncPrice > 0 ? vIncPrice.toString() : (inclusivePrice || "0").toString(),
+                regular_price: vIncRegPrice > 0 ? vIncRegPrice.toString() : (p.regular_price || vIncPrice || "0").toString(),
+                stock_status: v.stock_status || 'instock',
+                attributes: (v.attributes || []).map((a: any) => ({
+                    ...a,
+                    option: a.option || a.value || '',
+                    value: a.value || a.option || '',
+                }))
+            };
+        }) || null,
+        variation_images_map: (() => {
+            if (p.variation_images_map) return p.variation_images_map;
+            const imgMap: Record<string, any[]> = {};
+            if (p.variations_data && Array.isArray(p.variations_data)) {
+                p.variations_data.forEach((v: any) => {
+                    const colorAttr = v.attributes?.find((a: any) => 
+                        (a.name || "").toLowerCase().includes('color') || 
+                        (a.id || "").toString().includes('color') ||
+                        a.name === 'Pa_selecciona-el-color'
+                    );
+                    if (colorAttr && (colorAttr.option || colorAttr.value) && v.image?.src) {
+                        const colorKey = String(colorAttr.option || colorAttr.value).toLowerCase().trim();
+                        if (!imgMap[colorKey]) imgMap[colorKey] = [];
+                        if (!imgMap[colorKey].some((img: any) => img.src === v.image.src)) {
+                            imgMap[colorKey].push({ 
+                                id: v.image.id || 0,
+                                src: v.image.src, 
+                                alt: v.image.alt || v.image.name || '',
+                                name: v.image.name || ''
+                            });
+                        }
+                    }
+                });
+            }
+            return Object.keys(imgMap).length > 0 ? imgMap : null;
+        })(),
         stock_status: p.stock_status || 'instock',
         manage_stock: p.manage_stock || false,
         stock_quantity: p.stock_quantity || null
@@ -450,6 +509,40 @@ export async function getChildCategories(parentId: number) {
 }
 
 /**
+ * Fetch hierarchical categories (parents and their direct children)
+ */
+export async function getCategoryTree() {
+    const cacheKey = "wc_category_tree";
+    const cached = getStaticCached(cacheKey);
+    if (cached) return cached;
+
+    try {
+        const categories = await wcFetch("/products/categories?per_page=100&hide_empty=true");
+        if (!Array.isArray(categories)) return [];
+
+        const roots = categories.filter((c: any) => c.parent === 0);
+        const tree = roots.map((root: any) => ({
+            id: root.id,
+            name: root.name,
+            slug: root.slug,
+            children: categories
+                .filter((c: any) => c.parent === root.id)
+                .map((child: any) => ({
+                    id: child.id,
+                    name: child.name,
+                    slug: child.slug
+                }))
+        }));
+
+        setStaticCached(cacheKey, tree);
+        return tree;
+    } catch (error) {
+        console.error("Error fetching category tree:", error);
+        return [];
+    }
+}
+
+/**
  * Fetch Product by Slug with all its variations in one go!
  */
 /**
@@ -489,8 +582,31 @@ export async function getProductBySlug(slug: string) {
                 const storeRes = await fetch(`${PUBLIC_WP_URL}/wp-json/wc/store/v1/products/${productId}`);
                 if (storeRes.ok) {
                     const storeProduct = await storeRes.json();
+                    
+                    if (storeProduct.type === 'variable' && productId) {
+                        const variations = await getProductVariations(productId);
+                        storeProduct.variations_data = variations;
+                        
+                        if (variations.length > 0) {
+                            const imgMap: Record<string, any[]> = {};
+                            variations.forEach((v: any) => {
+                                const colorAttr = v.attributes?.find((a: any) =>
+                                    (a.name || "").toLowerCase().includes('color') || 
+                                    (a.slug || "").toLowerCase().includes('color') ||
+                                    a.name === 'Pa_selecciona-el-color'
+                                );
+                                if (colorAttr?.option && v.image?.src) {
+                                    const colorKey = colorAttr.option.toLowerCase().trim();
+                                    if (!imgMap[colorKey]) imgMap[colorKey] = [];
+                                    imgMap[colorKey].push({ src: v.image.src, alt: v.image.alt || '' });
+                                }
+                            });
+                            storeProduct.variation_images_map = imgMap;
+                        }
+                    }
+
                     const result = mapV3ToStore(storeProduct);
-                            return result;
+                    return result;
                 }
             } catch (e) {
                 console.warn(`[WC API] Store API fetch failed for ID ${productId}, falling back to v3.`);

@@ -58,11 +58,15 @@ export default function ProductCard({ product, isSelected, onSelectionToggle, on
 
     // Update state when initial props change
     useEffect(() => {
-        if (initialColor && !selectedColor) setSelectedColor(initialColor);
+        if (initialColor && initialColor !== selectedColor) {
+            setSelectedColor(initialColor);
+        }
     }, [initialColor]);
 
     useEffect(() => {
-        if (initialSize && !selectedSize) setSelectedSize(initialSize);
+        if (initialSize && initialSize !== selectedSize) {
+            setSelectedSize(initialSize);
+        }
     }, [initialSize]);
 
     // Estado para datos enriquecidos (variaciones) cargados bajo demanda
@@ -124,7 +128,8 @@ export default function ProductCard({ product, isSelected, onSelectionToggle, on
             .trim()
             .normalize("NFD")
             .replace(/[\u0300-\u036f]/g, "") // Quitar acentos
-            .replace(/[^a-z0-9]/g, '');      // Quitar todo lo que no sea alfanumérico
+            .replace(/\s+/g, '')             // Quitar espacios
+            .replace(/[^a-z0-9]/g, '');      // Quitar todo lo no alfanumérico
     };
 
     // Calcular el ID de la variación actual basándose en los datos enriquecidos o los originales
@@ -155,11 +160,14 @@ export default function ProductCard({ product, isSelected, onSelectionToggle, on
                        name.includes('selecciona-una-talla');
             });
 
-            const colorValue = normalizeAttr(vColor?.value || vColor?.option || '');
-            const sizeValue = normalizeAttr(vSize?.value || vSize?.option || '');
+            const vColorRaw = vColor?.value || vColor?.option || '';
+            const vSizeRaw = vSize?.value || vSize?.option || '';
 
-            const matchesColor = !selectedColor || !colorValue || colorValue === targetColor;
-            const matchesSize = !selectedSize || !sizeValue || sizeValue === targetSize;
+            const colorValue = normalizeAttr(vColorRaw);
+            const sizeValue = normalizeAttr(vSizeRaw);
+
+            const matchesColor = !selectedColor || colorValue === targetColor || vColorRaw === '';
+            const matchesSize = !selectedSize || sizeValue === targetSize || vSizeRaw === '';
 
             return matchesColor && matchesSize;
         });
@@ -201,27 +209,23 @@ export default function ProductCard({ product, isSelected, onSelectionToggle, on
 
     const colorSynonyms = useMemo(() => {
         if (!activeColor) return [];
-        const colorLower = activeColor.toLowerCase().trim();
+        const colorLower = normalizeAttr(activeColor);
         const synonyms: Record<string, string[]> = {
-            'negro': ['black'],
-            'blanco': ['white'],
-            'azul': ['blue', 'navy'],
+            'negro': ['black', 'dark'],
+            'blanco': ['white', 'light'],
+            'azul': ['blue', 'navy', 'celeste', 'ocean'],
             'rojo': ['red'],
-            'cafe': ['brown', 'marron', 'marrón', 'coffee', 'miel', 'tan', 'camel', 'tabaco', 'tabac', 'cognac'],
-            'miel': ['tan', 'honey', 'camel', 'cafe', 'brown', 'marron', 'cognac'],
-            'verde': ['green'],
-            'gris': ['grey', 'gray'],
-            'vino': ['vinotinto', 'burgundy', 'wine', 'rojo'],
-            'vinotinto': ['vino', 'burgundy', 'wine', 'rojo'],
-            'beige': ['arena', 'sand', 'cream', 'crema'],
+            'cafe': ['brown', 'marron', 'marrón', 'coffee', 'tan', 'camel', 'tabaco', 'tabac', 'cognac', 'chocolate'],
+            'miel': ['tan', 'honey', 'camel', 'arena', 'sand'],
+            'verde': ['green', 'oliva', 'olive'],
+            'gris': ['grey', 'gray', 'plata', 'silver'],
+            'vino': ['vinotinto', 'burgundy', 'wine', 'rojo', 'granate'],
+            'vinotinto': ['vino', 'burgundy', 'wine', 'rojo', 'granate'],
+            'beige': ['arena', 'sand', 'cream', 'crema', 'hueso'],
             'camel': ['tan', 'miel', 'cafe', 'brown', 'cognac'],
             'piel': ['cuero', 'leather', 'tan']
         };
-        const words = colorLower.split(/[\s-]+/);
-        const results = new Set([colorLower, ...words]);
-        words.forEach(w => {
-            if (synonyms[w]) synonyms[w].forEach(s => results.add(s));
-        });
+        const results = new Set([colorLower]);
         if (synonyms[colorLower]) synonyms[colorLower].forEach(s => results.add(s));
         return Array.from(results).filter(s => s.length > 2);
     }, [activeColor]);
@@ -238,38 +242,62 @@ export default function ProductCard({ product, isSelected, onSelectionToggle, on
         // --- 1. Obtener imágenes de la Variación (API) ---
         let varImages: any[] = [];
         if (currentProduct.variation_images_map) {
-            const matchedKey = Object.keys(currentProduct.variation_images_map).find(
-                key => {
-                    const k = key.toLowerCase().trim();
-                    return k === colorSlug ||
-                        k.includes(colorSlug) ||
-                        colorSlug.includes(k) ||
-                        (colorSlug === 'vinotinto' && k === 'vino') ||
-                        (colorSlug === 'vino' && k === 'vinotinto');
-                }
-            );
+            const colorSlugNormalized = normalizeAttr(active);
+            // Primero match exacto
+            let matchedKey = Object.keys(currentProduct.variation_images_map).find(key => normalizeAttr(key) === colorSlugNormalized);
+            
+            // Fallback match parcial si no hay exacto
+            if (!matchedKey) {
+                matchedKey = Object.keys(currentProduct.variation_images_map).find(
+                    key => {
+                        const k = normalizeAttr(key);
+                        return (colorSlugNormalized === 'vinotinto' && k === 'vino') ||
+                               (colorSlugNormalized === 'vino' && k === 'vinotinto') ||
+                               (colorSlugNormalized.length > 3 && k.includes(colorSlugNormalized));
+                    }
+                );
+            }
+
             if (matchedKey && currentProduct.variation_images_map[matchedKey]) {
                 varImages = currentProduct.variation_images_map[matchedKey];
             }
         }
 
-        // --- 2. Obtener imágenes de la Galería (Filtrado Robusto) ---
-        const patterns = [
-            `-${colorSlug}`, `_${colorSlug}`, ` ${colorSlug}`,
-            `-${colorName}`, `_${colorName}`, ` ${colorName}`,
-            ...colorSynonyms.flatMap(s => [`-${s}`, `_${s}`, ` ${s}`])
-        ];
+        const isMatch = (text: string, target: string) => {
+            if (!target || target.length < 3) return false;
+            const escaped = target.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            const regex = new RegExp(`(^|[-_\\s/])${escaped}([-_\\s.]|$)`, 'i');
+            return regex.test(text);
+        };
+
+        const allColorTerms = colorAttribute?.terms.map(t => ({
+            slug: t.slug,
+            name: t.name
+        })) || [];
 
         const galleryMatches = currentProduct.images.filter((img: { src: string; alt: string; name?: string }) => {
             const src = (img.src || "").toLowerCase();
             const alt = (img.alt || "").toLowerCase();
             const name = (img.name || "").toLowerCase();
+            
+            const selectedMatches = isMatch(src, colorSlug) || isMatch(alt, colorSlug) || 
+                                    (colorName && (isMatch(src, colorName) || isMatch(alt, colorName))) ||
+                                    colorSynonyms.some(s => isMatch(src, s) || isMatch(alt, s));
 
-            const hasPattern = patterns.some(p => src.includes(p) || alt.includes(p) || name.includes(p));
-            const isSuffix = new RegExp(`[-_ ](${colorSlug}|${colorName})\\.(jpg|jpeg|png|webp)$`, 'i').test(src);
-            const isFuzzy = colorSynonyms.some(s => src.includes(s) || alt.includes(s));
+            if (!selectedMatches) return false;
 
-            return hasPattern || isSuffix || isFuzzy;
+            const hasBetterMatch = allColorTerms.some(term => {
+                if (term.slug === active) return false;
+                const termMatches = isMatch(src, term.slug) || isMatch(alt, term.slug) || 
+                                   (term.name && (isMatch(src, term.name) || isMatch(alt, term.name)));
+                
+                if (termMatches) {
+                    return term.slug.length > colorSlug.length || (term.name && term.name.length > colorName.length);
+                }
+                return false;
+            });
+
+            return !hasBetterMatch;
         });
 
         // Combinar y de-duplicar
@@ -286,19 +314,19 @@ export default function ProductCard({ product, isSelected, onSelectionToggle, on
             const baseSrc = baseImg.src;
 
             const getSynonyms = (c: string) => {
-                const s = String(c).toLowerCase().trim();
+                const s = normalizeAttr(c);
                 const dict: Record<string, string[]> = {
-                    'negro': ['black'],
-                    'blanco': ['white'],
-                    'azul': ['blue', 'navy'],
+                    'negro': ['black', 'dark'],
+                    'blanco': ['white', 'light'],
+                    'azul': ['blue', 'navy', 'celeste', 'ocean'],
                     'rojo': ['red'],
-                    'cafe': ['brown', 'marron', 'marrón', 'coffee', 'miel', 'tan', 'camel', 'tabaco', 'tabac', 'cognac'],
-                    'miel': ['tan', 'honey', 'camel', 'cafe', 'brown', 'marron', 'cognac'],
-                    'verde': ['green'],
-                    'gris': ['grey', 'gray'],
-                    'vino': ['vinotinto', 'burgundy', 'wine', 'rojo'],
-                    'vinotinto': ['vino', 'burgundy', 'wine', 'rojo'],
-                    'beige': ['arena', 'sand', 'cream', 'crema'],
+                    'cafe': ['brown', 'marron', 'marrón', 'coffee', 'tan', 'camel', 'tabaco', 'tabac', 'cognac', 'chocolate'],
+                    'miel': ['tan', 'honey', 'camel', 'arena', 'sand'],
+                    'verde': ['green', 'oliva', 'olive'],
+                    'gris': ['grey', 'gray', 'plata', 'silver'],
+                    'vino': ['vinotinto', 'burgundy', 'wine', 'rojo', 'granate'],
+                    'vinotinto': ['vino', 'burgundy', 'wine', 'rojo', 'granate'],
+                    'beige': ['arena', 'sand', 'cream', 'crema', 'hueso'],
                     'camel': ['tan', 'miel', 'cafe', 'brown', 'cognac'],
                     'piel': ['cuero', 'leather', 'tan']
                 };

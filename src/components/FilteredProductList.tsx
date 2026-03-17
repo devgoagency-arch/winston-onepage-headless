@@ -8,6 +8,7 @@ interface FilteredProductListProps {
     colorTerms: any[];
     tallaTerms: any[];
     initialSort: any;
+    navigationTree?: any[];
 }
 
 const SORT_OPTIONS = [
@@ -23,7 +24,8 @@ const FilteredProductList: React.FC<FilteredProductListProps> = ({
     subcategories = [],
     colorTerms: initialColorTerms = [],
     tallaTerms: initialTallaTerms = [],
-    initialSort
+    initialSort,
+    navigationTree = []
 }) => {
     const [allFetchedProducts, setAllFetchedProducts] = useState(Array.isArray(initialProducts) ? initialProducts : []);
     const [loading, setLoading] = useState(false);
@@ -389,9 +391,18 @@ const FilteredProductList: React.FC<FilteredProductListProps> = ({
                                 <polyline points="6 9 12 15 18 9"></polyline>
                             </svg>
                             <ul className="dropdown-list">
-                                {Array.isArray(subcategories) && subcategories.map((cat: any) => (
-                                    <li key={cat.slug}>
+                                {(navigationTree.length > 0 ? navigationTree : subcategories).map((cat: any) => (
+                                    <li key={cat.slug} className={cat.children?.length > 0 ? 'has-children' : ''}>
                                         <a href={`/categoria/${cat.slug}`}>{cat.name}</a>
+                                        {cat.children?.length > 0 && (
+                                            <ul className="sub-dropdown">
+                                                {cat.children.map((sub: any) => (
+                                                    <li key={sub.slug}>
+                                                        <a href={`/categoria/${sub.slug}`}>{sub.name}</a>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        )}
                                     </li>
                                 ))}
                             </ul>
@@ -642,8 +653,34 @@ const FilteredProductList: React.FC<FilteredProductListProps> = ({
                 .current-category { font-family: var(--font-paragraphs); font-size: 0.8rem; font-weight: 500; letter-spacing: 1px; color: #121212; }
                 .dropdown-icon { transition: transform 0.3s ease; }
                 .dropdown-list { position: absolute; top: 100%; left: 0; background: #fff; list-style: none; padding: 0.5rem 0 1rem; margin: 0; min-width: 200px; max-height: 400px; overflow-y: auto; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08); border: 1px solid #e8e8e8; border-top: none; opacity: 0; visibility: hidden; pointer-events: none; transition: all 0.2s; z-index: 100; }
-                .dropdown-list li a { display: block; padding: 0.5rem 1.5rem; color: #666; text-decoration: none; font-family: var(--font-paragraphs); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; transition: all 0.2s; }
+                .dropdown-list li { position: relative; }
+                .dropdown-list li a { display: flex; align-items: center; justify-content: space-between; padding: 0.6rem 1.5rem; color: #666; text-decoration: none; font-family: var(--font-paragraphs); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; transition: all 0.2s; }
                 .dropdown-list li a:hover { color: var(--color-green, #155338); background-color: #f9f9f9; }
+                
+                .has-children > a::after { content: '›'; font-size: 1.2rem; line-height: 1; margin-left: 10px; color: #ccc; transition: transform 0.2s; }
+                .has-children:hover > a::after { color: var(--color-green); transform: translateX(3px); }
+                
+                .has-children:hover > .sub-dropdown { opacity: 1; visibility: visible; pointer-events: auto; transform: translateX(0); }
+                .sub-dropdown { 
+                    position: absolute; 
+                    top: -1px; 
+                    left: 100%; 
+                    background: #fff; 
+                    list-style: none; 
+                    padding: 0.5rem 0; 
+                    margin: 0; 
+                    min-width: 200px; 
+                    box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.08); 
+                    border: 1px solid #e8e8e8; 
+                    opacity: 0; 
+                    visibility: hidden; 
+                    pointer-events: none; 
+                    transition: all 0.2s; 
+                    transform: translateX(10px);
+                    z-index: 101;
+                }
+                .sub-dropdown li a { padding: 0.5rem 1.5rem; font-size: 0.75rem; color: #777; text-transform: uppercase; letter-spacing: 1px; }
+                .sub-dropdown li a:hover { background-color: #f5f5f5; color: #000; }
 
                 .sort-dropdown { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; padding: 0.5rem 1rem; border: 1px solid #e0e0e0; cursor: pointer; position: relative; width: 240px; }
                 .sort-dropdown:hover .sort-list { opacity: 1; visibility: visible; pointer-events: auto; }

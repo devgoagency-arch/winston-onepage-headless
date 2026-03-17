@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo, useRef } from 'react';
+import { useState, useEffect, useMemo, useRef, useCallback } from 'react';
 import ProductCard from './ProductCard';
 import { addToCart } from '../store/cart';
 import { redirectToCheckout } from '../utils/checkout';
@@ -11,7 +11,8 @@ function normalizeAttr(str: any): string {
     .trim()
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "") // Quitar acentos
-    .replace(/[^a-z0-9]/g, '');      // Quitar todo lo que no sea alfanumérico
+    .replace(/\s+/g, '')             // Quitar espacios
+    .replace(/[^a-z0-9]/g, '');      // Quitar todo lo no alfanumérico
 }
 
 interface Product {
@@ -40,6 +41,7 @@ interface Product {
   attributes: {
     id: number;
     name: string;
+    slug?: string;
     terms: { id: number; name: string; slug: string }[];
   }[];
   categories: { id: number; name: string; slug: string }[];
@@ -121,11 +123,11 @@ export default function ProductDetail({ initialProduct }: Props) {
 
   const currentProduct = enrichedProduct || product;
 
-  const handleFbtVariationChange = (productId: number, color: string | null, size: string | null, variationId?: number | null) => {
+  const handleFbtVariationChange = useCallback((productId: number, color: string | null, size: string | null, variationId?: number | null) => {
     // Sincronizar con el estado principal si es el mismo producto
     if (productId === product.id) {
-      if (color && color !== selectedColor) setSelectedColor(color);
-      if (size && size !== selectedSize) setSelectedSize(size);
+      if (color) setSelectedColor(prev => (color !== prev) ? color : prev);
+      if (size) setSelectedSize(prev => (size !== prev) ? size : prev);
     }
 
     setFbtVariations(prev => {
@@ -137,7 +139,7 @@ export default function ProductDetail({ initialProduct }: Props) {
         [productId]: { color, size, variationId }
       };
     });
-  };
+  }, [product.id]);
 
   useEffect(() => {
     if (product.fbt_products) {
@@ -147,54 +149,56 @@ export default function ProductDetail({ initialProduct }: Props) {
     }
   }, [product.id, product.fbt_products]);
 
-  const toggleFbtSelection = (id: number) => {
+  const toggleFbtSelection = useCallback((id: number) => {
     setSelectedFbtIds(prev =>
       prev.includes(id) ? prev.filter(i => i !== id) : [...prev, id]
     );
-  };
+  }, []);
 
-  const sizeAttribute = product.attributes?.find(attr =>
-    attr.name.toLowerCase().includes('talla') ||
-    attr.terms.some(t => !isNaN(Number(t.name)))
-  );
+  const sizeAttribute = useMemo(() => 
+    currentProduct.attributes?.find(attr =>
+      attr.name.toLowerCase().includes('talla') ||
+      attr.name.toLowerCase().includes('tamano') ||
+      attr.name.toLowerCase().includes('tamaño') ||
+      attr.name.toLowerCase().includes('size') ||
+      attr.name.toLowerCase().includes('selecciona-una-talla') ||
+      attr.terms.some(t => !isNaN(Number(t.name)))
+    ), [currentProduct]);
 
   // Ordenar las tallas numéricamente o por orden de ropa (XS, S, M, L, XL, XXL)
-  if (sizeAttribute) {
+  const sortedSizeTerms = useMemo(() => {
+    if (!sizeAttribute) return [];
+    
     const sizeOrder: Record<string, number> = {
       'xs': 1, 's': 2, 'm': 3, 'l': 4, 'xl': 5, 'xxl': 6, '2xl': 6, 'xxxl': 7, '3xl': 7
     };
 
-    sizeAttribute.terms.sort((a, b) => {
+    return [...sizeAttribute.terms].sort((a, b) => {
       const nameA = a.name.toLowerCase().trim();
       const nameB = b.name.toLowerCase().trim();
 
-      // Prioridad 1: Orden predefinido de ropa
-      if (sizeOrder[nameA] && sizeOrder[nameB]) {
-        return sizeOrder[nameA] - sizeOrder[nameB];
-      }
-
-      // Prioridad 2: Orden numérico (Zapatos)
+      if (sizeOrder[nameA] && sizeOrder[nameB]) return sizeOrder[nameA] - sizeOrder[nameB];
+      
       const valA = parseFloat(nameA.replace(',', '.'));
       const valB = parseFloat(nameB.replace(',', '.'));
 
-      if (!isNaN(valA) && !isNaN(valB)) {
-        return valA - valB;
-      }
-
-      // Prioridad 3: Alfabético (Fallback)
+      if (!isNaN(valA) && !isNaN(valB)) return valA - valB;
       return nameA.localeCompare(nameB);
     });
-  }
+  }, [sizeAttribute]);
 
   const hasSize = !!sizeAttribute;
 
-  const colorAttribute = product.attributes?.find(attr =>
-    attr.name.toLowerCase().includes('color')
-  );
+  const colorAttribute = useMemo(() => 
+    currentProduct.attributes?.find(attr =>
+      attr.name.toLowerCase().includes('color') || 
+      attr.name.toLowerCase().includes('selecciona-el-color') ||
+      attr.slug?.includes('color')
+    ), [currentProduct]);
 
   const currentSizeInfo = useMemo(() => {
     if (!selectedSize || !sizeAttribute) return null;
-    const sizeName = sizeAttribute.terms.find(t => t.slug === selectedSize)?.name;
+    const sizeName = sortedSizeTerms.find(t => t.slug === selectedSize)?.name;
     const found = SIZE_GUIDE_DATA.find(s => s[1] === sizeName);
     if (!found) return null;
     return {
@@ -235,31 +239,38 @@ export default function ProductDetail({ initialProduct }: Props) {
     if (tallaParam) setSelectedSize(tallaParam);
   }, []);
 
-  const colorSynonyms = useMemo(() => {
-    const colorLower = normalizeAttr(selectedColor);
-    const synonyms: Record<string, string[]> = {
-      'negro': ['black'],
-      'blanco': ['white'],
-      'azul': ['blue', 'navy'],
-      'rojo': ['red'],
-      'cafe': ['brown', 'marron', 'marrón', 'coffee', 'miel', 'tan', 'camel', 'tabaco', 'tabac', 'cognac'],
-      'miel': ['tan', 'honey', 'camel', 'cafe', 'brown', 'marron', 'cognac'],
-      'verde': ['green'],
-      'gris': ['grey', 'gray'],
-      'vino': ['vinotinto', 'burgundy', 'wine', 'rojo'],
-      'vinotinto': ['vino', 'burgundy', 'wine', 'rojo'],
-      'beige': ['arena', 'sand', 'cream', 'crema'],
-      'camel': ['tan', 'miel', 'cafe', 'brown', 'cognac'],
-      'piel': ['cuero', 'leather', 'tan']
-    };
-    const words = colorLower.split(/[0-9\s-]+/).filter(Boolean);
-    const results = new Set([colorLower, ...words]);
-    words.forEach(w => {
-        if (synonyms[w]) synonyms[w].forEach(s => results.add(s));
-    });
-    if (synonyms[colorLower]) synonyms[colorLower].forEach(s => results.add(s));
-    return Array.from(results).filter(s => s.length > 2);
-  }, [selectedColor]);
+    const colorSynonyms = useMemo(() => {
+        if (!selectedColor) return [];
+        const colorLower = normalizeAttr(selectedColor);
+        const synonyms: Record<string, string[]> = {
+            'negro': ['black', 'dark'],
+            'blanco': ['white', 'light'],
+            'azul': ['blue', 'navy', 'celeste', 'ocean'],
+            'rojo': ['red'],
+            'cafe': ['brown', 'marron', 'marrón', 'coffee', 'tan', 'camel', 'tabaco', 'tabac', 'cognac', 'chocolate'],
+            'miel': ['tan', 'honey', 'camel', 'arena', 'sand'],
+            'verde': ['green', 'oliva', 'olive'],
+            'gris': ['grey', 'gray', 'plata', 'silver'],
+            'vino': ['vinotinto', 'burgundy', 'wine', 'rojo', 'granate'],
+            'vinotinto': ['vino', 'burgundy', 'wine', 'rojo', 'granate'],
+            'beige': ['arena', 'sand', 'cream', 'crema', 'hueso'],
+            'camel': ['tan', 'miel', 'cafe', 'brown', 'cognac'],
+            'piel': ['cuero', 'leather', 'tan']
+        };
+        
+        // El set original incluye el slug completo
+        const results = new Set([colorLower]);
+        
+        // Intentar descomponer colores compuestos (ej: 'suede-tan' -> 'suede', 'tan')
+        const parts = selectedColor.split(/[-_\s]+/).map(p => normalizeAttr(p)).filter(p => p.length > 2);
+        parts.forEach(p => {
+            results.add(p);
+            if (synonyms[p]) synonyms[p].forEach(s => results.add(s));
+        });
+        
+        if (synonyms[colorLower]) synonyms[colorLower].forEach(s => results.add(s));
+        return Array.from(results).filter(s => s.length > 2);
+    }, [selectedColor]);
 
   const mainCategory = useMemo(() => {
     if (!product.categories || product.categories.length === 0) return null;
@@ -282,42 +293,65 @@ export default function ProductDetail({ initialProduct }: Props) {
 
     // --- 1. Obtener imágenes de la Variación (API) ---
     let varImages: any[] = [];
-    const colorSlugNormalized = normalizeAttr(selectedColor);
-    const variationMap = currentProduct.variation_images_map;
-
-    if (variationMap) {
-      const matchedKey = Object.keys(variationMap).find(
-        key => {
-          const k = normalizeAttr(key);
-          return k === colorSlugNormalized ||
-            k.includes(colorSlugNormalized) ||
-            colorSlugNormalized.includes(k) ||
-            (colorSlugNormalized === 'vinotinto' && k === 'vino') ||
-            (colorSlugNormalized === 'vino' && k === 'vinotinto');
+    if (currentProduct.variation_images_map) {
+        const colorSlugNormalized = normalizeAttr(selectedColor);
+        let matchedKey = Object.keys(currentProduct.variation_images_map).find(key => normalizeAttr(key) === colorSlugNormalized);
+        if (!matchedKey) {
+            matchedKey = Object.keys(currentProduct.variation_images_map).find(key => {
+                const k = normalizeAttr(key);
+                return (colorSlugNormalized === 'vinotinto' && k === 'vino') ||
+                       (colorSlugNormalized === 'vino' && k === 'vinotinto') ||
+                       (colorSlugNormalized.length > 3 && k.includes(colorSlugNormalized));
+            });
         }
-      );
-      if (matchedKey && variationMap[matchedKey]) {
-        varImages = variationMap[matchedKey];
-      }
+        if (matchedKey && currentProduct.variation_images_map[matchedKey]) {
+            varImages = currentProduct.variation_images_map[matchedKey];
+        }
     }
 
-    // --- 2. Obtener imágenes de la Galería (Filtrado Robusto) ---
-    const patterns = [
-        `-${colorSlug}`, `_${colorSlug}`, ` ${colorSlug}`,
-        `-${colorName}`, `_${colorName}`, ` ${colorName}`,
-        ...colorSynonyms.flatMap(s => [`-${s}`, `_${s}`, ` ${s}`])
-    ];
+    const allColorTerms = colorAttribute?.terms.map(t => ({
+        slug: t.slug,
+        name: t.name,
+        nSlug: normalizeAttr(t.slug),
+        nName: normalizeAttr(t.name)
+    })) || [];
 
     const galleryMatches = currentProduct.images.filter((img: { src: string; alt: string; name: string }) => {
       const src = (img.src || "").toLowerCase();
       const alt = (img.alt || "").toLowerCase();
       const name = (img.name || "").toLowerCase();
+      
+      const isMatch = (text: string, target: string) => {
+          if (!target || target.length < 3) return false;
+          const escaped = target.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+          const regex = new RegExp(`(^|[-_\\s/])${escaped}([-_\\s.]|$)`, 'i');
+          return regex.test(text);
+      };
 
-      const hasPattern = patterns.some(p => src.includes(p) || alt.includes(p) || name.includes(p));
-      const isSuffix = new RegExp(`[-_ ](${colorSlug}|${colorName})\\.(jpg|jpeg|png|webp)$`, 'i').test(src);
-      const isFuzzy = colorSynonyms.some(s => src.includes(s) || alt.includes(s));
+      // 1. Verificar si el término seleccionado hace match
+      const selectedMatches = isMatch(src, colorSlug) || isMatch(alt, colorSlug) || 
+                              (colorName && (isMatch(src, colorName) || isMatch(alt, colorName))) ||
+                              colorSynonyms.some(s => isMatch(src, s) || isMatch(alt, s));
 
-      return hasPattern || isSuffix || isFuzzy;
+      if (!selectedMatches) return false;
+
+      // 2. EXCLUSIÓN: Si el término seleccionado hace match, pero existe OTRO término del producto 
+      // que es más largo/específico y TAMBIÉN hace match, descartamos esta imagen por ser de otro color.
+      // Ejemplo: seleccionado 'cafe', pero la imagen es 'cafe-gamuza.jpg' y existe 'cafe-gamuza' como color.
+      const hasBetterMatch = allColorTerms.some(term => {
+          if (term.slug === selectedColor) return false;
+          // Solo comparamos con términos que "contengan" el seleccionado o sean claramente distintos
+          const termMatches = isMatch(src, term.slug) || isMatch(alt, term.slug) || 
+                             (term.name && (isMatch(src, term.name) || isMatch(alt, term.name)));
+          
+          if (termMatches) {
+              // Si el otro término es más largo, asumimos que es "más específico"
+              return term.slug.length > colorSlug.length || (term.name && term.name.length > colorName.length);
+          }
+          return false;
+      });
+
+      return !hasBetterMatch;
     });
 
     // Combinar y de-duplicar
@@ -336,21 +370,22 @@ export default function ProductDetail({ initialProduct }: Props) {
         const getSynonyms = (c: string) => {
             const s = normalizeAttr(c);
             const dict: Record<string, string[]> = {
-                'negro': ['black'],
-                'blanco': ['white'],
-                'azul': ['blue', 'navy'],
+                'negro': ['black', 'dark'],
+                'blanco': ['white', 'light'],
+                'azul': ['blue', 'navy', 'celeste', 'ocean'],
                 'rojo': ['red'],
-                'cafe': ['brown', 'marron', 'coffee', 'miel', 'tan', 'camel', 'tabaco', 'tabac', 'cognac'],
+                'cafe': ['brown', 'marron', 'marron', 'coffee', 'miel', 'tan', 'camel', 'tabaco', 'tabac', 'cognac', 'chocolate', 'marrn'],
                 'miel': ['tan', 'honey', 'camel', 'cafe', 'brown', 'marron', 'cognac'],
-                'verde': ['green'],
-                'gris': ['grey', 'gray'],
-                'vino': ['vinotinto', 'burgundy', 'wine', 'rojo'],
-                'vinotinto': ['vino', 'burgundy', 'wine', 'rojo'],
-                'beige': ['arena', 'sand', 'cream', 'crema'],
+                'verde': ['green', 'oliva', 'olive'],
+                'gris': ['grey', 'gray', 'plata', 'silver'],
+                'vino': ['vinotinto', 'burgundy', 'wine', 'rojo', 'granate'],
+                'vinotinto': ['vino', 'burgundy', 'wine', 'rojo', 'granate'],
+                'beige': ['arena', 'sand', 'cream', 'crema', 'hueso'],
                 'camel': ['tan', 'miel', 'cafe', 'brown', 'cognac'],
                 'piel': ['cuero', 'leather', 'tan']
             };
-            return [s, ...(dict[s] || [])].filter(x => x.length > 2);
+            const ns = normalizeAttr(c);
+            return [ns, ...(dict[ns] || [])].filter(x => x.length > 2);
         };
 
         // Detectar qué color tiene la imagen base
@@ -578,23 +613,36 @@ export default function ProductDetail({ initialProduct }: Props) {
     const targetSize = normalizeAttr(size);
 
     return variations.some(variation => {
-      const vColorAttr = variation.attributes.find(a =>
-        a.name.toLowerCase().includes('color') || a.name === 'Pa_selecciona-el-color' || a.id === 'pa_color'
-      );
-      const vSizeAttr = variation.attributes.find(a =>
-        a.name.toLowerCase().includes('talla') || a.name === 'Pa_selecciona-una-talla' || a.id === 'pa_talla'
-      );
+      const vColorAttr = variation.attributes.find(a => {
+        const n = (a.name || "").toLowerCase();
+        const sid = (a.id || "").toString().toLowerCase();
+        return n.includes('color') || n.includes('pa_color') || 
+               n.includes('selecciona-el-color') || sid.includes('color');
+      });
+      const vSizeAttr = variation.attributes.find(a => {
+        const n = (a.name || "").toLowerCase();
+        const sid = (a.id || "").toString().toLowerCase();
+        return n.includes('talla') || n.includes('size') || n.includes('tamano') || 
+               n.includes('tamaño') || n.includes('pa_talla') || 
+               n.includes('selecciona-una-talla') || sid.includes('talla') || sid.includes('size');
+      });
 
-      const vColor = normalizeAttr(vColorAttr?.value || vColorAttr?.option || '');
-      const vSize = normalizeAttr(vSizeAttr?.value || vSizeAttr?.option || '');
+      const vColorRaw = vColorAttr?.value || vColorAttr?.option || '';
+      const vSizeRaw = vSizeAttr?.value || vSizeAttr?.option || '';
+      
+      const vColor = normalizeAttr(vColorRaw);
+      const vSize = normalizeAttr(vSizeRaw);
 
-      const matchesColor = !color || vColor === targetColor;
-      const matchesSize = !size || vSize === targetSize;
+      // Si la variación tiene el atributo vacío, significa que aplica a "Cualquiera"
+      const matchesColor = !color || vColor === targetColor || vColorRaw === '';
+      const matchesSize = !size || vSize === targetSize || vSizeRaw === '';
 
       // Crucial: También verificar stock_status de la variación
-      const isInstock = variation.stock_status !== 'outofstock';
+      // Aceptamos 'instock' o si tiene cantidad positiva si manage_stock es true
+      const isVariationInStock = variation.stock_status === 'instock' || 
+                                (variation.manage_stock && variation.stock_quantity && variation.stock_quantity > 0);
 
-      return matchesColor && matchesSize && isInstock;
+      return matchesColor && matchesSize && isVariationInStock;
     });
   };
 
@@ -607,26 +655,44 @@ export default function ProductDetail({ initialProduct }: Props) {
     const targetSize = normalizeAttr(selectedSize);
 
     return variations.find((v: any) => {
-      const vColorAttr = v.attributes?.find((a: any) => 
-        a.name.toLowerCase().includes('color') || 
-        a.name.toLowerCase().includes('pa_selecciona-el-color') || 
-        a.id === 'pa_color'
-      );
-      const vSizeAttr = v.attributes?.find((a: any) => 
-        a.name.toLowerCase().includes('talla') || 
-        a.name.toLowerCase().includes('pa_selecciona-una-talla') || 
-        a.id === 'pa_talla'
-      );
+      const vColorAttr = v.attributes?.find((a: any) => {
+        const n = (a.name || "").toLowerCase();
+        const sid = (a.id || "").toString().toLowerCase();
+        return n.includes('color') || n.includes('pa_color') || 
+               n.includes('selecciona-el-color') || sid.includes('color');
+      });
+      const vSizeAttr = v.attributes?.find((a: any) => {
+        const n = (a.name || "").toLowerCase();
+        const sid = (a.id || "").toString().toLowerCase();
+        return n.includes('talla') || n.includes('size') || n.includes('tamano') || 
+               n.includes('tamaño') || n.includes('pa_talla') || 
+               n.includes('selecciona-una-talla') || sid.includes('talla') || sid.includes('size');
+      });
 
-      const vColorValue = normalizeAttr(vColorAttr?.value || vColorAttr?.option || '');
-      const vSizeValue = normalizeAttr(vSizeAttr?.value || vSizeAttr?.option || '');
+      const vColorRaw = vColorAttr?.value || vColorAttr?.option || vColorAttr?.text || '';
+      const vSizeRaw = vSizeAttr?.value || vSizeAttr?.option || vSizeAttr?.text || '';
 
-      const matchesColor = !selectedColor || vColorValue === targetColor;
-      const matchesSize = !selectedSize || vSizeValue === targetSize;
+      const vColor = normalizeAttr(vColorRaw);
+      const vSize = normalizeAttr(vSizeRaw);
+
+      // Match exacto o bitmask (Any)
+      const matchesColor = !selectedColor || vColor === targetColor || vColorRaw === '';
+      const matchesSize = !selectedSize || vSize === targetSize || vSizeRaw === '';
 
       return matchesColor && matchesSize;
     });
   }, [currentProduct.variations, selectedColor, selectedSize]);
+
+  useEffect(() => {
+    if (selectedVariation) {
+      console.log("[ProductDetail] Variation Selected:", {
+        id: selectedVariation.id,
+        price: selectedVariation.price,
+        reg: selectedVariation.regular_price,
+        attrs: selectedVariation.attributes
+      });
+    }
+  }, [selectedVariation]);
 
   const isOutOfStock = useMemo(() => {
     if (product.type === 'simple') {
@@ -642,12 +708,17 @@ export default function ProductDetail({ initialProduct }: Props) {
     return product.stock_status === 'outofstock';
   }, [product, selectedVariation, selectedColor, selectedSize, hasSize]);
 
-  const formatPrice = (price: string) => {
+  const formatPrice = (price: string | number | undefined) => {
+    if (price === undefined || price === null) return "$ 0";
+    const pStr = price.toString();
+    const pInt = parseInt(pStr.replace(/[^0-9]/g, ''));
+    if (isNaN(pInt)) return "$ 0";
+
     return new Intl.NumberFormat('es-CO', {
       style: 'currency',
       currency: product.prices.currency_code,
       minimumFractionDigits: 0
-    }).format(parseInt(price) / (10 ** product.prices.currency_minor_unit));
+    }).format(pInt / (10 ** product.prices.currency_minor_unit));
   };
 
   const isSelectionComplete = selectedColor && (!hasSize || selectedSize);
@@ -885,9 +956,13 @@ export default function ProductDetail({ initialProduct }: Props) {
                 {selectedVariation ? (
                    <div className="price-wrapper">
                      {Number(selectedVariation.regular_price || 0) > Number(selectedVariation.price || 0) && (
-                       <span className="old-price">{formatPrice(selectedVariation.regular_price || "0")}</span>
+                       <span className="old-price">{formatPrice(selectedVariation.regular_price)}</span>
                      )}
-                     <span className="sale-price highlight">{formatPrice(selectedVariation.price || "0")}</span>
+                     <span className="sale-price highlight">
+                        {selectedVariation.price && Number(selectedVariation.price) > 0 
+                          ? formatPrice(selectedVariation.price) 
+                          : formatPrice(product.prices.price)}
+                     </span>
                    </div>
                 ) : product.on_sale ? (
                   <div className="price-wrapper">
@@ -905,14 +980,14 @@ export default function ProductDetail({ initialProduct }: Props) {
 
               <div className="product-selectors">
                 {colorAttribute && (() => {
-                  const filteredTerms = colorAttribute.terms.filter(term => isCombinationAvailable(term.slug, null));
-                  if (filteredTerms.length === 0) return null;
+                  const terms = colorAttribute.terms;
+                  if (terms.length === 0) return null;
 
                   return (
                     <div className="selector-group">
-                    <label>Color: <strong>{colorAttribute.terms.find(t => normalizeAttr(t.slug) === normalizeAttr(selectedColor))?.name || ''}</strong></label>
+                    <label>Color: <strong>{colorAttribute.terms.find(t => normalizeAttr(t.slug) === normalizeAttr(selectedColor) || normalizeAttr(t.name) === normalizeAttr(selectedColor))?.name || ''}</strong></label>
                       <div className="color-options">
-                        {filteredTerms.map((term) => {
+                        {terms.map((term: any) => {
                           const isAvailable = isCombinationAvailable(term.slug, null);
                           const isSelected = selectedColor && normalizeAttr(selectedColor) === normalizeAttr(term.slug);
                           return (
@@ -934,7 +1009,7 @@ export default function ProductDetail({ initialProduct }: Props) {
                 {hasSize && (
                   <div className="selector-group">
                     <div className="label-row-between">
-                      <label>Talla: <strong>{sizeAttribute?.terms.find(t => normalizeAttr(t.slug) === normalizeAttr(selectedSize))?.name || ''}</strong></label>
+                      <label>Talla: <strong>{sizeAttribute?.terms.find(t => normalizeAttr(t.slug) === normalizeAttr(selectedSize) || normalizeAttr(t.name) === normalizeAttr(selectedSize))?.name || ''}</strong></label>
                       <button className="size-guide-dark" onClick={() => setShowSizeGuide(true)}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                           <path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z"></path>
@@ -947,7 +1022,7 @@ export default function ProductDetail({ initialProduct }: Props) {
                       </button>
                     </div>
                     <div className="size-options">
-                      {sizeAttribute.terms.map((term) => {
+                      {sortedSizeTerms.map((term) => {
                         const isAvailable = isCombinationAvailable(selectedColor, term.slug);
                         const isSelected = selectedSize && normalizeAttr(selectedSize) === normalizeAttr(term.slug);
                         return (
@@ -957,7 +1032,7 @@ export default function ProductDetail({ initialProduct }: Props) {
                             onClick={() => isAvailable && setSelectedSize(term.slug)}
                           >
                             {term.name}
-                            {!isAvailable && <span className="x-mark">✕</span>}
+                            {!isAvailable && <span className="x-mark" style={{ fontSize: '12px' }}>✕</span>}
                           </button>
                         );
                       })}
@@ -994,7 +1069,9 @@ export default function ProductDetail({ initialProduct }: Props) {
                     onClick={handleAddToCart}
                     disabled={isOutOfStock}
                   >
-                    {isOutOfStock ? 'Producto Agotado' : 'Añadir al Carrito'}
+                    {isOutOfStock ? 'Producto Agotado' : 
+                     (!selectedColor || (hasSize && !selectedSize)) ? 'Selecciona Opciones' : 
+                     'Añadir al Carrito'}
                   </button>
                   <button
                     className={`btn-action btn-outline-thick ${isOutOfStock ? 'disabled' : ''}`}
@@ -1006,7 +1083,9 @@ export default function ProductDetail({ initialProduct }: Props) {
                     }}
                     disabled={isOutOfStock}
                   >
-                    {isOutOfStock ? 'Sin Stock' : 'Comprar Ahora'}
+                    {isOutOfStock ? 'Sin Stock' : 
+                     (!selectedColor || (hasSize && !selectedSize)) ? 'Selecciona Opciones' : 
+                     'Comprar Ahora'}
                   </button>
                 </div>
               </div>
@@ -1443,8 +1522,21 @@ export default function ProductDetail({ initialProduct }: Props) {
         .label-row-between { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0rem; }
         .color-dot-btn { background: none; border: none; padding: 4px; cursor: pointer; border: 1px solid transparent; border-radius: 50%; transition: all 0.2s; position: relative; }
         .color-dot-btn.active { border-color: #000; }
-        .color-dot-btn.out-of-stock { opacity: 0.4; }
-        .color-dot { display: block; width: 24px; height: 24px; border-radius: 50%; border: 1px solid rgba(0,0,0,0.05); }
+        .color-dot-btn.out-of-stock { opacity: 0.6; }
+        .color-dot { display: block; width: 24px; height: 24px; border-radius: 50%; border: 1px solid rgba(0,0,0,0.1); }
+        .x-mark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #d62828;
+            font-size: 16px;
+            font-weight: bold;
+            pointer-events: none;
+            z-index: 2;
+            text-shadow: 0 0 3px #fff;
+            line-height: 1;
+        }
         .size-options { display: flex; flex-wrap: wrap; gap: 0.5rem; }
         .size-box-btn { min-width: 30px; height: 30px; border: 1px solid #eee; background: #fff; font-size: 0.85rem; cursor: pointer; transition: all 0.2s; border-radius: 2px; position: relative; color: #121212; }
         .size-box-btn.active { background: #000; color: #fff; border-color: #000; }
@@ -2029,5 +2121,8 @@ function getColorCode(slug: string): string {
     'marron': '#6F4E37',
     'marrón': '#6F4E37'
   };
-  return colors[slug.toLowerCase()] || colors[slug.toLowerCase().replace(/-/g, '')] || '#ddd';
+  return colors[slug.toLowerCase()] || 
+         colors[slug.toLowerCase().replace(/-/g, '')] || 
+         colors[normalizeAttr(slug)] || 
+         '#ddd';
 }
