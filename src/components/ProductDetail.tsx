@@ -3,6 +3,17 @@ import ProductCard from './ProductCard';
 import { addToCart } from '../store/cart';
 import { redirectToCheckout } from '../utils/checkout';
 
+// Función de normalización robusta para comparar slugs/nombres con acentos
+function normalizeAttr(str: any): string {
+  if (!str) return '';
+  const s = String(str);
+  return s.toLowerCase()
+    .trim()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "") // Quitar acentos
+    .replace(/[^a-z0-9]/g, '');      // Quitar todo lo que no sea alfanumérico
+}
+
 interface Product {
   id: number;
   name: string;
@@ -40,6 +51,9 @@ interface Product {
     stock_status?: string;
     manage_stock?: boolean;
     stock_quantity?: number | null;
+    price?: string;
+    regular_price?: string;
+    sale_price?: string;
   }[];
   variation_images_map?: Record<string, any[]>;
   related_products?: any[];
@@ -78,6 +92,34 @@ export default function ProductDetail({ initialProduct }: Props) {
   const [selectedFbtIds, setSelectedFbtIds] = useState<number[]>([]);
   const [fbtVariations, setFbtVariations] = useState<Record<number, { color: string | null, size: string | null, variationId?: number | null }>>({});
   const [failedSyntheticColors, setFailedSyntheticColors] = useState<string[]>([]);
+  const [enrichedProduct, setEnrichedProduct] = useState<Product | null>(null);
+  const [isFetchingVariations, setIsFetchingVariations] = useState(false);
+
+  // Re-hidratar el producto con datos frescos si es un producto variable
+  useEffect(() => {
+    if (product.type !== 'variable' || enrichedProduct || isFetchingVariations) return;
+
+    const fetchFullProduct = async () => {
+      setIsFetchingVariations(true);
+      try {
+        const res = await fetch(`/api/products?slug=${product.slug}&t=${Date.now()}`);
+        if (res.ok) {
+          const fullData = await res.json();
+          if (fullData && fullData.variations) {
+            setEnrichedProduct(fullData);
+          }
+        }
+      } catch (e) {
+        console.error("[ProductDetail] Error fetching enriched data:", e);
+      } finally {
+        setIsFetchingVariations(false);
+      }
+    };
+
+    fetchFullProduct();
+  }, [product.slug, product.type]);
+
+  const currentProduct = enrichedProduct || product;
 
   const handleFbtVariationChange = (productId: number, color: string | null, size: string | null, variationId?: number | null) => {
     // Sincronizar con el estado principal si es el mismo producto
@@ -194,8 +236,7 @@ export default function ProductDetail({ initialProduct }: Props) {
   }, []);
 
   const colorSynonyms = useMemo(() => {
-    if (!selectedColor) return [];
-    const colorLower = selectedColor.toLowerCase().trim();
+    const colorLower = normalizeAttr(selectedColor);
     const synonyms: Record<string, string[]> = {
       'negro': ['black'],
       'blanco': ['white'],
@@ -211,7 +252,7 @@ export default function ProductDetail({ initialProduct }: Props) {
       'camel': ['tan', 'miel', 'cafe', 'brown', 'cognac'],
       'piel': ['cuero', 'leather', 'tan']
     };
-    const words = colorLower.split(/[\s-]+/);
+    const words = colorLower.split(/[0-9\s-]+/).filter(Boolean);
     const results = new Set([colorLower, ...words]);
     words.forEach(w => {
         if (synonyms[w]) synonyms[w].forEach(s => results.add(s));
@@ -233,7 +274,7 @@ export default function ProductDetail({ initialProduct }: Props) {
   /* Restaurando lógica de filtrado de imágenes por color */
   const filteredImages = useMemo(() => {
     // Si NO hay color seleccionado, mostrar todo
-    if (!selectedColor) return product.images;
+    if (!selectedColor) return currentProduct.images;
 
     const colorSlug = selectedColor.toLowerCase().trim();
     const colorTerm = colorAttribute?.terms.find(t => t.slug === selectedColor);
@@ -241,19 +282,22 @@ export default function ProductDetail({ initialProduct }: Props) {
 
     // --- 1. Obtener imágenes de la Variación (API) ---
     let varImages: any[] = [];
-    if (product.variation_images_map) {
-      const matchedKey = Object.keys(product.variation_images_map).find(
+    const colorSlugNormalized = normalizeAttr(selectedColor);
+    const variationMap = currentProduct.variation_images_map;
+
+    if (variationMap) {
+      const matchedKey = Object.keys(variationMap).find(
         key => {
-          const k = key.toLowerCase().trim();
-          return k === colorSlug ||
-            k.includes(colorSlug) ||
-            colorSlug.includes(k) ||
-            (colorSlug === 'vinotinto' && k === 'vino') ||
-            (colorSlug === 'vino' && k === 'vinotinto');
+          const k = normalizeAttr(key);
+          return k === colorSlugNormalized ||
+            k.includes(colorSlugNormalized) ||
+            colorSlugNormalized.includes(k) ||
+            (colorSlugNormalized === 'vinotinto' && k === 'vino') ||
+            (colorSlugNormalized === 'vino' && k === 'vinotinto');
         }
       );
-      if (matchedKey && product.variation_images_map[matchedKey]) {
-        varImages = product.variation_images_map[matchedKey];
+      if (matchedKey && variationMap[matchedKey]) {
+        varImages = variationMap[matchedKey];
       }
     }
 
@@ -264,7 +308,7 @@ export default function ProductDetail({ initialProduct }: Props) {
         ...colorSynonyms.flatMap(s => [`-${s}`, `_${s}`, ` ${s}`])
     ];
 
-    const galleryMatches = product.images.filter((img: { src: string; alt: string; name: string }) => {
+    const galleryMatches = currentProduct.images.filter((img: { src: string; alt: string; name: string }) => {
       const src = (img.src || "").toLowerCase();
       const alt = (img.alt || "").toLowerCase();
       const name = (img.name || "").toLowerCase();
@@ -285,18 +329,18 @@ export default function ProductDetail({ initialProduct }: Props) {
     if (combined.length > 0) return combined;
 
     // --- 3. Fallback: Predicción Sintética (Mejorada) ---
-    if (product.images.length > 0 && colorAttribute && !failedSyntheticColors.includes(selectedColor)) {
-        const baseImg = product.images[0];
+    if (currentProduct.images.length > 0 && colorAttribute && !failedSyntheticColors.includes(selectedColor)) {
+        const baseImg = currentProduct.images[0];
         const baseSrc = baseImg.src;
 
         const getSynonyms = (c: string) => {
-            const s = String(c).toLowerCase().trim();
+            const s = normalizeAttr(c);
             const dict: Record<string, string[]> = {
                 'negro': ['black'],
                 'blanco': ['white'],
                 'azul': ['blue', 'navy'],
                 'rojo': ['red'],
-                'cafe': ['brown', 'marron', 'marrón', 'coffee', 'miel', 'tan', 'camel', 'tabaco', 'tabac', 'cognac'],
+                'cafe': ['brown', 'marron', 'coffee', 'miel', 'tan', 'camel', 'tabaco', 'tabac', 'cognac'],
                 'miel': ['tan', 'honey', 'camel', 'cafe', 'brown', 'marron', 'cognac'],
                 'verde': ['green'],
                 'gris': ['grey', 'gray'],
@@ -309,28 +353,22 @@ export default function ProductDetail({ initialProduct }: Props) {
             return [s, ...(dict[s] || [])].filter(x => x.length > 2);
         };
 
-        // Detectar qué color tiene la imagen base buscando en TODAS las fotos si es necesario
+        // Detectar qué color tiene la imagen base
         let colorInUrl = colorAttribute.terms.find((t: any) => {
             const targetSyns = getSynonyms(t.slug);
             const targetNames = getSynonyms(t.name);
-            const s = baseSrc.toLowerCase();
-            return targetSyns.some(syn => s.includes(`-${syn}`)) || 
-                   targetSyns.some(syn => s.includes(`_${syn}`)) || 
-                   targetSyns.some(syn => s.includes(syn)) || 
-                   targetNames.some(syn => s.includes(`-${syn}`)) || 
+            const s = normalizeAttr(baseSrc);
+            return targetSyns.some(syn => s.includes(syn)) || 
                    targetNames.some(syn => s.includes(syn));
         });
 
         if (!colorInUrl) {
-            for (const img of product.images) {
+            for (const img of currentProduct.images) {
                 const found = colorAttribute.terms.find((t: any) => {
                     const targetSyns = getSynonyms(t.slug);
                     const targetNames = getSynonyms(t.name);
-                    const s = img.src.toLowerCase();
-                    return targetSyns.some(syn => s.includes(`-${syn}`)) || 
-                           targetSyns.some(syn => s.includes(`_${syn}`)) || 
-                           targetSyns.some(syn => s.includes(syn)) || 
-                           targetNames.some(syn => s.includes(`-${syn}`)) || 
+                    const s = normalizeAttr(img.src);
+                    return targetSyns.some(syn => s.includes(syn)) || 
                            targetNames.some(syn => s.includes(syn));
                 });
                 if (found) {
@@ -341,11 +379,11 @@ export default function ProductDetail({ initialProduct }: Props) {
         }
 
         if (colorInUrl) {
-            if (colorInUrl.slug === selectedColor) {
-               return product.images.filter((img: { src: string }) => {
+            if (normalizeAttr(colorInUrl.slug) === normalizeAttr(selectedColor)) {
+               return currentProduct.images.filter((img: { src: string }) => {
                    const targetSyns = getSynonyms(colorInUrl!.slug);
-                   const s = img.src.toLowerCase();
-                   return targetSyns.some(syn => s.includes(syn)) || s.includes(colorInUrl!.name.toLowerCase());
+                   const s = normalizeAttr(img.src);
+                   return targetSyns.some(syn => s.includes(syn)) || s.includes(normalizeAttr(colorInUrl!.name));
                });
             }
 
@@ -373,27 +411,25 @@ export default function ProductDetail({ initialProduct }: Props) {
 
                 try {
                     const regex = new RegExp(matchedText, 'g');
-                    // Intentar predecir TODA la galería
-                    const syntheticGallery = product.images.map((img: { src: string; alt: string; id: number; name: string }) => {
+                    const syntheticGallery = currentProduct.images.map((img: { src: string; alt: string; id: number; name: string }) => {
                         const newSrc = img.src.replace(regex, replacement);
                         if (newSrc !== img.src) {
-                            return { ...img, id: -999 - img.id, isSynthetic: true, src: newSrc, alt: `${product.name} ${selectedColor}` };
+                            return { ...img, id: -999 - img.id, isSynthetic: true, src: newSrc, alt: `${currentProduct.name} ${selectedColor}` };
                         }
                         return null;
                     }).filter((img): img is { src: string; alt: string; id: number; name: string; isSynthetic: boolean } => img !== null);
 
                     if (syntheticGallery.length > 0) return syntheticGallery;
 
-                    // Fallback to single image if full gallery prediction fails
                     const newSrc = baseSrc.replace(regex, replacement);
-                    if (newSrc !== baseSrc) return [{ ...baseImg, id: -999, isSynthetic: true, src: newSrc, alt: `${product.name} ${selectedColor}` }];
-                } catch (e) { /* console.error("Synthetic image generation failed:", e); */ }
+                    if (newSrc !== baseSrc) return [{ ...baseImg, id: -999, isSynthetic: true, src: newSrc, alt: `${currentProduct.name} ${selectedColor}` }];
+                } catch (e) { }
             }
         }
     }
 
-    return [product.images[0]];
-  }, [selectedColor, product.images, colorAttribute, product.variation_images_map, failedSyntheticColors, product.name, colorSynonyms]);
+    return [currentProduct.images[0]];
+  }, [selectedColor, currentProduct.images, currentProduct.variation_images_map, colorAttribute, failedSyntheticColors, currentProduct.name, colorSynonyms]);
 
   /* State for Lightbox Gallery */
   const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -419,7 +455,7 @@ export default function ProductDetail({ initialProduct }: Props) {
 
   const galleryDOMImages = useMemo(() => {
     // Base images
-    const images = filteredImages.map(img => ({ src: img.src, alt: img.alt || product.name }));
+    const images = filteredImages.map(img => ({ src: img.src, alt: img.alt || currentProduct.name }));
 
     // Append Verified Guessed images IN ORDER
     GUESSED_PHOTO_RANGE.forEach(num => {
@@ -431,13 +467,18 @@ export default function ProductDetail({ initialProduct }: Props) {
       if (match) {
         const exists = images.some(img => img.src === match);
         if (!exists) {
-          images.push({ src: match, alt: `${product.name} vista ${num}` });
+          images.push({ src: match, alt: `${currentProduct.name} vista ${num}` });
         }
       }
     });
 
     return images;
-  }, [filteredImages, verifiedGuessedImages, product.name]);
+  }, [filteredImages, verifiedGuessedImages, currentProduct.name]);
+
+  // Reset index when color changes
+  useEffect(() => {
+    setActiveImageIndex(0);
+  }, [selectedColor]);
 
   // Función dinámica encargada de contar las fotos disponibles (WooCommerce + Cargadas)
   // Esta es la función que solicitaste para calcular dinámicamente cuántos puntos mostrar.
@@ -528,25 +569,27 @@ export default function ProductDetail({ initialProduct }: Props) {
 
 
   const isCombinationAvailable = (color: string | null, size: string | null) => {
-    if (!product.variations || product.variations.length === 0) {
-      return product.stock_status !== 'outofstock';
+    const variations = currentProduct.variations;
+    if (!variations || variations.length === 0) {
+      return currentProduct.stock_status !== 'outofstock';
     }
 
-    return product.variations.some(variation => {
-      const vColor = (variation.attributes.find(a =>
-        a.name.toLowerCase().includes('color') || a.name === 'Pa_selecciona-el-color' || a.id === 'pa_color'
-      )?.value || variation.attributes.find(a =>
-        a.name.toLowerCase().includes('color') || a.name === 'Pa_selecciona-el-color' || a.id === 'pa_color'
-      )?.option || '').toLowerCase();
+    const targetColor = normalizeAttr(color);
+    const targetSize = normalizeAttr(size);
 
-      const vSize = (variation.attributes.find(a =>
+    return variations.some(variation => {
+      const vColorAttr = variation.attributes.find(a =>
+        a.name.toLowerCase().includes('color') || a.name === 'Pa_selecciona-el-color' || a.id === 'pa_color'
+      );
+      const vSizeAttr = variation.attributes.find(a =>
         a.name.toLowerCase().includes('talla') || a.name === 'Pa_selecciona-una-talla' || a.id === 'pa_talla'
-      )?.value || variation.attributes.find(a =>
-        a.name.toLowerCase().includes('talla') || a.name === 'Pa_selecciona-una-talla' || a.id === 'pa_talla'
-      )?.option || '').toLowerCase();
+      );
 
-      const matchesColor = !color || vColor === color.toLowerCase();
-      const matchesSize = !size || vSize === size.toLowerCase();
+      const vColor = normalizeAttr(vColorAttr?.value || vColorAttr?.option || '');
+      const vSize = normalizeAttr(vSizeAttr?.value || vSizeAttr?.option || '');
+
+      const matchesColor = !color || vColor === targetColor;
+      const matchesSize = !size || vSize === targetSize;
 
       // Crucial: También verificar stock_status de la variación
       const isInstock = variation.stock_status !== 'outofstock';
@@ -556,10 +599,14 @@ export default function ProductDetail({ initialProduct }: Props) {
   };
 
   const selectedVariation = useMemo(() => {
-    if (!product.variations || product.variations.length === 0) return null;
+    const variations = currentProduct.variations;
+    if (!variations || variations.length === 0) return null;
     if (!selectedColor && !selectedSize) return null;
 
-    return product.variations.find((v: any) => {
+    const targetColor = normalizeAttr(selectedColor);
+    const targetSize = normalizeAttr(selectedSize);
+
+    return variations.find((v: any) => {
       const vColorAttr = v.attributes?.find((a: any) => 
         a.name.toLowerCase().includes('color') || 
         a.name.toLowerCase().includes('pa_selecciona-el-color') || 
@@ -571,18 +618,15 @@ export default function ProductDetail({ initialProduct }: Props) {
         a.id === 'pa_talla'
       );
 
-      const vColorValue = (vColorAttr?.value || vColorAttr?.option || '').toLowerCase().trim();
-      const vSizeValue = (vSizeAttr?.value || vSizeAttr?.option || '').toLowerCase().trim();
-
-      const targetColor = (selectedColor || '').toLowerCase().trim();
-      const targetSize = (selectedSize || '').toLowerCase().trim();
+      const vColorValue = normalizeAttr(vColorAttr?.value || vColorAttr?.option || '');
+      const vSizeValue = normalizeAttr(vSizeAttr?.value || vSizeAttr?.option || '');
 
       const matchesColor = !selectedColor || vColorValue === targetColor;
       const matchesSize = !selectedSize || vSizeValue === targetSize;
 
       return matchesColor && matchesSize;
     });
-  }, [product.variations, selectedColor, selectedSize]);
+  }, [currentProduct.variations, selectedColor, selectedSize]);
 
   const isOutOfStock = useMemo(() => {
     if (product.type === 'simple') {
@@ -609,7 +653,7 @@ export default function ProductDetail({ initialProduct }: Props) {
   const isSelectionComplete = selectedColor && (!hasSize || selectedSize);
 
   const handleAddToCart = () => {
-    if (product.type === 'variable' || (product.variations && product.variations.length > 0)) {
+    if (product.type === 'variable' || (currentProduct.variations && currentProduct.variations.length > 0)) {
       if (!selectedColor) {
         alert('Por favor, selecciona un color.');
         return false;
@@ -620,64 +664,19 @@ export default function ProductDetail({ initialProduct }: Props) {
       }
     }
 
-    // Encontrar la ID de la variación si es un producto variable
+    // Usar la variación ya encontrada por selectVariation
     let productIdToCart = product.id;
-    let foundVariation = false;
-
-    if (product.variations && product.variations.length > 0) {
-      console.log('[Cart Debug] Buscando variación para:', { selectedColor, selectedSize });
-      console.log('[Cart Debug] Variaciones disponibles:', product.variations.map(v => ({
-        id: v.id,
-        attrs: v.attributes
-      })));
-
-      const selectedVar = product.variations.find(v => {
-        const vColor = (
-          v.attributes.find(a =>
-            String(a.name || '').toLowerCase().includes('color') ||
-            String(a.name || '') === 'Pa_selecciona-el-color' ||
-            String(a.id || '') === 'pa_color'
-          )?.option ||
-          v.attributes.find(a =>
-            String(a.name || '').toLowerCase().includes('color') ||
-            String(a.name || '') === 'Pa_selecciona-el-color' ||
-            String(a.id || '') === 'pa_color'
-          )?.value || ''
-        ).toLowerCase().trim();
-
-        const vSize = (
-          v.attributes.find(a =>
-            String(a.name || '').toLowerCase().includes('talla') ||
-            String(a.name || '') === 'Pa_selecciona-una-talla' ||
-            String(a.id || '') === 'pa_talla'
-          )?.option ||
-          v.attributes.find(a =>
-            String(a.name || '').toLowerCase().includes('talla') ||
-            String(a.name || '') === 'Pa_selecciona-una-talla' ||
-            String(a.id || '') === 'pa_talla'
-          )?.value || ''
-        ).toLowerCase().trim();
-
-        const colorMatch = !selectedColor || vColor === selectedColor.toLowerCase().trim();
-        const sizeMatch = !hasSize || !selectedSize || vSize === selectedSize.toLowerCase().trim();
-        return colorMatch && sizeMatch;
-      });
-
-      if (selectedVar) {
-        productIdToCart = selectedVar.id;
-        foundVariation = true;
-        console.log('[Cart Debug] ✅ Variación encontrada:', productIdToCart);
-      } else {
-        // Es un producto variable pero no encontramos la variación exacta
-        // Verificamos si no hay variaciones cargadas aún (puede ser un timing issue)
-        console.warn('[Cart Debug] ❌ No se encontró variación para:', { selectedColor, selectedSize });
-        alert('No se pudo identificar la variación exacta. Por favor, intenta nuevamente o visita la página del producto.');
-        return false;
-      }
+    if (selectedVariation) {
+      productIdToCart = selectedVariation.id;
+      console.log('[Cart Debug] ✅ Usando variación seleccionada:', productIdToCart);
+    } else if (product.type === 'variable') {
+      console.warn('[Cart Debug] ❌ No se encontró variación para:', { selectedColor, selectedSize });
+      alert('No se pudo identificar la variación exacta. Por favor, intenta de nuevo.');
+      return false;
     }
 
     addToCart(
-      { ...product, id: productIdToCart },
+      { ...currentProduct, id: productIdToCart },
       quantity,
       selectedColor,
       selectedSize,
@@ -688,29 +687,13 @@ export default function ProductDetail({ initialProduct }: Props) {
   };
 
   const handleAddBothToCart = () => {
-    // 1. Añadir el producto principal (con variación correcta)
+    // 1. Añadir el producto principal (usando la misma lógica de handleAddToCart)
     if (selectedFbtIds.includes(product.id)) {
       let mainProductId = product.id;
-      // Resolver ID de variación para el producto principal
-      if (product.variations && product.variations.length > 0 && (selectedColor || selectedSize)) {
-        const mainVar = product.variations.find((v: any) => {
-          const vColor = (v.attributes.find((a: any) =>
-            String(a.name || '').toLowerCase().includes('color') || String(a.name || '') === 'Pa_selecciona-el-color' || String(a.id || '') === 'pa_color'
-          )?.option || v.attributes.find((a: any) =>
-            String(a.name || '').toLowerCase().includes('color') || String(a.name || '') === 'Pa_selecciona-el-color' || String(a.id || '') === 'pa_color'
-          )?.value || '').toLowerCase().trim();
-          const vSize = (v.attributes.find((a: any) =>
-            String(a.name || '').toLowerCase().includes('talla') || String(a.name || '') === 'Pa_selecciona-una-talla' || String(a.id || '') === 'pa_talla'
-          )?.option || v.attributes.find((a: any) =>
-            String(a.name || '').toLowerCase().includes('talla') || String(a.name || '') === 'Pa_selecciona-una-talla' || String(a.id || '') === 'pa_talla'
-          )?.value || '').toLowerCase().trim();
-          const colorMatch = !selectedColor || vColor === selectedColor.toLowerCase().trim();
-          const sizeMatch = !selectedSize || vSize === selectedSize.toLowerCase().trim();
-          return colorMatch && sizeMatch;
-        });
-        if (mainVar) mainProductId = mainVar.id;
+      if (selectedVariation) {
+        mainProductId = selectedVariation.id;
       }
-      addToCart({ ...product, id: mainProductId }, 1, selectedColor, selectedSize, filteredImages[0]?.src || product.images[0]?.src);
+      addToCart({ ...currentProduct, id: mainProductId }, 1, selectedColor, selectedSize, filteredImages[0]?.src || product.images[0]?.src);
     }
 
     // 2. Añadir productos FBT (ya usan variationId de ProductCard)
@@ -899,7 +882,14 @@ export default function ProductDetail({ initialProduct }: Props) {
               </div>
 
               <div className="product-price-container">
-                {product.on_sale ? (
+                {selectedVariation ? (
+                   <div className="price-wrapper">
+                     {Number(selectedVariation.regular_price || 0) > Number(selectedVariation.price || 0) && (
+                       <span className="old-price">{formatPrice(selectedVariation.regular_price || "0")}</span>
+                     )}
+                     <span className="sale-price highlight">{formatPrice(selectedVariation.price || "0")}</span>
+                   </div>
+                ) : product.on_sale ? (
                   <div className="price-wrapper">
                     {Number(product.prices.regular_price || 0) > Number(product.prices.price || 0) && (
                       <span className="old-price">{formatPrice(product.prices.regular_price)}</span>
@@ -920,14 +910,15 @@ export default function ProductDetail({ initialProduct }: Props) {
 
                   return (
                     <div className="selector-group">
-                      <label>Color: <strong>{colorAttribute.terms.find(t => t.slug === selectedColor)?.name || ''}</strong></label>
+                    <label>Color: <strong>{colorAttribute.terms.find(t => normalizeAttr(t.slug) === normalizeAttr(selectedColor))?.name || ''}</strong></label>
                       <div className="color-options">
                         {filteredTerms.map((term) => {
                           const isAvailable = isCombinationAvailable(term.slug, null);
+                          const isSelected = selectedColor && normalizeAttr(selectedColor) === normalizeAttr(term.slug);
                           return (
                             <button
                               key={term.id}
-                              className={`color-dot-btn ${selectedColor === term.slug ? 'active' : ''} ${!isAvailable ? 'out-of-stock' : ''}`}
+                              className={`color-dot-btn ${isSelected ? 'active' : ''} ${!isAvailable ? 'out-of-stock' : ''}`}
                               onClick={() => setSelectedColor(term.slug)}
                             >
                               <span className="color-dot" style={{ backgroundColor: getColorCode(term.slug) }}></span>
@@ -943,7 +934,7 @@ export default function ProductDetail({ initialProduct }: Props) {
                 {hasSize && (
                   <div className="selector-group">
                     <div className="label-row-between">
-                      <label>Talla: <strong>{sizeAttribute?.terms.find(t => t.slug === selectedSize)?.name || ''}</strong></label>
+                      <label>Talla: <strong>{sizeAttribute?.terms.find(t => normalizeAttr(t.slug) === normalizeAttr(selectedSize))?.name || ''}</strong></label>
                       <button className="size-guide-dark" onClick={() => setShowSizeGuide(true)}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                           <path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z"></path>
@@ -958,10 +949,11 @@ export default function ProductDetail({ initialProduct }: Props) {
                     <div className="size-options">
                       {sizeAttribute.terms.map((term) => {
                         const isAvailable = isCombinationAvailable(selectedColor, term.slug);
+                        const isSelected = selectedSize && normalizeAttr(selectedSize) === normalizeAttr(term.slug);
                         return (
                           <button
                             key={term.id}
-                            className={`size-box-btn ${selectedSize === term.slug ? 'active' : ''} ${!isAvailable ? 'out-of-stock' : ''}`}
+                            className={`size-box-btn ${isSelected ? 'active' : ''} ${!isAvailable ? 'out-of-stock' : ''}`}
                             onClick={() => isAvailable && setSelectedSize(term.slug)}
                           >
                             {term.name}
@@ -980,7 +972,7 @@ export default function ProductDetail({ initialProduct }: Props) {
                     )}
                     <div className="size-help-link">
                       <span>¿No encuentras tu talla? </span>
-                      <a href="#" target="_blank" rel="noopener noreferrer">Te ayudamos</a>
+                      <a href="https://wa.me/573100000000" target="_blank" rel="noopener noreferrer">Te ayudamos</a>
                     </div>
                   </div>
                 )}
