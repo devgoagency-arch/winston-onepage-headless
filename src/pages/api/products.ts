@@ -9,7 +9,7 @@ export const GET: APIRoute = async ({ url }) => {
 
     try {
         console.log(`[API Products] Request: category=${url.searchParams.get('category')}, slug=${url.searchParams.get('slug')}, search=${search}`);
-        
+
         // 0. BÚSQUEDA
         if (search) {
             const results = await searchProducts(search, parseInt(url.searchParams.get('per_page') || '20'));
@@ -18,7 +18,7 @@ export const GET: APIRoute = async ({ url }) => {
                 headers: {
                     'Content-Type': 'application/json',
                     'Access-Control-Allow-Origin': '*',
-                    'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=300'
+                    'Cache-Control': 'public, s-maxage=600, stale-while-revalidate=300'
                 }
             });
         }

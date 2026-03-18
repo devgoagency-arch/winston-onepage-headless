@@ -354,9 +354,9 @@ export default function ProductDetail({ initialProduct }: Props) {
       return !hasBetterMatch;
     });
 
-    // Combinar y de-duplicar
-    const combined = [...varImages];
-    galleryMatches.forEach((img: { src: string; alt: string; name: string }) => {
+    // Combinar y de-duplicar por src
+    const combined: any[] = [];
+    [...varImages, ...galleryMatches].forEach((img: any) => {
         if (!combined.some(c => c.src === img.src)) combined.push(img);
     });
 

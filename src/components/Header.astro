@@ -160,25 +160,6 @@ function flattenCategoryUrl(url: string) {
 <div class="menu-overlay" id="menu-overlay"></div>
 
 <div class="mobile-nav" id="mobile-nav">
-    <div class="mobile-search-container">
-        <button class="mobile-search-btn" id="search-btn-mobile">
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-            >
-                <circle cx="11" cy="11" r="8"></circle>
-                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-            </svg>
-            <span>BUSCAR</span>
-        </button>
-    </div>
     <ul class="mobile-links">
         {
             menuTree && menuTree.length > 0 ? (
@@ -753,13 +734,7 @@ function flattenCategoryUrl(url: string) {
         width: 18px;
         height: 18px;
     }
-    .mobile-search-container {
-        padding: 1.5rem 2rem;
-        flex-shrink: 0;
-        background: #fff;
-        z-index: 10;
-        border-bottom: 1px solid #f0f0f0;
-    }
+
     .mobile-search-btn {
         width: 100%;
         display: flex;

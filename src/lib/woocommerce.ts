@@ -114,15 +114,12 @@ export async function wcFetch(path: string, options: RequestInit = {}, retries =
     };
 
     if (needsAuth && CK && CS) {
-        // En WordPress/WooCommerce, los Query Params son mucho más confiables que el Header Basic Auth
-        // (que a menudo es bloqueado por Apache/Nginx o el .htaccess si no está bien configurado)
-        if (isWcNamespace) {
-            const connector = url.includes('?') ? '&' : '?';
-            url += `${connector}consumer_key=${CK}&consumer_secret=${CS}`;
-        } else {
-            // Para otros namespaces que requieran auth, usamos Basic Auth como fallback
-            headers['Authorization'] = `Basic ${safeBtoa(`${CK}:${CS}`)}`;
-        }
+        // 1. Query Params (Siempre van, es lo más confiable en WP)
+        const connector = url.includes('?') ? '&' : '?';
+        url += `${connector}consumer_key=${CK}&consumer_secret=${CS}`;
+
+        // 2. Redundancia vía Basic Auth (A veces es obligatorio para POSTs en ciertos hosts)
+        headers['Authorization'] = `Basic ${safeBtoa(`${CK}:${CS}`)}`;
     }
 
     for (let i = 0; i < retries; i++) {
@@ -131,11 +128,12 @@ export async function wcFetch(path: string, options: RequestInit = {}, retries =
             const res = await fetch(url, { ...options, headers });
             const endTime = Date.now();
             
-            console.log(`[WC API] ${res.status} | ${url.split('?')[0]} (${endTime - startTime}ms)`);
+            console.log(`[WC API] ${res.status} | ${options.method || 'GET'} ${url.split('?')[0]} (${endTime - startTime}ms)`);
 
             if (res.status === 401) {
                 console.error(`[WC API] 401 Unauthorized en ${url.split('?')[0]}. Revisa las claves WC_CONSUMER_KEY/SECRET.`);
-                // No lanzamos error fatal aquí para permitir que la app siga si hay caché
+                const text = await res.text();
+                console.error(`[WC API] Detalle error: ${text.substring(0, 500)}`);
                 return null;
             }
             
@@ -598,7 +596,9 @@ export async function getProductBySlug(slug: string) {
                                 if (colorAttr?.option && v.image?.src) {
                                     const colorKey = colorAttr.option.toLowerCase().trim();
                                     if (!imgMap[colorKey]) imgMap[colorKey] = [];
-                                    imgMap[colorKey].push({ src: v.image.src, alt: v.image.alt || '' });
+                                    if (!imgMap[colorKey].some(img => img.src === v.image.src)) {
+                                        imgMap[colorKey].push({ src: v.image.src, alt: v.image.alt || '' });
+                                    }
                                 }
                             });
                             storeProduct.variation_images_map = imgMap;

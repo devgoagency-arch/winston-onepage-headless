@@ -195,7 +195,10 @@ function buildVariationImagesMap(variations: any[]) {
         if (colorAttr?.option && v.image?.src) {
             const key = colorAttr.option.toLowerCase().trim();
             if (!imgMap[key]) imgMap[key] = [];
-            imgMap[key].push({ src: v.image.src, alt: v.image.alt || '' });
+            // De-duplicar por src
+            if (!imgMap[key].some(img => img.src === v.image.src)) {
+                imgMap[key].push({ src: v.image.src, alt: v.image.alt || '' });
+            }
         }
     });
     return imgMap;

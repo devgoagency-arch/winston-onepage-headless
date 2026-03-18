@@ -5,6 +5,7 @@ import Footer from "../components/Footer.astro";
 import { getAllProducts, getAttributeTerms, wcFetch } from "../lib/woocommerce";
 import FilteredProductList from "../components/FilteredProductList";
 
+export const prerender = true;
 export const isr = {
     expiration: 3600, // 1 hora
 };
