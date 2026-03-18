@@ -112,12 +112,6 @@ const SearchDrawer: React.FC = () => {
                             </div>
                         )}
 
-                        {results.length > 0 && (
-                            <a href={`/buscar?s=${encodeURIComponent(query)}`} className="view-all-results">
-                                VER TODOS LOS RESULTADOS
-                            </a>
-                        )}
-
                         {query.length === 0 && (
                             <div className="search-suggestions">
                                 <h5>Sugerencias</h5>
@@ -130,6 +124,12 @@ const SearchDrawer: React.FC = () => {
                             </div>
                         )}
                     </div>
+
+                    {results.length > 0 && (
+                        <a href={`/buscar?s=${encodeURIComponent(query)}`} className="view-all-results">
+                            VER TODOS LOS RESULTADOS
+                        </a>
+                    )}
                 </div>
             </div>
 
@@ -268,9 +268,8 @@ const SearchDrawer: React.FC = () => {
 
                 .view-all-results {
                     display: block;
-                    margin-top: 100%;
                     padding: 1.2rem;
-                    background: var(--color-green);
+                    background: var(--color-green, #121212);
                     color: #fff;
                     text-align: center;
                     font-family: var(--font-titles);
@@ -278,6 +277,8 @@ const SearchDrawer: React.FC = () => {
                     letter-spacing: 2px;
                     text-decoration: none;
                     transition: background 0.3s;
+                    margin-top: 1.5rem;
+                    flex-shrink: 0;
                 }
                 .view-all-results:hover { background: #333; }
 

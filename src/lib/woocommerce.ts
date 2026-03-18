@@ -734,17 +734,29 @@ export async function searchProducts(query: string, perPage = 20) {
 
         // 2. Inteligencia extra: Si no hay resultados o buscamos un "término categoría"
         // Intentamos ver si el término coincide con una categoría de producto
-        if (results.length === 0 || ['ropa', 'zapatos', 'calzado', 'maletas', 'cinturones', 'botas'].includes(term)) {
-            const categories = await wcFetch(`/products/categories?search=${encodeURIComponent(term)}&per_page=5`);
+        if (results.length === 0 || ['ropa', 'zapatos', 'calzado', 'maletas', 'cinturones', 'botas', 'mocasines', 'tenis', 'chaquetas'].includes(term)) {
+            const categories = await wcFetch(`/products/categories?search=${encodeURIComponent(term)}&per_page=10`);
+            
             if (Array.isArray(categories) && categories.length > 0) {
-                // Si encontramos una categoría exacta, traemos sus productos
-                const bestCat = categories.find(c => c.slug.includes(term) || term.includes(c.slug)) || categories[0];
-                const catProducts = await getProductsByCategory(bestCat.id, perPage);
+                // PRIORIDAD DE COINCIDENCIA:
+                // 1. Slug exacto o Nombre exacto
+                // 2. El slug empieza por el término
+                // 3. El slug contiene el término
+                const exactMatch = categories.find(c => c.slug === term || c.name.toLowerCase() === term);
+                const startsWithTerm = categories.find(c => c.slug.startsWith(term));
+                const containsTerm = categories.find(c => c.slug.includes(term) || (typeof term === 'string' && term.includes(c.slug)));
                 
-                // Combinamos respetando duplicados
-                const catIds = new Set(results.map(r => r.id));
-                const uniqueCatProducts = catProducts.filter(p => !catIds.has(p.id));
-                results = [...results, ...uniqueCatProducts].slice(0, perPage);
+                const bestCat = exactMatch || startsWithTerm || containsTerm || categories[0];
+                
+                // Si encontramos una categoría razonable, traemos sus productos y los ponemos al principio
+                if (bestCat) {
+                    const catProducts = await getProductsByCategory(bestCat.id, perPage);
+                    
+                    // Combinamos dando prioridad a los de la categoría
+                    const catIds = new Set(catProducts.map(p => p.id));
+                    const otherResults = results.filter(p => !catIds.has(p.id));
+                    results = [...catProducts, ...otherResults].slice(0, perPage);
+                }
             }
         }
 
