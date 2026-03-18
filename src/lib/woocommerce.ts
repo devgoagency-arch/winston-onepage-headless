@@ -858,14 +858,31 @@ export async function getMenu(slug: string) {
     const cached = getStaticCached(cacheKey);
     if (cached) return cached;
 
+    // Intentar el endpoint personalizado /wh/v1/menu con timeout corto
     try {
-        const menu = await wcFetch(`/wh/v1/menu/${slug}`);
-        setStaticCached(cacheKey, menu);
-        return menu;
-    } catch (error) {
-        console.error(`Error fetching menu ${slug}:`, error);
-        return [];
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 3000);
+        const CK = (import.meta.env.WC_CONSUMER_KEY || import.meta.env.WP_CONSUMER_KEY || "").trim();
+        const CS = (import.meta.env.WC_CONSUMER_SECRET || import.meta.env.WP_CONSUMER_SECRET || "").trim();
+        const url = `${PUBLIC_WP_URL}/wp-json/wh/v1/menu/${slug}`;
+        const res = await fetch(url, {
+            signal: controller.signal,
+            headers: {
+                'Accept': 'application/json',
+                'Authorization': `Basic ${safeBtoa(`${CK}:${CS}`)}`
+            }
+        });
+        clearTimeout(timeout);
+        if (res.ok) {
+            const menu = await res.json();
+            setStaticCached(cacheKey, menu);
+            return menu;
+        }
+    } catch (e: any) {
+        console.warn(`[Menu] Endpoint /wh/v1/menu/${slug} no disponible: ${e.message}. Retornando menú vacío.`);
     }
+
+    return [];
 }
 
 export async function getAttributes() {
