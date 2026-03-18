@@ -82,26 +82,6 @@
       "permanent": true
     },
     {
-      "source": "/politica-privacidad-proteccion-datos",
-      "destination": "/politica-privacidad-proteccion-datos",
-      "permanent": true
-    },
-    {
-      "source": "/politica-costos-envio",
-      "destination": "/politica-costos-envio",
-      "permanent": true
-    },
-    {
-      "source": "/politica-cookies",
-      "destination": "/politica-cookies",
-      "permanent": true
-    },
-    {
-      "source": "/terminos-condiciones",
-      "destination": "/terminos-condiciones",
-      "permanent": true
-    },
-    {
       "source": "/product-category/zapatos/page/:page",
       "destination": "/categoria/zapatos-cuero-hombre?page=$page",
       "permanent": true
