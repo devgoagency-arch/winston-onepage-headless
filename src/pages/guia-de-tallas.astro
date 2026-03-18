@@ -10,7 +10,7 @@ if (!page) {
         const res = await fetch(url);
         if (res.ok) page = await res.json();
     } catch(e: any) {
-        console.error("[DEBUG] Main domain fetch failed:", e.message);
+        console.error("Main domain fetch failed:", e.message);
     }
 }
 
@@ -30,7 +30,7 @@ if (page) {
         content = rawContent;
     }
 } else {
-    content = "<p>DEBUG: No se pudo obtener la página 14662 de ninguna fuente.</p>";
+    content = "<p>Lo sentimos, no pudimos cargar el contenido de la guía de tallas en este momento. Por favor, intenta más tarde.</p>";
 }
 ---
 
