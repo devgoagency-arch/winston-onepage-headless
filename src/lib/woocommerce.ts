@@ -114,15 +114,12 @@ export async function wcFetch(path: string, options: RequestInit = {}, retries =
     };
 
     if (needsAuth && CK && CS) {
-        // En WordPress/WooCommerce, los Query Params son mucho más confiables que el Header Basic Auth
-        // (que a menudo es bloqueado por Apache/Nginx o el .htaccess si no está bien configurado)
-        if (isWcNamespace) {
-            const connector = url.includes('?') ? '&' : '?';
-            url += `${connector}consumer_key=${CK}&consumer_secret=${CS}`;
-        } else {
-            // Para otros namespaces que requieran auth, usamos Basic Auth como fallback
-            headers['Authorization'] = `Basic ${safeBtoa(`${CK}:${CS}`)}`;
-        }
+        // 1. Query Params (Siempre van, es lo más confiable en WP)
+        const connector = url.includes('?') ? '&' : '?';
+        url += `${connector}consumer_key=${CK}&consumer_secret=${CS}`;
+
+        // 2. Redundancia vía Basic Auth (A veces es obligatorio para POSTs en ciertos hosts)
+        headers['Authorization'] = `Basic ${safeBtoa(`${CK}:${CS}`)}`;
     }
 
     for (let i = 0; i < retries; i++) {
@@ -131,11 +128,12 @@ export async function wcFetch(path: string, options: RequestInit = {}, retries =
             const res = await fetch(url, { ...options, headers });
             const endTime = Date.now();
             
-            console.log(`[WC API] ${res.status} | ${url.split('?')[0]} (${endTime - startTime}ms)`);
+            // Log removed for production
 
             if (res.status === 401) {
                 console.error(`[WC API] 401 Unauthorized en ${url.split('?')[0]}. Revisa las claves WC_CONSUMER_KEY/SECRET.`);
-                // No lanzamos error fatal aquí para permitir que la app siga si hay caché
+                const text = await res.text();
+                console.error(`[WC API] Detalle error: ${text.substring(0, 500)}`);
                 return null;
             }
             
@@ -243,17 +241,45 @@ function mapV3ToStore(p: any) {
 
         // Deep mapping for variations if they exist in Store API
         if (p.variations && Array.isArray(p.variations)) {
-            p.variations = p.variations.map((v: any) => ({
-                ...v,
-                stock_status: v.is_in_stock !== undefined 
-                    ? (v.is_in_stock ? 'instock' : 'outofstock') 
-                    : (v.stock_status || 'instock'),
-                attributes: (v.attributes || []).map((a: any) => ({
-                    ...a,
-                    option: a.value || a.option || '',
-                    value: a.value || a.option || ''
-                }))
-            }));
+            p.variations = p.variations.map((v: any) => {
+                const vPrices = v.prices || {};
+                return {
+                    ...v,
+                    stock_status: v.is_in_stock !== undefined 
+                        ? (v.is_in_stock ? 'instock' : 'outofstock') 
+                        : (v.stock_status || 'instock'),
+                    // Normalize variation prices
+                    price: (vPrices.price && normalizePriceStr(vPrices.price) !== "0") ? normalizePriceStr(vPrices.price) : p.prices.price,
+                    regular_price: (vPrices.regular_price && normalizePriceStr(vPrices.regular_price) !== "0") ? normalizePriceStr(vPrices.regular_price) : (vPrices.price ? normalizePriceStr(vPrices.price) : p.prices.regular_price),
+                    sale_price: vPrices.sale_price ? normalizePriceStr(vPrices.sale_price) : "",
+                    attributes: (v.attributes || []).map((a: any) => ({
+                        ...a,
+                        option: a.value || a.option || '',
+                        value: a.value || a.option || ''
+                    }))
+                };
+            });
+
+            // Construir variation_images_map para Store API
+            const imgMap: Record<string, any[]> = {};
+            p.variations.forEach((v: any) => {
+                const colorAttr = v.attributes?.find((a: any) => 
+                     (a.name || "").toLowerCase().includes('color') || 
+                     (a.id || "").toString().includes('color') ||
+                     a.name === 'Pa_selecciona-el-color'
+                );
+                if (colorAttr && (colorAttr.value || colorAttr.option) && v.image?.src) {
+                     const colorKey = String(colorAttr.value || colorAttr.option).toLowerCase().trim();
+                     if (!imgMap[colorKey]) imgMap[colorKey] = [];
+                     
+                     if (!imgMap[colorKey].some(img => img.src === v.image.src)) {
+                         imgMap[colorKey].push({ src: v.image.src, alt: v.image.alt || '' });
+                     }
+                }
+            });
+            if (Object.keys(imgMap).length > 0) {
+                p.variation_images_map = imgMap;
+            }
         }
 
         return p;
@@ -324,19 +350,50 @@ function mapV3ToStore(p: any) {
         featured: p.featured || false,
         upsell_ids: p.upsell_ids || [],
         cross_sell_ids: p.cross_sell_ids || [],
-        variations: p.variations_data?.map((v: any) => ({
-            ...v,
-            stock_status: v.stock_status || 'instock',
-            // Normalizamos los atributos para que siempre tengan 'option' Y 'value'
-            // WC v3 usa 'option', Store API usa 'value'. Esto permite búsqueda flexible.
-            attributes: (v.attributes || []).map((a: any) => ({
-                ...a,
-                // Aseguramos que ambos campos estén disponibles
-                option: a.option || a.value || '',
-                value: a.value || a.option || '',
-            }))
-        })) || null,
-        variation_images_map: p.variation_images_map || null,
+        variations: p.variations_data?.map((v: any) => {
+            const vRawPrice = parseFloat(v.price || v.regular_price || "0");
+            const vIncPrice = hasTax ? Math.round(vRawPrice * 1.19) : Math.round(vRawPrice);
+            const vRegRaw = parseFloat(v.regular_price || v.price || "0");
+            const vIncRegPrice = hasTax ? Math.round(vRegRaw * 1.19) : Math.round(vRegRaw);
+
+            return {
+                ...v,
+                price: vIncPrice > 0 ? vIncPrice.toString() : (inclusivePrice || "0").toString(),
+                regular_price: vIncRegPrice > 0 ? vIncRegPrice.toString() : (p.regular_price || vIncPrice || "0").toString(),
+                stock_status: v.stock_status || 'instock',
+                attributes: (v.attributes || []).map((a: any) => ({
+                    ...a,
+                    option: a.option || a.value || '',
+                    value: a.value || a.option || '',
+                }))
+            };
+        }) || null,
+        variation_images_map: (() => {
+            if (p.variation_images_map) return p.variation_images_map;
+            const imgMap: Record<string, any[]> = {};
+            if (p.variations_data && Array.isArray(p.variations_data)) {
+                p.variations_data.forEach((v: any) => {
+                    const colorAttr = v.attributes?.find((a: any) => 
+                        (a.name || "").toLowerCase().includes('color') || 
+                        (a.id || "").toString().includes('color') ||
+                        a.name === 'Pa_selecciona-el-color'
+                    );
+                    if (colorAttr && (colorAttr.option || colorAttr.value) && v.image?.src) {
+                        const colorKey = String(colorAttr.option || colorAttr.value).toLowerCase().trim();
+                        if (!imgMap[colorKey]) imgMap[colorKey] = [];
+                        if (!imgMap[colorKey].some((img: any) => img.src === v.image.src)) {
+                            imgMap[colorKey].push({ 
+                                id: v.image.id || 0,
+                                src: v.image.src, 
+                                alt: v.image.alt || v.image.name || '',
+                                name: v.image.name || ''
+                            });
+                        }
+                    }
+                });
+            }
+            return Object.keys(imgMap).length > 0 ? imgMap : null;
+        })(),
         stock_status: p.stock_status || 'instock',
         manage_stock: p.manage_stock || false,
         stock_quantity: p.stock_quantity || null
@@ -450,6 +507,40 @@ export async function getChildCategories(parentId: number) {
 }
 
 /**
+ * Fetch hierarchical categories (parents and their direct children)
+ */
+export async function getCategoryTree() {
+    const cacheKey = "wc_category_tree";
+    const cached = getStaticCached(cacheKey);
+    if (cached) return cached;
+
+    try {
+        const categories = await wcFetch("/products/categories?per_page=100&hide_empty=true");
+        if (!Array.isArray(categories)) return [];
+
+        const roots = categories.filter((c: any) => c.parent === 0);
+        const tree = roots.map((root: any) => ({
+            id: root.id,
+            name: root.name,
+            slug: root.slug,
+            children: categories
+                .filter((c: any) => c.parent === root.id)
+                .map((child: any) => ({
+                    id: child.id,
+                    name: child.name,
+                    slug: child.slug
+                }))
+        }));
+
+        setStaticCached(cacheKey, tree);
+        return tree;
+    } catch (error) {
+        console.error("Error fetching category tree:", error);
+        return [];
+    }
+}
+
+/**
  * Fetch Product by Slug with all its variations in one go!
  */
 /**
@@ -467,7 +558,7 @@ async function getProductVariations(productId: number) {
 export async function getProductBySlug(slug: string) {
 
     try {
-        console.log(`[WC API] Fetching product by slug: ${slug}`);
+        // Fetching product by slug...
         
         // 1. Intento vía Public WP API (para obtener el ID desde el slug sin auth)
         let productId = null;
@@ -489,8 +580,33 @@ export async function getProductBySlug(slug: string) {
                 const storeRes = await fetch(`${PUBLIC_WP_URL}/wp-json/wc/store/v1/products/${productId}`);
                 if (storeRes.ok) {
                     const storeProduct = await storeRes.json();
+                    
+                    if (storeProduct.type === 'variable' && productId) {
+                        const variations = await getProductVariations(productId);
+                        storeProduct.variations_data = variations;
+                        
+                        if (variations.length > 0) {
+                            const imgMap: Record<string, any[]> = {};
+                            variations.forEach((v: any) => {
+                                const colorAttr = v.attributes?.find((a: any) =>
+                                    (a.name || "").toLowerCase().includes('color') || 
+                                    (a.slug || "").toLowerCase().includes('color') ||
+                                    a.name === 'Pa_selecciona-el-color'
+                                );
+                                if (colorAttr?.option && v.image?.src) {
+                                    const colorKey = colorAttr.option.toLowerCase().trim();
+                                    if (!imgMap[colorKey]) imgMap[colorKey] = [];
+                                    if (!imgMap[colorKey].some(img => img.src === v.image.src)) {
+                                        imgMap[colorKey].push({ src: v.image.src, alt: v.image.alt || '' });
+                                    }
+                                }
+                            });
+                            storeProduct.variation_images_map = imgMap;
+                        }
+                    }
+
                     const result = mapV3ToStore(storeProduct);
-                            return result;
+                    return result;
                 }
             } catch (e) {
                 console.warn(`[WC API] Store API fetch failed for ID ${productId}, falling back to v3.`);
@@ -577,6 +693,76 @@ export async function getAllProducts(
         return Array.isArray(data) ? data.map(p => mapV3ToStore(p)) : [];
     } catch (error: any) {
         console.error("[getAllProducts] Error:", error.message);
+        return [];
+    }
+}
+
+export async function searchProducts(query: string, perPage = 20) {
+    if (!query || query.length < 2) return [];
+
+    // Normalizado de términos comunes y typos
+    const normalizeQuery = (q: string) => {
+        const lower = q.toLowerCase().trim();
+        // Diccionario de "Deseo decir" (Fuzzy simple)
+        const commonTypos: Record<string, string> = {
+            'roap': 'ropa', 'rospa': 'ropa', 'ropps': 'ropa',
+            'zapato': 'zapatos', 'sapato': 'zapatos', 'zapatoz': 'zapatos',
+            'mcltas': 'maletas', 'maleta': 'maletas',
+            'cinturon': 'cinturones', 'sinturon': 'cinturones',
+            'moka': 'mocasines', 'moccasin': 'mocasines',
+            'oxford': 'oxford', 'oxfor': 'oxford',
+            'bota': 'botas', 'vota': 'botas'
+        };
+        return commonTypos[lower] || lower;
+    };
+
+    const term = normalizeQuery(query);
+
+    try {
+        // 1. Intento de búsqueda por texto (Título/Descripción)
+        let results: any[] = [];
+        const storeUrl = `${PUBLIC_WP_URL}/wp-json/wc/store/v1/products?search=${encodeURIComponent(term)}&per_page=${perPage}`;
+        const storeRes = await fetch(storeUrl);
+        
+        if (storeRes.ok) {
+            const data = await storeRes.json();
+            results = Array.isArray(data) ? data.map(p => mapV3ToStore(p)).filter(p => p !== null) : [];
+        } else {
+            const data = await wcFetch(`/products?search=${encodeURIComponent(term)}&per_page=${perPage}&status=publish`);
+            results = Array.isArray(data) ? data.map(p => mapV3ToStore(p)) : [];
+        }
+
+        // 2. Inteligencia extra: Si no hay resultados o buscamos un "término categoría"
+        // Intentamos ver si el término coincide con una categoría de producto
+        if (results.length === 0 || ['ropa', 'zapatos', 'calzado', 'maletas', 'cinturones', 'botas', 'mocasines', 'tenis', 'chaquetas'].includes(term)) {
+            const categories = await wcFetch(`/products/categories?search=${encodeURIComponent(term)}&per_page=10`);
+            
+            if (Array.isArray(categories) && categories.length > 0) {
+                // PRIORIDAD DE COINCIDENCIA:
+                // 1. Slug exacto o Nombre exacto
+                // 2. El slug empieza por el término
+                // 3. El slug contiene el término
+                const exactMatch = categories.find(c => c.slug === term || c.name.toLowerCase() === term);
+                const startsWithTerm = categories.find(c => c.slug.startsWith(term));
+                const containsTerm = categories.find(c => c.slug.includes(term) || (typeof term === 'string' && term.includes(c.slug)));
+                
+                const bestCat = exactMatch || startsWithTerm || containsTerm || categories[0];
+                
+                // Si encontramos una categoría razonable, traemos sus productos y los ponemos al principio
+                if (bestCat) {
+                    const catProducts = await getProductsByCategory(bestCat.id, perPage);
+                    
+                    // Combinamos dando prioridad a los de la categoría
+                    const catIds = new Set(catProducts.map(p => p.id));
+                    const otherResults = results.filter(p => !catIds.has(p.id));
+                    results = [...catProducts, ...otherResults].slice(0, perPage);
+                }
+            }
+        }
+
+        return results;
+    } catch (error) {
+        console.error("[searchProducts] Error:", error);
         return [];
     }
 }
@@ -672,14 +858,31 @@ export async function getMenu(slug: string) {
     const cached = getStaticCached(cacheKey);
     if (cached) return cached;
 
+    // Intentar el endpoint personalizado /wh/v1/menu con timeout corto
     try {
-        const menu = await wcFetch(`/wh/v1/menu/${slug}`);
-        setStaticCached(cacheKey, menu);
-        return menu;
-    } catch (error) {
-        console.error(`Error fetching menu ${slug}:`, error);
-        return [];
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 3000);
+        const CK = (import.meta.env.WC_CONSUMER_KEY || import.meta.env.WP_CONSUMER_KEY || "").trim();
+        const CS = (import.meta.env.WC_CONSUMER_SECRET || import.meta.env.WP_CONSUMER_SECRET || "").trim();
+        const url = `${PUBLIC_WP_URL}/wp-json/wh/v1/menu/${slug}`;
+        const res = await fetch(url, {
+            signal: controller.signal,
+            headers: {
+                'Accept': 'application/json',
+                'Authorization': `Basic ${safeBtoa(`${CK}:${CS}`)}`
+            }
+        });
+        clearTimeout(timeout);
+        if (res.ok) {
+            const menu = await res.json();
+            setStaticCached(cacheKey, menu);
+            return menu;
+        }
+    } catch (e: any) {
+        console.warn(`[Menu] Endpoint /wh/v1/menu/${slug} no disponible: ${e.message}. Retornando menú vacío.`);
     }
+
+    return [];
 }
 
 export async function getAttributes() {

@@ -11,7 +11,7 @@
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "no-store, max-age=0"
+          "value": "public, s-maxage=600, stale-while-revalidate=300"
         }
       ]
     },
@@ -79,26 +79,6 @@
     {
       "source": "/guia-tallas",
       "destination": "/guia-de-tallas",
-      "permanent": true
-    },
-    {
-      "source": "/politica-privacidad-proteccion-datos",
-      "destination": "/politica-privacidad-proteccion-datos",
-      "permanent": true
-    },
-    {
-      "source": "/politica-costos-envio",
-      "destination": "/politica-costos-envio",
-      "permanent": true
-    },
-    {
-      "source": "/politica-cookies",
-      "destination": "/politica-cookies",
-      "permanent": true
-    },
-    {
-      "source": "/terminos-condiciones",
-      "destination": "/terminos-condiciones",
       "permanent": true
     },
     {

@@ -1,0 +1,776 @@
+<!DOCTYPE html><html lang="es"> <head><meta charset="UTF-8"><meta name="description" content="Winston & Harry - Calzado Artesanal de Lujo"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/png" href="/favicon.png"><link rel="preconnect" href="https://use.typekit.net" crossorigin><link rel="dns-prefetch" href="https://winstonandharrystore.com"><link rel="stylesheet" href="https://use.typekit.net/lpl0lgn.css"><meta name="generator" content="Astro v5.16.15"><title>Winston &amp; Harry | Calzado Artesanal de Lujo</title><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://winston-onepage-headless.vercel.app/"><meta property="og:title" content="Winston &#38; Harry | Calzado Artesanal de Lujo"><meta property="og:description" content="Winston & Harry - Calzado Artesanal de Lujo. Compra online ropa, maletas, zapatos de cuero colombianos para hombre."><meta property="og:image" content="https://winston-onepage-headless.vercel.app/images/hero-poster.webp"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://winston-onepage-headless.vercel.app/"><meta property="twitter:title" content="Winston &#38; Harry | Calzado Artesanal de Lujo"><meta property="twitter:description" content="Winston & Harry - Calzado Artesanal de Lujo. Compra online ropa, maletas, zapatos de cuero colombianos para hombre."><meta property="twitter:image" content="https://winston-onepage-headless.vercel.app/images/hero-poster.webp"><style data-vite-dev-id="C:/Users/Dev/Documents/winston-onepage-headless/src/styles/global.css">
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@300;400;700&display=swap');
+/* Fonts */
+:root {
+  --color-beige: #B1915F;
+  --color-green: #155338;
+  --color-white: #EFEFEF;
+  --color-black: #121212;
+  --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  --max-width: 1440px;
+
+  /* Font Families */
+  --font-titles: 'darkmode-off', 'Antonio', sans-serif;
+  --font-paragraphs: 'Helvetica', 'Arial', sans-serif;
+  --font-products: 'darkmode-off', 'Antonio', sans-serif;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: var(--font-paragraphs);
+  background-color: var(--color-white);
+  color: var(--color-black);
+  line-height: 1.6;
+  overflow-x: hidden;
+  font-size: 0.8rem;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-titles);
+  color: var(--color-green);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  font-size: 1.25rem;
+  /* 20px aprox */
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition-smooth);
+}
+ul {
+  list-style: none;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+/* Glassmorphism utility */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+/* Premium Button */
+.btn {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background-color: var(--color-green);
+  color: var(--color-white);
+  font-family: var(--font-titles);
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+  position: relative;
+  overflow: hidden;
+}
+.btn:hover {
+  background-color: var(--color-beige);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid var(--color-green);
+  color: var(--color-green);
+}
+.btn-outline:hover {
+  background-color: var(--color-green);
+  color: var(--color-white);
+}
+/* Animations LV Style */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1.2s cubic-bezier(0.33, 1, 0.68, 1), transform 1.2s cubic-bezier(0.33, 1, 0.68, 1);
+  will-change: opacity, transform;
+}
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+/* Section Spacing */
+section {
+  padding: 8rem 0;
+}
+@media (max-width: 768px) {
+  section {
+    padding: 4rem 0;
+  }
+}</style>
+<style data-vite-dev-id="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro?astro&#38;type=style&#38;index=0&#38;lang.css">.header {
+        position: fixed; /* Cambiado de sticky a fixed para mejor control */
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        background-color: #ffffff;
+        border-bottom: 1px solid #f0f0f0;
+        padding: 1.2rem 0;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .header-hidden {
+        transform: translateY(-100%);
+    }
+
+    .header-inner {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
+        max-width: 1600px;
+        margin: 0 auto;
+        padding: 0 3rem;
+        width: 100%;
+    }
+
+    /* Izquierda */
+    .header-left {
+        display: flex;
+        align-items: center;
+        gap: 2.5rem;
+    }
+
+    .burger-menu {
+        background: none;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        transition: opacity 0.3s;
+        width: 24px;
+        height: 24px;
+    }
+
+    .burger-menu svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .burger-menu line {
+        transition:
+            transform 0.3s ease,
+            opacity 0.3s ease;
+        transform-origin: center;
+        transform-box: fill-box;
+    }
+
+    /* SVG Lines order: 1=Top(6), 2=Middle(12), 3=Bottom(18) */
+    .burger-menu.open line:nth-child(1) {
+        transform: translateY(6px) rotate(45deg);
+    }
+
+    .burger-menu.open line:nth-child(2) {
+        opacity: 0;
+    }
+
+    .burger-menu.open line:nth-child(3) {
+        transform: translateY(-6px) rotate(-45deg);
+    }
+
+    .search-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        color: #333;
+        padding: 0;
+        font-family: var(--font-paragraphs);
+        transition: opacity 0.3s;
+    }
+
+    .action-text {
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        letter-spacing: 1.5px;
+        font-weight: 500;
+        margin-top: 2px;
+    }
+
+    .burger-menu:hover,
+    .search-btn:hover,
+    .action-btn:hover {
+        opacity: 0.6;
+    }
+
+    /* Centro */
+    .header-center {
+        display: flex;
+        justify-content: center;
+    }
+
+    .logo {
+        display: block;
+        width: 220px; /* Ajuste para que se vea premium y centrado */
+        transition: transform 0.3s ease;
+    }
+
+    .logo img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    /* Derecha */
+    .header-right {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .action-btn {
+        color: #333;
+        position: relative;
+        display: flex;
+        align-items: center;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        gap: 0.5rem;
+    }
+
+    .fav-count {
+        position: absolute;
+        top: -6px;
+        right: -10px;
+        background-color: var(--color-beige);
+        color: white;
+        font-size: 0.65rem;
+        font-weight: bold;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        display: none;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .cart-btn {
+        gap: 0.8rem;
+    }
+
+    .cart-icon-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    .cart-count {
+        position: absolute;
+        top: -6px;
+        right: -8px;
+        background-color: var(--color-beige);
+        color: white;
+        font-size: 0.6rem;
+        font-weight: bold;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        display: none;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .cart-total {
+        font-size: 0.8rem;
+        font-weight: 500;
+        color: #333;
+        font-family: var(--font-paragraphs);
+        letter-spacing: 0.5px;
+    }
+
+    /* Mobile Nav Drawer - LV STYLE BELOW HEADER */
+    .mobile-nav {
+        position: fixed;
+        top: 75px; /* Altura estimada del header */
+        left: 0;
+        width: 30%;
+        height: calc(100vh - 75px);
+        background-color: #fff;
+        transform: translateY(-100%);
+        transition:
+            transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+            visibility 0.4s;
+        z-index: 950; /* Por detrás del header (1000) */
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        visibility: hidden;
+        overflow-y: auto;
+    }
+
+    .mobile-nav.active {
+        transform: translateY(0);
+        visibility: visible;
+    }
+
+    .mobile-actions {
+        padding: 1rem 1rem;
+        border-top: 1px solid #f0f0f0;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .mobile-action-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        color: #121212;
+        text-decoration: none;
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        font-family: var(--font-paragraphs);
+    }
+    .mobile-action-item svg {
+        width: 18px;
+        height: 18px;
+        color: #666;
+    }
+
+    .mobile-links {
+        list-style: none;
+        padding: 2.5rem 3rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        flex-grow: 0;
+    }
+
+    .mobile-link {
+        font-size: 0.95rem;
+        font-weight: 400;
+        color: #121212;
+        text-decoration: none;
+        display: block;
+        font-family: var(--font-products);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    .menu-footer {
+        padding: 2rem 3rem 4rem;
+        margin-top: auto;
+    }
+
+    .header-actions-desktop {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    @media (max-width: 768px) {
+        .mobile-nav {
+            top: 65px; /* Ajuste para mobile */
+            height: calc(100vh - 65px);
+            width: 100%;
+        }
+        .header-actions-desktop {
+            display: none;
+        }
+    }
+
+    /* Cart Drawer */
+    .cart-drawer {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 450px;
+        max-width: 90vw;
+        height: 100vh;
+        background-color: #fff;
+        transform: translateX(100%);
+        transition:
+            transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+            visibility 0.4s;
+        z-index: 1100; /* Por encima del overlay (900) */
+        display: flex;
+        flex-direction: column;
+        box-shadow: -20px 0 50px rgba(0, 0, 0, 0.05);
+    }
+
+    .cart-drawer.active {
+        transform: translateX(0);
+    }
+
+    .cart-drawer-header {
+        padding: 2.5rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #f9f9f9;
+    }
+
+    .cart-title {
+        font-family: var(--font-titles);
+        font-size: 1.1rem;
+        color: var(--color-green);
+        letter-spacing: 1.5px;
+        font-weight: 700;
+    }
+
+    .cart-close {
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: #121212;
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-size: 0.9rem;
+        font-family: var(--font-paragraphs);
+        font-weight: 400;
+    }
+
+    .cart-items {
+        flex-grow: 1;
+        overflow-y: auto;
+        padding: 1rem 0;
+    }
+
+    .cart-item-drawer {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 1.2rem;
+        padding: 1.5rem 2rem;
+        border-bottom: 1px solid #f2f2f2;
+        position: relative;
+        align-items: flex-start;
+    }
+
+    .cart-item-img {
+        width: 80px;
+        height: 80px;
+        flex-shrink: 0;
+        background: #f6f6f6;
+        border-radius: 4px;
+        overflow: hidden;
+    }
+
+    .cart-item-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .cart-item-details {
+        flex-grow: 1;
+    }
+
+    .cart-item-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 0.4rem;
+    }
+
+    .cart-item-name {
+        font-family: var(--font-products);
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        color: #121212;
+        letter-spacing: 0.5px;
+        font-weight: 300;
+    }
+
+    .remove-item {
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: #999;
+        padding: 0;
+        transition: color 0.2s;
+    }
+
+    .remove-item:hover {
+        color: #d32f2f;
+    }
+
+    .cart-item-variant {
+        font-size: 0.8rem;
+        color: #666;
+        margin: 2px 0;
+        text-transform: none;
+        letter-spacing: normal;
+    }
+
+    .cart-item-variant span {
+        color: #999;
+        font-weight: 400;
+    }
+
+    .cart-item-price-qty {
+        margin-top: 0.5rem;
+        font-size: 0.85rem;
+        color: #ccc;
+        font-family: Arial, sans-serif;
+        font-weight: 400;
+    }
+
+    .cart-item-price-qty span {
+        color: #a3a3a3;
+        font-weight: 400;
+    }
+
+    .empty-cart-msg {
+        text-align: center;
+        padding: 4rem 2rem;
+        color: #999;
+        font-style: italic;
+    }
+
+    .cart-drawer-footer {
+        padding: 2.5rem 2rem;
+        border-top: 1px solid #eee;
+        background: #fff;
+    }
+
+    .subtotal-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+    }
+
+    .subtotal-label {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #333;
+    }
+
+    .subtotal-price-group {
+        text-align: right;
+    }
+
+    .subtotal-value {
+        display: block;
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: var(--color-beige);
+        font-family: "Helvetica", sans-serif;
+    }
+
+    .tax-note {
+        font-size: 0.75rem;
+        color: #999;
+    }
+
+    .cart-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .btn-drawer {
+        display: block;
+        width: 100%;
+        padding: 1.2rem;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 0.85rem;
+        letter-spacing: 1px;
+        transition: all 0.3s;
+        border: none;
+        cursor: pointer;
+        font-family: var(--font-paragraphs);
+    }
+
+    .btn-secondary {
+        border: 1px solid var(--color-beige);
+        color: var(--color-beige);
+        background: transparent;
+    }
+    .btn-secondary:hover {
+        background-color: var(--color-beige);
+        color: #fff;
+    }
+
+    .btn-primary {
+        background-color: var(--color-green);
+        color: #fff;
+    }
+    .btn-primary:hover {
+        background-color: #000;
+    }
+
+    /* Overlay */
+    .menu-overlay {
+        position: fixed;
+        top: 75px; /* Inicia debajo del header */
+        left: 0;
+        width: 100vw;
+        height: calc(100vh - 75px);
+        background-color: rgba(0, 0, 0, 0.2); /* Menos oscuro */
+        backdrop-filter: blur(10px);
+        z-index: 900; /* Detrás del menú */
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s ease;
+    }
+
+    .menu-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    @media (max-width: 768px) {
+        .menu-overlay {
+            top: 65px;
+            height: calc(100vh - 65px);
+        }
+    }
+
+    @media (max-width: 1100px) {
+        .header-inner {
+            padding: 0 1rem;
+        }
+        .action-text {
+            display: none;
+        }
+        .header-left {
+            gap: 1.5rem;
+        }
+        .header-right {
+            gap: 1.5rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .header {
+            padding: 0.8rem 0;
+        }
+        .logo {
+            width: 160px;
+        }
+        .cart-total {
+            display: none;
+        }
+        .mobile-nav,
+        .cart-drawer {
+            width: 100%;
+            max-width: 100vw;
+        }
+        .mobile-links {
+            padding: 1rem 2rem;
+        }
+        .menu-header,
+        .cart-drawer-header {
+            padding: 1.5rem 2rem;
+        }
+        .menu-footer,
+        .cart-drawer-footer {
+            padding: 2rem 2rem 5rem 2rem;
+        }
+        .mobile-link {
+            font-size: 0.8rem;
+        }
+    }</style>
+<style data-vite-dev-id="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Hero.astro?astro&#38;type=style&#38;index=0&#38;lang.css">.hero[data-astro-cid-bbe6dxrz]{position:relative;height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;background-color:#000;margin-top:90px}.video-background[data-astro-cid-bbe6dxrz]{position:absolute;top:0;left:0;width:100%;height:100%;z-index:0}.overlay[data-astro-cid-bbe6dxrz]{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.3);z-index:1}.video-background[data-astro-cid-bbe6dxrz] video[data-astro-cid-bbe6dxrz]{width:100%;height:100%;object-fit:cover}.hero-overlay-img[data-astro-cid-bbe6dxrz]{position:absolute;bottom:150px;left:50%;transform:translateX(-50%);z-index:10;width:60%;max-width:400px;opacity:0;animation:fadeInUp 1.5s ease-out forwards;animation-delay:0.5s}@keyframes fadeInUp{0%{opacity:0;transform:translate(-50%,50px)}100%{opacity:1;transform:translate(-50%,0)}}@media (max-width: 992px){.hero[data-astro-cid-bbe6dxrz]{height:auto;aspect-ratio:16 / 9;margin-top:65px}.hero-overlay-img[data-astro-cid-bbe6dxrz]{max-width:400px;bottom:20px}}@media (max-width: 480px){.hero-overlay-img[data-astro-cid-bbe6dxrz]{max-width:160px;bottom:15px}}</style>
+<style data-vite-dev-id="C:/Users/Dev/Documents/winston-onepage-headless/src/components/ScrollRevealBanner.astro?astro&#38;type=style&#38;index=0&#38;lang.css">.lv-reveal-container[data-astro-cid-mq7aec5e]{position:relative;height:400vh;width:100%;margin:0;padding:0;background-color:#000;z-index:1}.lv-reveal-sticky[data-astro-cid-mq7aec5e]{position:sticky;top:0;left:0;width:100%;height:100vh;overflow:hidden;display:flex;align-items:center;justify-content:center;z-index:1}.lv-reveal-media[data-astro-cid-mq7aec5e]{position:absolute;top:0;left:0;width:100%;height:100%;z-index:1}.lv-reveal-image[data-astro-cid-mq7aec5e]{width:100%;height:100%;object-fit:cover;object-position:center;display:block;transform-origin:center center;will-change:transform}.lv-reveal-overlay[data-astro-cid-mq7aec5e]{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(to top,rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.5) 40%,rgba(0,0,0,0.4) 75%,rgba(0,0,0,0.2) 90%);opacity:0;z-index:2;pointer-events:none;will-change:opacity}.lv-reveal-content-wrapper[data-astro-cid-mq7aec5e]{position:relative;z-index:3;width:100%;max-width:900px;padding:0 2rem;pointer-events:none}.lv-reveal-content[data-astro-cid-mq7aec5e]{text-align:center;color:#fff;will-change:transform,opacity}.lv-reveal-pretitle[data-astro-cid-mq7aec5e]{font-family:var(--font-titles);font-size:0.9rem;letter-spacing:5px;text-transform:uppercase;color:var(--color-beige);margin-bottom:1.5rem}.lv-reveal-title[data-astro-cid-mq7aec5e]{font-family:var(--font-titles);font-size:clamp(1.5rem,5vw,2.5rem);font-weight:700;letter-spacing:4px;line-height:1.2;text-transform:uppercase;margin-bottom:1.5rem;color:#fff}.lv-reveal-description[data-astro-cid-mq7aec5e]{font-family:var(--font-paragraphs);font-size:clamp(0.85rem,1.5vw,1rem);line-height:1.6;font-weight:300;max-width:500px;margin:0 auto;color:rgba(255,255,255,0.9)}</style>
+<style data-vite-dev-id="C:/Users/Dev/Documents/winston-onepage-headless/src/components/About.astro?astro&#38;type=style&#38;index=0&#38;lang.css">.about-lv-hero[data-astro-cid-v2cbyr3p]{position:relative;height:100vh;width:100%;overflow:hidden;background-color:#000;display:flex;align-items:flex-end;padding-bottom:8vh;z-index:10;margin-top:-100vh}.video-container[data-astro-cid-v2cbyr3p]{position:absolute;top:0;left:0;width:100%;height:100%;z-index:0}.video-overlay[data-astro-cid-v2cbyr3p]{position:absolute;top:0;left:0;width:100%;height:100%;background:radial-gradient(circle at 10% 90%,rgba(0,0,0,0.45) 0%,rgba(0,0,0,0.1) 50%,transparent 100%);z-index:2}.iframe-wrapper[data-astro-cid-v2cbyr3p]{position:relative;width:100%;height:100%;pointer-events:none}.iframe-wrapper[data-astro-cid-v2cbyr3p] iframe[data-astro-cid-v2cbyr3p]{position:absolute;top:50%;left:50%;width:100vw;height:56.25vw;min-height:100vh;min-width:177.77vh;transform:translate(-50%,-50%);opacity:0.9}.about-text-overlay[data-astro-cid-v2cbyr3p]{position:relative;z-index:3;width:100%;padding:0 4rem}.about-content-corner[data-astro-cid-v2cbyr3p]{max-width:420px;color:#fff}.about-title[data-astro-cid-v2cbyr3p]{font-family:var(--font-titles);font-size:clamp(1.5rem,3vw,2.2rem);font-weight:700;line-height:1.1;margin-bottom:1.5rem;text-transform:uppercase;letter-spacing:2px;color:#fff}.about-description[data-astro-cid-v2cbyr3p]{font-family:var(--font-paragraphs);font-size:0.85rem;line-height:1.6;font-weight:300;margin-bottom:2rem;color:rgba(255,255,255,0.85);letter-spacing:0.01em}.discover-link[data-astro-cid-v2cbyr3p]{font-family:var(--font-paragraphs);font-size:0.8rem;font-weight:400;color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.5);padding-bottom:4px;transition:border-color 0.3s ease;text-transform:capitalize}.discover-link[data-astro-cid-v2cbyr3p]:hover{border-bottom-color:#fff}@media (max-width: 768px){.about-lv-hero[data-astro-cid-v2cbyr3p]{padding-bottom:4rem}.about-text-overlay[data-astro-cid-v2cbyr3p]{padding:0 2rem}.about-title[data-astro-cid-v2cbyr3p]{font-size:1.8rem}}</style>
+<style data-vite-dev-id="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Footer.astro?astro&#38;type=style&#38;index=0&#38;lang.css">.footer[data-astro-cid-sz7xmlte]{background-color:#fff;color:#666;padding:5rem 0 0;border-top:1px solid #f0f0f0;font-family:var(--font-paragraphs)}.footer-grid[data-astro-cid-sz7xmlte]{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:2rem;padding-bottom:4rem}.brand-info[data-astro-cid-sz7xmlte]{padding-right:2rem}.footer-logo[data-astro-cid-sz7xmlte]{padding-bottom:20px}.footer-logo[data-astro-cid-sz7xmlte] img{width:250px;height:auto;display:block}.brand-description[data-astro-cid-sz7xmlte]{font-size:0.9rem;line-height:1.6;margin-bottom:2rem;color:#888}.brand-contact[data-astro-cid-sz7xmlte] p[data-astro-cid-sz7xmlte]{margin:0.5rem 0;font-size:0.9rem;color:#999}.footer-title[data-astro-cid-sz7xmlte]{color:var(--color-green, #155338);font-size:0.9rem;font-weight:800;margin-bottom:2rem;letter-spacing:1px}.footer-links[data-astro-cid-sz7xmlte]{list-style:none;padding:0;margin:0}.footer-links[data-astro-cid-sz7xmlte] li[data-astro-cid-sz7xmlte]{margin-bottom:1rem}.footer-links[data-astro-cid-sz7xmlte] a[data-astro-cid-sz7xmlte]{color:#999;text-decoration:none;font-size:0.9rem;transition:color 0.2s}.footer-links[data-astro-cid-sz7xmlte] a[data-astro-cid-sz7xmlte]:hover{color:var(--color-green, #155338)}.italic-link[data-astro-cid-sz7xmlte]{font-style:italic}.footer-bottom[data-astro-cid-sz7xmlte]{border-top:1px solid #f9f9f9;padding:2.5rem 0;text-align:center;background-color:#fff}.footer-bottom[data-astro-cid-sz7xmlte] p[data-astro-cid-sz7xmlte]{font-size:0.75rem;letter-spacing:1px;color:#aaa;text-transform:uppercase}.agency[data-astro-cid-sz7xmlte]{color:var(--color-beige, #b1915f);font-weight:bold}.scroll-top-btn[data-astro-cid-sz7xmlte]{position:fixed;bottom:30px;right:30px;width:45px;height:45px;background:#fff;border:none;border-radius:50%;box-shadow:0 4px 15px rgba(0,0,0,0.1);display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;visibility:hidden;transition:all 0.3s;z-index:99;color:#333}.scroll-top-btn[data-astro-cid-sz7xmlte].visible{opacity:1;visibility:visible}.scroll-top-btn[data-astro-cid-sz7xmlte]:hover{transform:translateY(-5px);box-shadow:0 6px 20px rgba(0,0,0,0.15)}@media (max-width: 992px){.footer-grid[data-astro-cid-sz7xmlte]{grid-template-columns:repeat(2,1fr);padding:0 2rem 4rem}}@media (max-width: 600px){.footer-grid[data-astro-cid-sz7xmlte]{grid-template-columns:1fr}}</style>
+<style data-vite-dev-id="C:/Users/Dev/Documents/winston-onepage-headless/src/pages/index.astro?astro&#38;type=style&#38;index=0&#38;lang.css">/* Smoothie scroll */
+	html {
+		scroll-behavior: smooth;
+	}
+
+	main {
+		/* Eliminamos overflow-x para permitir que position: sticky funcione en los componentes hijos */
+	}</style><script type="module" src="/@vite/client"></script>
+<script type="module" src="/@fs/C:/Users/Dev/Documents/winston-onepage-headless/node_modules/.pnpm/astro@5.16.15_@vercel+funct_66fb6651a630895e5709d2c12b65ba38/node_modules/astro/dist/runtime/client/dev-toolbar/entrypoint.js?v=22462236"></script>
+<script>window.__astro_dev_toolbar__ = {"root":"C:\\Users\\Dev\\Documents\\winston-onepage-headless\\","version":"5.16.15","debugInfo":"Astro                    v5.16.15\nNode                     v20.15.0\nSystem                   Windows (x64)\nPackage Manager          npm\nOutput                   server\nAdapter                  @astrojs/vercel\nIntegrations             @astrojs/vercel\n                         @astrojs/react\n                         astro:copy-vercel-output"}</script>
+<script type="module" src="/@id/astro:scripts/page.js"></script>
+<script type="module" src="/src/styles/global.css"></script>
+<script type="module" src="/src/components/Header.astro?astro&type=style&index=0&lang.css"></script>
+<script type="module" src="/src/components/Hero.astro?astro&type=style&index=0&lang.css"></script>
+<script type="module" src="/src/components/ScrollRevealBanner.astro?astro&type=style&index=0&lang.css"></script>
+<script type="module" src="/src/components/About.astro?astro&type=style&index=0&lang.css"></script>
+<script type="module" src="/src/components/Footer.astro?astro&type=style&index=0&lang.css"></script>
+<script type="module" src="/src/pages/index.astro?astro&type=style&index=0&lang.css"></script></head> <body data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/layouts/Layout.astro" data-astro-source-loc="60:11">  <header class="header" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="5:24"> <div class="header-inner" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="6:31"> <!-- Parte Izquierda: Menú y Buscar --> <div class="header-left" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="8:34"> <button class="burger-menu" id="burger-menu" aria-label="Abrir menú" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="13:14"> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="24:18"> <line x1="3" y1="6" x2="21" y2="6" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="25:22"></line> <line x1="3" y1="12" x2="21" y2="12" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="26:22"></line> <line x1="3" y1="18" x2="21" y2="18" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="27:22"></line> </svg> </button> <button class="action-btn search-btn header-search-desktop" id="search-btn-left" aria-label="Buscar" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="34:14"> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="45:18"> <circle cx="11" cy="11" r="8" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="46:22"></circle> <line x1="21" y1="21" x2="16.65" y2="16.65" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="47:22"></line> </svg> </button> </div> <!-- Parte Central: Logo --> <div class="header-center" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="53:36"> <a href="/" class="logo" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="54:38"> <img src="/_image?href=https%3A%2F%2Fwinstonandharrystore.com%2Fwp-content%2Fuploads%2F2020%2F12%2Flogo-w-h-vertical.png&#38;w=400&#38;h=400&#38;f=webp" data-image-component="true" alt="Winston &#38; Harry Logo" referrerpolicy="no-referrer" loading="eager" decoding="async" fetchpriority="auto" width="400" height="400" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/node_modules/.pnpm/astro@5.16.15_@vercel+funct_66fb6651a630895e5709d2c12b65ba38/node_modules/astro/components/Image.astro" data-astro-source-loc="51:2"> </a> </div> <!-- Parte Derecha: Acciones --> <div class="header-right" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="67:35"> <a href="/mi-cuenta" class="action-btn" aria-label="Mi Perfil" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="68:76"> <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="79:18"> <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="80:22"></path> <circle cx="12" cy="7" r="4" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="81:22"></circle> </svg> </a> <div class="header-actions-desktop" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="85:49"> <a href="/lista-de-deseos" class="action-btn" aria-label="Ver Favoritos" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="90:18"> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="101:22"> <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="102:26"></path> </svg> <span class="fav-count" id="fav-count" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="106:60">0</span> </a> <button class="action-btn cart-btn" id="cart-btn-desktop" aria-label="Carrito" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="113:18"> <div class="cart-icon-wrapper" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="114:52"> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="125:26"> <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="126:30"></path> <path d="M3 6h18" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="129:30"></path> <path d="M16 10a4 4 0 0 1-8 0" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="130:30"></path> </svg> <span class="cart-count" id="cart-count" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="132:66">0</span> </div> </button> </div> </div> </div> </header> <div class="menu-overlay" id="menu-overlay" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="140:2"></div> <div class="mobile-nav" id="mobile-nav" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="142:41"> <ul class="mobile-links" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="143:30"> <li data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="144:14"><a href="/" class="mobile-link" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="144:45">Inicio</a></li> <li data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="145:14"><a href="/#tienda" class="mobile-link" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="145:52">Tienda</a></li> <li data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="146:14"><a href="/#nosotros" class="mobile-link" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="146:54">Nosotros</a></li> <li data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="147:14"><a href="/#contacto" class="mobile-link" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="147:54">Contacto</a></li> </ul> <div class="mobile-actions" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="150:33"> <a href="/lista-de-deseos" class="mobile-action-item" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="151:63"> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="162:19"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="162:19"></path></svg> <span data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="166:19">Lista de Deseos (<span id="fav-count-mobile" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="166:64">0</span>)</span> </a> <button class="mobile-action-item cart-btn" id="cart-btn-mobile" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="168:74"> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="179:19"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="179:19"></path><path d="M3 6h18" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="180:26"></path><path d="M16 10a4 4 0 0 1-8 0" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="180:51"></path></svg> <span data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="183:19">Carrito (<span id="cart-count-mobile" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="183:57">0</span>)</span> </button> </div> <div class="menu-footer" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="187:30"> <a href="/ayuda" class="help-link" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="188:44">¿Cómo podemos ayudarle?</a> </div> </div> <!-- Cart Drawer --> <div class="cart-drawer" id="cart-drawer" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="193:43"> <div class="cart-drawer-header" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="194:37"> <span class="cart-title" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="195:34">SHOPPING CART</span> <button class="cart-close" id="cart-close" aria-label="Cerrar carrito" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="196:80"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="207:14"> <line x1="18" y1="6" x2="6" y2="18" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="208:18"></line> <line x1="6" y1="6" x2="18" y2="18" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="209:18"></line> </svg> <span data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="211:19">Cerrar</span> </button> </div> <div class="cart-items" id="cart-drawer-items" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="215:52"> <!-- Items populated by JS --> </div> <div class="cart-drawer-footer" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="219:37"> <div class="subtotal-row" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="220:35"> <span class="subtotal-label" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="221:42">Subtotal:</span> <div class="subtotal-price-group" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="222:47"> <span class="subtotal-value" id="drawer-subtotal" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="223:67">$0</span> <span class="tax-note" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="224:40">(con impuestos)</span> </div> </div> <div class="cart-actions" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="227:35"> <button class="btn-drawer btn-secondary" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="228:54">VER CARRITO</button> <button class="btn-drawer btn-primary" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Header.astro" data-astro-source-loc="229:52">FINALIZAR COMPRA</button> </div> </div> </div> <script type="module" src="/src/components/Header.astro?astro&type=script&index=0&lang.ts"></script>  <main data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/pages/index.astro" data-astro-source-loc="14:8"> <section id="inicio" class="hero" data-astro-cid-bbe6dxrz data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Hero.astro" data-astro-source-loc="5:35"> <div class="video-background" data-astro-cid-bbe6dxrz data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Hero.astro" data-astro-source-loc="6:35"> <video autoplay muted loop playsinline poster="/images/hero-poster.webp" preload="metadata" data-astro-cid-bbe6dxrz data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Hero.astro" data-astro-source-loc="14:10"> <source src="/videos/hero-video.mp4" type="video/mp4" data-astro-cid-bbe6dxrz data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Hero.astro" data-astro-source-loc="15:14"> </video> <div class="overlay" data-astro-cid-bbe6dxrz data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Hero.astro" data-astro-source-loc="17:10"></div> </div> <!-- Overlay Image "Eleva tu estilo sin límites" --> <img src="/images/hero-overlay.png" alt="Eleva tu estilo sin límites" class="hero-overlay-img" loading="eager" fetchpriority="high" data-astro-cid-bbe6dxrz data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Hero.astro" data-astro-source-loc="21:6"> </section>  <style>astro-island,astro-slot,astro-static-slot{display:contents}</style><script>(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).load=e;window.dispatchEvent(new Event("astro:load"));})();</script><script>(()=>{var A=Object.defineProperty;var g=(i,o,a)=>o in i?A(i,o,{enumerable:!0,configurable:!0,writable:!0,value:a}):i[o]=a;var l=(i,o,a)=>g(i,typeof o!="symbol"?o+"":o,a);{let i={0:t=>y(t),1:t=>a(t),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(a(t)),5:t=>new Set(a(t)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(t),9:t=>new Uint16Array(t),10:t=>new Uint32Array(t),11:t=>1/0*t},o=t=>{let[h,e]=t;return h in i?i[h](e):void 0},a=t=>t.map(o),y=t=>typeof t!="object"||t===null?t:Object.fromEntries(Object.entries(t).map(([h,e])=>[h,o(e)]));class f extends HTMLElement{constructor(){super(...arguments);l(this,"Component");l(this,"hydrator");l(this,"hydrate",async()=>{var b;if(!this.hydrator||!this.isConnected)return;let e=(b=this.parentElement)==null?void 0:b.closest("astro-island[ssr]");if(e){e.addEventListener("astro:hydrate",this.hydrate,{once:!0});return}let c=this.querySelectorAll("astro-slot"),n={},p=this.querySelectorAll("template[data-astro-template]");for(let r of p){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("data-astro-template")||"default"]=r.innerHTML,r.remove())}for(let r of c){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("name")||"default"]=r.innerHTML)}let u;try{u=this.hasAttribute("props")?y(JSON.parse(this.getAttribute("props"))):{}}catch(r){let s=this.getAttribute("component-url")||"<unknown>",v=this.getAttribute("component-export");throw v&&(s+=` (export ${v})`),console.error(`[hydrate] Error parsing props for component ${s}`,this.getAttribute("props"),r),r}let d,m=this.hydrator(this);d=performance.now(),await m(this.Component,u,n,{client:this.getAttribute("client")}),d&&this.setAttribute("client-render-time",(performance.now()-d).toString()),this.removeAttribute("ssr"),this.dispatchEvent(new CustomEvent("astro:hydrate"))});l(this,"unmount",()=>{this.isConnected||this.dispatchEvent(new CustomEvent("astro:unmount"))})}disconnectedCallback(){document.removeEventListener("astro:after-swap",this.unmount),document.addEventListener("astro:after-swap",this.unmount,{once:!0})}connectedCallback(){if(!this.hasAttribute("await-children")||document.readyState==="interactive"||document.readyState==="complete")this.childrenConnectedCallback();else{let e=()=>{document.removeEventListener("DOMContentLoaded",e),c.disconnect(),this.childrenConnectedCallback()},c=new MutationObserver(()=>{var n;((n=this.lastChild)==null?void 0:n.nodeType)===Node.COMMENT_NODE&&this.lastChild.nodeValue==="astro:end"&&(this.lastChild.remove(),e())});c.observe(this,{childList:!0}),document.addEventListener("DOMContentLoaded",e)}}async childrenConnectedCallback(){let e=this.getAttribute("before-hydration-url");e&&await import(e),this.start()}async start(){let e=JSON.parse(this.getAttribute("opts")),c=this.getAttribute("client");if(Astro[c]===void 0){window.addEventListener(`astro:${c}`,()=>this.start(),{once:!0});return}try{await Astro[c](async()=>{let n=this.getAttribute("renderer-url"),[p,{default:u}]=await Promise.all([import(this.getAttribute("component-url")),n?import(n):()=>()=>{}]),d=this.getAttribute("component-export")||"default";if(!d.includes("."))this.Component=p[d];else{this.Component=p;for(let m of d.split("."))this.Component=this.Component[m]}return this.hydrator=u,this.hydrate},e,this)}catch(n){console.error(`[astro-island] Error hydrating ${this.getAttribute("component-url")}`,n)}}attributeChangedCallback(){this.hydrate()}}l(f,"observedAttributes",["props"]),customElements.get("astro-island")||customElements.define("astro-island",f)}})();</script><astro-island uid="Z1yTtb5" prefix="r1" component-url="/src/components/ProductGrid.tsx" component-export="default" renderer-url="/node_modules/.vite/deps/@astrojs_react_client__js.js?v=e2ea0df5" props="{}" ssr client="load" before-hydration-url="/@id/astro:scripts/before-hydration.js" opts="{&quot;name&quot;:&quot;ProductGrid&quot;,&quot;value&quot;:true}" server-render-time="15.049200000008568" await-children><section id="tienda" class="tienda"><div class="container-full"><div class="section-title"><span class="subtitle">ACCESORIOS Y ZAPATOS DE CUERO PARA HOMBRE</span><h2>LOS FAVORITOS</h2><p class="description">En un mundo en el que todos tratamos de encajar, la única forma de diferenciarnos es honrando nuestras diferencias reflejadas en nuestra personalidad.</p></div><div class="grid-4x3"></div><div class="loading-spinner"><div class="spinner"></div></div></div><style>
+        .tienda { background-color: #fff; padding: 4rem 0; width: 100%; }
+        .container-full { width: 100%; padding: 0; }
+        .section-title { text-align: center; margin-bottom: 3rem; max-width: 800px; margin-left: auto; margin-right: auto; padding: 0 1rem; }
+        .subtitle { font-size: 0.8rem; color: #999; letter-spacing: 2px; text-transform: uppercase; display: block; margin-bottom: 0.5rem; font-family: var(--font-paragraphs); }
+        .section-title h2 { font-size: 1.25rem; margin-bottom: 1.5rem; color: var(--color-green); line-height: 1; }
+        .description { font-size: 0.8rem; color: #666; line-height: 1.6; font-family: var(--font-paragraphs); }
+
+        @media (max-width: 768px) {
+          .section-title h2 { font-size: 1.15rem; }
+          .description { font-size: 0.75rem; }
+        }
+
+        .grid-4x3 {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 0rem;
+          width: 100%;
+          
+        }
+
+        @media (max-width: 1200px) { .grid-4x3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+        @media (max-width: 768px) { .grid-4x3 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+        @media (max-width: 480px) { .grid-4x3 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+        .load-more-container { margin-top: 4rem; display: flex; justify-content: center; }
+        .error-container { text-align: center; padding: 4rem 0; }
+        .loading-spinner { display: flex; justify-content: center; margin-top: 3rem; }
+        .spinner { width: 40px; height: 40px; border: 4px solid rgba(21, 83, 56, 0.1); border-left-color: var(--color-green); border-radius: 50%; animation: spin 1s linear infinite; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+      </style></section><!--astro:end--></astro-island> <section class="lv-reveal-container" data-reveal-container data-astro-cid-mq7aec5e data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/ScrollRevealBanner.astro" data-astro-source-loc="13:60"> <div class="lv-reveal-sticky" data-reveal-sticky data-astro-cid-mq7aec5e data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/ScrollRevealBanner.astro" data-astro-source-loc="14:54"> <div class="lv-reveal-media" data-astro-cid-mq7aec5e data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/ScrollRevealBanner.astro" data-astro-source-loc="15:38"> <img src="/images/banner-look-completo.webp" alt class="lv-reveal-image" data-reveal-image loading="eager" data-astro-cid-mq7aec5e data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/ScrollRevealBanner.astro" data-astro-source-loc="16:14"> <div class="lv-reveal-overlay" data-reveal-overlay data-astro-cid-mq7aec5e data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/ScrollRevealBanner.astro" data-astro-source-loc="23:14"></div> </div> <div class="lv-reveal-content-wrapper" data-astro-cid-mq7aec5e data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/ScrollRevealBanner.astro" data-astro-source-loc="26:48"> <div class="lv-reveal-content" data-reveal-content style="opacity: 0; transform: translateY(300px);" data-astro-cid-mq7aec5e data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/ScrollRevealBanner.astro" data-astro-source-loc="31:14"> <p class="lv-reveal-pretitle" data-astro-cid-mq7aec5e data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/ScrollRevealBanner.astro" data-astro-source-loc="32:60">Winston &amp; Harry</p> <h3 class="lv-reveal-title" data-astro-cid-mq7aec5e data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/ScrollRevealBanner.astro" data-astro-source-loc="33:45">Estilo que se construye con intención</h3> <div class="lv-reveal-description" data-astro-cid-mq7aec5e data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/ScrollRevealBanner.astro" data-astro-source-loc="34:52"> <p data-astro-cid-mq7aec5e data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/ScrollRevealBanner.astro" data-astro-source-loc="35:24">Cada prenda está pensada para integrarse a tu forma de vestir y a tu ritmo. Descubre ropa que suma, combina y se adapta a tu día. chaquetas, camisas y suéteres.</p> </div> </div> </div> </div> </section>  <script type="module" src="/src/components/ScrollRevealBanner.astro?astro&type=script&index=0&lang.ts"></script> <section id="nosotros" class="about-lv-hero" data-astro-cid-v2cbyr3p data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/About.astro" data-astro-source-loc="5:46"> <div class="video-container" data-astro-cid-v2cbyr3p data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/About.astro" data-astro-source-loc="6:34"> <!-- Overlay sutil para legibilidad --> <div class="video-overlay" data-astro-cid-v2cbyr3p data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/About.astro" data-astro-source-loc="8:10"></div> <div class="iframe-wrapper" data-astro-cid-v2cbyr3p data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/About.astro" data-astro-source-loc="10:37"> <iframe src="https://www.youtube.com/embed/XGnN4DTsdD8?autoplay=1&mute=1&loop=1&playlist=XGnN4DTsdD8&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&disablekb=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen data-astro-cid-v2cbyr3p data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/About.astro" data-astro-source-loc="16:14">
+            </iframe> </div> </div> <div class="container about-text-overlay" data-astro-cid-v2cbyr3p data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/About.astro" data-astro-source-loc="21:47"> <div class="about-content-corner" data-astro-cid-v2cbyr3p data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/About.astro" data-astro-source-loc="22:43"> <h2 class="about-title" data-astro-cid-v2cbyr3p data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/About.astro" data-astro-source-loc="23:37">
+Winston & Harry, <br data-astro-cid-v2cbyr3p data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/About.astro" data-astro-source-loc="24:35">
+Maestros de la Tradición
+</h2> <p class="about-description" data-astro-cid-v2cbyr3p data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/About.astro" data-astro-source-loc="28:42">
+Winston & Harry nace de la pasión por el detalle y el respeto
+                por las técnicas tradicionales de zapatería. Cada par es una
+                obra única, confeccionada por manos colombianas que transforman
+                los cueros más finos en piezas de arte para tus pies.
+</p> <!-- <a href="#tienda" class="discover-link">Descubrir colección</a> --> </div> </div> </section>  </main> <footer id="footer" class="footer" data-astro-cid-sz7xmlte data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Footer.astro" data-astro-source-loc="5:36"> <div class="container footer-grid" data-astro-cid-sz7xmlte data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Footer.astro" data-astro-source-loc="6:40"> <!-- Columna 1: Logo e Info --> <div class="footer-column brand-info" data-astro-cid-sz7xmlte data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Footer.astro" data-astro-source-loc="8:47"> <div class="footer-logo" data-astro-cid-sz7xmlte data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Footer.astro" data-astro-source-loc="9:38"> <a href="/" class="logo" data-astro-cid-sz7xmlte data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Footer.astro" data-astro-source-loc="10:42"> <img src="/_image?href=https%3A%2F%2Fwinstonandharrystore.com%2Fwp-content%2Fuploads%2F2020%2F12%2Flogo-w-h-vertical.png&#38;w=400&#38;h=400&#38;f=webp" data-image-component="true" alt="Winston &#38; Harry Logo" referrerpolicy="no-referrer" loading="lazy" data-astro-cid-sz7xmlte="true" decoding="async" fetchpriority="auto" width="400" height="400" data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/node_modules/.pnpm/astro@5.16.15_@vercel+funct_66fb6651a630895e5709d2c12b65ba38/node_modules/astro/components/Image.astro" data-astro-source-loc="51:2"> </a> </div> <p class="brand-description" data-astro-cid-sz7xmlte data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Footer.astro" data-astro-source-loc="21:42">
+Nuestros productos son orgullosamente hechos a mano, cuidando
+                las tradiciones que nuestros artesanos colombianos han
+                conservado a lo largo de varias generaciones.
+</p> <div class="brand-contact" data-astro-cid-sz7xmlte data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Footer.astro" data-astro-source-loc="26:40"> <p data-astro-cid-sz7xmlte data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Footer.astro" data-astro-source-loc="27:20">Bogotá, Colombia</p> <p data-astro-cid-sz7xmlte data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Footer.astro" data-astro-source-loc="28:20">Teléfono: +57 310 3075540</p> <p data-astro-cid-sz7xmlte data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Footer.astro" data-astro-source-loc="29:20">info@winstonandharrystore.com</p> </div> </div> <!-- Columna 2: Atención al Cliente --> <div class="footer-column" data-astro-cid-sz7xmlte data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Footer.astro" data-astro-source-loc="34:36"> <h3 class="footer-title" data-astro-cid-sz7xmlte data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Footer.astro" data-astro-source-loc="35:38">ATENCIÓN AL CLIENTE</h3> <ul class="footer-links" data-astro-cid-sz7xmlte data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Footer.astro" data-astro-source-loc="36:38"> <li data-astro-cid-sz7xmlte data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Footer.astro" data-astro-source-loc="37:22"><a href="/contacto" data-astro-cid-sz7xmlte data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Footer.astro" data-astro-source-loc="37:41">Contáctanos</a></li> <li data-astro-cid-sz7xmlte data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Footer.astro" data-astro-source-loc="38:21"> <a href="/preguntas-frecuentes" data-astro-cid-sz7xmlte data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Footer.astro" data-astro-source-loc="39:53">Preguntas frecuentes</a> </li> <li data-astro-cid-sz7xmlte data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Footer.astro" data-astro-source-loc="41:22"><a href="/tiendas" data-astro-cid-sz7xmlte data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Footer.astro" data-astro-source-loc="41:40">Tiendas</a></li> <li data-astro-cid-sz7xmlte data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Footer.astro" data-astro-source-loc="42:21"> <a href="/cuidado-del-calzado" data-astro-cid-sz7xmlte data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Footer.astro" data-astro-source-loc="43:52">Cuidado de los productos</a> </li> </ul> </div> <!-- Columna 3: Nosotros --> <div class="footer-column" data-astro-cid-sz7xmlte data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Footer.astro" data-astro-source-loc="49:36"> <h3 class="footer-title" data-astro-cid-sz7xmlte data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Footer.astro" data-astro-source-loc="50:38">NOSOTROS</h3> <ul class="footer-links" data-astro-cid-sz7xmlte data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Footer.astro" data-astro-source-loc="51:38"> <li data-astro-cid-sz7xmlte data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Footer.astro" data-astro-source-loc="52:22"><a href="/la-marca" data-astro-cid-sz7xmlte data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Footer.astro" data-astro-source-loc="52:41">La Marca</a></li> <li data-astro-cid-sz7xmlte data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Footer.astro" data-astro-source-loc="53:22"><a href="/#tienda" data-astro-cid-sz7xmlte data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Footer.astro" data-astro-source-loc="53:40">Zapatos</a></li> <li data-astro-cid-sz7xmlte data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Footer.astro" data-astro-source-loc="54:22"><a href="/accesorios" data-astro-cid-sz7xmlte data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Footer.astro" data-astro-source-loc="54:43">Accesorios</a></li> <li data-astro-cid-sz7xmlte data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Footer.astro" data-astro-source-loc="55:22"><a href="/maletas" data-astro-cid-sz7xmlte data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Footer.astro" data-astro-source-loc="55:40">Maletas</a></li> <li data-astro-cid-sz7xmlte data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Footer.astro" data-astro-source-loc="56:22"><a href="/mascotas" data-astro-cid-sz7xmlte data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Footer.astro" data-astro-source-loc="56:41">Mascotas</a></li> <li data-astro-cid-sz7xmlte data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Footer.astro" data-astro-source-loc="57:22"><a href="/ropa" data-astro-cid-sz7xmlte data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Footer.astro" data-astro-source-loc="57:37">Ropa</a></li> <li data-astro-cid-sz7xmlte data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Footer.astro" data-astro-source-loc="58:22"><a href="/guia-de-tallas" data-astro-cid-sz7xmlte data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Footer.astro" data-astro-source-loc="58:47">Guía de tallas</a></li> <li data-astro-cid-sz7xmlte data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Footer.astro" data-astro-source-loc="59:21"> <a href="/dona-tus-zapatos" class="italic-link" data-astro-cid-sz7xmlte data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Footer.astro" data-astro-source-loc="61:26">Dona tus zapatos</a> </li> </ul> </div> <!-- Columna 4: Legal --> <div class="footer-column" data-astro-cid-sz7xmlte data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Footer.astro" data-astro-source-loc="68:36"> <h3 class="footer-title" data-astro-cid-sz7xmlte data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Footer.astro" data-astro-source-loc="69:38">LEGAL</h3> <ul class="footer-links" data-astro-cid-sz7xmlte data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Footer.astro" data-astro-source-loc="70:38"> <li data-astro-cid-sz7xmlte data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Footer.astro" data-astro-source-loc="71:21"> <a href="/politica-de-privacidad" data-astro-cid-sz7xmlte data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Footer.astro" data-astro-source-loc="72:55">Política de privacidad</a> </li> <li data-astro-cid-sz7xmlte data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Footer.astro" data-astro-source-loc="74:22"><a href="/politica-de-cookies" data-astro-cid-sz7xmlte data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Footer.astro" data-astro-source-loc="74:52">Política de cookies</a></li> <li data-astro-cid-sz7xmlte data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Footer.astro" data-astro-source-loc="75:21"> <a href="/terminos-y-condiciones" data-astro-cid-sz7xmlte data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Footer.astro" data-astro-source-loc="76:55">Términos y condiciones</a> </li> <li data-astro-cid-sz7xmlte data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Footer.astro" data-astro-source-loc="78:22"><a href="/politica-de-envios" data-astro-cid-sz7xmlte data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Footer.astro" data-astro-source-loc="78:51">Política de envíos</a></li> </ul> </div> </div> <!-- Barra Inferior --> <div class="footer-bottom" data-astro-cid-sz7xmlte data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Footer.astro" data-astro-source-loc="84:32"> <div class="container" data-astro-cid-sz7xmlte data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Footer.astro" data-astro-source-loc="85:32"> <p data-astro-cid-sz7xmlte data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Footer.astro" data-astro-source-loc="86:16">
+WINSTON & HARRY 2026 UN DESARROLLO DE <a href="https://goestrategiacreativa.com/" target="_blank" class="agency" data-astro-cid-sz7xmlte data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Footer.astro" data-astro-source-loc="90:36">GO Agency.</a> </p> </div> </div> <!-- Botón Volver Arriba --> <button id="scroll-to-top" class="scroll-top-btn" aria-label="Volver arriba" data-astro-cid-sz7xmlte data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Footer.astro" data-astro-source-loc="101:6"> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-sz7xmlte data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Footer.astro" data-astro-source-loc="111:38"><path d="m18 15-6-6-6 6" data-astro-cid-sz7xmlte data-astro-source-file="C:/Users/Dev/Documents/winston-onepage-headless/src/components/Footer.astro" data-astro-source-loc="111:38"></path></svg> </button> </footer> <script>
+    const scrollBtn = document.getElementById("scroll-to-top");
+    window.addEventListener("scroll", () => {
+        if (window.pageYOffset > 300) {
+            scrollBtn.classList.add("visible");
+        } else {
+            scrollBtn.classList.remove("visible");
+        }
+    });
+    scrollBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+</script>   <script type="module" src="/src/layouts/Layout.astro?astro&type=script&index=0&lang.ts"></script> </body> </html> 

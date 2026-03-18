@@ -281,8 +281,10 @@ function flattenCategoryUrl(url: string) {
 <!-- Cart Drawer Replaced by SideCart.tsx in Layout -->
 
 <script>
-    import { isCartOpen, cartItems } from "../store/cart";
+    import { isCartOpen, cartItems, isSearchOpen } from "../store/cart";
     const burgerBtn = document.getElementById("burger-menu");
+    const searchBtn = document.getElementById("search-btn-left");
+    const searchBtnMobile = document.getElementById("search-btn-mobile");
     const menuOverlay = document.getElementById("menu-overlay");
     const mobileNav = document.getElementById("mobile-nav");
     const mobileLinks = document.querySelectorAll(
@@ -313,6 +315,20 @@ function flattenCategoryUrl(url: string) {
             const isOpen = mobileNav?.classList.contains("active");
             toggleMenu(!isOpen);
         });
+
+    if (searchBtn) {
+        searchBtn.addEventListener("click", () => {
+            toggleMenu(false);
+            isSearchOpen.set(true);
+        });
+    }
+
+    if (searchBtnMobile) {
+        searchBtnMobile.addEventListener("click", () => {
+            toggleMenu(false);
+            isSearchOpen.set(true);
+        });
+    }
 
     cartBtns.forEach((btn) => {
         btn.addEventListener("click", () => {
@@ -547,13 +563,14 @@ function flattenCategoryUrl(url: string) {
         background: none;
         border: none;
         cursor: pointer;
-        display: none !important;
+        display: flex !important;
         align-items: center;
         gap: 0.8rem;
         color: #333;
-        padding: 0;
+        padding: 5px;
         font-family: var(--font-paragraphs);
         transition: opacity 0.3s;
+        pointer-events: auto !important;
     }
 
     .action-text {
@@ -680,7 +697,7 @@ function flattenCategoryUrl(url: string) {
         flex-direction: column;
         padding: 0;
         visibility: hidden;
-        overflow-y: auto;
+        overflow: hidden; /* IMPORTANTE: El contenedor padre no scrollea */
     }
 
     .mobile-nav.active {
@@ -714,16 +731,36 @@ function flattenCategoryUrl(url: string) {
     .mobile-action-item svg {
         width: 18px;
         height: 18px;
+    }
+
+    .mobile-search-btn {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        background: none;
+        border: none;
+        border-bottom: 1px solid #121212;
+        padding: 0.8rem 0;
+        cursor: pointer;
+        color: #121212;
+        font-family: var(--font-titles);
+        font-size: 0.75rem;
+        letter-spacing: 2px;
+        text-align: left;
+    }
+    .mobile-search-btn svg {
         color: #666;
     }
 
     .mobile-links {
         list-style: none;
-        padding: 2.5rem 3rem;
+        padding: 1.5rem 2rem;
         display: flex;
         flex-direction: column;
         gap: 1.5rem; /* El espacio se maneja a nivel del li */
-        flex-grow: 0;
+        flex-grow: 1;
+        overflow-y: auto; /* Solo scrollean los links */
     }
 
     .menu-item {

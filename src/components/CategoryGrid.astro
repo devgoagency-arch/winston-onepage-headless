@@ -2,23 +2,27 @@
 // Last update: 2026-03-16 - Deployment Trigger
 import { wcFetch } from '../lib/woocommerce';
 
-// Lista de categorías que queremos mostrar con su imagen local fija
+// Lista de categorías que queremos mostrar con su imagen local fija y palabras clave para búsqueda dinámica
 const targetCategories = [
-    { id: 'ropa', image: '/images/ropa.jpg', fallbackName: 'Ropa' },
-    { id: 'zapatos', image: '/images/zapatos.jpg', fallbackName: 'Zapatos' },
-    { id: 'maletas', image: '/images/maletas.jpg', fallbackName: 'Maletas' },
-    { id: 'accesorios', image: '/images/accesorios.jpg', fallbackName: 'Accesorios' }
+    { id: 'ropa', image: '/images/ropa.jpg', fallbackName: 'Ropa', keywords: ['ropa', 'indumentaria', 'prendas'] },
+    { id: 'zapatos', image: '/images/zapatos.jpg', fallbackName: 'Zapatos', keywords: ['zapatos', 'calzado', 'mocasines', 'botas'] },
+    { id: 'maletas', image: '/images/maletas.jpg', fallbackName: 'Maletas', keywords: ['maletas', 'maletines', 'bolsos', 'viaje', 'equipaje'] },
+    { id: 'accesorios', image: '/images/accesorios.jpg', fallbackName: 'Accesorios', keywords: ['accesorios', 'complementos', 'correas', 'billeteras'] }
 ];
 
 // Obtenemos todas las categorías para poder encontrarlas incluso si cambia el slug
 const allCategories = await wcFetch('/products/categories?per_page=100') || [];
 
 const categoriesData = targetCategories.map(target => {
-    // Buscamos la categoría que coincida con el slug original o con el nombre
-    const cat = allCategories.find((c: { slug: string; name: string }) => 
-        c.slug === target.id || 
-        c.name.toLowerCase() === target.id.toLowerCase()
-    );
+    // Buscamos la categoría que coincida con el slug original, el nombre o alguna palabra clave
+    const cat = allCategories.find((c: { slug: string; name: string }) => {
+        const slug = c.slug.toLowerCase();
+        const name = c.name.toLowerCase();
+        
+        return slug === target.id || 
+               name === target.id.toLowerCase() ||
+               target.keywords.some(k => slug.includes(k) || name.includes(k));
+    });
 
     return {
         slug: cat?.slug || target.id,

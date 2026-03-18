@@ -1,0 +1,41 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import ScrollRevealBanner from "../components/ScrollRevealBanner.astro";
+import ProductGrid from "../components/ProductGrid";
+import About from "../components/About.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout title="Winston & Harry | Calzado Artesanal de Lujo">
+	<Header />
+
+	<main>
+		<Hero />
+
+		<ProductGrid client:load />
+
+		<ScrollRevealBanner
+			imageUrl="/images/banner-look-completo.webp"
+			title="Estilo que se construye con intención"
+			description="Cada prenda está pensada para integrarse a tu forma de vestir y a tu ritmo. Descubre ropa que suma, combina y se adapta a tu día. chaquetas, camisas y suéteres."
+			pretitle="Winston & Harry"
+		/>
+
+		<About />
+	</main>
+
+	<Footer />
+</Layout>
+
+<style is:global>
+	/* Smoothie scroll */
+	html {
+		scroll-behavior: smooth;
+	}
+
+	main {
+		/* Eliminamos overflow-x para permitir que position: sticky funcione en los componentes hijos */
+	}
+</style>

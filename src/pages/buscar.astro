@@ -1,0 +1,225 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import ProductCard from "../components/ProductCard";
+import { searchProducts } from "../lib/woocommerce";
+
+const query = Astro.url.searchParams.get("s") || "";
+let products = [];
+let loading = false;
+
+if (query.trim().length > 0) {
+    loading = true;
+    products = await searchProducts(query);
+    loading = false;
+}
+---
+
+<Layout title={`Búsqueda: ${query} | Winston & Harry`}>
+    <Header />
+
+    <main class="search-results-page">
+        <section class="results-header">
+            <div class="container-full">
+                <h1 class="search-title">
+                    {
+                        query
+                            ? `RESULTADOS PARA: "${query.toUpperCase()}"`
+                            : "BUSCAR EN LA TIENDA"
+                    }
+                </h1>
+                <p class="results-count">
+                    {products.length}
+                    {
+                        products.length === 1
+                            ? "producto encontrado"
+                            : "productos encontrados"
+                    }
+                </p>
+
+                {
+                    !query && (
+                        <div class="search-page-form">
+                            <form action="/buscar" method="get">
+                                <input
+                                    type="text"
+                                    name="s"
+                                    placeholder="Escribe lo que buscas..."
+                                    class="main-search-input"
+                                    autofocus
+                                />
+                                <button type="submit" class="btn-search-p">
+                                    BUSCAR
+                                </button>
+                            </form>
+                        </div>
+                    )
+                }
+            </div>
+        </section>
+
+        <section class="products-grid-container container-full">
+            {
+                products.length > 0 ? (
+                    <div class="grid-4x3">
+                        {products.map((product) => (
+                            <ProductCard client:load product={product} />
+                        ))}
+                    </div>
+                ) : (
+                    query && (
+                        <div class="no-results">
+                            <p>
+                                No encontramos lo que buscas. Intenta con otras
+                                palabras o navega por nuestras categorías.
+                            </p>
+                            <div class="suggested-links">
+                                <a
+                                    href="/categoria/zapatos"
+                                    class="btn-outline"
+                                >
+                                    VER CALZADO
+                                </a>
+                                <a href="/categoria/ropa" class="btn-outline">
+                                    VER ROPA
+                                </a>
+                            </div>
+                        </div>
+                    )
+                )
+            }
+        </section>
+    </main>
+
+    <Footer />
+</Layout>
+
+<style is:global>
+    .search-results-page {
+        padding-top: 90px;
+        min-height: 70vh;
+    }
+    .products-grid-container {
+        padding: 0px !important;
+    }
+
+    .results-header {
+        padding: 2rem;
+        background: #f9f9f9;
+        text-align: center;
+        margin-bottom: 0rem;
+    }
+
+    .search-title {
+        font-family: var(--font-titles);
+        font-size: 1.5rem;
+        letter-spacing: 4px;
+        color: #121212;
+        margin-bottom: 1rem;
+    }
+
+    .results-count {
+        font-family: var(--font-paragraphs);
+        color: #666;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .search-page-form {
+        max-width: 600px;
+        margin: 2rem auto 0;
+    }
+
+    .search-page-form form {
+        display: flex;
+        gap: 0;
+        border-bottom: 2px solid #121212;
+    }
+
+    .main-search-input {
+        flex: 1;
+        padding: 1rem;
+        border: none;
+        background: none;
+        font-family: var(--font-paragraphs);
+        font-size: 1.1rem;
+        outline: none;
+    }
+
+    .btn-search-p {
+        background: #121212;
+        color: #fff;
+        border: none;
+        padding: 0 2rem;
+        font-family: var(--font-titles);
+        letter-spacing: 2px;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+
+    .btn-search-p:hover {
+        background: #333;
+    }
+
+    .grid-4x3 {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0;
+        width: 100%;
+        border-top: 1px solid #eee;
+    }
+
+    .no-results {
+        text-align: center;
+        padding: 4rem 2rem;
+    }
+
+    .no-results p {
+        font-family: var(--font-paragraphs);
+        font-size: 1.1rem;
+        color: #666;
+        margin-bottom: 2rem;
+    }
+
+    .suggested-links {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+
+    .btn-outline {
+        padding: 1rem 2rem;
+        border: 1px solid #121212;
+        color: #121212;
+        text-decoration: none;
+        font-family: var(--font-titles);
+        font-size: 0.8rem;
+        letter-spacing: 2px;
+        transition: all 0.3s;
+    }
+
+    .btn-outline:hover {
+        background: #121212;
+        color: #fff;
+    }
+
+    @media (max-width: 1024px) {
+        .grid-4x3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+    @media (max-width: 768px) {
+        .grid-4x3 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .search-title {
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+        }
+        .search-results-page {
+            padding-top: 60px;
+        }
+    }
+</style>

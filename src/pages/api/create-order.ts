@@ -58,6 +58,9 @@ export const POST: APIRoute = async ({ request }) => {
             customer_note: body.order_notes || '',
         };
 
+        // Log del payload para depuración
+        console.log('[API create-order] Enviando payload a WC:', JSON.stringify(orderPayload, null, 2));
+
         // Crear la orden en WooCommerce
         const order = await wcFetch('/orders', {
             method: 'POST',
@@ -65,9 +68,15 @@ export const POST: APIRoute = async ({ request }) => {
             body: JSON.stringify(orderPayload),
         });
 
+        console.log('[API create-order] Respuesta de WC:', order ? `Orden ID: ${order.id}` : 'FALLO (null)');
+
         if (!order || !order.id) {
+            console.error('[API create-order] Error: No se recibió ID de orden de WooCommerce');
             return new Response(
-                JSON.stringify({ error: 'No se pudo crear la orden' }),
+                JSON.stringify({ 
+                    error: 'No se pudo crear la orden en WordPress',
+                    details: 'La respuesta de WooCommerce fue inválida o falló la autenticación.'
+                }),
                 { status: 500 }
             );
         }

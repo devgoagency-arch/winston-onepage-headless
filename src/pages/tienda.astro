@@ -2,9 +2,10 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import { getAllProducts, getAttributeTerms, wcFetch } from "../lib/woocommerce";
+import { getAllProducts, getAttributeTerms, getAttributes, wcFetch } from "../lib/woocommerce";
 import FilteredProductList from "../components/FilteredProductList";
 
+export const prerender = true;
 export const isr = {
     expiration: 3600, // 1 hora
 };
@@ -61,10 +62,21 @@ try {
         activeSort.onSale,
     );
 
-    // 2. Cargamos términos para filtros (Color y Talla)
+    // 2. Cargamos términos para filtros — buscamos el ID real por nombre
+    const allAttributes = await getAttributes().catch(() => []);
+    const colorAttr = Array.isArray(allAttributes)
+        ? allAttributes.find((a: any) => (a.name || '').toLowerCase().includes('color'))
+        : null;
+    const tallaAttr = Array.isArray(allAttributes)
+        ? allAttributes.find((a: any) => {
+            const name = (a.name || '').toLowerCase();
+            return name.includes('talla') || name.includes('size') || name.includes('número') || name.includes('numero');
+          })
+        : null;
+
     const [colors, sizes, categories] = await Promise.all([
-        getAttributeTerms(2).catch(() => []), // ID 2 suele ser Color
-        getAttributeTerms(1).catch(() => []), // ID 1 suele ser Talla
+        colorAttr?.id ? getAttributeTerms(colorAttr.id).catch(() => []) : Promise.resolve([]),
+        tallaAttr?.id ? getAttributeTerms(tallaAttr.id).catch(() => []) : Promise.resolve([]),
         wcFetch("/products/categories?per_page=100&hide_empty=true").catch(
             () => [],
         ),

@@ -7,6 +7,7 @@ import {
     getCategoryBySlug,
     getProductsByCategory,
     getChildCategories,
+    getCategoryTree,
     getAttributeTerms,
     PUBLIC_WP_URL,
 } from "../../lib/woocommerce";
@@ -71,7 +72,7 @@ let colorTerms: any[] = [];
 let tallaTerms: any[] = [];
 
 let subcategories: any[] = [];
-let dropdownCategories: any[] = [];
+let navigationTree: any[] = [];
 
 try {
     // 1. Buscamos la categoría en WooCommerce (para productos e ID)
@@ -101,24 +102,11 @@ try {
             activeSort.onSale
         );
 
-        // 4. Cargamos subcategorías reales para el dropdown
-        const children = await getChildCategories(category.id);
-        
-        if (children && children.length > 0) {
-            dropdownCategories = children;
-        } else if (category.parent !== 0) {
-            // Si no hay subcategorías pero tiene un padre, mostramos las categorías hermanas
-            dropdownCategories = await getChildCategories(category.parent);
-        } else {
-            // Si es una categoría principal sin subcategorías, mostramos las categorías principales
-            dropdownCategories = [
-                { name: "Zapatos", slug: "zapatos" },
-                { name: "Ropa", slug: "ropa" },
-                { name: "Accesorios", slug: "accesorios" },
-                { name: "Maletas", slug: "maletas" },
-                { name: "Mascotas", slug: "mascotas" },
-            ];
-        }
+        // 4. Cargamos subcategorías REALES para el panel de filtros lateral
+        subcategories = await getChildCategories(category.id);
+
+        // 5. Cargamos el árbol completo de navegación para el dropdown superior
+        navigationTree = await getCategoryTree();
 
         if (tallaParam) {
             products = products.filter((p) =>
@@ -238,10 +226,11 @@ const seoData = wpCategory?.yoast_head_json || null;
                 client:load
                 initialProducts={products}
                 category={category}
-                subcategories={dropdownCategories}
+                subcategories={subcategories}
                 colorTerms={colorTerms}
                 tallaTerms={tallaTerms}
                 initialSort={activeSort}
+                navigationTree={navigationTree}
             />
         )}
     </main>

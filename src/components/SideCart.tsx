@@ -49,7 +49,7 @@ export default function SideCart() {
     };
 
     const handleCheckout = () => {
-        window.location.href = 'https://tienda.winstonandharrystore.com/checkout/';
+        redirectToCheckout('/checkout/');
     };
 
     const handleViewCart = () => {
