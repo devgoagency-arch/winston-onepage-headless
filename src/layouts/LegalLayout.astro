@@ -92,8 +92,7 @@ const { title, subtitle } = Astro.props;
         z-index: 10;
         background-color: #f3efe7;
         width: 100%;
-        display: flex;
-        justify-content: center;
+        display: block; /* Volvemos a block para evitar conflictos de flex con contenido complejo */
     }
 
     .content-container {
@@ -111,15 +110,30 @@ const { title, subtitle } = Astro.props;
         max-width: 1000px;
         margin: 0 auto;
         width: 100%;
+        overflow: hidden; /* Evita desbordamientos */
     }
 
     /* Estilos globales para contenido de WordPress dentro de páginas legales */
     :global(.wp-content) {
         word-break: break-word;
-        max-width: 900px;
+        max-width: 100%;
         margin: 0 auto;
         font-family: var(--font-body, "Helvetica", "Arial", sans-serif);
-        text-align: left; /* Aseguramos alineación a la izquierda */
+        text-align: left;
+    }
+
+    :global(.wp-content table) {
+        width: 100% !important;
+        max-width: 100% !important;
+        border-collapse: collapse;
+        margin: 2rem 0;
+        table-layout: fixed; /* Forzamos a que respete el contenedor */
+    }
+
+    :global(.wp-content table td) {
+        padding: 1rem;
+        border: 1px solid #eee;
+        overflow-wrap: break-word; /* Para que el texto dentro de celdas no empuje hacia afuera */
     }
 
     :global(.wp-content h1),
@@ -136,6 +150,8 @@ const { title, subtitle } = Astro.props;
         text-transform: uppercase;
         font-weight: 700;
         display: block;
+        max-width: 100%;
+        width: 100%;
     }
 
     :global(.wp-content p) {
@@ -145,6 +161,8 @@ const { title, subtitle } = Astro.props;
         font-size: 0.9rem;
         display: block;
         text-align: left !important;
+        width: 100%;
+        max-width: 100%;
     }
 
     :global(.wp-content ul),
