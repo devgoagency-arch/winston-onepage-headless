@@ -1002,44 +1002,53 @@ export async function getMenu(slug: string) {
     const cached = getStaticCached(cacheKey);
     if (cached) return cached;
 
-    // Intentar el endpoint personalizado /wh/v1/menu con timeout adecuado
-    try {
-        const controller = new AbortController();
-        const timeout = setTimeout(() => controller.abort(), 8000); // Aumentado a 8s
-        
-        // Preferir Application Passwords para endpoints personalizados de WP
-        const WP_USER = import.meta.env.WP_APP_USER || "";
-        const WP_PASS = import.meta.env.WP_APP_PASS || "";
-        const CK = (import.meta.env.WC_CONSUMER_KEY || import.meta.env.WP_CONSUMER_KEY || "").trim();
-        const CS = (import.meta.env.WC_CONSUMER_SECRET || import.meta.env.WP_CONSUMER_SECRET || "").trim();
-        
-        const authString = (WP_USER && WP_PASS) 
-            ? safeBtoa(`${WP_USER}:${WP_PASS}`)
-            : safeBtoa(`${CK}:${CS}`);
+    // Preferir Application Passwords para endpoints personalizados de WP
+    const WP_USER = import.meta.env.WP_APP_USER || "";
+    const WP_PASS = import.meta.env.WP_APP_PASS || "";
+    const CK = (import.meta.env.WC_CONSUMER_KEY || import.meta.env.WP_CONSUMER_KEY || "").trim();
+    const CS = (import.meta.env.WC_CONSUMER_SECRET || import.meta.env.WP_CONSUMER_SECRET || "").trim();
+    
+    const authString = (WP_USER && WP_PASS) 
+        ? safeBtoa(`${WP_USER}:${WP_PASS}`)
+        : safeBtoa(`${CK}:${CS}`);
 
-        const url = `${PUBLIC_WP_URL}/wp-json/wh/v1/menu/${slug}`;
-        
-        const res = await fetch(url, {
-            signal: controller.signal,
-            headers: {
-                'Accept': 'application/json',
-                'Authorization': `Basic ${authString}`
+    async function fetchMenuData(targetSlug: string) {
+        try {
+            const url = `${PUBLIC_WP_URL}/wp-json/wh/v1/menu/${targetSlug}`;
+            const res = await fetch(url, {
+                headers: { 'Authorization': `Basic ${authString}` },
+                signal: AbortSignal.timeout(8000)
+            });
+            if (res.ok) {
+                const data = await res.json();
+                if (Array.isArray(data) && data.length > 0) return data;
             }
-        });
-        clearTimeout(timeout);
-        
-        if (res.ok) {
-            const menu = await res.json();
-            if (Array.isArray(menu) && menu.length > 0) {
-                setStaticCached(cacheKey, menu);
-                return menu;
-            }
+        } catch (e) {
+            console.warn(`[Menu] Intento fallido para slug "${targetSlug}":`, e);
         }
-    } catch (e: any) {
-        console.warn(`[Menu] Error al obtener menú "${slug}": ${e.message}`);
+        return null;
     }
 
-    return [];
+    try {
+        // Intento 1: Slug original
+        let menuItems = await fetchMenuData(slug);
+
+        // Fallback para el menú principal si el primero falló
+        if (!menuItems && slug === "menu-principal") {
+            console.log("[Menu] Reintentando con slug alternativo 'principal'...");
+            menuItems = await fetchMenuData("principal");
+        }
+
+        if (menuItems && Array.isArray(menuItems) && menuItems.length > 0) {
+            setStaticCached(cacheKey, menuItems);
+            return menuItems;
+        }
+
+        return [];
+    } catch (error) {
+        console.error(`[Menu] Error crítico al obtener menú "${slug}":`, error);
+        return [];
+    }
 }
 
 export async function getAttributes() {
