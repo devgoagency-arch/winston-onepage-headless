@@ -858,28 +858,41 @@ export async function getMenu(slug: string) {
     const cached = getStaticCached(cacheKey);
     if (cached) return cached;
 
-    // Intentar el endpoint personalizado /wh/v1/menu con timeout corto
+    // Intentar el endpoint personalizado /wh/v1/menu con timeout adecuado
     try {
         const controller = new AbortController();
-        const timeout = setTimeout(() => controller.abort(), 3000);
+        const timeout = setTimeout(() => controller.abort(), 8000); // Aumentado a 8s
+        
+        // Preferir Application Passwords para endpoints personalizados de WP
+        const WP_USER = import.meta.env.WP_APP_USER || "";
+        const WP_PASS = import.meta.env.WP_APP_PASS || "";
         const CK = (import.meta.env.WC_CONSUMER_KEY || import.meta.env.WP_CONSUMER_KEY || "").trim();
         const CS = (import.meta.env.WC_CONSUMER_SECRET || import.meta.env.WP_CONSUMER_SECRET || "").trim();
+        
+        const authString = (WP_USER && WP_PASS) 
+            ? safeBtoa(`${WP_USER}:${WP_PASS}`)
+            : safeBtoa(`${CK}:${CS}`);
+
         const url = `${PUBLIC_WP_URL}/wp-json/wh/v1/menu/${slug}`;
+        
         const res = await fetch(url, {
             signal: controller.signal,
             headers: {
                 'Accept': 'application/json',
-                'Authorization': `Basic ${safeBtoa(`${CK}:${CS}`)}`
+                'Authorization': `Basic ${authString}`
             }
         });
         clearTimeout(timeout);
+        
         if (res.ok) {
             const menu = await res.json();
-            setStaticCached(cacheKey, menu);
-            return menu;
+            if (Array.isArray(menu) && menu.length > 0) {
+                setStaticCached(cacheKey, menu);
+                return menu;
+            }
         }
     } catch (e: any) {
-        console.warn(`[Menu] Endpoint /wh/v1/menu/${slug} no disponible: ${e.message}. Retornando menú vacío.`);
+        console.warn(`[Menu] Error al obtener menú "${slug}": ${e.message}`);
     }
 
     return [];

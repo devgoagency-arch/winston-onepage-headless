@@ -2,6 +2,22 @@
 import { Image } from "astro:assets";
 import ReviewsSection from "./ReviewsSection";
 import InstagramReels from "./InstagramReels";
+import { getMenu, PUBLIC_WP_URL } from "../lib/woocommerce";
+
+const menuCustomer = await getMenu("atencion-al-cliente");
+const menuAbout = await getMenu("nosotros");
+const menuLegal = await getMenu("legal");
+
+function flattenCategoryUrl(url: string) {
+    if (!url) return "";
+    let clean = url.replace(PUBLIC_WP_URL, "");
+    if (clean.includes("/product-category/")) {
+        const segments = clean.split("/").filter(Boolean);
+        const lastSegment = segments[segments.length - 1];
+        return `/categoria/${lastSegment}/`;
+    }
+    return clean;
+}
 ---
 
 <footer id="footer" class="footer">
@@ -159,8 +175,16 @@ import InstagramReels from "./InstagramReels";
         <div class="footer-column">
             <h3 class="footer-title">ATENCIÓN AL CLIENTE</h3>
             <ul class="footer-links">
-                <li><a href="/contacto">Contáctanos</a></li>
-                <li><a href="/contacto">Tiendas</a></li>
+                {menuCustomer.length > 0 ? (
+                    menuCustomer.map(item => (
+                        <li><a href={flattenCategoryUrl(item.url)} set:html={item.title}></a></li>
+                    ))
+                ) : (
+                    <>
+                        <li><a href="/contacto">Contáctanos</a></li>
+                        <li><a href="/contacto">Tiendas</a></li>
+                    </>
+                )}
             </ul>
         </div>
 
@@ -168,12 +192,20 @@ import InstagramReels from "./InstagramReels";
         <div class="footer-column">
             <h3 class="footer-title">NOSOTROS</h3>
             <ul class="footer-links">
-                <li><a href="/categoria/zapatos">Zapatos</a></li>
-                <li><a href="/categoria/accesorios">Accesorios</a></li>
-                <li><a href="/categoria/maletas">Maletas</a></li>
-                <li><a href="/categoria/mascotas">Mascotas</a></li>
-                <li><a href="/categoria/ropa">Ropa</a></li>
-                <li><a href="/guia-de-tallas">Guía de tallas</a></li>
+                {menuAbout.length > 0 ? (
+                    menuAbout.map(item => (
+                        <li><a href={flattenCategoryUrl(item.url)} set:html={item.title}></a></li>
+                    ))
+                ) : (
+                    <>
+                        <li><a href="/categoria/zapatos">Zapatos</a></li>
+                        <li><a href="/categoria/accesorios">Accesorios</a></li>
+                        <li><a href="/categoria/maletas">Maletas</a></li>
+                        <li><a href="/categoria/mascotas">Mascotas</a></li>
+                        <li><a href="/categoria/ropa">Ropa</a></li>
+                        <li><a href="/guia-de-tallas">Guía de tallas</a></li>
+                    </>
+                )}
             </ul>
         </div>
 
@@ -181,15 +213,17 @@ import InstagramReels from "./InstagramReels";
         <div class="footer-column">
             <h3 class="footer-title">LEGAL</h3>
             <ul class="footer-links">
-                <li>
-                    <a href="/politica-privacidad-proteccion-datos"
-                        >Política de privacidad</a
-                    >
-                </li>
-                <li>
-                    <a href="/terminos-condiciones">Términos y condiciones</a>
-                </li>
-                <li><a href="/politica-costos-envio">Política de envíos</a></li>
+                {menuLegal.length > 0 ? (
+                    menuLegal.map(item => (
+                        <li><a href={flattenCategoryUrl(item.url)} set:html={item.title}></a></li>
+                    ))
+                ) : (
+                    <>
+                        <li><a href="/politica-privacidad-proteccion-datos">Política de privacidad</a></li>
+                        <li><a href="/terminos-condiciones">Términos y condiciones</a></li>
+                        <li><a href="/politica-costos-envio">Política de envíos</a></li>
+                    </>
+                )}
             </ul>
         </div>
     </div>
