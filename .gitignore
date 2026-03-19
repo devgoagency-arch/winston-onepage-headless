@@ -27,6 +27,10 @@ pnpm-debug.log*
 winston-and-harry/
 winton-and-harry/
 winton-and-harry.zip
+winston-onepage-headless-main/
+
+# File types
+*.php
 
 # Debug and Diagnostic Files
 src/pages/api/debug-env.ts
@@ -39,3 +43,5 @@ debug-auth.js
 !package.json
 !tsconfig.json
 !vercel.json
+!menu.json
+!cornwall_data.json
