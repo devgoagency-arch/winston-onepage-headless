@@ -3,14 +3,9 @@
  * Using ck/cs credentials for full access and better data processing.
  */
 
-let WC_URL_ENV = import.meta.env.WC_URL || import.meta.env.WP_URL || "https://tienda.winstonandharrystore.com";
+const WC_URL_ENV = (import.meta.env.WC_URL || import.meta.env.WP_URL || "https://tienda.winstonandharrystore.com").replace(/\/$/, "");
 
-// CORRECCIÓN DE EMERGENCIA: Si el dominio no tiene "tienda.", se lo ponemos a la fuerza
-if (WC_URL_ENV.includes("winstonandharrystore.com") && !WC_URL_ENV.includes("tienda.")) {
-    WC_URL_ENV = WC_URL_ENV.replace("winstonandharrystore.com", "tienda.winstonandharrystore.com");
-}
-
-export const PUBLIC_WP_URL = WC_URL_ENV.replace(/\/$/, "");
+export const PUBLIC_WP_URL = WC_URL_ENV;
 const WP_JSON_BASE = `${PUBLIC_WP_URL}/wp-json`;
 
 // SSR Safe base64 helper
