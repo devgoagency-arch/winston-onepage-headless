@@ -1,33 +1,27 @@
 ---
 // Last update: 2026-03-16 - Deployment Trigger
-import { wcFetch } from '../lib/woocommerce';
+import { wcFetch } from "../lib/woocommerce";
 
 // Lista de categorías que queremos mostrar con su imagen local fija y palabras clave para búsqueda dinámica
+// Lista de categorías que queremos mostrar vinculadas por ID exacto de WordPress
 const targetCategories = [
-    { id: 'ropa', image: '/images/ropa.jpg', fallbackName: 'Ropa', keywords: ['ropa', 'indumentaria', 'prendas'] },
-    { id: 'zapatos', image: '/images/zapatos.jpg', fallbackName: 'Zapatos', keywords: ['zapatos', 'calzado', 'mocasines', 'botas'] },
-    { id: 'maletas', image: '/images/maletas.jpg', fallbackName: 'Maletas', keywords: ['maletas', 'maletines', 'bolsos', 'viaje', 'equipaje'] },
-    { id: 'accesorios', image: '/images/accesorios.jpg', fallbackName: 'Accesorios', keywords: ['accesorios', 'complementos', 'correas', 'billeteras'] }
+    { id: 249, image: "/images/ropa.jpg", fallbackName: "Ropa" },
+    { id: 194, image: "/images/zapatos.jpg", fallbackName: "Botas" },
+    { id: 190, image: "/images/maletas.jpg", fallbackName: "Maletas" },
+    { id: 126, image: "/images/accesorios.jpg", fallbackName: "Accesorios" },
 ];
 
-// Obtenemos todas las categorías para poder encontrarlas incluso si cambia el slug
-const allCategories = await wcFetch('/products/categories?per_page=100') || [];
+// Obtenemos todas las categorías para poder encontrarlas por ID
+const allCategories = (await wcFetch("/products/categories?per_page=100")) || [];
 
-const categoriesData = targetCategories.map(target => {
-    // Buscamos la categoría que coincida con el slug original, el nombre o alguna palabra clave
-    const cat = allCategories.find((c: { slug: string; name: string }) => {
-        const slug = c.slug.toLowerCase();
-        const name = c.name.toLowerCase();
-        
-        return slug === target.id || 
-               name === target.id.toLowerCase() ||
-               target.keywords.some(k => slug.includes(k) || name.includes(k));
-    });
+const categoriesData = targetCategories.map((target) => {
+    // Buscamos la categoría por ID exacto
+    const cat = allCategories.find((c: any) => c.id === target.id);
 
     return {
-        slug: cat?.slug || target.id,
+        slug: cat?.slug || target.id.toString(),
         name: cat?.name || target.fallbackName,
-        image: target.image
+        image: target.image,
     };
 });
 ---
@@ -43,19 +37,24 @@ const categoriesData = targetCategories.map(target => {
         </div>
 
         <div class="grid-layout">
-            {categoriesData.map((category) => (
-                <a href={`/categoria/${category.slug}`} class="category-item">
-                    <div class="category-image-wrapper">
-                        <img
-                            src={category.image}
-                            alt={category.name}
-                            class="category-image"
-                            loading="lazy"
-                        />
-                    </div>
-                    <h3 class="category-label">{category.name}</h3>
-                </a>
-            ))}
+            {
+                categoriesData.map((category) => (
+                    <a
+                        href={`/categoria/${category.slug}`}
+                        class="category-item"
+                    >
+                        <div class="category-image-wrapper">
+                            <img
+                                src={category.image}
+                                alt={category.name}
+                                class="category-image"
+                                loading="lazy"
+                            />
+                        </div>
+                        <h3 class="category-label">{category.name}</h3>
+                    </a>
+                ))
+            }
         </div>
     </div>
 </section>
@@ -133,6 +132,7 @@ const categoriesData = targetCategories.map(target => {
         letter-spacing: 2px;
         color: var(--color-green);
         margin: 0;
+        text-align: center;
         transition: color 0.3s ease;
     }
 
