@@ -45,6 +45,11 @@ export default function ProductGrid() {
   const [visibleCount, setVisibleCount] = useState(12);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [categorySlugs, setCategorySlugs] = useState<Record<string, string>>({
+    '63': 'zapatos',
+    '249': 'ropa',
+    '190': 'maletas'
+  });
   const [isHeaderHidden, setIsHeaderHidden] = useState(false);
 
   // Precarga inicial de todas las categorías para eliminar el loader al cambiar pestañas
@@ -54,7 +59,23 @@ export default function ProductGrid() {
         setLoading(true);
         setError(null);
 
-        // Hacemos las peticiones en paralelo
+        // 1. Obtener la información real de las categorías (para los slugs actualizados)
+        try {
+          const catRes = await fetch('/api/categories'); // Usar un endpoint que devuelva categorías
+          if (catRes.ok) {
+            const allCats = await catRes.json();
+            const newSlugs: Record<string, string> = { ...categorySlugs };
+            CATEGORIES.forEach(c => {
+                const found = allCats.find((ac: any) => String(ac.id) === String(c.id));
+                if (found) newSlugs[c.id] = found.slug;
+            });
+            setCategorySlugs(newSlugs);
+          }
+        } catch (e) {
+          console.error("Error fetching dynamic slugs:", e);
+        }
+
+        // 2. Cargar productos
         const results = await Promise.all(
           CATEGORIES.map(async (cat) => {
             const res = await fetch(`/api/products?category=${cat.id}&orderby=modified`);
@@ -218,7 +239,7 @@ export default function ProductGrid() {
                 Ver más {activeCategory.name.toLowerCase()}
               </button>
             ) : (
-              <a href={`/categoria/${activeCategory.slug}`} className="btn btn-outline">
+              <a href={`/categoria/${categorySlugs[activeCategory.id] || activeCategory.slug}`} className="btn btn-outline">
                 Ver toda la colección de {activeCategory.name.toLowerCase()}
               </a>
             )}
