@@ -671,7 +671,7 @@ export async function getAllProducts(
         });
         if (onSale) storeParams.append('on_sale', 'true');
 
-        const storeUrl = `${PUBLIC_WP_URL}/wp-json/wc/store/v1/products?${storeParams.toString()}`;
+        const storeUrl = `${PUBLIC_WP_URL}/wp-json/wc/store/v1/products?${storeParams.toString()}&stock_status=instock`;
         const storeRes = await fetch(storeUrl);
 
         if (storeRes.ok) {
@@ -685,7 +685,8 @@ export async function getAllProducts(
             page: page.toString(),
             orderby: orderBy,
             order: order,
-            status: 'publish'
+            status: 'publish',
+            stock_status: 'instock'
         });
         if (onSale) v3Params.append('on_sale', 'true');
 
@@ -721,14 +722,14 @@ export async function searchProducts(query: string, perPage = 20) {
     try {
         // 1. Intento de búsqueda por texto (Título/Descripción)
         let results: any[] = [];
-        const storeUrl = `${PUBLIC_WP_URL}/wp-json/wc/store/v1/products?search=${encodeURIComponent(term)}&per_page=${perPage}`;
+        const storeUrl = `${PUBLIC_WP_URL}/wp-json/wc/store/v1/products?search=${encodeURIComponent(term)}&per_page=${perPage}&stock_status=instock`;
         const storeRes = await fetch(storeUrl);
         
         if (storeRes.ok) {
             const data = await storeRes.json();
             results = Array.isArray(data) ? data.map(p => mapV3ToStore(p)).filter(p => p !== null) : [];
         } else {
-            const data = await wcFetch(`/products?search=${encodeURIComponent(term)}&per_page=${perPage}&status=publish`);
+            const data = await wcFetch(`/products?search=${encodeURIComponent(term)}&per_page=${perPage}&status=publish&stock_status=instock`);
             results = Array.isArray(data) ? data.map(p => mapV3ToStore(p)) : [];
         }
 
@@ -796,7 +797,7 @@ export async function getProductsByCategory(
         const fetchCategory = async (id: string) => {
             try {
                 // PRIORIDAD: Store API (Pública, mucho más rápida y cacheable en el server de WP)
-                const storeUrl = `${PUBLIC_WP_URL}/wp-json/wc/store/v1/products?category=${id}&per_page=${perPage}&page=${page}&orderby=${orderBy}&order=${order}${onSale ? '&on_sale=true' : ''}`;
+                const storeUrl = `${PUBLIC_WP_URL}/wp-json/wc/store/v1/products?category=${id}&per_page=${perPage}&page=${page}&orderby=${orderBy}&order=${order}${onSale ? '&on_sale=true' : ''}&stock_status=instock`;
                 const storeRes = await fetch(storeUrl);
                 
                 if (storeRes.ok) {
@@ -805,7 +806,7 @@ export async function getProductsByCategory(
                 }
                 
                 // Fallback: Si Store API falla, usamos v3 (Autenticada)
-                const data = await wcFetch(`/products?category=${id}&per_page=${perPage}&page=${page}&orderby=${orderBy}&order=${order}&status=publish${onSale ? '&on_sale=true' : ''}${attribute ? `&attribute=${attribute}` : ''}${attributeTerm ? `&attribute_term=${attributeTerm}` : ''}`);
+                const data = await wcFetch(`/products?category=${id}&per_page=${perPage}&page=${page}&orderby=${orderBy}&order=${order}&status=publish&stock_status=instock${onSale ? '&on_sale=true' : ''}${attribute ? `&attribute=${attribute}` : ''}${attributeTerm ? `&attribute_term=${attributeTerm}` : ''}`);
                 return Array.isArray(data) ? data : [];
             } catch (err: any) {
                 console.warn(`[getProductsByCategory] Error en fetch para id ${id}:`, err.message);
