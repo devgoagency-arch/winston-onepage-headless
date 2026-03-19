@@ -282,6 +282,48 @@ export default function ProductDetail({ initialProduct }: Props) {
     return cat;
   }, [product.categories]);
 
+  const selectedVariation = useMemo(() => {
+    const variations = currentProduct.variations;
+    if (!variations || variations.length === 0) return null;
+    if (!selectedColor && !selectedSize) return null;
+
+    const targetColor = normalizeAttr(selectedColor);
+    const targetSize = normalizeAttr(selectedSize);
+
+    return variations.find((v: any) => {
+      const vColorAttr = v.attributes?.find((a: any) => {
+        const n = (a.name || "").toLowerCase();
+        const sid = (a.id || "").toString().toLowerCase();
+        return n.includes('color') || n.includes('pa_color') || 
+               n.includes('selecciona-el-color') || sid.includes('color');
+      });
+      const vSizeAttr = v.attributes?.find((a: any) => {
+        const n = (a.name || "").toLowerCase();
+        const sid = (a.id || "").toString().toLowerCase();
+        return n.includes('talla') || n.includes('size') || n.includes('tamano') || 
+               n.includes('tamaño') || n.includes('pa_talla') || 
+               n.includes('selecciona-una-talla') || sid.includes('talla') || sid.includes('size');
+      });
+
+      const vColorRaw = vColorAttr?.value || vColorAttr?.option || vColorAttr?.text || '';
+      const vSizeRaw = vSizeAttr?.value || vSizeAttr?.option || vSizeAttr?.text || '';
+
+      const vColor = normalizeAttr(vColorRaw);
+      const vSize = normalizeAttr(vSizeRaw);
+
+      // Match exacto o inteligente (fuzzy/synonyms)
+      const matchesColor = !selectedColor || vColor === targetColor || vColorRaw === '' || 
+                          vColor.includes(targetColor) || targetColor.includes(vColor) ||
+                          (targetColor === 'vinotinto' && vColor === 'vino') ||
+                          (targetColor === 'vino' && vColor === 'vinotinto');
+      
+      const matchesSize = !selectedSize || vSize === targetSize || vSizeRaw === '';
+
+      return matchesColor && matchesSize;
+    });
+  }, [currentProduct.variations, selectedColor, selectedSize]);
+
+
   /* Restaurando lógica de filtrado de imágenes por color */
   const filteredImages = useMemo(() => {
     // Si NO hay color seleccionado, mostrar todo
@@ -291,22 +333,30 @@ export default function ProductDetail({ initialProduct }: Props) {
     const colorTerm = colorAttribute?.terms.find(t => t.slug === selectedColor);
     const colorName = colorTerm?.name.toLowerCase().trim() || "";
 
-    // --- 1. Obtener imágenes de la Variación (API) ---
+    // --- 1. Obtener imágenes de la Variación (API + Mapas) ---
     let varImages: any[] = [];
     if (currentProduct.variation_images_map) {
         const colorSlugNormalized = normalizeAttr(selectedColor);
-        let matchedKey = Object.keys(currentProduct.variation_images_map).find(key => normalizeAttr(key) === colorSlugNormalized);
-        if (!matchedKey) {
-            matchedKey = Object.keys(currentProduct.variation_images_map).find(key => {
-                const k = normalizeAttr(key);
-                return (colorSlugNormalized === 'vinotinto' && k === 'vino') ||
-                       (colorSlugNormalized === 'vino' && k === 'vinotinto') ||
-                       (colorSlugNormalized.length > 3 && k.includes(colorSlugNormalized));
-            });
-        }
-        if (matchedKey && currentProduct.variation_images_map[matchedKey]) {
-            varImages = currentProduct.variation_images_map[matchedKey];
-        }
+        const colorNameNormalized = normalizeAttr(colorName);
+        const searchTerms = new Set([
+            colorSlugNormalized, 
+            colorNameNormalized, 
+            ...colorSynonyms.map(s => normalizeAttr(s))
+        ].filter(s => s && s.length > 2));
+        
+        Object.keys(currentProduct.variation_images_map).forEach(key => {
+            const k = normalizeAttr(key);
+            const isMatch = Array.from(searchTerms).some(term => 
+                k === term || k.includes(term) || term.includes(k)
+            );
+            
+            if (isMatch) {
+                const imagesForKey = currentProduct.variation_images_map![key];
+                if (imagesForKey && Array.isArray(imagesForKey)) {
+                    varImages = [...varImages, ...imagesForKey];
+                }
+            }
+        });
     }
 
     const allColorTerms = colorAttribute?.terms.map(t => ({
@@ -337,15 +387,12 @@ export default function ProductDetail({ initialProduct }: Props) {
 
       // 2. EXCLUSIÓN: Si el término seleccionado hace match, pero existe OTRO término del producto 
       // que es más largo/específico y TAMBIÉN hace match, descartamos esta imagen por ser de otro color.
-      // Ejemplo: seleccionado 'cafe', pero la imagen es 'cafe-gamuza.jpg' y existe 'cafe-gamuza' como color.
       const hasBetterMatch = allColorTerms.some(term => {
           if (term.slug === selectedColor) return false;
-          // Solo comparamos con términos que "contengan" el seleccionado o sean claramente distintos
           const termMatches = isMatch(src, term.slug) || isMatch(alt, term.slug) || 
                              (term.name && (isMatch(src, term.name) || isMatch(alt, term.name)));
           
           if (termMatches) {
-              // Si el otro término es más largo, asumimos que es "más específico"
               return term.slug.length > colorSlug.length || (term.name && term.name.length > colorName.length);
           }
           return false;
@@ -354,28 +401,37 @@ export default function ProductDetail({ initialProduct }: Props) {
       return !hasBetterMatch;
     });
 
-    // Combinar y de-duplicar por src
+    // --- COMBINACIÓN FINAL ---
     const combined: any[] = [];
+    
+    // 1. PRIORIDAD MÁXIMA: Imagen principal de la variación seleccionada
+    if (selectedVariation?.image?.src) {
+        combined.push({
+            id: selectedVariation.image.id,
+            src: selectedVariation.image.src,
+            alt: selectedVariation.image.alt || currentProduct.name
+        });
+    }
+
+    // 2. PRIORIDAD MEDIA: Todas las fotos confirmadas de esa variante (Mapas + Galería)
     [...varImages, ...galleryMatches].forEach((img: any) => {
         if (!combined.some(c => c.src === img.src)) combined.push(img);
     });
 
-    if (combined.length > 0) return combined;
-
-    // --- 3. Fallback: Predicción Sintética (Mejorada) ---
-    if (currentProduct.images.length > 0 && colorAttribute && !failedSyntheticColors.includes(selectedColor)) {
+    // 3. PRIORIDAD BAJA: Predicción Sintética (Solo si no hay NADA real)
+    if (combined.length === 0 && currentProduct.images.length > 0 && colorAttribute && !failedSyntheticColors.includes(selectedColor)) {
         const baseImg = currentProduct.images[0];
         const baseSrc = baseImg.src;
 
         const getSynonyms = (c: string) => {
-            const s = normalizeAttr(c);
+            const ns = normalizeAttr(c);
             const dict: Record<string, string[]> = {
                 'negro': ['black', 'dark'],
                 'blanco': ['white', 'light'],
                 'azul': ['blue', 'navy', 'celeste', 'ocean'],
                 'rojo': ['red'],
-                'cafe': ['brown', 'marron', 'marron', 'coffee', 'miel', 'tan', 'camel', 'tabaco', 'tabac', 'cognac', 'chocolate', 'marrn'],
-                'miel': ['tan', 'honey', 'camel', 'cafe', 'brown', 'marron', 'cognac'],
+                'cafe': ['brown', 'marron', 'marrón', 'coffee', 'miel', 'tan', 'camel', 'tabaco', 'tabac', 'cognac', 'chocolate'],
+                'miel': ['tan', 'honey', 'camel', 'arena', 'sand'],
                 'verde': ['green', 'oliva', 'olive'],
                 'gris': ['grey', 'gray', 'plata', 'silver'],
                 'vino': ['vinotinto', 'burgundy', 'wine', 'rojo', 'granate'],
@@ -384,7 +440,6 @@ export default function ProductDetail({ initialProduct }: Props) {
                 'camel': ['tan', 'miel', 'cafe', 'brown', 'cognac'],
                 'piel': ['cuero', 'leather', 'tan']
             };
-            const ns = normalizeAttr(c);
             return [ns, ...(dict[ns] || [])].filter(x => x.length > 2);
         };
 
@@ -393,8 +448,7 @@ export default function ProductDetail({ initialProduct }: Props) {
             const targetSyns = getSynonyms(t.slug);
             const targetNames = getSynonyms(t.name);
             const s = normalizeAttr(baseSrc);
-            return targetSyns.some(syn => s.includes(syn)) || 
-                   targetNames.some(syn => s.includes(syn));
+            return targetSyns.some(syn => s.includes(syn)) || targetNames.some(syn => s.includes(syn));
         });
 
         if (!colorInUrl) {
@@ -403,25 +457,13 @@ export default function ProductDetail({ initialProduct }: Props) {
                     const targetSyns = getSynonyms(t.slug);
                     const targetNames = getSynonyms(t.name);
                     const s = normalizeAttr(img.src);
-                    return targetSyns.some(syn => s.includes(syn)) || 
-                           targetNames.some(syn => s.includes(syn));
+                    return targetSyns.some(syn => s.includes(syn)) || targetNames.some(syn => s.includes(syn));
                 });
-                if (found) {
-                    colorInUrl = found;
-                    break;
-                }
+                if (found) { colorInUrl = found; break; }
             }
         }
 
         if (colorInUrl) {
-            if (normalizeAttr(colorInUrl.slug) === normalizeAttr(selectedColor)) {
-               return currentProduct.images.filter((img: { src: string }) => {
-                   const targetSyns = getSynonyms(colorInUrl!.slug);
-                   const s = normalizeAttr(img.src);
-                   return targetSyns.some(syn => s.includes(syn)) || s.includes(normalizeAttr(colorInUrl!.name));
-               });
-            }
-
             const targetSyns = getSynonyms(colorInUrl.slug);
             const targetNames = getSynonyms(colorInUrl.name);
             let match = null;
@@ -441,30 +483,36 @@ export default function ProductDetail({ initialProduct }: Props) {
                 } else if (isCapitalized) {
                     replacementCore = selectedColor.charAt(0).toUpperCase() + selectedColor.slice(1).toLowerCase();
                 }
-                
                 const replacement = matchedText.replace(cleanMatchedText, replacementCore);
 
                 try {
                     const regex = new RegExp(matchedText, 'g');
-                    const syntheticGallery = currentProduct.images.map((img: { src: string; alt: string; id: number; name: string }) => {
+                    currentProduct.images.forEach((img: any) => {
                         const newSrc = img.src.replace(regex, replacement);
                         if (newSrc !== img.src) {
-                            return { ...img, id: -999 - img.id, isSynthetic: true, src: newSrc, alt: `${currentProduct.name} ${selectedColor}` };
+                            combined.push({ ...img, id: -999 - img.id, isSynthetic: true, src: newSrc, alt: `${currentProduct.name} ${selectedColor}` });
                         }
-                        return null;
-                    }).filter((img): img is { src: string; alt: string; id: number; name: string; isSynthetic: boolean } => img !== null);
-
-                    if (syntheticGallery.length > 0) return syntheticGallery;
-
-                    const newSrc = baseSrc.replace(regex, replacement);
-                    if (newSrc !== baseSrc) return [{ ...baseImg, id: -999, isSynthetic: true, src: newSrc, alt: `${currentProduct.name} ${selectedColor}` }];
+                    });
+                    if (combined.length === 0) {
+                        const newSrc = baseSrc.replace(regex, replacement);
+                        if (newSrc !== baseSrc) combined.push({ ...baseImg, id: -999, isSynthetic: true, src: newSrc, alt: `${currentProduct.name} ${selectedColor}` });
+                    }
                 } catch (e) { }
             }
         }
     }
 
-    return [currentProduct.images[0]];
-  }, [selectedColor, currentProduct.images, currentProduct.variation_images_map, colorAttribute, failedSyntheticColors, currentProduct.name, colorSynonyms]);
+    // 4. FALLBACK FINAL: Si el filtro de color no devolvió NADA (ni real ni sintético),
+    // mostramos la foto principal del producto para no dejar la galería vacía.
+    if (combined.length === 0 && currentProduct.images.length > 0) {
+        return [currentProduct.images[0]];
+    }
+
+    return combined;
+  }, [selectedColor, selectedVariation, currentProduct.images, currentProduct.variation_images_map, colorAttribute, failedSyntheticColors, currentProduct.name, colorSynonyms]);
+
+
+
 
   /* State for Lightbox Gallery */
   const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -577,7 +625,10 @@ export default function ProductDetail({ initialProduct }: Props) {
 
   useEffect(() => {
     setActiveImageIndex(0);
-    if (galleryRef.current) galleryRef.current.scrollLeft = 0;
+    if (galleryRef.current) {
+        galleryRef.current.scrollLeft = 0;
+        galleryRef.current.scrollTop = 0; // Fix para desktop (scroll vertical)
+    }
   }, [filteredImages]);
 
   const slideTo = (index: number) => {
@@ -645,43 +696,6 @@ export default function ProductDetail({ initialProduct }: Props) {
       return matchesColor && matchesSize && isVariationInStock;
     });
   };
-
-  const selectedVariation = useMemo(() => {
-    const variations = currentProduct.variations;
-    if (!variations || variations.length === 0) return null;
-    if (!selectedColor && !selectedSize) return null;
-
-    const targetColor = normalizeAttr(selectedColor);
-    const targetSize = normalizeAttr(selectedSize);
-
-    return variations.find((v: any) => {
-      const vColorAttr = v.attributes?.find((a: any) => {
-        const n = (a.name || "").toLowerCase();
-        const sid = (a.id || "").toString().toLowerCase();
-        return n.includes('color') || n.includes('pa_color') || 
-               n.includes('selecciona-el-color') || sid.includes('color');
-      });
-      const vSizeAttr = v.attributes?.find((a: any) => {
-        const n = (a.name || "").toLowerCase();
-        const sid = (a.id || "").toString().toLowerCase();
-        return n.includes('talla') || n.includes('size') || n.includes('tamano') || 
-               n.includes('tamaño') || n.includes('pa_talla') || 
-               n.includes('selecciona-una-talla') || sid.includes('talla') || sid.includes('size');
-      });
-
-      const vColorRaw = vColorAttr?.value || vColorAttr?.option || vColorAttr?.text || '';
-      const vSizeRaw = vSizeAttr?.value || vSizeAttr?.option || vSizeAttr?.text || '';
-
-      const vColor = normalizeAttr(vColorRaw);
-      const vSize = normalizeAttr(vSizeRaw);
-
-      // Match exacto o bitmask (Any)
-      const matchesColor = !selectedColor || vColor === targetColor || vColorRaw === '';
-      const matchesSize = !selectedSize || vSize === targetSize || vSizeRaw === '';
-
-      return matchesColor && matchesSize;
-    });
-  }, [currentProduct.variations, selectedColor, selectedSize]);
 
   useEffect(() => {
     if (selectedVariation) {
@@ -861,11 +875,17 @@ export default function ProductDetail({ initialProduct }: Props) {
               const firstImg = filteredImages[0];
               if (!firstImg?.src) return null;
 
-              // Solo intentar si cumple el patrón -1 o _1
-              const match = firstImg.src.match(/[-_]1(?:-e\d+)?\.(jpg|jpeg|png|webp)$/i);
-              if (!match) return null;
-
-              const guessedSrc = firstImg.src.replace(/([-_])1(?:-e\d+)?(\.(?:jpg|jpeg|png|webp))$/i, `$1${num}$2`);
+              // 2. Intento de adivinar el nombre de la foto (WooCommerce suele usar sufijos numéricos)
+              const match1 = firstImg.src.match(/([-_])1(?:-e\d+)?(\.(?:jpg|jpeg|png|webp))$/i);
+              let guessedSrc = "";
+              
+              if (match1) {
+                // Si la primera imagen termina en -1, reemplazamos por -num
+                guessedSrc = firstImg.src.replace(/([-_])1(?:-e\d+)?(\.(?:jpg|jpeg|png|webp))$/i, `$1${num}$2`);
+              } else {
+                // Si no tiene el sufijo -1, intentamos inyectar el número antes de la extensión (ej: camisa.jpg -> camisa-2.jpg)
+                guessedSrc = firstImg.src.replace(/(\.(?:jpg|jpeg|png|webp))$/i, `-${num}$1`);
+              }
 
               // Evitamos duplicados si la imagen ya está en las iniciales de WooCommerce
               const alreadyExists = filteredImages.some(img => img.src && (img.src === guessedSrc || img.src.includes(guessedSrc.split('/').pop() || '')));
@@ -2090,6 +2110,11 @@ function getColorCode(slug: string): string {
     'cafe': '#6F4E37',
     'miel': '#D4A373',
     'azul': '#1B3F8B',
+    'azul-oscuro': '#0B1B32',
+    'azuloscuro': '#0B1B32',
+    'navy': '#0B1B32',
+    'marino': '#151E3D',
+    'azul-marino': '#151E3D',
     'verde': '#155338',
     'vino': '#722F37',
     'vinotinto': '#722F37',

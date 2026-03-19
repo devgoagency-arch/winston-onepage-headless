@@ -243,8 +243,12 @@ function mapV3ToStore(p: any) {
         if (p.variations && Array.isArray(p.variations)) {
             p.variations = p.variations.map((v: any) => {
                 const vPrices = v.prices || {};
+                const vDetails = p.variations_data?.find((vd: any) => Number(vd.id) === Number(v.id));
+                
                 return {
                     ...v,
+                    // Usar la imagen de la REST API v3 si existe
+                    image: vDetails?.image || v.image || null,
                     stock_status: v.is_in_stock !== undefined 
                         ? (v.is_in_stock ? 'instock' : 'outofstock') 
                         : (v.stock_status || 'instock'),
@@ -262,6 +266,8 @@ function mapV3ToStore(p: any) {
 
             // Construir variation_images_map para Store API
             const imgMap: Record<string, any[]> = {};
+
+            // 1. Primero cargamos las imágenes principales de las variaciones (para que sean las primeras)
             p.variations.forEach((v: any) => {
                 const colorAttr = v.attributes?.find((a: any) => 
                      (a.name || "").toLowerCase().includes('color') || 
@@ -273,10 +279,40 @@ function mapV3ToStore(p: any) {
                      if (!imgMap[colorKey]) imgMap[colorKey] = [];
                      
                      if (!imgMap[colorKey].some(img => img.src === v.image.src)) {
-                         imgMap[colorKey].push({ src: v.image.src, alt: v.image.alt || '' });
+                         imgMap[colorKey].push({ 
+                            id: v.image.id || 0,
+                            src: v.image.src, 
+                            alt: v.image.alt || v.image.name || '',
+                            name: v.image.name || ''
+                        });
                      }
                 }
             });
+
+            // 2. Luego añadimos las de WPC (ordenadas después de la principal)
+            if (p.variations_data && Array.isArray(p.variations_data) && p.wpc_resolved_media) {
+                p.variations_data.forEach((v: any) => {
+                    const wpcMeta = v.meta_data?.find((m: any) => m.key === 'wpcvi_images');
+                    if (wpcMeta?.value) {
+                         const colorAttr = v.attributes?.find((a: any) => 
+                             (a.name || "").toLowerCase().includes('color') || 
+                             (a.id || "").toString().includes('color') ||
+                             a.name === 'Pa_selecciona-el-color'
+                         );
+                         const colorKey = colorAttr ? String(colorAttr.option || colorAttr.value).toLowerCase().trim() : 'default';
+                         if (!imgMap[colorKey]) imgMap[colorKey] = [];
+                         
+                         const ids = wpcMeta.value.split(',').map((id: string) => id.trim());
+                         ids.forEach((id: string) => {
+                             const url = p.wpc_resolved_media[id];
+                             if (url && !imgMap[colorKey].some(img => img.src === url)) {
+                                 imgMap[colorKey].push({ id: parseInt(id), src: url, alt: p.name });
+                             }
+                         });
+                    }
+                });
+            }
+
             if (Object.keys(imgMap).length > 0) {
                 p.variation_images_map = imgMap;
             }
@@ -296,6 +332,37 @@ function mapV3ToStore(p: any) {
     }
 
     const inclusivePrice = hasTax ? Math.round(rawPrice * 1.19) : Math.round(rawPrice);
+
+    // NUEVO: Soporte para WPC Additional Variation Images
+    const wpcImagesMap: Record<string, any[]> = {};
+    if (p.variations_data && Array.isArray(p.variations_data)) {
+        p.variations_data.forEach((v: any) => {
+            const wpcMeta = v.meta_data?.find((m: any) => m.key === 'wpcvi_images');
+            if (wpcMeta?.value && p.wpc_resolved_media) {
+                const colorAttr = v.attributes?.find((a: any) => 
+                    (a.name || "").toLowerCase().includes('color') || 
+                    (a.id || "").toString().includes('color') ||
+                    a.name === 'Pa_selecciona-el-color'
+                );
+                const colorKey = colorAttr ? String(colorAttr.option || colorAttr.value).toLowerCase().trim() : 'default';
+                
+                if (!wpcImagesMap[colorKey]) wpcImagesMap[colorKey] = [];
+                
+                const ids = wpcMeta.value.split(',').map((id: string) => id.trim());
+                ids.forEach((id: string) => {
+                    const url = p.wpc_resolved_media[id];
+                    if (url && !wpcImagesMap[colorKey].some(img => img.src === url)) {
+                        wpcImagesMap[colorKey].push({ 
+                            id: parseInt(id),
+                            src: url,
+                            alt: p.name,
+                            name: ""
+                        });
+                    }
+                });
+            }
+        });
+    }
 
     const mapped = {
         id: p.id,
@@ -371,22 +438,63 @@ function mapV3ToStore(p: any) {
         variation_images_map: (() => {
             if (p.variation_images_map) return p.variation_images_map;
             const imgMap: Record<string, any[]> = {};
+
             if (p.variations_data && Array.isArray(p.variations_data)) {
+                const colorsArr = (p.attributes || []).find((a: any) => 
+                    (a.name || "").toLowerCase().includes('color') || 
+                    (a.slug || "").toLowerCase().includes('color')
+                )?.options || [];
+
+                // 1. Primero cargamos las imágenes principales de las variaciones (para que sean las primeras)
                 p.variations_data.forEach((v: any) => {
-                    const colorAttr = v.attributes?.find((a: any) => 
-                        (a.name || "").toLowerCase().includes('color') || 
-                        (a.id || "").toString().includes('color') ||
-                        a.name === 'Pa_selecciona-el-color'
-                    );
+                    const colorAttr = v.attributes?.find((a: any) => {
+                        const n = (a.name || "").toLowerCase();
+                        const s = (a.slug || "").toLowerCase();
+                        return n.includes('color') || s.includes('color') || 
+                               n.includes('selecciona-el') || s.includes('selecciona-el');
+                    });
+                    
                     if (colorAttr && (colorAttr.option || colorAttr.value) && v.image?.src) {
-                        const colorKey = String(colorAttr.option || colorAttr.value).toLowerCase().trim();
-                        if (!imgMap[colorKey]) imgMap[colorKey] = [];
-                        if (!imgMap[colorKey].some((img: any) => img.src === v.image.src)) {
-                            imgMap[colorKey].push({ 
+                         const colorValue = String(colorAttr.option || colorAttr.value).toLowerCase().trim();
+                         // Usamos el slug normalizado si existe en los términos del producto, sino el valor crudo
+                         const colorKey = normalizeSlug(colorValue) || colorValue;
+                         
+                         if (!imgMap[colorKey]) imgMap[colorKey] = [];
+                         
+                         if (!imgMap[colorKey].some((img: any) => img.src === v.image.src)) {
+                             imgMap[colorKey].push({ 
                                 id: v.image.id || 0,
                                 src: v.image.src, 
                                 alt: v.image.alt || v.image.name || '',
                                 name: v.image.name || ''
+                            });
+                         }
+                    }
+                });
+
+                // 2. Luego añadimos las de WPC (ordenadas después de la principal)
+                p.variations_data.forEach((v: any) => {
+                    const wpcMeta = v.meta_data?.find((m: any) => m.key === 'wpcvi_images');
+                    if (wpcMeta?.value && p.wpc_resolved_media) {
+                        const colorAttr = v.attributes?.find((a: any) => {
+                            const n = (a.name || "").toLowerCase();
+                            const s = (a.slug || "").toLowerCase();
+                            return n.includes('color') || s.includes('color') || 
+                                   n.includes('selecciona-el') || s.includes('selecciona-el');
+                        });
+                        
+                        if (colorAttr && (colorAttr.option || colorAttr.value)) {
+                            const colorValue = String(colorAttr.option || colorAttr.value).toLowerCase().trim();
+                            const colorKey = normalizeSlug(colorValue) || colorValue;
+
+                            if (!imgMap[colorKey]) imgMap[colorKey] = [];
+                            
+                            const ids = wpcMeta.value.split(',').map((id: string) => id.trim());
+                            ids.forEach((id: string) => {
+                                const url = p.wpc_resolved_media[id];
+                                if (url && !imgMap[colorKey].some(img => img.src === url)) {
+                                    imgMap[colorKey].push({ id: parseInt(id), src: url, alt: p.name });
+                                }
                             });
                         }
                     }
@@ -437,21 +545,34 @@ export async function getProductById(id: number | string) {
             const variations = await getProductVariations(product.id);
             product.variations_data = variations;
 
-            // Build variation_images_map by color
-            if (variations.length > 0) {
-                const imgMap: Record<string, any[]> = {};
-                variations.forEach((v: any) => {
-                    const colorAttr = v.attributes?.find((a: any) =>
-                        a.name.toLowerCase().includes('color') || a.slug?.includes('color')
-                    );
-                    if (colorAttr?.option && v.image?.src) {
-                        const colorKey = colorAttr.option.toLowerCase().trim();
-                        if (!imgMap[colorKey]) imgMap[colorKey] = [];
-                        imgMap[colorKey].push({ src: v.image.src, alt: v.image.alt || '' });
+            // NUEVO: Resolver imágenes de WPC si existen
+            const allWpcIds = new Set<string>();
+            variations.forEach((v: any) => {
+                const meta = v.meta_data?.find((m: any) => m.key === 'wpcvi_images');
+                if (meta?.value) meta.value.split(',').forEach((id: string) => allWpcIds.add(id.trim()));
+            });
+
+            if (allWpcIds.size > 0) {
+                const idsArr = Array.from(allWpcIds);
+                const mediaMap: Record<string, string> = {};
+                for (let i = 0; i < idsArr.length; i += 50) {
+                    const chunk = idsArr.slice(i, i + 50).join(',');
+                    try {
+                        const res = await fetch(`${PUBLIC_WP_URL}/wp-json/wp/v2/media?include=${chunk}&per_page=100`);
+                        if (res.ok) {
+                            const media = await res.json();
+                            if (Array.isArray(media)) {
+                                media.forEach((m: any) => { mediaMap[m.id.toString()] = m.source_url; });
+                            }
+                        }
+                    } catch (e) {
+                         console.error("[WC API] Error resolving WPC media:", e);
                     }
-                });
-                product.variation_images_map = imgMap;
+                }
+                product.wpc_resolved_media = mediaMap;
             }
+
+            // Variaciones procesadas en mapV3ToStore
         }
 
         const result = mapV3ToStore(product);
@@ -585,23 +706,31 @@ export async function getProductBySlug(slug: string) {
                         const variations = await getProductVariations(productId);
                         storeProduct.variations_data = variations;
                         
-                        if (variations.length > 0) {
-                            const imgMap: Record<string, any[]> = {};
-                            variations.forEach((v: any) => {
-                                const colorAttr = v.attributes?.find((a: any) =>
-                                    (a.name || "").toLowerCase().includes('color') || 
-                                    (a.slug || "").toLowerCase().includes('color') ||
-                                    a.name === 'Pa_selecciona-el-color'
-                                );
-                                if (colorAttr?.option && v.image?.src) {
-                                    const colorKey = colorAttr.option.toLowerCase().trim();
-                                    if (!imgMap[colorKey]) imgMap[colorKey] = [];
-                                    if (!imgMap[colorKey].some(img => img.src === v.image.src)) {
-                                        imgMap[colorKey].push({ src: v.image.src, alt: v.image.alt || '' });
+                        // NUEVO: Resolver imágenes de WPC si existen
+                        const allWpcIds = new Set<string>();
+                        variations.forEach((v: any) => {
+                            const meta = v.meta_data?.find((m: any) => m.key === 'wpcvi_images');
+                            if (meta?.value) meta.value.split(',').forEach((id: string) => allWpcIds.add(id.trim()));
+                        });
+
+                        if (allWpcIds.size > 0) {
+                            const idsArr = Array.from(allWpcIds);
+                            const mediaMap: Record<string, string> = {};
+                            for (let i = 0; i < idsArr.length; i += 50) {
+                                const chunk = idsArr.slice(i, i + 50).join(',');
+                                try {
+                                    const res = await fetch(`${PUBLIC_WP_URL}/wp-json/wp/v2/media?include=${chunk}&per_page=100`);
+                                    if (res.ok) {
+                                        const media = await res.json();
+                                        if (Array.isArray(media)) {
+                                            media.forEach((m: any) => { mediaMap[m.id.toString()] = m.source_url; });
+                                        }
                                     }
+                                } catch (e) {
+                                    console.error("[WC API] Error resolving WPC media (StoreAPI):", e);
                                 }
-                            });
-                            storeProduct.variation_images_map = imgMap;
+                            }
+                            storeProduct.wpc_resolved_media = mediaMap;
                         }
                     }
 
@@ -627,20 +756,34 @@ export async function getProductBySlug(slug: string) {
             const variations = await getProductVariations(product.id);
             product.variations_data = variations;
             
-            if (variations.length > 0) {
-                const imgMap: Record<string, any[]> = {};
-                variations.forEach((v: any) => {
-                    const colorAttr = v.attributes?.find((a: any) =>
-                        (a.name || "").toLowerCase().includes('color') || a.id === 'pa_color'
-                    );
-                    if (colorAttr?.option && v.image?.src) {
-                        const colorKey = colorAttr.option.toLowerCase().trim();
-                        if (!imgMap[colorKey]) imgMap[colorKey] = [];
-                        imgMap[colorKey].push({ src: v.image.src, alt: v.image.alt || '' });
+            // NUEVO: Resolver imágenes de WPC si existen
+            const allWpcIds = new Set<string>();
+            variations.forEach((v: any) => {
+                const meta = v.meta_data?.find((m: any) => m.key === 'wpcvi_images');
+                if (meta?.value) meta.value.split(',').forEach((id: string) => allWpcIds.add(id.trim()));
+            });
+
+            if (allWpcIds.size > 0) {
+                const idsArr = Array.from(allWpcIds);
+                const mediaMap: Record<string, string> = {};
+                for (let i = 0; i < idsArr.length; i += 50) {
+                    const chunk = idsArr.slice(i, i + 50).join(',');
+                    try {
+                        const res = await fetch(`${PUBLIC_WP_URL}/wp-json/wp/v2/media?include=${chunk}&per_page=100`);
+                        if (res.ok) {
+                            const media = await res.json();
+                            if (Array.isArray(media)) {
+                                media.forEach((m: any) => { mediaMap[m.id.toString()] = m.source_url; });
+                            }
+                        }
+                    } catch (e) {
+                         console.error("[WC API] Error resolving WPC media (slug v3):", e);
                     }
-                });
-                product.variation_images_map = imgMap;
+                }
+                product.wpc_resolved_media = mediaMap;
             }
+            
+            // Variaciones procesadas en mapV3ToStore
         }
 
         const result = mapV3ToStore(product);
