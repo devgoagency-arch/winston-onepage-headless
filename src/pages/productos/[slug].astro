@@ -5,6 +5,7 @@ import Footer from "../../components/Footer.astro";
 import ProductDetail from "../../components/ProductDetail";
 import { getProductBySlug, getProductsPool } from "../../lib/woocommerce";
 
+export const prerender = false;
 export const isr = {
     expiration: 86400, // 24 horas (revalidación forzada vía Webhook)
 };
