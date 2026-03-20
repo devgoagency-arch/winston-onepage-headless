@@ -6,7 +6,7 @@ import vercel from '@astrojs/vercel';
 // https://astro.build/config
 export default defineConfig({
   integrations: [react()],
-  output: 'server',
+  output: 'hybrid',
   adapter: vercel({
     maxDuration: 300
   }),

@@ -183,7 +183,7 @@ const categoryDesc = category?.description?.replace(/<[^>]+>/g, "") || "";
 // Header de depuración para verificar el tiempo de generación en Vercel
 Astro.response.headers.set('X-Generated-At', new Date().toISOString());
 Astro.response.headers.set('Cache-Control', 'public, s-maxage=86400, stale-while-revalidate=43200');
-const seoData = wpCategory?.yoast_head_json || null;
+const seoData = wpCategory?.yoast_head_json || wpCategory?.rank_math_seo || null;
 ---
 
 <Layout 

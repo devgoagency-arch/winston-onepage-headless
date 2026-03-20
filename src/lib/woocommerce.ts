@@ -451,7 +451,9 @@ function mapV3ToStore(p: any) {
                         const n = (a.name || "").toLowerCase();
                         const s = (a.slug || "").toLowerCase();
                         return n.includes('color') || s.includes('color') || 
-                               n.includes('selecciona-el') || s.includes('selecciona-el');
+                               n.includes('selecciona-el') || s.includes('selecciona-el') ||
+                               (a.id || "").toString().includes('color') ||
+                               a.name === 'Pa_selecciona-el-color';
                     });
                     
                     if (colorAttr && (colorAttr.option || colorAttr.value) && v.image?.src) {
@@ -480,7 +482,9 @@ function mapV3ToStore(p: any) {
                             const n = (a.name || "").toLowerCase();
                             const s = (a.slug || "").toLowerCase();
                             return n.includes('color') || s.includes('color') || 
-                                   n.includes('selecciona-el') || s.includes('selecciona-el');
+                                   n.includes('selecciona-el') || s.includes('selecciona-el') ||
+                                   (a.id || "").toString().includes('color') ||
+                                   a.name === 'Pa_selecciona-el-color';
                         });
                         
                         if (colorAttr && (colorAttr.option || colorAttr.value)) {
@@ -504,7 +508,10 @@ function mapV3ToStore(p: any) {
         })(),
         stock_status: p.stock_status || 'instock',
         manage_stock: p.manage_stock || false,
-        stock_quantity: p.stock_quantity || null
+        stock_quantity: p.stock_quantity || null,
+        // Mantener intacta la metadata SEO de RankMath / Yoast
+        yoast_head_json: p.yoast_head_json || p.rank_math_seo || null,
+        rank_math_seo: p.rank_math_seo || null
     };
 
     // Para productos variables, si tenemos datos de variaciones, intentamos extraer los precios reales
@@ -995,14 +1002,60 @@ export async function getPageById(id: number | string) {
 }
 
 /**
- * Menús y Atributos: Caché de 5 min (Datos casi estáticos)
+ * Menús: Lee primero desde archivos JSON estáticos (descargados en build-time).
+ * Solo llama a WordPress como fallback si el archivo no existe o viene vacío.
+ * Esto garantiza menús consistentes en Vercel serverless (sin caché compartida entre lambdas).
  */
+
+// Mapa de archivos JSON por slug (cargados en build-time vía import() dinámico)
+const MENU_JSON_FILES: Record<string, string> = {
+    'menu-principal':    '/data/menus/menu-principal.json',
+    'atencion-al-cliente': '/data/menus/atencion-al-cliente.json',
+    'nosotros':          '/data/menus/nosotros.json',
+    'legal':             '/data/menus/legal.json',
+};
+
 export async function getMenu(slug: string) {
     const cacheKey = `menu_${slug}`;
     const cached = getStaticCached(cacheKey);
     if (cached) return cached;
 
-    // Preferir Application Passwords para endpoints personalizados de WP
+    // ── FUENTE 1: Archivo JSON estático (build-time) ─────────────────────
+    // Los archivos viven en public/data/menus/ y se sirven como assets estáticos.
+    // En SSR/Vercel leemos desde fetch al propio origen (evita fs en edge).
+    try {
+        const filePath = MENU_JSON_FILES[slug];
+        if (filePath) {
+            // Intentamos leer el archivo JSON estático que fue creado en pre-build
+            // via scripts/fetch-menus.mjs. En Vercel SSR usamos fetch al asset público.
+            const vercelUrl = import.meta.env.VERCEL_URL;
+            const siteUrl = import.meta.env.PUBLIC_SITE_URL;
+            const origin = vercelUrl
+                ? `https://${vercelUrl}`
+                : (siteUrl || 'http://localhost:4321');
+            
+            const jsonUrl = `${origin}${filePath}`;
+            
+            const jsonRes = await fetch(jsonUrl, {
+                signal: AbortSignal.timeout(5000),
+                headers: { 'Accept': 'application/json' }
+            });
+            
+            if (jsonRes.ok) {
+                const jsonData = await jsonRes.json();
+                const items = jsonData?.items;
+                if (Array.isArray(items) && items.length > 0) {
+                    console.log(`[Menu] ✅ Cargado desde JSON estático: "${slug}" (${items.length} items)`);
+                    setStaticCached(cacheKey, items);
+                    return items;
+                }
+            }
+        }
+    } catch (e: any) {
+        console.warn(`[Menu] Archivo estático no disponible para "${slug}": ${e.message}`);
+    }
+
+    // ── FUENTE 2: WordPress REST API (fallback) ───────────────────────────
     const WP_USER = import.meta.env.WP_APP_USER || "";
     const WP_PASS = import.meta.env.WP_APP_PASS || "";
     const CK = (import.meta.env.WC_CONSUMER_KEY || import.meta.env.WP_CONSUMER_KEY || "").trim();
@@ -1014,19 +1067,29 @@ export async function getMenu(slug: string) {
 
     async function fetchMenuData(targetSlug: string) {
         try {
+            const controller = new AbortController();
+            const timeout = setTimeout(() => controller.abort(), 8000);
+            
             const url = `${PUBLIC_WP_URL}/wp-json/wh/v1/menu/${targetSlug}`;
+            console.log(`[Menu] ⚠️ Usando fallback WP API para "${targetSlug}"`);
+            
             const res = await fetch(url, {
-                headers: { 'Authorization': `Basic ${authString}` },
-                signal: AbortSignal.timeout(8000)
+                signal: controller.signal,
+                headers: {
+                    'Accept': 'application/json',
+                    'Authorization': `Basic ${authString}`
+                }
             });
+            clearTimeout(timeout);
+            
             if (res.ok) {
                 const data = await res.json();
                 if (Array.isArray(data) && data.length > 0) return data;
             }
-        } catch (e) {
-            console.warn(`[Menu] Intento fallido para slug "${targetSlug}":`, e);
+        } catch (e: any) {
+            console.warn(`[Menu] Intento fallido para slug "${targetSlug}":`, e.message);
         }
-        return null;
+        return null; // si falla o viene vacío
     }
 
     try {
