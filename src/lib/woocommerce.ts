@@ -3,9 +3,14 @@
  * Using ck/cs credentials for full access and better data processing.
  */
 
-const WC_URL_ENV = (import.meta.env.WC_URL || import.meta.env.WP_URL || "https://tienda.winstonandharrystore.com").replace(/\/$/, "");
+let WC_URL_ENV = (import.meta.env.WC_URL || import.meta.env.WP_URL || "https://tienda.winstonandharrystore.com").trim();
 
-export const PUBLIC_WP_URL = WC_URL_ENV;
+// Asegurar que use el subdominio tienda. si es el dominio principal para los llamados a la API
+if (WC_URL_ENV.includes("winstonandharrystore.com") && !WC_URL_ENV.includes("tienda.")) {
+    WC_URL_ENV = WC_URL_ENV.replace("winstonandharrystore.com", "tienda.winstonandharrystore.com");
+}
+
+export const PUBLIC_WP_URL = WC_URL_ENV.replace(/\/$/, "");
 const WP_JSON_BASE = `${PUBLIC_WP_URL}/wp-json`;
 
 // SSR Safe base64 helper

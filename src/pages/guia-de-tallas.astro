@@ -6,7 +6,7 @@ let page = await getPageById(14662);
 
 if (!page) {
     try {
-        const url = `https://winstonandharrystore.com/wp-json/wp/v2/pages/14662`;
+        const url = `https://tienda.winstonandharrystore.com/wp-json/wp/v2/pages/14662`;
         const res = await fetch(url);
         if (res.ok) page = await res.json();
     } catch(e: any) {

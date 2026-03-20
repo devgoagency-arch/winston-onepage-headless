@@ -27,14 +27,33 @@ function buildMenuTree(items: any[]) {
 const menuTree = buildMenuTree(menuItems);
 
 function flattenCategoryUrl(url: string) {
-    if (!url) return "";
-    let clean = url.replace(PUBLIC_WP_URL, "");
+    if (!url) return "/";
+    
+    // Lista de dominios que pueden venir en las URLs de WordPress
+    const domains = [
+        "https://tienda.winstonandharrystore.com",
+        "https://winstonandharrystore.com",
+        PUBLIC_WP_URL
+    ];
+    
+    let clean = url;
+    domains.forEach(d => {
+        if (d) clean = clean.replace(d, "");
+    });
+
+    // Caso de categoría de producto (WooCommerce predeterminado)
     if (clean.includes("/product-category/")) {
-        // Extraemos solo el último segmento (el slug de la categoría hija)
         const segments = clean.split("/").filter(Boolean);
         const lastSegment = segments[segments.length - 1];
         return `/categoria/${lastSegment}/`;
     }
+
+    // Asegurar que no quede "vacio" o "//"
+    if (!clean || clean === "" || clean === "/") return "/";
+    
+    // Normalizar a barra inicial si no la tiene
+    if (!clean.startsWith("/")) clean = "/" + clean;
+    
     return clean;
 }
 ---

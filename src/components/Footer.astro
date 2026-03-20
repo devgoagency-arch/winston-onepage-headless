@@ -9,13 +9,27 @@ const menuAbout = await getMenu("nosotros");
 const menuLegal = await getMenu("legal");
 
 function flattenCategoryUrl(url: string) {
-    if (!url) return "";
-    let clean = url.replace(PUBLIC_WP_URL, "");
+    if (!url) return "/";
+    
+    const domains = [
+        "https://tienda.winstonandharrystore.com",
+        "https://winstonandharrystore.com",
+        PUBLIC_WP_URL
+    ];
+    
+    let clean = url;
+    domains.forEach(d => {
+        if (d) clean = clean.replace(d, "");
+    });
+
     if (clean.includes("/product-category/")) {
         const segments = clean.split("/").filter(Boolean);
         const lastSegment = segments[segments.length - 1];
         return `/categoria/${lastSegment}/`;
     }
+
+    if (!clean || clean === "" || clean === "/") return "/";
+    if (!clean.startsWith("/")) clean = "/" + clean;
     return clean;
 }
 ---
@@ -150,7 +164,7 @@ function flattenCategoryUrl(url: string) {
             <div class="footer-logo">
                 <a href="/" class="logo">
                     <Image
-                        src="https://winstonandharrystore.com/wp-content/uploads/2020/12/logo-w-h-vertical.png"
+                        src="https://tienda.winstonandharrystore.com/wp-content/uploads/2020/12/logo-w-h-vertical.png"
                         alt="Winston & Harry Logo"
                         width={400}
                         height={400}
@@ -176,7 +190,7 @@ function flattenCategoryUrl(url: string) {
             <h3 class="footer-title">ATENCIÓN AL CLIENTE</h3>
             <ul class="footer-links">
                 {menuCustomer.length > 0 ? (
-                    menuCustomer.map(item => (
+                    menuCustomer.map((item: any) => (
                         <li><a href={flattenCategoryUrl(item.url)} set:html={item.title}></a></li>
                     ))
                 ) : (
@@ -193,7 +207,7 @@ function flattenCategoryUrl(url: string) {
             <h3 class="footer-title">NOSOTROS</h3>
             <ul class="footer-links">
                 {menuAbout.length > 0 ? (
-                    menuAbout.map(item => (
+                    menuAbout.map((item: any) => (
                         <li><a href={flattenCategoryUrl(item.url)} set:html={item.title}></a></li>
                     ))
                 ) : (
@@ -214,7 +228,7 @@ function flattenCategoryUrl(url: string) {
             <h3 class="footer-title">LEGAL</h3>
             <ul class="footer-links">
                 {menuLegal.length > 0 ? (
-                    menuLegal.map(item => (
+                    menuLegal.map((item: any) => (
                         <li><a href={flattenCategoryUrl(item.url)} set:html={item.title}></a></li>
                     ))
                 ) : (
