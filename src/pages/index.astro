@@ -9,10 +9,17 @@ import Footer from "../components/Footer.astro";
 import FeaturesBanner from "../components/FeaturesBanner.astro";
 import LookOfTheWeek from "../components/LookOfTheWeek.astro";
 import CategoryGrid from "../components/CategoryGrid.astro";
+import { getHomeSEO } from "../lib/woocommerce";
+
 export const prerender = true;
+
+const homeSeo = await getHomeSEO();
 ---
 
-<Layout title="Winston & Harry | Calzado Artesanal de Lujo">
+<Layout 
+	title={homeSeo?.title || "Winston & Harry | Calzado Artesanal de Lujo"} 
+	seoData={homeSeo}
+>
 	<Header />
 
 	<main>

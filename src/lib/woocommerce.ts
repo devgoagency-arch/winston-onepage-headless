@@ -1143,3 +1143,41 @@ export async function getAttributeTerms(attributeId: number | string) {
         return [];
     }
 }
+
+/**
+ * Fetch Home SEO tags using RankMath Headless API
+ */
+export async function getHomeSEO() {
+    try {
+        const url = `${PUBLIC_WP_URL}/wp-json/rankmath/v1/getHead?url=${PUBLIC_WP_URL}/`;
+        const res = await fetch(url, { signal: AbortSignal.timeout(5000) });
+        
+        if (res.ok) {
+            const data = await res.json();
+            if (data.success && data.head) {
+                const head = data.head;
+                
+                // Mapear el string crudo a las props que Layout espera
+                const titleMatch = head.match(/<title>(.*?)<\/title>/);
+                const descMatch = head.match(/<meta name="description" content="(.*?)"/);
+                const ogImageMatch = head.match(/<meta property="og:image" content="(.*?)"/);
+                const ogTitleMatch = head.match(/<meta property="og:title" content="(.*?)"/);
+                const ogDescMatch = head.match(/<meta property="og:description" content="(.*?)"/);
+                
+                // Limpiar entidades HTML simples en el title
+                const cleanTitle = titleMatch ? titleMatch[1].replace(/&amp;/g, '&') : "";
+                
+                return {
+                    title: cleanTitle,
+                    description: descMatch ? descMatch[1] : "",
+                    opengraph_title: ogTitleMatch ? ogTitleMatch[1].replace(/&amp;/g, '&') : cleanTitle,
+                    opengraph_description: ogDescMatch ? ogDescMatch[1] : (descMatch ? descMatch[1] : ""),
+                    opengraph_image: ogImageMatch ? ogImageMatch[1] : ""
+                };
+            }
+        }
+    } catch (e) {
+        console.warn("[RankMath API] Error fetching Home SEO:", e);
+    }
+    return null;
+}
