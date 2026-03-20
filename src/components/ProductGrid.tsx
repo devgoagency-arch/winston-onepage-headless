@@ -38,12 +38,14 @@ const CATEGORIES = [
   { id: '190', name: 'Maletas', slug: 'maletas' }
 ];
 
-export default function ProductGrid() {
-  const [products, setProducts] = useState<Product[]>([]);
-  const [categoryCache, setCategoryCache] = useState<Record<string | number, Product[]>>({});
+export default function ProductGrid({ initialProducts = [] }: { initialProducts?: Product[] }) {
+  const [products, setProducts] = useState<Product[]>(initialProducts);
+  const [categoryCache, setCategoryCache] = useState<Record<string | number, Product[]>>({
+    '63': initialProducts
+  });
   const [activeCategory, setActiveCategory] = useState(CATEGORIES[0]);
   const [visibleCount, setVisibleCount] = useState(12);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(initialProducts.length === 0);
   const [error, setError] = useState<string | null>(null);
   const [categorySlugs, setCategorySlugs] = useState<Record<string, string>>({
     '63': 'zapatos',
@@ -56,7 +58,7 @@ export default function ProductGrid() {
   useEffect(() => {
     const prefetchCategories = async () => {
       try {
-        setLoading(true);
+        if (initialProducts.length === 0) setLoading(true);
         setError(null);
 
         // 1. Obtener la información real de las categorías (para los slugs actualizados)
@@ -78,6 +80,9 @@ export default function ProductGrid() {
         // 2. Cargar productos
         const results = await Promise.all(
           CATEGORIES.map(async (cat) => {
+            if (String(cat.id) === '63' && initialProducts.length > 0) {
+              return { id: cat.id, data: initialProducts };
+            }
             const res = await fetch(`/api/products?category=${cat.id}&orderby=modified`);
             if (!res.ok) return { id: cat.id, data: [] };
             const data: Product[] = await res.json();

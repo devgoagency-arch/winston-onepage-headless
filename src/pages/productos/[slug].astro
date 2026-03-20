@@ -90,6 +90,8 @@ if (!product && !error) {
     return Astro.redirect("/404");
 }
 const seoData = product?.yoast_head_json || product?.rank_math_seo || null;
+
+Astro.response.headers.set('Cache-Control', 'public, s-maxage=86400, stale-while-revalidate=43200');
 ---
 
 <Layout 
