@@ -14,13 +14,16 @@ import { getHomeSEO, getProductsByCategory } from "../lib/woocommerce";
 export const prerender = true;
 
 const homeSeo = await getHomeSEO();
-const initialProducts = await getProductsByCategory('63', 12, 1, 'popularity', 'desc');
+const initialProducts = await getProductsByCategory(
+	"63",
+	12,
+	1,
+	"popularity",
+	"desc",
+);
 ---
 
-<Layout 
-	title={homeSeo?.title || "Winston & Harry | Calzado Artesanal de Lujo"} 
-	seoData={homeSeo}
->
+<Layout title={homeSeo?.title} seoData={homeSeo}>
 	<Header />
 
 	<main>
