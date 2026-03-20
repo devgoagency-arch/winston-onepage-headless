@@ -861,11 +861,17 @@ export default function ProductDetail({ initialProduct }: Props) {
               const firstImg = filteredImages[0];
               if (!firstImg?.src) return null;
 
-              // Solo intentar si cumple el patrón -1 o _1
-              const match = firstImg.src.match(/[-_]1(?:-e\d+)?\.(jpg|jpeg|png|webp)$/i);
-              if (!match) return null;
-
-              const guessedSrc = firstImg.src.replace(/([-_])1(?:-e\d+)?(\.(?:jpg|jpeg|png|webp))$/i, `$1${num}$2`);
+              // 2. Intento de adivinar el nombre de la foto (WooCommerce suele usar sufijos numéricos)
+              const match1 = firstImg.src.match(/([-_])1(?:-e\d+)?(\.(?:jpg|jpeg|png|webp))$/i);
+              let guessedSrc = "";
+              
+              if (match1) {
+                // Si la primera imagen termina en -1, reemplazamos por -num
+                guessedSrc = firstImg.src.replace(/([-_])1(?:-e\d+)?(\.(?:jpg|jpeg|png|webp))$/i, `$1${num}$2`);
+              } else {
+                // Si no tiene el sufijo -1, intentamos inyectar el número antes de la extensión (ej: camisa.jpg -> camisa-2.jpg)
+                guessedSrc = firstImg.src.replace(/(\.(?:jpg|jpeg|png|webp))$/i, `-${num}$1`);
+              }
 
               // Evitamos duplicados si la imagen ya está en las iniciales de WooCommerce
               const alreadyExists = filteredImages.some(img => img.src && (img.src === guessedSrc || img.src.includes(guessedSrc.split('/').pop() || '')));
@@ -2090,6 +2096,11 @@ function getColorCode(slug: string): string {
     'cafe': '#6F4E37',
     'miel': '#D4A373',
     'azul': '#1B3F8B',
+    'azul-oscuro': '#0B1B32',
+    'azuloscuro': '#0B1B32',
+    'navy': '#0B1B32',
+    'marino': '#151E3D',
+    'azul-marino': '#151E3D',
     'verde': '#155338',
     'vino': '#722F37',
     'vinotinto': '#722F37',

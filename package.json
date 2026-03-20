@@ -4,6 +4,8 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
+    "fetch:menus": "node scripts/fetch-menus.mjs",
+    "prebuild": "node scripts/fetch-menus.mjs",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"

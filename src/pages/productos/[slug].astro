@@ -88,7 +88,7 @@ try {
 if (!product && !error) {
     return Astro.redirect("/404");
 }
-const seoData = product?.yoast_head_json || null;
+const seoData = product?.yoast_head_json || product?.rank_math_seo || null;
 ---
 
 <Layout 
