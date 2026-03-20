@@ -1,3 +1,4 @@
+export const prerender = false;
 /**
  * WooCommerce REST API Client for Winston & Harry
  *

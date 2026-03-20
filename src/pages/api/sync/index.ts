@@ -1,3 +1,4 @@
+export const prerender = false;
 /**
  * /api/sync — Webhook de WooCommerce (vía relay PHP de WordPress)
  *

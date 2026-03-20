@@ -1,3 +1,4 @@
+export const prerender = false;
 import type { APIRoute } from 'astro';
 import { getProductBySlug, getProductsByCategory, getAllProducts, searchProducts } from '../../lib/woocommerce';
 

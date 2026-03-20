@@ -1,3 +1,4 @@
+export const prerender = false;
 /**
  * /api/warm-cache — Cron diario 5AM
  *

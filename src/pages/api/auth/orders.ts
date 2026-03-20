@@ -1,3 +1,4 @@
+export const prerender = false;
 
 import { wcFetch } from "../../../lib/woocommerce";
 

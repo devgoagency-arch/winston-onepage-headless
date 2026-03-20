@@ -1,3 +1,4 @@
+export const prerender = false;
 /**
  * /api/sync-relay — Recibe notificaciones del relay PHP de WordPress
  * 

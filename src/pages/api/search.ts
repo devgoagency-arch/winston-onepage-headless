@@ -1,3 +1,4 @@
+export const prerender = false;
 import type { APIRoute } from 'astro';
 import { PUBLIC_WP_URL, wcFetch } from '../../lib/woocommerce';
 

@@ -1,3 +1,4 @@
+export const prerender = false;
 
 import { WP_URL } from "../../../lib/auth";
 
