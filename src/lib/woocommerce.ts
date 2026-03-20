@@ -1059,11 +1059,9 @@ export async function getMenu(slug: string) {
     const WP_USER = import.meta.env.WP_APP_USER || "";
     const WP_PASS = import.meta.env.WP_APP_PASS || "";
     const CK = (import.meta.env.WC_CONSUMER_KEY || import.meta.env.WP_CONSUMER_KEY || "").trim();
-    const CS = (import.meta.env.WC_CONSUMER_SECRET || import.meta.env.WP_CONSUMER_SECRET || "").trim();
-    
     const authString = (WP_USER && WP_PASS) 
         ? safeBtoa(`${WP_USER}:${WP_PASS}`)
-        : safeBtoa(`${CK}:${CS}`);
+        : null;
 
     async function fetchMenuData(targetSlug: string) {
         try {
@@ -1073,12 +1071,16 @@ export async function getMenu(slug: string) {
             const url = `${PUBLIC_WP_URL}/wp-json/wh/v1/menu/${targetSlug}`;
             console.log(`[Menu] ⚠️ Usando fallback WP API para "${targetSlug}"`);
             
+            const reqHeaders: Record<string, string> = {
+                'Accept': 'application/json'
+            };
+            if (authString) {
+                reqHeaders['Authorization'] = `Basic ${authString}`;
+            }
+
             const res = await fetch(url, {
                 signal: controller.signal,
-                headers: {
-                    'Accept': 'application/json',
-                    'Authorization': `Basic ${authString}`
-                }
+                headers: reqHeaders
             });
             clearTimeout(timeout);
             

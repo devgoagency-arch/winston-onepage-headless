@@ -57,10 +57,10 @@ const MENUS_TO_FETCH = [
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
 function getAuthHeader() {
-    const authStr = (WP_USER && WP_PASS)
-        ? Buffer.from(`${WP_USER}:${WP_PASS}`).toString('base64')
-        : Buffer.from(`${CK}:${CS}`).toString('base64');
-    return `Basic ${authStr}`;
+    if (WP_USER && WP_PASS) {
+        return `Basic ${Buffer.from(`${WP_USER}:${WP_PASS}`).toString('base64')}`;
+    }
+    return null;
 }
 
 async function fetchMenu(slug) {
@@ -71,13 +71,18 @@ async function fetchMenu(slug) {
     const timeout = setTimeout(() => controller.abort(), 15000);
 
     try {
-        const res = await fetch(url, {
+        const reqOptions = {
             signal: controller.signal,
             headers: {
-                'Accept': 'application/json',
-                'Authorization': getAuthHeader()
+                'Accept': 'application/json'
             }
-        });
+        };
+        const auth = getAuthHeader();
+        if (auth) {
+            reqOptions.headers['Authorization'] = auth;
+        }
+
+        const res = await fetch(url, reqOptions);
         clearTimeout(timeout);
 
         if (!res.ok) {
