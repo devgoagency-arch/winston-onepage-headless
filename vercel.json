@@ -61,266 +61,85 @@
     }
   ],
   "redirects": [
-    {
-      "source": "/shop",
-      "destination": "/tienda",
-      "permanent": true
-    },
-    {
-      "source": "/Shop",
-      "destination": "/tienda",
-      "permanent": true
-    },
-    {
-      "source": "/shop/",
-      "destination": "/tienda",
-      "permanent": true
-    },
-    {
-      "source": "/Shop/",
-      "destination": "/tienda",
-      "permanent": true
-    },
-    {
-      "source": "/telefonos-ubicacion-tiendas",
-      "destination": "/contacto",
-      "permanent": true
-    },
-    {
-      "source": "/guia-tallas",
-      "destination": "/guia-de-tallas",
-      "permanent": true
-    },
-    {
-      "source": "/product-category/zapatos/page/:page",
-      "destination": "/categoria/zapatos-cuero-hombre?page=:page",
-      "permanent": true
-    },
-    {
-      "source": "/product-category/zapatos",
-      "destination": "/categoria/zapatos-cuero-hombre",
-      "permanent": true
-    },
-    {
-      "source": "/product-category/zapatos/zapatos-de-cordon/page/:page",
-      "destination": "/categoria/zapatos-cordon-hombre?page=:page",
-      "permanent": true
-    },
-    {
-      "source": "/product-category/zapatos/zapatos-de-cordon",
-      "destination": "/categoria/zapatos-cordon-hombre",
-      "permanent": true
-    },
-    {
-      "source": "/product-category/zapatos/mocasin/page/:page",
-      "destination": "/categoria/mocasines-cuero-hombre?page=:page",
-      "permanent": true
-    },
-    {
-      "source": "/product-category/zapatos/mocasin",
-      "destination": "/categoria/mocasines-cuero-hombre",
-      "permanent": true
-    },
-    {
-      "source": "/product-category/zapatos/botas/page/:page",
-      "destination": "/categoria/botas-cuero-hombre?page=:page",
-      "permanent": true
-    },
-    {
-      "source": "/product-category/zapatos/botas",
-      "destination": "/categoria/botas-cuero-hombre",
-      "permanent": true
-    },
-    {
-      "source": "/product-category/zapatos/zapatos-de-hebilla",
-      "destination": "/categoria/zapatos-hebilla-hombre",
-      "permanent": true
-    },
-    {
-      "source": "/product-category/zapatos/tenis/page/:page",
-      "destination": "/categoria/tenis-hombre?page=:page",
-      "permanent": true
-    },
-    {
-      "source": "/product-category/zapatos/tenis",
-      "destination": "/categoria/tenis-hombre",
-      "permanent": true
-    },
-    {
-      "source": "/product-category/zapatos/linea-colombia",
-      "destination": "/categoria/zapatos-hechos-colombia-hombre",
-      "permanent": true
-    },
-    {
-      "source": "/product-category/zapatos/pantuflas",
-      "destination": "/categoria/pantuflas-cuero-hombre",
-      "permanent": true
-    },
-    {
-      "source": "/product-category/zapatos/tallas-grandes",
-      "destination": "/categoria/tallas-grandes-zapatos-hombre",
-      "permanent": true
-    },
-    {
-      "source": "/product-category/tallas-grandes",
-      "destination": "/categoria/tallas-grandes-zapatos-hombre",
-      "permanent": true
-    },
-    {
-      "source": "/product-category/ropa/page/:page",
-      "destination": "/categoria/ropa-hombre-colombia?page=:page",
-      "permanent": true
-    },
-    {
-      "source": "/product-category/ropa",
-      "destination": "/categoria/ropa-hombre-colombia",
-      "permanent": true
-    },
-    {
-      "source": "/product-category/ropa/chaquetas",
-      "destination": "/categoria/chaquetas-hombre",
-      "permanent": true
-    },
-    {
-      "source": "/product-category/chaquetas",
-      "destination": "/categoria/chaquetas-hombre",
-      "permanent": true
-    },
-    {
-      "source": "/product-category/ropa/camisetas-hoodies",
-      "destination": "/categoria/polos-camisetas-hombre",
-      "permanent": true
-    },
-    {
-      "source": "/product-category/camisetas-hoodies",
-      "destination": "/categoria/polos-camisetas-hombre",
-      "permanent": true
-    },
-    {
-      "source": "/product-category/ropa/sueter-tejido",
-      "destination": "/categoria/sueteres-chalecos-hombre",
-      "permanent": true
-    },
-    {
-      "source": "/product-category/sueter-tejido",
-      "destination": "/categoria/sueteres-chalecos-hombre",
-      "permanent": true
-    },
-    {
-      "source": "/product-category/maletas/page/:page",
-      "destination": "/categoria/maletas-morrales-cuero?page=:page",
-      "permanent": true
-    },
-    {
-      "source": "/product-category/maletas",
-      "destination": "/categoria/maletas-morrales-cuero",
-      "permanent": true
-    },
-    {
-      "source": "/product-category/zapatos-maletas",
-      "destination": "/categoria/zapatos-maletas-cuero-hombre",
-      "permanent": true
-    },
-    {
-      "source": "/product-category/accesorios/page/:page",
-      "destination": "/categoria/accesorios-hombre?page=:page",
-      "permanent": true
-    },
-    {
-      "source": "/product-category/accesorios",
-      "destination": "/categoria/accesorios-hombre",
-      "permanent": true
-    },
-    {
-      "source": "/product-category/mascotas",
-      "destination": "/categoria/collares-cuero-perro",
-      "permanent": true
-    },
-    {
-      "source": "/product-category/outlet",
-      "destination": "/categoria/outlet-zapatos-ropa",
-      "permanent": true
-    },
-    {
-      "source": "/product-category/guia-de-regalos",
-      "destination": "/categoria/ideas-regalo-hombre",
-      "permanent": true
-    },
-    {
-      "source": "/product-category/bono-de-regalo",
-      "destination": "/categoria/bono-regalo-hombre",
-      "permanent": true
-    },
-    {
-      "source": "/product-category/menos-350000",
-      "destination": "/tienda",
-      "permanent": true
-    },
-    {
-      "source": "/zapatos-hechos-a-mano",
-      "destination": "/categoria/zapatos-cuero-hombre",
-      "permanent": true
-    },
-    {
-      "source": "/zapatos-artesanales-para-hombre",
-      "destination": "/categoria/zapatos-cuero-hombre",
-      "permanent": true
-    },
-    {
-      "source": "/donar-zapatos",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/historia-winston-and-harry",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/preguntas-frecuentes",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/politica-privacidad-proteccion-datos/",
-      "destination": "/politica-privacidad-proteccion-datos",
-      "permanent": true
-    },
-    {
-      "source": "/politica-costos-envio/",
-      "destination": "/politica-costos-envio",
-      "permanent": true
-    },
-    {
-      "source": "/politica-cookies/",
-      "destination": "/politica-cookies",
-      "permanent": true
-    },
-    {
-      "source": "/terminos-condiciones/",
-      "destination": "/terminos-condiciones",
-      "permanent": true
-    },
-    {
-      "source": "/cart",
-      "destination": "/carrito",
-      "permanent": true
-    },
-    {
-      "source": "/checkout",
-      "destination": "/finalizar-compra",
-      "permanent": true
-    },
-    {
-      "source": "/product-tag/:slug",
-      "destination": "/tienda",
-      "permanent": true
-    },
-    {
-      "source": "/product/:slug",
-      "destination": "/productos/:slug",
-      "permanent": true
-    }
+    { "source": "/shop",   "destination": "/tienda", "permanent": true },
+    { "source": "/Shop",   "destination": "/tienda", "permanent": true },
+    { "source": "/shop/",  "destination": "/tienda", "permanent": true },
+    { "source": "/Shop/",  "destination": "/tienda", "permanent": true },
+    { "source": "/telefonos-ubicacion-tiendas",  "destination": "/contacto",       "permanent": true },
+    { "source": "/telefonos-ubicacion-tiendas/", "destination": "/contacto",       "permanent": true },
+    { "source": "/guia-tallas",                  "destination": "/guia-de-tallas", "permanent": true },
+    { "source": "/guia-tallas/",                 "destination": "/guia-de-tallas", "permanent": true },
+    { "source": "/product-category/zapatos/page/:page",  "destination": "/categoria/zapatos-cuero-hombre?page=:page", "permanent": true },
+    { "source": "/product-category/zapatos/",            "destination": "/categoria/zapatos-cuero-hombre",            "permanent": true },
+    { "source": "/product-category/zapatos",             "destination": "/categoria/zapatos-cuero-hombre",            "permanent": true },
+    { "source": "/product-category/zapatos/zapatos-de-cordon/page/:page", "destination": "/categoria/zapatos-cordon-hombre?page=:page", "permanent": true },
+    { "source": "/product-category/zapatos/zapatos-de-cordon/",           "destination": "/categoria/zapatos-cordon-hombre",            "permanent": true },
+    { "source": "/product-category/zapatos/zapatos-de-cordon",            "destination": "/categoria/zapatos-cordon-hombre",            "permanent": true },
+    { "source": "/product-category/zapatos/mocasin/page/:page", "destination": "/categoria/mocasines-cuero-hombre?page=:page", "permanent": true },
+    { "source": "/product-category/zapatos/mocasin/",           "destination": "/categoria/mocasines-cuero-hombre",            "permanent": true },
+    { "source": "/product-category/zapatos/mocasin",            "destination": "/categoria/mocasines-cuero-hombre",            "permanent": true },
+    { "source": "/product-category/zapatos/botas/page/:page", "destination": "/categoria/botas-cuero-hombre?page=:page", "permanent": true },
+    { "source": "/product-category/zapatos/botas/",           "destination": "/categoria/botas-cuero-hombre",            "permanent": true },
+    { "source": "/product-category/zapatos/botas",            "destination": "/categoria/botas-cuero-hombre",            "permanent": true },
+    { "source": "/product-category/zapatos/zapatos-de-hebilla/", "destination": "/categoria/zapatos-hebilla-hombre", "permanent": true },
+    { "source": "/product-category/zapatos/zapatos-de-hebilla",  "destination": "/categoria/zapatos-hebilla-hombre", "permanent": true },
+    { "source": "/product-category/zapatos/tenis/page/:page", "destination": "/categoria/tenis-hombre?page=:page", "permanent": true },
+    { "source": "/product-category/zapatos/tenis/",           "destination": "/categoria/tenis-hombre",            "permanent": true },
+    { "source": "/product-category/zapatos/tenis",            "destination": "/categoria/tenis-hombre",            "permanent": true },
+    { "source": "/product-category/zapatos/linea-colombia/", "destination": "/categoria/zapatos-hechos-colombia-hombre", "permanent": true },
+    { "source": "/product-category/zapatos/linea-colombia",  "destination": "/categoria/zapatos-hechos-colombia-hombre", "permanent": true },
+    { "source": "/product-category/zapatos/pantuflas/", "destination": "/categoria/pantuflas-cuero-hombre", "permanent": true },
+    { "source": "/product-category/zapatos/pantuflas",  "destination": "/categoria/pantuflas-cuero-hombre", "permanent": true },
+    { "source": "/product-category/zapatos/tallas-grandes/", "destination": "/categoria/tallas-grandes-zapatos-hombre", "permanent": true },
+    { "source": "/product-category/zapatos/tallas-grandes",  "destination": "/categoria/tallas-grandes-zapatos-hombre", "permanent": true },
+    { "source": "/product-category/tallas-grandes/", "destination": "/categoria/tallas-grandes-zapatos-hombre", "permanent": true },
+    { "source": "/product-category/tallas-grandes",  "destination": "/categoria/tallas-grandes-zapatos-hombre", "permanent": true },
+    { "source": "/product-category/ropa/page/:page", "destination": "/categoria/ropa-hombre-colombia?page=:page", "permanent": true },
+    { "source": "/product-category/ropa/",           "destination": "/categoria/ropa-hombre-colombia",            "permanent": true },
+    { "source": "/product-category/ropa",            "destination": "/categoria/ropa-hombre-colombia",            "permanent": true },
+    { "source": "/product-category/ropa/chaquetas/", "destination": "/categoria/chaquetas-hombre", "permanent": true },
+    { "source": "/product-category/ropa/chaquetas",  "destination": "/categoria/chaquetas-hombre", "permanent": true },
+    { "source": "/product-category/chaquetas/", "destination": "/categoria/chaquetas-hombre", "permanent": true },
+    { "source": "/product-category/chaquetas",  "destination": "/categoria/chaquetas-hombre", "permanent": true },
+    { "source": "/product-category/ropa/camisetas-hoodies/", "destination": "/categoria/polos-camisetas-hombre", "permanent": true },
+    { "source": "/product-category/ropa/camisetas-hoodies",  "destination": "/categoria/polos-camisetas-hombre", "permanent": true },
+    { "source": "/product-category/camisetas-hoodies/", "destination": "/categoria/polos-camisetas-hombre", "permanent": true },
+    { "source": "/product-category/camisetas-hoodies",  "destination": "/categoria/polos-camisetas-hombre", "permanent": true },
+    { "source": "/product-category/ropa/sueter-tejido/", "destination": "/categoria/sueteres-chalecos-hombre", "permanent": true },
+    { "source": "/product-category/ropa/sueter-tejido",  "destination": "/categoria/sueteres-chalecos-hombre", "permanent": true },
+    { "source": "/product-category/sueter-tejido/", "destination": "/categoria/sueteres-chalecos-hombre", "permanent": true },
+    { "source": "/product-category/sueter-tejido",  "destination": "/categoria/sueteres-chalecos-hombre", "permanent": true },
+    { "source": "/product-category/maletas/page/:page", "destination": "/categoria/maletas-morrales-cuero?page=:page", "permanent": true },
+    { "source": "/product-category/maletas/",           "destination": "/categoria/maletas-morrales-cuero",            "permanent": true },
+    { "source": "/product-category/maletas",            "destination": "/categoria/maletas-morrales-cuero",            "permanent": true },
+    { "source": "/product-category/zapatos-maletas/", "destination": "/categoria/zapatos-maletas-cuero-hombre", "permanent": true },
+    { "source": "/product-category/zapatos-maletas",  "destination": "/categoria/zapatos-maletas-cuero-hombre", "permanent": true },
+    { "source": "/product-category/accesorios/page/:page", "destination": "/categoria/accesorios-hombre?page=:page", "permanent": true },
+    { "source": "/product-category/accesorios/",           "destination": "/categoria/accesorios-hombre",            "permanent": true },
+    { "source": "/product-category/accesorios",            "destination": "/categoria/accesorios-hombre",            "permanent": true },
+    { "source": "/product-category/mascotas/", "destination": "/categoria/collares-cuero-perro", "permanent": true },
+    { "source": "/product-category/mascotas",  "destination": "/categoria/collares-cuero-perro", "permanent": true },
+    { "source": "/product-category/outlet/", "destination": "/categoria/outlet-zapatos-ropa", "permanent": true },
+    { "source": "/product-category/outlet",  "destination": "/categoria/outlet-zapatos-ropa", "permanent": true },
+    { "source": "/product-category/guia-de-regalos/", "destination": "/categoria/ideas-regalo-hombre", "permanent": true },
+    { "source": "/product-category/guia-de-regalos",  "destination": "/categoria/ideas-regalo-hombre", "permanent": true },
+    { "source": "/product-category/bono-de-regalo/", "destination": "/categoria/bono-regalo-hombre", "permanent": true },
+    { "source": "/product-category/bono-de-regalo",  "destination": "/categoria/bono-regalo-hombre", "permanent": true },
+    { "source": "/product-category/menos-350000/", "destination": "/tienda", "permanent": true },
+    { "source": "/product-category/menos-350000",  "destination": "/tienda", "permanent": true },
+    { "source": "/zapatos-hechos-a-mano",         "destination": "/categoria/zapatos-cuero-hombre", "permanent": true },
+    { "source": "/zapatos-artesanales-para-hombre","destination": "/categoria/zapatos-cuero-hombre", "permanent": true },
+    { "source": "/donar-zapatos",             "destination": "/", "permanent": true },
+    { "source": "/historia-winston-and-harry","destination": "/", "permanent": true },
+    { "source": "/preguntas-frecuentes",      "destination": "/", "permanent": true },
+    { "source": "/politica-privacidad-proteccion-datos/", "destination": "/politica-privacidad-proteccion-datos", "permanent": true },
+    { "source": "/politica-costos-envio/",                "destination": "/politica-costos-envio",                "permanent": true },
+    { "source": "/politica-cookies/",                     "destination": "/politica-cookies",                     "permanent": true },
+    { "source": "/terminos-condiciones/",                 "destination": "/terminos-condiciones",                 "permanent": true },
+    { "source": "/cart",     "destination": "/carrito",         "permanent": true },
+    { "source": "/checkout", "destination": "/finalizar-compra","permanent": true },
+    { "source": "/product-tag/:slug", "destination": "/tienda",          "permanent": true },
+    { "source": "/product/:slug",     "destination": "/productos/:slug",  "permanent": true }
   ],
   "rewrites": [
     {
