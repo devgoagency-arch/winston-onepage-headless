@@ -11,7 +11,7 @@
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "public, s-maxage=600, stale-while-revalidate=300"
+          "value": "no-store, max-age=0"
         }
       ]
     },
@@ -72,6 +72,16 @@
       "permanent": true
     },
     {
+      "source": "/shop/",
+      "destination": "/tienda",
+      "permanent": true
+    },
+    {
+      "source": "/Shop/",
+      "destination": "/tienda",
+      "permanent": true
+    },
+    {
       "source": "/telefonos-ubicacion-tiendas",
       "destination": "/contacto",
       "permanent": true
@@ -83,7 +93,7 @@
     },
     {
       "source": "/product-category/zapatos/page/:page",
-      "destination": "/categoria/zapatos-cuero-hombre?page=$page",
+      "destination": "/categoria/zapatos-cuero-hombre?page=:page",
       "permanent": true
     },
     {
@@ -93,7 +103,7 @@
     },
     {
       "source": "/product-category/zapatos/zapatos-de-cordon/page/:page",
-      "destination": "/categoria/zapatos-cordon-hombre?page=$page",
+      "destination": "/categoria/zapatos-cordon-hombre?page=:page",
       "permanent": true
     },
     {
@@ -103,7 +113,7 @@
     },
     {
       "source": "/product-category/zapatos/mocasin/page/:page",
-      "destination": "/categoria/mocasines-cuero-hombre?page=$page",
+      "destination": "/categoria/mocasines-cuero-hombre?page=:page",
       "permanent": true
     },
     {
@@ -113,7 +123,7 @@
     },
     {
       "source": "/product-category/zapatos/botas/page/:page",
-      "destination": "/categoria/botas-cuero-hombre?page=$page",
+      "destination": "/categoria/botas-cuero-hombre?page=:page",
       "permanent": true
     },
     {
@@ -128,7 +138,7 @@
     },
     {
       "source": "/product-category/zapatos/tenis/page/:page",
-      "destination": "/categoria/tenis-hombre?page=$page",
+      "destination": "/categoria/tenis-hombre?page=:page",
       "permanent": true
     },
     {
@@ -158,7 +168,7 @@
     },
     {
       "source": "/product-category/ropa/page/:page",
-      "destination": "/categoria/ropa-hombre-colombia?page=$page",
+      "destination": "/categoria/ropa-hombre-colombia?page=:page",
       "permanent": true
     },
     {
@@ -198,7 +208,7 @@
     },
     {
       "source": "/product-category/maletas/page/:page",
-      "destination": "/categoria/maletas-morrales-cuero?page=$page",
+      "destination": "/categoria/maletas-morrales-cuero?page=:page",
       "permanent": true
     },
     {
@@ -213,7 +223,7 @@
     },
     {
       "source": "/product-category/accesorios/page/:page",
-      "destination": "/categoria/accesorios-hombre?page=$page",
+      "destination": "/categoria/accesorios-hombre?page=:page",
       "permanent": true
     },
     {
@@ -272,6 +282,26 @@
       "permanent": true
     },
     {
+      "source": "/politica-privacidad-proteccion-datos/",
+      "destination": "/politica-privacidad-proteccion-datos",
+      "permanent": true
+    },
+    {
+      "source": "/politica-costos-envio/",
+      "destination": "/politica-costos-envio",
+      "permanent": true
+    },
+    {
+      "source": "/politica-cookies/",
+      "destination": "/politica-cookies",
+      "permanent": true
+    },
+    {
+      "source": "/terminos-condiciones/",
+      "destination": "/terminos-condiciones",
+      "permanent": true
+    },
+    {
       "source": "/cart",
       "destination": "/carrito",
       "permanent": true
@@ -296,14 +326,6 @@
     {
       "source": "/carrito",
       "destination": "/carrito"
-    },
-    {
-      "source": "/finalizar-compra",
-      "destination": "https://tienda.winstonandharrystore.com/checkout"
-    },
-    {
-      "source": "/finalizar-compra/:path*",
-      "destination": "https://tienda.winstonandharrystore.com/checkout/:path*"
     }
   ]
 }
