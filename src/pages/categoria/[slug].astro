@@ -184,7 +184,7 @@ const categoryDesc = category?.description?.replace(/<[^>]+>/g, "") || "";
 // Header de depuración para verificar el tiempo de generación en Vercel
 Astro.response.headers.set('X-Generated-At', new Date().toISOString());
 Astro.response.headers.set('Cache-Control', 'public, s-maxage=86400, stale-while-revalidate=43200');
-const seoData = wpCategory?.yoast_head_json || wpCategory?.rank_math_seo || null;
+const seoData = {     title: `${categoryTitle} | Winston & Harry`,     description: categoryDesc || `Descubre nuestra colección de ${categoryTitle} en Winston & Harry.`,     opengraph_title: `${categoryTitle} | Winston & Harry`,     opengraph_description: categoryDesc || `Descubre nuestra colección de ${categoryTitle} en Winston & Harry.`,     opengraph_image: desktopBanner || null,     opengraph_type: "website" };
 ---
 
 <Layout 
