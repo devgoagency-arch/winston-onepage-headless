@@ -29,14 +29,14 @@ const currentPath = Astro.url.pathname;
 const rawSeo = seoData
     ? sanitizeSEO(seoData, currentPath, SITE_URL)
     : {
-          title: title || "Zapatos de Cuero para Hombre | Winston & Harry",
+          title: title || "Ropa y zapatos de cuero para hombre | Winston & Harry",
           description:
               description ||
               "Zapatos y ropa para hombre hechos a mano en Colombia. Cuero artesanal, diseño atemporal y garantía de por vida. Envío gratis.",
           canonical:
               customCanonical ||
               `${SITE_URL}${currentPath === "/" ? "" : currentPath}`,
-          ogTitle: title || "Zapatos de Cuero para Hombre | Winston & Harry",
+          ogTitle: title || "Ropa y zapatos de cuero para hombre | Winston & Harry",
           ogDescription:
               description ||
               "Zapatos y ropa para hombre hechos a mano en Colombia. Cuero artesanal, diseño atemporal y garantía de por vida. Envío gratis.",
