@@ -13,30 +13,36 @@ interface Props {
     seoData?: any;
 }
 
-const { 
-    title, 
-    description, 
-    image, 
+const {
+    title,
+    description,
+    image,
     canonical: customCanonical,
-    seoData 
+    seoData,
 } = Astro.props;
 
 import { sanitizeSEO } from "../lib/seo";
 // IMPORTANTE: Cambia esta URL por tu dominio real de producción cuando lo tengas
-const SITE_URL = "https://winston-onepage-headless.vercel.app";
+const SITE_URL = "https://winstonandharrystore.com";
 const currentPath = Astro.url.pathname;
 
-const rawSeo = seoData 
+const rawSeo = seoData
     ? sanitizeSEO(seoData, currentPath, SITE_URL)
     : {
-        title: title || "Winston & Harry - Calzado Artesanal de Lujo",
-        description: description || "Winston & Harry - Calzado Artesanal de Lujo. Compra online ropa, maletas, zapatos de cuero colombianos para hombre.",
-        canonical: customCanonical || `${SITE_URL}${currentPath === '/' ? '' : currentPath}`,
-        ogTitle: title || "Winston & Harry - Calzado Artesanal de Lujo",
-        ogDescription: description || "Winston & Harry - Calzado Artesanal de Lujo. Compra online ropa, maletas, zapatos de cuero colombianos para hombre.",
-        ogImage: image || `${SITE_URL}/images/hero-poster.webp`,
-        ogType: 'website'
-    };
+          title: title || "Zapatos de Cuero para Hombre | Winston & Harry",
+          description:
+              description ||
+              "Zapatos y ropa para hombre hechos a mano en Colombia. Cuero artesanal, diseño atemporal y garantía de por vida. Envío gratis.",
+          canonical:
+              customCanonical ||
+              `${SITE_URL}${currentPath === "/" ? "" : currentPath}`,
+          ogTitle: title || "Zapatos de Cuero para Hombre | Winston & Harry",
+          ogDescription:
+              description ||
+              "Zapatos y ropa para hombre hechos a mano en Colombia. Cuero artesanal, diseño atemporal y garantía de por vida. Envío gratis.",
+          ogImage: image || `${SITE_URL}/images/hero-poster.webp`,
+          ogType: "website",
+      };
 
 // Asegurar que seo nunca sea null para TS
 const seo = rawSeo || {
@@ -46,7 +52,7 @@ const seo = rawSeo || {
     ogTitle: "Winston & Harry",
     ogDescription: "Calzado Artesanal",
     ogImage: `${SITE_URL}/favicon.png`,
-    ogType: 'website'
+    ogType: "website",
 };
 ---
 
@@ -58,12 +64,9 @@ const seo = rawSeo || {
         <meta name="viewport" content="width=device-width" />
         <link rel="icon" type="image/png" href="/favicon.png" />
         <link rel="canonical" href={seo.canonical} />
-        
+
         <link rel="preconnect" href="https://use.typekit.net" crossorigin />
-        <link
-            rel="dns-prefetch"
-            href={PUBLIC_WP_URL}
-        />
+        <link rel="dns-prefetch" href={PUBLIC_WP_URL} />
         <link rel="stylesheet" href="https://use.typekit.net/lpl0lgn.css" />
         <link
             rel="stylesheet"
@@ -78,35 +81,23 @@ const seo = rawSeo || {
 
         <!-- Open Graph / Facebook -->
         <meta property="og:type" content={seo.ogType} />
-        <meta
-            property="og:url"
-            content={seo.canonical}
-        />
+        <meta property="og:url" content={seo.canonical} />
         <meta property="og:title" content={seo.ogTitle || seo.title} />
         <meta
             property="og:description"
             content={seo.ogDescription || seo.description}
         />
-        <meta
-            property="og:image"
-            content={seo.ogImage}
-        />
+        <meta property="og:image" content={seo.ogImage} />
 
         <!-- Twitter -->
         <meta property="twitter:card" content="summary_large_image" />
-        <meta
-            property="twitter:url"
-            content={seo.canonical}
-        />
+        <meta property="twitter:url" content={seo.canonical} />
         <meta property="twitter:title" content={seo.ogTitle || seo.title} />
         <meta
             property="twitter:description"
             content={seo.ogDescription || seo.description}
         />
-        <meta
-            property="twitter:image"
-            content={seo.ogImage}
-        />
+        <meta property="twitter:image" content={seo.ogImage} />
     </head>
     <body>
         <SideCart client:load />
