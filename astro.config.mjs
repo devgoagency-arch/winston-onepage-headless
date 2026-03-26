@@ -2,10 +2,12 @@
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import vercel from '@astrojs/vercel';
+import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react()],
+  site: 'https://www.winstonandharrystore.com',
+  integrations: [react(), sitemap()],
   output: 'static',
   adapter: vercel({
     maxDuration: 300
