@@ -942,7 +942,7 @@ export default function ProductDetail({ initialProduct }: Props) {
                   <span className="separator">/</span>
                   {mainCategory && (
                     <>
-                      <a href="/#tienda">{mainCategory.name}</a>
+                      <a href={`/categoria/${mainCategory.slug}`}>{mainCategory.name}</a>
                       <span className="separator">/</span>
                     </>
                   )}
