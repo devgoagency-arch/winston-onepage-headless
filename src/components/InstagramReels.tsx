@@ -99,9 +99,8 @@ export default function InstagramReels() {
                                 />
                                 <div className="reel-overlay">
                                     <div className="reel-stats">
-                                        <i className="fa-regular fa-eye"></i>
-                                        <span>{reel.likeCount ? reel.likeCount.toLocaleString() : '—'}</span>
-                                    </div>
+                                            <i className="fa-solid fa-play"></i>
+                                </div>
                                     <div className="reel-icon">
                                         <i className="fa-solid fa-thumbtack"></i>
                                     </div>
