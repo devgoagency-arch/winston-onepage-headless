@@ -181,8 +181,9 @@ const FilteredProductList: React.FC<FilteredProductListProps> = ({
             const activeSort = sortParam ? (SORT_OPTIONS.find(o => o.key === sortParam) || SORT_OPTIONS[0]) : SORT_OPTIONS[0];
             fetchBaseProducts(activeSort, 1);
         } else if (ssrProducts.length > 0) {
-            // Si ya tenemos productos de SSR, asumimos que estamos en la página 1
+            setAllFetchedProducts(ssrProducts);
             setPage(1);
+            setLoading(false);
             if (ssrProducts.length < 16) setHasMore(false);
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -250,7 +251,7 @@ const FilteredProductList: React.FC<FilteredProductListProps> = ({
 
     useEffect(() => {
         const target = observerTarget.current;
-        if (!target || !hasMore || loading) return;
+        if (!target || !hasMore) return;
 
         const observer = new IntersectionObserver(
             entries => {
