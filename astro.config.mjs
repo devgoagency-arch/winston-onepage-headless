@@ -44,6 +44,12 @@ export default defineConfig({
       customPages: productPages
     })
   ],
+  redirects: {
+    '/review-unicentro': 'https://g.page/r/CUpXPMxMDYUWEBM/review',
+    '/review-palatino': 'https://g.page/r/CVqAdcaz3jkUEBM/review',
+    '/review-santabarbara': 'https://g.page/r/CfogiOsEUdgVEBM/review',
+    '/review-retiro': 'https://g.page/r/CSKXwQ5l5zSpEBM/review',
+  },
   output: 'static',
   adapter: vercel({
     maxDuration: 300
