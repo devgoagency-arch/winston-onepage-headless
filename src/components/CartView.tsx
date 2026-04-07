@@ -44,7 +44,7 @@ export default function CartView() {
     const total = subtotal + shippingCost;
 
     const handleCheckout = () => {
-        window.location.href = 'https://tienda.winstonandharrystore.com/checkout/';
+        redirectToCheckout('/checkout/');
     };
 
     if (items.length === 0) {
