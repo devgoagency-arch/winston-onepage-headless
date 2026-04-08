@@ -6,7 +6,7 @@ import { PUBLIC_WP_URL } from '../lib/woocommerce';
  * pasando todos los items actuales del carrito para sincronizar la sesión.
  * @param path - La ruta de destino (ej: '/checkout/' o '/cart/')
  */
-export async function redirectToCheckout(path: string = '/') {
+export async function redirectToCheckout(path: string = '/', coupon: string = '') {
     const $cartItems = cartItems.get();
     const items = Object.values($cartItems).map(value => JSON.parse(value));
 
@@ -51,6 +51,11 @@ export async function redirectToCheckout(path: string = '/') {
     const baseUrl = `${wpDomain.replace(/\/$/, '')}${cleanPath}`;
     const separator = baseUrl.includes('?') ? '&' : '?';
     let finalUrl = `${baseUrl}${separator}fill_cart=${itemsQuery}`;
+
+    // Añadir cupón si existe
+    if (coupon) {
+        finalUrl += `&coupon_code=${encodeURIComponent(coupon)}`;
+    }
 
     // Añadir autologin si hay token
     if (token) {
