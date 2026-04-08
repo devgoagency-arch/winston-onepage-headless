@@ -606,6 +606,43 @@ export default function CartView() {
                         width: 26px;
                         font-size: 0.75rem;
                     }
+
+                    /* New responsive fixes */
+                    .cart-page-title {
+                        margin-bottom: 2rem;
+                        padding: 0 1rem;
+                    }
+
+                    .cart-actions-bottom {
+                        flex-direction: column;
+                        align-items: stretch;
+                        gap: 1.5rem;
+                        margin-top: 2rem;
+                    }
+
+                    .coupon-wrapper {
+                        flex-direction: column;
+                    }
+
+                    .coupon-input {
+                        width: 100%;
+                    }
+
+                    .continue-shopping {
+                        text-align: center;
+                    }
+
+                    .summary-card {
+                        padding: 1.5rem;
+                    }
+
+                    .total-amount {
+                        font-size: 1.2rem !important;
+                    }
+                    
+                    .container {
+                        padding: 0 1rem;
+                    }
                 }
             `}</style>
         </div>
