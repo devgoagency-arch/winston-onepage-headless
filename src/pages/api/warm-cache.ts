@@ -35,16 +35,26 @@ export const GET: APIRoute = async ({ request }) => {
         const { wcFetch } = await import('../../lib/woocommerce');
         console.log('[WarmCache] 📦 Obteniendo slugs via wcFetch...');
 
-        // ─── 1. Obtener slugs en paralelo ──────
+        // ─── 1. Obtener slugs en paralelo (Soporta hasta 500 items de cada uno) ──────
+        const fetchMultiplePages = async (endpoint: string, pages = 5) => {
+            const results = await Promise.all(
+                Array.from({ length: pages }, (_, i) => i + 1).map(page => 
+                    wcFetch(`${endpoint}${endpoint.includes('?') ? '&' : '?'}per_page=100&page=${page}`)
+                        .then(res => Array.isArray(res) ? res : [])
+                        .catch(() => [])
+                )
+            );
+            return results.flat();
+        };
+
         const [products, categories] = await Promise.all([
-            // Obtenemos los últimos 100 productos publicados de una sola vez para calentar
-            wcFetch('/products?per_page=100&status=publish').then(res => Array.isArray(res) ? res : []),
-            wcFetch('/products/categories?per_page=100&hide_empty=false').then(res => Array.isArray(res) ? res : [])
+            fetchMultiplePages('/products?status=publish', 5),
+            fetchMultiplePages('/products/categories?hide_empty=false', 5)
         ]);
 
-        console.log(`[WarmCache] 🔍 WooCommerce API: ${products.length} productos, ${categories.length} categorías encontradas.`);
+        console.log(`[WarmCache] 🔍 WooCommerce API: ${products.length} productos, ${categories.length} categorías encontradas (después de paginación).`);
 
-        const urlsToWarm = [
+        const uniqueUrls = [...new Set([
             `${origin}/`,
             `${origin}/contacto`,
             `${origin}/guia-de-tallas`,
@@ -53,17 +63,17 @@ export const GET: APIRoute = async ({ request }) => {
             `${origin}/terminos-condiciones`,
             ...categories.map((c: any) => `${origin}/categoria/${c.slug}`),
             ...products.map((p: any) => `${origin}/productos/${p.slug}`)
-        ].filter(url => !url.includes('undefined') && url.startsWith('http'));
+        ])].filter(url => url && !url.includes('undefined') && url.startsWith('http'));
 
-        console.log(`[WarmCache] Calentando ${urlsToWarm.length} URLs simultáneamente...`);
+        console.log(`[WarmCache] Calentando ${uniqueUrls.length} URLs simultáneamente...`);
 
-        if (urlsToWarm.length === 6) {
+        if (uniqueUrls.length === 6) {
             console.warn('[WarmCache] ATENCIÓN: Solo se detectaron las 6 URLs estáticas. Verifica las credenciales WC_CONSUMER_KEY y WC_CONSUMER_SECRET si esperas productos.');
         }
 
         // ─── 2. Calentamiento Masivo ────────────
         const results = await Promise.allSettled(
-            urlsToWarm.map(async (url) => {
+            uniqueUrls.map(async (url) => {
                 const headers: Record<string, string> = {
                     'Cache-Control': 'no-cache',
                     'User-Agent': 'WH-CacheWarmer/8.0'
@@ -97,7 +107,7 @@ export const GET: APIRoute = async ({ request }) => {
         return new Response(JSON.stringify({
             success: true,
             results: {
-                total: urlsToWarm.length,
+                total: uniqueUrls.length,
                 ok: okCount,
                 time: `${elapsed.toFixed(1)}s`,
                 fetched: {
