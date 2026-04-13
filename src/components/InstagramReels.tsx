@@ -174,7 +174,7 @@ export default function InstagramReels() {
 
                 .reel-image-container {
                     position: relative;
-                    aspect-ratio: 4/5;
+                    aspect-ratio: 9/16;
                     overflow: hidden;
                     border-radius: 0px;
                     background-color: #f5f5f5;
@@ -249,7 +249,7 @@ export default function InstagramReels() {
                 }
 
                 .reel-skeleton {
-                    aspect-ratio: 4/5;
+                    aspect-ratio: 9/16;
                     background: linear-gradient(90deg, #f8f8f8 25%, #f0f0f0 50%, #f8f8f8 75%);
                     background-size: 200% 100%;
                     animation: loading 1.5s infinite;
