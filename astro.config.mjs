@@ -50,7 +50,7 @@ export default defineConfig({
     '/review-santabarbara': 'https://g.page/r/CfogiOsEUdgVEBM/review',
     '/review-retiro': 'https://g.page/r/CSKXwQ5l5zSpEBM/review',
   },
-  output: 'hybrid',
+  output: 'static',
   adapter: vercel({
     maxDuration: 300
   }),
