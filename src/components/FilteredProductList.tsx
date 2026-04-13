@@ -392,18 +392,9 @@ const FilteredProductList: React.FC<FilteredProductListProps> = ({
                                 <polyline points="6 9 12 15 18 9"></polyline>
                             </svg>
                             <ul className="dropdown-list">
-                                {(navigationTree.length > 0 ? navigationTree : subcategories).map((cat: any) => (
-                                    <li key={cat.slug} className={cat.children?.length > 0 ? 'has-children' : ''}>
+                                {subcategories.map((cat: any) => (
+                                    <li key={cat.slug}>
                                         <a href={`/categoria/${cat.slug}`}>{cat.name}</a>
-                                        {cat.children?.length > 0 && (
-                                            <ul className="sub-dropdown">
-                                                {cat.children.map((sub: any) => (
-                                                    <li key={sub.slug}>
-                                                        <a href={`/categoria/${sub.slug}`}>{sub.name}</a>
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        )}
                                     </li>
                                 ))}
                             </ul>
