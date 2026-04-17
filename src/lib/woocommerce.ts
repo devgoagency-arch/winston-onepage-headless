@@ -106,11 +106,12 @@ export async function wcFetch(path: string, options: RequestInit = {}, retries =
     // Limpieza de dobles barras (excepto las de http://)
     url = url.replace(/([^:]\/)\/+/g, "$1");
 
-    // 3. Determinar si requiere Auth (Solo para el namespace 'wc' que no sea 'store')
+    // 3. Determinar si requiere Auth (Namespace wc or wp, and not store)
     const finalCleanPath = url.split('wp-json/')[1] || "";
     const isWcNamespace = finalCleanPath.startsWith('wc/');
+    const isWpNamespace = finalCleanPath.startsWith('wp/');
     const isStore = finalCleanPath.includes('wc/store/');
-    const needsAuth = isWcNamespace && !isStore;
+    const needsAuth = (isWcNamespace || isWpNamespace) && !isStore;
     
     // 4. Headers base
     const headers: any = {
@@ -125,6 +126,13 @@ export async function wcFetch(path: string, options: RequestInit = {}, retries =
 
         // 2. Redundancia vía Basic Auth (A veces es obligatorio para POSTs en ciertos hosts)
         headers['Authorization'] = `Basic ${safeBtoa(`${CK}:${CS}`)}`;
+    } else if (isWpNamespace) {
+        // Para wp/v2 usamos Application Passwords si están disponibles (Prioridad para CPTs)
+        const WP_USER = import.meta.env.WP_APP_USER || "";
+        const WP_PASS = import.meta.env.WP_APP_PASS || "";
+        if (WP_USER && WP_PASS) {
+            headers['Authorization'] = `Basic ${safeBtoa(`${WP_USER}:${WP_PASS}`)}`;
+        }
     }
 
     for (let i = 0; i < retries; i++) {
@@ -1218,3 +1226,4 @@ export async function getHomeSEO() {
     }
     return null;
 }
+

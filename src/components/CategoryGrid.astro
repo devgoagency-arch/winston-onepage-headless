@@ -1,51 +1,32 @@
 ---
-// Last update: 2026-03-16 - Deployment Trigger
-import { wcFetch } from "../lib/woocommerce";
+import { getHomeCategories } from "../lib/categories";
 
-// Lista de categorías que queremos mostrar con su imagen local fija y palabras clave para búsqueda dinámica
-// Lista de categorías que queremos mostrar vinculadas por ID exacto de WordPress
-const targetCategories = [
-    { id: 249, image: "/images/ropa.jpg", fallbackName: "Ropa" },
-    { id: 194, image: "/images/zapatos.jpg", fallbackName: "Botas" },
-    { id: 190, image: "/images/maletas.jpg", fallbackName: "Maletas" },
-    { id: 126, image: "/images/accesorios.jpg", fallbackName: "Accesorios" },
-];
+// Obtenemos los datos dinámicos de la sección
+const data = await getHomeCategories();
 
-// Obtenemos todas las categorías para poder encontrarlas por ID
-const allCategories = (await wcFetch("/products/categories?per_page=100")) || [];
-
-const categoriesData = targetCategories.map((target) => {
-    // Buscamos la categoría por ID exacto
-    const cat = allCategories.find((c: any) => c.id === target.id);
-
-    return {
-        slug: cat?.slug || target.id.toString(),
-        name: cat?.name || target.fallbackName,
-        image: target.image,
-    };
-});
+// Si no hay datos (error API), usamos un fallback para mantener la UI
+const title = data?.title || "Ropa y zapatos para hombre";
+const subtitle = data?.subtitle || "Todo lo que necesita el hombre colombiano que viste con criterio. Ropa y cuero artesanal bajo un mismo sello.";
+const categories = data?.categories || [];
 ---
 
 <section class="category-grid">
     <div class="container text-center">
         <div class="category-header">
-            <h2 class="category-title">Ropa y zapatos para hombre</h2>
-            <p class="category-subtitle">
-                Todo lo que necesita el hombre colombiano que viste con
-                criterio. Ropa y cuero artesanal bajo un mismo sello.
-            </p>
+            <h2 class="category-title" set:html={title}></h2>
+            <div class="category-subtitle" set:html={subtitle}></div>
         </div>
 
         <div class="grid-layout">
             {
-                categoriesData.map((category) => (
+                categories.map((category: any) => (
                     <a
                         href={`/categoria/${category.slug}`}
                         class="category-item"
                     >
                         <div class="category-image-wrapper">
                             <img
-                                src={category.image}
+                                src={category.image || "/images/placeholder.jpg"}
                                 alt={category.name}
                                 class="category-image"
                                 loading="lazy"
