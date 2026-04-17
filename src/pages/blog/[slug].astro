@@ -39,14 +39,46 @@ try {
   return Astro.redirect('/blog');
 }
 
-const img = post._embedded?.['wp:featuredmedia']?.[0]?.source_url || '';
 const categories: any[] = post._embedded?.['wp:term']?.[0] || [];
 const tags: any[] = post._embedded?.['wp:term']?.[1] || [];
 const date = new Date(post.date).toLocaleDateString('es-CO', { year: 'numeric', month: 'long', day: 'numeric' });
 const title = post.title.rendered;
 const content = post.content.rendered;
 const excerpt = post.excerpt?.rendered?.replace(/<[^>]*>/g, '').slice(0, 160) || '';
-const reelUrl = post.acf?.reel_url || '';  function getEmbedUrl(url: string): { src: string; type: 'ig' | 'tiktok' | null } {   if (!url) return { src: '', type: null };   const ig = url.match(/instagram\.com\/(reel|p)\/([^/?]+)/);   if (ig) return { src: `https://www.instagram.com/${ig[1]}/${ig[2]}/embed/`, type: 'ig' };   const tt = url.match(/tiktok\.com\/@[^/]+\/video\/(\d+)/);   if (tt) return { src: `https://www.tiktok.com/embed/v2/${tt[1]}`, type: 'tiktok' };   return { src: '', type: null }; }  const embed = getEmbedUrl(reelUrl);
+
+let img = post._embedded?.['wp:featuredmedia']?.[0]?.source_url || '';
+const reelUrl = post.acf?.reel_url || '';
+
+function getEmbedUrl(url: string): { src: string; type: 'ig' | 'tiktok' | 'youtube' | null; id: string | null } {
+  if (!url) return { src: '', type: null, id: null };
+
+  // YouTube detection
+  const ytMatch = url.match(/(?:shorts\/|v=|youtu\.be\/)([^/?#&]+)/);
+  if (ytMatch && (url.includes('youtube.com') || url.includes('youtu.be'))) {
+    return { src: `https://www.youtube.com/embed/${ytMatch[1]}`, type: 'youtube', id: ytMatch[1] };
+  }
+
+  // Instagram detection
+  const igMatch = url.match(/(?:reel|p)\/([^/?#&]+)/);
+  if (igMatch && url.includes('instagram.com')) {
+    return { src: `https://www.instagram.com/reel/${igMatch[1]}/embed/`, type: 'ig', id: igMatch[1] };
+  }
+
+  // TikTok detection
+  const ttMatch = url.match(/video\/(\d+)/);
+  if (ttMatch && url.includes('tiktok.com')) {
+    return { src: `https://www.tiktok.com/embed/v2/${ttMatch[1]}`, type: 'tiktok', id: ttMatch[1] };
+  }
+
+  return { src: '', type: null, id: null };
+}
+
+const embed = getEmbedUrl(reelUrl);
+
+// YouTube thumbnail fallback
+if (!img && embed.type === 'youtube' && embed.id) {
+  img = `https://img.youtube.com/vi/${embed.id}/maxresdefault.jpg`;
+}
 const postUrl = `https://winstonandharrystore.com/blog/${slug}`;
 
 const seoData = {
@@ -69,7 +101,13 @@ const seoData = {
           {reelUrl && (
             <div class="reel-play-overlay">
               <span class="reel-play-platform">
-                {embed.type === 'tiktok' ? '♪ TikTok' : '▶ Instagram'}
+                {
+                  embed.type === 'tiktok'
+                    ? '♪ TikTok'
+                    : embed.type === 'youtube'
+                      ? '▶ YouTube'
+                      : '▶ Instagram'
+                }
               </span>
               <span class="reel-play-btn">▶</span>
             </div>
@@ -90,7 +128,13 @@ const seoData = {
       )}
       {reelUrl && (
         <a href={reelUrl} target="_blank" rel="noopener noreferrer" class="btn-reel">
-          {embed.type === 'tiktok' ? '♪ Ver en TikTok' : '▶ Ver en Instagram'}
+          {
+            embed.type === 'tiktok'
+              ? '♪ Ver en TikTok'
+              : embed.type === 'youtube'
+                ? '▶ Ver en YouTube'
+                : '▶ Ver en Instagram'
+          }
         </a>
       )}
     </div>

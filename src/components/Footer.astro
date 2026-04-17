@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import ReviewsSection from "./ReviewsSection";
+import BlogHome from "./BlogHome.astro";
 import InstagramReels from "./InstagramReels";
 import { getMenu, PUBLIC_WP_URL } from "../lib/woocommerce";
 
@@ -37,6 +38,9 @@ function flattenCategoryUrl(url: string) {
 <footer id="footer" class="footer">
     <!-- Reviews Section moved to footer -->
     <ReviewsSection client:visible />
+
+    <!-- Blog Section -->
+    <BlogHome />
 
     <!-- Instagram Reels Section -->
     <InstagramReels client:visible />

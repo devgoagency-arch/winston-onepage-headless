@@ -84,12 +84,17 @@ const seoData = {
             const excerpt = post.excerpt?.rendered?.replace(/<[^>]*>/g, '').slice(0, 120) + '...';
             const date = new Date(post.date).toLocaleDateString('es-CO', { year: 'numeric', month: 'long', day: 'numeric' });
             const reelUrl = post.acf?.reel_url || '';
+            
+            const isYT = reelUrl.includes('youtube.com') || reelUrl.includes('youtu.be');
+            const isTT = reelUrl.includes('tiktok.com');
+            const platformLabel = isYT ? 'YouTube' : (isTT ? 'TikTok' : 'Reel');
+
             return (
               <article class="blog-card reveal-on-scroll">
                 <a href={`/blog/${post.slug}`} class="blog-card__image-wrap">
                   {img && <img src={img} alt={post.title.rendered} loading="lazy" />}
                   {cat && <span class="blog-card__cat">{cat}</span>}
-                  {reelUrl && <span class="blog-card__reel-badge">▶ Reel</span>}
+                  {reelUrl && <span class="blog-card__reel-badge">▶ {platformLabel}</span>}
                 </a>
                 <div class="blog-card__body">
                   <time class="blog-card__date">{date}</time>
@@ -100,7 +105,7 @@ const seoData = {
                   <div class="blog-card__actions">
                     <a href={`/blog/${post.slug}`} class="btn blog-card__cta">Leer más</a>
                     {reelUrl && (
-                      <a href={reelUrl} target="_blank" rel="noopener noreferrer" class="blog-card__reel-btn">▶ Ver Reel</a>
+                      <a href={reelUrl} target="_blank" rel="noopener noreferrer" class="blog-card__reel-btn">▶ Ver en {platformLabel}</a>
                     )}
                   </div>
                 </div>

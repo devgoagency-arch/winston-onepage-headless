@@ -8,6 +8,8 @@
   --color-black: #121212;
   --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   --max-width: 1400px;
+  --section-padding-desktop: 2rem 0;
+  --section-padding-mobile: 1rem 0;
 
   /* Font Families */
   --font-titles: 'darkmode-off', 'Antonio', sans-serif;
@@ -133,6 +135,7 @@ section {
   section {
     padding: 4rem 0;
   }
+
   .container {
     padding: 0 1rem;
   }
