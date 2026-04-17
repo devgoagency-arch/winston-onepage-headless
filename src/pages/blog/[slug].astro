@@ -46,8 +46,27 @@ const date = new Date(post.date).toLocaleDateString('es-CO', { year: 'numeric', 
 const title = post.title.rendered;
 const content = post.content.rendered;
 const excerpt = post.excerpt?.rendered?.replace(/<[^>]*>/g, '').slice(0, 160) || '';
-const reelUrl = post.acf?.reel_url || '';  function getEmbedUrl(url: string): { src: string; type: 'ig' | 'tiktok' | null } {   if (!url) return { src: '', type: null };   const ig = url.match(/instagram\.com\/(reel|p)\/([^/?]+)/);   if (ig) return { src: `https://www.instagram.com/${ig[1]}/${ig[2]}/embed/`, type: 'ig' };   const tt = url.match(/tiktok\.com\/@[^/]+\/video\/(\d+)/);   if (tt) return { src: `https://www.tiktok.com/embed/v2/${tt[1]}`, type: 'tiktok' };   return { src: '', type: null }; }  const embed = getEmbedUrl(reelUrl);
-const postUrl = `https://winstonandharrystore.com/blog/${slug}`;
+const reelUrl = post.acf?.reel_url || '';
+function getEmbedUrl(url: string): { src: string; type: 'ig' | 'tiktok' | null } {
+  if (!url) return { src: '', type: null };
+  const ig = url.match(/instagram\.com\/(reel|p)\/([^/?]+)/);
+  if (ig) return { src: `https://www.instagram.com/${ig[1]}/${ig[2]}/embed/`, type: 'ig' };
+  const tt = url.match(/tiktok\.com\/@[^/]+\/video\/(\d+)/);
+  if (tt) return { src: `https://www.tiktok.com/embed/v2/${tt[1]}`, type: 'tiktok' };
+  return { src: '', type: null };
+}
+const embed = getEmbedUrl(reelUrl);
+
+let displayImg = img;
+if (!displayImg && reelUrl) {
+  try {
+    const oBase = embed.type === 'tiktok'
+      ? 'https://www.tiktok.com/oembed?url='
+      : 'https://www.instagram.com/oembed/?url=';
+    const oRes = await fetch(oBase + encodeURIComponent(reelUrl));
+    if (oRes.ok) { const oData = await oRes.json(); displayImg = oData.thumbnail_url || ''; }
+  } catch {}
+}const postUrl = `https://winstonandharrystore.com/blog/${slug}`;
 
 const seoData = {
   title: `${post.title.rendered.replace(/<[^>]*>/g, '')} | Blog Winston & Harry`,
