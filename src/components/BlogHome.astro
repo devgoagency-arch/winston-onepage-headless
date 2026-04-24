@@ -9,20 +9,13 @@ let posts = [];
 let beholdPosts = [];
 
 try {
-  const controller = new AbortController();
-  const timeoutId = setTimeout(() => controller.abort(), 5000); // 5s timeout
+  const beholdRes = await fetch(beholdUrl).catch(() => null);
 
-  // Fetch both WordPress and Behold in parallel
-  const [wpRes, beholdRes] = await Promise.all([
-    fetch(postsUrl, { signal: controller.signal }),
-    fetch(beholdUrl, { signal: controller.signal }).catch(() => null),
+  const [wpData] = await Promise.all([
+    wcFetch(`wp/v2/posts?per_page=${perPage}&status=publish&_embed`),
   ]);
 
-  clearTimeout(timeoutId);
-
-  if (wpRes && wpRes.ok) {
-    posts = await wpRes.json();
-  }
+  if (wpData) posts = wpData;
 
   if (beholdRes && beholdRes.ok) {
     const data = await beholdRes.json();
