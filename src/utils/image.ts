@@ -17,10 +17,8 @@ interface OptimizeOptions {
  * Generates an optimized URL for a remote image.
  */
 export function getOptimizedUrl(src: string, options: OptimizeOptions = {}): string {
-  if (!src) return '';
-  
-  // If it's a placeholder or already optimized, return as is
-  if (src.includes('placeholder.com') || src.startsWith('/_image')) return src;
+  // If it's a placeholder, already optimized, or an invalid URL, return as is
+  if (!src || src.includes('placeholder.com') || src.startsWith('/_image') || src.includes('undefined')) return src;
 
   const { width, quality = 80, format = 'webp' } = options;
   
