@@ -1,4 +1,5 @@
 import { useState, useEffect, useMemo } from 'react';
+import { getOptimizedUrl, getImageSrcSet } from '../utils/image';
 
 interface Product {
     id: number;
@@ -498,16 +499,26 @@ export default function ProductCard({ product, isSelected, onSelectionToggle, on
                         <picture className="primary-image">
                             <img
                                 key={mainImage?.src}
-                                src={mainImage?.src || 'https://via.placeholder.com/300x400?text=Zapato'}
+                                src={getOptimizedUrl(mainImage?.src || '', { width: 600 })}
+                                srcSet={getImageSrcSet(mainImage?.src || '', [400, 600, 800])}
+                                sizes="(max-width: 768px) 50vw, 33vw"
                                 alt={mainImage?.alt || product.name}
                                 className="fade-in reveal-on-scroll is-visible"
                                 loading="lazy"
+                                decoding="async"
                                 referrerPolicy="no-referrer"
                                 onError={(e) => {
                                     const target = e.target as HTMLImageElement;
                                     target.onerror = null;
 
-                                    let currentSrc = target.src;
+                                    let currentSrc = target.getAttribute('src') || '';
+
+                                    // Si falló el optimizado, intentar con el original
+                                    if (currentSrc.includes('/_image')) {
+                                        target.src = mainImage?.src || '';
+                                        target.removeAttribute('srcset');
+                                        return;
+                                    }
 
                                     // 1. Intentar quitar .webp (case insensitive)
                                     if (currentSrc.toLowerCase().endsWith('.webp')) {
@@ -537,14 +548,24 @@ export default function ProductCard({ product, isSelected, onSelectionToggle, on
                         {effectiveHoverSrc && (
                             <picture className="hover-image">
                                 <img
-                                    src={effectiveHoverSrc}
+                                    src={getOptimizedUrl(effectiveHoverSrc || '', { width: 600 })}
+                                    srcSet={getImageSrcSet(effectiveHoverSrc || '', [400, 600])}
+                                    sizes="(max-width: 768px) 50vw, 33vw"
                                     alt={hoverImageRaw?.alt || product.name}
                                     className="reveal-on-scroll is-visible"
                                     loading="lazy"
+                                    decoding="async"
                                     referrerPolicy="no-referrer"
                                     onError={(e) => {
                                         const target = e.target as HTMLImageElement;
-                                        const currentSrc = target.src;
+                                        const currentSrc = target.getAttribute('src') || '';
+
+                                        // Si falló el optimizado, intentar con el original
+                                        if (currentSrc.includes('/_image')) {
+                                            target.src = effectiveHoverSrc || '';
+                                            target.removeAttribute('srcset');
+                                            return;
+                                        }
 
                                         // Si falla con .webp, intentar sin .webp
                                         if (currentSrc.toLowerCase().endsWith('.webp')) {
