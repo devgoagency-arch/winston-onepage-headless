@@ -1,5 +1,6 @@
 ---
 import { getHeroSlides } from "../lib/hero";
+import { getOptimizedUrl, getImageSrcSet } from "../utils/image";
 
 // Fetch dynamic data
 const result = await getHeroSlides();
@@ -41,10 +42,13 @@ const finalSlides = displaySlides.length > 0 ? displaySlides : [
                         </video>
                     ) : (
                         <img 
-                            src={slide.media_url} 
+                            src={getOptimizedUrl(slide.media_url, { width: 1920 })} 
+                            srcset={getImageSrcSet(slide.media_url, [800, 1200, 1920])}
+                            sizes="100vw"
                             class="hero-bg-image" 
                             alt={slide.title}
                             loading="eager"
+                            decoding="sync"
                         />
                     )}
                     <div class="overlay"></div>

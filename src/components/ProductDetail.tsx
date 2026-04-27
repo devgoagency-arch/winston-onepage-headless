@@ -1,4 +1,5 @@
 import { useState, useEffect, useMemo, useRef, useCallback } from 'react';
+import { getOptimizedUrl, getImageSrcSet } from '../utils/image';
 import ProductCard from './ProductCard';
 import { addToCart } from '../store/cart';
 import { redirectToCheckout } from '../utils/checkout';
@@ -827,15 +828,25 @@ export default function ProductDetail({ initialProduct }: Props) {
               <div key={img.id || index} className="gallery-item">
                 <picture>
                   <img
-                    src={img.src}
+                    src={getOptimizedUrl(img.src, { width: 1200 })}
+                    srcSet={getImageSrcSet(img.src, [600, 900, 1200])}
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     alt={img.alt || product.name}
                     className="reveal-on-scroll is-visible cursor-zoom"
                     loading={index === 0 ? "eager" : "lazy"}
+                    decoding={index === 0 ? "sync" : "async"}
                     onClick={() => openLightbox(index)}
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
                       target.onerror = null;
-                      const currentSrc = target.src;
+                      const currentSrc = target.getAttribute('src') || '';
+
+                      // Si falló el optimizado, intentar con el original
+                      if (currentSrc.includes('/_image')) {
+                        target.src = img.src;
+                        target.removeAttribute('srcset');
+                        return;
+                      }
 
                       // 1. Si es .webp, quitar .webp para volver al formato original (ej: .jpg.webp → .jpg)
                       if (currentSrc.toLowerCase().endsWith('.webp')) {
@@ -895,10 +906,13 @@ export default function ProductDetail({ initialProduct }: Props) {
                 <div key={`guessed-${num}`} className="gallery-item">
                   <picture>
                     <img
-                      src={guessedSrc}
+                      src={getOptimizedUrl(guessedSrc, { width: 1200 })}
+                      srcSet={getImageSrcSet(guessedSrc, [600, 900, 1200])}
+                      sizes="(max-width: 768px) 100vw, 50vw"
                       alt={`${product.name} vista ${num}`}
                       className="reveal-on-scroll is-visible cursor-zoom"
                       loading="lazy"
+                      decoding="async"
                       onClick={() => {
                         const verifiedIndex = verifiedGuessedImages.indexOf(guessedSrc);
                         if (verifiedIndex !== -1) {
@@ -907,8 +921,17 @@ export default function ProductDetail({ initialProduct }: Props) {
                       }}
                       onLoad={() => handleGuessedImageLoad(guessedSrc)}
                       onError={(e) => {
-                        // Si la foto no existe en WooCommerce, ocultamos este slide
                         const target = e.target as HTMLImageElement;
+                        const currentSrc = target.getAttribute('src') || '';
+
+                        // Si falló el optimizado, intentar con el original (para que onLoad/onError funcione)
+                        if (currentSrc.includes('/_image')) {
+                          target.src = guessedSrc;
+                          target.removeAttribute('srcset');
+                          return;
+                        }
+
+                        // Si la foto no existe en WooCommerce, ocultamos este slide
                         const container = target.closest('.gallery-item') as HTMLElement;
                         if (container) container.style.display = 'none';
                       }}
