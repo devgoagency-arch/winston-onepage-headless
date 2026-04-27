@@ -3,6 +3,7 @@ import "../styles/global.css";
 import SideCart from "../components/SideCart";
 import SearchDrawer from "../components/SearchDrawer";
 import CookieBanner from "../components/CookieBanner.astro";
+import MetaPixel from "../components/MetaPixel.astro";
 import { PUBLIC_WP_URL } from "../lib/woocommerce";
 
 interface Props {
@@ -99,6 +100,7 @@ const seo = rawSeo || {
             content={seo.ogDescription || seo.description}
         />
         <meta property="twitter:image" content={seo.ogImage} />
+        <MetaPixel />
     </head>
     <body>
         <SideCart client:load />
