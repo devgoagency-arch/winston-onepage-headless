@@ -4,10 +4,10 @@
  */
 
 const getEnv = (key: string) => {
-    return import.meta.env[key] || 
-           import.meta.env[`PUBLIC_${key}`] || 
-           (typeof process !== 'undefined' ? process.env[key] : undefined) || 
-           (typeof process !== 'undefined' ? process.env[`PUBLIC_${key}`] : undefined);
+    return import.meta.env[key] ||
+        import.meta.env[`PUBLIC_${key}`] ||
+        (typeof process !== 'undefined' ? process.env[key] : undefined) ||
+        (typeof process !== 'undefined' ? process.env[`PUBLIC_${key}`] : undefined);
 };
 
 let WC_URL_ENV = (getEnv('WC_URL') || getEnv('WP_URL') || "https://tienda.winstonandharrystore.com").trim();
@@ -92,7 +92,7 @@ export async function wcFetch(path: string, options: RequestInit = {}, retries =
     }
     // 1. Normalizar el path: quitar barras iniciales y el texto 'wp-json/' si viene incluido
     let cleanPath = path.replace(/^\/+/, '').replace('wp-json/', '');
-    
+
     // 2. Determinar la URL final con el Namespace correcto
     let url = "";
     if (path.startsWith('http')) {
@@ -100,7 +100,7 @@ export async function wcFetch(path: string, options: RequestInit = {}, retries =
     } else {
         const namespaces = ['wc/', 'wp/', 'wh/'];
         const hasNamespace = namespaces.some(ns => cleanPath.startsWith(ns));
-        
+
         if (hasNamespace) {
             // Ya tiene namespace (ej: wh/v1/menu)
             url = `${PUBLIC_WP_URL}/wp-json/${cleanPath}`;
@@ -118,10 +118,10 @@ export async function wcFetch(path: string, options: RequestInit = {}, retries =
     const isWcNamespace = finalCleanPath.startsWith('wc/');
     const isWpNamespace = finalCleanPath.startsWith('wp/');
     const isStore = finalCleanPath.includes('wc/store/');
-    
+
     // WooCommerce requiere Auth para casi todo excepto Store API
     const needsWcAuth = isWcNamespace && !isStore;
-    
+
     // 4. Headers base
     const headers: any = {
         'Accept': 'application/json',
@@ -157,7 +157,7 @@ export async function wcFetch(path: string, options: RequestInit = {}, retries =
                 clearTimeout(timeoutId);
             }
             const endTime = Date.now();
-            
+
             // Log removed for production
 
             if (res.status === 401) {
@@ -166,9 +166,9 @@ export async function wcFetch(path: string, options: RequestInit = {}, retries =
                 console.error(`[WC API] Detalle error: ${text.substring(0, 500)}`);
                 return null;
             }
-            
+
             if (res.status === 404) throw new Error(`WC API 404 en: ${url.split('?')[0]}`);
-            
+
             if (!res.ok) {
                 if ([500, 502, 503, 429].includes(res.status) && i < retries - 1) {
                     await new Promise(r => setTimeout(r, delay));
@@ -187,7 +187,7 @@ export async function wcFetch(path: string, options: RequestInit = {}, retries =
             }
         } catch (error: any) {
             if (i === retries - 1) throw error;
-            console.warn(`[WC API] Intento ${i+1} fallido: ${error.message}`);
+            console.warn(`[WC API] Intento ${i + 1} fallido: ${error.message}`);
             await new Promise(r => setTimeout(r, delay));
             delay *= 2;
         }
@@ -204,7 +204,7 @@ export async function getProductsPool() {
         const url = `${PUBLIC_WP_URL}/wp-json/wc/store/v1/products?per_page=60&stock_status=instock`;
         const res = await fetch(url);
         if (!res.ok) throw new Error(`Store API error: ${res.status}`);
-        
+
         const products = await res.json();
         if (products && Array.isArray(products)) {
             return products
@@ -261,7 +261,7 @@ function mapV3ToStore(p: any) {
         }
 
         p.prices.price = normalizePriceStr(rawPrice);
-        
+
         // Final sanity check: if price is still 0, it's invalid for display
         if (p.prices.price === "0" || p.prices.price === "0.00") return null;
 
@@ -274,13 +274,13 @@ function mapV3ToStore(p: any) {
             p.variations = p.variations.map((v: any) => {
                 const vPrices = v.prices || {};
                 const vDetails = p.variations_data?.find((vd: any) => Number(vd.id) === Number(v.id));
-                
+
                 return {
                     ...v,
                     // Usar la imagen de la REST API v3 si existe
                     image: vDetails?.image || v.image || null,
-                    stock_status: v.is_in_stock !== undefined 
-                        ? (v.is_in_stock ? 'instock' : 'outofstock') 
+                    stock_status: v.is_in_stock !== undefined
+                        ? (v.is_in_stock ? 'instock' : 'outofstock')
                         : (v.stock_status || 'instock'),
                     // Normalize variation prices
                     price: (vPrices.price && normalizePriceStr(vPrices.price) !== "0") ? normalizePriceStr(vPrices.price) : p.prices.price,
@@ -299,23 +299,23 @@ function mapV3ToStore(p: any) {
 
             // 1. Primero cargamos las imágenes principales de las variaciones (para que sean las primeras)
             p.variations.forEach((v: any) => {
-                const colorAttr = v.attributes?.find((a: any) => 
-                     (a.name || "").toLowerCase().includes('color') || 
-                     (a.id || "").toString().includes('color') ||
-                     a.name === 'Pa_selecciona-el-color'
+                const colorAttr = v.attributes?.find((a: any) =>
+                    (a.name || "").toLowerCase().includes('color') ||
+                    (a.id || "").toString().includes('color') ||
+                    a.name === 'Pa_selecciona-el-color'
                 );
                 if (colorAttr && (colorAttr.value || colorAttr.option) && v.image?.src) {
-                     const colorKey = String(colorAttr.value || colorAttr.option).toLowerCase().trim();
-                     if (!imgMap[colorKey]) imgMap[colorKey] = [];
-                     
-                     if (!imgMap[colorKey].some(img => img.src === v.image.src)) {
-                         imgMap[colorKey].push({ 
+                    const colorKey = String(colorAttr.value || colorAttr.option).toLowerCase().trim();
+                    if (!imgMap[colorKey]) imgMap[colorKey] = [];
+
+                    if (!imgMap[colorKey].some(img => img.src === v.image.src)) {
+                        imgMap[colorKey].push({
                             id: v.image.id || 0,
-                            src: v.image.src, 
+                            src: v.image.src,
                             alt: v.image.alt || v.image.name || '',
                             name: v.image.name || ''
                         });
-                     }
+                    }
                 }
             });
 
@@ -324,21 +324,21 @@ function mapV3ToStore(p: any) {
                 p.variations_data.forEach((v: any) => {
                     const wpcMeta = v.meta_data?.find((m: any) => m.key === 'wpcvi_images');
                     if (wpcMeta?.value) {
-                         const colorAttr = v.attributes?.find((a: any) => 
-                             (a.name || "").toLowerCase().includes('color') || 
-                             (a.id || "").toString().includes('color') ||
-                             a.name === 'Pa_selecciona-el-color'
-                         );
-                         const colorKey = colorAttr ? String(colorAttr.option || colorAttr.value).toLowerCase().trim() : 'default';
-                         if (!imgMap[colorKey]) imgMap[colorKey] = [];
-                         
-                         const ids = wpcMeta.value.split(',').map((id: string) => id.trim());
-                         ids.forEach((id: string) => {
-                             const url = p.wpc_resolved_media[id];
-                             if (url && !imgMap[colorKey].some(img => img.src === url)) {
-                                 imgMap[colorKey].push({ id: parseInt(id), src: url, alt: p.name });
-                             }
-                         });
+                        const colorAttr = v.attributes?.find((a: any) =>
+                            (a.name || "").toLowerCase().includes('color') ||
+                            (a.id || "").toString().includes('color') ||
+                            a.name === 'Pa_selecciona-el-color'
+                        );
+                        const colorKey = colorAttr ? String(colorAttr.option || colorAttr.value).toLowerCase().trim() : 'default';
+                        if (!imgMap[colorKey]) imgMap[colorKey] = [];
+
+                        const ids = wpcMeta.value.split(',').map((id: string) => id.trim());
+                        ids.forEach((id: string) => {
+                            const url = p.wpc_resolved_media[id];
+                            if (url && !imgMap[colorKey].some(img => img.src === url)) {
+                                imgMap[colorKey].push({ id: parseInt(id), src: url, alt: p.name });
+                            }
+                        });
                     }
                 });
             }
@@ -369,20 +369,20 @@ function mapV3ToStore(p: any) {
         p.variations_data.forEach((v: any) => {
             const wpcMeta = v.meta_data?.find((m: any) => m.key === 'wpcvi_images');
             if (wpcMeta?.value && p.wpc_resolved_media) {
-                const colorAttr = v.attributes?.find((a: any) => 
-                    (a.name || "").toLowerCase().includes('color') || 
+                const colorAttr = v.attributes?.find((a: any) =>
+                    (a.name || "").toLowerCase().includes('color') ||
                     (a.id || "").toString().includes('color') ||
                     a.name === 'Pa_selecciona-el-color'
                 );
                 const colorKey = colorAttr ? String(colorAttr.option || colorAttr.value).toLowerCase().trim() : 'default';
-                
+
                 if (!wpcImagesMap[colorKey]) wpcImagesMap[colorKey] = [];
-                
+
                 const ids = wpcMeta.value.split(',').map((id: string) => id.trim());
                 ids.forEach((id: string) => {
                     const url = p.wpc_resolved_media[id];
                     if (url && !wpcImagesMap[colorKey].some(img => img.src === url)) {
-                        wpcImagesMap[colorKey].push({ 
+                        wpcImagesMap[colorKey].push({
                             id: parseInt(id),
                             src: url,
                             alt: p.name,
@@ -470,8 +470,8 @@ function mapV3ToStore(p: any) {
             const imgMap: Record<string, any[]> = {};
 
             if (p.variations_data && Array.isArray(p.variations_data)) {
-                const colorsArr = (p.attributes || []).find((a: any) => 
-                    (a.name || "").toLowerCase().includes('color') || 
+                const colorsArr = (p.attributes || []).find((a: any) =>
+                    (a.name || "").toLowerCase().includes('color') ||
                     (a.slug || "").toLowerCase().includes('color')
                 )?.options || [];
 
@@ -480,27 +480,27 @@ function mapV3ToStore(p: any) {
                     const colorAttr = v.attributes?.find((a: any) => {
                         const n = (a.name || "").toLowerCase();
                         const s = (a.slug || "").toLowerCase();
-                        return n.includes('color') || s.includes('color') || 
-                               n.includes('selecciona-el') || s.includes('selecciona-el') ||
-                               (a.id || "").toString().includes('color') ||
-                               a.name === 'Pa_selecciona-el-color';
+                        return n.includes('color') || s.includes('color') ||
+                            n.includes('selecciona-el') || s.includes('selecciona-el') ||
+                            (a.id || "").toString().includes('color') ||
+                            a.name === 'Pa_selecciona-el-color';
                     });
-                    
+
                     if (colorAttr && (colorAttr.option || colorAttr.value) && v.image?.src) {
-                         const colorValue = String(colorAttr.option || colorAttr.value).toLowerCase().trim();
-                         // Usamos el slug normalizado si existe en los términos del producto, sino el valor crudo
-                         const colorKey = normalizeSlug(colorValue) || colorValue;
-                         
-                         if (!imgMap[colorKey]) imgMap[colorKey] = [];
-                         
-                         if (!imgMap[colorKey].some((img: any) => img.src === v.image.src)) {
-                             imgMap[colorKey].push({ 
+                        const colorValue = String(colorAttr.option || colorAttr.value).toLowerCase().trim();
+                        // Usamos el slug normalizado si existe en los términos del producto, sino el valor crudo
+                        const colorKey = normalizeSlug(colorValue) || colorValue;
+
+                        if (!imgMap[colorKey]) imgMap[colorKey] = [];
+
+                        if (!imgMap[colorKey].some((img: any) => img.src === v.image.src)) {
+                            imgMap[colorKey].push({
                                 id: v.image.id || 0,
-                                src: v.image.src, 
+                                src: v.image.src,
                                 alt: v.image.alt || v.image.name || '',
                                 name: v.image.name || ''
                             });
-                         }
+                        }
                     }
                 });
 
@@ -511,18 +511,18 @@ function mapV3ToStore(p: any) {
                         const colorAttr = v.attributes?.find((a: any) => {
                             const n = (a.name || "").toLowerCase();
                             const s = (a.slug || "").toLowerCase();
-                            return n.includes('color') || s.includes('color') || 
-                                   n.includes('selecciona-el') || s.includes('selecciona-el') ||
-                                   (a.id || "").toString().includes('color') ||
-                                   a.name === 'Pa_selecciona-el-color';
+                            return n.includes('color') || s.includes('color') ||
+                                n.includes('selecciona-el') || s.includes('selecciona-el') ||
+                                (a.id || "").toString().includes('color') ||
+                                a.name === 'Pa_selecciona-el-color';
                         });
-                        
+
                         if (colorAttr && (colorAttr.option || colorAttr.value)) {
                             const colorValue = String(colorAttr.option || colorAttr.value).toLowerCase().trim();
                             const colorKey = normalizeSlug(colorValue) || colorValue;
 
                             if (!imgMap[colorKey]) imgMap[colorKey] = [];
-                            
+
                             const ids = wpcMeta.value.split(',').map((id: string) => id.trim());
                             ids.forEach((id: string) => {
                                 const url = p.wpc_resolved_media[id];
@@ -603,7 +603,7 @@ export async function getProductById(id: number | string) {
                             }
                         }
                     } catch (e) {
-                         console.error("[WC API] Error resolving WPC media:", e);
+                        console.error("[WC API] Error resolving WPC media:", e);
                     }
                 }
                 product.wpc_resolved_media = mediaMap;
@@ -628,7 +628,7 @@ export async function getCategoryBySlug(slug: string) {
     try {
         const categories = await wcFetch(`/products/categories?slug=${slug}`);
         if (!categories || categories.length === 0) return null;
-        
+
         const result = categories[0];
         setStaticCached(cacheKey, result);
         return result;
@@ -646,7 +646,7 @@ export async function getCategoryById(id: number) {
     try {
         const category = await wcFetch(`/products/categories/${id}`);
         if (!category) return null;
-        
+
         setStaticCached(cacheKey, category);
         return category;
     } catch (error: any) {
@@ -734,7 +734,7 @@ export async function getProductBySlug(slug: string) {
 
     try {
         // Fetching product by slug...
-        
+
         // 1. Intento vía Public WP API (para obtener el ID desde el slug sin auth)
         let productId = null;
         try {
@@ -755,11 +755,11 @@ export async function getProductBySlug(slug: string) {
                 const storeRes = await fetch(`${PUBLIC_WP_URL}/wp-json/wc/store/v1/products/${productId}`);
                 if (storeRes.ok) {
                     const storeProduct = await storeRes.json();
-                    
+
                     if (storeProduct.type === 'variable' && productId) {
                         const variations = await getProductVariations(productId);
                         storeProduct.variations_data = variations;
-                        
+
                         // NUEVO: Resolver imágenes de WPC si existen
                         const allWpcIds = new Set<string>();
                         variations.forEach((v: any) => {
@@ -799,7 +799,7 @@ export async function getProductBySlug(slug: string) {
         // 3. Fallback final: REST API v3 (con Auth)
         const path = `/products?slug=${slug}&status=publish`;
         const products = await wcFetch(path);
-        
+
         if (!products || products.length === 0) {
             console.warn(`[WC API] No products found for slug: ${slug} in all APIs.`);
             return null;
@@ -809,7 +809,7 @@ export async function getProductBySlug(slug: string) {
         if (product.type === 'variable' && product.id) {
             const variations = await getProductVariations(product.id);
             product.variations_data = variations;
-            
+
             // NUEVO: Resolver imágenes de WPC si existen
             const allWpcIds = new Set<string>();
             variations.forEach((v: any) => {
@@ -831,12 +831,12 @@ export async function getProductBySlug(slug: string) {
                             }
                         }
                     } catch (e) {
-                         console.error("[WC API] Error resolving WPC media (slug v3):", e);
+                        console.error("[WC API] Error resolving WPC media (slug v3):", e);
                     }
                 }
                 product.wpc_resolved_media = mediaMap;
             }
-            
+
             // Variaciones procesadas en mapV3ToStore
         }
 
@@ -921,7 +921,7 @@ export async function searchProducts(query: string, perPage = 20) {
         let results: any[] = [];
         const storeUrl = `${PUBLIC_WP_URL}/wp-json/wc/store/v1/products?search=${encodeURIComponent(term)}&per_page=${perPage}&stock_status=instock`;
         const storeRes = await fetch(storeUrl);
-        
+
         if (storeRes.ok) {
             const data = await storeRes.json();
             results = Array.isArray(data) ? data.map(p => mapV3ToStore(p)).filter(p => p !== null) : [];
@@ -933,13 +933,13 @@ export async function searchProducts(query: string, perPage = 20) {
         // 2. Inteligencia extra: Buscar por Categorías y Tags
         // Si no hay resultados o si el término es corto/genérico, buscamos coincidencias en taxonomías
         const isCommonTerm = ['ropa', 'zapatos', 'calzado', 'maletas', 'cinturones', 'botas', 'mocasines', 'tenis', 'chaquetas', 'morral', 'maletin', 'billetera'].includes(term);
-        
+
         if (results.length < 5 || isCommonTerm) {
             const [categories, tags] = await Promise.all([
                 wcFetch(`/products/categories?search=${encodeURIComponent(term)}&per_page=10`),
                 wcFetch(`/products/tags?search=${encodeURIComponent(term)}&per_page=10`)
             ]);
-            
+
             let extraProducts: any[] = [];
 
             // Procesar Categorías
@@ -976,7 +976,7 @@ export async function searchProducts(query: string, perPage = 20) {
                         seenIds.add(p.id);
                     }
                 }
-                
+
                 // Si el término coincide exactamente con el nombre de un producto de extraProducts, ponerlo arriba
                 results.sort((a, b) => {
                     const aName = a.name.toLowerCase();
@@ -1026,12 +1026,12 @@ export async function getProductsByCategory(
                 // PRIORIDAD: Store API (Pública, mucho más rápida y cacheable en el server de WP)
                 const storeUrl = `${PUBLIC_WP_URL}/wp-json/wc/store/v1/products?category=${id}&per_page=${perPage}&page=${page}&orderby=${orderBy}&order=${order}${onSale ? '&on_sale=true' : ''}&stock_status=instock`;
                 const storeRes = await fetch(storeUrl);
-                
+
                 if (storeRes.ok) {
                     const data = await storeRes.json();
                     return Array.isArray(data) ? data.map((p: any) => mapV3ToStore(p)).filter(p => p !== null) : [];
                 }
-                
+
                 // Fallback: Si Store API falla, usamos v3 (Autenticada)
                 const data = await wcFetch(`/products?category=${id}&per_page=${perPage}&page=${page}&orderby=${orderBy}&order=${order}&status=publish&stock_status=instock${onSale ? '&on_sale=true' : ''}${attribute ? `&attribute=${attribute}` : ''}${attributeTerm ? `&attribute_term=${attributeTerm}` : ''}`);
                 return Array.isArray(data) ? data : [];
@@ -1086,10 +1086,10 @@ export async function getPageById(id: number | string) {
 
 // Mapa de archivos JSON por slug (cargados en build-time vía import() dinámico)
 const MENU_JSON_FILES: Record<string, string> = {
-    'menu-principal':    '/data/menus/menu-principal.json',
+    'menu-principal': '/data/menus/menu-principal.json',
     'atencion-al-cliente': '/data/menus/atencion-al-cliente.json',
-    'nosotros':          '/data/menus/nosotros.json',
-    'legal':             '/data/menus/legal.json',
+    'nosotros': '/data/menus/nosotros.json',
+    'legal': '/data/menus/legal.json',
 };
 
 export async function getMenu(slug: string) {
@@ -1110,14 +1110,14 @@ export async function getMenu(slug: string) {
             const origin = vercelUrl
                 ? `https://${vercelUrl}`
                 : (siteUrl || 'http://localhost:4321');
-            
+
             const jsonUrl = `${origin}${filePath}`;
-            
+
             const jsonRes = await fetch(jsonUrl, {
                 signal: AbortSignal.timeout(5000),
                 headers: { 'Accept': 'application/json' }
             });
-            
+
             if (jsonRes.ok) {
                 const jsonData = await jsonRes.json();
                 const items = jsonData?.items;
@@ -1136,7 +1136,7 @@ export async function getMenu(slug: string) {
     const WP_USER = import.meta.env.WP_APP_USER || "";
     const WP_PASS = import.meta.env.WP_APP_PASS || "";
     const CK = (import.meta.env.WC_CONSUMER_KEY || import.meta.env.WP_CONSUMER_KEY || "").trim();
-    const authString = (WP_USER && WP_PASS) 
+    const authString = (WP_USER && WP_PASS)
         ? safeBtoa(`${WP_USER}:${WP_PASS}`)
         : null;
 
@@ -1144,10 +1144,10 @@ export async function getMenu(slug: string) {
         try {
             const controller = new AbortController();
             const timeout = setTimeout(() => controller.abort(), 8000);
-            
+
             const url = `${PUBLIC_WP_URL}/wp-json/wh/v1/menu/${targetSlug}`;
             console.log(`[Menu] ⚠️ Usando fallback WP API para "${targetSlug}"`);
-            
+
             const reqHeaders: Record<string, string> = {
                 'Accept': 'application/json'
             };
@@ -1160,7 +1160,7 @@ export async function getMenu(slug: string) {
                 headers: reqHeaders
             });
             clearTimeout(timeout);
-            
+
             if (res.ok) {
                 const data = await res.json();
                 if (Array.isArray(data) && data.length > 0) return data;
@@ -1230,7 +1230,7 @@ export async function getHomeSEO() {
     try {
         const url = `${PUBLIC_WP_URL}/wp-json/wp/v2/pages/83750`;
         const res = await fetch(url, { signal: AbortSignal.timeout(5000) });
-        
+
         if (res.ok) {
             const data = await res.json();
             // Retorna los datos estructurados tal cual los da RankMath para WP
