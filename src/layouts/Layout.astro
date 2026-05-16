@@ -85,14 +85,6 @@ const seo = rawSeo || {
         <link rel="icon" type="image/png" href="/favicon.png" />
         <link rel="canonical" href={seo.canonical} />
 
-        {/* Preload del poster del Hero para mejorar LCP */}
-        <link
-            rel="preload"
-            as="image"
-            href="/images/banner-winston-and-harry-maletas.webp"
-            fetchpriority="high"
-        />
-
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
@@ -107,12 +99,7 @@ const seo = rawSeo || {
             rel="preload"
             href="https://use.typekit.net/lpl0lgn.css"
             as="style"
-        />
-        <link
-            rel="stylesheet"
-            href="https://use.typekit.net/lpl0lgn.css"
-            media="print"
-            onload="this.media='all'"
+            onload="this.rel='stylesheet'"
         />
         <link
             rel="stylesheet"
@@ -186,9 +173,8 @@ const seo = rawSeo || {
                 }, observerOptions);
 
                 function observeNewElements() {
-                    const elementsToReveal = document.querySelectorAll(
-                        ".reveal-on-scroll"
-                    );
+                    const elementsToReveal =
+                        document.querySelectorAll(".reveal-on-scroll");
 
                     elementsToReveal.forEach((el) => {
                         // Skip already processed elements (no DOM modification needed)
