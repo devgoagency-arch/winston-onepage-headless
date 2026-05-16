@@ -111,6 +111,15 @@ const finalSlides = displaySlides.length > 0 ? displaySlides : [
         video.muted = true;
         video.playsInline = true;
         video.setAttribute('playsinline', '');
+        
+        // Garantizar estilos en línea por si CSS Modules aísla las clases
+        video.style.position = 'absolute';
+        video.style.top = '0';
+        video.style.left = '0';
+        video.style.width = '100%';
+        video.style.height = '100%';
+        video.style.objectFit = 'cover';
+        video.style.zIndex = '0';
         video.style.opacity = '0'; // empieza invisible
 
         const source = document.createElement('source');
@@ -126,6 +135,12 @@ const finalSlides = displaySlides.length > 0 ? displaySlides : [
         const revealVideo = () => {
             video.style.opacity = '1';
             setTimeout(() => { poster.style.opacity = '0'; }, 400);
+            
+            // PAUSAR el autoplay del Swiper para que el video no se corte
+            const swiperEl = document.querySelector('.hero-slider');
+            if (swiperEl && swiperEl._swiper) {
+                swiperEl._swiper.autoplay.stop();
+            }
         };
 
         if (video.readyState >= 3) {
@@ -139,7 +154,7 @@ const finalSlides = displaySlides.length > 0 ? displaySlides : [
             poster.style.opacity = '1';
             video.style.opacity = '0';
             const swiperEl = document.querySelector('.hero-slider');
-            if (swiperEl?._swiper) {
+            if (swiperEl && swiperEl._swiper) {
                 setTimeout(() => {
                     swiperEl._swiper.slideNext();
                     swiperEl._swiper.autoplay.start();
