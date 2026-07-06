@@ -41,6 +41,7 @@ debug-auth.ts
 debug-auth.js
 *.json
 !public/data/products/*.json
+!public/data/catalog/tienda-p*.json
 !package.json
 !tsconfig.json
 !vercel.json
