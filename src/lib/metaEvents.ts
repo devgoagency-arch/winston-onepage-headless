@@ -4,7 +4,16 @@
  * Requiere la variable de entorno META_ACCESS_TOKEN.
  */
 
+import crypto from 'node:crypto';
+
 const PIXEL_ID = '533909598411848';
+
+/** Hashea PII usando SHA-256 (requerido por Meta) */
+function hashData(value: string | undefined): string | undefined {
+    if (!value) return undefined;
+    const normalized = value.toLowerCase().trim();
+    return crypto.createHash('sha256').update(normalized).digest('hex');
+}
 
 interface MetaEventPayload {
     eventName: string;
@@ -46,7 +55,9 @@ export async function sendMetaServerEvent(payload: MetaEventPayload): Promise<vo
                 user_data: {
                     client_ip_address: payload.clientIp || null,
                     client_user_agent: payload.clientUserAgent || null,
-                    ...payload.userData,
+                    ...Object.fromEntries(
+                        Object.entries(payload.userData || {}).map(([k, v]) => [k, hashData(v)])
+                    )
                 },
                 custom_data: customData,
             },

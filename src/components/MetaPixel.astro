@@ -29,24 +29,9 @@ src="https://www.facebook.com/tr?id=533909598411848&ev=PageView&noscript=1"
     // Hacerlo global para scripts inline (ej. ViewContent en [slug].astro)
     (window as any).trackMetaEvent = trackMetaEvent;
 
-    // Disparar en la carga inicial (si no estamos en view transitions) o en cada navegación
-    // En Astro con ViewTransitions, astro:page-load se dispara también en la primera carga,
-    // así que usamos un flag para evitar disparar dos veces si es necesario, 
-    // pero para mantener la lógica igual que antes, lo ponemos en astro:page-load
-    // y hacemos un track inicial si astro:page-load no está presente, pero Astro ViewTransitions lo dispara siempre.
-    // La forma segura es simplemente dispararlo en page-load y una vez al inicio si no hay VT.
-    
-    // Track initial page load
-    if (!(window as any)._initialPageViewTracked) {
-        trackMetaEvent('PageView');
-        (window as any)._initialPageViewTracked = true;
-    }
-
+    // Disparar en cada vista de página (Astro ViewTransitions garantiza que astro:page-load
+    // se dispara tanto en la primera carga completa como en las navegaciones SPA subsiguientes)
     document.addEventListener('astro:page-load', () => {
-        // Evitar duplicar en la carga inicial
-        if ((window as any)._pageLoadFired) {
-             trackMetaEvent('PageView');
-        }
-        (window as any)._pageLoadFired = true;
+        trackMetaEvent('PageView');
     });
 </script>
