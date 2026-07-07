@@ -1321,22 +1321,29 @@ export async function searchProducts(query: string, perPage = 20) {
 
     try {
         // 1. Cargar el caché global a RAM si no está cargado
+        // NOTA: Vercel no incluye public/ en el bundle del Lambda, por eso
+        // usamos fetch() HTTP (los archivos sí están en el CDN de Vercel como estáticos)
         if (!globalSearchCache) {
-            const fs = await import('node:fs');
-            const path = await import('node:path');
+            const SITE = 'https://www.winstonandharrystore.com';
             const newCache: any[] = [];
-            for (let i = 1; i <= 20; i++) {
-                const filePath = path.join(process.cwd(), 'public', 'data', 'catalog', `tienda-p${i}.json`);
-                if (fs.existsSync(filePath)) {
-                    const data = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
-                    newCache.push(...data);
-                } else {
-                    break;
+
+            // Carga en paralelo todas las páginas (más rápido que secuencial)
+            const fetches = Array.from({ length: 20 }, (_, i) =>
+                fetch(`${SITE}/data/catalog/tienda-p${i + 1}.json`)
+                    .then(r => r.ok ? r.json() : [])
+                    .catch(() => [])
+            );
+            const pages = await Promise.all(fetches);
+            for (const page of pages) {
+                if (Array.isArray(page) && page.length > 0) {
+                    newCache.push(...page);
                 }
             }
+
             globalSearchCache = newCache;
-            console.log(`[searchProducts] Global cache loaded with ${globalSearchCache.length} products in memory.`);
+            console.log(`[searchProducts] Global cache loaded with ${globalSearchCache.length} products via fetch.`);
         }
+
 
         if (!globalSearchCache || globalSearchCache.length === 0) {
             return [];
