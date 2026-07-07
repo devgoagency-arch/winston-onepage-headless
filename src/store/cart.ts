@@ -1,6 +1,6 @@
 import { persistentMap } from '@nanostores/persistent';
 import { atom } from 'nanostores';
-
+import { trackMetaEvent } from '../utils/metaPixel';
 export interface CartItem {
     id: number;
     name: string;
@@ -122,8 +122,8 @@ export function addToCart(product: any, quantity: number, color: string | null, 
         isCartOpen.set(true);
 
         // Disparar evento de Meta Pixel
-        if (typeof window !== 'undefined' && typeof (window as any).fbq === 'function') {
-            (window as any).fbq('track', 'AddToCart', {
+        if (typeof window !== 'undefined') {
+            trackMetaEvent('AddToCart', {
                 content_name: product.name,
                 content_ids: [finalId.toString()],
                 content_type: 'product',

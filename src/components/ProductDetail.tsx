@@ -3,7 +3,7 @@ import { getOptimizedUrl, getImageSrcSet } from '../utils/image';
 import ProductCard from './ProductCard';
 import { addToCart } from '../store/cart';
 import { redirectToCheckout } from '../utils/checkout';
-
+import { trackMetaEvent } from '../utils/metaPixel';
 // Función de normalización robusta para comparar slugs/nombres con acentos
 function normalizeAttr(str: any): string {
   if (!str) return '';
@@ -646,13 +646,11 @@ export default function ProductDetail({ initialProduct }: Props) {
         currency: 'COP', value: price,
         items: [{ item_id: String(currentProduct.id), item_name: currentProduct.name, price, quantity: 1 }]
       });
-      console.log("[META Debug] typeof window.fbq =", typeof (window as any).fbq);
-      if (typeof (window as any).fbq === 'function') {
-        (window as any).fbq('track', 'AddToCart', {
-          content_ids: [String(currentProduct.id)], content_type: 'product', value: price, currency: 'COP'
-        });
-        console.log("✅ META TRACKING EXITOSO: AddToCart", price);
-      }
+      console.log("[META Debug] Intentando trackear AddToCart");
+      trackMetaEvent('AddToCart', {
+        content_ids: [String(currentProduct.id)], content_type: 'product', value: price, currency: 'COP'
+      });
+      console.log("✅ META TRACKING EXITOSO: AddToCart", price);
     }
 
     return true;

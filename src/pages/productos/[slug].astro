@@ -408,14 +408,22 @@ const schemaData = (product && schemaPrice > 0 && !isNaN(schemaPrice))
           console.log("✅ GTM TRACKING EXITOSO: view_item");
 
           // Meta Pixel
-          if (typeof window.fbq === 'function') {
-            window.fbq('track', 'ViewContent', {
+          if (typeof window.trackMetaEvent === 'function') {
+            window.trackMetaEvent('ViewContent', {
               content_ids: ['${product.id}'],
               content_type: 'product',
               value: ${schemaPrice},
               currency: 'COP'
             });
             console.log("✅ META TRACKING EXITOSO: ViewContent");
+          } else if (typeof window.fbq === 'function') {
+            // Fallback si no ha cargado
+            window.fbq('track', 'ViewContent', {
+              content_ids: ['${product.id}'],
+              content_type: 'product',
+              value: ${schemaPrice},
+              currency: 'COP'
+            });
           }
         }
       });

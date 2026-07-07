@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { clearCart } from '../../store/cart';
+import { trackMetaEvent } from '../../utils/metaPixel';
 
 interface OrderData {
     id: number;
@@ -113,15 +114,16 @@ export default function OrderConfirmation() {
         }
 
         // Meta Pixel
-        if (typeof (window as any).fbq === 'function') {
-            (window as any).fbq('track', 'Purchase', {
-                content_ids: orderItems.map((item: any) => String(item.id)),
-                content_type: 'product',
-                value: orderTotal,
-                currency: 'COP',
-                num_items: orderItems.reduce((acc: number, item: any) => acc + (item.quantity || 1), 0)
-            });
-        }
+        trackMetaEvent('Purchase', {
+            content_ids: orderItems.map((item: any) => String(item.id)),
+            content_type: 'product',
+            value: orderTotal,
+            currency: 'COP',
+            num_items: orderItems.reduce((acc: number, item: any) => acc + (item.quantity || 1), 0)
+        }, {
+            // Pasar email como userData para mejorar el matching
+            em: order.email?.toLowerCase().trim()
+        });
 
         sessionStorage.setItem('tracked_order_' + order.id, 'true');
     }

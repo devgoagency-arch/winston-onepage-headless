@@ -3,7 +3,7 @@ import React, { useMemo } from 'react';
 import { useStore } from '@nanostores/react';
 import { cartItems, removeFromCart, updateQuantity, updateCartItemVariation, type CartItem } from '../store/cart';
 import { redirectToCheckout } from '../utils/checkout';
-
+import { trackMetaEvent } from '../utils/metaPixel';
 export default function CartView() {
     const $cartItems = useStore(cartItems);
 
@@ -88,11 +88,9 @@ React.useEffect(() => {
                 currency: 'COP', value: total,
                 items: items.map(item => ({ item_id: String(item.id), item_name: item.name, price: item.price, quantity: item.quantity }))
             });
-            if (typeof (window as any).fbq === 'function') {
-                (window as any).fbq('track', 'InitiateCheckout', {
-                    content_ids: items.map(item => String(item.id)), content_type: 'product', value: total, currency: 'COP', num_items: items.length
-                });
-            }
+            trackMetaEvent('InitiateCheckout', {
+                content_ids: items.map(item => String(item.id)), content_type: 'product', value: total, currency: 'COP', num_items: items.length
+            });
         }
         window.location.href = couponCode ? `/checkout?coupon=${couponCode}` : '/checkout';
     };

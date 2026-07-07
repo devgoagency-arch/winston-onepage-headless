@@ -1,4 +1,5 @@
 import { cartItems } from '../store/cart';
+import { trackMetaEvent } from './metaPixel';
 
 /**
  * Redirecciona al usuario a una página de WordPress (WooCommerce) 
@@ -62,11 +63,11 @@ export async function redirectToCheckout(path: string = '/', coupon: string = ''
     }
 
     // Disparar evento de Meta Pixel: InitiateCheckout
-    if (typeof window !== 'undefined' && typeof (window as any).fbq === 'function') {
+    if (typeof window !== 'undefined') {
         const cartValue = items.reduce((acc: number, item: any) => acc + (item.price * item.quantity), 0);
         const itemIds = items.map((item: any) => item.id.toString());
         
-        (window as any).fbq('track', 'InitiateCheckout', {
+        trackMetaEvent('InitiateCheckout', {
             content_ids: itemIds,
             content_type: 'product',
             value: cartValue,

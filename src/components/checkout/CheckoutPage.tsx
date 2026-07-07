@@ -3,6 +3,7 @@ import { useState, useMemo, useEffect, useRef } from 'react';
 import { cartItems, clearCart, isCartOpen, type CartItem } from '../../store/cart';
 import { userSession } from '../../store/user';
 import colombiaCities from '../../lib/colombiaCities.json';
+import { trackMetaEvent } from '../../utils/metaPixel';
 
 type Step = 'form' | 'payment' | 'processing';
 
@@ -201,15 +202,13 @@ export default function CheckoutPage() {
             }
         });
         
-        if (typeof (window as any).fbq === 'function') {
-            (window as any).fbq('track', 'InitiateCheckout', {
-                content_ids: items.map(item => String(item.id)),
-                content_type: 'product',
-                value: subtotal,
-                currency: 'COP',
-                num_items: items.reduce((acc, i) => acc + i.quantity, 0)
-            });
-        }
+        trackMetaEvent('InitiateCheckout', {
+            content_ids: items.map(item => String(item.id)),
+            content_type: 'product',
+            value: subtotal,
+            currency: 'COP',
+            num_items: items.reduce((acc, i) => acc + i.quantity, 0)
+        });
 
         // 4. Log de éxito
         console.log("✅ GTM TRACKING EXITOSO: begin_checkout & InitiateCheckout");
