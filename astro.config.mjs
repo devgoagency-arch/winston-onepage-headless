@@ -128,7 +128,6 @@ export default defineConfig({
     '/review-palatino': 'https://g.page/r/CVqAdcaz3jkUEBM/review',
     '/review-santabarbara': 'https://g.page/r/CfogiOsEUdgVEBM/review',
     '/review-retiro': 'https://g.page/r/CSKXwQ5l5zSpEBM/review',
-    '/categoria/pantalones-jeans-hombre': '/categoria/ropa-hombre-colombia',
     '/categoria/reatascinturones': '/categoria/cinturones-reatas-cuero-hombre',
     '/categoria/billeteras': '/categoria/billeteras-cuero-hombre',
     '/categoria/limpieza': '/categoria/limpieza-cuidado-zapatos',

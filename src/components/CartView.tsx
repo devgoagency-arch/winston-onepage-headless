@@ -1,7 +1,7 @@
 
 import React, { useMemo } from 'react';
 import { useStore } from '@nanostores/react';
-import { cartItems, removeFromCart, updateQuantity, updateCartItemVariation, type CartItem } from '../store/cart';
+import { cartItems, removeFromCart, updateQuantity, updateCartItemVariation, calculateComboDiscount, type CartItem } from '../store/cart';
 import { redirectToCheckout } from '../utils/checkout';
 import { trackMetaEvent } from '../utils/metaPixel';
 export default function CartView() {
@@ -75,10 +75,15 @@ React.useEffect(() => {
         console.log("4. ✅ GTM TRACKING EXITOSO: view_cart");
     }, [items, subtotal]);
 
+    const discount = useMemo(() => {
+        return calculateComboDiscount(items);
+    }, [items]);
+
     const FREE_SHIPPING_THRESHOLD = shippingSettings.free_shipping_threshold;
     const SHIPPING_COST = shippingSettings.flat_rate;
-    const shippingCost = subtotal >= FREE_SHIPPING_THRESHOLD ? 0 : SHIPPING_COST;
-    const total = subtotal + shippingCost;
+    const discountedSubtotal = subtotal - discount;
+    const shippingCost = discountedSubtotal >= FREE_SHIPPING_THRESHOLD ? 0 : SHIPPING_COST;
+    const total = discountedSubtotal + shippingCost;
 
     const handleCheckout = () => {
         if (typeof window !== 'undefined') {
@@ -387,6 +392,12 @@ React.useEffect(() => {
                                 <span>Subtotal</span>
                                 <span>${new Intl.NumberFormat('es-CO').format(subtotal)}</span>
                             </div>
+                            {discount > 0 && (
+                                <div className="summary-row" style={{ color: '#d9534f' }}>
+                                    <span>Descuento Combo -25%</span>
+                                    <span>-${new Intl.NumberFormat('es-CO').format(discount)}</span>
+                                </div>
+                            )}
                             <div className="summary-row">
                                 <span>Envío</span>
                                 {shippingCost === 0 ? (
@@ -397,7 +408,7 @@ React.useEffect(() => {
                             </div>
                             {shippingCost > 0 && (
                                 <div className="shipping-notice">
-                                    Agrega ${new Intl.NumberFormat('es-CO').format(FREE_SHIPPING_THRESHOLD - subtotal)} más para envío gratis
+                                    Agrega ${new Intl.NumberFormat('es-CO').format(FREE_SHIPPING_THRESHOLD - discountedSubtotal)} más para envío gratis
                                 </div>
                             )}
                             <div className="summary-row total">

@@ -1,5 +1,5 @@
 import { useStore } from '@nanostores/react';
-import { cartItems, isCartOpen, removeFromCart, updateQuantity, updateCartItemVariation, type CartItem } from '../store/cart';
+import { cartItems, isCartOpen, removeFromCart, updateQuantity, updateCartItemVariation, calculateComboDiscount, type CartItem } from '../store/cart';
 import { useEffect, useState, useMemo } from 'react';
 import { redirectToCheckout } from '../utils/checkout';
 
@@ -28,6 +28,12 @@ export default function SideCart() {
     const subtotal = useMemo(() => {
         return items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
     }, [items]);
+
+    const discount = useMemo(() => {
+        return calculateComboDiscount(items);
+    }, [items]);
+
+    const total = subtotal - discount;
 
     useEffect(() => {
         if ($isCartOpen) {
@@ -180,9 +186,37 @@ export default function SideCart() {
                                 <span className="subtotal-value">
                                     ${new Intl.NumberFormat('es-CO').format(subtotal)}
                                 </span>
-                                <span className="tax-note">(con impuestos)</span>
                             </div>
                         </div>
+                        {discount > 0 && (
+                            <div className="footer-top discount-row">
+                                <span className="subtotal-label">Descuento Combo -25%:</span>
+                                <div className="price-stack">
+                                    <span className="subtotal-value" style={{ color: '#d9534f' }}>
+                                        -${new Intl.NumberFormat('es-CO').format(discount)}
+                                    </span>
+                                </div>
+                            </div>
+                        )}
+                        {discount > 0 && (
+                            <div className="footer-top total-row">
+                                <span className="subtotal-label">Total:</span>
+                                <div className="price-stack">
+                                    <span className="subtotal-value">
+                                        ${new Intl.NumberFormat('es-CO').format(total)}
+                                    </span>
+                                    <span className="tax-note">(con impuestos)</span>
+                                </div>
+                            </div>
+                        )}
+                        {discount === 0 && (
+                            <div className="footer-top">
+                                <span className="subtotal-label"></span>
+                                <div className="price-stack">
+                                    <span className="tax-note">(con impuestos)</span>
+                                </div>
+                            </div>
+                        )}
                         <div className="cart-actions">
                             <button className="btn-action btn-green" onClick={handleCheckout}>
                                 FINALIZAR COMPRA

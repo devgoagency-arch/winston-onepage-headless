@@ -13,6 +13,7 @@ export interface CartItem {
     // Metadata for variable products
     attributes?: any[];
     variations?: any[];
+    categories?: any[];
 }
 
 export const cartItems = persistentMap<Record<string, string>>('wh_cart_v2', {});
@@ -147,7 +148,8 @@ function createCartItem(id: number, product: any, price: number, color: string |
         image,
         slug: product.slug,
         attributes: product.attributes,
-        variations: product.variations
+        variations: product.variations,
+        categories: product.categories || []
     };
 }
 
@@ -225,4 +227,55 @@ export function getCartCount() {
             return total + item.quantity;
         } catch(e) { return total; }
     }, 0);
+}
+
+export function calculateComboDiscount(items: (CartItem & { key?: string })[]) {
+    const cat_jeans = [958];
+    const cat_camisas = [956, 954];
+    const cat_cinturon = [967, 963];
+
+    let tiene_jean = false;
+    let tiene_camisa = false;
+    let tiene_cinturon = false;
+
+    let subtotal_combo = 0;
+
+    items.forEach(item => {
+        let es_jean = false;
+        let es_camisa = false;
+        let es_cinturon = false;
+
+        if (item.categories && item.categories.length > 0) {
+            const catIds = item.categories.map((c: any) => c.id);
+            es_jean = catIds.some((id: number) => cat_jeans.includes(id));
+            es_camisa = catIds.some((id: number) => cat_camisas.includes(id));
+            es_cinturon = catIds.some((id: number) => cat_cinturon.includes(id));
+        } else {
+            // Fallback automático para productos viejos en el carrito que no tienen las categorías guardadas
+            const slug = String(item.slug || '').toLowerCase();
+            const name = String(item.name || '').toLowerCase();
+            es_jean = slug.includes('jean') || name.includes('jean');
+            es_camisa = slug.includes('camisa') || slug.includes('polo') || name.includes('camisa') || name.includes('polo');
+            es_cinturon = slug.includes('reata') || slug.includes('cinturon') || name.includes('reata') || name.includes('cinturon');
+        }
+
+        if (es_jean) {
+            tiene_jean = true;
+            subtotal_combo += (item.price * item.quantity);
+        }
+        if (es_camisa) {
+            tiene_camisa = true;
+            subtotal_combo += (item.price * item.quantity);
+        }
+        if (es_cinturon) {
+            tiene_cinturon = true;
+            subtotal_combo += (item.price * item.quantity);
+        }
+    });
+
+    if (tiene_jean && tiene_camisa && tiene_cinturon) {
+        return subtotal_combo * 0.25;
+    }
+
+    return 0;
 }

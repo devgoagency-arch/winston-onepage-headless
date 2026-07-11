@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Hero from "../components/Hero.astro";
+import HeroPromo from "../components/HeroPromo.astro";
 import ScrollRevealBanner from "../components/ScrollRevealBanner.astro";
 import ProductGrid from "../components/ProductGrid";
 import About from "../components/About.astro";
@@ -45,7 +46,11 @@ const lookData = await getLookOfTheWeekData();
 	<Header />
 
 	<main>
-		<Hero slides={heroSlides} slots={heroSlots} />
+		<!-- Banner promocional temporal: Look Completo -->
+		<HeroPromo />
+		
+		<!-- Banner original guardado en borrador -->
+		<!-- <Hero slides={heroSlides} slots={heroSlots} /> -->
 
 		<div class="content-wrapper">
 			<FeaturesBanner />

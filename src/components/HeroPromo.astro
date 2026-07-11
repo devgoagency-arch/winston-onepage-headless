@@ -1,0 +1,134 @@
+---
+// src/components/HeroPromo.astro
+// Este componente reemplaza temporalmente al Hero estándar para la campaña "Look Completo"
+---
+
+<section class="hero-promo">
+  <!-- Ocultamos los textos visualmente porque ya están en la imagen, pero los mantenemos en el HTML para SEO y Accesibilidad -->
+  <div class="sr-only">
+    <p>25% OFF</p>
+    <p>En tu look completo</p>
+    <p>
+      Elige un jean, una camisa, camiseta o polo y un cinturón o
+      reata. Agrega las tres piezas al carrito y recibe
+      automáticamente 25% OFF.
+    </p>
+  </div>
+
+  <a href="/categoria/ropa-hombre-colombia" class="hero-promo__banner-link">
+      <picture>
+         <source media="(max-width: 767px)" srcset="/images/banner-look-completo-mob.jpg" />
+         <source media="(min-width: 768px)" srcset="/images/banner-look-completo-desk.jpg" />
+         <img
+           src="/images/banner-look-completo-desk.jpg"
+           class="hero-promo__bg-image"
+           alt="Promoción 25% OFF en Look Completo"
+           fetchpriority="high"
+           loading="eager"
+           decoding="sync"
+         >
+      </picture>
+  </a>
+</section>
+
+<!-- Tres botones uno al lado del otro -->
+<section class="promo-categories">
+    <a href="/categoria/pantalones-jeans-hombre" class="promo-cat-btn">Jeans</a>
+    <a href="/categoria/camisas-algodon-hombre" class="promo-cat-btn">Camisas / Polos</a>
+    <a href="/categoria/cinturones" class="promo-cat-btn">Cinturones / Reatas</a>
+</section>
+
+<style>
+  /* Ocultar visualmente pero mantener en el DOM para Screen Readers y SEO */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  .hero-promo {
+    width: 100%;
+    margin-top: 90px;
+    display: block;
+    line-height: 0;
+    padding: 0;
+    background: transparent;
+  }
+
+  body.is-header-hidden .hero-promo {
+    margin-top: 0;
+  }
+
+  .hero-promo__banner-link {
+    display: block;
+    width: 100%;
+    cursor: pointer;
+  }
+
+  .hero-promo__bg-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+
+  .promo-categories {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem 5%; /* Reducido de 2rem a 1rem para evitar espacio gris excesivo */
+    background-color: transparent; /* Eliminado el fondo gris */
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+
+  .promo-cat-btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background-color: #0b4526;
+    color: #fff;
+    font-family: var(--font-titles);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    min-width: 200px;
+    text-align: center;
+  }
+
+  .promo-cat-btn:hover {
+    background-color: #b57a41;
+  }
+
+  /* Responsive Adjustments */
+  @media (min-width: 769px) {
+    .hero-promo__bg-image {
+      height: calc(100vh - 90px);
+      object-fit: cover;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-promo {
+      margin-top: 65px;
+    }
+
+    .promo-categories {
+      flex-direction: column;
+      padding: 1.5rem 5%;
+    }
+
+    .promo-cat-btn {
+      width: 100%;
+    }
+  }
+</style>

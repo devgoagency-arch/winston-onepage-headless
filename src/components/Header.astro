@@ -50,7 +50,6 @@ function flattenCategoryUrl(url: string) {
         // Interceptar y corregir los slugs obsoletos que puedan venir de WordPress
         if (lastSegment === "billeteras") lastSegment = "billeteras-cuero-hombre";
         if (lastSegment === "limpieza") lastSegment = "limpieza-cuidado-zapatos";
-        if (lastSegment === "pantalones-jeans-hombre") lastSegment = "ropa-hombre-colombia";
         if (lastSegment === "reatascinturones") lastSegment = "cinturones-reatas-cuero-hombre";
 
         return `/categoria/${lastSegment}`;

@@ -1,6 +1,6 @@
 import { useStore } from '@nanostores/react';
 import { useState, useMemo, useEffect, useRef } from 'react';
-import { cartItems, clearCart, isCartOpen, type CartItem } from '../../store/cart';
+import { cartItems, clearCart, isCartOpen, calculateComboDiscount, type CartItem } from '../../store/cart';
 import { userSession } from '../../store/user';
 import colombiaCities from '../../lib/colombiaCities.json';
 import { trackMetaEvent } from '../../utils/metaPixel';
@@ -214,10 +214,15 @@ export default function CheckoutPage() {
         console.log("✅ GTM TRACKING EXITOSO: begin_checkout & InitiateCheckout");
     }, [items, subtotal]);
 
+    const discount = useMemo(() => {
+        return calculateComboDiscount(items);
+    }, [items]);
+
     const FREE_SHIPPING_THRESHOLD = shippingSettings.free_shipping_threshold;
     const SHIPPING_COST = shippingSettings.flat_rate;
-    const shippingCost = subtotal >= FREE_SHIPPING_THRESHOLD ? 0 : SHIPPING_COST;
-    const total = subtotal + shippingCost;
+    const discountedSubtotal = subtotal - discount;
+    const shippingCost = discountedSubtotal >= FREE_SHIPPING_THRESHOLD ? 0 : SHIPPING_COST;
+    const total = discountedSubtotal + shippingCost;
 
     const fmt = (n: number) => '$' + new Intl.NumberFormat('es-CO').format(n);
 
@@ -678,6 +683,12 @@ export default function CheckoutPage() {
                                     <span>SUBTOTAL</span>
                                     <span>{fmt(subtotal)}</span>
                                 </div>
+                                {discount > 0 && (
+                                    <div className="summary-row" style={{ color: '#d9534f' }}>
+                                        <span>Descuento Combo -25%</span>
+                                        <span>-{fmt(discount)}</span>
+                                    </div>
+                                )}
                                 <div className="summary-row">
                                     <span>ENVÍO</span>
                                     {shippingCost === 0 ? (
@@ -688,7 +699,7 @@ export default function CheckoutPage() {
                                 </div>
                                 {shippingCost > 0 && (
                                     <div className="shipping-threshold-notice">
-                                        Agrega {fmt(FREE_SHIPPING_THRESHOLD - subtotal)} más para envío gratis
+                                        Agrega {fmt(FREE_SHIPPING_THRESHOLD - discountedSubtotal)} más para envío gratis
                                     </div>
                                 )}
                                 <div className="summary-row summary-total-row">
