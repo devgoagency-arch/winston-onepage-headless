@@ -2153,9 +2153,9 @@ export default function ProductDetail({ initialProduct }: Props) {
         @media (max-width: 600px) {
             .fbt-new-section { padding: 2rem 0; }
             .fbt-fullwidth-container { padding: 0 1.5rem; }
-            .fbt-visual-row { gap: 1rem; width: 100%; }
-            .fbt-bundle-step { gap: 1rem; }
-            .fbt-card-isla { width: 100%; min-width: 0; }
+            .fbt-visual-row { gap: 1rem; width: 100%; align-items: stretch; }
+            .fbt-bundle-step { gap: 1rem; flex: 1; }
+            .fbt-card-isla { width: 100%; min-width: 0; height: 100%; display: flex; flex-direction: column; }
             .fbt-math-plus { font-size: 1.2rem; margin-top: -30px; display: none;}
             .fbt-item-name { font-size: 0.7rem; }
             .fbt-action-card { padding: 1.5rem; }
