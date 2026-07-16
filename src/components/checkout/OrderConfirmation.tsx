@@ -2,10 +2,22 @@ import { useEffect, useState } from 'react';
 import { clearCart } from '../../store/cart';
 import { trackMetaEvent } from '../../utils/metaPixel';
 
+const parseColPrice = (val: any): number => {
+    if (!val) return 0;
+    const str = String(val);
+    // Remover puntos de miles y reemplazar coma decimal si existe
+    const cleaned = str.replace(/\./g, '').replace(',', '.');
+    return parseFloat(cleaned) || 0;
+};
+
 interface OrderData {
     id: number;
     number: string;
     email: string;
+    total: any;
+    shipping_total?: any;
+    total_tax?: any;
+    items?: any[];
 }
 
 export default function OrderConfirmation() {
@@ -60,14 +72,6 @@ export default function OrderConfirmation() {
 
     // Extraer la lógica de tracking a una función separada para reutilizarla
     function fireTrackingEvents(order: any) {
-        const parseColPrice = (val: any): number => {
-            if (!val) return 0;
-            const str = String(val);
-            // Remover puntos de miles y reemplazar coma decimal si existe
-            const cleaned = str.replace(/\./g, '').replace(',', '.');
-            return parseFloat(cleaned) || 0;
-        };
-
         const orderTotal = parseColPrice(order.total);
         const orderItems = order.items || [];
 
@@ -148,6 +152,61 @@ export default function OrderConfirmation() {
                         </a>
                     </p>
 
+                    {order?.items && order.items.length > 0 && (
+                        <div className="order-summary">
+                            <h2>Resumen de tu pedido</h2>
+                            <div className="order-items">
+                                {order.items.map((item: any, idx: number) => (
+                                    <div key={idx} className="order-item">
+                                        {item.image && (
+                                            <div className="item-image">
+                                                <img src={item.image} alt={item.name} />
+                                            </div>
+                                        )}
+                                        <div className="item-details">
+                                            <h3>{item.name}</h3>
+                                            {(item.color || item.size || (item.attributes && item.attributes.length > 0)) && (
+                                                <div className="item-variants">
+                                                    {item.color && <span>Color: {item.color}</span>}
+                                                    {item.size && <span>Talla: {item.size}</span>}
+                                                    {item.attributes && item.attributes.map((attr: any, i: number) => (
+                                                        <span key={i}>{attr.key}: {attr.value}</span>
+                                                    ))}
+                                                </div>
+                                            )}
+                                        </div>
+                                        <div className="item-qty-price">
+                                            <span className="qty">Cant: {item.quantity}</span>
+                                            <span className="price">${parseColPrice(item.price || item.total).toLocaleString('es-CO')}</span>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                            <div className="order-totals">
+                                <div className="total-row">
+                                    <span>Subtotal:</span>
+                                    <span>${(order.items.reduce((acc: number, item: any) => acc + (parseColPrice(item.price || item.total) * item.quantity), 0)).toLocaleString('es-CO')}</span>
+                                </div>
+                                {order.shipping_total !== undefined && (
+                                    <div className="total-row">
+                                        <span>Envío:</span>
+                                        <span>{parseColPrice(order.shipping_total) === 0 ? 'Gratuito' : `$${parseColPrice(order.shipping_total).toLocaleString('es-CO')}`}</span>
+                                    </div>
+                                )}
+                                {order.total_tax !== undefined && parseColPrice(order.total_tax) > 0 && (
+                                    <div className="total-row">
+                                        <span>Impuestos:</span>
+                                        <span>${parseColPrice(order.total_tax).toLocaleString('es-CO')}</span>
+                                    </div>
+                                )}
+                                <div className="total-row grand-total">
+                                    <span>Total Pagado:</span>
+                                    <span>${parseColPrice(order.total).toLocaleString('es-CO')}</span>
+                                </div>
+                            </div>
+                        </div>
+                    )}
+
                     <div className="confirmation-actions">
                         {order && (
                             <a href="/mi-cuenta/pedidos" className="btn-green">
@@ -220,9 +279,10 @@ export default function OrderConfirmation() {
                 .order-note a { color: var(--green); }
                 .confirmation-actions {
                     display: flex;
-                    gap: 12px;
+                    gap: 16px;
                     justify-content: center;
                     flex-wrap: wrap;
+                    margin-top: 32px;
                 }
                 .btn-green {
                     display: inline-block;
@@ -236,13 +296,15 @@ export default function OrderConfirmation() {
                     letter-spacing: 2px;
                     text-decoration: none;
                     transition: filter 0.2s;
+                    border-radius: 4px;
                 }
                 .btn-green:hover { filter: brightness(1.1); color: #fff; }
                 .btn-outline {
                     display: inline-block;
                     padding: 14px 28px;
-                    border: 1px solid var(--green);
+                    background: transparent;
                     color: var(--green);
+                    border: 1px solid var(--green);
                     font-family: var(--font-titles, sans-serif);
                     font-size: 0.85rem;
                     font-weight: 700;
@@ -250,6 +312,7 @@ export default function OrderConfirmation() {
                     letter-spacing: 2px;
                     text-decoration: none;
                     transition: all 0.2s;
+                    border-radius: 4px;
                 }
                 .btn-outline:hover { background: var(--green); color: #fff; }
             `}</style>

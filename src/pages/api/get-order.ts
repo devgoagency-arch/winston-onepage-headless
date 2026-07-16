@@ -24,17 +24,25 @@ export const GET: APIRoute = async ({ url }) => {
 
         const wcOrder = await res.json();
 
-        // Devolver solo los campos que necesita el tracking
+        // Devolver campos necesarios para tracking y para el UI del resumen
         return new Response(JSON.stringify({
             id: wcOrder.id,
+            status: wcOrder.status,
             number: wcOrder.number,
             total: wcOrder.total,
+            shipping_total: wcOrder.shipping_total,
+            total_tax: wcOrder.total_tax,
             email: wcOrder.billing?.email,
             items: wcOrder.line_items?.map((item: any) => ({
                 id: item.product_id,
                 name: item.name,
-                price: parseFloat(item.price),
-                quantity: item.quantity
+                price: parseFloat(item.price || item.total),
+                quantity: item.quantity,
+                image: item.image?.src || '',
+                attributes: item.meta_data?.map((m: any) => ({
+                    key: m.display_key || m.key,
+                    value: m.display_value || m.value
+                })) || []
             })) || []
         }), {
             status: 200,
