@@ -161,11 +161,17 @@ export default function OrderConfirmation() {
                             <div className="order-items">
                                 {order.items.map((item: any, idx: number) => (
                                     <div key={idx} className="order-item">
-                                        {item.image && (
-                                            <div className="item-image">
+                                        <div className="item-image">
+                                            {item.image ? (
                                                 <img src={item.image} alt={item.name} />
-                                            </div>
-                                        )}
+                                            ) : (
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ccc" strokeWidth="2" style={{ margin: '18px auto', display: 'block' }}>
+                                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                                                    <circle cx="8.5" cy="8.5" r="1.5" />
+                                                    <polyline points="21 15 16 10 5 21" />
+                                                </svg>
+                                            )}
+                                        </div>
                                         <div className="item-details">
                                             <h3>{item.name}</h3>
                                             {(item.color || item.size || (item.attributes && item.attributes.length > 0)) && (
