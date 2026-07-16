@@ -7,7 +7,7 @@ const parseColPrice = (val: any): number => {
     const str = String(val);
     // Remover puntos de miles y reemplazar coma decimal si existe
     const cleaned = str.replace(/\./g, '').replace(',', '.');
-    return parseFloat(cleaned) || 0;
+    return Math.round(parseFloat(cleaned)) || 0;
 };
 
 interface OrderData {
@@ -318,6 +318,113 @@ export default function OrderConfirmation() {
                     border-radius: 4px;
                 }
                 .btn-outline:hover { background: var(--green); color: #fff; }
+
+                .order-summary {
+                    margin-top: 32px;
+                    padding: 24px;
+                    border: 1px solid var(--line);
+                    border-radius: 8px;
+                    background: #fff;
+                    text-align: left;
+                }
+                .order-summary h2 {
+                    font-family: var(--font-titles, sans-serif);
+                    font-size: 1.1rem;
+                    color: var(--green);
+                    margin: 0 0 20px 0;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    border-bottom: 1px solid var(--line);
+                    padding-bottom: 12px;
+                }
+                .order-items {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 16px;
+                    margin-bottom: 24px;
+                }
+                .order-item {
+                    display: flex;
+                    gap: 16px;
+                    align-items: center;
+                }
+                .item-image {
+                    width: 60px;
+                    height: 60px;
+                    flex-shrink: 0;
+                    background: #f9f9f9;
+                    border-radius: 4px;
+                    overflow: hidden;
+                }
+                .item-image img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+                .item-details {
+                    flex: 1;
+                }
+                .item-details h3 {
+                    margin: 0 0 4px 0;
+                    font-size: 0.95rem;
+                    color: #333;
+                    font-weight: 600;
+                }
+                .item-variants {
+                    font-size: 0.8rem;
+                    color: #666;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 2px;
+                }
+                .item-qty-price {
+                    text-align: right;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 4px;
+                }
+                .item-qty-price .qty {
+                    font-size: 0.8rem;
+                    color: #666;
+                }
+                .item-qty-price .price {
+                    font-size: 0.95rem;
+                    font-weight: 600;
+                    color: #333;
+                }
+                .order-totals {
+                    border-top: 1px solid var(--line);
+                    padding-top: 16px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 8px;
+                }
+                .total-row {
+                    display: flex;
+                    justify-content: space-between;
+                    font-size: 0.95rem;
+                    color: #555;
+                }
+                .total-row.grand-total {
+                    margin-top: 8px;
+                    padding-top: 8px;
+                    border-top: 1px dashed var(--line);
+                    font-size: 1.1rem;
+                    font-weight: 700;
+                    color: var(--green);
+                }
+
+                @media (max-width: 600px) {
+                    .confirmation-actions {
+                        flex-direction: column;
+                    }
+                    .confirmation-box {
+                        padding: 20px;
+                    }
+                    .order-summary {
+                        padding: 16px;
+                    }
+                }
             `}</style>
         </>
     );
