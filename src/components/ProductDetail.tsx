@@ -490,6 +490,29 @@ export default function ProductDetail({ initialProduct }: Props) {
 
   const galleryRef = useRef<HTMLDivElement>(null);
   const productDetailRef = useRef<HTMLDivElement>(null);
+  const selectorsRef = useRef<HTMLDivElement>(null);
+  const [showStickyBar, setShowStickyBar] = useState(false);
+  const [bottomSheetOpen, setBottomSheetOpen] = useState(false);
+
+  // Nombre legible del color/talla seleccionados para el resumen de la sticky bar
+  const selectedColorName = colorAttribute?.terms.find(
+    (t: any) => normalizeAttr(t.slug) === normalizeAttr(selectedColor) || normalizeAttr(t.name) === normalizeAttr(selectedColor)
+  )?.name || '';
+  const selectedSizeName = sizeAttribute?.terms.find(
+    (t: any) => normalizeAttr(t.slug) === normalizeAttr(selectedSize) || normalizeAttr(t.name) === normalizeAttr(selectedSize)
+  )?.name || '';
+
+  // IntersectionObserver: mostrar sticky bar cuando los selectores salen del viewport
+  useEffect(() => {
+    const node = selectorsRef.current;
+    if (!node) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setShowStickyBar(!entry.isIntersecting),
+      { threshold: 0 }
+    );
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     setActiveImageIndex(0);
@@ -905,7 +928,7 @@ export default function ProductDetail({ initialProduct }: Props) {
 
               <div className="product-short-description" dangerouslySetInnerHTML={{ __html: product.short_description }} />
 
-              <div className="product-selectors">
+              <div className="product-selectors" ref={selectorsRef}>
                 {colorAttribute && (() => {
                   const terms = colorAttribute.terms;
                   if (terms.length === 0) return null;
@@ -1219,6 +1242,163 @@ export default function ProductDetail({ initialProduct }: Props) {
         </div>
       )}
 
+      {/* ===== STICKY BOTTOM BAR (solo mobile/tablet) ===== */}
+      <div className={`sticky-bottom-bar ${showStickyBar ? 'visible' : ''}`}>
+        <div className="sticky-bar-row">
+          {/* Precio */}
+          <div className="sticky-bar-price">
+            {selectedVariation ? (
+              <>
+                {Number(selectedVariation.regular_price || 0) > Number(selectedVariation.price || 0) && (
+                  <span className="sticky-old-price">{formatPrice(selectedVariation.regular_price)}</span>
+                )}
+                <span className="sticky-sale-price">
+                  {selectedVariation.price && Number(selectedVariation.price) > 0
+                    ? formatPrice(selectedVariation.price)
+                    : formatPrice(product.prices.price)}
+                </span>
+              </>
+            ) : product.on_sale ? (
+              <>
+                {Number(product.prices.regular_price || 0) > Number(product.prices.price || 0) && (
+                  <span className="sticky-old-price">{formatPrice(product.prices.regular_price)}</span>
+                )}
+                <span className="sticky-sale-price">{formatPrice(product.prices.price)}</span>
+              </>
+            ) : (
+              <span className="sticky-sale-price">{formatPrice(product.prices.price)}</span>
+            )}
+          </div>
+
+          {/* Caso A: selección completa → resumen + agregar */}
+          {isSelectionComplete ? (
+            <>
+              <button className="sticky-bar-summary" onClick={() => setBottomSheetOpen(true)}>
+                <span className="sticky-bar-summary-text">
+                  {selectedColorName}{hasSize && selectedSizeName ? ` · ${selectedSizeName}` : ''}
+                </span>
+                <svg className="sticky-bar-edit-icon" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/><path d="m15 5 4 4"/></svg>
+              </button>
+              <button
+                className={`sticky-bar-cart-btn ${isOutOfStock ? 'disabled' : ''}`}
+                onClick={handleAddToCart}
+                disabled={isOutOfStock}
+              >
+                {isOutOfStock ? 'Agotado' : 'Añadir al Carrito'}
+              </button>
+            </>
+          ) : (
+            /* Caso B: falta selección → abrir bottom sheet */
+            <button
+              className="sticky-bar-cart-btn"
+              onClick={() => setBottomSheetOpen(true)}
+            >
+              Elegir Opciones
+            </button>
+          )}
+        </div>
+      </div>
+
+      {/* ===== BOTTOM SHEET (selectores completos) ===== */}
+      {bottomSheetOpen && (
+        <div className="bs-overlay" onClick={() => setBottomSheetOpen(false)}>
+          <div className="bs-sheet" onClick={(e) => e.stopPropagation()}>
+            <div className="bs-handle-bar"><span /></div>
+
+            <div className="bs-header">
+              <h3 className="bs-title">Selecciona tus opciones</h3>
+              <button className="bs-close" onClick={() => setBottomSheetOpen(false)}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
+              </button>
+            </div>
+
+            {/* Precio dentro del bottom sheet */}
+            <div className="bs-price">
+              {selectedVariation ? (
+                <>
+                  {Number(selectedVariation.regular_price || 0) > Number(selectedVariation.price || 0) && (
+                    <span className="bs-old-price">{formatPrice(selectedVariation.regular_price)}</span>
+                  )}
+                  <span className="bs-current-price">
+                    {selectedVariation.price && Number(selectedVariation.price) > 0
+                      ? formatPrice(selectedVariation.price)
+                      : formatPrice(product.prices.price)}
+                  </span>
+                </>
+              ) : (
+                <span className="bs-current-price">{formatPrice(product.prices.price)}</span>
+              )}
+            </div>
+
+            <div className="bs-body">
+              {/* Selector de color completo */}
+              {colorAttribute && colorAttribute.terms.length > 0 && (
+                <div className="bs-selector-group">
+                  <label className="bs-label">Color: <strong>{selectedColorName}</strong></label>
+                  <div className="bs-color-options">
+                    {colorAttribute.terms.map((term: any) => {
+                      const isAvailable = isCombinationAvailable(term.slug, null);
+                      const isSelected = selectedColor && normalizeAttr(selectedColor) === normalizeAttr(term.slug);
+                      return (
+                        <button
+                          key={`bs-c-${term.id}`}
+                          className={`color-dot-btn ${isSelected ? 'active' : ''} ${!isAvailable ? 'out-of-stock' : ''}`}
+                          onClick={() => setSelectedColor(term.slug)}
+                        >
+                          <span className="color-dot" style={{ backgroundColor: getColorCode(term.slug) }}></span>
+                          {!isAvailable && <span className="x-mark">✕</span>}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+
+              {/* Selector de talla completo */}
+              {hasSize && sortedSizeTerms.length > 0 && (
+                <div className="bs-selector-group">
+                  <label className="bs-label">Talla: <strong>{selectedSizeName}</strong></label>
+                  <div className="bs-size-options">
+                    {sortedSizeTerms.map((term) => {
+                      const isAvailable = isCombinationAvailable(selectedColor, term.slug);
+                      const isSelected = selectedSize && normalizeAttr(selectedSize) === normalizeAttr(term.slug);
+                      return (
+                        <button
+                          key={`bs-s-${term.id}`}
+                          className={`size-box-btn ${isSelected ? 'active' : ''} ${!isAvailable ? 'out-of-stock' : ''}`}
+                          onClick={() => isAvailable && setSelectedSize(term.slug)}
+                        >
+                          {term.name}
+                          {!isAvailable && <span className="x-mark" style={{ fontSize: '12px' }}>✕</span>}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Botón agregar dentro del bottom sheet */}
+            <div className="bs-footer">
+              <button
+                className={`bs-add-btn ${(!isSelectionComplete || isOutOfStock) ? 'disabled' : ''}`}
+                onClick={() => {
+                  if (isSelectionComplete && !isOutOfStock) {
+                    handleAddToCart();
+                    setBottomSheetOpen(false);
+                  }
+                }}
+                disabled={!isSelectionComplete || isOutOfStock}
+              >
+                {isOutOfStock ? 'Producto Agotado' :
+                  !isSelectionComplete ? 'Selecciona color y talla' :
+                    'Agregar al Carrito'}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       <style>{`
         .product-detail { background: #fff; width: 100%; }
 
@@ -1276,7 +1456,8 @@ export default function ProductDetail({ initialProduct }: Props) {
         .product-detail-split { display: flex; flex-direction: row; align-items: stretch; }
         .product-gallery-container { width: 50%; position: relative; }
         .product-gallery { display: flex; flex-direction: column; background: #f8f8f8; }
-        .gallery-item img { width: 100%; height: auto; display: block; object-fit: cover; }
+        .gallery-item { aspect-ratio: 1 / 1; overflow: hidden; }
+        .gallery-item img { width: 100%; height: 100%; display: block; object-fit: cover; }
         .gallery-nav { display: none; }
 
         .gallery-dots {
@@ -1581,7 +1762,8 @@ export default function ProductDetail({ initialProduct }: Props) {
           .gallery-item {
             flex: 0 0 100%;
             scroll-snap-align: center;
-            height: 100%;
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
           }
           .gallery-item img {
             height: 100%;
@@ -1824,9 +2006,10 @@ export default function ProductDetail({ initialProduct }: Props) {
         }
 
         .lightbox-img {
-          max-width: 100vw;
-          max-height: 100vh;
-          object-fit: contain;
+          max-width: 90vh;
+          max-height: 90vh;
+          aspect-ratio: 1 / 1;
+          object-fit: cover;
           box-shadow: 0 20px 60px rgba(0,0,0,0.2);
           background: #fff;
           transition: transform 0.2s ease-out;
@@ -1841,8 +2024,10 @@ export default function ProductDetail({ initialProduct }: Props) {
 
         @media (max-width: 768px) {
             .lightbox-img {
-                max-width: 100vw;
-                max-height: 80vh;
+                max-width: 90vw;
+                max-height: 90vw;
+                aspect-ratio: 1 / 1;
+                object-fit: cover;
             }
             .lightbox-nav, .lightbox-zoom-indicator {
                 width: 25px;
@@ -2005,6 +2190,242 @@ export default function ProductDetail({ initialProduct }: Props) {
         @media (max-width: 992px) {
           .related-grid { grid-template-columns: repeat(2, 1fr); }
           .related-products-section { padding: 2rem 0; }
+        }
+
+        /* ===== STICKY BOTTOM BAR ===== */
+        .sticky-bottom-bar {
+          position: fixed;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          z-index: 9999;
+          background: #fff;
+          border-top: 1px solid #eee;
+          box-shadow: 0 -4px 20px rgba(0,0,0,0.08);
+          padding: 10px 16px;
+          padding-bottom: max(10px, env(safe-area-inset-bottom));
+          transform: translateY(100%);
+          transition: transform 250ms ease-out;
+          display: none;
+        }
+        .sticky-bottom-bar.visible {
+          transform: translateY(0);
+        }
+        .sticky-bar-row {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          width: 100%;
+        }
+        .sticky-bar-price {
+          display: flex;
+          flex-direction: column;
+          flex-shrink: 0;
+          line-height: 1.15;
+        }
+        .sticky-old-price {
+          font-size: 0.65rem;
+          color: #999;
+          text-decoration: line-through;
+        }
+        .sticky-sale-price {
+          font-size: 0.95rem;
+          font-weight: 700;
+          color: #121212;
+          white-space: nowrap;
+        }
+        .sticky-bar-summary {
+          flex: 1;
+          min-width: 0;
+          display: flex;
+          align-items: center;
+          gap: 4px;
+          background: none;
+          border: none;
+          padding: 4px 0;
+          cursor: pointer;
+          text-align: left;
+        }
+        .sticky-bar-summary-text {
+          font-size: 0.75rem;
+          color: #333;
+          font-family: var(--font-paragraphs);
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          text-decoration: underline;
+          text-decoration-style: dotted;
+          text-underline-offset: 3px;
+          text-decoration-color: #bbb;
+        }
+        .sticky-bar-edit-icon {
+          flex-shrink: 0;
+          color: #999;
+          transition: color 0.15s;
+        }
+        .sticky-bar-summary:active .sticky-bar-summary-text {
+          color: #121212;
+        }
+        .sticky-bar-summary:active .sticky-bar-edit-icon {
+          color: #121212;
+        }
+        .sticky-bar-cart-btn {
+          flex-shrink: 0;
+          background: #121212;
+          color: #fff;
+          border: none;
+          border-radius: 6px;
+          padding: 10px 18px;
+          font-size: 0.75rem;
+          font-weight: 600;
+          font-family: var(--font-paragraphs);
+          text-transform: uppercase;
+          letter-spacing: 0.3px;
+          cursor: pointer;
+          transition: background 0.2s;
+          white-space: nowrap;
+        }
+        .sticky-bar-cart-btn:active { background: #333; }
+        .sticky-bar-cart-btn.disabled {
+          background: #ccc;
+          cursor: not-allowed;
+        }
+
+        @media (max-width: 992px) {
+          .sticky-bottom-bar { display: block; }
+        }
+
+        /* ===== BOTTOM SHEET ===== */
+        .bs-overlay {
+          position: fixed;
+          inset: 0;
+          z-index: 10000;
+          background: rgba(0,0,0,0.45);
+          animation: bsOverlayIn 200ms ease-out;
+        }
+        @keyframes bsOverlayIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+        .bs-sheet {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background: #fff;
+          border-radius: 16px 16px 0 0;
+          max-height: 70vh;
+          display: flex;
+          flex-direction: column;
+          animation: bsSlideUp 300ms cubic-bezier(0.32, 0.72, 0, 1);
+          padding-bottom: max(16px, env(safe-area-inset-bottom));
+        }
+        @keyframes bsSlideUp {
+          from { transform: translateY(100%); }
+          to { transform: translateY(0); }
+        }
+        .bs-handle-bar {
+          display: flex;
+          justify-content: center;
+          padding: 10px 0 4px;
+        }
+        .bs-handle-bar span {
+          width: 36px;
+          height: 4px;
+          border-radius: 2px;
+          background: #ddd;
+        }
+        .bs-header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 0 20px 12px;
+          border-bottom: 1px solid #f0f0f0;
+        }
+        .bs-title {
+          font-size: 1rem;
+          font-weight: 600;
+          color: #121212;
+          font-family: var(--font-paragraphs);
+          margin: 0;
+        }
+        .bs-close {
+          background: none;
+          border: none;
+          cursor: pointer;
+          padding: 4px;
+          color: #666;
+          display: flex;
+          align-items: center;
+        }
+        .bs-close:hover { color: #121212; }
+        .bs-price {
+          padding: 12px 20px 0;
+          display: flex;
+          align-items: baseline;
+          gap: 8px;
+        }
+        .bs-old-price {
+          font-size: 0.85rem;
+          color: #999;
+          text-decoration: line-through;
+        }
+        .bs-current-price {
+          font-size: 1.15rem;
+          font-weight: 700;
+          color: #121212;
+        }
+        .bs-body {
+          padding: 16px 20px;
+          overflow-y: auto;
+          flex: 1;
+        }
+        .bs-selector-group {
+          margin-bottom: 20px;
+        }
+        .bs-selector-group:last-child {
+          margin-bottom: 0;
+        }
+        .bs-label {
+          display: block;
+          font-size: 0.8rem;
+          color: #555;
+          margin-bottom: 10px;
+          font-family: var(--font-paragraphs);
+        }
+        .bs-color-options {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 8px;
+        }
+        .bs-size-options {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 8px;
+        }
+        .bs-footer {
+          padding: 12px 20px 0;
+          border-top: 1px solid #f0f0f0;
+        }
+        .bs-add-btn {
+          width: 100%;
+          background: #121212;
+          color: #fff;
+          border: none;
+          border-radius: 8px;
+          padding: 14px;
+          font-size: 0.85rem;
+          font-weight: 600;
+          font-family: var(--font-paragraphs);
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+          cursor: pointer;
+          transition: background 0.2s;
+        }
+        .bs-add-btn:active { background: #333; }
+        .bs-add-btn.disabled {
+          background: #ccc;
+          cursor: not-allowed;
         }
       `}</style>
     </div>

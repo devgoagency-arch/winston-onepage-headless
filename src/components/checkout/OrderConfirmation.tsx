@@ -46,20 +46,10 @@ export default function OrderConfirmation() {
     }, []);
 
     function dispatchWhenReady(order: any) {
-        // ✅ Detectar gtag() en lugar de dataLayer.length
-        // gtag es el proxy que Partytown expone en el thread principal
-        if (typeof (window as any).gtag === 'function') {
-            fireTrackingEvents(order);
-        } else {
-            let attempts = 0;
-            const interval = setInterval(() => {
-                attempts++;
-                if (typeof (window as any).gtag === 'function' || attempts >= 8) {
-                    clearInterval(interval);
-                    fireTrackingEvents(order);
-                }
-            }, 600);
-        }
+        // Al empujar directamente al dataLayer (que es un array normal antes de que GTM cargue),
+        // no necesitamos esperar a que GTM ni Partytown estén listos. GTM procesará 
+        // la cola automáticamente en cuanto se inicialice.
+        fireTrackingEvents(order);
     }
 
     // Extraer la lógica de tracking a una función separada para reutilizarla
@@ -81,10 +71,16 @@ export default function OrderConfirmation() {
             items: orderItems 
         });
 
-        // ✅ Usar gtag() directamente en lugar de dataLayer.push
-        // gtag() cruza correctamente la barrera del Web Worker de Partytown
-        if (typeof (window as any).gtag === 'function') {
-            (window as any).gtag('event', 'purchase', {
+        // Aseguramos que el objeto dataLayer exista
+        (window as any).dataLayer = (window as any).dataLayer || [];
+
+        // 1. Limpiar objeto ecommerce previo para evitar variables fantasma
+        (window as any).dataLayer.push({ ecommerce: null });
+
+        // 2. Empujar el evento con formato GA4 estricto para GTM
+        (window as any).dataLayer.push({
+            event: 'purchase',
+            ecommerce: {
                 transaction_id: String(order.id),
                 currency: 'COP',
                 value: orderTotal,
@@ -94,24 +90,8 @@ export default function OrderConfirmation() {
                     price: parseColPrice(item.price || item.total),
                     quantity: item.quantity
                 }))
-            });
-        } else {
-            // Fallback por si gtag no cargó
-            (window as any).dataLayer = (window as any).dataLayer || [];
-            (window as any).dataLayer.push({ ecommerce: null });
-            (window as any).dataLayer.push({
-                event: 'purchase',
-                transaction_id: String(order.id),
-                currency: 'COP',
-                value: orderTotal,
-                items: orderItems.map((item: any) => ({
-                    item_id: String(item.id),
-                    item_name: item.name,
-                    price: parseColPrice(item.price || item.total),
-                    quantity: item.quantity
-                }))
-            });
-        }
+            }
+        });
 
         // Meta Pixel
         trackMetaEvent('Purchase', {

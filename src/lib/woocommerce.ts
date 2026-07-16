@@ -1269,8 +1269,8 @@ export async function getAllProducts(
         if (onSale) storeParams.append('on_sale', 'true');
         if (maxPrice) storeParams.append('max_price', maxPrice);
 
-        const storeUrl = `${PUBLIC_WP_URL}/wp-json/wc/store/v1/products?${storeParams.toString()}&stock_status=instock`;
-        const storeRes = await fetch(storeUrl);
+        const storeUrl = `${PUBLIC_WP_URL}/wp-json/wc/store/v1/products?${storeParams.toString()}&stock_status=instock&_cb=${Date.now()}`;
+        const storeRes = await fetch(storeUrl, { headers: { 'Cache-Control': 'no-cache' } });
 
         if (storeRes.ok) {
             const data = await storeRes.json();

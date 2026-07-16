@@ -108,7 +108,7 @@ export default defineConfig({
         if (page.includes('undefined') || page.includes('null') || page.includes('[object')) return false;
         if (page.includes('?')) return false;
 
-        const excludedPatterns = ['/wp-json/', '/wp-admin/', '/wp-content/', '/xmlrpc', '/api/', '/carrito', '/checkout', '/cart/', '/mi-cuenta', '/my-account/', '/login', '/lost-password', '/edit-account', '/recuperar-password', '/lista-de-deseos', '/404', '/gracias', '/menu-test', '/buscar', '/tienda', 'uncategorized', 'sin-categorizar', ...EXCLUDED_SLUGS.map(slug => `/${slug}`)];
+        const excludedPatterns = ['/wp-json/', '/wp-admin/', '/wp-content/', '/xmlrpc', '/api/', '/carrito', '/checkout', '/cart/', '/mi-cuenta', '/my-account/', '/login', '/lost-password', '/edit-account', '/recuperar-password', '/lista-de-deseos', '/404', '/gracias', '/menu-test', '/buscar', '/tienda', 'uncategorized', 'sin-categorizar', '/productos/test', ...EXCLUDED_SLUGS.map(slug => `/${slug}`)];
 
         if (excludedPatterns.some(pattern => page.includes(pattern))) {
           return false;

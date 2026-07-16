@@ -44,6 +44,12 @@ export async function getStaticPaths() {
 
     console.log(`[SSG Total] Encontrados ${allProducts.length} productos. Pre-generando JSONs de variaciones y detalles...`);
 
+    // Inyección forzada del producto de prueba para que siempre tenga URL generada
+    // incluso si en WooCommerce lo marcan como "Oculto" (Visibilidad de catálogo: Oculto)
+    if (!allProducts.some(p => p.slug === 'test')) {
+        allProducts.push({ slug: 'test' });
+    }
+
     // 2. Pre-generar los archivos JSON de detalle para cada producto (CON CONCURRENCIA CONTROLADA A 5 EN PARALELO Y DESCANSO DE 200ms)
     const CONCURRENCY = 5;
     const chunks: any[][] = [];

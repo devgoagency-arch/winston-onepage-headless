@@ -290,8 +290,8 @@
       "type": "variation",
       "date_created": "2023-06-08T16:36:21",
       "date_created_gmt": "2023-06-08T16:36:21",
-      "date_modified": "2026-05-08T21:47:00",
-      "date_modified_gmt": "2026-05-08T21:47:00",
+      "date_modified": "2026-07-15T22:15:24",
+      "date_modified_gmt": "2026-07-15T22:15:24",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/techcase/?attribute_pa_selecciona-el-color=cafe",
       "sku": "15150304000",
@@ -314,7 +314,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 2,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -938,6 +938,11 @@
           "id": 2313195,
           "key": "wpcvi_images",
           "value": "59600,59601,59602,59603,59604,59605,59606,59607"
+        },
+        {
+          "id": 2389616,
+          "key": "_wc_push_notification_sent_low_stock",
+          "value": "1784153786"
         }
       ],
       "name": "Café",
