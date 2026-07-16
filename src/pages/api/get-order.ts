@@ -1,12 +1,14 @@
 // src/pages/api/get-order.ts
+export const prerender = false;
 import type { APIRoute } from 'astro';
 
 const WC_URL = import.meta.env.WC_URL || 'https://tienda.winstonandharrystore.com';
 const WC_KEY = import.meta.env.WC_CONSUMER_KEY;
 const WC_SECRET = import.meta.env.WC_CONSUMER_SECRET;
 
-export const GET: APIRoute = async ({ url }) => {
-    const orderId = url.searchParams.get('id');
+export const GET: APIRoute = async ({ url, request }) => {
+    console.log('API get-order URL:', url.href, 'Request URL:', request.url);
+    const orderId = url.searchParams.get('id') || new URL(request.url).searchParams.get('id');
 
     if (!orderId || isNaN(Number(orderId))) {
         return new Response(JSON.stringify({ error: 'Invalid order ID' }), { status: 400 });
