@@ -37,7 +37,13 @@ export default function OrderConfirmation() {
                     .then(orderData => {
                         if (orderData?.id) {
                             setOrder(orderData);
-                            dispatchWhenReady(orderData);
+                            // Validar estado contra el backend para evitar trackear rechazos o abandonos
+                            const validStatuses = ['processing', 'completed', 'on-hold'];
+                            if (validStatuses.includes(orderData.status)) {
+                                dispatchWhenReady(orderData);
+                            } else {
+                                console.log('[GA4 Purchase Debug] Compra no trackeada debido a estado:', orderData.status);
+                            }
                         }
                     })
                     .catch(err => console.error('Error fetching order for tracking:', err));
