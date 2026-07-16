@@ -26,6 +26,33 @@ export const GET: APIRoute = async ({ url, request }) => {
 
         const wcOrder = await res.json();
 
+        // Obtener IDs de productos que no trajeron imagen en la orden
+        const productIds = wcOrder.line_items
+            ?.filter((item: any) => !item.image?.src)
+            ?.map((item: any) => item.product_id)
+            ?.filter(Boolean) || [];
+
+        let productImages: Record<string, string> = {};
+        
+        if (productIds.length > 0) {
+            try {
+                // Consultar WooCommerce para traer las imágenes en un solo llamado
+                const resProducts = await fetch(`${WC_URL}/wp-json/wc/v3/products?include=${productIds.join(',')}&_fields=id,images`, {
+                    headers: { Authorization: `Basic ${credentials}` }
+                });
+                if (resProducts.ok) {
+                    const productsData = await resProducts.json();
+                    productsData.forEach((p: any) => {
+                        if (p.images && p.images.length > 0) {
+                            productImages[p.id] = p.images[0].src;
+                        }
+                    });
+                }
+            } catch (e) {
+                console.error("Error fetching product images for order:", e);
+            }
+        }
+
         // Devolver campos necesarios para tracking y para el UI del resumen
         return new Response(JSON.stringify({
             id: wcOrder.id,
@@ -40,7 +67,7 @@ export const GET: APIRoute = async ({ url, request }) => {
                 name: item.name,
                 price: parseFloat(item.total || item.price) + parseFloat(item.total_tax || '0'),
                 quantity: item.quantity,
-                image: item.image?.src || '',
+                image: item.image?.src || productImages[item.product_id] || '',
                 attributes: item.meta_data?.map((m: any) => ({
                     key: m.display_key || m.key,
                     value: m.display_value || m.value
