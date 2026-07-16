@@ -43,18 +43,21 @@ export default function OrderConfirmation() {
             // Leer order_id del query param que viene de Mercado Pago
             const params = new URLSearchParams(window.location.search);
             const orderId = params.get('order_id') || params.get('external_reference');
-            if (orderId && !sessionStorage.getItem('tracked_order_' + orderId)) {
+            if (orderId) {
                 fetch(`/api/get-order?id=${orderId}`)
                     .then(r => r.json())
                     .then(orderData => {
                         if (orderData?.id) {
-                            setOrder(orderData);
-                            // Validar estado contra el backend para evitar trackear rechazos o abandonos
-                            const validStatuses = ['processing', 'completed', 'on-hold'];
-                            if (validStatuses.includes(orderData.status)) {
-                                dispatchWhenReady(orderData);
-                            } else {
-                                console.log('[GA4 Purchase Debug] Compra no trackeada debido a estado:', orderData.status);
+                            setOrder(orderData); // Siempre settear la orden para que el resumen visual funcione
+                            
+                            // Validar si ya se trackeó antes de disparar el evento
+                            if (!sessionStorage.getItem('tracked_order_' + orderId)) {
+                                const validStatuses = ['processing', 'completed', 'on-hold'];
+                                if (validStatuses.includes(orderData.status)) {
+                                    dispatchWhenReady(orderData);
+                                } else {
+                                    console.log('[GA4 Purchase Debug] Compra no trackeada debido a estado:', orderData.status);
+                                }
                             }
                         }
                     })
