@@ -38,7 +38,7 @@ export const GET: APIRoute = async ({ url, request }) => {
             items: wcOrder.line_items?.map((item: any) => ({
                 id: item.product_id,
                 name: item.name,
-                price: parseFloat(item.price || item.total),
+                price: parseFloat(item.total || item.price) + parseFloat(item.total_tax || '0'),
                 quantity: item.quantity,
                 image: item.image?.src || '',
                 attributes: item.meta_data?.map((m: any) => ({

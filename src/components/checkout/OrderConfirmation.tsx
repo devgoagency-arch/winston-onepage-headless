@@ -198,7 +198,7 @@ export default function OrderConfirmation() {
                                 )}
                                 {order.total_tax !== undefined && parseColPrice(order.total_tax) > 0 && (
                                     <div className="total-row">
-                                        <span>Impuestos:</span>
+                                        <span>Incluye Impuestos:</span>
                                         <span>${parseColPrice(order.total_tax).toLocaleString('es-CO')}</span>
                                     </div>
                                 )}
@@ -232,7 +232,7 @@ export default function OrderConfirmation() {
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    padding: 60px 20px;
+                    padding: 140px 20px 60px;
                     font-family: var(--font-paragraphs, sans-serif);
                 }
                 .confirmation-box {
