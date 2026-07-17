@@ -17,10 +17,24 @@ const OrderHistory: React.FC = () => {
                     setLoading(false);
                 })
                 .catch(() => setLoading(false));
+        } else {
+            const timer = setTimeout(() => {
+                setLoading(false);
+            }, 500);
+            return () => clearTimeout(timer);
         }
     }, [session.id]);
 
-    if (loading) return <div className="loading-dots">Cargando tus pedidos...</div>;
+    if (loading) return <div className="loading-dots" style={{ padding: '4rem', textAlign: 'center' }}>Cargando tus pedidos...</div>;
+
+    if (!session.id) {
+        return (
+            <div className="empty-orders">
+                <p>Debes iniciar sesión para ver el historial de tus pedidos.</p>
+                <a href="/mi-cuenta" className="btn" style={{ marginTop: '2rem', display: 'inline-block' }}>Iniciar sesión</a>
+            </div>
+        );
+    }
 
     if (orders.length === 0) {
         return (
