@@ -70,10 +70,15 @@ export const GET: APIRoute = async ({ url, request }) => {
                 image: item.image?.src || productImages[item.product_id] || '',
                 attributes: item.meta_data
                     ?.filter((m: any) => m.key && !m.key.startsWith('_'))
-                    ?.map((m: any) => ({
-                        key: m.display_key || m.key,
-                        value: m.display_value || m.value
-                    })) || []
+                    ?.map((m: any) => {
+                        let cleanKey = m.display_key || m.key;
+                        // Eliminar frases como "Selecciona una ", "Selecciona el ", etc.
+                        cleanKey = cleanKey.replace(/^Selecciona (el |la |un |una )?/i, '').trim();
+                        return {
+                            key: cleanKey,
+                            value: m.display_value || m.value
+                        };
+                    }) || []
             })) || []
         }), {
             status: 200,
