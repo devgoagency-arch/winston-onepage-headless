@@ -68,10 +68,12 @@ export const GET: APIRoute = async ({ url, request }) => {
                 price: parseFloat(item.total || item.price) + parseFloat(item.total_tax || '0'),
                 quantity: item.quantity,
                 image: item.image?.src || productImages[item.product_id] || '',
-                attributes: item.meta_data?.map((m: any) => ({
-                    key: m.display_key || m.key,
-                    value: m.display_value || m.value
-                })) || []
+                attributes: item.meta_data
+                    ?.filter((m: any) => m.key && !m.key.startsWith('_'))
+                    ?.map((m: any) => ({
+                        key: m.display_key || m.key,
+                        value: m.display_value || m.value
+                    })) || []
             })) || []
         }), {
             status: 200,
