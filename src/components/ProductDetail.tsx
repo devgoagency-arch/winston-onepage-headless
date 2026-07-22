@@ -16,6 +16,17 @@ function normalizeAttr(str: any): string {
     .replace(/[^a-z0-9]/g, '');      // Quitar todo lo no alfanumérico
 }
 
+// Función para obtener el nombre base de una imagen de WordPress ignorando sufijos de edición o escalado
+function getBaseImageName(url: string): string {
+  if (!url) return '';
+  let name = url.split('/').pop() || '';
+  name = name.split('?')[0];
+  name = name.replace(/-e\d+/i, ''); // Sufijo de edición de WP (ej: -e16345678)
+  name = name.replace(/-scaled/i, ''); // Sufijo de escalado
+  name = name.replace(/-\d+x\d+/i, ''); // Dimensiones (ej: -150x150)
+  return name.toLowerCase();
+}
+
 interface Product {
   id: number;
   name: string;
@@ -806,7 +817,9 @@ export default function ProductDetail({ initialProduct }: Props) {
               }
 
               // Evitamos duplicados si la imagen ya está en las iniciales de WooCommerce
-              const alreadyExists = filteredImages.some(img => img.src && (img.src === guessedSrc || img.src.includes(guessedSrc.split('/').pop() || '')));
+              const guessedBase = getBaseImageName(guessedSrc);
+              const alreadyExists = filteredImages.some(img => getBaseImageName(img.src) === guessedBase);
+              
               if (alreadyExists) return null;
 
               return (
