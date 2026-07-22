@@ -380,45 +380,6 @@ export default function ProductDetail({ initialProduct }: Props) {
   const [lightboxIndex, setLightboxIndex] = useState(0);
   const [isZoomed, setIsZoomed] = useState(false);
   const [zoomPosition, setZoomPosition] = useState({ x: 50, y: 50 });
-  const [verifiedGuessedImages, setVerifiedGuessedImages] = useState<string[]>([]);
-
-  // Reset verified images when color changes
-  useEffect(() => {
-    setVerifiedGuessedImages([]);
-  }, [selectedColor, product.name]);
-
-  const handleGuessedImageLoad = (src: string) => {
-    setVerifiedGuessedImages(prev => {
-      if (prev.includes(src)) return prev;
-      return [...prev, src];
-    });
-  };
-
-  // Rango máximo de fotos adicionales que intentaremos adivinar de WooCommerce
-  const GUESSED_PHOTO_RANGE = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-
-  const galleryDOMImages = useMemo(() => {
-    // Base images
-    const images = filteredImages.map(img => ({ src: img.src, alt: img.alt || currentProduct.name }));
-
-    // Append Verified Guessed images IN ORDER
-    GUESSED_PHOTO_RANGE.forEach(num => {
-      const match = verifiedGuessedImages.find(src => {
-        const m = src.match(/[-_](\d+)(?:-e\d+)?\.(jpg|jpeg|png|webp)$/i);
-        return m && parseInt(m[1], 10) === num;
-      });
-
-      if (match) {
-        const exists = images.some(img => img.src === match);
-        if (!exists) {
-          images.push({ src: match, alt: `${currentProduct.name} vista ${num}` });
-        }
-      }
-    });
-
-    return images;
-  }, [filteredImages, verifiedGuessedImages, currentProduct.name]);
-
   // Reset index when color changes
   useEffect(() => {
     setActiveImageIndex(0);
@@ -430,10 +391,9 @@ export default function ProductDetail({ initialProduct }: Props) {
     }
   }, [selectedColor]);
 
-  // Función dinámica encargada de contar las fotos disponibles (WooCommerce + Cargadas)
-  // Esta es la función que solicitaste para calcular dinámicamente cuántos puntos mostrar.
+  // Función para contar fotos disponibles
   const getGalleryCount = () => {
-    return galleryDOMImages.length;
+    return filteredImages.length;
   };
 
   const openLightbox = (index: number) => {
@@ -461,7 +421,7 @@ export default function ProductDetail({ initialProduct }: Props) {
     if (isZoomed) {
       setIsZoomed(false); // Reset zoom on slide change
     }
-    setLightboxIndex((prev) => (prev - 1 + galleryDOMImages.length) % galleryDOMImages.length);
+    setLightboxIndex((prev) => (prev - 1 + filteredImages.length) % filteredImages.length);
   };
 
   const toggleZoom = (e: React.MouseEvent) => {
@@ -534,12 +494,12 @@ export default function ProductDetail({ initialProduct }: Props) {
   };
 
   const nextSlide = () => {
-    const nextIndex = (activeImageIndex + 1) % galleryDOMImages.length;
+    const nextIndex = (activeImageIndex + 1) % filteredImages.length;
     slideTo(nextIndex);
   };
 
   const prevSlide = () => {
-    const prevIndex = (activeImageIndex - 1 + galleryDOMImages.length) % galleryDOMImages.length;
+    const prevIndex = (activeImageIndex - 1 + filteredImages.length) % filteredImages.length;
     slideTo(prevIndex);
   };
 
@@ -787,66 +747,6 @@ export default function ProductDetail({ initialProduct }: Props) {
                 </picture>
               </div>
             ))}
-
-            {/* Smart Gallery Expansion: Intentamos completar la galería dinámicamente */}
-            {GUESSED_PHOTO_RANGE.map(num => {
-              const firstImg = filteredImages[0];
-              if (!firstImg?.src) return null;
-
-              // 2. Intento de adivinar el nombre de la foto (WooCommerce suele usar sufijos numéricos)
-              const match1 = firstImg.src.match(/([-_])1(?:-e\d+)?(\.(?:jpg|jpeg|png|webp))$/i);
-              let guessedSrc = "";
-
-              if (match1) {
-                // Si la primera imagen termina en -1, reemplazamos por -num
-                guessedSrc = firstImg.src.replace(/([-_])1(?:-e\d+)?(\.(?:jpg|jpeg|png|webp))$/i, `$1${num}$2`);
-              } else {
-                // Si no tiene el sufijo -1, intentamos inyectar el número antes de la extensión (ej: camisa.jpg -> camisa-2.jpg)
-                guessedSrc = firstImg.src.replace(/(\.(?:jpg|jpeg|png|webp))$/i, `-${num}$1`);
-              }
-
-              // Evitamos duplicados si la imagen ya está en las iniciales de WooCommerce
-              const alreadyExists = filteredImages.some(img => img.src && (img.src === guessedSrc || img.src.includes(guessedSrc.split('/').pop() || '')));
-              if (alreadyExists) return null;
-
-              return (
-                <div key={`guessed-${num}`} className="gallery-item">
-                  <picture>
-                    <img
-                      src={getOptimizedUrl(guessedSrc, { width: 1200 })}
-                      srcSet={getImageSrcSet(guessedSrc, [600, 900, 1200])}
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                      alt={`${product.name} vista ${num}`}
-                      className="reveal-on-scroll is-visible cursor-zoom"
-                      loading="lazy"
-                      decoding="async"
-                      onClick={() => {
-                        const verifiedIndex = verifiedGuessedImages.indexOf(guessedSrc);
-                        if (verifiedIndex !== -1) {
-                          openLightbox(filteredImages.length + verifiedIndex);
-                        }
-                      }}
-                      onLoad={() => handleGuessedImageLoad(guessedSrc)}
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        const currentSrc = target.getAttribute('src') || '';
-
-                        // Si falló el optimizado, intentar con el original (para que onLoad/onError funcione)
-                        if (currentSrc.includes('/_image')) {
-                          target.src = guessedSrc;
-                          target.removeAttribute('srcset');
-                          return;
-                        }
-
-                        // Si la foto no existe en WooCommerce, ocultamos este slide
-                        const container = target.closest('.gallery-item') as HTMLElement;
-                        if (container) container.style.display = 'none';
-                      }}
-                    />
-                  </picture>
-                </div>
-              );
-            })}
           </div>
 
           {getGalleryCount() > 1 && (
@@ -1182,12 +1082,12 @@ export default function ProductDetail({ initialProduct }: Props) {
               className="lightbox-slider"
               style={{ transform: `translateX(-${lightboxIndex * 100}%)` }}
             >
-              {galleryDOMImages.map((img, i) => (
+              {filteredImages.map((img, i) => (
                 <div key={i} className="lightbox-slide">
                   <div className="lightbox-image-wrapper" onMouseMove={handleMouseMove} onTouchMove={handleTouchMove}>
                     <img
                       src={img.src}
-                      alt={img.alt}
+                      alt={img.alt || product.name}
                       className={`lightbox-img ${isZoomed && lightboxIndex === i ? 'zoomed' : ''}`}
                       style={isZoomed && lightboxIndex === i ? { transformOrigin: `${zoomPosition.x}% ${zoomPosition.y}%`, transform: 'scale(2)' } : {}}
                       onDragStart={(e) => e.preventDefault()}
