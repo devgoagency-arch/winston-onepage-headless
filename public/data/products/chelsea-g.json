@@ -467,35 +467,6 @@
       "price": "701250",
       "regular_price": "825000",
       "sale_price": ""
-    },
-    {
-      "id": 30085,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "arena",
-          "option": "arena"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "37",
-          "option": "37"
-        }
-      ],
-      "image": {
-        "id": 33108,
-        "date_created": "2024-02-06T15:49:35",
-        "date_created_gmt": "2024-02-06T15:49:35",
-        "date_modified": "2024-04-26T03:46:53",
-        "date_modified_gmt": "2024-04-26T03:46:53",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Chelsea-bota-cuero-nobuck-beige-winstonandharry-7.jpg",
-        "name": "Chelsea-bota-cuero-nobuck-beige-winstonandharry-7",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "701250",
-      "regular_price": "825000",
-      "sale_price": ""
     }
   ],
   "grouped_products": [],
@@ -11338,8 +11309,8 @@
       "type": "variation",
       "date_created": "2023-06-21T20:08:45",
       "date_created_gmt": "2023-06-21T20:08:45",
-      "date_modified": "2026-05-08T21:40:24",
-      "date_modified_gmt": "2026-05-08T21:40:24",
+      "date_modified": "2026-07-16T22:41:15",
+      "date_modified_gmt": "2026-07-16T22:41:15",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/chelsea-g/?attribute_pa_selecciona-el-color=arena&attribute_pa_selecciona-una-talla=37",
       "sku": "7116706037",
@@ -11362,8 +11333,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -11922,7 +11893,7 @@
         {
           "id": 2260570,
           "key": "_last_change_time",
-          "value": "1778275691"
+          "value": "1784241675"
         },
         {
           "id": 2312934,
@@ -22078,44 +22049,6 @@
         "alt": "Chelsea G"
       }
     ],
-    "arena": [
-      {
-        "id": 33108,
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Chelsea-bota-cuero-nobuck-beige-winstonandharry-7.jpg",
-        "alt": "Chelsea-bota-cuero-nobuck-beige-winstonandharry-7",
-        "name": "Chelsea-bota-cuero-nobuck-beige-winstonandharry-7"
-      },
-      {
-        "id": 33102,
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Chelsea-bota-cuero-nobuck-beige-winstonandharry-1.jpg",
-        "alt": "Chelsea G"
-      },
-      {
-        "id": 33103,
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Chelsea-bota-cuero-nobuck-beige-winstonandharry-2.jpg",
-        "alt": "Chelsea G"
-      },
-      {
-        "id": 33107,
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Chelsea-bota-cuero-nobuck-beige-winstonandharry-6.jpg",
-        "alt": "Chelsea G"
-      },
-      {
-        "id": 33105,
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Chelsea-bota-cuero-nobuck-beige-winstonandharry-4.jpg",
-        "alt": "Chelsea G"
-      },
-      {
-        "id": 33104,
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Chelsea-bota-cuero-nobuck-beige-winstonandharry-3.jpg",
-        "alt": "Chelsea G"
-      },
-      {
-        "id": 33106,
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Chelsea-bota-cuero-nobuck-beige-winstonandharry-5.jpg",
-        "alt": "Chelsea G"
-      }
-    ],
     "café": [
       {
         "id": 33109,
@@ -22145,6 +22078,38 @@
       {
         "id": 33113,
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Chelsea-bota-cuero-nobuck-cafe-winstonandharry-12.jpg",
+        "alt": "Chelsea G"
+      }
+    ],
+    "arena": [
+      {
+        "id": 33102,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Chelsea-bota-cuero-nobuck-beige-winstonandharry-1.jpg",
+        "alt": "Chelsea G"
+      },
+      {
+        "id": 33103,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Chelsea-bota-cuero-nobuck-beige-winstonandharry-2.jpg",
+        "alt": "Chelsea G"
+      },
+      {
+        "id": 33107,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Chelsea-bota-cuero-nobuck-beige-winstonandharry-6.jpg",
+        "alt": "Chelsea G"
+      },
+      {
+        "id": 33105,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Chelsea-bota-cuero-nobuck-beige-winstonandharry-4.jpg",
+        "alt": "Chelsea G"
+      },
+      {
+        "id": 33104,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Chelsea-bota-cuero-nobuck-beige-winstonandharry-3.jpg",
+        "alt": "Chelsea G"
+      },
+      {
+        "id": 33106,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Chelsea-bota-cuero-nobuck-beige-winstonandharry-5.jpg",
         "alt": "Chelsea G"
       }
     ]

@@ -14,10 +14,7 @@
     "price": "245000",
     "regular_price": "245000",
     "sale_price": "245000",
-    "price_range": {
-      "min_amount": "245000",
-      "max_amount": "790000"
-    },
+    "price_range": null,
     "currency_code": "COP",
     "currency_symbol": "$",
     "currency_minor_unit": 0,
@@ -26,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\" aria-hidden=\"true\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>245,000</span> <span aria-hidden=\"true\">&ndash;</span> <span class=\"woocommerce-Price-amount amount\" aria-hidden=\"true\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>790,000</span><span class=\"screen-reader-text\">Price range: &#036;245,000 through &#036;790,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>245,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -213,35 +210,6 @@
       "sale_price": ""
     },
     {
-      "id": 62558,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "naranja",
-          "option": "naranja"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "xs",
-          "option": "xs"
-        }
-      ],
-      "image": {
-        "id": 62995,
-        "date_created": "2025-04-25T23:38:40",
-        "date_created_gmt": "2025-04-25T23:38:40",
-        "date_modified": "2025-04-26T03:23:20",
-        "date_modified_gmt": "2025-04-26T03:23:20",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/04/Sueter-tejido-escalera-naranja-winstonandharry-1-e1750284442271.jpg",
-        "name": "Sueter-tejido-escalera-naranja-winstonandharry-1",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "245000",
-      "regular_price": "245000",
-      "sale_price": ""
-    },
-    {
       "id": 62559,
       "attributes": [
         {
@@ -253,35 +221,6 @@
           "name": "Selecciona una Talla",
           "value": "xl",
           "option": "xl"
-        }
-      ],
-      "image": {
-        "id": 62995,
-        "date_created": "2025-04-25T23:38:40",
-        "date_created_gmt": "2025-04-25T23:38:40",
-        "date_modified": "2025-04-26T03:23:20",
-        "date_modified_gmt": "2025-04-26T03:23:20",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/04/Sueter-tejido-escalera-naranja-winstonandharry-1-e1750284442271.jpg",
-        "name": "Sueter-tejido-escalera-naranja-winstonandharry-1",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "245000",
-      "regular_price": "245000",
-      "sale_price": ""
-    },
-    {
-      "id": 62560,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "naranja",
-          "option": "naranja"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "xxl",
-          "option": "xxl"
         }
       ],
       "image": {
@@ -365,8 +304,8 @@
       "type": "variation",
       "date_created": "2025-04-22T23:35:16",
       "date_created_gmt": "2025-04-22T23:35:16",
-      "date_modified": "2026-05-07T23:14:27",
-      "date_modified_gmt": "2026-05-07T23:14:27",
+      "date_modified": "2026-07-16T22:43:11",
+      "date_modified_gmt": "2026-07-16T22:43:11",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/sueter-tejido-escalera-naranja/?attribute_pa_selecciona-el-color=naranja&attribute_pa_selecciona-una-talla=xxl",
       "sku": "6060121040",
@@ -389,8 +328,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -1088,7 +1027,7 @@
         {
           "id": 2259210,
           "key": "_last_change_time",
-          "value": "1778195667"
+          "value": "1784241791"
         },
         {
           "id": 2311538,
@@ -1130,8 +1069,8 @@
       "type": "variation",
       "date_created": "2025-04-22T23:35:16",
       "date_created_gmt": "2025-04-22T23:35:16",
-      "date_modified": "2026-07-03T17:22:30",
-      "date_modified_gmt": "2026-07-03T17:22:30",
+      "date_modified": "2026-07-16T22:43:11",
+      "date_modified_gmt": "2026-07-16T22:43:11",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/sueter-tejido-escalera-naranja/?attribute_pa_selecciona-el-color=naranja&attribute_pa_selecciona-una-talla=xl",
       "sku": "6060121038",
@@ -1154,7 +1093,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 4,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -1853,7 +1792,7 @@
         {
           "id": 2219041,
           "key": "_last_change_time",
-          "value": "1783099350"
+          "value": "1784241791"
         },
         {
           "id": 2311537,
@@ -1895,8 +1834,8 @@
       "type": "variation",
       "date_created": "2025-04-22T23:35:16",
       "date_created_gmt": "2025-04-22T23:35:16",
-      "date_modified": "2026-05-07T23:14:27",
-      "date_modified_gmt": "2026-05-07T23:14:27",
+      "date_modified": "2026-07-16T22:43:11",
+      "date_modified_gmt": "2026-07-16T22:43:11",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/sueter-tejido-escalera-naranja/?attribute_pa_selecciona-el-color=naranja&attribute_pa_selecciona-una-talla=xs",
       "sku": "6060121030",
@@ -1919,8 +1858,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -2618,7 +2557,7 @@
         {
           "id": 2259201,
           "key": "_last_change_time",
-          "value": "1778195667"
+          "value": "1784241791"
         },
         {
           "id": 2311542,

@@ -186,35 +186,6 @@
       "sale_price": ""
     },
     {
-      "id": 67039,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "cafe",
-          "option": "cafe"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "xs",
-          "option": "xs"
-        }
-      ],
-      "image": {
-        "id": 67168,
-        "date_created": "2025-08-20T07:48:20",
-        "date_created_gmt": "2025-08-20T07:48:20",
-        "date_modified": "2025-11-04T17:23:08",
-        "date_modified_gmt": "2025-11-04T17:23:08",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Los-Angeles-Cafe-Winstonandharry-5-e1755677056788.jpg",
-        "name": "Los Angeles-Café-Winstonandharry-5",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "1600000",
-      "regular_price": "1600000",
-      "sale_price": ""
-    },
-    {
       "id": 67040,
       "attributes": [
         {
@@ -338,8 +309,8 @@
       "type": "variation",
       "date_created": "2025-08-14T17:08:14",
       "date_created_gmt": "2025-08-14T17:08:14",
-      "date_modified": "2026-05-07T23:01:14",
-      "date_modified_gmt": "2026-05-07T23:01:14",
+      "date_modified": "2026-07-16T22:44:11",
+      "date_modified_gmt": "2026-07-16T22:44:11",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/chaqueta-los-angeles/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=xxl",
       "sku": "14145304040",
@@ -362,7 +333,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 2,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -1156,7 +1127,7 @@
         {
           "id": 2261928,
           "key": "_last_change_time",
-          "value": "1778177796"
+          "value": "1784241851"
         },
         {
           "id": 2311246,
@@ -2058,8 +2029,8 @@
       "type": "variation",
       "date_created": "2025-08-14T17:08:14",
       "date_created_gmt": "2025-08-14T17:08:14",
-      "date_modified": "2026-05-07T23:16:40",
-      "date_modified_gmt": "2026-05-07T23:16:40",
+      "date_modified": "2026-07-16T22:44:11",
+      "date_modified_gmt": "2026-07-16T22:44:11",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/chaqueta-los-angeles/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=xs",
       "sku": "14145304030",
@@ -2082,8 +2053,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -2876,7 +2847,7 @@
         {
           "id": 2261926,
           "key": "_last_change_time",
-          "value": "1778195800"
+          "value": "1784241851"
         },
         {
           "id": 2311244,

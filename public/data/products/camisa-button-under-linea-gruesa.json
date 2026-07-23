@@ -215,35 +215,6 @@
       "sale_price": ""
     },
     {
-      "id": 83182,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "azul",
-          "option": "azul"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "xs",
-          "option": "xs"
-        }
-      ],
-      "image": {
-        "id": 81813,
-        "date_created": "2025-10-28T21:00:49",
-        "date_created_gmt": "2025-10-28T21:00:49",
-        "date_modified": "2025-11-04T17:24:36",
-        "date_modified_gmt": "2025-11-04T17:24:36",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2504-Btt-Under-Linea-Gru-Azul-Winstonandharry-3.jpg",
-        "name": "2504-Btt Under-Linea Gru-Azul-Winstonandharry-3",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "310000",
-      "regular_price": "310000",
-      "sale_price": ""
-    },
-    {
       "id": 83183,
       "attributes": [
         {
@@ -2087,8 +2058,8 @@
       "type": "variation",
       "date_created": "2025-10-31T05:13:37",
       "date_created_gmt": "2025-10-31T05:13:37",
-      "date_modified": "2026-05-07T23:16:06",
-      "date_modified_gmt": "2026-05-07T23:16:06",
+      "date_modified": "2026-07-16T22:45:12",
+      "date_modified_gmt": "2026-07-16T22:45:12",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/camisa-button-under-linea-gruesa/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=xs",
       "sku": "5250401030",
@@ -2111,8 +2082,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -2905,7 +2876,7 @@
         {
           "id": 2259185,
           "key": "_last_change_time",
-          "value": "1778195766"
+          "value": "1784241912"
         },
         {
           "id": 2310842,

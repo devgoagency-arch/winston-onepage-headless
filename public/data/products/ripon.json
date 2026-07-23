@@ -455,35 +455,6 @@
       "price": "560000",
       "regular_price": "560000",
       "sale_price": ""
-    },
-    {
-      "id": 60712,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "negro",
-          "option": "negro"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "45",
-          "option": "45"
-        }
-      ],
-      "image": {
-        "id": 60978,
-        "date_created": "2025-03-02T05:28:34",
-        "date_created_gmt": "2025-03-02T05:28:34",
-        "date_modified": "2025-03-03T03:23:36",
-        "date_modified_gmt": "2025-03-03T03:23:36",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/03/Ripon-Negro-Winstonandharry-1-e1752876094433.jpg",
-        "name": "Ripon-Negro-Winstonandharry-1",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "560000",
-      "regular_price": "560000",
-      "sale_price": ""
     }
   ],
   "grouped_products": [],
@@ -545,8 +516,8 @@
       "type": "variation",
       "date_created": "2025-02-27T03:55:19",
       "date_created_gmt": "2025-02-27T03:55:19",
-      "date_modified": "2026-05-07T23:13:54",
-      "date_modified_gmt": "2026-05-07T23:13:54",
+      "date_modified": "2026-07-16T22:42:56",
+      "date_modified_gmt": "2026-07-16T22:42:56",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/ripon/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=45",
       "sku": "7901102045",
@@ -569,8 +540,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -1193,7 +1164,7 @@
         {
           "id": 2217658,
           "key": "_last_change_time",
-          "value": "1778195634"
+          "value": "1784241776"
         },
         {
           "id": 2311802,

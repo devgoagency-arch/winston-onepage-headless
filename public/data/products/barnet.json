@@ -9222,8 +9222,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:42:34",
       "date_created_gmt": "2022-08-25T22:42:34",
-      "date_modified": "2026-07-03T17:20:57",
-      "date_modified_gmt": "2026-07-03T17:20:57",
+      "date_modified": "2026-07-16T22:39:56",
+      "date_modified_gmt": "2026-07-16T22:39:56",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/barnet/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=42",
       "sku": "7300904042",
@@ -9246,7 +9246,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 2,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -9873,7 +9873,7 @@
         {
           "id": 2215573,
           "key": "_last_change_time",
-          "value": "1783099257"
+          "value": "1784241596"
         },
         {
           "id": 2314470,
@@ -10608,8 +10608,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:42:34",
       "date_created_gmt": "2022-08-25T22:42:34",
-      "date_modified": "2026-05-07T22:57:52",
-      "date_modified_gmt": "2026-05-07T22:57:52",
+      "date_modified": "2026-07-19T23:42:41",
+      "date_modified_gmt": "2026-07-19T23:42:41",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/barnet/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=40",
       "sku": "7300904040",
@@ -10632,7 +10632,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 2,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -11265,6 +11265,11 @@
           "id": 2314468,
           "key": "wpcvi_images",
           "value": "60949,60948,60950,61113,60951,60952,60953"
+        },
+        {
+          "id": 2390365,
+          "key": "_wc_push_notification_sent_low_stock",
+          "value": "1784504701"
         }
       ],
       "name": "Café, 40",

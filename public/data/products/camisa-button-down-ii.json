@@ -259,35 +259,6 @@
       "sale_price": ""
     },
     {
-      "id": 66951,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "azul",
-          "option": "azul"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "xs",
-          "option": "xs"
-        }
-      ],
-      "image": {
-        "id": 67132,
-        "date_created": "2025-08-20T07:45:25",
-        "date_created_gmt": "2025-08-20T07:45:25",
-        "date_modified": "2025-08-25T04:36:32",
-        "date_modified_gmt": "2025-08-25T04:36:32",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/BTT-Down-II-Azul-Winstonandharry-1-e1755676511403.jpg",
-        "name": "BTT Down II-Azul-Winstonandharry-1",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "310000",
-      "regular_price": "310000",
-      "sale_price": ""
-    },
-    {
       "id": 66952,
       "attributes": [
         {
@@ -433,35 +404,6 @@
       "sale_price": ""
     },
     {
-      "id": 66957,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "blanco",
-          "option": "blanco"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "xs",
-          "option": "xs"
-        }
-      ],
-      "image": {
-        "id": 67136,
-        "date_created": "2025-08-20T07:45:45",
-        "date_created_gmt": "2025-08-20T07:45:45",
-        "date_modified": "2025-08-25T04:36:33",
-        "date_modified_gmt": "2025-08-25T04:36:33",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/BTT-Down-II-Blanco-Winstonandharry-1-e1755676573388.jpg",
-        "name": "BTT Down II-Blanco-Winstonandharry-1",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "310000",
-      "regular_price": "310000",
-      "sale_price": ""
-    },
-    {
       "id": 66959,
       "attributes": [
         {
@@ -560,35 +502,6 @@
           "name": "Selecciona una Talla",
           "value": "l",
           "option": "l"
-        }
-      ],
-      "image": {
-        "id": 67140,
-        "date_created": "2025-08-20T07:46:05",
-        "date_created_gmt": "2025-08-20T07:46:05",
-        "date_modified": "2025-08-25T04:36:37",
-        "date_modified_gmt": "2025-08-25T04:36:37",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/BTT-Down-II-Morado-Winstonandharry-1-e1755676623529.jpg",
-        "name": "BTT Down II-Morado-Winstonandharry-1",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "310000",
-      "regular_price": "310000",
-      "sale_price": ""
-    },
-    {
-      "id": 66963,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "morado",
-          "option": "morado"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "xs",
-          "option": "xs"
         }
       ],
       "image": {
@@ -734,35 +647,6 @@
           "name": "Selecciona una Talla",
           "value": "l",
           "option": "l"
-        }
-      ],
-      "image": {
-        "id": 67144,
-        "date_created": "2025-08-20T07:46:24",
-        "date_created_gmt": "2025-08-20T07:46:24",
-        "date_modified": "2025-08-25T04:36:38",
-        "date_modified_gmt": "2025-08-25T04:36:38",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/BTT-Down-II-Rosado-Winstonandharry-1-e1755676675583.jpg",
-        "name": "BTT Down II-Rosado-Winstonandharry-1",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "310000",
-      "regular_price": "310000",
-      "sale_price": ""
-    },
-    {
-      "id": 66969,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "rosado",
-          "option": "rosado"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "xs",
-          "option": "xs"
         }
       ],
       "image": {
@@ -2624,8 +2508,8 @@
       "type": "variation",
       "date_created": "2025-08-14T16:37:13",
       "date_created_gmt": "2025-08-14T16:37:13",
-      "date_modified": "2026-05-07T23:16:06",
-      "date_modified_gmt": "2026-05-07T23:16:06",
+      "date_modified": "2026-07-16T22:44:11",
+      "date_modified_gmt": "2026-07-16T22:44:11",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/camisa-button-down-ii/?attribute_pa_selecciona-el-color=rosado&attribute_pa_selecciona-una-talla=xs",
       "sku": "5150216030",
@@ -2648,8 +2532,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -3442,7 +3326,7 @@
         {
           "id": 2259128,
           "key": "_last_change_time",
-          "value": "1778195766"
+          "value": "1784241851"
         },
         {
           "id": 2311278,
@@ -7784,8 +7668,8 @@
       "type": "variation",
       "date_created": "2025-08-14T16:37:13",
       "date_created_gmt": "2025-08-14T16:37:13",
-      "date_modified": "2026-05-07T23:16:06",
-      "date_modified_gmt": "2026-05-07T23:16:06",
+      "date_modified": "2026-07-16T22:44:11",
+      "date_modified_gmt": "2026-07-16T22:44:11",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/camisa-button-down-ii/?attribute_pa_selecciona-el-color=morado&attribute_pa_selecciona-una-talla=xs",
       "sku": "5150222030",
@@ -7808,8 +7692,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -8602,7 +8486,7 @@
         {
           "id": 2259132,
           "key": "_last_change_time",
-          "value": "1778195766"
+          "value": "1784241851"
         },
         {
           "id": 2311283,
@@ -12944,8 +12828,8 @@
       "type": "variation",
       "date_created": "2025-08-14T16:37:12",
       "date_created_gmt": "2025-08-14T16:37:12",
-      "date_modified": "2026-05-07T23:16:06",
-      "date_modified_gmt": "2026-05-07T23:16:06",
+      "date_modified": "2026-07-16T22:44:11",
+      "date_modified_gmt": "2026-07-16T22:44:11",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/camisa-button-down-ii/?attribute_pa_selecciona-el-color=blanco&attribute_pa_selecciona-una-talla=xs",
       "sku": "5150215030",
@@ -12968,8 +12852,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -13762,7 +13646,7 @@
         {
           "id": 2259124,
           "key": "_last_change_time",
-          "value": "1778195766"
+          "value": "1784241851"
         },
         {
           "id": 2311292,
@@ -18104,8 +17988,8 @@
       "type": "variation",
       "date_created": "2025-08-14T16:37:12",
       "date_created_gmt": "2025-08-14T16:37:12",
-      "date_modified": "2026-05-07T23:16:06",
-      "date_modified_gmt": "2026-05-07T23:16:06",
+      "date_modified": "2026-07-16T22:44:11",
+      "date_modified_gmt": "2026-07-16T22:44:11",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/camisa-button-down-ii/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=xs",
       "sku": "5150201030",
@@ -18128,8 +18012,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -18922,7 +18806,7 @@
         {
           "id": 2259120,
           "key": "_last_change_time",
-          "value": "1778195766"
+          "value": "1784241851"
         },
         {
           "id": 2311287,

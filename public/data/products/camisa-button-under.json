@@ -244,35 +244,6 @@
       "sale_price": ""
     },
     {
-      "id": 83164,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "blanco",
-          "option": "blanco"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "xs",
-          "option": "xs"
-        }
-      ],
-      "image": {
-        "id": 81807,
-        "date_created": "2025-10-28T20:49:08",
-        "date_created_gmt": "2025-10-28T20:49:08",
-        "date_modified": "2025-11-04T17:24:32",
-        "date_modified_gmt": "2025-11-04T17:24:32",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2501-Btt-Under-Blanco-Winstonandharry-3.jpg",
-        "name": "2501-Btt Under-Blanco-Winstonandharry-3",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "310000",
-      "regular_price": "310000",
-      "sale_price": ""
-    },
-    {
       "id": 83165,
       "attributes": [
         {
@@ -2116,8 +2087,8 @@
       "type": "variation",
       "date_created": "2025-10-31T05:03:46",
       "date_created_gmt": "2025-10-31T05:03:46",
-      "date_modified": "2026-05-07T23:16:06",
-      "date_modified_gmt": "2026-05-07T23:16:06",
+      "date_modified": "2026-07-16T22:44:57",
+      "date_modified_gmt": "2026-07-16T22:44:57",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/camisa-button-under/?attribute_pa_selecciona-el-color=blanco&attribute_pa_selecciona-una-talla=xs",
       "sku": "5250115030",
@@ -2140,8 +2111,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -2934,7 +2905,7 @@
         {
           "id": 2259178,
           "key": "_last_change_time",
-          "value": "1778195766"
+          "value": "1784241897"
         },
         {
           "id": 2310851,

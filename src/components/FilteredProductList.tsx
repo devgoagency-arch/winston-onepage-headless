@@ -213,19 +213,32 @@ const FilteredProductList: React.FC<FilteredProductListProps> = ({
         
         if (isSpecific) {
             const matched = dynamicCategories.find(m => m.slug === slug || String(m.id) === String(category?.id));
+            let finalList = [];
             if (matched && matched.subcategories.length > 0) {
-                return {
-                    isSpecific: true,
-                    title: 'Subcategorías',
-                    list: matched.subcategories
-                };
+                finalList = [...matched.subcategories];
             } else {
-                return {
-                    isSpecific: true,
-                    title: 'Subcategorías',
-                    list: subcategories && subcategories.length > 0 ? subcategories : []
-                };
+                finalList = subcategories && subcategories.length > 0 ? [...subcategories] : [];
             }
+            
+            // Inyectar el filtro virtual si estamos en Maletas, Morrales y Maletines
+            if (slug === 'maletas-morrales-cuero-hombre' || slug === 'maletas-morrales-potafolios-cuero' || slug === 'maletas-morrales-cuero') {
+                const hasAccesorios = finalList.some(c => c.slug === 'accesorios-viaje-cuero');
+                if (!hasAccesorios) {
+                    finalList.push({ name: 'Accesorios de Viaje', slug: 'accesorios-viaje-cuero' });
+                }
+                
+                // Si Maletas (real) no existe en WooCommerce porque está vacía o no es hija, la inyectamos temporalmente como virtual para que no se rompa la UI
+                const hasMaletas = finalList.some(c => c.name.toLowerCase().includes('maleta'));
+                if (!hasMaletas) {
+                    finalList.push({ name: 'Maletas de Viaje', slug: 'maletas-viaje-cuero-hombre' });
+                }
+            }
+
+            return {
+                isSpecific: true,
+                title: 'Subcategorías',
+                list: finalList
+            };
         } else {
             return {
                 isSpecific: false,

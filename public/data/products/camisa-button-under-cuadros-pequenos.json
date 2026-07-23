@@ -244,35 +244,6 @@
       "sale_price": ""
     },
     {
-      "id": 83173,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "rosado",
-          "option": "rosado"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "xs",
-          "option": "xs"
-        }
-      ],
-      "image": {
-        "id": 81809,
-        "date_created": "2025-10-28T20:53:28",
-        "date_created_gmt": "2025-10-28T20:53:28",
-        "date_modified": "2025-11-04T17:24:34",
-        "date_modified_gmt": "2025-11-04T17:24:34",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2502-Btt-Under-Cuadros-Peq-Rosado-Winstonandharry-3.jpg",
-        "name": "2502-Btt Under-Cuadros Peq-Rosado-Winstonandharry-3",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "310000",
-      "regular_price": "310000",
-      "sale_price": ""
-    },
-    {
       "id": 83174,
       "attributes": [
         {
@@ -2116,8 +2087,8 @@
       "type": "variation",
       "date_created": "2025-10-31T05:07:37",
       "date_created_gmt": "2025-10-31T05:07:37",
-      "date_modified": "2026-05-07T23:16:06",
-      "date_modified_gmt": "2026-05-07T23:16:06",
+      "date_modified": "2026-07-16T22:44:57",
+      "date_modified_gmt": "2026-07-16T22:44:57",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/camisa-button-under-cuadros-pequenos/?attribute_pa_selecciona-el-color=rosado&attribute_pa_selecciona-una-talla=xs",
       "sku": "5250216030",
@@ -2140,8 +2111,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -2934,7 +2905,7 @@
         {
           "id": 2259182,
           "key": "_last_change_time",
-          "value": "1778195766"
+          "value": "1784241897"
         },
         {
           "id": 2310846,

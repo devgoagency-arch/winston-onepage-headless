@@ -427,35 +427,6 @@
       "sale_price": ""
     },
     {
-      "id": 62363,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "cafe",
-          "option": "cafe"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "45",
-          "option": "45"
-        }
-      ],
-      "image": {
-        "id": 62846,
-        "date_created": "2025-04-25T21:54:47",
-        "date_created_gmt": "2025-04-25T21:54:47",
-        "date_modified": "2025-04-26T05:59:37",
-        "date_modified_gmt": "2025-04-26T05:59:37",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/04/Clarence-Cafe-Winstonandharry-1-e1751485783963.jpg",
-        "name": "Clarence-Café-Winstonandharry-1",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "825000",
-      "regular_price": "825000",
-      "sale_price": ""
-    },
-    {
       "id": 62365,
       "attributes": [
         {
@@ -641,35 +612,6 @@
           "name": "Selecciona una Talla",
           "value": "44",
           "option": "44"
-        }
-      ],
-      "image": {
-        "id": 62854,
-        "date_created": "2025-04-25T21:55:51",
-        "date_created_gmt": "2025-04-25T21:55:51",
-        "date_modified": "2025-04-26T05:59:37",
-        "date_modified_gmt": "2025-04-26T05:59:37",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/04/Clarence-Miel-Winstonandharry-1-e1751479672858.jpg",
-        "name": "Clarence-Miel-Winstonandharry-1",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "825000",
-      "regular_price": "825000",
-      "sale_price": ""
-    },
-    {
-      "id": 62372,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "miel",
-          "option": "miel"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "45",
-          "option": "45"
         }
       ],
       "image": {
@@ -979,8 +921,8 @@
       "type": "variation",
       "date_created": "2025-04-21T17:19:22",
       "date_created_gmt": "2025-04-21T17:19:22",
-      "date_modified": "2026-05-07T23:17:25",
-      "date_modified_gmt": "2026-05-07T23:17:25",
+      "date_modified": "2026-07-16T22:42:56",
+      "date_modified_gmt": "2026-07-16T22:42:56",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/clarence/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=45",
       "sku": "7008026045",
@@ -1003,8 +945,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -1702,7 +1644,7 @@
         {
           "id": 2259521,
           "key": "_last_change_time",
-          "value": "1778195845"
+          "value": "1784241776"
         },
         {
           "id": 2311649,
@@ -7864,8 +7806,8 @@
       "type": "variation",
       "date_created": "2025-04-21T17:19:22",
       "date_created_gmt": "2025-04-21T17:19:22",
-      "date_modified": "2026-05-07T23:17:25",
-      "date_modified_gmt": "2026-05-07T23:17:25",
+      "date_modified": "2026-07-16T22:42:56",
+      "date_modified_gmt": "2026-07-16T22:42:56",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/clarence/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=45",
       "sku": "7008004045",
@@ -7888,8 +7830,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -8587,7 +8529,7 @@
         {
           "id": 2259510,
           "key": "_last_change_time",
-          "value": "1778195845"
+          "value": "1784241776"
         },
         {
           "id": 2311638,

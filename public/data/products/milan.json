@@ -539,35 +539,6 @@
       "price": "825000",
       "regular_price": "825000",
       "sale_price": ""
-    },
-    {
-      "id": 61124,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "negro",
-          "option": "negro"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "45",
-          "option": "45"
-        }
-      ],
-      "image": {
-        "id": 62012,
-        "date_created": "2025-03-04T02:45:20",
-        "date_created_gmt": "2025-03-04T02:45:20",
-        "date_modified": "2025-03-04T07:24:27",
-        "date_modified_gmt": "2025-03-04T07:24:27",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/03/Milan-Negro-Winstonandharry-1-e1752614072943.jpg",
-        "name": "Milan-Negro-Winstonandharry-1",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "825000",
-      "regular_price": "825000",
-      "sale_price": ""
     }
   ],
   "grouped_products": [],
@@ -6890,8 +6861,8 @@
       "type": "variation",
       "date_created": "2025-03-03T05:44:40",
       "date_created_gmt": "2025-03-03T05:44:40",
-      "date_modified": "2026-05-07T23:13:32",
-      "date_modified_gmt": "2026-05-07T23:13:32",
+      "date_modified": "2026-07-16T22:42:56",
+      "date_modified_gmt": "2026-07-16T22:42:56",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/milan/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=45",
       "sku": "7002802045",
@@ -6914,8 +6885,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -7543,7 +7514,7 @@
         {
           "id": 2259373,
           "key": "_last_change_time",
-          "value": "1778190871"
+          "value": "1784241776"
         },
         {
           "id": 2311801,

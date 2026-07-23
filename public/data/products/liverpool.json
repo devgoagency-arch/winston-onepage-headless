@@ -377,35 +377,6 @@
       "sale_price": ""
     },
     {
-      "id": 24337,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "miel",
-          "option": "miel"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "37",
-          "option": "37"
-        }
-      ],
-      "image": {
-        "id": 35814,
-        "date_created": "2024-02-09T22:39:48",
-        "date_created_gmt": "2024-02-09T22:39:48",
-        "date_modified": "2024-05-26T01:36:29",
-        "date_modified_gmt": "2024-05-26T01:36:29",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Liverpool-miel-cuero-zapato-winstonandharry-6-2.jpg",
-        "name": "Liverpool-miel-cuero-zapato-winstonandharry-6 (2)",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "825000",
-      "regular_price": "825000",
-      "sale_price": ""
-    },
-    {
       "id": 24338,
       "attributes": [
         {
@@ -9642,8 +9613,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:30:15",
       "date_created_gmt": "2022-08-25T22:30:15",
-      "date_modified": "2026-05-07T23:05:34",
-      "date_modified_gmt": "2026-05-07T23:05:34",
+      "date_modified": "2026-07-16T22:39:21",
+      "date_modified_gmt": "2026-07-16T22:39:21",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/liverpool/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=40",
       "sku": "7012926040",
@@ -9666,7 +9637,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 19,
+      "stock_quantity": 18,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -10223,7 +10194,7 @@
         {
           "id": 2218882,
           "key": "_last_change_time",
-          "value": "1778184250"
+          "value": "1784241561"
         },
         {
           "id": 2314902,
@@ -11511,8 +11482,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:30:14",
       "date_created_gmt": "2022-08-25T22:30:14",
-      "date_modified": "2026-06-16T17:40:49",
-      "date_modified_gmt": "2026-06-16T17:40:49",
+      "date_modified": "2026-07-16T22:39:21",
+      "date_modified_gmt": "2026-07-16T22:39:21",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/liverpool/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=37",
       "sku": "7012926037",
@@ -11535,8 +11506,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -12092,7 +12063,7 @@
         {
           "id": 2259558,
           "key": "_last_change_time",
-          "value": "1781631263"
+          "value": "1784241561"
         },
         {
           "id": 2314909,

@@ -802,7 +802,7 @@ export const ASTRO_TO_WP_SLUG_MAP: Record<string, string> = {
     'zapatos-cuero-hombre': 'zapatos',
     'botas-cuero-hombre': 'botas',
     'ropa-hombre-colombia': 'ropa',
-    'maletas-morrales-cuero': 'maletas',
+    'maletas-morrales-cuero-hombre': 'maletas',
     'accesorios-hombre': 'accesorios',
     'tenis-hombre': 'tenis',
     'outlet-zapatos-ropa': 'outlet',
@@ -846,9 +846,9 @@ export const STRICT_CATEGORIES = [
     },
     { 
         id: 190, 
-        slug: 'maletas-morrales-cuero', 
-        name: 'Maletas y Morrales',
-        description: 'Morrales, maletines y maletas de viaje de cuero legítimo para hombre. Piezas exclusivas, espaciosas y con un diseño sofisticado que te acompaña en cada viaje.',
+        slug: 'maletas-morrales-cuero-hombre', 
+        name: 'Maletas, Morrales y Maletines',
+        description: 'Encuentra la mejor selección de maletines, morrales y maletas de viaje en cuero para hombre.',
         image: 'https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-maletas-m.jpg'
     },
     { 

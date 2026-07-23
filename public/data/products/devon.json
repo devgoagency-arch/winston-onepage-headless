@@ -614,35 +614,6 @@
       "sale_price": ""
     },
     {
-      "id": 31173,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "negro",
-          "option": "negro"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "39",
-          "option": "39"
-        }
-      ],
-      "image": {
-        "id": 62051,
-        "date_created": "2025-03-04T02:54:40",
-        "date_created_gmt": "2025-03-04T02:54:40",
-        "date_modified": "2025-03-04T07:26:38",
-        "date_modified_gmt": "2025-03-04T07:26:38",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/03/Devon-Negro-Winstonandharry-1-e1752613400180.jpg",
-        "name": "Devon-Negro-Winstonandharry-1",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "825000",
-      "regular_price": "825000",
-      "sale_price": ""
-    },
-    {
       "id": 31147,
       "attributes": [
         {
@@ -11734,8 +11705,8 @@
       "type": "variation",
       "date_created": "2023-08-17T23:26:46",
       "date_created_gmt": "2023-08-17T23:26:46",
-      "date_modified": "2026-06-16T17:42:18",
-      "date_modified_gmt": "2026-06-16T17:42:18",
+      "date_modified": "2026-07-16T22:41:15",
+      "date_modified_gmt": "2026-07-16T22:41:15",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/devon/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=39",
       "sku": "7031402039",
@@ -11758,8 +11729,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -12382,7 +12353,7 @@
         {
           "id": 2258545,
           "key": "_last_change_time",
-          "value": "1781631369"
+          "value": "1784241675"
         },
         {
           "id": 2312570,

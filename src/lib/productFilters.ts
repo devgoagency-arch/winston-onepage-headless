@@ -104,11 +104,11 @@ export function filterBySubcats(products: any[], selectedSubcats: string[]): any
         if (hasNormalSubcat) return true;
 
         // Validación para el filtro virtual "Accesorios de viaje" (atrapa lo que sobra)
-        if (selectedSubcats.includes('virtual-accesorios-viaje')) {
+        if (selectedSubcats.includes('accesorios-viaje-cuero')) {
             const mainSlugs = [
-                'portafolios-de-cuero-para-hombre', 
-                'morrales-de-cuero-para-hombre', 
-                'maletas-de-viaje-cuero'
+                'maletines-cuero-hombre', 
+                'morrales-cuero-hombre', 
+                'maletas-viaje-cuero-hombre'
             ];
             const isUncategorized = !p.categories?.some((c: any) => mainSlugs.includes(c.slug)) && (!p.category_slug || !mainSlugs.includes(p.category_slug));
             if (isUncategorized) return true;

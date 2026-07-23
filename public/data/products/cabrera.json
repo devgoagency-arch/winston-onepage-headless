@@ -423,64 +423,6 @@
       "sale_price": ""
     },
     {
-      "id": 57031,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "blanco",
-          "option": "blanco"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "45",
-          "option": "45"
-        }
-      ],
-      "image": {
-        "id": 61806,
-        "date_created": "2025-03-04T01:54:34",
-        "date_created_gmt": "2025-03-04T01:54:34",
-        "date_modified": "2025-03-04T07:31:22",
-        "date_modified_gmt": "2025-03-04T07:31:22",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/03/Cabrera-Blanco-Winstonandharry-1-e1752870205503.jpg",
-        "name": "Cabrera-Blanco-Winstonandharry-1",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "560000",
-      "regular_price": "560000",
-      "sale_price": ""
-    },
-    {
-      "id": 57032,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "miel",
-          "option": "miel"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "45",
-          "option": "45"
-        }
-      ],
-      "image": {
-        "id": 61790,
-        "date_created": "2025-03-04T01:52:16",
-        "date_created_gmt": "2025-03-04T01:52:16",
-        "date_modified": "2025-03-04T07:31:23",
-        "date_modified_gmt": "2025-03-04T07:31:23",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/03/Cabrera-Miel-Winstonandharry-1-e1752869916540.jpg",
-        "name": "Cabrera-Miel-Winstonandharry-1",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "560000",
-      "regular_price": "560000",
-      "sale_price": ""
-    },
-    {
       "id": 57034,
       "attributes": [
         {
@@ -608,35 +550,6 @@
           "name": "Selecciona una Talla",
           "value": "43",
           "option": "43"
-        }
-      ],
-      "image": {
-        "id": 61798,
-        "date_created": "2025-03-04T01:53:34",
-        "date_created_gmt": "2025-03-04T01:53:34",
-        "date_modified": "2025-03-04T07:31:37",
-        "date_modified_gmt": "2025-03-04T07:31:37",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/03/Cabrera-Negro-Winstonandharry-1-e1752870100237.jpg",
-        "name": "Cabrera-Negro-Winstonandharry-1",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "560000",
-      "regular_price": "560000",
-      "sale_price": ""
-    },
-    {
-      "id": 57041,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "negro",
-          "option": "negro"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "45",
-          "option": "45"
         }
       ],
       "image": {
@@ -1097,8 +1010,8 @@
       "type": "variation",
       "date_created": "2024-07-12T04:30:37",
       "date_created_gmt": "2024-07-12T04:30:37",
-      "date_modified": "2026-05-07T23:16:05",
-      "date_modified_gmt": "2026-05-07T23:16:05",
+      "date_modified": "2026-07-16T22:42:10",
+      "date_modified_gmt": "2026-07-16T22:42:10",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cabrera/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=45",
       "sku": "7230502045",
@@ -1121,8 +1034,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -1745,7 +1658,7 @@
         {
           "id": 2260892,
           "key": "_last_change_time",
-          "value": "1778195765"
+          "value": "1784241730"
         },
         {
           "id": 2312278,
@@ -7287,8 +7200,8 @@
       "type": "variation",
       "date_created": "2024-07-12T04:30:37",
       "date_created_gmt": "2024-07-12T04:30:37",
-      "date_modified": "2026-05-07T23:16:05",
-      "date_modified_gmt": "2026-05-07T23:16:05",
+      "date_modified": "2026-07-16T22:42:10",
+      "date_modified_gmt": "2026-07-16T22:42:10",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cabrera/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=45",
       "sku": "7230526045",
@@ -7311,8 +7224,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -7935,7 +7848,7 @@
         {
           "id": 2260906,
           "key": "_last_change_time",
-          "value": "1778195765"
+          "value": "1784241730"
         },
         {
           "id": 2312279,
@@ -7977,8 +7890,8 @@
       "type": "variation",
       "date_created": "2024-07-12T04:30:37",
       "date_created_gmt": "2024-07-12T04:30:37",
-      "date_modified": "2026-05-07T23:16:05",
-      "date_modified_gmt": "2026-05-07T23:16:05",
+      "date_modified": "2026-07-16T22:42:10",
+      "date_modified_gmt": "2026-07-16T22:42:10",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cabrera/?attribute_pa_selecciona-el-color=blanco&attribute_pa_selecciona-una-talla=45",
       "sku": "7230515045",
@@ -8001,8 +7914,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -8625,7 +8538,7 @@
         {
           "id": 2260900,
           "key": "_last_change_time",
-          "value": "1778195765"
+          "value": "1784241730"
         },
         {
           "id": 2312287,
@@ -17632,8 +17545,8 @@
       "type": "variation",
       "date_created": "2023-08-17T23:23:40",
       "date_created_gmt": "2023-08-17T23:23:40",
-      "date_modified": "2026-07-03T17:21:38",
-      "date_modified_gmt": "2026-07-03T17:21:38",
+      "date_modified": "2026-07-16T22:41:15",
+      "date_modified_gmt": "2026-07-16T22:41:15",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cabrera/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=40",
       "sku": "7230526040",
@@ -17656,7 +17569,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 5,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -18280,7 +18193,7 @@
         {
           "id": 2260903,
           "key": "_last_change_time",
-          "value": "1783099298"
+          "value": "1784241675"
         },
         {
           "id": 2312622,
@@ -25978,6 +25891,49 @@
         "alt": "Cabrera"
       }
     ],
+    "negro": [
+      {
+        "id": 61798,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/03/Cabrera-Negro-Winstonandharry-1-e1752870100237.jpg",
+        "alt": "Cabrera-Negro-Winstonandharry-1",
+        "name": "Cabrera-Negro-Winstonandharry-1"
+      },
+      {
+        "id": 61800,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/03/Cabrera-Negro-Winstonandharry-3-e1752870122539.jpg",
+        "alt": "Cabrera"
+      },
+      {
+        "id": 61799,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/03/Cabrera-Negro-Winstonandharry-2-e1752870111496.jpg",
+        "alt": "Cabrera"
+      },
+      {
+        "id": 61801,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/03/Cabrera-Negro-Winstonandharry-4-e1752870136383.jpg",
+        "alt": "Cabrera"
+      },
+      {
+        "id": 61802,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/03/Cabrera-Negro-Winstonandharry-5-e1752870147270.jpg",
+        "alt": "Cabrera"
+      },
+      {
+        "id": 61803,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/03/Cabrera-Negro-Winstonandharry-6-e1752870158882.jpg",
+        "alt": "Cabrera"
+      },
+      {
+        "id": 61804,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/03/Cabrera-Negro-Winstonandharry-7-e1752870172312.jpg",
+        "alt": "Cabrera"
+      },
+      {
+        "id": 61805,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/03/Cabrera-Negro-Winstonandharry-8-e1752870186808.jpg",
+        "alt": "Cabrera"
+      }
+    ],
     "blanco": [
       {
         "id": 61806,
@@ -26061,49 +26017,6 @@
       {
         "id": 61797,
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/03/Cabrera-Miel-Winstonandharry-8-e1752870088653.jpg",
-        "alt": "Cabrera"
-      }
-    ],
-    "negro": [
-      {
-        "id": 61798,
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/03/Cabrera-Negro-Winstonandharry-1-e1752870100237.jpg",
-        "alt": "Cabrera-Negro-Winstonandharry-1",
-        "name": "Cabrera-Negro-Winstonandharry-1"
-      },
-      {
-        "id": 61800,
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/03/Cabrera-Negro-Winstonandharry-3-e1752870122539.jpg",
-        "alt": "Cabrera"
-      },
-      {
-        "id": 61799,
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/03/Cabrera-Negro-Winstonandharry-2-e1752870111496.jpg",
-        "alt": "Cabrera"
-      },
-      {
-        "id": 61801,
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/03/Cabrera-Negro-Winstonandharry-4-e1752870136383.jpg",
-        "alt": "Cabrera"
-      },
-      {
-        "id": 61802,
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/03/Cabrera-Negro-Winstonandharry-5-e1752870147270.jpg",
-        "alt": "Cabrera"
-      },
-      {
-        "id": 61803,
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/03/Cabrera-Negro-Winstonandharry-6-e1752870158882.jpg",
-        "alt": "Cabrera"
-      },
-      {
-        "id": 61804,
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/03/Cabrera-Negro-Winstonandharry-7-e1752870172312.jpg",
-        "alt": "Cabrera"
-      },
-      {
-        "id": 61805,
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/03/Cabrera-Negro-Winstonandharry-8-e1752870186808.jpg",
         "alt": "Cabrera"
       }
     ]

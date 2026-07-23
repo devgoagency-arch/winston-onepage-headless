@@ -196,35 +196,6 @@
       "sale_price": ""
     },
     {
-      "id": 83116,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "azul",
-          "option": "azul"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "xs",
-          "option": "xs"
-        }
-      ],
-      "image": {
-        "id": 81795,
-        "date_created": "2025-10-28T19:55:49",
-        "date_created_gmt": "2025-10-28T19:55:49",
-        "date_modified": "2025-11-04T17:24:19",
-        "date_modified_gmt": "2025-11-04T17:24:19",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/1505-Btt-Down-Cuadros-Gra-Azul-Winstonandharry-3.jpg",
-        "name": "1505-Btt Down-Cuadros Gra-Azul-Winstonandharry-3",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "310000",
-      "regular_price": "310000",
-      "sale_price": ""
-    },
-    {
       "id": 83117,
       "attributes": [
         {
@@ -370,35 +341,6 @@
       "sale_price": ""
     },
     {
-      "id": 83122,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "negro",
-          "option": "negro"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "xs",
-          "option": "xs"
-        }
-      ],
-      "image": {
-        "id": 81797,
-        "date_created": "2025-10-28T20:16:11",
-        "date_created_gmt": "2025-10-28T20:16:11",
-        "date_modified": "2025-11-04T17:24:21",
-        "date_modified_gmt": "2025-11-04T17:24:21",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/1505-Btt-Down-Cuadros-Gra-Negro-Winstonandharry-3.jpg",
-        "name": "1505-Btt Down-Cuadros Gra-Negro-Winstonandharry-3",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "310000",
-      "regular_price": "310000",
-      "sale_price": ""
-    },
-    {
       "id": 83123,
       "attributes": [
         {
@@ -497,35 +439,6 @@
           "name": "Selecciona una Talla",
           "value": "m",
           "option": "m"
-        }
-      ],
-      "image": {
-        "id": 81801,
-        "date_created": "2025-10-28T20:44:47",
-        "date_created_gmt": "2025-10-28T20:44:47",
-        "date_modified": "2025-11-04T17:24:19",
-        "date_modified_gmt": "2025-11-04T17:24:19",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/1505-Btt-Down-Cuadros-Gra-Rosado-Winstonandharry-3.jpg",
-        "name": "1505-Btt Down-Cuadros Gra-Rosado-Winstonandharry-3",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "310000",
-      "regular_price": "310000",
-      "sale_price": ""
-    },
-    {
-      "id": 83128,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "rosado",
-          "option": "rosado"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "xs",
-          "option": "xs"
         }
       ],
       "image": {
@@ -2387,8 +2300,8 @@
       "type": "variation",
       "date_created": "2025-10-31T04:51:45",
       "date_created_gmt": "2025-10-31T04:51:45",
-      "date_modified": "2026-05-07T23:16:06",
-      "date_modified_gmt": "2026-05-07T23:16:06",
+      "date_modified": "2026-07-16T22:44:57",
+      "date_modified_gmt": "2026-07-16T22:44:57",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/camisa-button-down-cuadros-grandes/?attribute_pa_selecciona-el-color=rosado&attribute_pa_selecciona-una-talla=xs",
       "sku": "5150516030",
@@ -2411,8 +2324,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -3205,7 +3118,7 @@
         {
           "id": 2259156,
           "key": "_last_change_time",
-          "value": "1778195766"
+          "value": "1784241897"
         },
         {
           "id": 2310866,
@@ -7547,8 +7460,8 @@
       "type": "variation",
       "date_created": "2025-10-31T04:51:45",
       "date_created_gmt": "2025-10-31T04:51:45",
-      "date_modified": "2026-05-07T23:16:06",
-      "date_modified_gmt": "2026-05-07T23:16:06",
+      "date_modified": "2026-07-16T22:44:56",
+      "date_modified_gmt": "2026-07-16T22:44:56",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/camisa-button-down-cuadros-grandes/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=xs",
       "sku": "5150502030",
@@ -7571,8 +7484,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -8365,7 +8278,7 @@
         {
           "id": 2259154,
           "key": "_last_change_time",
-          "value": "1778195766"
+          "value": "1784241896"
         },
         {
           "id": 2310874,
@@ -12707,8 +12620,8 @@
       "type": "variation",
       "date_created": "2025-10-31T04:51:45",
       "date_created_gmt": "2025-10-31T04:51:45",
-      "date_modified": "2026-05-07T23:16:06",
-      "date_modified_gmt": "2026-05-07T23:16:06",
+      "date_modified": "2026-07-16T22:44:56",
+      "date_modified_gmt": "2026-07-16T22:44:56",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/camisa-button-down-cuadros-grandes/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=xs",
       "sku": "5150501030",
@@ -12731,8 +12644,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -13525,7 +13438,7 @@
         {
           "id": 2259146,
           "key": "_last_change_time",
-          "value": "1778195766"
+          "value": "1784241896"
         },
         {
           "id": 2310869,

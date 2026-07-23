@@ -348,64 +348,6 @@
       "sale_price": ""
     },
     {
-      "id": 62520,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "cafe",
-          "option": "cafe"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "44",
-          "option": "44"
-        }
-      ],
-      "image": {
-        "id": 62971,
-        "date_created": "2025-04-25T22:19:06",
-        "date_created_gmt": "2025-04-25T22:19:06",
-        "date_modified": "2025-04-26T05:59:58",
-        "date_modified_gmt": "2025-04-26T05:59:58",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/04/Brent-Cafe-Winstonandharry-1-e1751407044470.jpg",
-        "name": "Brent-Café-Winstonandharry-1",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "649000",
-      "regular_price": "649000",
-      "sale_price": ""
-    },
-    {
-      "id": 62521,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "cafe",
-          "option": "cafe"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "45",
-          "option": "45"
-        }
-      ],
-      "image": {
-        "id": 62971,
-        "date_created": "2025-04-25T22:19:06",
-        "date_created_gmt": "2025-04-25T22:19:06",
-        "date_modified": "2025-04-26T05:59:58",
-        "date_modified_gmt": "2025-04-26T05:59:58",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/04/Brent-Cafe-Winstonandharry-1-e1751407044470.jpg",
-        "name": "Brent-Café-Winstonandharry-1",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "649000",
-      "regular_price": "649000",
-      "sale_price": ""
-    },
-    {
       "id": 62522,
       "attributes": [
         {
@@ -549,64 +491,6 @@
       "price": "649000",
       "regular_price": "649000",
       "sale_price": ""
-    },
-    {
-      "id": 62529,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "miel",
-          "option": "miel"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "44",
-          "option": "44"
-        }
-      ],
-      "image": {
-        "id": 62979,
-        "date_created": "2025-04-25T22:21:25",
-        "date_created_gmt": "2025-04-25T22:21:25",
-        "date_modified": "2025-04-26T05:59:58",
-        "date_modified_gmt": "2025-04-26T05:59:58",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/04/Brent-Miel-Winstonandharry-1-e1750285607340.jpg",
-        "name": "Brent-Miel-Winstonandharry-1",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "649000",
-      "regular_price": "649000",
-      "sale_price": ""
-    },
-    {
-      "id": 62530,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "miel",
-          "option": "miel"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "45",
-          "option": "45"
-        }
-      ],
-      "image": {
-        "id": 62979,
-        "date_created": "2025-04-25T22:21:25",
-        "date_created_gmt": "2025-04-25T22:21:25",
-        "date_modified": "2025-04-26T05:59:58",
-        "date_modified_gmt": "2025-04-26T05:59:58",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/04/Brent-Miel-Winstonandharry-1-e1750285607340.jpg",
-        "name": "Brent-Miel-Winstonandharry-1",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "649000",
-      "regular_price": "649000",
-      "sale_price": ""
     }
   ],
   "grouped_products": [],
@@ -674,8 +558,8 @@
       "type": "variation",
       "date_created": "2025-04-21T19:49:56",
       "date_created_gmt": "2025-04-21T19:49:56",
-      "date_modified": "2026-05-07T23:15:52",
-      "date_modified_gmt": "2026-05-07T23:15:52",
+      "date_modified": "2026-07-16T22:42:57",
+      "date_modified_gmt": "2026-07-16T22:42:57",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/brent/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=45",
       "sku": "7400726045",
@@ -698,8 +582,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -1392,7 +1276,7 @@
         {
           "id": 2261299,
           "key": "_last_change_time",
-          "value": "1778195752"
+          "value": "1784241777"
         },
         {
           "id": 2311558,
@@ -1434,8 +1318,8 @@
       "type": "variation",
       "date_created": "2025-04-21T19:49:56",
       "date_created_gmt": "2025-04-21T19:49:56",
-      "date_modified": "2026-05-07T23:15:52",
-      "date_modified_gmt": "2026-05-07T23:15:52",
+      "date_modified": "2026-07-16T22:42:57",
+      "date_modified_gmt": "2026-07-16T22:42:57",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/brent/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=44",
       "sku": "7400726044",
@@ -1458,8 +1342,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -2152,7 +2036,7 @@
         {
           "id": 2261295,
           "key": "_last_change_time",
-          "value": "1778195752"
+          "value": "1784241777"
         },
         {
           "id": 2311556,
@@ -7539,8 +7423,8 @@
       "type": "variation",
       "date_created": "2025-04-21T19:49:56",
       "date_created_gmt": "2025-04-21T19:49:56",
-      "date_modified": "2026-05-07T23:15:52",
-      "date_modified_gmt": "2026-05-07T23:15:52",
+      "date_modified": "2026-07-16T22:42:57",
+      "date_modified_gmt": "2026-07-16T22:42:57",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/brent/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=45",
       "sku": "7400704045",
@@ -7563,8 +7447,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -8262,7 +8146,7 @@
         {
           "id": 2261287,
           "key": "_last_change_time",
-          "value": "1778195752"
+          "value": "1784241777"
         },
         {
           "id": 2311563,
@@ -8304,8 +8188,8 @@
       "type": "variation",
       "date_created": "2025-04-21T19:49:56",
       "date_created_gmt": "2025-04-21T19:49:56",
-      "date_modified": "2026-05-07T23:15:52",
-      "date_modified_gmt": "2026-05-07T23:15:52",
+      "date_modified": "2026-07-16T22:42:57",
+      "date_modified_gmt": "2026-07-16T22:42:57",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/brent/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=44",
       "sku": "7400704044",
@@ -8328,8 +8212,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -9027,7 +8911,7 @@
         {
           "id": 2261286,
           "key": "_last_change_time",
-          "value": "1778195752"
+          "value": "1784241777"
         },
         {
           "id": 2311562,

@@ -11,9 +11,9 @@
   "description": "<p>La Maleta Kent une el diseño de un modelo clásico británico con la practicidad necesaria para la vida moderna. Está hecha a mano por artesanos colombianos en cuero de becerro y en su interior se puede detallar el forro insignia de Winston &amp;amp</p>",
   "on_sale": false,
   "prices": {
-    "price": "797500",
-    "regular_price": "797500",
-    "sale_price": "797500",
+    "price": "830000",
+    "regular_price": "830000",
+    "sale_price": "830000",
     "price_range": null,
     "currency_code": "COP",
     "currency_symbol": "$",
@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>797,500</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>830,000</span>",
   "average_rating": "5.00",
   "review_count": 1,
   "images": [
@@ -113,30 +113,6 @@
   ],
   "variations": [
     {
-      "id": 25557,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "cognac",
-          "option": "cognac"
-        }
-      ],
-      "image": {
-        "id": 17306,
-        "date_created": "2021-03-26T17:29:55",
-        "date_created_gmt": "2021-03-26T17:29:55",
-        "date_modified": "2021-03-26T17:29:55",
-        "date_modified_gmt": "2021-03-26T17:29:55",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/03/4-kent-cognac-posi-1.jpg",
-        "name": "4 kent cognac posi 1",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "797500",
-      "regular_price": "797500",
-      "sale_price": ""
-    },
-    {
       "id": 24833,
       "attributes": [
         {
@@ -156,8 +132,8 @@
         "alt": ""
       },
       "stock_status": "instock",
-      "price": "797500",
-      "regular_price": "797500",
+      "price": "830000",
+      "regular_price": "830000",
       "sale_price": ""
     },
     {
@@ -180,8 +156,8 @@
         "alt": ""
       },
       "stock_status": "instock",
-      "price": "797500",
-      "regular_price": "797500",
+      "price": "830000",
+      "regular_price": "830000",
       "sale_price": ""
     }
   ],
@@ -244,14 +220,14 @@
       "type": "variation",
       "date_created": "2022-08-25T22:49:10",
       "date_created_gmt": "2022-08-25T22:49:10",
-      "date_modified": "2026-05-07T23:25:40",
-      "date_modified_gmt": "2026-05-07T23:25:40",
+      "date_modified": "2026-07-21T16:11:16",
+      "date_modified_gmt": "2026-07-21T16:11:16",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/maleta-kent/?attribute_pa_selecciona-el-color=cognac",
       "sku": "15159804000",
       "global_unique_id": "",
-      "price": "797500",
-      "regular_price": "797500",
+      "price": "830000",
+      "regular_price": "830000",
       "sale_price": "",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
@@ -268,8 +244,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 4,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -567,11 +543,6 @@
           "value": "yes"
         },
         {
-          "id": 929275,
-          "key": "fb_product_description",
-          "value": ""
-        },
-        {
           "id": 929276,
           "key": "_wc_facebook_product_image_source",
           "value": "product"
@@ -749,12 +720,37 @@
         {
           "id": 2261968,
           "key": "_last_change_time",
-          "value": "1778196340"
+          "value": "1784650262"
         },
         {
           "id": 2314056,
           "key": "wpcvi_images",
           "value": "17307,17308,17309"
+        },
+        {
+          "id": 2390486,
+          "key": "fb_mpn",
+          "value": ""
+        },
+        {
+          "id": 2390487,
+          "key": "_wc_facebook_product_video_source",
+          "value": "upload"
+        },
+        {
+          "id": 2390488,
+          "key": "fb_product_video",
+          "value": []
+        },
+        {
+          "id": 2390489,
+          "key": "fb_product_images",
+          "value": ""
+        },
+        {
+          "id": 2390490,
+          "key": "_wc_facebook_sync_enabled_v2",
+          "value": "yes"
         }
       ],
       "name": "Cognac",
@@ -791,14 +787,14 @@
       "type": "variation",
       "date_created": "2022-08-25T22:39:30",
       "date_created_gmt": "2022-08-25T22:39:30",
-      "date_modified": "2026-06-02T17:35:35",
-      "date_modified_gmt": "2026-06-02T17:35:35",
+      "date_modified": "2026-07-21T16:11:16",
+      "date_modified_gmt": "2026-07-21T16:11:16",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/maleta-kent/?attribute_pa_selecciona-el-color=negro",
       "sku": "15159802000",
       "global_unique_id": "",
-      "price": "797500",
-      "regular_price": "797500",
+      "price": "830000",
+      "regular_price": "830000",
       "sale_price": "",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
@@ -1115,11 +1111,6 @@
           "value": "yes"
         },
         {
-          "id": 868335,
-          "key": "fb_product_description",
-          "value": ""
-        },
-        {
           "id": 868336,
           "key": "_wc_facebook_product_image_source",
           "value": "product"
@@ -1297,12 +1288,37 @@
         {
           "id": 2261966,
           "key": "_last_change_time",
-          "value": "1780421735"
+          "value": "1784650262"
         },
         {
           "id": 2314573,
           "key": "wpcvi_images",
           "value": "13585,13586,13591"
+        },
+        {
+          "id": 2390496,
+          "key": "fb_mpn",
+          "value": ""
+        },
+        {
+          "id": 2390497,
+          "key": "_wc_facebook_product_video_source",
+          "value": "upload"
+        },
+        {
+          "id": 2390498,
+          "key": "fb_product_video",
+          "value": []
+        },
+        {
+          "id": 2390499,
+          "key": "fb_product_images",
+          "value": ""
+        },
+        {
+          "id": 2390500,
+          "key": "_wc_facebook_sync_enabled_v2",
+          "value": "yes"
         }
       ],
       "name": "Negro",
@@ -1339,14 +1355,14 @@
       "type": "variation",
       "date_created": "2022-08-25T22:39:30",
       "date_created_gmt": "2022-08-25T22:39:30",
-      "date_modified": "2026-07-03T17:20:57",
-      "date_modified_gmt": "2026-07-03T17:20:57",
+      "date_modified": "2026-07-21T16:11:16",
+      "date_modified_gmt": "2026-07-21T16:11:16",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/maleta-kent/?attribute_pa_selecciona-el-color=miel",
       "sku": "15159826000",
       "global_unique_id": "",
-      "price": "797500",
-      "regular_price": "797500",
+      "price": "830000",
+      "regular_price": "830000",
       "sale_price": "",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
@@ -1663,11 +1679,6 @@
           "value": "yes"
         },
         {
-          "id": 868249,
-          "key": "fb_product_description",
-          "value": ""
-        },
-        {
           "id": 868250,
           "key": "_wc_facebook_product_image_source",
           "value": "product"
@@ -1845,12 +1856,37 @@
         {
           "id": 2261969,
           "key": "_last_change_time",
-          "value": "1783099257"
+          "value": "1784650262"
         },
         {
           "id": 2314572,
           "key": "wpcvi_images",
           "value": "13588,13580,13589"
+        },
+        {
+          "id": 2390491,
+          "key": "fb_mpn",
+          "value": ""
+        },
+        {
+          "id": 2390492,
+          "key": "_wc_facebook_product_video_source",
+          "value": "upload"
+        },
+        {
+          "id": 2390493,
+          "key": "fb_product_video",
+          "value": []
+        },
+        {
+          "id": 2390494,
+          "key": "fb_product_images",
+          "value": ""
+        },
+        {
+          "id": 2390495,
+          "key": "_wc_facebook_sync_enabled_v2",
+          "value": "yes"
         }
       ],
       "name": "Miel",
@@ -1896,29 +1932,6 @@
   },
   "stock_status": "instock",
   "variation_images_map": {
-    "cognac": [
-      {
-        "id": 17306,
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/03/4-kent-cognac-posi-1.jpg",
-        "alt": "4 kent cognac posi 1",
-        "name": "4 kent cognac posi 1"
-      },
-      {
-        "id": 17307,
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/03/4-kent-cognac-posi-2.jpg",
-        "alt": "Maleta Kent"
-      },
-      {
-        "id": 17308,
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/03/4-kent-cognac-detalle-b.jpg",
-        "alt": "Maleta Kent"
-      },
-      {
-        "id": 17309,
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/03/4-kent-cognac-detalle-a.jpg",
-        "alt": "Maleta Kent"
-      }
-    ],
     "miel": [
       {
         "id": 13581,
@@ -1962,6 +1975,23 @@
       {
         "id": 13591,
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2020/12/bolso-12-delle-b.jpg",
+        "alt": "Maleta Kent"
+      }
+    ],
+    "cognac": [
+      {
+        "id": 17307,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/03/4-kent-cognac-posi-2.jpg",
+        "alt": "Maleta Kent"
+      },
+      {
+        "id": 17308,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/03/4-kent-cognac-detalle-b.jpg",
+        "alt": "Maleta Kent"
+      },
+      {
+        "id": 17309,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/03/4-kent-cognac-detalle-a.jpg",
         "alt": "Maleta Kent"
       }
     ]

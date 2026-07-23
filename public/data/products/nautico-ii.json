@@ -324,35 +324,6 @@
       "sale_price": ""
     },
     {
-      "id": 60019,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "azul",
-          "option": "azul"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "45",
-          "option": "45"
-        }
-      ],
-      "image": {
-        "id": 57973,
-        "date_created": "2024-10-08T03:53:44",
-        "date_created_gmt": "2024-10-08T03:53:44",
-        "date_modified": "2025-02-26T03:50:30",
-        "date_modified_gmt": "2025-02-26T03:50:30",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2024/10/Nautico-II-Azul-Winstonandharry-280.jpg",
-        "name": "Nautico-II-Azul-Winstonandharry-280",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "495000",
-      "regular_price": "495000",
-      "sale_price": ""
-    },
-    {
       "id": 60020,
       "attributes": [
         {
@@ -509,35 +480,6 @@
           "name": "Selecciona una Talla",
           "value": "44",
           "option": "44"
-        }
-      ],
-      "image": {
-        "id": 57980,
-        "date_created": "2024-10-08T04:03:16",
-        "date_created_gmt": "2024-10-08T04:03:16",
-        "date_modified": "2025-02-26T03:50:30",
-        "date_modified_gmt": "2025-02-26T03:50:30",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2024/10/Nautico-II-Cafe-Winstonandharry-239.jpg",
-        "name": "Nautico-II-Café-Winstonandharry-239",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "495000",
-      "regular_price": "495000",
-      "sale_price": ""
-    },
-    {
-      "id": 60028,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "cafe",
-          "option": "cafe"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "45",
-          "option": "45"
         }
       ],
       "image": {
@@ -757,35 +699,6 @@
       "price": "495000",
       "regular_price": "495000",
       "sale_price": ""
-    },
-    {
-      "id": 60037,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "verde",
-          "option": "verde"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "45",
-          "option": "45"
-        }
-      ],
-      "image": {
-        "id": 57988,
-        "date_created": "2024-10-08T04:20:39",
-        "date_created_gmt": "2024-10-08T04:20:39",
-        "date_modified": "2025-02-26T03:50:31",
-        "date_modified_gmt": "2025-02-26T03:50:31",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2024/10/Nautico-II-Verde-Winstonandharry-248.jpg",
-        "name": "Nautico-II-Verde-Winstonandharry-248",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "495000",
-      "regular_price": "495000",
-      "sale_price": ""
     }
   ],
   "grouped_products": [],
@@ -853,8 +766,8 @@
       "type": "variation",
       "date_created": "2025-02-19T20:40:25",
       "date_created_gmt": "2025-02-19T20:40:25",
-      "date_modified": "2026-05-07T23:13:33",
-      "date_modified_gmt": "2026-05-07T23:13:33",
+      "date_modified": "2026-07-16T22:42:30",
+      "date_modified_gmt": "2026-07-16T22:42:30",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/nautico-ii/?attribute_pa_selecciona-el-color=verde&attribute_pa_selecciona-una-talla=45",
       "sku": "7100205045",
@@ -877,8 +790,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -1501,7 +1414,7 @@
         {
           "id": 2260049,
           "key": "_last_change_time",
-          "value": "1778190879"
+          "value": "1784241750"
         },
         {
           "id": 2312041,
@@ -7048,8 +6961,8 @@
       "type": "variation",
       "date_created": "2025-02-19T20:40:25",
       "date_created_gmt": "2025-02-19T20:40:25",
-      "date_modified": "2026-05-07T23:13:33",
-      "date_modified_gmt": "2026-05-07T23:13:33",
+      "date_modified": "2026-07-16T22:42:30",
+      "date_modified_gmt": "2026-07-16T22:42:30",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/nautico-ii/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=45",
       "sku": "7100204045",
@@ -7072,8 +6985,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -7696,7 +7609,7 @@
         {
           "id": 2260041,
           "key": "_last_change_time",
-          "value": "1778190879"
+          "value": "1784241750"
         },
         {
           "id": 2312029,
@@ -13288,8 +13201,8 @@
       "type": "variation",
       "date_created": "2025-02-19T20:40:24",
       "date_created_gmt": "2025-02-19T20:40:24",
-      "date_modified": "2026-05-07T23:13:33",
-      "date_modified_gmt": "2026-05-07T23:13:33",
+      "date_modified": "2026-07-16T22:42:30",
+      "date_modified_gmt": "2026-07-16T22:42:30",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/nautico-ii/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=45",
       "sku": "7100201045",
@@ -13312,8 +13225,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -13941,7 +13854,7 @@
         {
           "id": 2260032,
           "key": "_last_change_time",
-          "value": "1778190879"
+          "value": "1784241750"
         },
         {
           "id": 2312051,
@@ -17443,8 +17356,8 @@
       "type": "variation",
       "date_created": "2025-02-19T20:40:24",
       "date_created_gmt": "2025-02-19T20:40:24",
-      "date_modified": "2026-05-07T23:07:22",
-      "date_modified_gmt": "2026-05-07T23:07:22",
+      "date_modified": "2026-07-16T22:42:30",
+      "date_modified_gmt": "2026-07-16T22:42:30",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/nautico-ii/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=39",
       "sku": "7100201039",
@@ -17467,7 +17380,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 3,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -18096,7 +18009,7 @@
         {
           "id": 2250337,
           "key": "_last_change_time",
-          "value": "1778184419"
+          "value": "1784241750"
         },
         {
           "id": 2312045,
@@ -18138,8 +18051,8 @@
       "type": "variation",
       "date_created": "2025-02-19T20:40:24",
       "date_created_gmt": "2025-02-19T20:40:24",
-      "date_modified": "2026-07-03T17:22:07",
-      "date_modified_gmt": "2026-07-03T17:22:07",
+      "date_modified": "2026-07-16T22:42:30",
+      "date_modified_gmt": "2026-07-16T22:42:30",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/nautico-ii/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=38",
       "sku": "7100201038",
@@ -18162,7 +18075,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 2,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -18791,7 +18704,7 @@
         {
           "id": 2260028,
           "key": "_last_change_time",
-          "value": "1783099327"
+          "value": "1784241750"
         },
         {
           "id": 2312044,

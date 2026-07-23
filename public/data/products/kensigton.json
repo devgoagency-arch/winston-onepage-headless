@@ -551,93 +551,6 @@
       "sale_price": ""
     },
     {
-      "id": 28197,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "cafe",
-          "option": "cafe"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "43",
-          "option": "43"
-        }
-      ],
-      "image": {
-        "id": 67096,
-        "date_created": "2025-08-20T01:43:19",
-        "date_created_gmt": "2025-08-20T01:43:19",
-        "date_modified": "2025-08-25T04:36:10",
-        "date_modified_gmt": "2025-08-25T04:36:10",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Kensigton-Cafe-Winstonandharry-1-e1755659427741.jpg",
-        "name": "Kensigton-Cafe-Winstonandharry-1",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "704000",
-      "regular_price": "704000",
-      "sale_price": ""
-    },
-    {
-      "id": 28198,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "cafe",
-          "option": "cafe"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "44",
-          "option": "44"
-        }
-      ],
-      "image": {
-        "id": 67096,
-        "date_created": "2025-08-20T01:43:19",
-        "date_created_gmt": "2025-08-20T01:43:19",
-        "date_modified": "2025-08-25T04:36:10",
-        "date_modified_gmt": "2025-08-25T04:36:10",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Kensigton-Cafe-Winstonandharry-1-e1755659427741.jpg",
-        "name": "Kensigton-Cafe-Winstonandharry-1",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "704000",
-      "regular_price": "704000",
-      "sale_price": ""
-    },
-    {
-      "id": 28199,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "cafe",
-          "option": "cafe"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "45",
-          "option": "45"
-        }
-      ],
-      "image": {
-        "id": 67096,
-        "date_created": "2025-08-20T01:43:19",
-        "date_created_gmt": "2025-08-20T01:43:19",
-        "date_modified": "2025-08-25T04:36:10",
-        "date_modified_gmt": "2025-08-25T04:36:10",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Kensigton-Cafe-Winstonandharry-1-e1755659427741.jpg",
-        "name": "Kensigton-Cafe-Winstonandharry-1",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "704000",
-      "regular_price": "704000",
-      "sale_price": ""
-    },
-    {
       "id": 28201,
       "attributes": [
         {
@@ -752,64 +665,6 @@
       "price": "704000",
       "regular_price": "704000",
       "sale_price": ""
-    },
-    {
-      "id": 28207,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "negro",
-          "option": "negro"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "44",
-          "option": "44"
-        }
-      ],
-      "image": {
-        "id": 67104,
-        "date_created": "2025-08-20T01:44:33",
-        "date_created_gmt": "2025-08-20T01:44:33",
-        "date_modified": "2025-08-25T04:36:15",
-        "date_modified_gmt": "2025-08-25T04:36:15",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Kensigton-Negro-Winstonandharry-1-e1755659649749.jpg",
-        "name": "Kensigton-Negro-Winstonandharry-1",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "704000",
-      "regular_price": "704000",
-      "sale_price": ""
-    },
-    {
-      "id": 28208,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "negro",
-          "option": "negro"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "45",
-          "option": "45"
-        }
-      ],
-      "image": {
-        "id": 67104,
-        "date_created": "2025-08-20T01:44:33",
-        "date_created_gmt": "2025-08-20T01:44:33",
-        "date_modified": "2025-08-25T04:36:15",
-        "date_modified_gmt": "2025-08-25T04:36:15",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Kensigton-Negro-Winstonandharry-1-e1755659649749.jpg",
-        "name": "Kensigton-Negro-Winstonandharry-1",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "704000",
-      "regular_price": "704000",
-      "sale_price": ""
     }
   ],
   "grouped_products": [],
@@ -877,8 +732,8 @@
       "type": "variation",
       "date_created": "2023-01-11T20:51:25",
       "date_created_gmt": "2023-01-11T20:51:25",
-      "date_modified": "2026-05-07T23:20:18",
-      "date_modified_gmt": "2026-05-07T23:20:18",
+      "date_modified": "2026-07-16T22:41:14",
+      "date_modified_gmt": "2026-07-16T22:41:14",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/kensigton/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=45",
       "sku": "7414002045",
@@ -901,8 +756,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -1695,7 +1550,7 @@
         {
           "id": 2216798,
           "key": "_last_change_time",
-          "value": "1778196018"
+          "value": "1784241674"
         },
         {
           "id": 2313418,
@@ -1737,8 +1592,8 @@
       "type": "variation",
       "date_created": "2023-01-11T20:51:25",
       "date_created_gmt": "2023-01-11T20:51:25",
-      "date_modified": "2026-05-07T23:20:17",
-      "date_modified_gmt": "2026-05-07T23:20:17",
+      "date_modified": "2026-07-16T22:41:14",
+      "date_modified_gmt": "2026-07-16T22:41:14",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/kensigton/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=44",
       "sku": "7414002044",
@@ -1761,8 +1616,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -2555,7 +2410,7 @@
         {
           "id": 2216796,
           "key": "_last_change_time",
-          "value": "1778196017"
+          "value": "1784241674"
         },
         {
           "id": 2313421,
@@ -5177,8 +5032,8 @@
       "type": "variation",
       "date_created": "2023-01-11T20:51:24",
       "date_created_gmt": "2023-01-11T20:51:24",
-      "date_modified": "2026-05-07T23:05:09",
-      "date_modified_gmt": "2026-05-07T23:05:09",
+      "date_modified": "2026-07-16T22:41:14",
+      "date_modified_gmt": "2026-07-16T22:41:14",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/kensigton/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=40",
       "sku": "7414002040",
@@ -5201,7 +5056,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 2,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -5995,7 +5850,7 @@
         {
           "id": 2216788,
           "key": "_last_change_time",
-          "value": "1778184083"
+          "value": "1784241674"
         },
         {
           "id": 2313433,
@@ -8617,8 +8472,8 @@
       "type": "variation",
       "date_created": "2023-01-11T20:51:24",
       "date_created_gmt": "2023-01-11T20:51:24",
-      "date_modified": "2026-05-07T23:20:17",
-      "date_modified_gmt": "2026-05-07T23:20:17",
+      "date_modified": "2026-07-16T22:41:14",
+      "date_modified_gmt": "2026-07-16T22:41:14",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/kensigton/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=45",
       "sku": "7414004045",
@@ -8641,8 +8496,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -9435,7 +9290,7 @@
         {
           "id": 2216780,
           "key": "_last_change_time",
-          "value": "1778196017"
+          "value": "1784241674"
         },
         {
           "id": 2313429,
@@ -9477,8 +9332,8 @@
       "type": "variation",
       "date_created": "2023-01-11T20:51:24",
       "date_created_gmt": "2023-01-11T20:51:24",
-      "date_modified": "2026-05-07T23:20:17",
-      "date_modified_gmt": "2026-05-07T23:20:17",
+      "date_modified": "2026-07-16T22:41:14",
+      "date_modified_gmt": "2026-07-16T22:41:14",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/kensigton/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=44",
       "sku": "7414004044",
@@ -9501,8 +9356,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -10295,7 +10150,7 @@
         {
           "id": 2216778,
           "key": "_last_change_time",
-          "value": "1778196017"
+          "value": "1784241674"
         },
         {
           "id": 2313428,
@@ -10337,8 +10192,8 @@
       "type": "variation",
       "date_created": "2023-01-11T20:51:24",
       "date_created_gmt": "2023-01-11T20:51:24",
-      "date_modified": "2026-05-07T23:20:16",
-      "date_modified_gmt": "2026-05-07T23:20:16",
+      "date_modified": "2026-07-16T22:41:14",
+      "date_modified_gmt": "2026-07-16T22:41:14",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/kensigton/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=43",
       "sku": "7414004043",
@@ -10361,8 +10216,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -11155,7 +11010,7 @@
         {
           "id": 2216776,
           "key": "_last_change_time",
-          "value": "1778196016"
+          "value": "1784241674"
         },
         {
           "id": 2313427,

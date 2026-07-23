@@ -380,35 +380,6 @@
       "sale_price": ""
     },
     {
-      "id": 57050,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "azul",
-          "option": "azul"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "45",
-          "option": "45"
-        }
-      ],
-      "image": {
-        "id": 47670,
-        "date_created": "2024-02-21T16:44:40",
-        "date_created_gmt": "2024-02-21T16:44:40",
-        "date_modified": "2024-07-12T06:20:53",
-        "date_modified_gmt": "2024-07-12T06:20:53",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Ely-tenis-azul-winstonandharry-1.jpg",
-        "name": "Ely-tenis-azul-winstonandharry (1)",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "420000",
-      "regular_price": "560000",
-      "sale_price": ""
-    },
-    {
       "id": 57051,
       "attributes": [
         {
@@ -1045,35 +1016,6 @@
       "price": "420000",
       "regular_price": "560000",
       "sale_price": ""
-    },
-    {
-      "id": 57077,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "negro",
-          "option": "negro"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "45",
-          "option": "45"
-        }
-      ],
-      "image": {
-        "id": 47288,
-        "date_created": "2024-02-21T16:33:44",
-        "date_created_gmt": "2024-02-21T16:33:44",
-        "date_modified": "2024-07-12T06:21:12",
-        "date_modified_gmt": "2024-07-12T06:21:12",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Ely-tenis-negro-winstonandharry.jpg",
-        "name": "Ely-tenis-negro-winstonandharry",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "420000",
-      "regular_price": "560000",
-      "sale_price": ""
     }
   ],
   "grouped_products": [],
@@ -1135,8 +1077,8 @@
       "type": "variation",
       "date_created": "2024-07-12T06:00:45",
       "date_created_gmt": "2024-07-12T06:00:45",
-      "date_modified": "2026-05-08T21:42:16",
-      "date_modified_gmt": "2026-05-08T21:42:16",
+      "date_modified": "2026-07-16T22:42:10",
+      "date_modified_gmt": "2026-07-16T22:42:10",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/ely/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=45",
       "sku": "7408302045",
@@ -1159,8 +1101,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -1723,7 +1665,7 @@
         {
           "id": 2261460,
           "key": "_last_change_time",
-          "value": "1778275820"
+          "value": "1784241730"
         },
         {
           "id": 2312250,
@@ -18255,8 +18197,8 @@
       "type": "variation",
       "date_created": "2024-07-12T06:00:44",
       "date_created_gmt": "2024-07-12T06:00:44",
-      "date_modified": "2026-05-08T21:42:16",
-      "date_modified_gmt": "2026-05-08T21:42:16",
+      "date_modified": "2026-07-16T22:42:10",
+      "date_modified_gmt": "2026-07-16T22:42:10",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/ely/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=45",
       "sku": "7408301045",
@@ -18279,8 +18221,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -18838,7 +18780,7 @@
         {
           "id": 2261451,
           "key": "_last_change_time",
-          "value": "1778275820"
+          "value": "1784241730"
         },
         {
           "id": 2312269,

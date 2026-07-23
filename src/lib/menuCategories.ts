@@ -29,14 +29,14 @@ export const MENU_CATEGORIES = [
     ]
   },
   {
-    name: 'Maletas, Morrales y Portafolios de Cuero',
-    slug: 'maletas-morrales-potafolios-cuero',
+    name: 'Maletas, Morrales y Maletines',
+    slug: 'maletas-morrales-cuero-hombre',
     id: '190',
     subcategories: [
-      { name: 'Portafolios', slug: 'portafolios-de-cuero-para-hombre' },
-      { name: 'Morrales', slug: 'morrales-de-cuero-para-hombre' },
-      { name: 'Maletas', slug: 'maletas-de-viaje-cuero' },
-      { name: 'Accesorios de viaje', slug: 'virtual-accesorios-viaje' }
+      { name: 'Maletas de Viaje', slug: 'maletas-viaje-cuero-hombre' },
+      { name: 'Morrales', slug: 'morrales-cuero-hombre' },
+      { name: 'Maletines', slug: 'maletines-cuero-hombre' },
+      { name: 'Accesorios de Viaje', slug: 'accesorios-viaje-cuero' }
     ]
   },
   {

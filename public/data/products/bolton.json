@@ -347,35 +347,6 @@
       "sale_price": ""
     },
     {
-      "id": 54818,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "negro",
-          "option": "negro"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "45",
-          "option": "45"
-        }
-      ],
-      "image": {
-        "id": 56456,
-        "date_created": "2024-06-21T03:09:50",
-        "date_created_gmt": "2024-06-21T03:09:50",
-        "date_modified": "2024-07-12T06:20:51",
-        "date_modified_gmt": "2024-07-12T06:20:51",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2024/06/Bolton-Negro-Wintonandharry-Tennis-96.jpg",
-        "name": "Bolton-Negro-Wintonandharry-Tennis-96",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "630000",
-      "regular_price": "630000",
-      "sale_price": ""
-    },
-    {
       "id": 24805,
       "attributes": [
         {
@@ -387,35 +358,6 @@
           "name": "Selecciona una Talla",
           "value": "38",
           "option": "38"
-        }
-      ],
-      "image": {
-        "id": 56448,
-        "date_created": "2024-06-21T02:49:39",
-        "date_created_gmt": "2024-06-21T02:49:39",
-        "date_modified": "2024-07-12T06:20:41",
-        "date_modified_gmt": "2024-07-12T06:20:41",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2024/06/Bolton-Miel-Winstonandharry-72.jpg",
-        "name": "Bolton-Miel-Winstonandharry-72",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "630000",
-      "regular_price": "630000",
-      "sale_price": ""
-    },
-    {
-      "id": 24812,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "cognac",
-          "option": "cognac"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "45",
-          "option": "45"
         }
       ],
       "image": {
@@ -499,8 +441,8 @@
       "type": "variation",
       "date_created": "2024-04-24T17:52:00",
       "date_created_gmt": "2024-04-24T17:52:00",
-      "date_modified": "2026-05-07T23:15:52",
-      "date_modified_gmt": "2026-05-07T23:15:52",
+      "date_modified": "2026-07-16T22:41:50",
+      "date_modified_gmt": "2026-07-16T22:41:50",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bolton/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=45",
       "sku": "7403302045",
@@ -523,8 +465,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 2,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -1087,7 +1029,7 @@
         {
           "id": 2261407,
           "key": "_last_change_time",
-          "value": "1778195752"
+          "value": "1784241710"
         },
         {
           "id": 2312473,
@@ -6159,8 +6101,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:38:06",
       "date_created_gmt": "2022-08-25T22:38:06",
-      "date_modified": "2026-05-07T23:15:52",
-      "date_modified_gmt": "2026-05-07T23:15:52",
+      "date_modified": "2026-07-16T22:39:21",
+      "date_modified_gmt": "2026-07-16T22:39:21",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bolton/?attribute_pa_selecciona-el-color=cognac&attribute_pa_selecciona-una-talla=45",
       "sku": "7403332045",
@@ -6183,8 +6125,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -6747,7 +6689,7 @@
         {
           "id": 2261418,
           "key": "_last_change_time",
-          "value": "1778195752"
+          "value": "1784241561"
         },
         {
           "id": 2314580,

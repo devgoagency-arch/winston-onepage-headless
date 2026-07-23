@@ -437,64 +437,6 @@
       "sale_price": ""
     },
     {
-      "id": 82130,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "cognac",
-          "option": "cognac"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "44",
-          "option": "44"
-        }
-      ],
-      "image": {
-        "id": 81735,
-        "date_created": "2025-10-27T19:08:57",
-        "date_created_gmt": "2025-10-27T19:08:57",
-        "date_modified": "2025-11-04T17:21:08",
-        "date_modified_gmt": "2025-11-04T17:21:08",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Cumberland-II-Cognac-Winstonandharry-1.jpg",
-        "name": "Cumberland II-Cognac-Winstonandharry-1",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "902000",
-      "regular_price": "902000",
-      "sale_price": ""
-    },
-    {
-      "id": 82131,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "cognac",
-          "option": "cognac"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "45",
-          "option": "45"
-        }
-      ],
-      "image": {
-        "id": 81735,
-        "date_created": "2025-10-27T19:08:57",
-        "date_created_gmt": "2025-10-27T19:08:57",
-        "date_modified": "2025-11-04T17:21:08",
-        "date_modified_gmt": "2025-11-04T17:21:08",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Cumberland-II-Cognac-Winstonandharry-1.jpg",
-        "name": "Cumberland II-Cognac-Winstonandharry-1",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "902000",
-      "regular_price": "902000",
-      "sale_price": ""
-    },
-    {
       "id": 82132,
       "attributes": [
         {
@@ -696,64 +638,6 @@
       "price": "902000",
       "regular_price": "902000",
       "sale_price": ""
-    },
-    {
-      "id": 82139,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "miel",
-          "option": "miel"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "44",
-          "option": "44"
-        }
-      ],
-      "image": {
-        "id": 81743,
-        "date_created": "2025-10-27T19:09:41",
-        "date_created_gmt": "2025-10-27T19:09:41",
-        "date_modified": "2025-11-04T17:21:24",
-        "date_modified_gmt": "2025-11-04T17:21:24",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Cumberland-II-Miel-Winstonandharry-1.jpg",
-        "name": "Cumberland II-Miel-Winstonandharry-1",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "902000",
-      "regular_price": "902000",
-      "sale_price": ""
-    },
-    {
-      "id": 82140,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "miel",
-          "option": "miel"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "45",
-          "option": "45"
-        }
-      ],
-      "image": {
-        "id": 81743,
-        "date_created": "2025-10-27T19:09:41",
-        "date_created_gmt": "2025-10-27T19:09:41",
-        "date_modified": "2025-11-04T17:21:24",
-        "date_modified_gmt": "2025-11-04T17:21:24",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Cumberland-II-Miel-Winstonandharry-1.jpg",
-        "name": "Cumberland II-Miel-Winstonandharry-1",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "902000",
-      "regular_price": "902000",
-      "sale_price": ""
     }
   ],
   "grouped_products": [],
@@ -821,8 +705,8 @@
       "type": "variation",
       "date_created": "2025-10-30T03:59:08",
       "date_created_gmt": "2025-10-30T03:59:08",
-      "date_modified": "2026-05-07T23:02:48",
-      "date_modified_gmt": "2026-05-07T23:02:48",
+      "date_modified": "2026-07-16T22:44:35",
+      "date_modified_gmt": "2026-07-16T22:44:35",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cumberland-ii/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=45",
       "sku": "7034326045",
@@ -845,8 +729,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -1639,7 +1523,7 @@
         {
           "id": 2259919,
           "key": "_last_change_time",
-          "value": "1778177978"
+          "value": "1784241875"
         },
         {
           "id": 2311013,
@@ -1681,8 +1565,8 @@
       "type": "variation",
       "date_created": "2025-10-30T03:59:08",
       "date_created_gmt": "2025-10-30T03:59:08",
-      "date_modified": "2026-05-07T23:02:48",
-      "date_modified_gmt": "2026-05-07T23:02:48",
+      "date_modified": "2026-07-16T22:44:35",
+      "date_modified_gmt": "2026-07-16T22:44:35",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cumberland-ii/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=44",
       "sku": "7034326044",
@@ -1705,8 +1589,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -2499,7 +2383,7 @@
         {
           "id": 2259918,
           "key": "_last_change_time",
-          "value": "1778177978"
+          "value": "1784241875"
         },
         {
           "id": 2311012,
@@ -8561,8 +8445,8 @@
       "type": "variation",
       "date_created": "2025-10-30T03:59:08",
       "date_created_gmt": "2025-10-30T03:59:08",
-      "date_modified": "2026-05-07T23:02:48",
-      "date_modified_gmt": "2026-05-07T23:02:48",
+      "date_modified": "2026-07-16T22:44:35",
+      "date_modified_gmt": "2026-07-16T22:44:35",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cumberland-ii/?attribute_pa_selecciona-el-color=cognac&attribute_pa_selecciona-una-talla=45",
       "sku": "7034332045",
@@ -8585,8 +8469,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -9379,7 +9263,7 @@
         {
           "id": 2259926,
           "key": "_last_change_time",
-          "value": "1778177975"
+          "value": "1784241875"
         },
         {
           "id": 2311019,
@@ -9421,8 +9305,8 @@
       "type": "variation",
       "date_created": "2025-10-30T03:59:08",
       "date_created_gmt": "2025-10-30T03:59:08",
-      "date_modified": "2026-05-07T23:02:48",
-      "date_modified_gmt": "2026-05-07T23:02:48",
+      "date_modified": "2026-07-16T22:44:35",
+      "date_modified_gmt": "2026-07-16T22:44:35",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cumberland-ii/?attribute_pa_selecciona-el-color=cognac&attribute_pa_selecciona-una-talla=44",
       "sku": "7034332044",
@@ -9445,8 +9329,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -10239,7 +10123,7 @@
         {
           "id": 2259925,
           "key": "_last_change_time",
-          "value": "1778177975"
+          "value": "1784241875"
         },
         {
           "id": 2311018,
@@ -11141,8 +11025,8 @@
       "type": "variation",
       "date_created": "2025-10-30T03:59:08",
       "date_created_gmt": "2025-10-30T03:59:08",
-      "date_modified": "2026-05-07T23:02:48",
-      "date_modified_gmt": "2026-05-07T23:02:48",
+      "date_modified": "2026-07-16T22:44:35",
+      "date_modified_gmt": "2026-07-16T22:44:35",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cumberland-ii/?attribute_pa_selecciona-el-color=cognac&attribute_pa_selecciona-una-talla=42",
       "sku": "7034332042",
@@ -11165,7 +11049,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 3,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -11959,7 +11843,7 @@
         {
           "id": 2259924,
           "key": "_last_change_time",
-          "value": "1778177975"
+          "value": "1784241875"
         },
         {
           "id": 2311016,

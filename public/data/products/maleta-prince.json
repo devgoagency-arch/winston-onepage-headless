@@ -11,9 +11,9 @@
   "description": "<p>La Maleta Prince une el diseño de un modelo clásico británico con la practicidad necesaria para la vida moderna. Está hecha a mano por artesanos colombianos en cuero de becerro y en su interior se puede detallar el forro insignia de Winston &amp; Harry</p>",
   "on_sale": false,
   "prices": {
-    "price": "935000",
-    "regular_price": "935000",
-    "sale_price": "935000",
+    "price": "1050000",
+    "regular_price": "1050000",
+    "sale_price": "1050000",
     "price_range": null,
     "currency_code": "COP",
     "currency_symbol": "$",
@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>935,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>1,050,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -119,6 +119,30 @@
   ],
   "variations": [
     {
+      "id": 24962,
+      "attributes": [
+        {
+          "name": "Selecciona el Color",
+          "value": "miel",
+          "option": "miel"
+        }
+      ],
+      "image": {
+        "id": 13599,
+        "date_created": "2020-12-17T19:45:51",
+        "date_created_gmt": "2020-12-17T19:45:51",
+        "date_modified": "2020-12-17T19:45:51",
+        "date_modified_gmt": "2020-12-17T19:45:51",
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2020/12/bolso-02-front.jpg",
+        "name": "bolso-02-front",
+        "alt": ""
+      },
+      "stock_status": "instock",
+      "price": "1050000",
+      "regular_price": "1050000",
+      "sale_price": ""
+    },
+    {
       "id": 24963,
       "attributes": [
         {
@@ -138,8 +162,32 @@
         "alt": ""
       },
       "stock_status": "instock",
-      "price": "935000",
-      "regular_price": "935000",
+      "price": "1050000",
+      "regular_price": "1050000",
+      "sale_price": ""
+    },
+    {
+      "id": 24964,
+      "attributes": [
+        {
+          "name": "Selecciona el Color",
+          "value": "cafe",
+          "option": "cafe"
+        }
+      ],
+      "image": {
+        "id": 13603,
+        "date_created": "2020-12-17T19:46:01",
+        "date_created_gmt": "2020-12-17T19:46:01",
+        "date_modified": "2020-12-17T19:46:01",
+        "date_modified_gmt": "2020-12-17T19:46:01",
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2020/12/bolso-03-front.jpg",
+        "name": "bolso-03-front",
+        "alt": ""
+      },
+      "stock_status": "instock",
+      "price": "1050000",
+      "regular_price": "1050000",
       "sale_price": ""
     }
   ],
@@ -202,14 +250,14 @@
       "type": "variation",
       "date_created": "2022-08-25T22:42:01",
       "date_created_gmt": "2022-08-25T22:42:01",
-      "date_modified": "2026-05-07T23:06:05",
-      "date_modified_gmt": "2026-05-07T23:06:05",
+      "date_modified": "2026-07-21T16:09:22",
+      "date_modified_gmt": "2026-07-21T16:09:22",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/maleta-prince/?attribute_pa_selecciona-el-color=cafe",
       "sku": "15159704000",
       "global_unique_id": "",
-      "price": "935000",
-      "regular_price": "935000",
+      "price": "1050000",
+      "regular_price": "1050000",
       "sale_price": "",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
@@ -226,8 +274,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 0,
-      "stock_status": "outofstock",
+      "stock_quantity": 18,
+      "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -516,11 +564,6 @@
           "value": "yes"
         },
         {
-          "id": 878932,
-          "key": "fb_product_description",
-          "value": ""
-        },
-        {
           "id": 878933,
           "key": "_wc_facebook_product_image_source",
           "value": "product"
@@ -693,12 +736,37 @@
         {
           "id": 2261965,
           "key": "_last_change_time",
-          "value": "1778184340"
+          "value": "1784650145"
         },
         {
           "id": 2314506,
           "key": "wpcvi_images",
           "value": "13602,13601,13600"
+        },
+        {
+          "id": 2390464,
+          "key": "fb_mpn",
+          "value": ""
+        },
+        {
+          "id": 2390465,
+          "key": "_wc_facebook_product_video_source",
+          "value": "upload"
+        },
+        {
+          "id": 2390466,
+          "key": "fb_product_video",
+          "value": []
+        },
+        {
+          "id": 2390467,
+          "key": "fb_product_images",
+          "value": ""
+        },
+        {
+          "id": 2390468,
+          "key": "_wc_facebook_sync_enabled_v2",
+          "value": "yes"
         }
       ],
       "name": "Café",
@@ -735,14 +803,14 @@
       "type": "variation",
       "date_created": "2022-08-25T22:42:01",
       "date_created_gmt": "2022-08-25T22:42:01",
-      "date_modified": "2026-05-07T23:06:05",
-      "date_modified_gmt": "2026-05-07T23:06:05",
+      "date_modified": "2026-07-21T16:09:22",
+      "date_modified_gmt": "2026-07-21T16:09:22",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/maleta-prince/?attribute_pa_selecciona-el-color=negro",
       "sku": "15159702000",
       "global_unique_id": "",
-      "price": "935000",
-      "regular_price": "935000",
+      "price": "1050000",
+      "regular_price": "1050000",
       "sale_price": "",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
@@ -759,7 +827,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 6,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -1058,11 +1126,6 @@
           "value": "yes"
         },
         {
-          "id": 878846,
-          "key": "fb_product_description",
-          "value": ""
-        },
-        {
           "id": 878847,
           "key": "_wc_facebook_product_image_source",
           "value": "product"
@@ -1240,12 +1303,37 @@
         {
           "id": 2218898,
           "key": "_last_change_time",
-          "value": "1778184340"
+          "value": "1784650145"
         },
         {
           "id": 2314505,
           "key": "wpcvi_images",
           "value": "13594,13593,13592"
+        },
+        {
+          "id": 2390459,
+          "key": "fb_mpn",
+          "value": ""
+        },
+        {
+          "id": 2390460,
+          "key": "_wc_facebook_product_video_source",
+          "value": "upload"
+        },
+        {
+          "id": 2390461,
+          "key": "fb_product_video",
+          "value": []
+        },
+        {
+          "id": 2390462,
+          "key": "fb_product_images",
+          "value": ""
+        },
+        {
+          "id": 2390463,
+          "key": "_wc_facebook_sync_enabled_v2",
+          "value": "yes"
         }
       ],
       "name": "Negro",
@@ -1282,14 +1370,14 @@
       "type": "variation",
       "date_created": "2022-08-25T22:42:01",
       "date_created_gmt": "2022-08-25T22:42:01",
-      "date_modified": "2026-06-02T17:35:49",
-      "date_modified_gmt": "2026-06-02T17:35:49",
+      "date_modified": "2026-07-21T16:09:22",
+      "date_modified_gmt": "2026-07-21T16:09:22",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/maleta-prince/?attribute_pa_selecciona-el-color=miel",
       "sku": "15159726000",
       "global_unique_id": "",
-      "price": "935000",
-      "regular_price": "935000",
+      "price": "1050000",
+      "regular_price": "1050000",
       "sale_price": "",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
@@ -1306,8 +1394,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 0,
-      "stock_status": "outofstock",
+      "stock_quantity": 18,
+      "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -1606,11 +1694,6 @@
           "value": "yes"
         },
         {
-          "id": 878760,
-          "key": "fb_product_description",
-          "value": ""
-        },
-        {
           "id": 878761,
           "key": "_wc_facebook_product_image_source",
           "value": "product"
@@ -1788,12 +1871,37 @@
         {
           "id": 2250096,
           "key": "_last_change_time",
-          "value": "1780421749"
+          "value": "1784650145"
         },
         {
           "id": 2314504,
           "key": "wpcvi_images",
           "value": "13598,13597,13596"
+        },
+        {
+          "id": 2390454,
+          "key": "fb_mpn",
+          "value": ""
+        },
+        {
+          "id": 2390455,
+          "key": "_wc_facebook_product_video_source",
+          "value": "upload"
+        },
+        {
+          "id": 2390456,
+          "key": "fb_product_video",
+          "value": []
+        },
+        {
+          "id": 2390457,
+          "key": "fb_product_images",
+          "value": ""
+        },
+        {
+          "id": 2390458,
+          "key": "_wc_facebook_sync_enabled_v2",
+          "value": "yes"
         }
       ],
       "name": "Miel",
@@ -1839,6 +1947,29 @@
   },
   "stock_status": "instock",
   "variation_images_map": {
+    "miel": [
+      {
+        "id": 13599,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2020/12/bolso-02-front.jpg",
+        "alt": "bolso-02-front",
+        "name": "bolso-02-front"
+      },
+      {
+        "id": 13598,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2020/12/bolso-02-delle-b.jpg",
+        "alt": "Maleta Prince"
+      },
+      {
+        "id": 13597,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2020/12/bolso-02-delle-a.jpg",
+        "alt": "Maleta Prince"
+      },
+      {
+        "id": 13596,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2020/12/bolso-02-back.jpg",
+        "alt": "Maleta Prince"
+      }
+    ],
     "negro": [
       {
         "id": 13595,
@@ -1862,6 +1993,14 @@
         "alt": "Maleta Prince"
       }
     ],
+    "cafe": [
+      {
+        "id": 13603,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2020/12/bolso-03-front.jpg",
+        "alt": "bolso-03-front",
+        "name": "bolso-03-front"
+      }
+    ],
     "café": [
       {
         "id": 13602,
@@ -1876,23 +2015,6 @@
       {
         "id": 13600,
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2020/12/bolso-03-back.jpg",
-        "alt": "Maleta Prince"
-      }
-    ],
-    "miel": [
-      {
-        "id": 13598,
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2020/12/bolso-02-delle-b.jpg",
-        "alt": "Maleta Prince"
-      },
-      {
-        "id": 13597,
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2020/12/bolso-02-delle-a.jpg",
-        "alt": "Maleta Prince"
-      },
-      {
-        "id": 13596,
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2020/12/bolso-02-back.jpg",
         "alt": "Maleta Prince"
       }
     ]
