@@ -97,10 +97,25 @@ export function filterOnlyOnSale(products: any[]): any[] {
 /** Filtra por subcategorías seleccionadas. */
 export function filterBySubcats(products: any[], selectedSubcats: string[]): any[] {
     if (!selectedSubcats.length) return products;
-    return products.filter(p =>
-        p.categories?.some((c: any) => selectedSubcats.includes(c.slug)) ||
-        (p.category_slug && selectedSubcats.includes(p.category_slug))
-    );
+    
+    return products.filter(p => {
+        // Validación normal
+        const hasNormalSubcat = p.categories?.some((c: any) => selectedSubcats.includes(c.slug)) || (p.category_slug && selectedSubcats.includes(p.category_slug));
+        if (hasNormalSubcat) return true;
+
+        // Validación para el filtro virtual "Accesorios de viaje" (atrapa lo que sobra)
+        if (selectedSubcats.includes('virtual-accesorios-viaje')) {
+            const mainSlugs = [
+                'portafolios-de-cuero-para-hombre', 
+                'morrales-de-cuero-para-hombre', 
+                'maletas-de-viaje-cuero'
+            ];
+            const isUncategorized = !p.categories?.some((c: any) => mainSlugs.includes(c.slug)) && (!p.category_slug || !mainSlugs.includes(p.category_slug));
+            if (isUncategorized) return true;
+        }
+
+        return false;
+    });
 }
 
 /** Filtra por tags seleccionados. */

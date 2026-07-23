@@ -134,6 +134,7 @@ export default defineConfig({
     '/productos/limpiador-en-seco': '/categoria/accesorios-hombre',
     '/productos/sueter-tejido-escalera-negro': '/categoria/sueteres-chalecos-hombre',
     '/regalos-dia-del-padre': '/',
+    '/categoria/maletas-morrales-cuero': '/categoria/maletas-morrales-potafolios-cuero',
     
     // Redirects Categorías Legacy (eliminadas)
     '/categoria/menos-de-200000': '/sale',
