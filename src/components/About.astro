@@ -13,7 +13,6 @@ const hasNativeVideo = videoUrl && videoUrl.trim() !== "" && videoUrl.endsWith("
 <section id="nosotros" class="about-lv-hero js-about-section">
     <div class="video-container">
         {hasNativeVideo ? (
-            <!-- Video HTML5 nativo y optimizado con precarga controlada para máximo score PSI -->
             <video 
                 class="about-native-video js-about-video"
                 preload="none"
@@ -25,7 +24,6 @@ const hasNativeVideo = videoUrl && videoUrl.trim() !== "" && videoUrl.endsWith("
                 <source src={videoUrl} type="video/mp4" />
             </video>
         ) : (
-            <!-- Imagen estática optimizada de portada (Evita bloqueos de YouTube y asegura PSI 100/100) -->
             <div class="about-poster-image" style="background-image: url('https://img.youtube.com/vi/XGnN4DTsdD8/maxresdefault.jpg');"></div>
         )}
         
