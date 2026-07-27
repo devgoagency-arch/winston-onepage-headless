@@ -203,35 +203,6 @@
   ],
   "variations": [
     {
-      "id": 24270,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "azul",
-          "option": "azul"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "38",
-          "option": "38"
-        }
-      ],
-      "image": {
-        "id": 60852,
-        "date_created": "2025-03-02T05:02:51",
-        "date_created_gmt": "2025-03-02T05:02:51",
-        "date_modified": "2025-03-03T03:12:38",
-        "date_modified_gmt": "2025-03-03T03:12:38",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/03/Cardiff-Azul-Winstonandharry-1-e1752771572771.jpg",
-        "name": "Cardiff-Azul-Winstonandharry-1",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "825000",
-      "regular_price": "825000",
-      "sale_price": ""
-    },
-    {
       "id": 24272,
       "attributes": [
         {
@@ -3446,8 +3417,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:29:26",
       "date_created_gmt": "2022-08-25T22:29:26",
-      "date_modified": "2026-06-02T17:35:08",
-      "date_modified_gmt": "2026-06-02T17:35:08",
+      "date_modified": "2026-07-27T17:43:06",
+      "date_modified_gmt": "2026-07-27T17:43:06",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cardiff/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=41",
       "sku": "7005002041",
@@ -3470,7 +3441,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 6,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -4097,7 +4068,7 @@
         {
           "id": 2259478,
           "key": "_last_change_time",
-          "value": "1780421708"
+          "value": "1785174186"
         },
         {
           "id": 2314954,
@@ -11778,8 +11749,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:29:25",
       "date_created_gmt": "2022-08-25T22:29:25",
-      "date_modified": "2026-05-07T23:00:48",
-      "date_modified_gmt": "2026-05-07T23:00:48",
+      "date_modified": "2026-07-27T17:43:06",
+      "date_modified_gmt": "2026-07-27T17:43:06",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cardiff/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=38",
       "sku": "7005001038",
@@ -11802,8 +11773,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -12432,7 +12403,7 @@
         {
           "id": 2259463,
           "key": "_last_change_time",
-          "value": "1778177769"
+          "value": "1785174186"
         },
         {
           "id": 2314967,

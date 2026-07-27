@@ -485,7 +485,32 @@ function mapV3ToStore(p: any) {
                 }
             });
 
-            // 2. Luego añadimos las de WPC (ordenadas después de la principal)
+            // 2. Luego añadimos las de gallery_image_ids de la variación (nativas de WooCommerce)
+            if (p.variations_data && Array.isArray(p.variations_data)) {
+                // Construir mapa rápido id->imagen desde la galería general del producto
+                const productImagesById: Record<number, any> = {};
+                (p.images || []).forEach((img: any) => { if (img.id) productImagesById[img.id] = img; });
+
+                p.variations_data.forEach((v: any) => {
+                    if (!Array.isArray(v.gallery_image_ids) || v.gallery_image_ids.length === 0) return;
+                    const colorAttr = v.attributes?.find((a: any) =>
+                        (a.name || "").toLowerCase().includes('color') ||
+                        (a.id || "").toString().includes('color') ||
+                        a.name === 'Pa_selecciona-el-color'
+                    );
+                    const colorKey = colorAttr ? String(colorAttr.option || colorAttr.value).toLowerCase().trim() : 'default';
+                    if (!imgMap[colorKey]) imgMap[colorKey] = [];
+
+                    v.gallery_image_ids.forEach((id: number) => {
+                        const img = productImagesById[id];
+                        if (img?.src && !imgMap[colorKey].some((i: any) => i.src === img.src)) {
+                            imgMap[colorKey].push({ id: img.id, src: img.src, alt: img.alt || img.name || p.name, name: img.name || '' });
+                        }
+                    });
+                });
+            }
+
+            // 3. Luego añadimos las de WPC (ordenadas después de la principal)
             if (p.variations_data && Array.isArray(p.variations_data) && p.wpc_resolved_media) {
                 p.variations_data.forEach((v: any) => {
                     const wpcMeta = v.meta_data?.find((m: any) => (m.key === 'wpcvi_images' || m.key === 'wd_additional_variation_images_data') && m.value);
@@ -676,7 +701,34 @@ function mapV3ToStore(p: any) {
                         }
                     });
 
-                    // 2. Luego añadimos las de WPC (ordenadas después de la principal)
+                    // 2. Luego añadimos las de gallery_image_ids de la variación (nativas de WooCommerce)
+                    const productImagesById: Record<number, any> = {};
+                    (p.images || []).forEach((img: any) => { if (img.id) productImagesById[img.id] = img; });
+
+                    p.variations_data.forEach((v: any) => {
+                        if (!Array.isArray(v.gallery_image_ids) || v.gallery_image_ids.length === 0) return;
+                        const colorAttr = v.attributes?.find((a: any) => {
+                            const n = (a.name || "").toLowerCase();
+                            const s = (a.slug || "").toLowerCase();
+                            return n.includes('color') || s.includes('color') ||
+                                   n.includes('selecciona-el') || s.includes('selecciona-el') ||
+                                   (a.id || "").toString().includes('color') ||
+                                   a.name === 'Pa_selecciona-el-color';
+                        });
+                        if (!colorAttr || !(colorAttr.option || colorAttr.value)) return;
+                        const colorValue = String(colorAttr.option || colorAttr.value).toLowerCase().trim();
+                        const colorKey = normalizeSlug(colorValue) || colorValue;
+                        if (!imgMap[colorKey]) imgMap[colorKey] = [];
+
+                        v.gallery_image_ids.forEach((id: number) => {
+                            const img = productImagesById[id];
+                            if (img?.src && !imgMap[colorKey].some((i: any) => i.src === img.src)) {
+                                imgMap[colorKey].push({ id: img.id, src: img.src, alt: img.alt || img.name || p.name, name: img.name || '' });
+                            }
+                        });
+                    });
+
+                    // 3. Luego añadimos las de WPC (ordenadas después de la principal)
                     p.variations_data.forEach((v: any) => {
                         const wpcMeta = v.meta_data?.find((m: any) => (m.key === 'wpcvi_images' || m.key === 'wd_additional_variation_images_data') && m.value);
                         if (wpcMeta?.value && p.wpc_resolved_media) {

@@ -78,6 +78,12 @@
       "name": "Ideas de regalo",
       "slug": "ideas-regalo-hombre",
       "link": "https://tienda.winstonandharrystore.com/product-category/ideas-regalo-hombre/"
+    },
+    {
+      "id": 1009,
+      "name": "Maletas de Viaje",
+      "slug": "maletas-viaje-cuero-hombre",
+      "link": "https://tienda.winstonandharrystore.com/product-category/maletas-morrales-cuero-hombre/maletas-viaje-cuero-hombre/"
     }
   ],
   "tags": [],
@@ -1980,16 +1986,18 @@
       {
         "id": 13594,
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2020/12/bolso-01-delle-b.jpg",
-        "alt": "Maleta Prince"
-      },
-      {
-        "id": 13593,
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2020/12/bolso-01-delle-a.jpg",
-        "alt": "Maleta Prince"
+        "alt": "bolso-01-delle-b",
+        "name": "bolso-01-delle-b"
       },
       {
         "id": 13592,
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2020/12/bolso-01-back.jpg",
+        "alt": "bolso-01-back",
+        "name": "bolso-01-back"
+      },
+      {
+        "id": 13593,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2020/12/bolso-01-delle-a.jpg",
         "alt": "Maleta Prince"
       }
     ],

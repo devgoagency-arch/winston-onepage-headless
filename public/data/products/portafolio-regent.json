@@ -69,6 +69,12 @@
       "link": "https://tienda.winstonandharrystore.com/product-category/ideas-regalo-hombre/"
     },
     {
+      "id": 1007,
+      "name": "Maletines",
+      "slug": "maletines-cuero-hombre",
+      "link": "https://tienda.winstonandharrystore.com/product-category/maletas-morrales-cuero-hombre/maletines-cuero-hombre/"
+    },
+    {
       "id": 410,
       "name": "Zapatos y Maletas",
       "slug": "zapatos-maletas-cuero-hombre",
@@ -406,8 +412,8 @@
       "type": "variation",
       "date_created": "2023-12-04T19:51:27",
       "date_created_gmt": "2023-12-04T19:51:27",
-      "date_modified": "2026-05-07T23:08:05",
-      "date_modified_gmt": "2026-05-07T23:08:05",
+      "date_modified": "2026-07-27T17:43:35",
+      "date_modified_gmt": "2026-07-27T17:43:35",
       "description": "<p>• 100% Cuero de la mejor calidad y resistente</p>\n<p>• Un tamaño ideal para llevar todas tus pertenencias importantes y un poco mas </p>\n<p>• Cuenta con un forro impermeable para el cuidado de tus cosas</p>\n",
       "permalink": "https://tienda.winstonandharrystore.com/product/portafolio-regent/?attribute_pa_selecciona-el-color=miel",
       "sku": "17236126000",
@@ -430,7 +436,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 4,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -908,7 +914,7 @@
         {
           "id": 2229473,
           "key": "_last_change_time",
-          "value": "1778184484"
+          "value": "1785174215"
         },
         {
           "id": 2312521,

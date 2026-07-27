@@ -63,6 +63,12 @@
   ],
   "categories": [
     {
+      "id": 1008,
+      "name": "Morrales",
+      "slug": "morrales-cuero-hombre",
+      "link": "https://tienda.winstonandharrystore.com/product-category/maletas-morrales-cuero-hombre/morrales-cuero-hombre/"
+    },
+    {
       "id": 410,
       "name": "Zapatos y Maletas",
       "slug": "zapatos-maletas-cuero-hombre",
@@ -237,8 +243,8 @@
       "type": "variation",
       "date_created": "2023-12-11T16:50:08",
       "date_created_gmt": "2023-12-11T16:50:08",
-      "date_modified": "2026-05-11T17:51:46",
-      "date_modified_gmt": "2026-05-11T17:51:46",
+      "date_modified": "2026-07-22T05:47:12",
+      "date_modified_gmt": "2026-07-22T05:47:12",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/morral-effort-lona/?attribute_pa_selecciona-el-color=azul",
       "sku": "15150401000",
@@ -261,7 +267,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 18,
+      "stock_quantity": 17,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,

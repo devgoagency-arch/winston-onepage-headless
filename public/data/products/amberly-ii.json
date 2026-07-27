@@ -10189,14 +10189,16 @@
     ],
     "negro": [
       {
-        "id": 11757,
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2020/12/103-zapato-cenital.jpg",
-        "alt": "Amberly II"
-      },
-      {
         "id": 11760,
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2020/12/103-zapato-lateral.jpg",
-        "alt": "Amberly II"
+        "alt": "103-zapato-lateral",
+        "name": "103-zapato-lateral"
+      },
+      {
+        "id": 11757,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2020/12/103-zapato-cenital.jpg",
+        "alt": "103-zapato-cenital",
+        "name": "103-zapato-cenital"
       }
     ]
   }

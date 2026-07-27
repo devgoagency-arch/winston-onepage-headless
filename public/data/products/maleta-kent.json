@@ -67,6 +67,12 @@
       "name": "Ideas de regalo",
       "slug": "ideas-regalo-hombre",
       "link": "https://tienda.winstonandharrystore.com/product-category/ideas-regalo-hombre/"
+    },
+    {
+      "id": 1009,
+      "name": "Maletas de Viaje",
+      "slug": "maletas-viaje-cuero-hombre",
+      "link": "https://tienda.winstonandharrystore.com/product-category/maletas-morrales-cuero-hombre/maletas-viaje-cuero-hombre/"
     }
   ],
   "tags": [],
@@ -1940,18 +1946,20 @@
         "name": "bolso-04-front"
       },
       {
-        "id": 13588,
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2020/12/bolso-04-back.jpg",
-        "alt": "Maleta Kent"
-      },
-      {
         "id": 13580,
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2020/12/bolso-04-delle-b.jpg",
-        "alt": "Maleta Kent"
+        "alt": "bolso-04-delle-b",
+        "name": "bolso-04-delle-b"
       },
       {
         "id": 13589,
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2020/12/bolso-04-delle-a.jpg",
+        "alt": "bolso-04-delle-a",
+        "name": "bolso-04-delle-a"
+      },
+      {
+        "id": 13588,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2020/12/bolso-04-back.jpg",
         "alt": "Maleta Kent"
       }
     ],

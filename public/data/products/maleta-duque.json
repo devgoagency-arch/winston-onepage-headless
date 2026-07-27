@@ -78,6 +78,12 @@
       "name": "Ideas de regalo",
       "slug": "ideas-regalo-hombre",
       "link": "https://tienda.winstonandharrystore.com/product-category/ideas-regalo-hombre/"
+    },
+    {
+      "id": 1009,
+      "name": "Maletas de Viaje",
+      "slug": "maletas-viaje-cuero-hombre",
+      "link": "https://tienda.winstonandharrystore.com/product-category/maletas-morrales-cuero-hombre/maletas-viaje-cuero-hombre/"
     }
   ],
   "tags": [],
@@ -1833,6 +1839,24 @@
         "alt": "Maleta Duque"
       }
     ],
+    "cognac": [
+      {
+        "id": 11629,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2020/12/Duke-tula_opt.jpg",
+        "alt": "Duke-tula_opt",
+        "name": "Duke-tula_opt"
+      },
+      {
+        "id": 17435,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/04/bolso-06-delle-b.jpg",
+        "alt": "Maleta Duque"
+      },
+      {
+        "id": 17434,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/04/bolso-06-delle-a.jpg",
+        "alt": "Maleta Duque"
+      }
+    ],
     "café": [
       {
         "id": 18476,
@@ -1852,23 +1876,6 @@
       {
         "id": 18480,
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/06/002-grande-05.jpg",
-        "alt": "Maleta Duque"
-      }
-    ],
-    "cognac": [
-      {
-        "id": 17435,
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/04/bolso-06-delle-b.jpg",
-        "alt": "Maleta Duque"
-      },
-      {
-        "id": 17434,
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/04/bolso-06-delle-a.jpg",
-        "alt": "Maleta Duque"
-      },
-      {
-        "id": 11629,
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2020/12/Duke-tula_opt.jpg",
         "alt": "Maleta Duque"
       }
     ]

@@ -7,8 +7,8 @@
   "variation": "",
   "permalink": "https://tienda.winstonandharrystore.com/product/wear/",
   "sku": "800",
-  "short_description": "<p>• Un mocasin muy formal pero igualmente comodo.<br />\n• Hecho a mano 100% por artesanos colombianos.<br />\n• Suela en goma muy liviana.</p>",
-  "description": "<p>• Hecho a mano 100% por artesanos colombianos.<br />\n• Capellada en cuero.<br />\n• Forro interior en cuero para mayor frescura.<br />\n• Estilo formal con un antifaz diferente para darle un toque unico.<br />\n• Su construcción y su plantilla en espuma de latex, generan mayor comodidad y cuidado a tu salud.<br />\n• Suela en goma muy liviana.<br />\n• Los mejores materiales para mayor durabilidad.</p>",
+  "short_description": "<p>• Un mocasin muy formal pero igualmente comodo.</p>\n<p>• Hecho a mano 100% por artesanos colombianos.</p>\n<p>• Suela en goma muy liviana.</p>",
+  "description": "<p>• Hecho a mano 100% por artesanos colombianos.</p>\n<p>• Capellada en cuero.</p>\n<p>• Forro interior en cuero para mayor frescura.</p>\n<p>• Estilo formal con un antifaz diferente para darle un toque unico.</p>\n<p>• Su construcción y su plantilla en espuma de latex, generan mayor comodidad y cuidado a tu salud.</p>\n<p>• Suela en goma muy liviana.</p>\n<p>• Los mejores materiales para mayor durabilidad.</p>",
   "on_sale": false,
   "prices": {
     "price": "649000",
@@ -733,8 +733,8 @@
       "type": "variation",
       "date_created": "2023-06-21T21:10:37",
       "date_created_gmt": "2023-06-21T21:10:37",
-      "date_modified": "2026-05-07T23:14:46",
-      "date_modified_gmt": "2026-05-07T23:14:46",
+      "date_modified": "2026-07-27T20:50:58",
+      "date_modified_gmt": "2026-07-27T20:50:58",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wear/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=45",
       "sku": "7310326045",
@@ -752,8 +752,8 @@
       "virtual": false,
       "downloadable": false,
       "downloads": [],
-      "download_limit": 0,
-      "download_expiry": 0,
+      "download_limit": -1,
+      "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
@@ -1452,6 +1452,141 @@
           "id": 2312868,
           "key": "wpcvi_images",
           "value": "62958,62957,62959,62960,62961"
+        },
+        {
+          "id": 2445882,
+          "key": "_wc_gla_sync_status",
+          "value": ""
+        },
+        {
+          "id": 2445883,
+          "key": "_wc_facebook_sync_enabled_v2",
+          "value": ""
+        },
+        {
+          "id": 2445884,
+          "key": "rank_math_internal_links_processed",
+          "value": ""
+        },
+        {
+          "id": 2445885,
+          "key": "rank_math_analytic_object_id",
+          "value": ""
+        },
+        {
+          "id": 2445886,
+          "key": "_woodmart_product_custom_tab_priority",
+          "value": ""
+        },
+        {
+          "id": 2445887,
+          "key": "_woodmart_product_custom_tab_priority_2",
+          "value": ""
+        },
+        {
+          "id": 2445888,
+          "key": "_woodmart_product_custom_tab_title_3",
+          "value": ""
+        },
+        {
+          "id": 2445889,
+          "key": "_woodmart_product_custom_tab_priority_3",
+          "value": ""
+        },
+        {
+          "id": 2445890,
+          "key": "_woodmart_product_custom_tab_content_type_3",
+          "value": ""
+        },
+        {
+          "id": 2445891,
+          "key": "_woodmart_product_custom_tab_content_3",
+          "value": ""
+        },
+        {
+          "id": 2445892,
+          "key": "_woodmart_product_custom_tab_html_block_3",
+          "value": ""
+        },
+        {
+          "id": 2445893,
+          "key": "_woodmart_product_custom_tab_title_4",
+          "value": ""
+        },
+        {
+          "id": 2445894,
+          "key": "_woodmart_product_custom_tab_priority_4",
+          "value": ""
+        },
+        {
+          "id": 2445895,
+          "key": "_woodmart_product_custom_tab_content_type_4",
+          "value": ""
+        },
+        {
+          "id": 2445896,
+          "key": "_woodmart_product_custom_tab_content_4",
+          "value": ""
+        },
+        {
+          "id": 2445897,
+          "key": "_woodmart_product_custom_tab_html_block_4",
+          "value": ""
+        },
+        {
+          "id": 2445898,
+          "key": "_woodmart_product_custom_tab_title_5",
+          "value": ""
+        },
+        {
+          "id": 2445899,
+          "key": "_woodmart_product_custom_tab_priority_5",
+          "value": ""
+        },
+        {
+          "id": 2445900,
+          "key": "_woodmart_product_custom_tab_content_type_5",
+          "value": ""
+        },
+        {
+          "id": 2445901,
+          "key": "_woodmart_product_custom_tab_content_5",
+          "value": ""
+        },
+        {
+          "id": 2445902,
+          "key": "_woodmart_product_custom_tab_html_block_5",
+          "value": ""
+        },
+        {
+          "id": 2445903,
+          "key": "_oembed_time_3efc152008105e0533b1d0735c932ef8",
+          "value": ""
+        },
+        {
+          "id": 2445904,
+          "key": "_wc_gla_visibility",
+          "value": ""
+        },
+        {
+          "id": 2445905,
+          "key": "_wc_push_notification_sent_low_stock",
+          "value": ""
+        },
+        {
+          "id": 2445906,
+          "key": "_wc_facebook_product_video_source",
+          "value": ""
+        },
+        {
+          "id": 2445907,
+          "key": "fb_product_images",
+          "value": ""
+        },
+        {
+          "id": 2445908,
+          "key": "_wc_push_notification_sent_out_of_stock",
+          "value": ""
         }
       ],
       "name": "Miel, 45",
@@ -1488,8 +1623,8 @@
       "type": "variation",
       "date_created": "2023-06-21T21:10:37",
       "date_created_gmt": "2023-06-21T21:10:37",
-      "date_modified": "2026-05-07T23:12:30",
-      "date_modified_gmt": "2026-05-07T23:12:30",
+      "date_modified": "2026-07-27T20:50:58",
+      "date_modified_gmt": "2026-07-27T20:50:58",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wear/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=44",
       "sku": "7310326044",
@@ -1507,8 +1642,8 @@
       "virtual": false,
       "downloadable": false,
       "downloads": [],
-      "download_limit": 0,
-      "download_expiry": 0,
+      "download_limit": -1,
+      "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
@@ -2212,6 +2347,136 @@
           "id": 2312867,
           "key": "wpcvi_images",
           "value": "62958,62957,62959,62960,62961"
+        },
+        {
+          "id": 2445909,
+          "key": "_wc_facebook_sync_enabled_v2",
+          "value": ""
+        },
+        {
+          "id": 2445910,
+          "key": "rank_math_internal_links_processed",
+          "value": ""
+        },
+        {
+          "id": 2445911,
+          "key": "rank_math_analytic_object_id",
+          "value": ""
+        },
+        {
+          "id": 2445912,
+          "key": "_woodmart_product_custom_tab_priority",
+          "value": ""
+        },
+        {
+          "id": 2445913,
+          "key": "_woodmart_product_custom_tab_priority_2",
+          "value": ""
+        },
+        {
+          "id": 2445914,
+          "key": "_woodmart_product_custom_tab_title_3",
+          "value": ""
+        },
+        {
+          "id": 2445915,
+          "key": "_woodmart_product_custom_tab_priority_3",
+          "value": ""
+        },
+        {
+          "id": 2445916,
+          "key": "_woodmart_product_custom_tab_content_type_3",
+          "value": ""
+        },
+        {
+          "id": 2445917,
+          "key": "_woodmart_product_custom_tab_content_3",
+          "value": ""
+        },
+        {
+          "id": 2445918,
+          "key": "_woodmart_product_custom_tab_html_block_3",
+          "value": ""
+        },
+        {
+          "id": 2445919,
+          "key": "_woodmart_product_custom_tab_title_4",
+          "value": ""
+        },
+        {
+          "id": 2445920,
+          "key": "_woodmart_product_custom_tab_priority_4",
+          "value": ""
+        },
+        {
+          "id": 2445921,
+          "key": "_woodmart_product_custom_tab_content_type_4",
+          "value": ""
+        },
+        {
+          "id": 2445922,
+          "key": "_woodmart_product_custom_tab_content_4",
+          "value": ""
+        },
+        {
+          "id": 2445923,
+          "key": "_woodmart_product_custom_tab_html_block_4",
+          "value": ""
+        },
+        {
+          "id": 2445924,
+          "key": "_woodmart_product_custom_tab_title_5",
+          "value": ""
+        },
+        {
+          "id": 2445925,
+          "key": "_woodmart_product_custom_tab_priority_5",
+          "value": ""
+        },
+        {
+          "id": 2445926,
+          "key": "_woodmart_product_custom_tab_content_type_5",
+          "value": ""
+        },
+        {
+          "id": 2445927,
+          "key": "_woodmart_product_custom_tab_content_5",
+          "value": ""
+        },
+        {
+          "id": 2445928,
+          "key": "_woodmart_product_custom_tab_html_block_5",
+          "value": ""
+        },
+        {
+          "id": 2445929,
+          "key": "_oembed_time_3efc152008105e0533b1d0735c932ef8",
+          "value": ""
+        },
+        {
+          "id": 2445930,
+          "key": "_wc_gla_visibility",
+          "value": ""
+        },
+        {
+          "id": 2445931,
+          "key": "_wc_push_notification_sent_low_stock",
+          "value": ""
+        },
+        {
+          "id": 2445932,
+          "key": "_wc_facebook_product_video_source",
+          "value": ""
+        },
+        {
+          "id": 2445933,
+          "key": "fb_product_images",
+          "value": ""
+        },
+        {
+          "id": 2445934,
+          "key": "_wc_push_notification_sent_out_of_stock",
+          "value": ""
         }
       ],
       "name": "Miel, 44",
@@ -2248,8 +2513,8 @@
       "type": "variation",
       "date_created": "2023-06-21T21:10:37",
       "date_created_gmt": "2023-06-21T21:10:37",
-      "date_modified": "2026-05-07T23:12:20",
-      "date_modified_gmt": "2026-05-07T23:12:20",
+      "date_modified": "2026-07-27T20:51:09",
+      "date_modified_gmt": "2026-07-27T20:51:09",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wear/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=43",
       "sku": "7310326043",
@@ -2267,8 +2532,8 @@
       "virtual": false,
       "downloadable": false,
       "downloads": [],
-      "download_limit": 0,
-      "download_expiry": 0,
+      "download_limit": -1,
+      "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
@@ -2977,6 +3242,136 @@
           "id": 2312866,
           "key": "wpcvi_images",
           "value": "62958,62957,62959,62960,62961"
+        },
+        {
+          "id": 2445938,
+          "key": "_wc_facebook_sync_enabled_v2",
+          "value": ""
+        },
+        {
+          "id": 2445939,
+          "key": "rank_math_internal_links_processed",
+          "value": ""
+        },
+        {
+          "id": 2445940,
+          "key": "rank_math_analytic_object_id",
+          "value": ""
+        },
+        {
+          "id": 2445941,
+          "key": "_woodmart_product_custom_tab_priority",
+          "value": ""
+        },
+        {
+          "id": 2445942,
+          "key": "_woodmart_product_custom_tab_priority_2",
+          "value": ""
+        },
+        {
+          "id": 2445943,
+          "key": "_woodmart_product_custom_tab_title_3",
+          "value": ""
+        },
+        {
+          "id": 2445944,
+          "key": "_woodmart_product_custom_tab_priority_3",
+          "value": ""
+        },
+        {
+          "id": 2445945,
+          "key": "_woodmart_product_custom_tab_content_type_3",
+          "value": ""
+        },
+        {
+          "id": 2445946,
+          "key": "_woodmart_product_custom_tab_content_3",
+          "value": ""
+        },
+        {
+          "id": 2445947,
+          "key": "_woodmart_product_custom_tab_html_block_3",
+          "value": ""
+        },
+        {
+          "id": 2445948,
+          "key": "_woodmart_product_custom_tab_title_4",
+          "value": ""
+        },
+        {
+          "id": 2445949,
+          "key": "_woodmart_product_custom_tab_priority_4",
+          "value": ""
+        },
+        {
+          "id": 2445950,
+          "key": "_woodmart_product_custom_tab_content_type_4",
+          "value": ""
+        },
+        {
+          "id": 2445951,
+          "key": "_woodmart_product_custom_tab_content_4",
+          "value": ""
+        },
+        {
+          "id": 2445952,
+          "key": "_woodmart_product_custom_tab_html_block_4",
+          "value": ""
+        },
+        {
+          "id": 2445953,
+          "key": "_woodmart_product_custom_tab_title_5",
+          "value": ""
+        },
+        {
+          "id": 2445954,
+          "key": "_woodmart_product_custom_tab_priority_5",
+          "value": ""
+        },
+        {
+          "id": 2445955,
+          "key": "_woodmart_product_custom_tab_content_type_5",
+          "value": ""
+        },
+        {
+          "id": 2445956,
+          "key": "_woodmart_product_custom_tab_content_5",
+          "value": ""
+        },
+        {
+          "id": 2445957,
+          "key": "_woodmart_product_custom_tab_html_block_5",
+          "value": ""
+        },
+        {
+          "id": 2445958,
+          "key": "_oembed_time_3efc152008105e0533b1d0735c932ef8",
+          "value": ""
+        },
+        {
+          "id": 2445959,
+          "key": "_wc_gla_visibility",
+          "value": ""
+        },
+        {
+          "id": 2445960,
+          "key": "_wc_push_notification_sent_low_stock",
+          "value": ""
+        },
+        {
+          "id": 2445961,
+          "key": "_wc_facebook_product_video_source",
+          "value": ""
+        },
+        {
+          "id": 2445962,
+          "key": "fb_product_images",
+          "value": ""
+        },
+        {
+          "id": 2445963,
+          "key": "_wc_push_notification_sent_out_of_stock",
+          "value": ""
         }
       ],
       "name": "Miel, 43",
@@ -3013,8 +3408,8 @@
       "type": "variation",
       "date_created": "2023-06-21T21:10:37",
       "date_created_gmt": "2023-06-21T21:10:37",
-      "date_modified": "2026-05-07T23:12:20",
-      "date_modified_gmt": "2026-05-07T23:12:20",
+      "date_modified": "2026-07-27T20:51:09",
+      "date_modified_gmt": "2026-07-27T20:51:09",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wear/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=42",
       "sku": "7310326042",
@@ -3032,8 +3427,8 @@
       "virtual": false,
       "downloadable": false,
       "downloads": [],
-      "download_limit": 0,
-      "download_expiry": 0,
+      "download_limit": -1,
+      "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
@@ -3742,6 +4137,136 @@
           "id": 2312865,
           "key": "wpcvi_images",
           "value": "62958,62957,62959,62960,62961"
+        },
+        {
+          "id": 2445964,
+          "key": "_wc_facebook_sync_enabled_v2",
+          "value": ""
+        },
+        {
+          "id": 2445965,
+          "key": "rank_math_internal_links_processed",
+          "value": ""
+        },
+        {
+          "id": 2445966,
+          "key": "rank_math_analytic_object_id",
+          "value": ""
+        },
+        {
+          "id": 2445967,
+          "key": "_woodmart_product_custom_tab_priority",
+          "value": ""
+        },
+        {
+          "id": 2445968,
+          "key": "_woodmart_product_custom_tab_priority_2",
+          "value": ""
+        },
+        {
+          "id": 2445969,
+          "key": "_woodmart_product_custom_tab_title_3",
+          "value": ""
+        },
+        {
+          "id": 2445970,
+          "key": "_woodmart_product_custom_tab_priority_3",
+          "value": ""
+        },
+        {
+          "id": 2445971,
+          "key": "_woodmart_product_custom_tab_content_type_3",
+          "value": ""
+        },
+        {
+          "id": 2445972,
+          "key": "_woodmart_product_custom_tab_content_3",
+          "value": ""
+        },
+        {
+          "id": 2445973,
+          "key": "_woodmart_product_custom_tab_html_block_3",
+          "value": ""
+        },
+        {
+          "id": 2445974,
+          "key": "_woodmart_product_custom_tab_title_4",
+          "value": ""
+        },
+        {
+          "id": 2445975,
+          "key": "_woodmart_product_custom_tab_priority_4",
+          "value": ""
+        },
+        {
+          "id": 2445976,
+          "key": "_woodmart_product_custom_tab_content_type_4",
+          "value": ""
+        },
+        {
+          "id": 2445977,
+          "key": "_woodmart_product_custom_tab_content_4",
+          "value": ""
+        },
+        {
+          "id": 2445978,
+          "key": "_woodmart_product_custom_tab_html_block_4",
+          "value": ""
+        },
+        {
+          "id": 2445979,
+          "key": "_woodmart_product_custom_tab_title_5",
+          "value": ""
+        },
+        {
+          "id": 2445980,
+          "key": "_woodmart_product_custom_tab_priority_5",
+          "value": ""
+        },
+        {
+          "id": 2445981,
+          "key": "_woodmart_product_custom_tab_content_type_5",
+          "value": ""
+        },
+        {
+          "id": 2445982,
+          "key": "_woodmart_product_custom_tab_content_5",
+          "value": ""
+        },
+        {
+          "id": 2445983,
+          "key": "_woodmart_product_custom_tab_html_block_5",
+          "value": ""
+        },
+        {
+          "id": 2445984,
+          "key": "_oembed_time_3efc152008105e0533b1d0735c932ef8",
+          "value": ""
+        },
+        {
+          "id": 2445985,
+          "key": "_wc_gla_visibility",
+          "value": ""
+        },
+        {
+          "id": 2445986,
+          "key": "_wc_push_notification_sent_low_stock",
+          "value": ""
+        },
+        {
+          "id": 2445987,
+          "key": "_wc_facebook_product_video_source",
+          "value": ""
+        },
+        {
+          "id": 2445988,
+          "key": "fb_product_images",
+          "value": ""
+        },
+        {
+          "id": 2445989,
+          "key": "_wc_push_notification_sent_out_of_stock",
+          "value": ""
         }
       ],
       "name": "Miel, 42",
@@ -3778,8 +4303,8 @@
       "type": "variation",
       "date_created": "2023-06-21T21:10:37",
       "date_created_gmt": "2023-06-21T21:10:37",
-      "date_modified": "2026-05-07T23:12:20",
-      "date_modified_gmt": "2026-05-07T23:12:20",
+      "date_modified": "2026-07-27T20:51:09",
+      "date_modified_gmt": "2026-07-27T20:51:09",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wear/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=41",
       "sku": "7310326041",
@@ -3797,8 +4322,8 @@
       "virtual": false,
       "downloadable": false,
       "downloads": [],
-      "download_limit": 0,
-      "download_expiry": 0,
+      "download_limit": -1,
+      "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
@@ -4507,6 +5032,136 @@
           "id": 2312880,
           "key": "wpcvi_images",
           "value": "62958,62957,62959,62960,62961"
+        },
+        {
+          "id": 2445990,
+          "key": "_wc_facebook_sync_enabled_v2",
+          "value": ""
+        },
+        {
+          "id": 2445991,
+          "key": "rank_math_internal_links_processed",
+          "value": ""
+        },
+        {
+          "id": 2445992,
+          "key": "rank_math_analytic_object_id",
+          "value": ""
+        },
+        {
+          "id": 2445993,
+          "key": "_woodmart_product_custom_tab_priority",
+          "value": ""
+        },
+        {
+          "id": 2445994,
+          "key": "_woodmart_product_custom_tab_priority_2",
+          "value": ""
+        },
+        {
+          "id": 2445995,
+          "key": "_woodmart_product_custom_tab_title_3",
+          "value": ""
+        },
+        {
+          "id": 2445996,
+          "key": "_woodmart_product_custom_tab_priority_3",
+          "value": ""
+        },
+        {
+          "id": 2445997,
+          "key": "_woodmart_product_custom_tab_content_type_3",
+          "value": ""
+        },
+        {
+          "id": 2445998,
+          "key": "_woodmart_product_custom_tab_content_3",
+          "value": ""
+        },
+        {
+          "id": 2445999,
+          "key": "_woodmart_product_custom_tab_html_block_3",
+          "value": ""
+        },
+        {
+          "id": 2446000,
+          "key": "_woodmart_product_custom_tab_title_4",
+          "value": ""
+        },
+        {
+          "id": 2446001,
+          "key": "_woodmart_product_custom_tab_priority_4",
+          "value": ""
+        },
+        {
+          "id": 2446002,
+          "key": "_woodmart_product_custom_tab_content_type_4",
+          "value": ""
+        },
+        {
+          "id": 2446003,
+          "key": "_woodmart_product_custom_tab_content_4",
+          "value": ""
+        },
+        {
+          "id": 2446004,
+          "key": "_woodmart_product_custom_tab_html_block_4",
+          "value": ""
+        },
+        {
+          "id": 2446005,
+          "key": "_woodmart_product_custom_tab_title_5",
+          "value": ""
+        },
+        {
+          "id": 2446006,
+          "key": "_woodmart_product_custom_tab_priority_5",
+          "value": ""
+        },
+        {
+          "id": 2446007,
+          "key": "_woodmart_product_custom_tab_content_type_5",
+          "value": ""
+        },
+        {
+          "id": 2446008,
+          "key": "_woodmart_product_custom_tab_content_5",
+          "value": ""
+        },
+        {
+          "id": 2446009,
+          "key": "_woodmart_product_custom_tab_html_block_5",
+          "value": ""
+        },
+        {
+          "id": 2446010,
+          "key": "_oembed_time_3efc152008105e0533b1d0735c932ef8",
+          "value": ""
+        },
+        {
+          "id": 2446011,
+          "key": "_wc_gla_visibility",
+          "value": ""
+        },
+        {
+          "id": 2446012,
+          "key": "_wc_push_notification_sent_low_stock",
+          "value": ""
+        },
+        {
+          "id": 2446013,
+          "key": "_wc_facebook_product_video_source",
+          "value": ""
+        },
+        {
+          "id": 2446014,
+          "key": "fb_product_images",
+          "value": ""
+        },
+        {
+          "id": 2446015,
+          "key": "_wc_push_notification_sent_out_of_stock",
+          "value": ""
         }
       ],
       "name": "Miel, 41",
@@ -4543,8 +5198,8 @@
       "type": "variation",
       "date_created": "2023-06-21T21:10:37",
       "date_created_gmt": "2023-06-21T21:10:37",
-      "date_modified": "2026-05-07T23:12:19",
-      "date_modified_gmt": "2026-05-07T23:12:19",
+      "date_modified": "2026-07-27T20:51:09",
+      "date_modified_gmt": "2026-07-27T20:51:09",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wear/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=40",
       "sku": "7310326040",
@@ -4562,8 +5217,8 @@
       "virtual": false,
       "downloadable": false,
       "downloads": [],
-      "download_limit": 0,
-      "download_expiry": 0,
+      "download_limit": -1,
+      "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
@@ -5272,6 +5927,136 @@
           "id": 2312879,
           "key": "wpcvi_images",
           "value": "62958,62957,62959,62960,62961"
+        },
+        {
+          "id": 2446016,
+          "key": "_wc_facebook_sync_enabled_v2",
+          "value": ""
+        },
+        {
+          "id": 2446017,
+          "key": "rank_math_internal_links_processed",
+          "value": ""
+        },
+        {
+          "id": 2446018,
+          "key": "rank_math_analytic_object_id",
+          "value": ""
+        },
+        {
+          "id": 2446019,
+          "key": "_woodmart_product_custom_tab_priority",
+          "value": ""
+        },
+        {
+          "id": 2446020,
+          "key": "_woodmart_product_custom_tab_priority_2",
+          "value": ""
+        },
+        {
+          "id": 2446021,
+          "key": "_woodmart_product_custom_tab_title_3",
+          "value": ""
+        },
+        {
+          "id": 2446022,
+          "key": "_woodmart_product_custom_tab_priority_3",
+          "value": ""
+        },
+        {
+          "id": 2446023,
+          "key": "_woodmart_product_custom_tab_content_type_3",
+          "value": ""
+        },
+        {
+          "id": 2446024,
+          "key": "_woodmart_product_custom_tab_content_3",
+          "value": ""
+        },
+        {
+          "id": 2446025,
+          "key": "_woodmart_product_custom_tab_html_block_3",
+          "value": ""
+        },
+        {
+          "id": 2446026,
+          "key": "_woodmart_product_custom_tab_title_4",
+          "value": ""
+        },
+        {
+          "id": 2446027,
+          "key": "_woodmart_product_custom_tab_priority_4",
+          "value": ""
+        },
+        {
+          "id": 2446028,
+          "key": "_woodmart_product_custom_tab_content_type_4",
+          "value": ""
+        },
+        {
+          "id": 2446029,
+          "key": "_woodmart_product_custom_tab_content_4",
+          "value": ""
+        },
+        {
+          "id": 2446030,
+          "key": "_woodmart_product_custom_tab_html_block_4",
+          "value": ""
+        },
+        {
+          "id": 2446031,
+          "key": "_woodmart_product_custom_tab_title_5",
+          "value": ""
+        },
+        {
+          "id": 2446032,
+          "key": "_woodmart_product_custom_tab_priority_5",
+          "value": ""
+        },
+        {
+          "id": 2446033,
+          "key": "_woodmart_product_custom_tab_content_type_5",
+          "value": ""
+        },
+        {
+          "id": 2446034,
+          "key": "_woodmart_product_custom_tab_content_5",
+          "value": ""
+        },
+        {
+          "id": 2446035,
+          "key": "_woodmart_product_custom_tab_html_block_5",
+          "value": ""
+        },
+        {
+          "id": 2446036,
+          "key": "_oembed_time_3efc152008105e0533b1d0735c932ef8",
+          "value": ""
+        },
+        {
+          "id": 2446037,
+          "key": "_wc_gla_visibility",
+          "value": ""
+        },
+        {
+          "id": 2446038,
+          "key": "_wc_push_notification_sent_low_stock",
+          "value": ""
+        },
+        {
+          "id": 2446039,
+          "key": "_wc_facebook_product_video_source",
+          "value": ""
+        },
+        {
+          "id": 2446040,
+          "key": "fb_product_images",
+          "value": ""
+        },
+        {
+          "id": 2446041,
+          "key": "_wc_push_notification_sent_out_of_stock",
+          "value": ""
         }
       ],
       "name": "Miel, 40",
@@ -5308,8 +6093,8 @@
       "type": "variation",
       "date_created": "2023-06-21T21:10:37",
       "date_created_gmt": "2023-06-21T21:10:37",
-      "date_modified": "2026-05-07T23:12:19",
-      "date_modified_gmt": "2026-05-07T23:12:19",
+      "date_modified": "2026-07-27T20:51:09",
+      "date_modified_gmt": "2026-07-27T20:51:09",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wear/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=39",
       "sku": "7310326039",
@@ -5327,8 +6112,8 @@
       "virtual": false,
       "downloadable": false,
       "downloads": [],
-      "download_limit": 0,
-      "download_expiry": 0,
+      "download_limit": -1,
+      "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
@@ -6037,6 +6822,136 @@
           "id": 2312878,
           "key": "wpcvi_images",
           "value": "62958,62957,62959,62960,62961"
+        },
+        {
+          "id": 2446042,
+          "key": "_wc_facebook_sync_enabled_v2",
+          "value": ""
+        },
+        {
+          "id": 2446043,
+          "key": "rank_math_internal_links_processed",
+          "value": ""
+        },
+        {
+          "id": 2446044,
+          "key": "rank_math_analytic_object_id",
+          "value": ""
+        },
+        {
+          "id": 2446045,
+          "key": "_woodmart_product_custom_tab_priority",
+          "value": ""
+        },
+        {
+          "id": 2446046,
+          "key": "_woodmart_product_custom_tab_priority_2",
+          "value": ""
+        },
+        {
+          "id": 2446047,
+          "key": "_woodmart_product_custom_tab_title_3",
+          "value": ""
+        },
+        {
+          "id": 2446048,
+          "key": "_woodmart_product_custom_tab_priority_3",
+          "value": ""
+        },
+        {
+          "id": 2446049,
+          "key": "_woodmart_product_custom_tab_content_type_3",
+          "value": ""
+        },
+        {
+          "id": 2446050,
+          "key": "_woodmart_product_custom_tab_content_3",
+          "value": ""
+        },
+        {
+          "id": 2446051,
+          "key": "_woodmart_product_custom_tab_html_block_3",
+          "value": ""
+        },
+        {
+          "id": 2446052,
+          "key": "_woodmart_product_custom_tab_title_4",
+          "value": ""
+        },
+        {
+          "id": 2446053,
+          "key": "_woodmart_product_custom_tab_priority_4",
+          "value": ""
+        },
+        {
+          "id": 2446054,
+          "key": "_woodmart_product_custom_tab_content_type_4",
+          "value": ""
+        },
+        {
+          "id": 2446055,
+          "key": "_woodmart_product_custom_tab_content_4",
+          "value": ""
+        },
+        {
+          "id": 2446056,
+          "key": "_woodmart_product_custom_tab_html_block_4",
+          "value": ""
+        },
+        {
+          "id": 2446057,
+          "key": "_woodmart_product_custom_tab_title_5",
+          "value": ""
+        },
+        {
+          "id": 2446058,
+          "key": "_woodmart_product_custom_tab_priority_5",
+          "value": ""
+        },
+        {
+          "id": 2446059,
+          "key": "_woodmart_product_custom_tab_content_type_5",
+          "value": ""
+        },
+        {
+          "id": 2446060,
+          "key": "_woodmart_product_custom_tab_content_5",
+          "value": ""
+        },
+        {
+          "id": 2446061,
+          "key": "_woodmart_product_custom_tab_html_block_5",
+          "value": ""
+        },
+        {
+          "id": 2446062,
+          "key": "_oembed_time_3efc152008105e0533b1d0735c932ef8",
+          "value": ""
+        },
+        {
+          "id": 2446063,
+          "key": "_wc_gla_visibility",
+          "value": ""
+        },
+        {
+          "id": 2446064,
+          "key": "_wc_push_notification_sent_low_stock",
+          "value": ""
+        },
+        {
+          "id": 2446065,
+          "key": "_wc_facebook_product_video_source",
+          "value": ""
+        },
+        {
+          "id": 2446066,
+          "key": "fb_product_images",
+          "value": ""
+        },
+        {
+          "id": 2446067,
+          "key": "_wc_push_notification_sent_out_of_stock",
+          "value": ""
         }
       ],
       "name": "Miel, 39",
@@ -6073,8 +6988,8 @@
       "type": "variation",
       "date_created": "2023-06-21T21:10:37",
       "date_created_gmt": "2023-06-21T21:10:37",
-      "date_modified": "2026-05-07T23:12:19",
-      "date_modified_gmt": "2026-05-07T23:12:19",
+      "date_modified": "2026-07-27T20:51:09",
+      "date_modified_gmt": "2026-07-27T20:51:09",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wear/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=38",
       "sku": "7310326038",
@@ -6092,8 +7007,8 @@
       "virtual": false,
       "downloadable": false,
       "downloads": [],
-      "download_limit": 0,
-      "download_expiry": 0,
+      "download_limit": -1,
+      "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
@@ -6802,6 +7717,136 @@
           "id": 2312877,
           "key": "wpcvi_images",
           "value": "62958,62957,62959,62960,62961"
+        },
+        {
+          "id": 2446068,
+          "key": "_wc_facebook_sync_enabled_v2",
+          "value": ""
+        },
+        {
+          "id": 2446069,
+          "key": "rank_math_internal_links_processed",
+          "value": ""
+        },
+        {
+          "id": 2446070,
+          "key": "rank_math_analytic_object_id",
+          "value": ""
+        },
+        {
+          "id": 2446071,
+          "key": "_woodmart_product_custom_tab_priority",
+          "value": ""
+        },
+        {
+          "id": 2446072,
+          "key": "_woodmart_product_custom_tab_priority_2",
+          "value": ""
+        },
+        {
+          "id": 2446073,
+          "key": "_woodmart_product_custom_tab_title_3",
+          "value": ""
+        },
+        {
+          "id": 2446074,
+          "key": "_woodmart_product_custom_tab_priority_3",
+          "value": ""
+        },
+        {
+          "id": 2446075,
+          "key": "_woodmart_product_custom_tab_content_type_3",
+          "value": ""
+        },
+        {
+          "id": 2446076,
+          "key": "_woodmart_product_custom_tab_content_3",
+          "value": ""
+        },
+        {
+          "id": 2446077,
+          "key": "_woodmart_product_custom_tab_html_block_3",
+          "value": ""
+        },
+        {
+          "id": 2446078,
+          "key": "_woodmart_product_custom_tab_title_4",
+          "value": ""
+        },
+        {
+          "id": 2446079,
+          "key": "_woodmart_product_custom_tab_priority_4",
+          "value": ""
+        },
+        {
+          "id": 2446080,
+          "key": "_woodmart_product_custom_tab_content_type_4",
+          "value": ""
+        },
+        {
+          "id": 2446081,
+          "key": "_woodmart_product_custom_tab_content_4",
+          "value": ""
+        },
+        {
+          "id": 2446082,
+          "key": "_woodmart_product_custom_tab_html_block_4",
+          "value": ""
+        },
+        {
+          "id": 2446083,
+          "key": "_woodmart_product_custom_tab_title_5",
+          "value": ""
+        },
+        {
+          "id": 2446084,
+          "key": "_woodmart_product_custom_tab_priority_5",
+          "value": ""
+        },
+        {
+          "id": 2446085,
+          "key": "_woodmart_product_custom_tab_content_type_5",
+          "value": ""
+        },
+        {
+          "id": 2446086,
+          "key": "_woodmart_product_custom_tab_content_5",
+          "value": ""
+        },
+        {
+          "id": 2446087,
+          "key": "_woodmart_product_custom_tab_html_block_5",
+          "value": ""
+        },
+        {
+          "id": 2446088,
+          "key": "_oembed_time_3efc152008105e0533b1d0735c932ef8",
+          "value": ""
+        },
+        {
+          "id": 2446089,
+          "key": "_wc_gla_visibility",
+          "value": ""
+        },
+        {
+          "id": 2446090,
+          "key": "_wc_push_notification_sent_low_stock",
+          "value": ""
+        },
+        {
+          "id": 2446091,
+          "key": "_wc_facebook_product_video_source",
+          "value": ""
+        },
+        {
+          "id": 2446092,
+          "key": "fb_product_images",
+          "value": ""
+        },
+        {
+          "id": 2446093,
+          "key": "_wc_push_notification_sent_out_of_stock",
+          "value": ""
         }
       ],
       "name": "Miel, 38",
@@ -6838,8 +7883,8 @@
       "type": "variation",
       "date_created": "2023-06-21T21:10:37",
       "date_created_gmt": "2023-06-21T21:10:37",
-      "date_modified": "2026-05-07T23:12:19",
-      "date_modified_gmt": "2026-05-07T23:12:19",
+      "date_modified": "2026-07-27T20:51:09",
+      "date_modified_gmt": "2026-07-27T20:51:09",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wear/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=37",
       "sku": "7310326037",
@@ -6857,8 +7902,8 @@
       "virtual": false,
       "downloadable": false,
       "downloads": [],
-      "download_limit": 0,
-      "download_expiry": 0,
+      "download_limit": -1,
+      "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
@@ -7567,6 +8612,136 @@
           "id": 2312876,
           "key": "wpcvi_images",
           "value": "62958,62957,62959,62960,62961"
+        },
+        {
+          "id": 2446094,
+          "key": "_wc_facebook_sync_enabled_v2",
+          "value": ""
+        },
+        {
+          "id": 2446095,
+          "key": "rank_math_internal_links_processed",
+          "value": ""
+        },
+        {
+          "id": 2446096,
+          "key": "rank_math_analytic_object_id",
+          "value": ""
+        },
+        {
+          "id": 2446097,
+          "key": "_woodmart_product_custom_tab_priority",
+          "value": ""
+        },
+        {
+          "id": 2446098,
+          "key": "_woodmart_product_custom_tab_priority_2",
+          "value": ""
+        },
+        {
+          "id": 2446099,
+          "key": "_woodmart_product_custom_tab_title_3",
+          "value": ""
+        },
+        {
+          "id": 2446100,
+          "key": "_woodmart_product_custom_tab_priority_3",
+          "value": ""
+        },
+        {
+          "id": 2446101,
+          "key": "_woodmart_product_custom_tab_content_type_3",
+          "value": ""
+        },
+        {
+          "id": 2446102,
+          "key": "_woodmart_product_custom_tab_content_3",
+          "value": ""
+        },
+        {
+          "id": 2446103,
+          "key": "_woodmart_product_custom_tab_html_block_3",
+          "value": ""
+        },
+        {
+          "id": 2446104,
+          "key": "_woodmart_product_custom_tab_title_4",
+          "value": ""
+        },
+        {
+          "id": 2446105,
+          "key": "_woodmart_product_custom_tab_priority_4",
+          "value": ""
+        },
+        {
+          "id": 2446106,
+          "key": "_woodmart_product_custom_tab_content_type_4",
+          "value": ""
+        },
+        {
+          "id": 2446107,
+          "key": "_woodmart_product_custom_tab_content_4",
+          "value": ""
+        },
+        {
+          "id": 2446108,
+          "key": "_woodmart_product_custom_tab_html_block_4",
+          "value": ""
+        },
+        {
+          "id": 2446109,
+          "key": "_woodmart_product_custom_tab_title_5",
+          "value": ""
+        },
+        {
+          "id": 2446110,
+          "key": "_woodmart_product_custom_tab_priority_5",
+          "value": ""
+        },
+        {
+          "id": 2446111,
+          "key": "_woodmart_product_custom_tab_content_type_5",
+          "value": ""
+        },
+        {
+          "id": 2446112,
+          "key": "_woodmart_product_custom_tab_content_5",
+          "value": ""
+        },
+        {
+          "id": 2446113,
+          "key": "_woodmart_product_custom_tab_html_block_5",
+          "value": ""
+        },
+        {
+          "id": 2446114,
+          "key": "_oembed_time_3efc152008105e0533b1d0735c932ef8",
+          "value": ""
+        },
+        {
+          "id": 2446115,
+          "key": "_wc_gla_visibility",
+          "value": ""
+        },
+        {
+          "id": 2446116,
+          "key": "_wc_push_notification_sent_low_stock",
+          "value": ""
+        },
+        {
+          "id": 2446117,
+          "key": "_wc_facebook_product_video_source",
+          "value": ""
+        },
+        {
+          "id": 2446118,
+          "key": "fb_product_images",
+          "value": ""
+        },
+        {
+          "id": 2446119,
+          "key": "_wc_push_notification_sent_out_of_stock",
+          "value": ""
         }
       ],
       "name": "Miel, 37",
@@ -7603,8 +8778,8 @@
       "type": "variation",
       "date_created": "2023-06-21T21:10:37",
       "date_created_gmt": "2023-06-21T21:10:37",
-      "date_modified": "2026-05-07T23:14:46",
-      "date_modified_gmt": "2026-05-07T23:14:46",
+      "date_modified": "2026-07-27T20:51:09",
+      "date_modified_gmt": "2026-07-27T20:51:09",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wear/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=45",
       "sku": "7310302045",
@@ -7622,8 +8797,8 @@
       "virtual": false,
       "downloadable": false,
       "downloads": [],
-      "download_limit": 0,
-      "download_expiry": 0,
+      "download_limit": -1,
+      "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
@@ -8322,6 +9497,141 @@
           "id": 2312875,
           "key": "wpcvi_images",
           "value": "62964,62963,62965,62966,62967,62968,62970"
+        },
+        {
+          "id": 2446120,
+          "key": "_wc_gla_sync_status",
+          "value": ""
+        },
+        {
+          "id": 2446121,
+          "key": "_wc_facebook_sync_enabled_v2",
+          "value": ""
+        },
+        {
+          "id": 2446122,
+          "key": "rank_math_internal_links_processed",
+          "value": ""
+        },
+        {
+          "id": 2446123,
+          "key": "rank_math_analytic_object_id",
+          "value": ""
+        },
+        {
+          "id": 2446124,
+          "key": "_woodmart_product_custom_tab_priority",
+          "value": ""
+        },
+        {
+          "id": 2446125,
+          "key": "_woodmart_product_custom_tab_priority_2",
+          "value": ""
+        },
+        {
+          "id": 2446126,
+          "key": "_woodmart_product_custom_tab_title_3",
+          "value": ""
+        },
+        {
+          "id": 2446127,
+          "key": "_woodmart_product_custom_tab_priority_3",
+          "value": ""
+        },
+        {
+          "id": 2446128,
+          "key": "_woodmart_product_custom_tab_content_type_3",
+          "value": ""
+        },
+        {
+          "id": 2446129,
+          "key": "_woodmart_product_custom_tab_content_3",
+          "value": ""
+        },
+        {
+          "id": 2446130,
+          "key": "_woodmart_product_custom_tab_html_block_3",
+          "value": ""
+        },
+        {
+          "id": 2446131,
+          "key": "_woodmart_product_custom_tab_title_4",
+          "value": ""
+        },
+        {
+          "id": 2446132,
+          "key": "_woodmart_product_custom_tab_priority_4",
+          "value": ""
+        },
+        {
+          "id": 2446133,
+          "key": "_woodmart_product_custom_tab_content_type_4",
+          "value": ""
+        },
+        {
+          "id": 2446134,
+          "key": "_woodmart_product_custom_tab_content_4",
+          "value": ""
+        },
+        {
+          "id": 2446135,
+          "key": "_woodmart_product_custom_tab_html_block_4",
+          "value": ""
+        },
+        {
+          "id": 2446136,
+          "key": "_woodmart_product_custom_tab_title_5",
+          "value": ""
+        },
+        {
+          "id": 2446137,
+          "key": "_woodmart_product_custom_tab_priority_5",
+          "value": ""
+        },
+        {
+          "id": 2446138,
+          "key": "_woodmart_product_custom_tab_content_type_5",
+          "value": ""
+        },
+        {
+          "id": 2446139,
+          "key": "_woodmart_product_custom_tab_content_5",
+          "value": ""
+        },
+        {
+          "id": 2446140,
+          "key": "_woodmart_product_custom_tab_html_block_5",
+          "value": ""
+        },
+        {
+          "id": 2446141,
+          "key": "_oembed_time_3efc152008105e0533b1d0735c932ef8",
+          "value": ""
+        },
+        {
+          "id": 2446142,
+          "key": "_wc_gla_visibility",
+          "value": ""
+        },
+        {
+          "id": 2446143,
+          "key": "_wc_push_notification_sent_low_stock",
+          "value": ""
+        },
+        {
+          "id": 2446144,
+          "key": "_wc_facebook_product_video_source",
+          "value": ""
+        },
+        {
+          "id": 2446145,
+          "key": "fb_product_images",
+          "value": ""
+        },
+        {
+          "id": 2446146,
+          "key": "_wc_push_notification_sent_out_of_stock",
+          "value": ""
         }
       ],
       "name": "Negro, 45",
@@ -8358,8 +9668,8 @@
       "type": "variation",
       "date_created": "2023-06-21T21:10:37",
       "date_created_gmt": "2023-06-21T21:10:37",
-      "date_modified": "2026-05-07T23:12:19",
-      "date_modified_gmt": "2026-05-07T23:12:19",
+      "date_modified": "2026-07-27T20:51:09",
+      "date_modified_gmt": "2026-07-27T20:51:09",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wear/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=44",
       "sku": "7310302044",
@@ -8377,8 +9687,8 @@
       "virtual": false,
       "downloadable": false,
       "downloads": [],
-      "download_limit": 0,
-      "download_expiry": 0,
+      "download_limit": -1,
+      "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
@@ -9087,6 +10397,136 @@
           "id": 2312874,
           "key": "wpcvi_images",
           "value": "62964,62963,62965,62966,62967,62968,62970"
+        },
+        {
+          "id": 2446147,
+          "key": "_wc_facebook_sync_enabled_v2",
+          "value": ""
+        },
+        {
+          "id": 2446148,
+          "key": "rank_math_internal_links_processed",
+          "value": ""
+        },
+        {
+          "id": 2446149,
+          "key": "rank_math_analytic_object_id",
+          "value": ""
+        },
+        {
+          "id": 2446150,
+          "key": "_woodmart_product_custom_tab_priority",
+          "value": ""
+        },
+        {
+          "id": 2446151,
+          "key": "_woodmart_product_custom_tab_priority_2",
+          "value": ""
+        },
+        {
+          "id": 2446152,
+          "key": "_woodmart_product_custom_tab_title_3",
+          "value": ""
+        },
+        {
+          "id": 2446153,
+          "key": "_woodmart_product_custom_tab_priority_3",
+          "value": ""
+        },
+        {
+          "id": 2446154,
+          "key": "_woodmart_product_custom_tab_content_type_3",
+          "value": ""
+        },
+        {
+          "id": 2446155,
+          "key": "_woodmart_product_custom_tab_content_3",
+          "value": ""
+        },
+        {
+          "id": 2446156,
+          "key": "_woodmart_product_custom_tab_html_block_3",
+          "value": ""
+        },
+        {
+          "id": 2446157,
+          "key": "_woodmart_product_custom_tab_title_4",
+          "value": ""
+        },
+        {
+          "id": 2446158,
+          "key": "_woodmart_product_custom_tab_priority_4",
+          "value": ""
+        },
+        {
+          "id": 2446159,
+          "key": "_woodmart_product_custom_tab_content_type_4",
+          "value": ""
+        },
+        {
+          "id": 2446160,
+          "key": "_woodmart_product_custom_tab_content_4",
+          "value": ""
+        },
+        {
+          "id": 2446161,
+          "key": "_woodmart_product_custom_tab_html_block_4",
+          "value": ""
+        },
+        {
+          "id": 2446162,
+          "key": "_woodmart_product_custom_tab_title_5",
+          "value": ""
+        },
+        {
+          "id": 2446163,
+          "key": "_woodmart_product_custom_tab_priority_5",
+          "value": ""
+        },
+        {
+          "id": 2446164,
+          "key": "_woodmart_product_custom_tab_content_type_5",
+          "value": ""
+        },
+        {
+          "id": 2446165,
+          "key": "_woodmart_product_custom_tab_content_5",
+          "value": ""
+        },
+        {
+          "id": 2446166,
+          "key": "_woodmart_product_custom_tab_html_block_5",
+          "value": ""
+        },
+        {
+          "id": 2446167,
+          "key": "_oembed_time_3efc152008105e0533b1d0735c932ef8",
+          "value": ""
+        },
+        {
+          "id": 2446168,
+          "key": "_wc_gla_visibility",
+          "value": ""
+        },
+        {
+          "id": 2446169,
+          "key": "_wc_push_notification_sent_low_stock",
+          "value": ""
+        },
+        {
+          "id": 2446170,
+          "key": "_wc_facebook_product_video_source",
+          "value": ""
+        },
+        {
+          "id": 2446171,
+          "key": "fb_product_images",
+          "value": ""
+        },
+        {
+          "id": 2446172,
+          "key": "_wc_push_notification_sent_out_of_stock",
+          "value": ""
         }
       ],
       "name": "Negro, 44",
@@ -9123,8 +10563,8 @@
       "type": "variation",
       "date_created": "2023-06-21T21:10:37",
       "date_created_gmt": "2023-06-21T21:10:37",
-      "date_modified": "2026-05-07T23:12:19",
-      "date_modified_gmt": "2026-05-07T23:12:19",
+      "date_modified": "2026-07-27T20:51:09",
+      "date_modified_gmt": "2026-07-27T20:51:09",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wear/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=43",
       "sku": "7310302043",
@@ -9142,8 +10582,8 @@
       "virtual": false,
       "downloadable": false,
       "downloads": [],
-      "download_limit": 0,
-      "download_expiry": 0,
+      "download_limit": -1,
+      "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
@@ -9847,6 +11287,141 @@
           "id": 2312873,
           "key": "wpcvi_images",
           "value": "62964,62963,62965,62966,62967,62968,62970"
+        },
+        {
+          "id": 2446173,
+          "key": "_wc_gla_sync_status",
+          "value": ""
+        },
+        {
+          "id": 2446174,
+          "key": "_wc_facebook_sync_enabled_v2",
+          "value": ""
+        },
+        {
+          "id": 2446175,
+          "key": "rank_math_internal_links_processed",
+          "value": ""
+        },
+        {
+          "id": 2446176,
+          "key": "rank_math_analytic_object_id",
+          "value": ""
+        },
+        {
+          "id": 2446177,
+          "key": "_woodmart_product_custom_tab_priority",
+          "value": ""
+        },
+        {
+          "id": 2446178,
+          "key": "_woodmart_product_custom_tab_priority_2",
+          "value": ""
+        },
+        {
+          "id": 2446179,
+          "key": "_woodmart_product_custom_tab_title_3",
+          "value": ""
+        },
+        {
+          "id": 2446180,
+          "key": "_woodmart_product_custom_tab_priority_3",
+          "value": ""
+        },
+        {
+          "id": 2446181,
+          "key": "_woodmart_product_custom_tab_content_type_3",
+          "value": ""
+        },
+        {
+          "id": 2446182,
+          "key": "_woodmart_product_custom_tab_content_3",
+          "value": ""
+        },
+        {
+          "id": 2446183,
+          "key": "_woodmart_product_custom_tab_html_block_3",
+          "value": ""
+        },
+        {
+          "id": 2446184,
+          "key": "_woodmart_product_custom_tab_title_4",
+          "value": ""
+        },
+        {
+          "id": 2446185,
+          "key": "_woodmart_product_custom_tab_priority_4",
+          "value": ""
+        },
+        {
+          "id": 2446186,
+          "key": "_woodmart_product_custom_tab_content_type_4",
+          "value": ""
+        },
+        {
+          "id": 2446187,
+          "key": "_woodmart_product_custom_tab_content_4",
+          "value": ""
+        },
+        {
+          "id": 2446188,
+          "key": "_woodmart_product_custom_tab_html_block_4",
+          "value": ""
+        },
+        {
+          "id": 2446189,
+          "key": "_woodmart_product_custom_tab_title_5",
+          "value": ""
+        },
+        {
+          "id": 2446190,
+          "key": "_woodmart_product_custom_tab_priority_5",
+          "value": ""
+        },
+        {
+          "id": 2446191,
+          "key": "_woodmart_product_custom_tab_content_type_5",
+          "value": ""
+        },
+        {
+          "id": 2446192,
+          "key": "_woodmart_product_custom_tab_content_5",
+          "value": ""
+        },
+        {
+          "id": 2446193,
+          "key": "_woodmart_product_custom_tab_html_block_5",
+          "value": ""
+        },
+        {
+          "id": 2446194,
+          "key": "_oembed_time_3efc152008105e0533b1d0735c932ef8",
+          "value": ""
+        },
+        {
+          "id": 2446195,
+          "key": "_wc_gla_visibility",
+          "value": ""
+        },
+        {
+          "id": 2446196,
+          "key": "_wc_push_notification_sent_low_stock",
+          "value": ""
+        },
+        {
+          "id": 2446197,
+          "key": "_wc_facebook_product_video_source",
+          "value": ""
+        },
+        {
+          "id": 2446198,
+          "key": "fb_product_images",
+          "value": ""
+        },
+        {
+          "id": 2446199,
+          "key": "_wc_push_notification_sent_out_of_stock",
+          "value": ""
         }
       ],
       "name": "Negro, 43",
@@ -9883,8 +11458,8 @@
       "type": "variation",
       "date_created": "2023-06-21T21:10:37",
       "date_created_gmt": "2023-06-21T21:10:37",
-      "date_modified": "2026-05-07T23:12:19",
-      "date_modified_gmt": "2026-05-07T23:12:19",
+      "date_modified": "2026-07-27T20:51:09",
+      "date_modified_gmt": "2026-07-27T20:51:09",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wear/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=42",
       "sku": "7310302042",
@@ -9902,8 +11477,8 @@
       "virtual": false,
       "downloadable": false,
       "downloads": [],
-      "download_limit": 0,
-      "download_expiry": 0,
+      "download_limit": -1,
+      "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
@@ -10612,6 +12187,136 @@
           "id": 2312872,
           "key": "wpcvi_images",
           "value": "62964,62963,62965,62966,62967,62968,62970"
+        },
+        {
+          "id": 2446200,
+          "key": "_wc_facebook_sync_enabled_v2",
+          "value": ""
+        },
+        {
+          "id": 2446201,
+          "key": "rank_math_internal_links_processed",
+          "value": ""
+        },
+        {
+          "id": 2446202,
+          "key": "rank_math_analytic_object_id",
+          "value": ""
+        },
+        {
+          "id": 2446203,
+          "key": "_woodmart_product_custom_tab_priority",
+          "value": ""
+        },
+        {
+          "id": 2446204,
+          "key": "_woodmart_product_custom_tab_priority_2",
+          "value": ""
+        },
+        {
+          "id": 2446205,
+          "key": "_woodmart_product_custom_tab_title_3",
+          "value": ""
+        },
+        {
+          "id": 2446206,
+          "key": "_woodmart_product_custom_tab_priority_3",
+          "value": ""
+        },
+        {
+          "id": 2446207,
+          "key": "_woodmart_product_custom_tab_content_type_3",
+          "value": ""
+        },
+        {
+          "id": 2446208,
+          "key": "_woodmart_product_custom_tab_content_3",
+          "value": ""
+        },
+        {
+          "id": 2446209,
+          "key": "_woodmart_product_custom_tab_html_block_3",
+          "value": ""
+        },
+        {
+          "id": 2446210,
+          "key": "_woodmart_product_custom_tab_title_4",
+          "value": ""
+        },
+        {
+          "id": 2446211,
+          "key": "_woodmart_product_custom_tab_priority_4",
+          "value": ""
+        },
+        {
+          "id": 2446212,
+          "key": "_woodmart_product_custom_tab_content_type_4",
+          "value": ""
+        },
+        {
+          "id": 2446213,
+          "key": "_woodmart_product_custom_tab_content_4",
+          "value": ""
+        },
+        {
+          "id": 2446214,
+          "key": "_woodmart_product_custom_tab_html_block_4",
+          "value": ""
+        },
+        {
+          "id": 2446215,
+          "key": "_woodmart_product_custom_tab_title_5",
+          "value": ""
+        },
+        {
+          "id": 2446216,
+          "key": "_woodmart_product_custom_tab_priority_5",
+          "value": ""
+        },
+        {
+          "id": 2446217,
+          "key": "_woodmart_product_custom_tab_content_type_5",
+          "value": ""
+        },
+        {
+          "id": 2446218,
+          "key": "_woodmart_product_custom_tab_content_5",
+          "value": ""
+        },
+        {
+          "id": 2446219,
+          "key": "_woodmart_product_custom_tab_html_block_5",
+          "value": ""
+        },
+        {
+          "id": 2446220,
+          "key": "_oembed_time_3efc152008105e0533b1d0735c932ef8",
+          "value": ""
+        },
+        {
+          "id": 2446221,
+          "key": "_wc_gla_visibility",
+          "value": ""
+        },
+        {
+          "id": 2446222,
+          "key": "_wc_push_notification_sent_low_stock",
+          "value": ""
+        },
+        {
+          "id": 2446223,
+          "key": "_wc_facebook_product_video_source",
+          "value": ""
+        },
+        {
+          "id": 2446224,
+          "key": "fb_product_images",
+          "value": ""
+        },
+        {
+          "id": 2446225,
+          "key": "_wc_push_notification_sent_out_of_stock",
+          "value": ""
         }
       ],
       "name": "Negro, 42",
@@ -10648,8 +12353,8 @@
       "type": "variation",
       "date_created": "2023-06-21T21:10:37",
       "date_created_gmt": "2023-06-21T21:10:37",
-      "date_modified": "2026-05-07T23:12:19",
-      "date_modified_gmt": "2026-05-07T23:12:19",
+      "date_modified": "2026-07-27T20:51:09",
+      "date_modified_gmt": "2026-07-27T20:51:09",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wear/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=41",
       "sku": "7310302041",
@@ -10667,8 +12372,8 @@
       "virtual": false,
       "downloadable": false,
       "downloads": [],
-      "download_limit": 0,
-      "download_expiry": 0,
+      "download_limit": -1,
+      "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
@@ -11377,6 +13082,136 @@
           "id": 2312871,
           "key": "wpcvi_images",
           "value": "62964,62963,62965,62966,62967,62968,62970"
+        },
+        {
+          "id": 2446226,
+          "key": "_wc_facebook_sync_enabled_v2",
+          "value": ""
+        },
+        {
+          "id": 2446227,
+          "key": "rank_math_internal_links_processed",
+          "value": ""
+        },
+        {
+          "id": 2446228,
+          "key": "rank_math_analytic_object_id",
+          "value": ""
+        },
+        {
+          "id": 2446229,
+          "key": "_woodmart_product_custom_tab_priority",
+          "value": ""
+        },
+        {
+          "id": 2446230,
+          "key": "_woodmart_product_custom_tab_priority_2",
+          "value": ""
+        },
+        {
+          "id": 2446231,
+          "key": "_woodmart_product_custom_tab_title_3",
+          "value": ""
+        },
+        {
+          "id": 2446232,
+          "key": "_woodmart_product_custom_tab_priority_3",
+          "value": ""
+        },
+        {
+          "id": 2446233,
+          "key": "_woodmart_product_custom_tab_content_type_3",
+          "value": ""
+        },
+        {
+          "id": 2446234,
+          "key": "_woodmart_product_custom_tab_content_3",
+          "value": ""
+        },
+        {
+          "id": 2446235,
+          "key": "_woodmart_product_custom_tab_html_block_3",
+          "value": ""
+        },
+        {
+          "id": 2446236,
+          "key": "_woodmart_product_custom_tab_title_4",
+          "value": ""
+        },
+        {
+          "id": 2446237,
+          "key": "_woodmart_product_custom_tab_priority_4",
+          "value": ""
+        },
+        {
+          "id": 2446238,
+          "key": "_woodmart_product_custom_tab_content_type_4",
+          "value": ""
+        },
+        {
+          "id": 2446239,
+          "key": "_woodmart_product_custom_tab_content_4",
+          "value": ""
+        },
+        {
+          "id": 2446240,
+          "key": "_woodmart_product_custom_tab_html_block_4",
+          "value": ""
+        },
+        {
+          "id": 2446241,
+          "key": "_woodmart_product_custom_tab_title_5",
+          "value": ""
+        },
+        {
+          "id": 2446242,
+          "key": "_woodmart_product_custom_tab_priority_5",
+          "value": ""
+        },
+        {
+          "id": 2446243,
+          "key": "_woodmart_product_custom_tab_content_type_5",
+          "value": ""
+        },
+        {
+          "id": 2446244,
+          "key": "_woodmart_product_custom_tab_content_5",
+          "value": ""
+        },
+        {
+          "id": 2446245,
+          "key": "_woodmart_product_custom_tab_html_block_5",
+          "value": ""
+        },
+        {
+          "id": 2446246,
+          "key": "_oembed_time_3efc152008105e0533b1d0735c932ef8",
+          "value": ""
+        },
+        {
+          "id": 2446247,
+          "key": "_wc_gla_visibility",
+          "value": ""
+        },
+        {
+          "id": 2446248,
+          "key": "_wc_push_notification_sent_low_stock",
+          "value": ""
+        },
+        {
+          "id": 2446249,
+          "key": "_wc_facebook_product_video_source",
+          "value": ""
+        },
+        {
+          "id": 2446250,
+          "key": "fb_product_images",
+          "value": ""
+        },
+        {
+          "id": 2446251,
+          "key": "_wc_push_notification_sent_out_of_stock",
+          "value": ""
         }
       ],
       "name": "Negro, 41",
@@ -11413,8 +13248,8 @@
       "type": "variation",
       "date_created": "2023-06-21T21:10:37",
       "date_created_gmt": "2023-06-21T21:10:37",
-      "date_modified": "2026-05-07T23:12:19",
-      "date_modified_gmt": "2026-05-07T23:12:19",
+      "date_modified": "2026-07-27T20:51:09",
+      "date_modified_gmt": "2026-07-27T20:51:09",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wear/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=40",
       "sku": "7310302040",
@@ -11432,8 +13267,8 @@
       "virtual": false,
       "downloadable": false,
       "downloads": [],
-      "download_limit": 0,
-      "download_expiry": 0,
+      "download_limit": -1,
+      "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
@@ -12142,6 +13977,136 @@
           "id": 2312870,
           "key": "wpcvi_images",
           "value": "62964,62963,62965,62966,62967,62968,62970"
+        },
+        {
+          "id": 2446252,
+          "key": "_wc_facebook_sync_enabled_v2",
+          "value": ""
+        },
+        {
+          "id": 2446253,
+          "key": "rank_math_internal_links_processed",
+          "value": ""
+        },
+        {
+          "id": 2446254,
+          "key": "rank_math_analytic_object_id",
+          "value": ""
+        },
+        {
+          "id": 2446255,
+          "key": "_woodmart_product_custom_tab_priority",
+          "value": ""
+        },
+        {
+          "id": 2446256,
+          "key": "_woodmart_product_custom_tab_priority_2",
+          "value": ""
+        },
+        {
+          "id": 2446257,
+          "key": "_woodmart_product_custom_tab_title_3",
+          "value": ""
+        },
+        {
+          "id": 2446258,
+          "key": "_woodmart_product_custom_tab_priority_3",
+          "value": ""
+        },
+        {
+          "id": 2446259,
+          "key": "_woodmart_product_custom_tab_content_type_3",
+          "value": ""
+        },
+        {
+          "id": 2446260,
+          "key": "_woodmart_product_custom_tab_content_3",
+          "value": ""
+        },
+        {
+          "id": 2446261,
+          "key": "_woodmart_product_custom_tab_html_block_3",
+          "value": ""
+        },
+        {
+          "id": 2446262,
+          "key": "_woodmart_product_custom_tab_title_4",
+          "value": ""
+        },
+        {
+          "id": 2446263,
+          "key": "_woodmart_product_custom_tab_priority_4",
+          "value": ""
+        },
+        {
+          "id": 2446264,
+          "key": "_woodmart_product_custom_tab_content_type_4",
+          "value": ""
+        },
+        {
+          "id": 2446265,
+          "key": "_woodmart_product_custom_tab_content_4",
+          "value": ""
+        },
+        {
+          "id": 2446266,
+          "key": "_woodmart_product_custom_tab_html_block_4",
+          "value": ""
+        },
+        {
+          "id": 2446267,
+          "key": "_woodmart_product_custom_tab_title_5",
+          "value": ""
+        },
+        {
+          "id": 2446268,
+          "key": "_woodmart_product_custom_tab_priority_5",
+          "value": ""
+        },
+        {
+          "id": 2446269,
+          "key": "_woodmart_product_custom_tab_content_type_5",
+          "value": ""
+        },
+        {
+          "id": 2446270,
+          "key": "_woodmart_product_custom_tab_content_5",
+          "value": ""
+        },
+        {
+          "id": 2446271,
+          "key": "_woodmart_product_custom_tab_html_block_5",
+          "value": ""
+        },
+        {
+          "id": 2446272,
+          "key": "_oembed_time_3efc152008105e0533b1d0735c932ef8",
+          "value": ""
+        },
+        {
+          "id": 2446273,
+          "key": "_wc_gla_visibility",
+          "value": ""
+        },
+        {
+          "id": 2446274,
+          "key": "_wc_push_notification_sent_low_stock",
+          "value": ""
+        },
+        {
+          "id": 2446275,
+          "key": "_wc_facebook_product_video_source",
+          "value": ""
+        },
+        {
+          "id": 2446276,
+          "key": "fb_product_images",
+          "value": ""
+        },
+        {
+          "id": 2446277,
+          "key": "_wc_push_notification_sent_out_of_stock",
+          "value": ""
         }
       ],
       "name": "Negro, 40",
@@ -12178,8 +14143,8 @@
       "type": "variation",
       "date_created": "2023-06-21T21:10:37",
       "date_created_gmt": "2023-06-21T21:10:37",
-      "date_modified": "2026-05-07T23:12:18",
-      "date_modified_gmt": "2026-05-07T23:12:18",
+      "date_modified": "2026-07-27T20:51:10",
+      "date_modified_gmt": "2026-07-27T20:51:10",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wear/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=39",
       "sku": "7310302039",
@@ -12197,8 +14162,8 @@
       "virtual": false,
       "downloadable": false,
       "downloads": [],
-      "download_limit": 0,
-      "download_expiry": 0,
+      "download_limit": -1,
+      "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
@@ -12907,6 +14872,136 @@
           "id": 2312869,
           "key": "wpcvi_images",
           "value": "62964,62963,62965,62966,62967,62968,62970"
+        },
+        {
+          "id": 2446278,
+          "key": "_wc_facebook_sync_enabled_v2",
+          "value": ""
+        },
+        {
+          "id": 2446279,
+          "key": "rank_math_internal_links_processed",
+          "value": ""
+        },
+        {
+          "id": 2446280,
+          "key": "rank_math_analytic_object_id",
+          "value": ""
+        },
+        {
+          "id": 2446281,
+          "key": "_woodmart_product_custom_tab_priority",
+          "value": ""
+        },
+        {
+          "id": 2446282,
+          "key": "_woodmart_product_custom_tab_priority_2",
+          "value": ""
+        },
+        {
+          "id": 2446283,
+          "key": "_woodmart_product_custom_tab_title_3",
+          "value": ""
+        },
+        {
+          "id": 2446284,
+          "key": "_woodmart_product_custom_tab_priority_3",
+          "value": ""
+        },
+        {
+          "id": 2446285,
+          "key": "_woodmart_product_custom_tab_content_type_3",
+          "value": ""
+        },
+        {
+          "id": 2446286,
+          "key": "_woodmart_product_custom_tab_content_3",
+          "value": ""
+        },
+        {
+          "id": 2446287,
+          "key": "_woodmart_product_custom_tab_html_block_3",
+          "value": ""
+        },
+        {
+          "id": 2446288,
+          "key": "_woodmart_product_custom_tab_title_4",
+          "value": ""
+        },
+        {
+          "id": 2446289,
+          "key": "_woodmart_product_custom_tab_priority_4",
+          "value": ""
+        },
+        {
+          "id": 2446290,
+          "key": "_woodmart_product_custom_tab_content_type_4",
+          "value": ""
+        },
+        {
+          "id": 2446291,
+          "key": "_woodmart_product_custom_tab_content_4",
+          "value": ""
+        },
+        {
+          "id": 2446292,
+          "key": "_woodmart_product_custom_tab_html_block_4",
+          "value": ""
+        },
+        {
+          "id": 2446293,
+          "key": "_woodmart_product_custom_tab_title_5",
+          "value": ""
+        },
+        {
+          "id": 2446294,
+          "key": "_woodmart_product_custom_tab_priority_5",
+          "value": ""
+        },
+        {
+          "id": 2446295,
+          "key": "_woodmart_product_custom_tab_content_type_5",
+          "value": ""
+        },
+        {
+          "id": 2446296,
+          "key": "_woodmart_product_custom_tab_content_5",
+          "value": ""
+        },
+        {
+          "id": 2446297,
+          "key": "_woodmart_product_custom_tab_html_block_5",
+          "value": ""
+        },
+        {
+          "id": 2446298,
+          "key": "_oembed_time_3efc152008105e0533b1d0735c932ef8",
+          "value": ""
+        },
+        {
+          "id": 2446299,
+          "key": "_wc_gla_visibility",
+          "value": ""
+        },
+        {
+          "id": 2446300,
+          "key": "_wc_push_notification_sent_low_stock",
+          "value": ""
+        },
+        {
+          "id": 2446301,
+          "key": "_wc_facebook_product_video_source",
+          "value": ""
+        },
+        {
+          "id": 2446302,
+          "key": "fb_product_images",
+          "value": ""
+        },
+        {
+          "id": 2446303,
+          "key": "_wc_push_notification_sent_out_of_stock",
+          "value": ""
         }
       ],
       "name": "Negro, 39",
@@ -12943,8 +15038,8 @@
       "type": "variation",
       "date_created": "2023-06-21T21:10:36",
       "date_created_gmt": "2023-06-21T21:10:36",
-      "date_modified": "2026-05-07T23:12:18",
-      "date_modified_gmt": "2026-05-07T23:12:18",
+      "date_modified": "2026-07-27T20:51:10",
+      "date_modified_gmt": "2026-07-27T20:51:10",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wear/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=38",
       "sku": "7310302038",
@@ -12962,8 +15057,8 @@
       "virtual": false,
       "downloadable": false,
       "downloads": [],
-      "download_limit": 0,
-      "download_expiry": 0,
+      "download_limit": -1,
+      "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
@@ -13672,6 +15767,136 @@
           "id": 2312882,
           "key": "wpcvi_images",
           "value": "62964,62963,62965,62966,62967,62968,62970"
+        },
+        {
+          "id": 2446304,
+          "key": "_wc_facebook_sync_enabled_v2",
+          "value": ""
+        },
+        {
+          "id": 2446305,
+          "key": "rank_math_internal_links_processed",
+          "value": ""
+        },
+        {
+          "id": 2446306,
+          "key": "rank_math_analytic_object_id",
+          "value": ""
+        },
+        {
+          "id": 2446307,
+          "key": "_woodmart_product_custom_tab_priority",
+          "value": ""
+        },
+        {
+          "id": 2446308,
+          "key": "_woodmart_product_custom_tab_priority_2",
+          "value": ""
+        },
+        {
+          "id": 2446309,
+          "key": "_woodmart_product_custom_tab_title_3",
+          "value": ""
+        },
+        {
+          "id": 2446310,
+          "key": "_woodmart_product_custom_tab_priority_3",
+          "value": ""
+        },
+        {
+          "id": 2446311,
+          "key": "_woodmart_product_custom_tab_content_type_3",
+          "value": ""
+        },
+        {
+          "id": 2446312,
+          "key": "_woodmart_product_custom_tab_content_3",
+          "value": ""
+        },
+        {
+          "id": 2446313,
+          "key": "_woodmart_product_custom_tab_html_block_3",
+          "value": ""
+        },
+        {
+          "id": 2446314,
+          "key": "_woodmart_product_custom_tab_title_4",
+          "value": ""
+        },
+        {
+          "id": 2446315,
+          "key": "_woodmart_product_custom_tab_priority_4",
+          "value": ""
+        },
+        {
+          "id": 2446316,
+          "key": "_woodmart_product_custom_tab_content_type_4",
+          "value": ""
+        },
+        {
+          "id": 2446317,
+          "key": "_woodmart_product_custom_tab_content_4",
+          "value": ""
+        },
+        {
+          "id": 2446318,
+          "key": "_woodmart_product_custom_tab_html_block_4",
+          "value": ""
+        },
+        {
+          "id": 2446319,
+          "key": "_woodmart_product_custom_tab_title_5",
+          "value": ""
+        },
+        {
+          "id": 2446320,
+          "key": "_woodmart_product_custom_tab_priority_5",
+          "value": ""
+        },
+        {
+          "id": 2446321,
+          "key": "_woodmart_product_custom_tab_content_type_5",
+          "value": ""
+        },
+        {
+          "id": 2446322,
+          "key": "_woodmart_product_custom_tab_content_5",
+          "value": ""
+        },
+        {
+          "id": 2446323,
+          "key": "_woodmart_product_custom_tab_html_block_5",
+          "value": ""
+        },
+        {
+          "id": 2446324,
+          "key": "_oembed_time_3efc152008105e0533b1d0735c932ef8",
+          "value": ""
+        },
+        {
+          "id": 2446325,
+          "key": "_wc_gla_visibility",
+          "value": ""
+        },
+        {
+          "id": 2446326,
+          "key": "_wc_push_notification_sent_low_stock",
+          "value": ""
+        },
+        {
+          "id": 2446327,
+          "key": "_wc_facebook_product_video_source",
+          "value": ""
+        },
+        {
+          "id": 2446328,
+          "key": "fb_product_images",
+          "value": ""
+        },
+        {
+          "id": 2446329,
+          "key": "_wc_push_notification_sent_out_of_stock",
+          "value": ""
         }
       ],
       "name": "Negro, 38",
@@ -13708,8 +15933,8 @@
       "type": "variation",
       "date_created": "2023-06-21T21:10:36",
       "date_created_gmt": "2023-06-21T21:10:36",
-      "date_modified": "2026-05-07T23:12:18",
-      "date_modified_gmt": "2026-05-07T23:12:18",
+      "date_modified": "2026-07-27T20:51:10",
+      "date_modified_gmt": "2026-07-27T20:51:10",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wear/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=37",
       "sku": "7310302037",
@@ -13727,8 +15952,8 @@
       "virtual": false,
       "downloadable": false,
       "downloads": [],
-      "download_limit": 0,
-      "download_expiry": 0,
+      "download_limit": -1,
+      "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
@@ -14437,6 +16662,136 @@
           "id": 2312881,
           "key": "wpcvi_images",
           "value": "62964,62963,62965,62966,62967,62968,62970"
+        },
+        {
+          "id": 2446330,
+          "key": "_wc_facebook_sync_enabled_v2",
+          "value": ""
+        },
+        {
+          "id": 2446331,
+          "key": "rank_math_internal_links_processed",
+          "value": ""
+        },
+        {
+          "id": 2446332,
+          "key": "rank_math_analytic_object_id",
+          "value": ""
+        },
+        {
+          "id": 2446333,
+          "key": "_woodmart_product_custom_tab_priority",
+          "value": ""
+        },
+        {
+          "id": 2446334,
+          "key": "_woodmart_product_custom_tab_priority_2",
+          "value": ""
+        },
+        {
+          "id": 2446335,
+          "key": "_woodmart_product_custom_tab_title_3",
+          "value": ""
+        },
+        {
+          "id": 2446336,
+          "key": "_woodmart_product_custom_tab_priority_3",
+          "value": ""
+        },
+        {
+          "id": 2446337,
+          "key": "_woodmart_product_custom_tab_content_type_3",
+          "value": ""
+        },
+        {
+          "id": 2446338,
+          "key": "_woodmart_product_custom_tab_content_3",
+          "value": ""
+        },
+        {
+          "id": 2446339,
+          "key": "_woodmart_product_custom_tab_html_block_3",
+          "value": ""
+        },
+        {
+          "id": 2446340,
+          "key": "_woodmart_product_custom_tab_title_4",
+          "value": ""
+        },
+        {
+          "id": 2446341,
+          "key": "_woodmart_product_custom_tab_priority_4",
+          "value": ""
+        },
+        {
+          "id": 2446342,
+          "key": "_woodmart_product_custom_tab_content_type_4",
+          "value": ""
+        },
+        {
+          "id": 2446343,
+          "key": "_woodmart_product_custom_tab_content_4",
+          "value": ""
+        },
+        {
+          "id": 2446344,
+          "key": "_woodmart_product_custom_tab_html_block_4",
+          "value": ""
+        },
+        {
+          "id": 2446345,
+          "key": "_woodmart_product_custom_tab_title_5",
+          "value": ""
+        },
+        {
+          "id": 2446346,
+          "key": "_woodmart_product_custom_tab_priority_5",
+          "value": ""
+        },
+        {
+          "id": 2446347,
+          "key": "_woodmart_product_custom_tab_content_type_5",
+          "value": ""
+        },
+        {
+          "id": 2446348,
+          "key": "_woodmart_product_custom_tab_content_5",
+          "value": ""
+        },
+        {
+          "id": 2446349,
+          "key": "_woodmart_product_custom_tab_html_block_5",
+          "value": ""
+        },
+        {
+          "id": 2446350,
+          "key": "_oembed_time_3efc152008105e0533b1d0735c932ef8",
+          "value": ""
+        },
+        {
+          "id": 2446351,
+          "key": "_wc_gla_visibility",
+          "value": ""
+        },
+        {
+          "id": 2446352,
+          "key": "_wc_push_notification_sent_low_stock",
+          "value": ""
+        },
+        {
+          "id": 2446353,
+          "key": "_wc_facebook_product_video_source",
+          "value": ""
+        },
+        {
+          "id": 2446354,
+          "key": "fb_product_images",
+          "value": ""
+        },
+        {
+          "id": 2446355,
+          "key": "_wc_push_notification_sent_out_of_stock",
+          "value": ""
         }
       ],
       "name": "Negro, 37",

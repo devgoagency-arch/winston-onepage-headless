@@ -340,34 +340,37 @@ export default function ProductDetail({ initialProduct }: Props) {
     });
   }, [currentProduct.variations, selectedColor, selectedSize]);
 
-  /* Filtrado de imágenes de la galería (100% estricto con los datos del backend) */
+  /* Galería de imágenes: siempre galería general primero, luego extras por color */
   const filteredImages = useMemo(() => {
-    // 1. Auto-seleccionar primer color disponible si no hay selectedColor
+    // 1. Siempre comenzamos con TODAS las imágenes de la galería general (fila "Imágenes" en WooCommerce)
+    const baseImages: any[] = (currentProduct.images || []).map((img: any) => ({
+      src: img.src,
+      alt: img.alt || currentProduct.name
+    }));
+    const baseSrcs = new Set(baseImages.map((img: any) => img.src));
+
+    // 2. Determinar el color efectivo (seleccionado o primero disponible)
     const effectiveColor = selectedColor || (colorAttribute?.terms?.length > 0 ? colorAttribute.terms[0].slug : null);
-    if (!effectiveColor) return currentProduct.images?.length > 0 ? [currentProduct.images[0]] : [];
 
-    const colorTerm = colorAttribute?.terms.find(t => t.slug === effectiveColor);
-    const colorName = colorTerm?.name || "";
+    // 3. Buscar extras en variation_images_map para el color seleccionado (fila "IDs" en WooCommerce)
+    const extraImages: any[] = [];
+    if (effectiveColor && currentProduct.variation_images_map) {
+      const colorTerm = colorAttribute?.terms.find((t: any) => t.slug === effectiveColor);
+      const colorName = colorTerm?.name || "";
+      const colorSlugNormalized = normalizeAttr(effectiveColor);
+      const colorNameNormalized = normalizeAttr(colorName);
+      const searchTerms = new Set([colorSlugNormalized, colorNameNormalized].filter(s => s && s.length > 0));
 
-    const colorSlugNormalized = normalizeAttr(effectiveColor);
-    const colorNameNormalized = normalizeAttr(colorName);
-    
-    const searchTerms = new Set([colorSlugNormalized, colorNameNormalized].filter(s => s && s.length > 0));
-
-    // 2. Buscar en variation_images_map todos los keys que coincidan con el color
-    let varImages: any[] = [];
-    if (currentProduct.variation_images_map) {
       Object.keys(currentProduct.variation_images_map).forEach(key => {
         const k = normalizeAttr(key);
         const isMatch = Array.from(searchTerms).some(term => k === term);
-        
         if (isMatch) {
           const imagesForKey = currentProduct.variation_images_map![key];
           if (Array.isArray(imagesForKey)) {
             imagesForKey.forEach((img: any) => {
-              // Acumular sin duplicados
-              if (!varImages.some(v => v.src === img.src)) {
-                varImages.push(img);
+              // Solo añadir si NO está ya en la galería base
+              if (!baseSrcs.has(img.src) && !extraImages.some((e: any) => e.src === img.src)) {
+                extraImages.push(img);
               }
             });
           }
@@ -375,13 +378,10 @@ export default function ProductDetail({ initialProduct }: Props) {
       });
     }
 
-    // 3. Fallback: si no hay imágenes para esta variación, devolver la primera imagen del producto padre
-    if (varImages.length === 0 && currentProduct.images?.length > 0) {
-      return [currentProduct.images[0]];
-    }
-
-    return varImages;
-  }, [selectedColor, currentProduct.variation_images_map, colorAttribute]);
+    // 4. Resultado final: galería general primero, IDs adicionales después
+    const result = [...baseImages, ...extraImages];
+    return result.length > 0 ? result : [];
+  }, [selectedColor, currentProduct.images, currentProduct.variation_images_map, colorAttribute]);
 
 
 

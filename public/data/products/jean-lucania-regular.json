@@ -1446,8 +1446,8 @@
       "type": "variation",
       "date_created": "2026-05-08T02:20:59",
       "date_created_gmt": "2026-05-08T02:20:59",
-      "date_modified": "2026-07-11T02:29:04",
-      "date_modified_gmt": "2026-07-11T02:29:04",
+      "date_modified": "2026-07-27T17:44:42",
+      "date_modified_gmt": "2026-07-27T17:44:42",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/jean-lucania-regular/?attribute_pa_selecciona-el-color=azul-oscuro&attribute_pa_selecciona-una-talla=36",
       "sku": "3033737036",
@@ -1470,7 +1470,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 15,
+      "stock_quantity": 14,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -1517,7 +1517,7 @@
         {
           "id": 2341846,
           "key": "_last_change_time",
-          "value": "1780422152"
+          "value": "1785174282"
         },
         {
           "id": 2341847,
@@ -5776,6 +5776,18 @@
     ],
     "azul oscuro": [
       {
+        "id": 85653,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-jean-lucania-regaular-azul-oscuro-dobaldo.jpg",
+        "alt": "winston-and-harry-jean-lucania-regaular-azul-oscuro-dobaldo",
+        "name": "winston-and-harry-jean-lucania-regaular-azul-oscuro-dobaldo"
+      },
+      {
+        "id": 85655,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-jean-lucania-regaular-azul-oscuro-frente-detalle.jpg",
+        "alt": "winston-and-harry-jean-lucania-regaular-azul-oscuro-frente-detalle",
+        "name": "winston-and-harry-jean-lucania-regaular-azul-oscuro-frente-detalle"
+      },
+      {
         "id": 85656,
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-jean-lucania-regaular-azul-oscuro-posterior.jpg",
         "alt": "Jean Lucania Regular"
@@ -5803,11 +5815,6 @@
       {
         "id": 85654,
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-jean-lucania-regaular-azul-oscuro-dobaldo-frente-completo.jpg",
-        "alt": "Jean Lucania Regular"
-      },
-      {
-        "id": 85653,
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-jean-lucania-regaular-azul-oscuro-dobaldo.jpg",
         "alt": "Jean Lucania Regular"
       },
       {

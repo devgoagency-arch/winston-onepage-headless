@@ -63,6 +63,12 @@
   ],
   "categories": [
     {
+      "id": 1008,
+      "name": "Morrales",
+      "slug": "morrales-cuero-hombre",
+      "link": "https://tienda.winstonandharrystore.com/product-category/maletas-morrales-cuero-hombre/morrales-cuero-hombre/"
+    },
+    {
       "id": 410,
       "name": "Zapatos y Maletas",
       "slug": "zapatos-maletas-cuero-hombre",
@@ -921,8 +927,8 @@
       "type": "variation",
       "date_created": "2025-02-13T03:50:58",
       "date_created_gmt": "2025-02-13T03:50:58",
-      "date_modified": "2026-06-02T17:39:39",
-      "date_modified_gmt": "2026-06-02T17:39:39",
+      "date_modified": "2026-07-27T17:43:36",
+      "date_modified_gmt": "2026-07-27T17:43:36",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/morral-effort/?attribute_pa_selecciona-el-color=cognac",
       "sku": "15150532000",
@@ -945,7 +951,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 7,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -1563,7 +1569,7 @@
         {
           "id": 2229412,
           "key": "_last_change_time",
-          "value": "1780421979"
+          "value": "1785174216"
         },
         {
           "id": 2312080,
