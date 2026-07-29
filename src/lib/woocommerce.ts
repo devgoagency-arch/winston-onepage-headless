@@ -470,8 +470,9 @@ function mapV3ToStore(p: any) {
                      (a.id || "").toString().includes('color') ||
                      a.name === 'Pa_selecciona-el-color'
                 );
-                if (colorAttr && (colorAttr.value || colorAttr.option) && v.image?.src) {
-                     const colorKey = String(colorAttr.value || colorAttr.option).toLowerCase().trim();
+                 if (colorAttr && (colorAttr.value || colorAttr.option) && v.image?.src) {
+                     const rawColor = String(colorAttr.value || colorAttr.option).toLowerCase().trim();
+                     const colorKey = normalizeSlug(rawColor) || rawColor;
                      if (!imgMap[colorKey]) imgMap[colorKey] = [];
                      
                      if (!imgMap[colorKey].some(img => img.src === v.image.src)) {
@@ -498,13 +499,20 @@ function mapV3ToStore(p: any) {
                         (a.id || "").toString().includes('color') ||
                         a.name === 'Pa_selecciona-el-color'
                     );
-                    const colorKey = colorAttr ? String(colorAttr.option || colorAttr.value).toLowerCase().trim() : 'default';
+                    const rawColor = colorAttr ? String(colorAttr.option || colorAttr.value).toLowerCase().trim() : 'default';
+                    const colorKey = colorAttr ? (normalizeSlug(rawColor) || rawColor) : 'default';
                     if (!imgMap[colorKey]) imgMap[colorKey] = [];
 
                     v.gallery_image_ids.forEach((id: number) => {
                         const img = productImagesById[id];
                         if (img?.src && !imgMap[colorKey].some((i: any) => i.src === img.src)) {
                             imgMap[colorKey].push({ id: img.id, src: img.src, alt: img.alt || img.name || p.name, name: img.name || '' });
+                        } else if (!img && p.wpc_resolved_media?.[String(id)]) {
+                            // Fallback: el ID no está en p.images pero sí fue resuelto via media API
+                            const url = p.wpc_resolved_media[String(id)];
+                            if (!imgMap[colorKey].some((i: any) => i.src === url)) {
+                                imgMap[colorKey].push({ id, src: url, alt: p.name });
+                            }
                         }
                     });
                 });
@@ -520,7 +528,8 @@ function mapV3ToStore(p: any) {
                              (a.id || "").toString().includes('color') ||
                              a.name === 'Pa_selecciona-el-color'
                          );
-                         const colorKey = colorAttr ? String(colorAttr.option || colorAttr.value).toLowerCase().trim() : 'default';
+                         const rawColor = colorAttr ? String(colorAttr.option || colorAttr.value).toLowerCase().trim() : 'default';
+                         const colorKey = colorAttr ? (normalizeSlug(rawColor) || rawColor) : 'default';
                          if (!imgMap[colorKey]) imgMap[colorKey] = [];
                          
                          const ids = parseVariationImageIds(wpcMeta.value);
@@ -724,6 +733,12 @@ function mapV3ToStore(p: any) {
                             const img = productImagesById[id];
                             if (img?.src && !imgMap[colorKey].some((i: any) => i.src === img.src)) {
                                 imgMap[colorKey].push({ id: img.id, src: img.src, alt: img.alt || img.name || p.name, name: img.name || '' });
+                            } else if (!img && p.wpc_resolved_media?.[String(id)]) {
+                                // Fallback: el ID no está en p.images pero sí fue resuelto via media API
+                                const url = p.wpc_resolved_media[String(id)];
+                                if (!imgMap[colorKey].some((i: any) => i.src === url)) {
+                                    imgMap[colorKey].push({ id, src: url, alt: p.name });
+                                }
                             }
                         });
                     });
@@ -811,11 +826,20 @@ export async function getProductById(id: number | string) {
             const variations = await getProductVariations(product.id);
             product.variations_data = variations;
 
-            // NUEVO: Resolver imágenes de WPC si existen
+            // Resolver imágenes de WPC + gallery_image_ids que no estén en p.images
+            const productImageIds = new Set((product.images || []).map((img: any) => String(img.id)));
             const allWpcIds = new Set<string>();
             variations.forEach((v: any) => {
+                // IDs del plugin WPC
                 const meta = v.meta_data?.find((m: any) => (m.key === 'wpcvi_images' || m.key === 'wd_additional_variation_images_data') && m.value);
                 if (meta?.value) parseVariationImageIds(meta.value).forEach((id: string) => { if (id) allWpcIds.add(id.trim()); });
+                // gallery_image_ids que NO estén ya en p.images
+                if (Array.isArray(v.gallery_image_ids)) {
+                    v.gallery_image_ids.forEach((id: number) => {
+                        const sid = String(id);
+                        if (!productImageIds.has(sid)) allWpcIds.add(sid);
+                    });
+                }
             });
 
             if (allWpcIds.size > 0) {
@@ -1261,11 +1285,20 @@ export async function getProductBySlug(slug: string) {
             const variations = await getProductVariations(product.id);
             product.variations_data = variations;
             
-            // NUEVO: Resolver imágenes de WPC si existen
+            // Resolver imágenes de WPC + gallery_image_ids que no estén en p.images
+            const productImageIds = new Set((product.images || []).map((img: any) => String(img.id)));
             const allWpcIds = new Set<string>();
             variations.forEach((v: any) => {
+                // IDs del plugin WPC
                 const meta = v.meta_data?.find((m: any) => (m.key === 'wpcvi_images' || m.key === 'wd_additional_variation_images_data') && m.value);
                 if (meta?.value) parseVariationImageIds(meta.value).forEach((id: string) => { if (id) allWpcIds.add(id.trim()); });
+                // gallery_image_ids que NO estén ya en p.images
+                if (Array.isArray(v.gallery_image_ids)) {
+                    v.gallery_image_ids.forEach((id: number) => {
+                        const sid = String(id);
+                        if (!productImageIds.has(sid)) allWpcIds.add(sid);
+                    });
+                }
             });
 
             if (allWpcIds.size > 0) {

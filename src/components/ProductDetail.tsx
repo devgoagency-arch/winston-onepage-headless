@@ -340,47 +340,53 @@ export default function ProductDetail({ initialProduct }: Props) {
     });
   }, [currentProduct.variations, selectedColor, selectedSize]);
 
-  /* Galería de imágenes: siempre galería general primero, luego extras por color */
+  /* Galería de imágenes: filtra por color seleccionado, con p.images como fallback */
   const filteredImages = useMemo(() => {
-    // 1. Siempre comenzamos con TODAS las imágenes de la galería general (fila "Imágenes" en WooCommerce)
-    const baseImages: any[] = (currentProduct.images || []).map((img: any) => ({
+    // Todas las imágenes de la galería general (fila "Imágenes" en WooCommerce)
+    const allBaseImages: any[] = (currentProduct.images || []).map((img: any) => ({
       src: img.src,
       alt: img.alt || currentProduct.name
     }));
-    const baseSrcs = new Set(baseImages.map((img: any) => img.src));
 
-    // 2. Determinar el color efectivo (seleccionado o primero disponible)
+    // Determinar el color efectivo (seleccionado o primero disponible)
     const effectiveColor = selectedColor || (colorAttribute?.terms?.length > 0 ? colorAttribute.terms[0].slug : null);
 
-    // 3. Buscar extras en variation_images_map para el color seleccionado (fila "IDs" en WooCommerce)
-    const extraImages: any[] = [];
-    if (effectiveColor && currentProduct.variation_images_map) {
-      const colorTerm = colorAttribute?.terms.find((t: any) => t.slug === effectiveColor);
-      const colorName = colorTerm?.name || "";
-      const colorSlugNormalized = normalizeAttr(effectiveColor);
-      const colorNameNormalized = normalizeAttr(colorName);
-      const searchTerms = new Set([colorSlugNormalized, colorNameNormalized].filter(s => s && s.length > 0));
-
-      Object.keys(currentProduct.variation_images_map).forEach(key => {
-        const k = normalizeAttr(key);
-        const isMatch = Array.from(searchTerms).some(term => k === term);
-        if (isMatch) {
-          const imagesForKey = currentProduct.variation_images_map![key];
-          if (Array.isArray(imagesForKey)) {
-            imagesForKey.forEach((img: any) => {
-              // Solo añadir si NO está ya en la galería base
-              if (!baseSrcs.has(img.src) && !extraImages.some((e: any) => e.src === img.src)) {
-                extraImages.push(img);
-              }
-            });
-          }
-        }
-      });
+    // Sin color (producto simple o sin variaciones de color): mostrar todas las imágenes
+    if (!effectiveColor || !currentProduct.variation_images_map) {
+      return allBaseImages.length > 0 ? allBaseImages : [];
     }
 
-    // 4. Resultado final: galería general primero, IDs adicionales después
-    const result = [...baseImages, ...extraImages];
-    return result.length > 0 ? result : [];
+    // Buscar las imágenes del color seleccionado en variation_images_map
+    // (el mapa ya tiene el orden correcto: imagen principal → gallery_image_ids → IDs del plugin)
+    const colorTerm = colorAttribute?.terms.find((t: any) => t.slug === effectiveColor);
+    const colorName = colorTerm?.name || "";
+    const colorSlugNormalized = normalizeAttr(effectiveColor);
+    const colorNameNormalized = normalizeAttr(colorName);
+    const searchTerms = new Set([colorSlugNormalized, colorNameNormalized].filter(s => s && s.length > 0));
+
+    let colorImages: any[] = [];
+    Object.keys(currentProduct.variation_images_map).forEach(key => {
+      const k = normalizeAttr(key);
+      const isMatch = Array.from(searchTerms).some(term => k === term);
+      if (isMatch) {
+        const imagesForKey = currentProduct.variation_images_map![key];
+        if (Array.isArray(imagesForKey)) {
+          imagesForKey.forEach((img: any) => {
+            if (!colorImages.some((e: any) => e.src === img.src)) {
+              colorImages.push(img);
+            }
+          });
+        }
+      }
+    });
+
+    // Si el mapa tiene imágenes para este color, usarlas únicamente.
+    if (colorImages.length > 0) {
+      return colorImages;
+    }
+
+    // Fallback: no hay entradas para este color en el mapa → mostrar toda la galería general
+    return allBaseImages.length > 0 ? allBaseImages : [];
   }, [selectedColor, currentProduct.images, currentProduct.variation_images_map, colorAttribute]);
 
 
