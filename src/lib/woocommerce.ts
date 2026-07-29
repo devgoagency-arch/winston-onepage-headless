@@ -862,6 +862,9 @@ export async function getProductById(id: number | string) {
                 product.wpc_resolved_media = mediaMap;
             }
 
+            // Descubrir URLs subidas por CSV que WooCommerce ignoró (solo 1 imagen por var)
+            await autoDiscoverVariationImages(product);
+
             // Variaciones procesadas en mapV3ToStore
         }
 
@@ -870,6 +873,84 @@ export async function getProductById(id: number | string) {
     } catch (error) {
         console.error(`Error fetching product by ID ${id}:`, error);
         return null;
+    }
+}
+
+/**
+ * Función de auto-descubrimiento para variaciones importadas por CSV.
+ * WooCommerce ignora nativamente las URLs extra, así que probamos -02, -03... si termina en -01.
+ */
+async function autoDiscoverVariationImages(product: any) {
+    if (!product || !Array.isArray(product.variations_data)) return;
+    if (!product.wpc_resolved_media) product.wpc_resolved_media = {};
+
+    const promises: Promise<void>[] = [];
+
+    product.variations_data.forEach((v: any) => {
+        // Contar cuántas imágenes extra válidas tiene realmente
+        let validExtraImages = 0;
+        if (v.gallery_image_ids && Array.isArray(v.gallery_image_ids)) {
+            validExtraImages = v.gallery_image_ids.filter((id: number) => {
+                return product.images?.some((img: any) => img.id === id) || product.wpc_resolved_media?.[String(id)];
+            }).length;
+        }
+
+        // Si ya tiene al menos 1 imagen extra válida, no necesitamos auto-descubrir
+        if (validExtraImages > 0) return;
+
+        // Ignorar si ya tiene metadata de WPC válido (que no sea el corrupto)
+        const wpcMeta = v.meta_data?.find((m: any) => (m.key === 'wpcvi_images' || m.key === 'wd_additional_variation_images_data') && m.value);
+        if (wpcMeta?.value) {
+            // Checkeo de sanidad por si el dato es unix time como en bilston (ej: 1,671,816,717)
+            const parts = String(wpcMeta.value).split(',');
+            const firstId = parseInt(parts[0].trim());
+            // Si el primer ID es muy pequeño (ej: 1), probablemente es un número formateado corrupto, no un ID de WP real (que van por >80000)
+            const isCorrupt = !isNaN(firstId) && firstId < 1000;
+            if (!isCorrupt) return; // Si no es corrupto, ignorar porque ya tiene fotos
+        }
+
+        if (v.image?.src) {
+            const match = v.image.src.match(/(.*[-_])(0?1)(\.[a-zA-Z]+)$/);
+            if (match) {
+                const [_, base, num, ext] = match;
+                const isZeroPadded = num.startsWith('0');
+                
+                const discoverTask = async () => {
+                    const discoveredIds: string[] = [];
+                    // Probar del 2 al 6
+                    for (let i = 2; i <= 6; i++) {
+                        const nextNum = isZeroPadded ? String(i).padStart(2, '0') : String(i);
+                        const testUrl = base + nextNum + ext;
+                        try {
+                            const res = await fetch(testUrl, { method: 'HEAD' });
+                            if (res.ok) {
+                                const mockId = `auto_${v.id}_${i}`;
+                                product.wpc_resolved_media[mockId] = testUrl;
+                                discoveredIds.push(mockId);
+                            } else {
+                                break;
+                            }
+                        } catch(e) {
+                            break;
+                        }
+                    }
+                    if (discoveredIds.length > 0) {
+                        if (!v.meta_data) v.meta_data = [];
+                        // Remover metadata corrupta si existe
+                        v.meta_data = v.meta_data.filter((m: any) => m.key !== 'wpcvi_images' && m.key !== 'wd_additional_variation_images_data');
+                        v.meta_data.push({
+                            key: 'wpcvi_images',
+                            value: discoveredIds.join(',')
+                        });
+                    }
+                };
+                promises.push(discoverTask());
+            }
+        }
+    });
+
+    if (promises.length > 0) {
+        await Promise.all(promises);
     }
 }
 
@@ -1321,6 +1402,9 @@ export async function getProductBySlug(slug: string) {
                 product.wpc_resolved_media = mediaMap;
             }
             
+            // Descubrir URLs subidas por CSV que WooCommerce ignoró (solo 1 imagen por var)
+            await autoDiscoverVariationImages(product);
+
             // Variaciones procesadas en mapV3ToStore
         }
 
