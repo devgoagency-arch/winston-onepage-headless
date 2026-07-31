@@ -463,6 +463,19 @@ function mapV3ToStore(p: any) {
             // Construir variation_images_map para Store API
             const imgMap: Record<string, any[]> = {};
 
+            // Regla de excepción para limpiar fotos de variaciones que pertenecen a otros modelos
+            // (casos específicos detectados: Milan, Mompox, Winsdor, Wisbech II)
+            const isForeignImage = (filename: string) => {
+                if (!filename) return false;
+                const slug = (p.slug || '').toLowerCase();
+                const knownForeignSlugs = ['bucaramanga', 'loaiza', 'bath', 'bradford', 'buckingham', 'wessex', 'lincoln'];
+                const foreign = knownForeignSlugs.find(s => filename.toLowerCase().includes(s) && slug !== s);
+                if (foreign && !slug.includes(foreign)) {
+                    return true; // Es una foto ajena, descartar
+                }
+                return false;
+            };
+
             // 1. Primero cargamos las imágenes principales de las variaciones (para que sean las primeras)
             p.variations.forEach((v: any) => {
                 const colorAttr = v.attributes?.find((a: any) => 
@@ -476,12 +489,14 @@ function mapV3ToStore(p: any) {
                      if (!imgMap[colorKey]) imgMap[colorKey] = [];
                      
                      if (!imgMap[colorKey].some(img => img.src === v.image.src)) {
-                         imgMap[colorKey].push({ 
-                            id: v.image.id || 0,
-                            src: v.image.src, 
-                            alt: v.image.alt || v.image.name || '',
-                            name: v.image.name || ''
-                        });
+                         if (!isForeignImage(v.image.src)) {
+                             imgMap[colorKey].push({ 
+                                id: v.image.id || 0,
+                                src: v.image.src, 
+                                alt: v.image.alt || v.image.name || '',
+                                name: v.image.name || ''
+                            });
+                         }
                      }
                 }
             });
@@ -506,12 +521,16 @@ function mapV3ToStore(p: any) {
                     v.gallery_image_ids.forEach((id: number) => {
                         const img = productImagesById[id];
                         if (img?.src && !imgMap[colorKey].some((i: any) => i.src === img.src)) {
-                            imgMap[colorKey].push({ id: img.id, src: img.src, alt: img.alt || img.name || p.name, name: img.name || '' });
+                            if (!isForeignImage(img.src)) {
+                                imgMap[colorKey].push({ id: img.id, src: img.src, alt: img.alt || img.name || p.name, name: img.name || '' });
+                            }
                         } else if (!img && p.wpc_resolved_media?.[String(id)]) {
                             // Fallback: el ID no está en p.images pero sí fue resuelto via media API
                             const url = p.wpc_resolved_media[String(id)];
                             if (!imgMap[colorKey].some((i: any) => i.src === url)) {
-                                imgMap[colorKey].push({ id, src: url, alt: p.name });
+                                if (!isForeignImage(url)) {
+                                    imgMap[colorKey].push({ id, src: url, alt: p.name });
+                                }
                             }
                         }
                     });
@@ -536,7 +555,9 @@ function mapV3ToStore(p: any) {
                          ids.forEach((id: string) => {
                              const url = p.wpc_resolved_media[id];
                              if (url && !imgMap[colorKey].some(img => img.src === url)) {
-                                 imgMap[colorKey].push({ id: parseInt(id), src: url, alt: p.name });
+                                 if (!isForeignImage(url)) {
+                                     imgMap[colorKey].push({ id: parseInt(id), src: url, alt: p.name });
+                                 }
                              }
                          });
                     }
