@@ -2,120 +2,266 @@
   "id": 24884,
   "name": "Card Holder",
   "slug": "card-holder",
-  "permalink": "https://tienda.winstonandharrystore.com/product/card-holder/",
+  "parent": 0,
   "type": "variable",
-  "status": "publish",
-  "description": "<p>Tarjetero hecho a mano en cuero de becerro. El tarjetero viene con un elegante diseño de dos tonos, con muchos espacios para sus tarjetas y forrado en su interior con el forro escoces insignia de Winston &amp; Harry. Cuando se trata de accesorios, siempre puedes contar con el Card Holder.</p>\n",
+  "variation": "",
+  "permalink": "https://tienda.winstonandharrystore.com/product/card-holder/",
+  "sku": "317",
   "short_description": "",
+  "description": "<p>Tarjetero hecho a mano en cuero de becerro. El tarjetero viene con un elegante diseño de dos tonos, con muchos espacios para sus tarjetas y forrado en su interior con el forro escoces insignia de Winston &amp; Harry. Cuando se trata de accesorios, siempre puedes contar con el Card Holder.</p>",
+  "on_sale": false,
   "prices": {
-    "price": "117810",
-    "regular_price": "117810",
-    "sale_price": "",
+    "price": "99000",
+    "regular_price": "99000",
+    "sale_price": "99000",
+    "price_range": null,
     "currency_code": "COP",
     "currency_symbol": "$",
     "currency_minor_unit": 0,
+    "currency_decimal_separator": ".",
+    "currency_thousand_separator": ",",
     "currency_prefix": "$",
-    "price_range": null
+    "currency_suffix": ""
   },
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>99,000</span>",
+  "average_rating": "0",
+  "review_count": 0,
   "images": [
     {
       "id": 58989,
       "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2024/11/Card-Holder-Negro-Winstonandharry-1.jpg",
-      "alt": "Card Holder",
-      "name": "Card-Holder-Negro-Winstonandharry-1"
+      "thumbnail": "https://tienda.winstonandharrystore.com/wp-content/uploads/2024/11/Card-Holder-Negro-Winstonandharry-1-324x324.jpg",
+      "srcset": "https://tienda.winstonandharrystore.com/wp-content/uploads/2024/11/Card-Holder-Negro-Winstonandharry-1.jpg 1000w, https://tienda.winstonandharrystore.com/wp-content/uploads/2024/11/Card-Holder-Negro-Winstonandharry-1-324x324.jpg 324w, https://tienda.winstonandharrystore.com/wp-content/uploads/2024/11/Card-Holder-Negro-Winstonandharry-1-100x100.jpg 100w, https://tienda.winstonandharrystore.com/wp-content/uploads/2024/11/Card-Holder-Negro-Winstonandharry-1-416x416.jpg 416w, https://tienda.winstonandharrystore.com/wp-content/uploads/2024/11/Card-Holder-Negro-Winstonandharry-1-150x150.jpg 150w, https://tienda.winstonandharrystore.com/wp-content/uploads/2024/11/Card-Holder-Negro-Winstonandharry-1-300x300.jpg 300w, https://tienda.winstonandharrystore.com/wp-content/uploads/2024/11/Card-Holder-Negro-Winstonandharry-1-768x767.jpg 768w, https://tienda.winstonandharrystore.com/wp-content/uploads/2024/11/Card-Holder-Negro-Winstonandharry-1-200x200.jpg 200w",
+      "sizes": "(max-width: 1000px) 100vw, 1000px",
+      "thumbnail_srcset": "https://tienda.winstonandharrystore.com/wp-content/uploads/2024/11/Card-Holder-Negro-Winstonandharry-1-324x324.jpg 324w, https://tienda.winstonandharrystore.com/wp-content/uploads/2024/11/Card-Holder-Negro-Winstonandharry-1-100x100.jpg 100w, https://tienda.winstonandharrystore.com/wp-content/uploads/2024/11/Card-Holder-Negro-Winstonandharry-1-416x416.jpg 416w, https://tienda.winstonandharrystore.com/wp-content/uploads/2024/11/Card-Holder-Negro-Winstonandharry-1-150x150.jpg 150w, https://tienda.winstonandharrystore.com/wp-content/uploads/2024/11/Card-Holder-Negro-Winstonandharry-1-300x300.jpg 300w, https://tienda.winstonandharrystore.com/wp-content/uploads/2024/11/Card-Holder-Negro-Winstonandharry-1-768x767.jpg 768w, https://tienda.winstonandharrystore.com/wp-content/uploads/2024/11/Card-Holder-Negro-Winstonandharry-1-200x200.jpg 200w, https://tienda.winstonandharrystore.com/wp-content/uploads/2024/11/Card-Holder-Negro-Winstonandharry-1.jpg 1000w",
+      "thumbnail_sizes": "(max-width: 324px) 100vw, 324px",
+      "name": "Card-Holder-Negro-Winstonandharry-1",
+      "alt": ""
     },
     {
       "id": 58991,
       "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2024/11/Card-Holder-Negro-Winstonandharry-3.jpg",
-      "alt": "Card Holder",
-      "name": "Card-Holder-Negro-Winstonandharry-3"
-    }
-  ],
-  "attributes": [
-    {
-      "id": 3,
-      "name": "Selecciona el Color",
-      "slug": "pa_selecciona-el-color",
-      "terms": [
-        {
-          "id": 0,
-          "name": "Café",
-          "slug": "cafe"
-        },
-        {
-          "id": 1,
-          "name": "Miel",
-          "slug": "miel"
-        },
-        {
-          "id": 2,
-          "name": "Negro",
-          "slug": "negro"
-        }
-      ]
+      "thumbnail": "https://tienda.winstonandharrystore.com/wp-content/uploads/2024/11/Card-Holder-Negro-Winstonandharry-3-324x324.jpg",
+      "srcset": "https://tienda.winstonandharrystore.com/wp-content/uploads/2024/11/Card-Holder-Negro-Winstonandharry-3.jpg 1000w, https://tienda.winstonandharrystore.com/wp-content/uploads/2024/11/Card-Holder-Negro-Winstonandharry-3-324x324.jpg 324w, https://tienda.winstonandharrystore.com/wp-content/uploads/2024/11/Card-Holder-Negro-Winstonandharry-3-100x100.jpg 100w, https://tienda.winstonandharrystore.com/wp-content/uploads/2024/11/Card-Holder-Negro-Winstonandharry-3-416x416.jpg 416w, https://tienda.winstonandharrystore.com/wp-content/uploads/2024/11/Card-Holder-Negro-Winstonandharry-3-150x150.jpg 150w, https://tienda.winstonandharrystore.com/wp-content/uploads/2024/11/Card-Holder-Negro-Winstonandharry-3-300x300.jpg 300w, https://tienda.winstonandharrystore.com/wp-content/uploads/2024/11/Card-Holder-Negro-Winstonandharry-3-768x768.jpg 768w, https://tienda.winstonandharrystore.com/wp-content/uploads/2024/11/Card-Holder-Negro-Winstonandharry-3-200x200.jpg 200w",
+      "sizes": "(max-width: 1000px) 100vw, 1000px",
+      "thumbnail_srcset": "https://tienda.winstonandharrystore.com/wp-content/uploads/2024/11/Card-Holder-Negro-Winstonandharry-3-324x324.jpg 324w, https://tienda.winstonandharrystore.com/wp-content/uploads/2024/11/Card-Holder-Negro-Winstonandharry-3-100x100.jpg 100w, https://tienda.winstonandharrystore.com/wp-content/uploads/2024/11/Card-Holder-Negro-Winstonandharry-3-416x416.jpg 416w, https://tienda.winstonandharrystore.com/wp-content/uploads/2024/11/Card-Holder-Negro-Winstonandharry-3-150x150.jpg 150w, https://tienda.winstonandharrystore.com/wp-content/uploads/2024/11/Card-Holder-Negro-Winstonandharry-3-300x300.jpg 300w, https://tienda.winstonandharrystore.com/wp-content/uploads/2024/11/Card-Holder-Negro-Winstonandharry-3-768x768.jpg 768w, https://tienda.winstonandharrystore.com/wp-content/uploads/2024/11/Card-Holder-Negro-Winstonandharry-3-200x200.jpg 200w, https://tienda.winstonandharrystore.com/wp-content/uploads/2024/11/Card-Holder-Negro-Winstonandharry-3.jpg 1000w",
+      "thumbnail_sizes": "(max-width: 324px) 100vw, 324px",
+      "name": "Card-Holder-Negro-Winstonandharry-3",
+      "alt": ""
     }
   ],
   "categories": [
     {
       "id": 126,
       "name": "Accesorios",
-      "slug": "accesorios-hombre"
+      "slug": "accesorios-hombre",
+      "link": "https://tienda.winstonandharrystore.com/product-category/accesorios-hombre/"
     },
     {
       "id": 964,
       "name": "Billeteras",
-      "slug": "billeteras"
+      "slug": "billeteras",
+      "link": "https://tienda.winstonandharrystore.com/product-category/accesorios-hombre/billeteras/"
     },
     {
       "id": 424,
       "name": "Ideas de regalo",
-      "slug": "ideas-regalo-hombre"
+      "slug": "ideas-regalo-hombre",
+      "link": "https://tienda.winstonandharrystore.com/product-category/ideas-regalo-hombre/"
     },
     {
       "id": 920,
       "name": "Menos de $200,000",
-      "slug": "menos-de-200000"
+      "slug": "menos-de-200000",
+      "link": "https://tienda.winstonandharrystore.com/product-category/menos-de-200000/"
     },
     {
       "id": 921,
       "name": "Menos de $350,000",
-      "slug": "menos-de-350000"
+      "slug": "menos-de-350000",
+      "link": "https://tienda.winstonandharrystore.com/product-category/menos-de-350000/"
     },
     {
       "id": 922,
       "name": "Menos de $499,000",
-      "slug": "menos-de-499000"
+      "slug": "menos-de-499000",
+      "link": "https://tienda.winstonandharrystore.com/product-category/menos-de-499000/"
     }
-  ],
-  "category_ids": [
-    126,
-    964,
-    424,
-    920,
-    921,
-    922
   ],
   "tags": [
     {
       "id": 432,
       "name": "Menos de 150.000",
-      "slug": "menos-de-150-000"
+      "slug": "menos-de-150-000",
+      "link": "https://tienda.winstonandharrystore.com/product-tag/menos-de-150-000/"
     }
   ],
-  "variation_ids": [
-    58976,
-    58977,
-    58978
-  ],
-  "on_sale": false,
-  "featured": false,
-  "upsell_ids": [
-    24819
-  ],
-  "cross_sell_ids": [
-    24852
+  "brands": [],
+  "attributes": [
+    {
+      "id": 3,
+      "name": "Selecciona el Color",
+      "taxonomy": "pa_selecciona-el-color",
+      "has_variations": true,
+      "terms": [
+        {
+          "id": 105,
+          "name": "Café",
+          "slug": "cafe"
+        },
+        {
+          "id": 112,
+          "name": "Miel",
+          "slug": "miel"
+        },
+        {
+          "id": 96,
+          "name": "Negro",
+          "slug": "negro"
+        }
+      ]
+    }
   ],
   "variations": [
+    {
+      "id": 58976,
+      "attributes": [
+        {
+          "name": "Selecciona el Color",
+          "value": "cafe",
+          "option": "cafe"
+        }
+      ],
+      "image": {
+        "id": 58983,
+        "date_created": "2024-11-30T22:51:43",
+        "date_created_gmt": "2024-11-30T22:51:43",
+        "date_modified": "2024-11-30T23:18:45",
+        "date_modified_gmt": "2024-11-30T23:18:45",
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2024/11/Card-Holder-Cafe-Winstonandharry-1.jpg",
+        "name": "Card-Holder-Café-Winstonandharry-1",
+        "alt": ""
+      },
+      "stock_status": "instock",
+      "price": "99000",
+      "regular_price": "99000",
+      "sale_price": ""
+    },
+    {
+      "id": 58977,
+      "attributes": [
+        {
+          "name": "Selecciona el Color",
+          "value": "miel",
+          "option": "miel"
+        }
+      ],
+      "image": {
+        "id": 58986,
+        "date_created": "2024-11-30T22:51:53",
+        "date_created_gmt": "2024-11-30T22:51:53",
+        "date_modified": "2024-11-30T23:18:45",
+        "date_modified_gmt": "2024-11-30T23:18:45",
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2024/11/Card-Holder-Miel-Winstonandharry-1.jpg",
+        "name": "Card-Holder-Miel-Winstonandharry-1",
+        "alt": ""
+      },
+      "stock_status": "instock",
+      "price": "99000",
+      "regular_price": "99000",
+      "sale_price": ""
+    },
+    {
+      "id": 58978,
+      "attributes": [
+        {
+          "name": "Selecciona el Color",
+          "value": "negro",
+          "option": "negro"
+        }
+      ],
+      "image": {
+        "id": 58989,
+        "date_created": "2024-11-30T22:52:03",
+        "date_created_gmt": "2024-11-30T22:52:03",
+        "date_modified": "2024-11-30T23:18:45",
+        "date_modified_gmt": "2024-11-30T23:18:45",
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2024/11/Card-Holder-Negro-Winstonandharry-1.jpg",
+        "name": "Card-Holder-Negro-Winstonandharry-1",
+        "alt": ""
+      },
+      "stock_status": "instock",
+      "price": "99000",
+      "regular_price": "99000",
+      "sale_price": ""
+    }
+  ],
+  "grouped_products": [],
+  "has_options": true,
+  "is_purchasable": true,
+  "is_in_stock": true,
+  "is_on_backorder": false,
+  "low_stock_remaining": null,
+  "stock_availability": {
+    "text": "Hay existencias",
+    "class": "in-stock"
+  },
+  "sold_individually": false,
+  "weight": "",
+  "dimensions": {
+    "length": "",
+    "width": "",
+    "height": ""
+  },
+  "formatted_weight": "N/D",
+  "formatted_dimensions": "N/D",
+  "add_to_cart": {
+    "text": "Seleccionar opciones",
+    "description": "Elige las opciones para &ldquo;Card Holder&rdquo;",
+    "url": "https://tienda.winstonandharrystore.com/product/card-holder/",
+    "single_text": "Añadir al carrito",
+    "minimum": 1,
+    "maximum": 1,
+    "multiple_of": 1
+  },
+  "is_password_protected": false,
+  "extensions": {},
+  "_links": {
+    "self": [
+      {
+        "href": "https://tienda.winstonandharrystore.com/wp-json/wc/store/v1/products/24884",
+        "targetHints": {
+          "allow": [
+            "GET"
+          ]
+        }
+      }
+    ],
+    "collection": [
+      {
+        "href": "https://tienda.winstonandharrystore.com/wp-json/wc/store/v1/products"
+      }
+    ],
+    "upsells": [
+      {
+        "embeddable": true,
+        "href": "https://tienda.winstonandharrystore.com/wp-json/wc/store/v1/products?include=24819"
+      }
+    ],
+    "cross_sells": [
+      {
+        "embeddable": true,
+        "href": "https://tienda.winstonandharrystore.com/wp-json/wc/store/v1/products?include=24852"
+      }
+    ],
+    "related": [
+      {
+        "embeddable": true,
+        "href": "https://tienda.winstonandharrystore.com/wp-json/wc/store/v1/products?related=24884&per_page=10"
+      }
+    ]
+  },
+  "variations_data": [
     {
       "id": 58978,
       "type": "variation",
@@ -127,8 +273,8 @@
       "permalink": "https://tienda.winstonandharrystore.com/product/card-holder/?attribute_pa_selecciona-el-color=negro",
       "sku": "33337102000",
       "global_unique_id": "",
-      "price": "117810",
-      "regular_price": "117810",
+      "price": "99000",
+      "regular_price": "99000",
       "sale_price": "",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
@@ -175,8 +321,7 @@
           "id": 3,
           "name": "Selecciona el Color",
           "slug": "pa_selecciona-el-color",
-          "option": "Negro",
-          "value": "Negro"
+          "option": "Negro"
         }
       ],
       "menu_order": 3,
@@ -792,8 +937,8 @@
       "permalink": "https://tienda.winstonandharrystore.com/product/card-holder/?attribute_pa_selecciona-el-color=miel",
       "sku": "33337126000",
       "global_unique_id": "",
-      "price": "117810",
-      "regular_price": "117810",
+      "price": "99000",
+      "regular_price": "99000",
       "sale_price": "",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
@@ -840,8 +985,7 @@
           "id": 3,
           "name": "Selecciona el Color",
           "slug": "pa_selecciona-el-color",
-          "option": "Miel",
-          "value": "Miel"
+          "option": "Miel"
         }
       ],
       "menu_order": 2,
@@ -1457,8 +1601,8 @@
       "permalink": "https://tienda.winstonandharrystore.com/product/card-holder/?attribute_pa_selecciona-el-color=cafe",
       "sku": "33337104000",
       "global_unique_id": "",
-      "price": "117810",
-      "regular_price": "117810",
+      "price": "99000",
+      "regular_price": "99000",
       "sale_price": "",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
@@ -1505,8 +1649,7 @@
           "id": 3,
           "name": "Selecciona el Color",
           "slug": "pa_selecciona-el-color",
-          "option": "Café",
-          "value": "Café"
+          "option": "Café"
         }
       ],
       "menu_order": 1,
@@ -2112,22 +2255,31 @@
       }
     }
   ],
+  "wpc_resolved_media": {
+    "58984": "https://tienda.winstonandharrystore.com/wp-content/uploads/2024/11/Card-Holder-Cafe-Winstonandharry-2.jpg",
+    "58985": "https://tienda.winstonandharrystore.com/wp-content/uploads/2024/11/Card-Holder-Cafe-Winstonandharry-3.jpg",
+    "58987": "https://tienda.winstonandharrystore.com/wp-content/uploads/2024/11/Card-Holder-Miel-Winstonandharry-2.jpg",
+    "58988": "https://tienda.winstonandharrystore.com/wp-content/uploads/2024/11/Card-Holder-Miel-Winstonandharry-3.jpg",
+    "58990": "https://tienda.winstonandharrystore.com/wp-content/uploads/2024/11/Card-Holder-Negro-Winstonandharry-2.jpg",
+    "58991": "https://tienda.winstonandharrystore.com/wp-content/uploads/2024/11/Card-Holder-Negro-Winstonandharry-3.jpg"
+  },
+  "stock_status": "instock",
   "variation_images_map": {
-    "negro": [
+    "cafe": [
       {
-        "id": 58989,
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2024/11/Card-Holder-Negro-Winstonandharry-1.jpg",
-        "alt": "Card-Holder-Negro-Winstonandharry-1",
-        "name": "Card-Holder-Negro-Winstonandharry-1"
+        "id": 58983,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2024/11/Card-Holder-Cafe-Winstonandharry-1.jpg",
+        "alt": "Card-Holder-Café-Winstonandharry-1",
+        "name": "Card-Holder-Café-Winstonandharry-1"
       },
       {
-        "id": 58990,
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2024/11/Card-Holder-Negro-Winstonandharry-2.jpg",
+        "id": 58984,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2024/11/Card-Holder-Cafe-Winstonandharry-2.jpg",
         "alt": "Card Holder"
       },
       {
-        "id": 58991,
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2024/11/Card-Holder-Negro-Winstonandharry-3.jpg",
+        "id": 58985,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2024/11/Card-Holder-Cafe-Winstonandharry-3.jpg",
         "alt": "Card Holder"
       }
     ],
@@ -2149,28 +2301,23 @@
         "alt": "Card Holder"
       }
     ],
-    "cafe": [
+    "negro": [
       {
-        "id": 58983,
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2024/11/Card-Holder-Cafe-Winstonandharry-1.jpg",
-        "alt": "Card-Holder-Café-Winstonandharry-1",
-        "name": "Card-Holder-Café-Winstonandharry-1"
+        "id": 58989,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2024/11/Card-Holder-Negro-Winstonandharry-1.jpg",
+        "alt": "Card-Holder-Negro-Winstonandharry-1",
+        "name": "Card-Holder-Negro-Winstonandharry-1"
       },
       {
-        "id": 58984,
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2024/11/Card-Holder-Cafe-Winstonandharry-2.jpg",
+        "id": 58990,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2024/11/Card-Holder-Negro-Winstonandharry-2.jpg",
         "alt": "Card Holder"
       },
       {
-        "id": 58985,
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2024/11/Card-Holder-Cafe-Winstonandharry-3.jpg",
+        "id": 58991,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2024/11/Card-Holder-Negro-Winstonandharry-3.jpg",
         "alt": "Card Holder"
       }
     ]
-  },
-  "stock_status": "instock",
-  "manage_stock": true,
-  "stock_quantity": 1,
-  "yoast_head_json": null,
-  "rank_math_seo": null
+  }
 }
