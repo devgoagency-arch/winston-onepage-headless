@@ -1,6 +1,6 @@
 import { useStore } from '@nanostores/react';
 import { useState, useMemo, useEffect, useRef } from 'react';
-import { cartItems, clearCart, isCartOpen, calculateComboDiscount, type CartItem } from '../../store/cart';
+import { cartItems, clearCart, isCartOpen, calculateComboDiscount, calculateSweater2x1Discount, type CartItem } from '../../store/cart';
 import { userSession } from '../../store/user';
 import colombiaCities from '../../lib/colombiaCities.json';
 import { trackMetaEvent } from '../../utils/metaPixel';
@@ -218,9 +218,15 @@ export default function CheckoutPage() {
         return calculateComboDiscount(items);
     }, [items]);
 
+    const sweater2x1Discount = useMemo(() => {
+        return calculateSweater2x1Discount(items);
+    }, [items]);
+
+    const totalDiscount = discount + sweater2x1Discount;
+
     const FREE_SHIPPING_THRESHOLD = shippingSettings.free_shipping_threshold;
     const SHIPPING_COST = shippingSettings.flat_rate;
-    const discountedSubtotal = subtotal - discount;
+    const discountedSubtotal = subtotal - totalDiscount;
     const shippingCost = discountedSubtotal >= FREE_SHIPPING_THRESHOLD ? 0 : SHIPPING_COST;
     const total = discountedSubtotal + shippingCost;
 
@@ -687,6 +693,12 @@ export default function CheckoutPage() {
                                     <div className="summary-row" style={{ color: '#d9534f' }}>
                                         <span>Descuento Combo -25%</span>
                                         <span>-{fmt(discount)}</span>
+                                    </div>
+                                )}
+                                {sweater2x1Discount > 0 && (
+                                    <div className="summary-row" style={{ color: '#d9534f' }}>
+                                        <span>🎁 2x1 Suéter Escalera</span>
+                                        <span>-{fmt(sweater2x1Discount)}</span>
                                     </div>
                                 )}
                                 <div className="summary-row">

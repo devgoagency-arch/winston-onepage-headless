@@ -1,0 +1,59 @@
+---
+// src/components/ui/RevealOnView.astro
+// Wrapper genérico: revela su contenido (fade + slide-up) cuando entra
+// en viewport. Usa IntersectionObserver nativo, sin librerías.
+// Respeta prefers-reduced-motion.
+interface Props {
+  delayMs?: number;
+}
+const { delayMs = 0 } = Astro.props;
+---
+
+<div class="reveal" style={`--reveal-delay:${delayMs}ms`}>
+  <slot />
+</div>
+
+<style>
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+      opacity 0.7s ease var(--reveal-delay),
+      transform 0.7s ease var(--reveal-delay);
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+  // Un solo observer compartido para todos los .reveal de la página.
+  const io = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      }
+    },
+    { threshold: 0.12 }
+  );
+
+  function observeAll() {
+    document.querySelectorAll('.reveal:not(.is-visible)').forEach((el) => io.observe(el));
+  }
+
+  observeAll();
+
+  // Re-observar tras cada navegación con View Transitions de Astro
+  document.addEventListener('astro:page-load', observeAll);
+</script>

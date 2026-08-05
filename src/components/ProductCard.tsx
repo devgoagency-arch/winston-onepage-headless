@@ -38,6 +38,7 @@ interface Product {
     on_sale?: boolean;
     featured?: boolean;
     stock_status?: string;
+    categories?: { id: number; name: string; slug: string }[];
 }
 
 interface Props {
@@ -481,6 +482,9 @@ export default function ProductCard({ product, isSelected, onSelectionToggle, on
     const renderPrice = price / (10 ** currencyMinorUnit);
     const currencySymbol = priceData.currency_prefix || priceData.currency_symbol;
 
+    const isEscalera = (product.slug || '').toLowerCase().includes('escalera') 
+                     || (product.name || '').toLowerCase().includes('escalera');
+
     return (
         <div
             className="product-card"
@@ -508,6 +512,12 @@ export default function ProductCard({ product, isSelected, onSelectionToggle, on
                                 </div>
                             )}
                         </div>
+                        
+                        {isEscalera && (
+                            <div className="promo-2x1-badge">
+                                2x1
+                            </div>
+                        )}
 
                         <picture className="primary-image">
                             <img
@@ -847,6 +857,23 @@ export default function ProductCard({ product, isSelected, onSelectionToggle, on
 
         .discount-badge {
             background-color: #A98B68; /* Sandy gold discount badge */
+        }
+
+        .promo-2x1-badge {
+            position: absolute;
+            top: 10px;
+            right: 45px;
+            background-color: rgba(255, 255, 255, 0.95);
+            color: #111;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            font-size: 0.65rem;
+            font-weight: 700;
+            padding: 4px 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-radius: 1px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            z-index: 10;
         }
 
         .product-card:hover .product-image img { transform: scale(1.05); }

@@ -3,6 +3,8 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Hero from "../components/Hero.astro";
 import HeroPromo from "../components/HeroPromo.astro";
+import HomeHero from "../components/home/HomeHero.astro";
+import SplitBanners from "../components/home/SplitBanners.astro";
 import ScrollRevealBanner from "../components/ScrollRevealBanner.astro";
 import ProductGrid from "../components/ProductGrid";
 import About from "../components/About.astro";
@@ -14,6 +16,7 @@ import BlogHome from "../components/BlogHome.astro";
 import { getHomePageData, getProductsByCategory } from "../lib/woocommerce";
 import { getHeroSlides } from "../lib/hero";
 import { getLookOfTheWeekData } from "../lib/look";
+import { getHomeBanner } from "../lib/homeBanner";
 
 // Pre-cargar todos los datos de la página del Home en una única petición (ID 83750)
 const homePage = await getHomePageData();
@@ -40,19 +43,52 @@ const heroSlots = heroResult.slots || 1;
 
 // Pre-cargar el Look of the Week en build-time
 const lookData = await getLookOfTheWeekData();
+
+// Pre-cargar datos del banner home desde WordPress CPT
+const banner = await getHomeBanner();
 ---
 
 <Layout title={homeSeo?.title} seoData={homeSeo}>
 	<Header />
 
 	<main>
-		<!-- Banner promocional temporal: Look Completo -->
-		<HeroPromo />
-		
-		<!-- Banner original guardado en borrador -->
+		<!-- Banner dinámico desde WordPress CPT home_banner -->
+		<HomeHero
+			image_desktop={banner.hero.image_desktop}
+			image_mobile={banner.hero.image_mobile}
+			eyebrow={banner.hero.eyebrow}
+			title={banner.hero.title}
+			subtitle={banner.hero.subtitle}
+			cta_label={banner.hero.cta_label}
+			cta_href={banner.hero.cta_href}
+			eyebrow_color={banner.hero.eyebrow_color}
+			title_color={banner.hero.title_color}
+			subtitle_color={banner.hero.subtitle_color}
+			cta_color={banner.hero.cta_color}
+		/>
+
+		<!-- Backup (descomentar para volver al banner anterior) -->
+		<!-- <HeroPromo /> -->
 		<!-- <Hero slides={heroSlides} slots={heroSlots} /> -->
 
 		<div class="content-wrapper">
+			<!-- Split banners: dos paneles con fade-in al scroll -->
+			<SplitBanners
+				left={{
+					image:     banner.left.image,
+					title:     banner.left.title,
+					subtitle:  banner.left.subtitle,
+					cta_label: banner.left.cta_label,
+					cta_href:  banner.left.cta_href,
+				}}
+				right={{
+					image:     banner.right.image,
+					title:     banner.right.title,
+					subtitle:  banner.right.subtitle,
+					cta_label: banner.right.cta_label,
+					cta_href:  banner.right.cta_href,
+				}}
+			/>
 			<FeaturesBanner />
 			<CategoryGrid />
 			<ProductGrid client:load initialProducts={productsZapatos} initialCache={initialCache} />

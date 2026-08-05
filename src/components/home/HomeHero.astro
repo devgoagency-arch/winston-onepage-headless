@@ -1,0 +1,226 @@
+---
+// src/components/home/HomeHero.astro
+// Hero full-bleed con imagen desde WP/CDN (Imagify la optimiza en origen).
+// Usa <picture> desktop/mobile. Ken Burns y scrim con CSS puro.
+// Soporta colores de texto configurables desde el CPT de WP.
+
+interface Props {
+  image_desktop:    string;
+  image_mobile:     string;
+  eyebrow?:         string;
+  title:            string;
+  subtitle?:        string;
+  cta_label:        string;
+  cta_href:         string;
+  // Colores opcionales (vienen del CPT, si no se usan los defaults blancos)
+  eyebrow_color?:   string;
+  title_color?:     string;
+  subtitle_color?:  string;
+  cta_color?:       string;
+}
+
+const {
+  image_desktop,
+  image_mobile,
+  eyebrow,
+  title,
+  subtitle,
+  cta_label,
+  cta_href,
+  eyebrow_color  = 'rgba(255,255,255,0.9)',
+  title_color    = '#ffffff',
+  subtitle_color = 'rgba(255,255,255,0.88)',
+  cta_color      = '#ffffff',
+} = Astro.props;
+
+const mobileUrl = image_mobile || image_desktop;
+---
+
+<section class="hh" aria-label="Winston & Harry — destacado">
+  <!-- Imagen de fondo con versión desktop/mobile -->
+  <a href={cta_href} class="hh__link" aria-label={title}>
+    <picture>
+      <source media="(max-width: 767px)" srcset={mobileUrl} />
+      <source media="(min-width: 768px)"  srcset={image_desktop} />
+      <img
+        src={image_desktop}
+        alt={title}
+        class="hh__img"
+        fetchpriority="high"
+        loading="eager"
+        decoding="sync"
+      />
+    </picture>
+  </a>
+
+  <div class="hh__scrim" aria-hidden="true"></div>
+
+  <!-- Contenido editorial al fondo de la imagen -->
+  <div class="hh__content">
+    {eyebrow && (
+      <p class="hh__eyebrow hh__anim" style={`color:${eyebrow_color};--delay:0.3s`}>{eyebrow}</p>
+    )}
+    <h1 class="hh__title hh__anim" style={`color:${title_color};--delay:0.55s`}>{title}</h1>
+    {subtitle && (
+      <p class="hh__subtitle hh__anim" style={`color:${subtitle_color};--delay:0.75s`}>{subtitle}</p>
+    )}
+    <a
+      href={cta_href}
+      class="hh__cta hh__anim"
+      style={`color:${cta_color};border-color:${cta_color};--delay:0.95s`}
+    >{cta_label}</a>
+  </div>
+</section>
+
+<style>
+  .hh {
+    position: relative;
+    display: grid;
+    /* Texto pegado al fondo, alineado a la izquierda */
+    align-items: end;
+    justify-items: start;
+    min-height: calc(100svh - 90px);
+    margin-top: 90px;
+    margin-bottom: 0;   /* ← elimina espacio negro inferior */
+    overflow: hidden;
+    isolation: isolate;
+    line-height: 0;     /* ← evita hueco por line-height en grid */
+  }
+
+  body.is-header-hidden .hh {
+    margin-top: 0;
+    min-height: 100svh;
+  }
+
+  /* ── Imagen ─────────────────────────────────── */
+  .hh__link {
+    position: absolute;
+    inset: 0;
+    display: block;
+    line-height: 0;
+  }
+
+  .hh__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    animation: hhZoom 14s ease-out forwards;
+  }
+
+  @keyframes hhZoom {
+    from { transform: scale(1.06); }
+    to   { transform: scale(1); }
+  }
+
+  /* ── Scrim — degradado solo en la parte inferior ── */
+  .hh__scrim {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(
+      to top,
+      rgba(10, 10, 10, 0.80) 0%,
+      rgba(10, 10, 10, 0.20) 35%,
+      rgba(10, 10, 10, 0)    60%
+    );
+  }
+
+  /* ── Caja de texto: pegada al fondo ─────────── */
+  .hh__content {
+    position: relative;
+    z-index: 1;
+    /* Padding inferior generoso para separar del borde */
+    padding: 0 clamp(1.5rem, 5vw, 4rem) clamp(2.5rem, 5vw, 4.5rem);
+    max-width: 48rem;
+    line-height: normal;
+    pointer-events: none;
+  }
+
+  /* Eyebrow: -25% */
+  .hh__eyebrow {
+    font-family: var(--font-titles, 'Antonio', sans-serif);
+    font-size: clamp(1.05rem, 2.1vw, 1.65rem);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin: 0 0 0.5rem;
+    line-height: 1;
+  }
+
+  /* Title: -25% */
+  .hh__title {
+    font-family: var(--font-titles, 'Antonio', sans-serif);
+    font-size: clamp(1.5rem, 3.75vw, 2.7rem);
+    font-weight: 700;
+    line-height: 1.06;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0 0 0.75rem;
+  }
+
+  /* Subtitle: -25% */
+  .hh__subtitle {
+    font-family: var(--font-paragraphs, sans-serif);
+    font-size: clamp(0.64rem, 1.05vw, 0.75rem);
+    margin: 0 0 1.75rem;
+    max-width: 34rem;
+    line-height: 1.6;
+  }
+
+  /* CTA: -25% */
+  .hh__cta {
+    display: inline-block;
+    padding: 0.64rem 1.5rem;
+    border: 1.5px solid;
+    font-family: var(--font-titles, 'Antonio', sans-serif);
+    font-size: 0.64rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    pointer-events: all;
+    transition: background 0.25s ease, color 0.25s ease;
+    background: transparent;
+  }
+
+  .hh__cta:hover {
+    background: #fff;
+    color: #0a0a0a !important;
+    border-color: #fff !important;
+  }
+
+  /* ── Animación de entrada staggered ────────── */
+  @keyframes hhSlideUp {
+    from {
+      opacity: 0;
+      transform: translateY(32px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .hh__anim {
+    opacity: 0; /* oculto hasta que arranque la animación */
+    animation: hhSlideUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) var(--delay, 0s) forwards;
+  }
+
+  /* ── Responsive ─────────────────────────────── */
+  @media (max-width: 768px) {
+    .hh {
+      min-height: calc(100svh - 65px);
+      margin-top: 65px;
+    }
+
+    .hh__content {
+      padding-bottom: 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hh__img  { animation: none; }
+    .hh__anim { animation: none; opacity: 1; transform: none; }
+  }
+</style>

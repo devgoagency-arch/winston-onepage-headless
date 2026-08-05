@@ -1,0 +1,108 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import ProductCard from "../components/ProductCard";
+import { searchProducts } from "../lib/woocommerce";
+
+const searchResults = await searchProducts("escalera", 20);
+
+const products = searchResults.filter(
+    (p) =>
+        (p.slug || "").toLowerCase().includes("escalera") ||
+        (p.name || "").toLowerCase().includes("escalera")
+);
+
+const seoData = {
+    title: "Promo 2x1 Suéter Tejido Escalera | Winston & Harry",
+    description: "2x1 en Suéter Tejido Escalera. Agrega dos al carrito y el segundo es gratis.",
+};
+---
+
+<Layout title={seoData.title} seoData={seoData}>
+    <Header />
+
+    <main class="promo-page">
+        <section class="promo-header">
+            <span class="eyebrow">PROMOCIÓN EXCLUSIVA</span>
+            <h1 class="promo-title">2x1 EN SUÉTER TEJIDO ESCALERA</h1>
+            <p class="promo-desc">
+                Elige 2 suéteres de los colores que prefieras. Al agregarlos
+                al carrito, el segundo te saldrá <strong>totalmente GRATIS</strong>.
+            </p>
+        </section>
+
+        <!-- Inline style: React no puede sobreescribir estilos del HTML de Astro -->
+        <div style="display:grid; grid-template-columns: repeat(3,1fr); width:100%; border-top:1px solid #eee;">
+            {products.map((product) => (
+                <ProductCard client:load product={product} />
+            ))}
+        </div>
+    </main>
+
+    <Footer />
+</Layout>
+
+<style is:global>
+    .promo-page {
+        padding-top: 90px;
+        min-height: 70vh;
+        background: #fff;
+    }
+
+    .promo-header {
+        padding: 3.5rem 2rem 3rem;
+        background: #111;
+        text-align: center;
+        color: #fff;
+    }
+
+    .eyebrow {
+        display: block;
+        font-family: var(--font-paragraphs);
+        font-size: 0.78rem;
+        letter-spacing: 0.2em;
+        color: #B1915F;
+        margin-bottom: 0.75rem;
+        text-transform: uppercase;
+    }
+
+    .promo-title {
+        font-family: var(--font-titles);
+        font-size: clamp(1.6rem, 4vw, 2.4rem);
+        letter-spacing: 2px;
+        margin: 0 0 0.75rem;
+        text-transform: uppercase;
+        color: #fff !important;
+    }
+
+    .promo-desc {
+        font-family: var(--font-paragraphs);
+        color: #ccc;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        max-width: 560px;
+        margin: 0 auto;
+    }
+
+    .promo-desc strong { color: #fff; }
+
+    /* Grid idéntico al de buscar.astro — probado y funcional */
+    .escalera-grid-wrap {
+        width: 100%;
+        border-top: 1px solid #eee;
+    }
+
+    .escalera-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0;
+        width: 100%;
+    }
+
+    @media (max-width: 768px) {
+        .escalera-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+</style>

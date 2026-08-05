@@ -1,5 +1,5 @@
 import { useStore } from '@nanostores/react';
-import { cartItems, isCartOpen, removeFromCart, updateQuantity, updateCartItemVariation, calculateComboDiscount, type CartItem } from '../store/cart';
+import { cartItems, isCartOpen, removeFromCart, updateQuantity, updateCartItemVariation, calculateComboDiscount, calculateSweater2x1Discount, type CartItem } from '../store/cart';
 import { useEffect, useState, useMemo } from 'react';
 import { redirectToCheckout } from '../utils/checkout';
 
@@ -33,7 +33,13 @@ export default function SideCart() {
         return calculateComboDiscount(items);
     }, [items]);
 
-    const total = subtotal - discount;
+    const sweater2x1Discount = useMemo(() => {
+        return calculateSweater2x1Discount(items);
+    }, [items]);
+
+    const totalDiscount = discount + sweater2x1Discount;
+
+    const total = subtotal - totalDiscount;
 
     useEffect(() => {
         if ($isCartOpen) {
@@ -198,7 +204,17 @@ export default function SideCart() {
                                 </div>
                             </div>
                         )}
-                        {discount > 0 && (
+                        {sweater2x1Discount > 0 && (
+                            <div className="footer-top discount-row">
+                                <span className="subtotal-label">🎁 2x1 Suéter Escalera:</span>
+                                <div className="price-stack">
+                                    <span className="subtotal-value" style={{ color: '#d9534f' }}>
+                                        -${new Intl.NumberFormat('es-CO').format(sweater2x1Discount)}
+                                    </span>
+                                </div>
+                            </div>
+                        )}
+                        {totalDiscount > 0 && (
                             <div className="footer-top total-row">
                                 <span className="subtotal-label">Total:</span>
                                 <div className="price-stack">
@@ -209,7 +225,7 @@ export default function SideCart() {
                                 </div>
                             </div>
                         )}
-                        {discount === 0 && (
+                        {totalDiscount === 0 && (
                             <div className="footer-top">
                                 <span className="subtotal-label"></span>
                                 <div className="price-stack">

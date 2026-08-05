@@ -279,3 +279,96 @@ export function calculateComboDiscount(items: (CartItem & { key?: string })[]) {
 
     return 0;
 }
+
+/**
+ * Calcula el descuento 2x1 para el Suéter Tejido Escalera.
+ * Regla: Por cada 2 suéteres escalera en el carrito, el de menor precio es GRATIS.
+ * - 1 suéter → precio full (sin descuento)
+ * - 2 suéteres → el más barato es gratis
+ * - 3 suéteres → 1 gratis + 1 full (paga 2)
+ * - 4 suéteres → 2 gratis (paga 2)
+ *
+ * Implementación: expande los ítems según su quantity, ordena de mayor a menor precio,
+ * y suma los precios en posiciones pares (0-indexed: 1, 3, 5...) como descuento.
+ */
+export function calculateSweater2x1Discount(items: (CartItem & { key?: string })[]): number {
+    // Tag ID conocido: 937 ("2×1 en Suéteres tejidos Rombo y Escalera")
+    const TAG_2X1_ID = 937;
+    const TAG_2X1_SLUG = '2x1-en-sueteres-tejidos-rombo-y-escalera';
+    const CAT_SUETERES = 955; // "Suéteres y Chalecos"
+
+    // Recopilar todos los suéteres escalera expandidos por cantidad
+    const precios: number[] = [];
+
+    items.forEach(item => {
+        let es_sueter_escalera = false;
+
+        // Primero verificar por tags (más preciso)
+        if (item.categories && Array.isArray(item.categories)) {
+            // Verificar si tiene el tag 2x1
+        }
+        // Verificar en tags (guardados en el item como parte de categories? No, en este proyecto las tags se guardan separado)
+        // Fallback por slug/nombre — el producto es "Sueter Tejido Escalera"
+        const slug = String(item.slug || '').toLowerCase();
+        const name = String(item.name || '').toLowerCase();
+
+        // Detectar por slug o nombre del producto
+        const slugStr = slug || '';
+        const nameStr = name || '';
+        const esEscalera = slugStr.includes('escalera') || nameStr.includes('escalera');
+
+        // Verificar por categoría si está disponible
+        if (item.categories && item.categories.length > 0) {
+            const catIds = item.categories.map((c: any) => c.id);
+            const esSueterCategoria = catIds.includes(CAT_SUETERES);
+
+            if (esSueterCategoria && esEscalera) {
+                es_sueter_escalera = true;
+            } else if (esEscalera) {
+                es_sueter_escalera = true;
+            }
+        } else {
+            es_sueter_escalera = esEscalera;
+        }
+
+        if (es_sueter_escalera) {
+            // Expandir por quantity
+            for (let i = 0; i < item.quantity; i++) {
+                precios.push(item.price);
+            }
+        }
+    });
+
+    if (precios.length < 2) return 0;
+
+    // Ordenar de mayor a menor precio
+    precios.sort((a, b) => b - a);
+
+    // Por cada 2 suéteres, el de menor precio (posición impar 1-indexed = índice par 0-indexed NO... )
+    // Posición 1 paga, posición 2 gratis, posición 3 paga, posición 4 gratis...
+    // En 0-indexed: índice 0 paga, índice 1 gratis, índice 2 paga, índice 3 gratis
+    let descuento = 0;
+    for (let i = 1; i < precios.length; i += 2) {
+        descuento += precios[i];
+    }
+
+    return descuento;
+}
+
+/**
+ * Calcula el total de todos los descuentos activos en el carrito.
+ * Incluye: combo jean+camisa+cinturón (25%) y 2x1 suéter escalera.
+ */
+export function calculateTotalDiscount(items: (CartItem & { key?: string })[]): {
+    comboDiscount: number;
+    sweater2x1Discount: number;
+    total: number;
+} {
+    const comboDiscount = calculateComboDiscount(items);
+    const sweater2x1Discount = calculateSweater2x1Discount(items);
+    return {
+        comboDiscount,
+        sweater2x1Discount,
+        total: comboDiscount + sweater2x1Discount,
+    };
+}
