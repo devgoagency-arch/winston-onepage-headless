@@ -49,6 +49,11 @@ const banner = await getHomeBanner();
 ---
 
 <Layout title={homeSeo?.title} seoData={homeSeo}>
+	<Fragment slot="head">
+		<link rel="preload" href={banner.hero.image_desktop} as="image" media="(min-width: 768px)" fetchpriority="high" />
+		<link rel="preload" href={banner.hero.image_mobile || banner.hero.image_desktop} as="image" media="(max-width: 767px)" fetchpriority="high" />
+	</Fragment>
+	
 	<Header />
 
 	<main>

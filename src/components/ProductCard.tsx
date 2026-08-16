@@ -1,6 +1,12 @@
 import { useState, useEffect, useMemo } from 'react';
 import { getOptimizedUrl, getImageSrcSet } from '../utils/image';
 
+// Elimina sufijos de miniaturas de WordPress (ej: -150x150) para cargar la imagen original
+function getOriginalImageUrl(url: string): string {
+    if (!url) return '';
+    return url.replace(/-\d+x\d+(?=\.(jpg|jpeg|png|webp|gif)$)/i, '');
+}
+
 interface Product {
     id: number;
     name: string;
@@ -522,8 +528,8 @@ export default function ProductCard({ product, isSelected, onSelectionToggle, on
                         <picture className="primary-image">
                             <img
                                 key={mainImage?.src}
-                                src={getOptimizedUrl(mainImage?.src || '', { width: 600 })}
-                                srcSet={mainImage?.srcset || getImageSrcSet(mainImage?.src || '', [400, 600, 800])}
+                                src={getOptimizedUrl(getOriginalImageUrl(mainImage?.src || ''), { width: 600 })}
+                                srcSet={getImageSrcSet(getOriginalImageUrl(mainImage?.src || ''), [400, 600, 800])}
                                 sizes={mainImage?.sizes || "(max-width: 768px) 50vw, 33vw"}
                                 alt={mainImage?.alt || product.name}
                                 className="fade-in reveal-on-scroll is-visible"
@@ -571,8 +577,8 @@ export default function ProductCard({ product, isSelected, onSelectionToggle, on
                         {effectiveHoverSrc && (
                             <picture className="hover-image">
                                 <img
-                                    src={getOptimizedUrl(effectiveHoverSrc || '', { width: 600 })}
-                                    srcSet={hoverImageRaw?.srcset || getImageSrcSet(effectiveHoverSrc || '', [400, 600])}
+                                    src={getOptimizedUrl(getOriginalImageUrl(effectiveHoverSrc || ''), { width: 600 })}
+                                    srcSet={getImageSrcSet(getOriginalImageUrl(effectiveHoverSrc || ''), [400, 600])}
                                     sizes={hoverImageRaw?.sizes || "(max-width: 768px) 50vw, 33vw"}
                                     alt={hoverImageRaw?.alt || product.name}
                                     className="reveal-on-scroll is-visible"
@@ -1107,5 +1113,24 @@ function getColorCode(slug: string): string {
         'marron': '#6F4E37',
         'marrón': '#6F4E37'
     };
-    return colors[slug.toLowerCase()] || colors[slug.toLowerCase().replace(/-/g, '')] || '#ddd';
+
+    const normalized = slug.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, '').replace(/[^a-z0-9]/g, '');
+
+    if (colors[slug.toLowerCase()]) return colors[slug.toLowerCase()];
+    if (colors[slug.toLowerCase().replace(/-/g, '')]) return colors[slug.toLowerCase().replace(/-/g, '')];
+    if (colors[normalized]) return colors[normalized];
+
+    // Fallbacks para variaciones compuestas (ej. "Negro Florantik")
+    if (normalized.includes('negro')) return '#121212';
+    if (normalized.includes('rojo') && normalized.includes('florantik')) return '#8B0000';
+    if (normalized.includes('rojo')) return '#C41E3A';
+    if (normalized.includes('cafe') || normalized.includes('marron')) return '#6F4E37';
+    if (normalized.includes('miel')) return '#D4A373';
+    if (normalized.includes('azul')) return '#1B3F8B';
+    if (normalized.includes('verde')) return '#155338';
+    if (normalized.includes('vino')) return '#722F37';
+    if (normalized.includes('blanco')) return '#FFFFFF';
+    if (normalized.includes('gris')) return '#888888';
+
+    return '#ddd';
 }

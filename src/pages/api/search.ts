@@ -51,7 +51,6 @@ export const GET: APIRoute = async ({ url }) => {
         }
 
         // ── PASO 2: Búsqueda de texto — Store API + v3 en paralelo ───────────
-        // Ambas peticiones arrancan al mismo tiempo, la más rápida "gana"
         const [storeResult, v3Result] = await Promise.allSettled([
             withTimeout(
                 fetch(`${PUBLIC_WP_URL}/wp-json/wc/store/v1/products?search=${encoded}&per_page=${perPage}`).then(r => r.ok ? r.json() : []),
@@ -129,8 +128,11 @@ export const GET: APIRoute = async ({ url }) => {
             } catch (_) { /* Taxonomías fallaron, ignorar */ }
         }
 
+        // Ordenar los resultados combinados por ID (los más altos son los más recientes)
+        products.sort((a, b) => (b.id || 0) - (a.id || 0));
+
         const normalized = products
-            .slice(0, perPage)
+            .slice(0, 12) // Mostrar un máximo de 12 resultados al usuario
             .map(p => normalizeProduct(p, p._source === 'store'))
             .filter((p: any) => p.id && p.name);
 

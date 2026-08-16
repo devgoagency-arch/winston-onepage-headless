@@ -25,6 +25,7 @@ const SearchModal: React.FC = () => {
     const [searched, setSearched] = useState(false);
     const inputRef = useRef<HTMLInputElement>(null);
     const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+    const abortRef = useRef<AbortController | null>(null);
 
     // Escuchar eventos del DOM para abrir/cerrar el modal
     useEffect(() => {
@@ -77,18 +78,27 @@ const SearchModal: React.FC = () => {
             setSearched(false);
             return;
         }
+
+        // Cancelar cualquier búsqueda anterior en vuelo
+        if (abortRef.current) abortRef.current.abort();
+        abortRef.current = new AbortController();
+        const signal = abortRef.current.signal;
+
         setLoading(true);
         setSearched(false);
         try {
-            const res = await fetch(`/api/search?q=${encodeURIComponent(q)}&per_page=10`);
+            const res = await fetch(`/api/search?q=${encodeURIComponent(q)}&per_page=40`, { signal });
             if (!res.ok) throw new Error('Error en búsqueda');
             const data = await res.json();
             setResults(Array.isArray(data) ? data : []);
-        } catch (e) {
+        } catch (e: any) {
+            if (e.name === 'AbortError') return; // Ignorar si fue cancelada
             setResults([]);
         } finally {
-            setLoading(false);
-            setSearched(true);
+            if (!signal.aborted) {
+                setLoading(false);
+                setSearched(true);
+            }
         }
     }, []);
 

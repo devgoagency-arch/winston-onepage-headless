@@ -27,6 +27,12 @@ function getBaseImageName(url: string): string {
   return name.toLowerCase();
 }
 
+// Función para asegurar que se carga la imagen original y no una miniatura (ej: -150x150)
+function getOriginalImageUrl(url: string): string {
+  if (!url) return '';
+  return url.replace(/-\d+x\d+(?=\.(jpg|jpeg|png|webp|gif)$)/i, '');
+}
+
 interface Product {
   id: number;
   name: string;
@@ -753,12 +759,13 @@ export default function ProductDetail({ initialProduct }: Props) {
                 <picture>
                   <img
                     src={getOptimizedUrl(img.src, { width: 1200 })}
-                    srcSet={img.srcset || getImageSrcSet(img.src, [600, 900, 1200])}
+                    srcSet={getImageSrcSet(img.src, [600, 900, 1200])}
                     sizes={img.sizes || "(max-width: 768px) 100vw, 50vw"}
                     alt={img.alt || product.name}
                     className="reveal-on-scroll is-visible cursor-zoom"
-                    loading={index === 0 ? "eager" : "lazy"}
-                    decoding={index === 0 ? "sync" : "async"}
+                    loading={index < 2 ? "eager" : "lazy"}
+                    fetchPriority={index === 0 ? "high" : "auto"}
+                    decoding={index < 2 ? "sync" : "async"}
                     onClick={() => openLightbox(index)}
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
@@ -1775,11 +1782,11 @@ export default function ProductDetail({ initialProduct }: Props) {
             overflow-x: auto;
             scroll-snap-type: x mandatory;
             scrollbar-width: none;
-            height: 100%;
             -webkit-overflow-scrolling: touch;
           }
           .gallery-item {
             flex: 0 0 100%;
+            width: 100%;
             scroll-snap-align: center;
             aspect-ratio: 1 / 1;
             overflow: hidden;
@@ -2493,8 +2500,24 @@ function getColorCode(slug: string): string {
     'marron': '#6F4E37',
     'marrón': '#6F4E37'
   };
-  return colors[slug.toLowerCase()] ||
-    colors[slug.toLowerCase().replace(/-/g, '')] ||
-    colors[normalizeAttr(slug)] ||
-    '#ddd';
+
+  const normalized = normalizeAttr(slug);
+  
+  if (colors[slug.toLowerCase()]) return colors[slug.toLowerCase()];
+  if (colors[slug.toLowerCase().replace(/-/g, '')]) return colors[slug.toLowerCase().replace(/-/g, '')];
+  if (colors[normalized]) return colors[normalized];
+
+  // Fallbacks para variaciones compuestas (ej. "Negro Florantik")
+  if (normalized.includes('negro')) return '#121212';
+  if (normalized.includes('rojo') && normalized.includes('florantik')) return '#8B0000';
+  if (normalized.includes('rojo')) return '#C41E3A';
+  if (normalized.includes('cafe') || normalized.includes('marron')) return '#6F4E37';
+  if (normalized.includes('miel')) return '#D4A373';
+  if (normalized.includes('azul')) return '#1B3F8B';
+  if (normalized.includes('verde')) return '#155338';
+  if (normalized.includes('vino')) return '#722F37';
+  if (normalized.includes('blanco')) return '#FFFFFF';
+  if (normalized.includes('gris')) return '#888888';
+
+  return '#ddd';
 }
