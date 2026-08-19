@@ -627,6 +627,7 @@ function mapV3ToStore(p: any) {
         permalink: p.permalink,
         type: p.type,
         status: p.status,
+        date_created: p.date_created,
         description: p.description,
         short_description: p.short_description,
         prices: {
@@ -1449,25 +1450,8 @@ export async function getAllProducts(
     maxPrice?: string
 ) {
     try {
-        // Prioridad: Store API
-        const storeParams = new URLSearchParams({
-            per_page: perPage.toString(),
-            page: page.toString(),
-            orderby: orderBy,
-            order: order
-        });
-        if (onSale) storeParams.append('on_sale', 'true');
-        if (maxPrice) storeParams.append('max_price', maxPrice);
-
-        const storeUrl = `${PUBLIC_WP_URL}/wp-json/wc/store/v1/products?${storeParams.toString()}&stock_status=instock&_cb=${Date.now()}`;
-        const storeRes = await fetch(storeUrl, { headers: { 'Cache-Control': 'no-cache' } });
-
-        if (storeRes.ok) {
-            const data = await storeRes.json();
-            return Array.isArray(data) ? data.map(p => mapV3ToStore(p)).filter(p => p !== null) : [];
-        }
-
-        // Fallback: v3
+        // Usar API v3 (exclusivamente, al igual que getProductsByCategory)
+        // para asegurar que date_created siempre esté disponible.
         const v3Params = new URLSearchParams({
             per_page: perPage.toString(),
             page: page.toString(),
@@ -1477,9 +1461,10 @@ export async function getAllProducts(
             stock_status: 'instock'
         });
         if (onSale) v3Params.append('on_sale', 'true');
+        if (maxPrice) v3Params.append('max_price', maxPrice);
 
         const data = await wcFetch(`/products?${v3Params.toString()}`);
-        return Array.isArray(data) ? data.map(p => mapV3ToStore(p)) : [];
+        return Array.isArray(data) ? data.map(p => mapV3ToStore(p)).filter(p => p !== null) : [];
     } catch (error: any) {
         console.error("[getAllProducts] Error:", error.message);
         return [];

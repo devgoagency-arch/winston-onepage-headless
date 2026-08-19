@@ -501,6 +501,20 @@ export default function ProductCard({ product, isSelected, onSelectionToggle, on
                 <a href={`/productos/${product.slug}${selectedColor ? `?color=${selectedColor}` : ''}`} className="image-link">
                     <div className={`product-image ${isHoverActive ? 'hover-active' : ''}`}>
                         <div className="badges-container">
+                            {(() => {
+                                if (!product.date_created) return null;
+                                const created = new Date(product.date_created);
+                                const now = new Date();
+                                const days = (now.getTime() - created.getTime()) / (1000 * 60 * 60 * 24);
+                                if (days <= 30) {
+                                    return (
+                                        <div className="badge new-badge">
+                                            NUEVO
+                                        </div>
+                                    );
+                                }
+                                return null;
+                            })()}
                             {isSale && (
                                 <div className="badge discount-badge">
                                     {(() => {
@@ -863,7 +877,10 @@ export default function ProductCard({ product, isSelected, onSelectionToggle, on
         .hot-badge {
             background-color: #E63946; /* Hot red badge */
         }
-
+        .new-badge {
+            background-color: #000; /* Black for new products */
+            color: #FFF;
+        }
         .discount-badge {
             background-color: #A98B68; /* Sandy gold discount badge */
         }

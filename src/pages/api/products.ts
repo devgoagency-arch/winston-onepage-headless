@@ -19,7 +19,7 @@ export const GET: APIRoute = async ({ url }) => {
                 headers: {
                     'Content-Type': 'application/json',
                     'Access-Control-Allow-Origin': '*',
-                    'Cache-Control': 'public, s-maxage=600, stale-while-revalidate=300'
+                    'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=30'
                 }
             });
         }
@@ -37,7 +37,7 @@ export const GET: APIRoute = async ({ url }) => {
                 headers: {
                     'Content-Type': 'application/json',
                     'Access-Control-Allow-Origin': '*',
-                    'Cache-Control': 'public, s-maxage=300, stale-while-revalidate=3600'
+                    'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=30'
                 }
             });
         }
@@ -76,6 +76,29 @@ export const GET: APIRoute = async ({ url }) => {
                 throw fetchErr;
             }
         }
+        // Ordenamiento de productos nuevos (<= 30 días) primero
+        if (allProducts && allProducts.length > 0) {
+            const now = new Date();
+            const thirtyDaysAgo = new Date(now.getTime() - (30 * 24 * 60 * 60 * 1000));
+            
+            const newProducts: any[] = [];
+            const otherProducts: any[] = [];
+            
+            allProducts.forEach((p: any) => {
+                if (p.date_created) {
+                    const createdDate = new Date(p.date_created);
+                    if (createdDate >= thirtyDaysAgo) {
+                        newProducts.push(p);
+                        return;
+                    }
+                }
+                otherProducts.push(p);
+            });
+            
+            newProducts.sort((a, b) => new Date(b.date_created).getTime() - new Date(a.date_created).getTime());
+            allProducts = [...newProducts, ...otherProducts];
+        }
+
         console.log(`[API Products] Returning ${allProducts?.length || 0} products (Page: ${page}, PerPage: ${perPage})`);
 
         return new Response(JSON.stringify(allProducts), {
@@ -83,7 +106,7 @@ export const GET: APIRoute = async ({ url }) => {
             headers: {
                 'Content-Type': 'application/json',
                 'Access-Control-Allow-Origin': '*',
-                'Cache-Control': 'public, s-maxage=300, stale-while-revalidate=3600'
+                'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=30'
             }
         });
 
