@@ -116,15 +116,15 @@ function flattenCategoryUrl(url: string) {
 
         <!-- Parte Central: Logo -->
         <a href="/" class="logo">
-            <picture>
-                <img 
+            <Image
                 src={`${PUBLIC_WP_URL}/wp-content/uploads/2020/12/logo-w-h-vertical.png`}
                 alt="Winston & Harry Logo"
+                inferSize
+                format="webp"
                 loading="eager"
                 fetchpriority="high"
                 decoding="sync"
-                />
-            </picture>
+            />
         </a>
 
         <!-- Parte Derecha: Acciones -->
