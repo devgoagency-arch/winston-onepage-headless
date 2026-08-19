@@ -1520,7 +1520,7 @@ export async function searchProducts(query: string, perPage = 20) {
         // NOTA: Vercel no incluye public/ en el bundle del Lambda, por eso
         // usamos fetch() HTTP (los archivos sí están en el CDN de Vercel como estáticos)
         if (!globalSearchCache) {
-            const SITE = 'https://www.winstonandharrystore.com';
+            const SITE = import.meta.env.DEV ? 'http://localhost:4321' : 'https://www.winstonandharrystore.com';
             const newCache: any[] = [];
 
             // Carga en paralelo todas las páginas (más rápido que secuencial)
