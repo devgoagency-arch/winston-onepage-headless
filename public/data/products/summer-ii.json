@@ -324,6 +324,35 @@
       "sale_price": ""
     },
     {
+      "id": 60632,
+      "attributes": [
+        {
+          "name": "Selecciona el Color",
+          "value": "azul",
+          "option": "azul"
+        },
+        {
+          "name": "Selecciona una Talla",
+          "value": "41",
+          "option": "41"
+        }
+      ],
+      "image": {
+        "id": 60923,
+        "date_created": "2025-03-02T05:18:01",
+        "date_created_gmt": "2025-03-02T05:18:01",
+        "date_modified": "2025-03-03T03:16:58",
+        "date_modified_gmt": "2025-03-03T03:16:58",
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/03/Summer-II-Azul-Winstonandharry-1-e1752872353671.jpg",
+        "name": "Summer II-Azul-Winstonandharry-1",
+        "alt": ""
+      },
+      "stock_status": "instock",
+      "price": "539000",
+      "regular_price": "539000",
+      "sale_price": ""
+    },
+    {
       "id": 60633,
       "attributes": [
         {
@@ -16288,8 +16317,8 @@
       "type": "variation",
       "date_created": "2025-02-27T03:12:49",
       "date_created_gmt": "2025-02-27T03:12:49",
-      "date_modified": "2026-06-02T17:40:05",
-      "date_modified_gmt": "2026-06-02T17:40:05",
+      "date_modified": "2026-08-18T17:46:53",
+      "date_modified_gmt": "2026-08-18T17:46:53",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/summer-ii/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=41",
       "sku": "7100601041",
@@ -16312,8 +16341,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 0,
-      "stock_status": "outofstock",
+      "stock_quantity": 1,
+      "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -16941,7 +16970,7 @@
         {
           "id": 2218341,
           "key": "_last_change_time",
-          "value": "1780422005"
+          "value": "1787075213"
         },
         {
           "id": 2311832,

@@ -1523,17 +1523,17 @@ export async function searchProducts(query: string, perPage = 20) {
             const SITE = import.meta.env.DEV ? 'http://localhost:4321' : 'https://www.winstonandharrystore.com';
             const newCache: any[] = [];
 
-            // Carga en paralelo todas las páginas (más rápido que secuencial)
-            const fetches = Array.from({ length: 20 }, (_, i) =>
-                fetch(`${SITE}/data/catalog/tienda-p${i + 1}.json`)
-                    .then(r => r.ok ? r.json() : [])
-                    .catch(() => [])
-            );
-            const pages = await Promise.all(fetches);
-            for (const page of pages) {
-                if (Array.isArray(page) && page.length > 0) {
-                    newCache.push(...page);
+            // Cargar el catálogo completo generado por SSG en lugar de los archivos paginados viejos
+            try {
+                const res = await fetch(`${SITE}/data/catalog/tienda-all.json`);
+                if (res.ok) {
+                    const page = await res.json();
+                    if (Array.isArray(page) && page.length > 0) {
+                        newCache.push(...page);
+                    }
                 }
+            } catch (e) {
+                console.warn("[searchProducts] Error fetching tienda-all.json:", e);
             }
 
             globalSearchCache = newCache;

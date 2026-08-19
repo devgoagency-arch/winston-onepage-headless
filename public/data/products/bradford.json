@@ -448,35 +448,6 @@
       "sale_price": ""
     },
     {
-      "id": 24313,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "negro",
-          "option": "negro"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "44",
-          "option": "44"
-        }
-      ],
-      "image": {
-        "id": 62862,
-        "date_created": "2025-04-25T21:57:19",
-        "date_created_gmt": "2025-04-25T21:57:19",
-        "date_modified": "2025-04-26T05:59:38",
-        "date_modified_gmt": "2025-04-26T05:59:38",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/04/Bradford-Negro-winstonandharry-1-e1751479580632.jpg",
-        "name": "Bradford-Negro-winstonandharry-1",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "825000",
-      "regular_price": "825000",
-      "sale_price": ""
-    },
-    {
       "id": 24315,
       "attributes": [
         {
@@ -4541,8 +4512,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:29:43",
       "date_created_gmt": "2022-08-25T22:29:43",
-      "date_modified": "2026-05-07T22:58:51",
-      "date_modified_gmt": "2026-05-07T22:58:51",
+      "date_modified": "2026-08-13T00:04:06",
+      "date_modified_gmt": "2026-08-13T00:04:06",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bradford/?attribute_pa_selecciona-el-color=vinotinto&attribute_pa_selecciona-una-talla=39",
       "sku": "7012719039",
@@ -4565,7 +4536,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 4,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -5122,7 +5093,7 @@
         {
           "id": 2259532,
           "key": "_last_change_time",
-          "value": "1778175651"
+          "value": "1786579446"
         },
         {
           "id": 2314926,
@@ -5164,8 +5135,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:29:43",
       "date_created_gmt": "2022-08-25T22:29:43",
-      "date_modified": "2026-05-07T22:58:51",
-      "date_modified_gmt": "2026-05-07T22:58:51",
+      "date_modified": "2026-08-13T00:04:06",
+      "date_modified_gmt": "2026-08-13T00:04:06",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bradford/?attribute_pa_selecciona-el-color=vinotinto&attribute_pa_selecciona-una-talla=38",
       "sku": "7012719038",
@@ -5188,7 +5159,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 4,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -5745,7 +5716,7 @@
         {
           "id": 2259531,
           "key": "_last_change_time",
-          "value": "1778175650"
+          "value": "1786579446"
         },
         {
           "id": 2314925,
@@ -7170,8 +7141,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:29:43",
       "date_created_gmt": "2022-08-25T22:29:43",
-      "date_modified": "2026-07-03T17:20:57",
-      "date_modified_gmt": "2026-07-03T17:20:57",
+      "date_modified": "2026-08-13T00:04:05",
+      "date_modified_gmt": "2026-08-13T00:04:05",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bradford/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=44",
       "sku": "7012702044",
@@ -7194,8 +7165,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -7888,7 +7859,7 @@
         {
           "id": 2259528,
           "key": "_last_change_time",
-          "value": "1783099257"
+          "value": "1786579445"
         },
         {
           "id": 2314922,
@@ -8685,8 +8656,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:29:43",
       "date_created_gmt": "2022-08-25T22:29:43",
-      "date_modified": "2026-07-03T17:20:57",
-      "date_modified_gmt": "2026-07-03T17:20:57",
+      "date_modified": "2026-08-13T00:04:05",
+      "date_modified_gmt": "2026-08-13T00:04:05",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bradford/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=42",
       "sku": "7012702042",
@@ -8709,7 +8680,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 7,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -9403,7 +9374,7 @@
         {
           "id": 2250063,
           "key": "_last_change_time",
-          "value": "1783099257"
+          "value": "1786579445"
         },
         {
           "id": 2314920,
@@ -9445,8 +9416,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:29:43",
       "date_created_gmt": "2022-08-25T22:29:43",
-      "date_modified": "2026-07-27T17:43:06",
-      "date_modified_gmt": "2026-07-27T17:43:06",
+      "date_modified": "2026-08-13T00:04:05",
+      "date_modified_gmt": "2026-08-13T00:04:05",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bradford/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=41",
       "sku": "7012702041",
@@ -9469,7 +9440,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 8,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -10158,7 +10129,7 @@
         {
           "id": 2259526,
           "key": "_last_change_time",
-          "value": "1785174186"
+          "value": "1786579445"
         },
         {
           "id": 2314919,
@@ -10200,8 +10171,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:29:43",
       "date_created_gmt": "2022-08-25T22:29:43",
-      "date_modified": "2026-07-27T17:43:06",
-      "date_modified_gmt": "2026-07-27T17:43:06",
+      "date_modified": "2026-08-13T00:04:05",
+      "date_modified_gmt": "2026-08-13T00:04:05",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bradford/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=40",
       "sku": "7012702040",
@@ -10224,7 +10195,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 9,
+      "stock_quantity": 8,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -10913,7 +10884,7 @@
         {
           "id": 2259525,
           "key": "_last_change_time",
-          "value": "1785174186"
+          "value": "1786579445"
         },
         {
           "id": 2314918,
@@ -10955,8 +10926,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:29:42",
       "date_created_gmt": "2022-08-25T22:29:42",
-      "date_modified": "2026-07-16T22:39:21",
-      "date_modified_gmt": "2026-07-16T22:39:21",
+      "date_modified": "2026-08-13T00:04:05",
+      "date_modified_gmt": "2026-08-13T00:04:05",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bradford/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=39",
       "sku": "7012702039",
@@ -10979,7 +10950,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 6,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -11673,7 +11644,7 @@
         {
           "id": 2259524,
           "key": "_last_change_time",
-          "value": "1784241561"
+          "value": "1786579445"
         },
         {
           "id": 2314933,
@@ -11715,8 +11686,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:29:42",
       "date_created_gmt": "2022-08-25T22:29:42",
-      "date_modified": "2026-07-16T22:39:21",
-      "date_modified_gmt": "2026-07-16T22:39:21",
+      "date_modified": "2026-08-13T00:04:05",
+      "date_modified_gmt": "2026-08-13T00:04:05",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bradford/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=38",
       "sku": "7012702038",
@@ -11739,7 +11710,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 10,
+      "stock_quantity": 9,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -12428,7 +12399,7 @@
         {
           "id": 2259523,
           "key": "_last_change_time",
-          "value": "1784241561"
+          "value": "1786579445"
         },
         {
           "id": 2314932,

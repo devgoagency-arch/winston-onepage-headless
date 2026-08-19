@@ -190,35 +190,6 @@
   ],
   "variations": [
     {
-      "id": 24446,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "miel",
-          "option": "miel"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "37",
-          "option": "37"
-        }
-      ],
-      "image": {
-        "id": 60874,
-        "date_created": "2025-03-02T05:06:31",
-        "date_created_gmt": "2025-03-02T05:06:31",
-        "date_modified": "2025-03-03T03:14:27",
-        "date_modified_gmt": "2025-03-03T03:14:27",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/03/Buckingham-Miel-Winstonandharry-1-e1752772452338.jpg",
-        "name": "Buckingham-Miel-Winstonandharry-1",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "825000",
-      "regular_price": "825000",
-      "sale_price": ""
-    },
-    {
       "id": 24447,
       "attributes": [
         {
@@ -12379,8 +12350,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:32:11",
       "date_created_gmt": "2022-08-25T22:32:11",
-      "date_modified": "2026-05-07T22:59:10",
-      "date_modified_gmt": "2026-05-07T22:59:10",
+      "date_modified": "2026-08-18T17:45:43",
+      "date_modified_gmt": "2026-08-18T17:45:43",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/buckingham/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=37",
       "sku": "7021226037",
@@ -12403,8 +12374,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -13027,7 +12998,7 @@
         {
           "id": 2259690,
           "key": "_last_change_time",
-          "value": "1778177562"
+          "value": "1787071620"
         },
         {
           "id": 2314841,

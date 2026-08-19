@@ -4559,8 +4559,8 @@
       "type": "variation",
       "date_created": "2024-09-24T15:28:44",
       "date_created_gmt": "2024-09-24T15:28:44",
-      "date_modified": "2026-07-27T20:50:36",
-      "date_modified_gmt": "2026-07-27T20:50:36",
+      "date_modified": "2026-08-18T17:45:43",
+      "date_modified_gmt": "2026-08-18T17:45:43",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/tenby/?attribute_pa_selecciona-el-color=beige&attribute_pa_selecciona-una-talla=41",
       "sku": "7234306041",
@@ -4583,7 +4583,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 7,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -5147,7 +5147,7 @@
         {
           "id": 2260933,
           "key": "_last_change_time",
-          "value": "1785174216"
+          "value": "1787071622"
         },
         {
           "id": 2312191,
@@ -5395,11 +5395,6 @@
           "value": ""
         },
         {
-          "id": 2443149,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2443150,
           "key": "_wc_facebook_product_video_source",
           "value": ""
@@ -5407,11 +5402,6 @@
         {
           "id": 2443151,
           "key": "fb_product_images",
-          "value": ""
-        },
-        {
-          "id": 2443152,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],

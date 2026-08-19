@@ -307,35 +307,6 @@
       "sale_price": ""
     },
     {
-      "id": 84986,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "azul",
-          "option": "azul"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "44",
-          "option": "44"
-        }
-      ],
-      "image": {
-        "id": 84734,
-        "date_created": "2026-04-21T14:59:04",
-        "date_created_gmt": "2026-04-21T14:59:04",
-        "date_modified": "2026-06-02T17:01:36",
-        "date_modified_gmt": "2026-06-02T17:01:36",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-blazer-glen-azul-frente.jpg",
-        "name": "Winston-and-Harry-blazer-glen-azul-frente",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "1450000",
-      "regular_price": "1450000",
-      "sale_price": ""
-    },
-    {
       "id": 84987,
       "attributes": [
         {
@@ -7043,8 +7014,8 @@
       "type": "variation",
       "date_created": "2026-05-08T00:17:52",
       "date_created_gmt": "2026-05-08T00:17:52",
-      "date_modified": "2026-06-02T17:02:19",
-      "date_modified_gmt": "2026-06-02T17:02:19",
+      "date_modified": "2026-08-13T00:03:02",
+      "date_modified_gmt": "2026-08-13T00:03:02",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/blazer-glen-check/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=44",
       "sku": "2025101044",
@@ -7067,8 +7038,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -7114,7 +7085,7 @@
         {
           "id": 2328156,
           "key": "_last_change_time",
-          "value": "1778199535"
+          "value": "1786579382"
         },
         {
           "id": 2328157,

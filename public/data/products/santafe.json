@@ -346,35 +346,6 @@
       "sale_price": ""
     },
     {
-      "id": 29354,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "cafe",
-          "option": "cafe"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "42",
-          "option": "42"
-        }
-      ],
-      "image": {
-        "id": 85923,
-        "date_created": "2026-07-27T16:04:57",
-        "date_created_gmt": "2026-07-27T16:04:57",
-        "date_modified": "2026-07-27T17:06:52",
-        "date_modified_gmt": "2026-07-27T17:06:52",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-santafe-cafe-01.jpg",
-        "name": "winston-and-harry-mocasines-santafe-cafe-01",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "560000",
-      "regular_price": "560000",
-      "sale_price": ""
-    },
-    {
       "id": 30495,
       "attributes": [
         {
@@ -19419,8 +19390,8 @@
       "type": "variation",
       "date_created": "2023-06-08T17:15:37",
       "date_created_gmt": "2023-06-08T17:15:37",
-      "date_modified": "2026-07-27T20:49:47",
-      "date_modified_gmt": "2026-07-27T20:49:47",
+      "date_modified": "2026-08-13T00:04:32",
+      "date_modified_gmt": "2026-08-13T00:04:32",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/santafe/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=42",
       "sku": "7192504042",
@@ -19443,8 +19414,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -19930,7 +19901,7 @@
         {
           "id": 2260709,
           "key": "_last_change_time",
-          "value": "1785172021"
+          "value": "1786579472"
         },
         {
           "id": 2313185,

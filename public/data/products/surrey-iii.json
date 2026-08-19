@@ -784,35 +784,6 @@
       "price": "654500",
       "regular_price": "654500",
       "sale_price": ""
-    },
-    {
-      "id": 28844,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "negro",
-          "option": "negro"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "44",
-          "option": "44"
-        }
-      ],
-      "image": {
-        "id": 57477,
-        "date_created": "2024-09-04T04:12:03",
-        "date_created_gmt": "2024-09-04T04:12:03",
-        "date_modified": "2024-09-24T16:26:21",
-        "date_modified_gmt": "2024-09-24T16:26:21",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2024/09/Surrey-III-Negro-Winstonandharry-63.jpg",
-        "name": "Surrey-III-Negro-Winstonandharry-63",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "654500",
-      "regular_price": "654500",
-      "sale_price": ""
     }
   ],
   "grouped_products": [],
@@ -9774,8 +9745,8 @@
       "type": "variation",
       "date_created": "2023-04-26T15:08:10",
       "date_created_gmt": "2023-04-26T15:08:10",
-      "date_modified": "2026-07-27T20:50:23",
-      "date_modified_gmt": "2026-07-27T20:50:23",
+      "date_modified": "2026-08-13T00:04:52",
+      "date_modified_gmt": "2026-08-13T00:04:52",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/surrey-iii/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=44",
       "sku": "7222402044",
@@ -9798,8 +9769,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -10362,7 +10333,7 @@
         {
           "id": 2260800,
           "key": "_last_change_time",
-          "value": "1778190375"
+          "value": "1786579492"
         },
         {
           "id": 2313231,
@@ -22234,8 +22205,8 @@
       "type": "variation",
       "date_created": "2023-04-26T15:08:01",
       "date_created_gmt": "2023-04-26T15:08:01",
-      "date_modified": "2026-07-27T20:50:23",
-      "date_modified_gmt": "2026-07-27T20:50:23",
+      "date_modified": "2026-08-13T00:04:52",
+      "date_modified_gmt": "2026-08-13T00:04:52",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/surrey-iii/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=39",
       "sku": "7222404039",
@@ -22258,7 +22229,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 3,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -22822,7 +22793,7 @@
         {
           "id": 2250206,
           "key": "_last_change_time",
-          "value": "1781631340"
+          "value": "1786579492"
         },
         {
           "id": 2313237,
@@ -23070,11 +23041,6 @@
           "value": ""
         },
         {
-          "id": 2441275,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2441276,
           "key": "_wc_facebook_product_video_source",
           "value": ""
@@ -23082,11 +23048,6 @@
         {
           "id": 2441277,
           "key": "fb_product_images",
-          "value": ""
-        },
-        {
-          "id": 2441278,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],

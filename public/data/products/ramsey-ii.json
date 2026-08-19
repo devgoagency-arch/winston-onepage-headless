@@ -627,35 +627,6 @@
       "sale_price": ""
     },
     {
-      "id": 66687,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "cognac",
-          "option": "cognac"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "43",
-          "option": "43"
-        }
-      ],
-      "image": {
-        "id": 67056,
-        "date_created": "2025-08-20T01:35:50",
-        "date_created_gmt": "2025-08-20T01:35:50",
-        "date_modified": "2025-08-25T04:35:50",
-        "date_modified_gmt": "2025-08-25T04:35:50",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Ramsey-II-Cognac-Winstonandharry-1-e1755656939892.jpg",
-        "name": "Ramsey II-Cognac-Winstonandharry-1",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "544500",
-      "regular_price": "544500",
-      "sale_price": ""
-    },
-    {
       "id": 66690,
       "attributes": [
         {
@@ -7189,8 +7160,8 @@
       "type": "variation",
       "date_created": "2025-07-30T17:25:46",
       "date_created_gmt": "2025-07-30T17:25:46",
-      "date_modified": "2026-07-27T20:49:00",
-      "date_modified_gmt": "2026-07-27T20:49:00",
+      "date_modified": "2026-08-13T00:03:44",
+      "date_modified_gmt": "2026-08-13T00:03:44",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/ramsey-ii/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=38",
       "sku": "7000702038",
@@ -7213,7 +7184,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 6,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -8012,7 +7983,7 @@
         {
           "id": 2259318,
           "key": "_last_change_time",
-          "value": "1784241839"
+          "value": "1786579424"
         },
         {
           "id": 2311388,
@@ -8030,11 +8001,6 @@
           "value": ""
         },
         {
-          "id": 2431870,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2431871,
           "key": "_wc_facebook_product_video_source",
           "value": ""
@@ -8042,11 +8008,6 @@
         {
           "id": 2431872,
           "key": "fb_product_images",
-          "value": ""
-        },
-        {
-          "id": 2431873,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],
@@ -10769,8 +10730,8 @@
       "type": "variation",
       "date_created": "2025-07-30T17:25:45",
       "date_created_gmt": "2025-07-30T17:25:45",
-      "date_modified": "2026-07-27T20:49:06",
-      "date_modified_gmt": "2026-07-27T20:49:06",
+      "date_modified": "2026-08-13T00:03:45",
+      "date_modified_gmt": "2026-08-13T00:03:45",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/ramsey-ii/?attribute_pa_selecciona-el-color=cognac&attribute_pa_selecciona-una-talla=43",
       "sku": "7000732043",
@@ -10793,8 +10754,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -11592,7 +11553,7 @@
         {
           "id": 2254911,
           "key": "_last_change_time",
-          "value": "1781631467"
+          "value": "1786579425"
         },
         {
           "id": 2311400,
@@ -11664,8 +11625,8 @@
       "type": "variation",
       "date_created": "2025-07-30T17:25:45",
       "date_created_gmt": "2025-07-30T17:25:45",
-      "date_modified": "2026-07-27T20:49:06",
-      "date_modified_gmt": "2026-07-27T20:49:06",
+      "date_modified": "2026-08-18T17:46:53",
+      "date_modified_gmt": "2026-08-18T17:46:53",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/ramsey-ii/?attribute_pa_selecciona-el-color=cognac&attribute_pa_selecciona-una-talla=42",
       "sku": "7000732042",
@@ -11688,7 +11649,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 3,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -12487,7 +12448,7 @@
         {
           "id": 2259327,
           "key": "_last_change_time",
-          "value": "1785174247"
+          "value": "1787075213"
         },
         {
           "id": 2311399,
@@ -12505,11 +12466,6 @@
           "value": ""
         },
         {
-          "id": 2431920,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2431921,
           "key": "_wc_facebook_product_video_source",
           "value": ""
@@ -12517,11 +12473,6 @@
         {
           "id": 2431922,
           "key": "fb_product_images",
-          "value": ""
-        },
-        {
-          "id": 2431923,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],
@@ -14349,8 +14300,8 @@
       "type": "variation",
       "date_created": "2025-07-30T17:25:45",
       "date_created_gmt": "2025-07-30T17:25:45",
-      "date_modified": "2026-07-27T20:49:07",
-      "date_modified_gmt": "2026-07-27T20:49:07",
+      "date_modified": "2026-08-13T00:03:45",
+      "date_modified_gmt": "2026-08-13T00:03:45",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/ramsey-ii/?attribute_pa_selecciona-el-color=cognac&attribute_pa_selecciona-una-talla=39",
       "sku": "7000732039",
@@ -14373,7 +14324,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 7,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -15172,7 +15123,7 @@
         {
           "id": 2259325,
           "key": "_last_change_time",
-          "value": "1784241839"
+          "value": "1786579425"
         },
         {
           "id": 2311396,
@@ -15190,11 +15141,6 @@
           "value": ""
         },
         {
-          "id": 2431986,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2431987,
           "key": "_wc_facebook_product_video_source",
           "value": ""
@@ -15202,11 +15148,6 @@
         {
           "id": 2431988,
           "key": "fb_product_images",
-          "value": ""
-        },
-        {
-          "id": 2431989,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],
@@ -15244,8 +15185,8 @@
       "type": "variation",
       "date_created": "2025-07-30T17:25:45",
       "date_created_gmt": "2025-07-30T17:25:45",
-      "date_modified": "2026-07-27T20:49:07",
-      "date_modified_gmt": "2026-07-27T20:49:07",
+      "date_modified": "2026-08-13T00:03:44",
+      "date_modified_gmt": "2026-08-13T00:03:44",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/ramsey-ii/?attribute_pa_selecciona-el-color=cognac&attribute_pa_selecciona-una-talla=38",
       "sku": "7000732038",
@@ -15268,7 +15209,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 8,
+      "stock_quantity": 7,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -16067,7 +16008,7 @@
         {
           "id": 2259324,
           "key": "_last_change_time",
-          "value": "1784241839"
+          "value": "1786579424"
         },
         {
           "id": 2311408,
@@ -16085,11 +16026,6 @@
           "value": ""
         },
         {
-          "id": 2431980,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2431981,
           "key": "_wc_facebook_product_video_source",
           "value": ""
@@ -16097,11 +16033,6 @@
         {
           "id": 2431982,
           "key": "fb_product_images",
-          "value": ""
-        },
-        {
-          "id": 2431983,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],
@@ -22404,8 +22335,8 @@
       "type": "variation",
       "date_created": "2025-07-30T17:25:44",
       "date_created_gmt": "2025-07-30T17:25:44",
-      "date_modified": "2026-07-27T20:49:07",
-      "date_modified_gmt": "2026-07-27T20:49:07",
+      "date_modified": "2026-08-18T17:46:53",
+      "date_modified_gmt": "2026-08-18T17:46:53",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/ramsey-ii/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=39",
       "sku": "7000701039",
@@ -22428,7 +22359,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 7,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -23227,7 +23158,7 @@
         {
           "id": 2259307,
           "key": "_last_change_time",
-          "value": "1784241838"
+          "value": "1787075213"
         },
         {
           "id": 2311411,
@@ -23245,11 +23176,6 @@
           "value": ""
         },
         {
-          "id": 2431992,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2431993,
           "key": "_wc_facebook_product_video_source",
           "value": ""
@@ -23257,11 +23183,6 @@
         {
           "id": 2431994,
           "key": "fb_product_images",
-          "value": ""
-        },
-        {
-          "id": 2431995,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],

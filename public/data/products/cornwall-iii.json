@@ -400,35 +400,6 @@
       "price": "902000",
       "regular_price": "902000",
       "sale_price": ""
-    },
-    {
-      "id": 82268,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "cafe",
-          "option": "cafe"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "43",
-          "option": "43"
-        }
-      ],
-      "image": {
-        "id": 81767,
-        "date_created": "2025-10-27T19:13:18",
-        "date_created_gmt": "2025-10-27T19:13:18",
-        "date_modified": "2025-11-04T17:22:00",
-        "date_modified_gmt": "2025-11-04T17:22:00",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Cornwall-III-Cafe-Winstonandharry-1.jpg",
-        "name": "Cornwall III-Café-Winstonandharry-1",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "902000",
-      "regular_price": "902000",
-      "sale_price": ""
     }
   ],
   "grouped_products": [],
@@ -2276,8 +2247,8 @@
       "type": "variation",
       "date_created": "2025-10-30T04:18:27",
       "date_created_gmt": "2025-10-30T04:18:27",
-      "date_modified": "2026-07-27T20:46:28",
-      "date_modified_gmt": "2026-07-27T20:46:28",
+      "date_modified": "2026-08-13T00:04:32",
+      "date_modified_gmt": "2026-08-13T00:04:32",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cornwall-iii/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=43",
       "sku": "7124904043",
@@ -2300,8 +2271,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -3094,7 +3065,7 @@
         {
           "id": 2260592,
           "key": "_last_change_time",
-          "value": "1781631494"
+          "value": "1786579472"
         },
         {
           "id": 2310991,
@@ -5836,8 +5807,8 @@
       "type": "variation",
       "date_created": "2025-10-30T04:18:27",
       "date_created_gmt": "2025-10-30T04:18:27",
-      "date_modified": "2026-07-27T20:46:23",
-      "date_modified_gmt": "2026-07-27T20:46:23",
+      "date_modified": "2026-08-18T17:46:54",
+      "date_modified_gmt": "2026-08-18T17:46:54",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cornwall-iii/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=39",
       "sku": "7124904039",
@@ -5860,7 +5831,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 4,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -6654,7 +6625,7 @@
         {
           "id": 2260589,
           "key": "_last_change_time",
-          "value": "1784241876"
+          "value": "1787075214"
         },
         {
           "id": 2310987,
@@ -6672,11 +6643,6 @@
           "value": ""
         },
         {
-          "id": 2409218,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2409219,
           "key": "_wc_facebook_product_video_source",
           "value": ""
@@ -6684,11 +6650,6 @@
         {
           "id": 2409220,
           "key": "fb_product_images",
-          "value": ""
-        },
-        {
-          "id": 2409221,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],
@@ -6726,8 +6687,8 @@
       "type": "variation",
       "date_created": "2025-10-30T04:18:27",
       "date_created_gmt": "2025-10-30T04:18:27",
-      "date_modified": "2026-07-27T20:46:23",
-      "date_modified_gmt": "2026-07-27T20:46:23",
+      "date_modified": "2026-08-13T00:04:32",
+      "date_modified_gmt": "2026-08-13T00:04:32",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cornwall-iii/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=38",
       "sku": "7124904038",
@@ -6750,7 +6711,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 6,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -7544,7 +7505,7 @@
         {
           "id": 2233429,
           "key": "_last_change_time",
-          "value": "1780422097"
+          "value": "1786579472"
         },
         {
           "id": 2310986,
@@ -7562,11 +7523,6 @@
           "value": ""
         },
         {
-          "id": 2409212,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2409213,
           "key": "_wc_facebook_product_video_source",
           "value": ""
@@ -7574,11 +7530,6 @@
         {
           "id": 2409214,
           "key": "fb_product_images",
-          "value": ""
-        },
-        {
-          "id": 2409215,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],

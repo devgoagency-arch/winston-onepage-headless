@@ -289,35 +289,6 @@
       "price": "323400",
       "regular_price": "539000",
       "sale_price": ""
-    },
-    {
-      "id": 25091,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "cafe",
-          "option": "cafe"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "45",
-          "option": "45"
-        }
-      ],
-      "image": {
-        "id": 85893,
-        "date_created": "2026-07-27T15:13:42",
-        "date_created_gmt": "2026-07-27T15:13:42",
-        "date_modified": "2026-07-27T17:04:57",
-        "date_modified_gmt": "2026-07-27T17:04:57",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-maidstone-cafe-01.jpg",
-        "name": "winston-and-harry-mocasines-maidstone-cafe-01",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "323400",
-      "regular_price": "539000",
-      "sale_price": ""
     }
   ],
   "grouped_products": [],
@@ -385,8 +356,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:43:43",
       "date_created_gmt": "2022-08-25T22:43:43",
-      "date_modified": "2026-07-27T20:47:40",
-      "date_modified_gmt": "2026-07-27T20:47:40",
+      "date_modified": "2026-08-05T00:44:05",
+      "date_modified_gmt": "2026-08-05T00:44:05",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/maidstone/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=45",
       "sku": "7304604045",
@@ -409,8 +380,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -891,7 +862,7 @@
         {
           "id": 2217126,
           "key": "_last_change_time",
-          "value": "1785171898"
+          "value": "1785890645"
         },
         {
           "id": 2314386,

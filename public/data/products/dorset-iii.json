@@ -491,35 +491,6 @@
       "sale_price": ""
     },
     {
-      "id": 55659,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "miel",
-          "option": "miel"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "40",
-          "option": "40"
-        }
-      ],
-      "image": {
-        "id": 55713,
-        "date_created": "2024-05-30T16:45:57",
-        "date_created_gmt": "2024-05-30T16:45:57",
-        "date_modified": "2024-05-31T02:52:20",
-        "date_modified_gmt": "2024-05-31T02:52:20",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2024/05/Dorset-III-Miel-Winstonandharry-313.jpg",
-        "name": "Dorset-III-Miel-Winstonandharry-313",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "750000",
-      "regular_price": "750000",
-      "sale_price": ""
-    },
-    {
       "id": 55660,
       "attributes": [
         {
@@ -9525,8 +9496,8 @@
       "type": "variation",
       "date_created": "2024-05-30T15:32:48",
       "date_created_gmt": "2024-05-30T15:32:48",
-      "date_modified": "2026-05-07T23:03:10",
-      "date_modified_gmt": "2026-05-07T23:03:10",
+      "date_modified": "2026-08-13T00:04:52",
+      "date_modified_gmt": "2026-08-13T00:04:52",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/dorset-iii/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=40",
       "sku": "7308626040",
@@ -9549,8 +9520,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -10103,7 +10074,7 @@
         {
           "id": 2258547,
           "key": "_last_change_time",
-          "value": "1778178120"
+          "value": "1786579492"
         },
         {
           "id": 2312331,
@@ -15105,8 +15076,8 @@
       "type": "variation",
       "date_created": "2024-05-30T15:32:47",
       "date_created_gmt": "2024-05-30T15:32:47",
-      "date_modified": "2026-06-02T17:38:57",
-      "date_modified_gmt": "2026-06-02T17:38:57",
+      "date_modified": "2026-08-13T00:04:52",
+      "date_modified_gmt": "2026-08-13T00:04:52",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/dorset-iii/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=40",
       "sku": "7308604040",
@@ -15129,7 +15100,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 4,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -15673,7 +15644,7 @@
         {
           "id": 2254791,
           "key": "_last_change_time",
-          "value": "1780421937"
+          "value": "1786579492"
         },
         {
           "id": 2312336,

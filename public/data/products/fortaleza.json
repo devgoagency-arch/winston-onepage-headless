@@ -11303,8 +11303,8 @@
       "type": "variation",
       "date_created": "2025-10-29T22:11:40",
       "date_created_gmt": "2025-10-29T22:11:40",
-      "date_modified": "2026-07-27T20:47:10",
-      "date_modified_gmt": "2026-07-27T20:47:10",
+      "date_modified": "2026-08-13T00:04:03",
+      "date_modified_gmt": "2026-08-13T00:04:03",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/fortaleza/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=42",
       "sku": "7003204042",
@@ -11327,7 +11327,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -12121,7 +12121,7 @@
         {
           "id": 2259439,
           "key": "_last_change_time",
-          "value": "1785174247"
+          "value": "1786579443"
         },
         {
           "id": 2311060,
@@ -12139,11 +12139,6 @@
           "value": ""
         },
         {
-          "id": 2416688,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2416689,
           "key": "_wc_facebook_product_video_source",
           "value": ""
@@ -12151,11 +12146,6 @@
         {
           "id": 2416690,
           "key": "fb_product_images",
-          "value": ""
-        },
-        {
-          "id": 2416691,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],
