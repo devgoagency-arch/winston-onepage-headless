@@ -1483,7 +1483,22 @@ export async function getAllProducts(
         if (onSale) v3Params.append('on_sale', 'true');
         if (maxPrice) v3Params.append('max_price', maxPrice);
 
-        const data = await wcFetch(`/products?${v3Params.toString()}`);
+        let data = await wcFetch(`/products?${v3Params.toString()}`);
+        
+        if (Array.isArray(data)) {
+            const variableProducts = data.filter((p: any) => p.type === 'variable' && p.id);
+            for (let i = 0; i < variableProducts.length; i += 5) {
+                const chunk = variableProducts.slice(i, i + 5);
+                await Promise.all(chunk.map(async (p: any) => {
+                    try {
+                        p.variations_data = await getProductVariations(p.id);
+                    } catch (e) {
+                        console.warn(`Error al obtener variaciones para ${p.id}`);
+                    }
+                }));
+            }
+        }
+
         let parsed = Array.isArray(data) ? data.map(p => mapV3ToStore(p)).filter(p => p !== null) : [];
         return sortNewProductsFirst(parsed);
     } catch (error: any) {
@@ -1675,7 +1690,22 @@ export async function getProductsByCategory(
                 if (attributeTerm) endpoint += `&attribute_term=${attributeTerm}`;
                 if (maxPrice) endpoint += `&max_price=${maxPrice}`;
                 
-                const data = await wcFetch(endpoint);
+                let data = await wcFetch(endpoint);
+                
+                if (Array.isArray(data)) {
+                    const variableProducts = data.filter((p: any) => p.type === 'variable' && p.id);
+                    // Descargar variaciones en lotes de 5 para no saturar la API
+                    for (let i = 0; i < variableProducts.length; i += 5) {
+                        const chunk = variableProducts.slice(i, i + 5);
+                        await Promise.all(chunk.map(async (p: any) => {
+                            try {
+                                p.variations_data = await getProductVariations(p.id);
+                            } catch (e) {
+                                console.warn(`Error al obtener variaciones para ${p.id}`);
+                            }
+                        }));
+                    }
+                }
 
                 return Array.isArray(data) 
                     ? data.map((p: any) => mapV3ToStore(p))
