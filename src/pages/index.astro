@@ -96,7 +96,7 @@ const banner = await getHomeBanner();
 			/>
 			<FeaturesBanner />
 			<CategoryGrid />
-			<ProductGrid client:load initialProducts={productsZapatos} initialCache={initialCache} />
+			<ProductGrid client:visible initialProducts={productsZapatos} initialCache={initialCache} />
 			<ScrollRevealBanner
 				imageUrl="/images/banner-look-completo.webp"
 				title="Estilo que se construye con intención"
