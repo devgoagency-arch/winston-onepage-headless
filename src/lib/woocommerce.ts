@@ -1438,6 +1438,26 @@ export async function getProductBySlug(slug: string) {
     }
 }
 
+export function sortNewProductsFirst(products: any[]) {
+    if (!products || products.length === 0) return products;
+    const now = new Date();
+    const thirtyDaysAgo = new Date(now.getTime() - (30 * 24 * 60 * 60 * 1000));
+    
+    const newProducts: any[] = [];
+    const otherProducts: any[] = [];
+    
+    products.forEach((p: any) => {
+        if (p.date_created && new Date(p.date_created) >= thirtyDaysAgo) {
+            newProducts.push(p);
+        } else {
+            otherProducts.push(p);
+        }
+    });
+    
+    newProducts.sort((a, b) => new Date(b.date_created).getTime() - new Date(a.date_created).getTime());
+    return [...newProducts, ...otherProducts];
+}
+
 /**
  * Fetch all products (Generic Shop Page)
  */
@@ -1464,10 +1484,11 @@ export async function getAllProducts(
         if (maxPrice) v3Params.append('max_price', maxPrice);
 
         const data = await wcFetch(`/products?${v3Params.toString()}`);
-        return Array.isArray(data) ? data.map(p => mapV3ToStore(p)).filter(p => p !== null) : [];
+        let parsed = Array.isArray(data) ? data.map(p => mapV3ToStore(p)).filter(p => p !== null) : [];
+        return sortNewProductsFirst(parsed);
     } catch (error: any) {
         console.error("[getAllProducts] Error:", error.message);
-        return [];
+        throw error;
     }
 }
 
@@ -1682,7 +1703,7 @@ export async function getProductsByCategory(
                     : [];
             } catch (err: any) {
                 console.warn(`[getProductsByCategory] Error en fetch para id ${id}:`, err.message);
-                return [];
+                throw err;
             }
         };
 
@@ -1693,7 +1714,6 @@ export async function getProductsByCategory(
         for (const list of results) {
             if (Array.isArray(list)) {
                 for (const p of list) {
-                    // Los productos ya vienen mapeados de fetchCategory
                     if (p && (p.id || p.id === 0) && !seenIds.has(p.id)) {
                         seenIds.add(p.id);
                         combined.push(p);
@@ -1702,7 +1722,7 @@ export async function getProductsByCategory(
             }
         }
 
-        return combined;
+        return sortNewProductsFirst(combined);
     } catch (error: any) {
         console.error("Error fetching products by category:", error.message);
         return [];
