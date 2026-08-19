@@ -135,7 +135,7 @@ function getEmbedInfo(url: string) {
               <article class="blog-card reveal-on-scroll">
                 <div class="blog-card__main">
                   <div class="blog-card__image-container">
-                    <a href={`/blog/${slug}`} class="blog-card__image-link">
+                    <a href={`/blog/${slug}`} class="blog-card__image-link" aria-label={`Leer: ${title}`}>
                       {img ? (
                         <img
                           src={img}
