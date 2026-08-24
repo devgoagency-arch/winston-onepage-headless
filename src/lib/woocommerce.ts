@@ -681,12 +681,18 @@ function mapV3ToStore(p: any) {
             const vIncRegPrice = hasTax ? Math.round(vRegRaw * 1.19) : Math.round(vRegRaw);
 
             return {
-                ...v,
+                id: v.id,
+                image: v.image,
+                manage_stock: v.manage_stock,
+                stock_quantity: v.stock_quantity,
+                sale_price: v.sale_price,
                 price: vIncPrice > 0 ? vIncPrice.toString() : (inclusivePrice || "0").toString(),
                 regular_price: vIncRegPrice > 0 ? vIncRegPrice.toString() : (p.regular_price || vIncPrice || "0").toString(),
                 stock_status: v.stock_status || 'instock',
                 attributes: (v.attributes || []).map((a: any) => ({
-                    ...a,
+                    id: a.id,
+                    name: a.name,
+                    slug: a.slug,
                     option: a.option || a.value || '',
                     value: a.value || a.option || '',
                 }))
