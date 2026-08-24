@@ -59,9 +59,6 @@ export function sanitizeSEO(seoData: any, currentPath: string, siteUrl: string) 
         if (!ogImage.startsWith('http')) {
             ogImage = `${wpUrl}${ogImage}`;
         }
-        ogImage = ogImage
-            .replace("https://tienda.winstonandharrystore.com", "https://www.winstonandharrystore.com")
-            .replace("https://winstonandharrystore.com", "https://www.winstonandharrystore.com");
     } else {
         ogImage = "";
     }
