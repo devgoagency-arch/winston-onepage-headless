@@ -667,35 +667,6 @@
       "sale_price": ""
     },
     {
-      "id": 60616,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "miel",
-          "option": "miel"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "44",
-          "option": "44"
-        }
-      ],
-      "image": {
-        "id": 60915,
-        "date_created": "2025-03-02T05:16:22",
-        "date_created_gmt": "2025-03-02T05:16:22",
-        "date_modified": "2025-03-03T03:16:43",
-        "date_modified_gmt": "2025-03-03T03:16:43",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/03/Winsdor-III-Miel-Winstonandharry-1-e1752872234714.jpg",
-        "name": "Winsdor III-Miel-Winstonandharry-1",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "590000",
-      "regular_price": "590000",
-      "sale_price": ""
-    },
-    {
       "id": 60617,
       "attributes": [
         {
@@ -1680,8 +1651,8 @@
       "type": "variation",
       "date_created": "2025-02-27T02:50:27",
       "date_created_gmt": "2025-02-27T02:50:27",
-      "date_modified": "2026-07-27T20:51:36",
-      "date_modified_gmt": "2026-07-27T20:51:36",
+      "date_modified": "2026-08-22T00:04:25",
+      "date_modified_gmt": "2026-08-22T00:04:25",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/winsdor-iii/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=44",
       "sku": "7100526044",
@@ -1704,8 +1675,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -2328,7 +2299,7 @@
         {
           "id": 2260117,
           "key": "_last_change_time",
-          "value": "1783012315"
+          "value": "1787357065"
         },
         {
           "id": 2311870,

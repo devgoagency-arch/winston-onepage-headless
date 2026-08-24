@@ -6912,8 +6912,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:31:50",
       "date_created_gmt": "2022-08-25T22:31:50",
-      "date_modified": "2026-07-27T20:50:32",
-      "date_modified_gmt": "2026-07-27T20:50:32",
+      "date_modified": "2026-08-22T00:03:47",
+      "date_modified_gmt": "2026-08-22T00:03:47",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/sussex/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=38",
       "sku": "7018702038",
@@ -6936,7 +6936,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 2,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -7503,7 +7503,7 @@
         {
           "id": 2250067,
           "key": "_last_change_time",
-          "value": "1778190418"
+          "value": "1787357027"
         },
         {
           "id": 2314869,
@@ -7763,11 +7763,6 @@
         {
           "id": 2442217,
           "key": "fb_product_images",
-          "value": ""
-        },
-        {
-          "id": 2442218,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],

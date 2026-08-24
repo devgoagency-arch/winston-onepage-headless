@@ -14424,8 +14424,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:29:04",
       "date_created_gmt": "2022-08-25T22:29:04",
-      "date_modified": "2026-07-27T20:46:12",
-      "date_modified_gmt": "2026-07-27T20:46:12",
+      "date_modified": "2026-08-22T00:03:47",
+      "date_modified_gmt": "2026-08-22T00:03:47",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cornwall/?attribute_pa_selecciona-el-color=vinotinto&attribute_pa_selecciona-una-talla=39",
       "sku": "7002119039",
@@ -14448,7 +14448,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 3,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -15015,7 +15015,7 @@
         {
           "id": 2250061,
           "key": "_last_change_time",
-          "value": "1785174186"
+          "value": "1787357027"
         },
         {
           "id": 2314975,
@@ -15263,11 +15263,6 @@
           "value": ""
         },
         {
-          "id": 2406542,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2406543,
           "key": "_wc_facebook_product_video_source",
           "value": ""
@@ -15275,11 +15270,6 @@
         {
           "id": 2406544,
           "key": "fb_product_images",
-          "value": ""
-        },
-        {
-          "id": 2406545,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],

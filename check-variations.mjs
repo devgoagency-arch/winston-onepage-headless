@@ -1,0 +1,1 @@
+import { wcFetch, getProductVariations } from './src/lib/woocommerce.ts'; async function run() { try { const data = await wcFetch('/products?search=dublin&per_page=10'); console.log(data); } catch(e) { console.error(e); } } run();
