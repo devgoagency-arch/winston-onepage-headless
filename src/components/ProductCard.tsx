@@ -81,16 +81,11 @@ export default function ProductCard({ product, isSelected, onSelectionToggle, on
     const [enrichedProduct, setEnrichedProduct] = useState<any>(null);
     const [isFetchingVariations, setIsFetchingVariations] = useState(false);
 
-    // Efecto para cargar variaciones PROACTIVAMENTE para productos variables
+    // Efecto para cargar variaciones BAJO DEMANDA (cuando el usuario hace hover o interactúa)
     useEffect(() => {
-        // Solo cargar si es variable y no tenemos datos aún
+        // Solo cargar si es variable, no tenemos datos aún, y hay interacción (hover o tap en selector)
         if (product.type !== 'variable' || enrichedProduct || isFetchingVariations) return;
-
-        // Si ya tenemos el precio regular y las imágenes de variaciones, no es urgente cargar más
-        const hasRegularPrice = Number(product.prices.regular_price) > 0;
-        const hasVariationImages = product.variation_images_map && Object.keys(product.variation_images_map).length > 0;
-
-        if (hasRegularPrice && hasVariationImages) return;
+        if (!isCardHovered && !selectedColor && !selectedSize) return;
 
         const fetchFullProduct = async () => {
             setIsFetchingVariations(true);
@@ -109,7 +104,7 @@ export default function ProductCard({ product, isSelected, onSelectionToggle, on
         };
 
         fetchFullProduct();
-    }, [product.slug, product.type, product.variation_images_map]);
+    }, [product.slug, product.type, isCardHovered, selectedColor, selectedSize, enrichedProduct, isFetchingVariations]);
 
 
 

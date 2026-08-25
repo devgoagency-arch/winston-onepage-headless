@@ -374,7 +374,7 @@ export async function getProductsPool() {
  * Maps wc/v3 structure to wc/store/v1 structure for frontend compatibility
  * If the input is already from Store API, it will pass through or be slightly adjusted.
  */
-function mapV3ToStore(p: any) {
+function mapV3ToStore(p: any, isLightweight = true) {
     if (!p) return null;
 
     const cleanDescription = (html: string | undefined | null): string => {
@@ -628,8 +628,8 @@ function mapV3ToStore(p: any) {
         type: p.type,
         status: p.status,
         date_created: p.date_created,
-        description: p.description,
-        short_description: p.short_description,
+        description: isLightweight ? "" : p.description,
+        short_description: isLightweight ? "" : p.short_description,
         prices: {
             price: (inclusivePrice || 0).toString(),
             regular_price: p.regular_price
@@ -674,7 +674,7 @@ function mapV3ToStore(p: any) {
         featured: p.featured || false,
         upsell_ids: p.upsell_ids || [],
         cross_sell_ids: p.cross_sell_ids || [],
-        variations: p.variations_data?.map((v: any) => {
+        variations: isLightweight ? [] : (p.variations_data?.map((v: any) => {
             const vRawPrice = parseFloat(v.price || v.regular_price || "0");
             const vIncPrice = hasTax ? Math.round(vRawPrice * 1.19) : Math.round(vRawPrice);
             const vRegRaw = parseFloat(v.regular_price || v.price || "0");
@@ -697,7 +697,7 @@ function mapV3ToStore(p: any) {
                     value: a.value || a.option || '',
                 }))
             };
-        }) || null,
+        }) || null),
         variation_images_map: (() => {
             try {
                 if (p.variation_images_map) return p.variation_images_map;
@@ -896,7 +896,7 @@ export async function getProductById(id: number | string) {
             // Variaciones procesadas en mapV3ToStore
         }
 
-        const result = mapV3ToStore(product);
+        const result = mapV3ToStore(product, false);
         return result;
     } catch (error) {
         console.error(`Error fetching product by ID ${id}:`, error);
@@ -1372,7 +1372,7 @@ export async function getProductBySlug(slug: string) {
                         }
                     }
 
-                    const result = mapV3ToStore(storeProduct);
+                    const result = mapV3ToStore(storeProduct, false);
                     return result;
                 }
             } catch (e) {
@@ -1436,7 +1436,7 @@ export async function getProductBySlug(slug: string) {
             // Variaciones procesadas en mapV3ToStore
         }
 
-        const result = mapV3ToStore(product);
+        const result = mapV3ToStore(product, false);
         return result;
     } catch (error: any) {
         console.error(`[WC API] Error crítico en getProductBySlug "${slug}":`, error.message);
