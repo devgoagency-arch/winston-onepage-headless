@@ -124,6 +124,10 @@ export default function CheckoutPage() {
     const [submitting, setSubmitting] = useState(false);
     const [serverError, setServerError] = useState('');
     const [showCoupon, setShowCoupon] = useState(false);
+    const [couponCode, setCouponCode] = useState('');
+    const [appliedCoupon, setAppliedCoupon] = useState<{ code: string; discount: number } | null>(null);
+    const [couponError, setCouponError] = useState('');
+    const [couponLoading, setCouponLoading] = useState(false);
 
     // Calcular opciones de ciudad en base al departamento seleccionado
     const billingCitiesOptions = useMemo(() => {
@@ -224,9 +228,10 @@ export default function CheckoutPage() {
 
     const totalDiscount = discount + sweater2x1Discount;
 
+    const couponDiscount = appliedCoupon ? appliedCoupon.discount : 0;
     const FREE_SHIPPING_THRESHOLD = shippingSettings.free_shipping_threshold;
     const SHIPPING_COST = shippingSettings.flat_rate;
-    const discountedSubtotal = subtotal - totalDiscount;
+    const discountedSubtotal = Math.max(0, subtotal - totalDiscount - couponDiscount);
     const shippingCost = discountedSubtotal >= FREE_SHIPPING_THRESHOLD ? 0 : SHIPPING_COST;
     const total = discountedSubtotal + shippingCost;
 
@@ -244,6 +249,40 @@ export default function CheckoutPage() {
     const set = (field: keyof FormData, value: string) => {
         setForm(f => ({ ...f, [field]: value }));
         setErrors(e => ({ ...e, [field]: '' }));
+    };
+
+    const applyCoupon = async () => {
+        if (!couponCode.trim()) return;
+        setCouponLoading(true);
+        setCouponError('');
+        try {
+            const controller = new AbortController();
+            const timeout = setTimeout(() => controller.abort(), 8000);
+            const res = await fetch('/api/apply-coupon', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ code: couponCode.trim().toLowerCase(), subtotal }),
+                signal: controller.signal,
+            });
+            clearTimeout(timeout);
+            const data = await res.json();
+            if (!res.ok || data.error) {
+                setCouponError(data.error || 'Cupón inválido o expirado.');
+                setAppliedCoupon(null);
+            } else {
+                setAppliedCoupon({ code: couponCode.trim().toLowerCase(), discount: data.discount });
+                setCouponError('');
+                setShowCoupon(false);
+            }
+        } catch (err: any) {
+            if (err.name === 'AbortError') {
+                setCouponError('No se pudo verificar el cupón (tiempo de espera agotado). Intenta de nuevo.');
+            } else {
+                setCouponError('Error al verificar el cupón. Intenta de nuevo.');
+            }
+        } finally {
+            setCouponLoading(false);
+        }
     };
 
     const validate = (): boolean => {
@@ -279,11 +318,11 @@ export default function CheckoutPage() {
             const payload = {
                 ...form,
                 shipping_cost: shippingCost,
+                coupon_code: appliedCoupon?.code || null,
                 items: items.map(item => {
-                    const baseProductId = Number(String(item.key).split('-')[0]);
                     return {
-                        product_id: baseProductId,
-                        variation_id: item.id !== baseProductId ? item.id : 0,
+                        product_id: item.product_id || Number(String(item.key).split('-')[0]), // Fallback for old carts
+                        variation_id: item.id !== item.product_id ? item.id : 0,
                         quantity: item.quantity,
                     };
                 }),
@@ -298,7 +337,11 @@ export default function CheckoutPage() {
             const data = await res.json();
 
             if (!res.ok || !data.order_id) {
-                setServerError(data.details || data.error || 'Error al crear la orden. Intenta de nuevo.');
+                let errorMsg = data.details || data.error || 'Error al crear la orden. Intenta de nuevo.';
+                if (typeof errorMsg === 'string' && errorMsg.includes('Missing attributes')) {
+                    errorMsg = 'Error en el carrito: Faltan opciones de producto (talla/color). Por favor, vacía tu carrito y vuelve a agregar los productos.';
+                }
+                setServerError(errorMsg);
                 setSubmitting(false);
                 return;
             }
@@ -358,9 +401,30 @@ export default function CheckoutPage() {
                     <div className="coupon-form-container" style={{ marginBottom: '20px', marginTop: '20px' }}>
                         <p style={{ marginBottom: '10px' }}>Si tienes un código de cupón, por favor, aplícalo abajo.</p>
                         <div className="coupon-input-group" style={{ display: 'flex', gap: '10px' }}>
-                            <input type="text" placeholder="Código de cupón" style={{ flex: 1, padding: '12px', border: '1px solid #ccc' }} />
-                            <button type="button" style={{ padding: '12px 24px', backgroundColor: '#155338', color: '#fff', border: 'none', cursor: 'pointer' }}>APLICAR CUPÓN</button>
+                            <input
+                                type="text"
+                                placeholder="Código de cupón"
+                                value={couponCode}
+                                onChange={e => setCouponCode(e.target.value)}
+                                onKeyDown={e => e.key === 'Enter' && applyCoupon()}
+                                style={{ flex: 1, padding: '12px', border: '1px solid #ccc' }}
+                            />
+                            <button
+                                type="button"
+                                onClick={applyCoupon}
+                                disabled={couponLoading}
+                                style={{ padding: '12px 24px', backgroundColor: '#155338', color: '#fff', border: 'none', cursor: 'pointer', opacity: couponLoading ? 0.7 : 1 }}
+                            >
+                                {couponLoading ? 'VERIFICANDO...' : 'APLICAR CUPÓN'}
+                            </button>
                         </div>
+                        {couponError && <p style={{ color: '#d9534f', marginTop: '8px', fontSize: '0.85rem' }}>{couponError}</p>}
+                    </div>
+                )}
+                {appliedCoupon && (
+                    <div style={{ background: '#eaf5ee', border: '1px solid #b6dfca', borderRadius: '6px', padding: '10px 16px', marginBottom: '12px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.9rem', color: '#155338' }}>
+                        <span>✅ Cupón <strong>{appliedCoupon.code}</strong> aplicado — Descuento: {fmt(appliedCoupon.discount)}</span>
+                        <button type="button" onClick={() => { setAppliedCoupon(null); setCouponCode(''); }} style={{ background: 'none', border: 'none', color: '#d9534f', cursor: 'pointer', fontSize: '1rem' }}>✕</button>
                     </div>
                 )}
 
@@ -661,14 +725,20 @@ export default function CheckoutPage() {
                                     <div key={`${item.id}-${idx}`} className="checkout-summary-item">
                                         <div className="checkout-item-image">
                                             {item.image ? (
-                                                <img src={item.image} alt={item.name} />
+                                                <a href={`/productos/${item.slug}`} style={{ display: 'block', width: '100%', height: '100%' }}>
+                                                    <img src={item.image} alt={item.name} />
+                                                </a>
                                             ) : (
                                                 <div className="checkout-item-placeholder" />
                                             )}
                                             <span className="checkout-item-qty">{item.quantity}</span>
                                         </div>
                                         <div className="checkout-item-details">
-                                            <span className="checkout-item-name">{item.name}</span>
+                                            <span className="checkout-item-name">
+                                                <a href={`/productos/${item.slug}`} style={{ color: 'inherit', textDecoration: 'none' }}>
+                                                    {item.name}
+                                                </a>
+                                            </span>
                                             {item.color && (
                                                 <span className="checkout-item-attr">Color: {item.color}</span>
                                             )}

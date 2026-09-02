@@ -506,35 +506,6 @@
       "sale_price": ""
     },
     {
-      "id": 55548,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "negro",
-          "option": "negro"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "39",
-          "option": "39"
-        }
-      ],
-      "image": {
-        "id": 55240,
-        "date_created": "2024-05-22T15:01:59",
-        "date_created_gmt": "2024-05-22T15:01:59",
-        "date_modified": "2024-05-30T16:40:55",
-        "date_modified_gmt": "2024-05-30T16:40:55",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2024/05/Bradford-II-Negro-Winstonandharry-168.jpg",
-        "name": "Bradford-II-Negro-Winstonandharry-168",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "825000",
-      "regular_price": "825000",
-      "sale_price": ""
-    },
-    {
       "id": 55550,
       "attributes": [
         {
@@ -11376,8 +11347,8 @@
       "type": "variation",
       "date_created": "2024-05-29T21:17:35",
       "date_created_gmt": "2024-05-29T21:17:35",
-      "date_modified": "2026-07-03T17:22:06",
-      "date_modified_gmt": "2026-07-03T17:22:06",
+      "date_modified": "2026-08-24T20:31:48",
+      "date_modified_gmt": "2026-08-24T20:31:48",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bradford-ll/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=39",
       "sku": "7112702039",
@@ -11400,8 +11371,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -11964,7 +11935,7 @@
         {
           "id": 2260353,
           "key": "_last_change_time",
-          "value": "1783099326"
+          "value": "1787603446"
         },
         {
           "id": 2312362,

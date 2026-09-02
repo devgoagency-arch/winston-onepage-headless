@@ -295,11 +295,17 @@ React.useEffect(() => {
                                     <div key={item.key} className="cart-item-row">
                                         <div className="col-product item-info">
                                             <div className="item-img">
-                                                <img src={item.image} alt={item.name} />
+                                                <a href={`/productos/${item.slug}`}>
+                                                    <img src={item.image} alt={item.name} />
+                                                </a>
                                             </div>
                                             <div className="item-text">
                                                 <div className="item-title-row">
-                                                    <h3>{item.name}</h3>
+                                                    <h3>
+                                                        <a href={`/productos/${item.slug}`} style={{ color: 'inherit', textDecoration: 'none' }}>
+                                                            {item.name}
+                                                        </a>
+                                                    </h3>
                                                     <button className="item-remove-x mobile-only" onClick={() => removeFromCart(item.key)}>
                                                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                                                             <path d="M18 6L6 18M6 6l12 12" />

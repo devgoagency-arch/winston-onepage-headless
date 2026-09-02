@@ -214,8 +214,8 @@
       "type": "variation",
       "date_created": "2025-10-31T01:31:20",
       "date_created_gmt": "2025-10-31T01:31:20",
-      "date_modified": "2026-08-22T00:04:26",
-      "date_modified_gmt": "2026-08-22T00:04:26",
+      "date_modified": "2026-08-24T20:32:28",
+      "date_modified_gmt": "2026-08-24T20:32:28",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/medias-bicicleta/?attribute_pa_selecciona-el-color=azul-claro",
       "sku": "11188901000",
@@ -238,7 +238,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 76,
+      "stock_quantity": 74,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -1026,7 +1026,7 @@
         {
           "id": 2219132,
           "key": "_last_change_time",
-          "value": "1787357066"
+          "value": "1787603548"
         },
         {
           "id": 2310920,
@@ -1918,10 +1918,7 @@
       }
     }
   ],
-  "wpc_resolved_media": {
-    "81905": "https://tienda.winstonandharrystore.com/wp-content/uploads/Medias-Bicicleta-Azul-Baby-Winstonandharry-2.png",
-    "81907": "https://tienda.winstonandharrystore.com/wp-content/uploads/Medias-Bicicleta-Azul-Winstonandharry-2.jpg"
-  },
+  "wpc_resolved_media": {},
   "stock_status": "instock",
   "variation_images_map": {
     "azul": [
@@ -1930,11 +1927,6 @@
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Medias-Bicicleta-Azul-Baby-Winstonandharry-1.jpg",
         "alt": "Medias-Bicicleta-Azul Baby-Winstonandharry-1",
         "name": "Medias-Bicicleta-Azul Baby-Winstonandharry-1"
-      },
-      {
-        "id": 81905,
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Medias-Bicicleta-Azul-Baby-Winstonandharry-2.png",
-        "alt": "Medias Bicicleta"
       }
     ],
     "azul-claro": [
@@ -1943,11 +1935,6 @@
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Medias-Bicicleta-Azul-Winstonandharry-1.jpg",
         "alt": "Medias-Bicicleta-Azul-Winstonandharry-1",
         "name": "Medias-Bicicleta-Azul-Winstonandharry-1"
-      },
-      {
-        "id": 81907,
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Medias-Bicicleta-Azul-Winstonandharry-2.jpg",
-        "alt": "Medias Bicicleta"
       }
     ]
   }

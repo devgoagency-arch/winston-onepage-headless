@@ -259,35 +259,6 @@
       "sale_price": ""
     },
     {
-      "id": 30499,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "miel",
-          "option": "miel"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "37",
-          "option": "37"
-        }
-      ],
-      "image": {
-        "id": 85926,
-        "date_created": "2026-07-27T16:05:06",
-        "date_created_gmt": "2026-07-27T16:05:06",
-        "date_modified": "2026-07-27T17:06:54",
-        "date_modified_gmt": "2026-07-27T17:06:54",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-santafe-miel-01.jpg",
-        "name": "winston-and-harry-mocasines-santafe-miel-01",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "560000",
-      "regular_price": "560000",
-      "sale_price": ""
-    },
-    {
       "id": 29350,
       "attributes": [
         {
@@ -7781,8 +7752,8 @@
       "type": "variation",
       "date_created": "2023-07-11T19:19:11",
       "date_created_gmt": "2023-07-11T19:19:11",
-      "date_modified": "2026-07-27T20:49:40",
-      "date_modified_gmt": "2026-07-27T20:49:40",
+      "date_modified": "2026-08-24T20:31:48",
+      "date_modified_gmt": "2026-08-24T20:31:48",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/santafe/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=37",
       "sku": "7192526037",
@@ -7805,8 +7776,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -8282,7 +8253,7 @@
         {
           "id": 2260713,
           "key": "_last_change_time",
-          "value": "1785172014"
+          "value": "1787603446"
         },
         {
           "id": 2312783,

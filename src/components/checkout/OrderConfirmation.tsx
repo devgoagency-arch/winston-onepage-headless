@@ -4,8 +4,13 @@ import { trackMetaEvent } from '../../utils/metaPixel';
 
 const parseColPrice = (val: any): number => {
     if (!val) return 0;
-    const str = String(val);
-    // Remover puntos de miles y reemplazar coma decimal si existe
+    if (typeof val === 'number') return Math.round(val);
+    const str = String(val).trim();
+    // Si viene en formato API WooCommerce con decimales (ej. 590000.00)
+    if (/^-?\d+\.\d{1,4}$/.test(str)) {
+        return Math.round(parseFloat(str)) || 0;
+    }
+    // Si viene en formato COP con separador de miles (ej. 590.000)
     const cleaned = str.replace(/\./g, '').replace(',', '.');
     return Math.round(parseFloat(cleaned)) || 0;
 };
@@ -24,45 +29,37 @@ export default function OrderConfirmation() {
     const [order, setOrder] = useState<OrderData | null>(null);
 
     useEffect(() => {
+        let orderId = '';
         const raw = sessionStorage.getItem('wh_last_order');
-
         if (raw) {
             const parsedOrder = JSON.parse(raw);
-            setOrder(parsedOrder);
+            orderId = parsedOrder.id;
             sessionStorage.removeItem('wh_last_order');
             clearCart();
+        }
 
-            const alreadyTracked = sessionStorage.getItem('tracked_order_' + parsedOrder.id);
-            if (!alreadyTracked) {
-                // ⚠️ FIX TIMING: esperar a que GTM/Partytown inicialice el dataLayer
-                // antes de hacer push mediante un setInterval
-                dispatchWhenReady(parsedOrder);
-            }
-        } else {
-            // FALLBACK: el sessionStorage no está (usuario llegó directo, recargó, etc.)
-            // Leer order_id del query param que viene de Mercado Pago
-            const params = new URLSearchParams(window.location.search);
-            const orderId = params.get('order_id') || params.get('external_reference');
-            if (orderId) {
-                fetch(`/api/get-order?id=${orderId}`)
-                    .then(r => r.json())
-                    .then(orderData => {
-                        if (orderData?.id) {
-                            setOrder(orderData); // Siempre settear la orden para que el resumen visual funcione
-                            
-                            // Validar si ya se trackeó antes de disparar el evento
-                            if (!sessionStorage.getItem('tracked_order_' + orderId)) {
-                                const validStatuses = ['processing', 'completed', 'on-hold'];
-                                if (validStatuses.includes(orderData.status)) {
-                                    dispatchWhenReady(orderData);
-                                } else {
-                                    console.log('[GA4 Purchase Debug] Compra no trackeada debido a estado:', orderData.status);
-                                }
+        const params = new URLSearchParams(window.location.search);
+        orderId = orderId || params.get('order_id') || params.get('external_reference') || '';
+
+        if (orderId) {
+            fetch(`/api/get-order?id=${orderId}`)
+                .then(r => r.json())
+                .then(orderData => {
+                    if (orderData?.id) {
+                        setOrder(orderData); // Siempre settear la orden completa
+                        
+                        if (!sessionStorage.getItem('tracked_order_' + orderId)) {
+                            const validStatuses = ['processing', 'completed', 'on-hold'];
+                            const isZeroOrder = parseColPrice(orderData.total) === 0;
+                            if (validStatuses.includes(orderData.status) || isZeroOrder) {
+                                dispatchWhenReady(orderData);
+                            } else {
+                                console.log('[GA4 Purchase Debug] Compra no trackeada debido a estado:', orderData.status);
                             }
                         }
-                    })
-                    .catch(err => console.error('Error fetching order for tracking:', err));
-            }
+                    }
+                })
+                .catch(err => console.error('Error fetching order for tracking:', err));
         }
     }, []);
 

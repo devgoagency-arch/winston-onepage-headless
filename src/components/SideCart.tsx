@@ -110,14 +110,35 @@ export default function SideCart() {
                                     name.includes('selecciona-una-talla');
                             });
 
+                            const itemSlug = item.slug || item.name?.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
                             return (
                                 <div key={item.key} className="cart-item">
                                     <div className="item-image">
-                                        <img src={item.image} alt={item.name} />
+                                        {itemSlug ? (
+                                            <img
+                                                src={item.image}
+                                                alt={item.name}
+                                                style={{ cursor: 'pointer' }}
+                                                onClick={(e) => { e.stopPropagation(); isCartOpen.set(false); window.location.href = `/productos/${itemSlug}`; }}
+                                            />
+                                        ) : (
+                                            <img src={item.image} alt={item.name} />
+                                        )}
                                     </div>
                                     <div className="item-details">
                                         <div className="item-title-row">
-                                            <h3>{item.name}</h3>
+                                            <h3>
+                                                {itemSlug ? (
+                                                    <span
+                                                        onClick={(e) => { e.stopPropagation(); isCartOpen.set(false); window.location.href = `/productos/${itemSlug}`; }}
+                                                        style={{ color: 'inherit', textDecoration: 'none', cursor: 'pointer' }}
+                                                    >
+                                                        {item.name}
+                                                    </span>
+                                                ) : (
+                                                    item.name
+                                                )}
+                                            </h3>
                                             <button className="item-remove-x" onClick={() => removeFromCart(item.key)}>
                                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                                                     <path d="M18 6L6 18M6 6l12 12" />

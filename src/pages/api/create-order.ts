@@ -216,6 +216,27 @@ export const POST: APIRoute = async ({ request, clientAddress }) => {
         }
 
         // 3. Preparar el payload del Checkout (Store API)
+        // 2.5 Aplicar cupón al carrito si viene en el payload
+        if (body.coupon_code) {
+            const couponRes = await fetch(`${WC_URL}/wp-json/wc/store/v1/cart/apply-coupon`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Cart-Token': cartToken,
+                    'Nonce': nonce,
+                    ...forwardHeaders
+                },
+                body: JSON.stringify({ code: body.coupon_code })
+            });
+            if (!couponRes.ok) {
+                const couponErr = await couponRes.json().catch(() => ({}));
+                console.warn('[API Store Checkout] No se pudo aplicar el cupón:', couponErr.message || 'Error desconocido');
+                // No abortamos — continuamos sin cupón si falla
+            } else {
+                console.log('[API Store Checkout] Cupón aplicado en WooCommerce:', body.coupon_code);
+            }
+        }
+
         const paymentMethodId = body.payment_method === 'addi' ? 'addi' : 'woo-mercado-pago-basic';
         
         const validState = getValidStateCode(body.state);

@@ -675,11 +675,12 @@ export default function ProductDetail({ initialProduct }: Props) {
     }
 
     addToCart(
-      { ...currentProduct, id: productIdToCart },
+      currentProduct,
       quantity,
       selectedColor,
       selectedSize,
-      filteredImages[0]?.src || product.images[0]?.src
+      filteredImages[0]?.src || product.images[0]?.src,
+      productIdToCart !== currentProduct.id ? productIdToCart : null
     );
 
     // GA4 + Meta add_to_cart
@@ -687,10 +688,14 @@ export default function ProductDetail({ initialProduct }: Props) {
     if (typeof window !== 'undefined') {
       console.log('[GTM Debug] Ejecutando dataLayer.push add_to_cart', price);
       (window as any).dataLayer = (window as any).dataLayer || [];
+      (window as any).dataLayer.push({ ecommerce: null });
       (window as any).dataLayer.push({
         event: 'add_to_cart',
-        currency: 'COP', value: price,
-        items: [{ item_id: String(currentProduct.id), item_name: currentProduct.name, price, quantity: 1 }]
+        ecommerce: {
+          currency: 'COP', 
+          value: price,
+          items: [{ item_id: String(currentProduct.id), item_name: currentProduct.name, price, quantity: 1 }]
+        }
       });
       console.log("[META Debug] Intentando trackear AddToCart");
       trackMetaEvent('AddToCart', {
@@ -709,7 +714,7 @@ export default function ProductDetail({ initialProduct }: Props) {
       if (selectedVariation) {
         mainProductId = selectedVariation.id;
       }
-      addToCart({ ...currentProduct, id: mainProductId }, 1, selectedColor, selectedSize, filteredImages[0]?.src || product.images[0]?.src);
+      addToCart(currentProduct, 1, selectedColor, selectedSize, filteredImages[0]?.src || product.images[0]?.src, mainProductId !== product.id ? mainProductId : null);
     }
 
     // 2. Añadir productos FBT (ya usan variationId de ProductCard)
@@ -718,7 +723,7 @@ export default function ProductDetail({ initialProduct }: Props) {
         if (selectedFbtIds.includes(p.id)) {
           const pVar = fbtVariations[p.id];
           const finalId = pVar?.variationId || p.id;
-          addToCart({ ...p, id: finalId }, 1, pVar?.color || null, pVar?.size || null, p.images[0]?.src);
+          addToCart(p, 1, pVar?.color || null, pVar?.size || null, p.images[0]?.src, finalId !== p.id ? finalId : null);
         }
       }
     }

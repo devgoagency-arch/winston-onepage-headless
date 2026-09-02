@@ -2,6 +2,7 @@ import { persistentMap } from '@nanostores/persistent';
 import { atom } from 'nanostores';
 import { trackMetaEvent } from '../utils/metaPixel';
 export interface CartItem {
+    product_id?: number; // Main product id
     id: number;
     name: string;
     price: number;
@@ -112,11 +113,11 @@ export function addToCart(product: any, quantity: number, color: string | null, 
                 item.id = finalId;
                 cartItems.setKey(itemId, JSON.stringify(item));
             } catch (e) {
-                const newItem = createCartItem(finalId, product, processedPrice, color, size, quantity, image);
+                const newItem = createCartItem(finalId, product.id, product, processedPrice, color, size, quantity, image);
                 cartItems.setKey(itemId, JSON.stringify(newItem));
             }
         } else {
-            const newItem = createCartItem(finalId, product, processedPrice, color, size, quantity, image);
+            const newItem = createCartItem(finalId, product.id, product, processedPrice, color, size, quantity, image);
             cartItems.setKey(itemId, JSON.stringify(newItem));
         }
 
@@ -137,9 +138,10 @@ export function addToCart(product: any, quantity: number, color: string | null, 
     }
 }
 
-function createCartItem(id: number, product: any, price: number, color: string | null, size: string | null, quantity: number, image: string): CartItem {
+function createCartItem(id: number, product_id: number, product: any, price: number, color: string | null, size: string | null, quantity: number, image: string): CartItem {
     return {
         id,
+        product_id,
         name: product.name,
         price,
         color,
