@@ -65,8 +65,9 @@ export async function getStaticPaths() {
             if (!p.slug) return;
             try {
                 const filePath = path.join(productsDir, `${p.slug}.json`);
-                // En DEV, si el archivo ya existe saltamos la descarga para no bloquear el servidor
-                if (import.meta.env.DEV && fs.existsSync(filePath)) {
+                // Si el archivo JSON ya existe (en dev o en prod), usarlo como caché.
+                // Solo descargamos si NO existe (producto nuevo o primer build).
+                if (fs.existsSync(filePath)) {
                     return;
                 }
 

@@ -82,8 +82,8 @@ export async function getStaticPaths() {
             
             const filePath = path.join(catalogDir, `${cat.slug}-all.json`);
             
-            // Si en desarrollo ya existe, saltamos la descarga (o la cargamos de caché si es necesario)
-            if (import.meta.env.DEV && fs.existsSync(filePath)) {
+            // Si ya existe el JSON en caché (dev o prod), lo usamos directamente
+            if (fs.existsSync(filePath)) {
                 console.log(`[SSG Total] Caché encontrado para ${cat.slug}, omitiendo descarga.`);
             } else {
                 while (hasMore) {

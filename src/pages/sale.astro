@@ -32,8 +32,8 @@ while (hasMore) {
         let pageProducts;
         const filePath = path.join(catalogDir, `sale-p${page}.json`);
 
-        // En desarrollo, si ya descargamos este catálogo, lo leemos de disco para que no sea lento
-        if (import.meta.env.DEV && fs.existsSync(filePath)) {
+        // Si ya existe el caché (dev o prod), lo leemos de disco para no repetir la descarga
+        if (fs.existsSync(filePath)) {
             try {
                 const cachedData = JSON.parse(fs.readFileSync(filePath, "utf-8"));
                 pageProducts = cachedData;
