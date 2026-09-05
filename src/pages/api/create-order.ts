@@ -326,6 +326,10 @@ export const POST: APIRoute = async ({ request, clientAddress }) => {
             }
         } catch (err: any) {
             console.error('[2x1 Escalera] Error calculando descuento server-side:', err.message);
+            return new Response(
+                JSON.stringify({ error: 'Error interno de red al calcular promociones. Por favor, intenta nuevamente.' }),
+                { status: 500 }
+            );
         }
         // ─────────────────────────────────────────────────────────────────────────────
 
