@@ -307,7 +307,10 @@ export default function ProductDetail({ initialProduct }: Props) {
   }, [product.categories]);
 
   const selectedVariation = useMemo(() => {
-    const variations = currentProduct.variations;
+    const variations = (Array.isArray(currentProduct.variations) && typeof currentProduct.variations[0] === 'object') 
+      ? currentProduct.variations 
+      : (currentProduct.variations_data || []);
+      
     if (!variations || variations.length === 0) return null;
     if (!selectedColor && !selectedSize) return null;
 
@@ -569,7 +572,10 @@ export default function ProductDetail({ initialProduct }: Props) {
 
 
   const isCombinationAvailable = (color: string | null, size: string | null) => {
-    const variations = currentProduct.variations;
+    const variations = (Array.isArray(currentProduct.variations) && typeof currentProduct.variations[0] === 'object') 
+      ? currentProduct.variations 
+      : (currentProduct.variations_data || []);
+      
     if (!variations || variations.length === 0) {
       return currentProduct.stock_status !== 'outofstock';
     }
