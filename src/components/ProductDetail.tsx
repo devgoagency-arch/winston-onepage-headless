@@ -181,7 +181,7 @@ export default function ProductDetail({ initialProduct }: Props) {
       attr.name.toLowerCase().includes('tamaño') ||
       attr.name.toLowerCase().includes('size') ||
       attr.name.toLowerCase().includes('selecciona-una-talla') ||
-      attr.terms.some(t => !isNaN(Number(t.name)))
+      (attr.terms && attr.terms.some(t => !isNaN(Number(t.name))))
     ), [currentProduct]);
 
   // Ordenar las tallas numéricamente o por orden de ropa (XS, S, M, L, XL, XXL)
@@ -1100,7 +1100,7 @@ export default function ProductDetail({ initialProduct }: Props) {
                             <div key={attr.id} className="additional-info-row">
                               <span className="info-label">{displayName}</span>
                               <span className="info-value">
-                                {attr.terms.map(t => t.name).join(' , ')}
+                                {attr.terms ? attr.terms.map(t => t.name).join(' , ') : attr.options ? attr.options.join(' , ') : ''}
                               </span>
                             </div>
                           );
