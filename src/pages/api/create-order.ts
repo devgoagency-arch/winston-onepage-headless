@@ -270,8 +270,6 @@ export const POST: APIRoute = async ({ request, clientAddress }) => {
                 }
             }
 
-            // 3. Calcular el descuento: por cada 2, el de menor precio es gratis
-            //    (ordenar de mayor a menor → los de posición impar [1, 3, 5…] son los gratis)
             if (escaleraSweaters.length >= 2) {
                 escaleraSweaters.sort((a, b) => b - a);
                 let discount2x1 = 0;
@@ -280,7 +278,6 @@ export const POST: APIRoute = async ({ request, clientAddress }) => {
                 }
 
                 if (discount2x1 > 0) {
-                    // 4. Crear cupón temporal en WooCommerce (un solo uso)
                     tempCouponCode = `2x1esc_${Date.now()}`;
                     const createdCoupon = await wcFetch('coupons', {
                         method: 'POST',
@@ -293,19 +290,37 @@ export const POST: APIRoute = async ({ request, clientAddress }) => {
                             description: 'Descuento 2x1 Suéter Tejido Escalera (automático, temporal)'
                         })
                     });
-                    if (createdCoupon?.id) tempCouponId = createdCoupon.id;
 
-                    // 5. Aplicar el cupón al carrito de WooCommerce
-                    const applyCouponRes = await fetch(`${WC_URL}/wp-json/wc/store/v1/cart/apply-coupon`, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json', 'Nonce': nonce, 'Cart-Token': cartToken, ...forwardHeaders },
-                        body: JSON.stringify({ code: tempCouponCode })
-                    });
-                    if (applyCouponRes.ok) {
-                        console.log(`[2x1 Escalera] Descuento $${discount2x1} aplicado correctamente.`);
+                    if (createdCoupon && createdCoupon.id) {
+                        tempCouponId = createdCoupon.id;
+                        console.log(`[2x1 Escalera] Cupón creado en WooCommerce: ${tempCouponCode} por $${discount2x1}`);
                     } else {
-                        const err = await applyCouponRes.json().catch(() => ({}));
-                        console.warn('[2x1 Escalera] No se pudo aplicar el cupón:', err.message);
+                        console.error('[2x1 Escalera] FALLO CRÍTICO: No se pudo crear el cupón en WooCommerce.', createdCoupon);
+                        return new Response(JSON.stringify({ error: 'Error del sistema: No se pudo generar el descuento 2x1. Intenta nuevamente.' }), { status: 500 });
+                    }
+
+                    let couponApplied = false;
+                    for (let attempt = 1; attempt <= 3; attempt++) {
+                        const applyCouponRes = await fetch(`${WC_URL}/wp-json/wc/store/v1/cart/apply-coupon`, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json', 'Nonce': nonce, 'Cart-Token': cartToken, ...forwardHeaders },
+                            body: JSON.stringify({ code: tempCouponCode })
+                        });
+
+                        if (applyCouponRes.ok) {
+                            console.log(`[2x1 Escalera] Descuento $${discount2x1} aplicado correctamente (Intento ${attempt}).`);
+                            couponApplied = true;
+                            break;
+                        } else {
+                            const err = await applyCouponRes.json().catch(() => ({}));
+                            console.warn(`[2x1 Escalera] Falló al aplicar cupón (Intento ${attempt}):`, err.message);
+                            if (attempt < 3) await new Promise(res => setTimeout(res, 1000));
+                        }
+                    }
+
+                    if (!couponApplied) {
+                        wcFetch(`coupons/${tempCouponId}?force=true`, { method: 'DELETE' }).catch(() => {});
+                        return new Response(JSON.stringify({ error: 'Error al aplicar el descuento 2x1 en el carrito. Por favor, intenta de nuevo.' }), { status: 400 });
                     }
                 }
             }
