@@ -125,7 +125,7 @@ export default function CheckoutPage() {
     const [serverError, setServerError] = useState('');
     const [showCoupon, setShowCoupon] = useState(false);
     const [couponCode, setCouponCode] = useState('');
-    const [appliedCoupon, setAppliedCoupon] = useState<{ code: string; discount: number } | null>(null);
+    const [appliedCoupon, setAppliedCoupon] = useState<{ code: string; discount: number; free_shipping?: boolean } | null>(null);
     const [couponError, setCouponError] = useState('');
     const [couponLoading, setCouponLoading] = useState(false);
 
@@ -232,7 +232,8 @@ export default function CheckoutPage() {
     const FREE_SHIPPING_THRESHOLD = shippingSettings.free_shipping_threshold;
     const SHIPPING_COST = shippingSettings.flat_rate;
     const discountedSubtotal = Math.max(0, subtotal - totalDiscount - couponDiscount);
-    const shippingCost = discountedSubtotal >= FREE_SHIPPING_THRESHOLD ? 0 : SHIPPING_COST;
+    const hasFreeShippingCoupon = appliedCoupon?.free_shipping === true;
+    const shippingCost = (discountedSubtotal >= FREE_SHIPPING_THRESHOLD || hasFreeShippingCoupon) ? 0 : SHIPPING_COST;
     const total = discountedSubtotal + shippingCost;
 
     const fmt = (n: number) => '$' + new Intl.NumberFormat('es-CO').format(n);
@@ -270,8 +271,13 @@ export default function CheckoutPage() {
                 setCouponError(data.error || 'Cupón inválido o expirado.');
                 setAppliedCoupon(null);
             } else {
-                setAppliedCoupon({ code: couponCode.trim().toLowerCase(), discount: data.discount });
+                setAppliedCoupon({ 
+                    code: data.code, 
+                    discount: data.discount,
+                    free_shipping: data.free_shipping
+                });
                 setCouponError('');
+                setCouponCode('');
                 setShowCoupon(false);
             }
         } catch (err: any) {

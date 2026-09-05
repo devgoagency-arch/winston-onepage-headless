@@ -132,7 +132,6 @@ export default defineConfig({
     '/categoria/billeteras': '/categoria/billeteras-cuero-hombre',
     '/categoria/limpieza': '/categoria/limpieza-cuidado-zapatos',
     '/productos/limpiador-en-seco': '/categoria/accesorios-hombre',
-    '/productos/sueter-tejido-escalera-negro': '/categoria/sueteres-chalecos-hombre',
     '/regalos-dia-del-padre': '/',
     '/categoria/maletas-morrales-cuero': '/categoria/maletas-morrales-cuero-hombre',
     '/categoria/maletas-morrales-potafolios-cuero': '/categoria/maletas-morrales-cuero-hombre',

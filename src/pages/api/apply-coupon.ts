@@ -72,7 +72,12 @@ export const POST: APIRoute = async ({ request }) => {
         }
 
         return new Response(
-            JSON.stringify({ discount, code: coupon.code, type: discountType }),
+            JSON.stringify({ 
+                discount, 
+                code: coupon.code, 
+                type: discountType,
+                free_shipping: Boolean(coupon.free_shipping)
+            }),
             { status: 200, headers: { 'Content-Type': 'application/json' } }
         );
 
