@@ -273,8 +273,9 @@ export async function wcFetch(path: string, options: RequestInit = {}, retries =
         const connector = url.includes('?') ? '&' : '?';
         url += `${connector}consumer_key=${CK}&consumer_secret=${CS}`;
 
-        // Redundancia vía Basic Auth
-        headers['Authorization'] = `Basic ${safeBtoa(`${CK}:${CS}`)}`;
+        // NOTA: Se eliminó la cabecera 'Authorization: Basic' porque el Web Application Firewall (WAF)
+        // de Hostinger / BitNinja bloquea peticiones de servidores en la nube (Vercel) que incluyen esta cabecera
+        // asumiendo ataques de fuerza bruta. WooCommerce soporta auth nativa por query params que acabamos de inyectar.
     } else if (isWpNamespace) {
         // Para wp/v2 usamos Application Passwords SOLO si están disponibles
         const WP_USER = getEnv('WP_APP_USER') || "";
