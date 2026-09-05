@@ -160,6 +160,8 @@ export default defineConfig({
     '/productos/wallet': '/categoria/billeteras-cuero-hombre',
     '/productos/clip-card-holder': '/categoria/billeteras-cuero-hombre',
     '/productos/crema-humectante': '/categoria/limpieza-cuidado-zapatos',
+    '/productos/botas-chelsea-marron-winston': '/productos/bota-chelsea-marron',
+    '/productos/sueter-tejido-escalera-negro': '/categoria/sueteres-chalecos-hombre',
     '/productos/bono-de-regalo': '/',
     '/productos/bono-de-regalo-2': '/',
     '/productos/producto': '/',
