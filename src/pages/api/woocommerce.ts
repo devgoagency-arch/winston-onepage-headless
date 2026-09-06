@@ -134,7 +134,7 @@ function mapV3ToStore(p: any) {
         const prices = p.variations_data.map((v: any) => parseFloat(v.price || "0")).filter((pr: number) => pr > 0);
         if (prices.length > 0) rawPrice = Math.min(...prices);
     }
-    const toPrice = (n: number) => hasTax ? Math.round(n * 1.19) : Math.round(n);
+    const toPrice = (n: number) => Math.round(n);
     const inclusivePrice = toPrice(rawPrice);
 
     const mapped: any = {

@@ -165,10 +165,8 @@ function normalizeProduct(p: any, isStoreApi: boolean): any {
         price = Math.round(Number(rawPrice) / divisor).toString();
         regularPrice = Math.round(Number(p.prices?.regular_price || rawPrice) / divisor).toString();
     } else {
-        const hasTax = p.tax_status === 'taxable';
-        const mult = hasTax ? 1.19 : 1;
-        price = Math.round(parseFloat(p.price || p.regular_price || '0') * mult).toString();
-        regularPrice = Math.round(parseFloat(p.regular_price || p.price || '0') * mult).toString();
+        price = Math.round(parseFloat(p.price || p.regular_price || '0')).toString();
+        regularPrice = Math.round(parseFloat(p.regular_price || p.price || '0')).toString();
     }
 
     return {

@@ -2488,6 +2488,8 @@ function getColorCode(slug: string): string {
     'tabaco': '#8B5A2B',
     'cognac': '#9A463D',
     'rojo': '#C41E3A',
+    'naranja': '#FF6600',
+    'orange': '#FF6600',
     'blanco': '#FFFFFF',
     'gris': '#888888',
     'plata': '#C0C0C0',
@@ -2522,6 +2524,7 @@ function getColorCode(slug: string): string {
   if (normalized.includes('negro')) return '#121212';
   if (normalized.includes('rojo') && normalized.includes('florantik')) return '#8B0000';
   if (normalized.includes('rojo')) return '#C41E3A';
+  if (normalized.includes('naranja') || normalized.includes('orange')) return '#FF6600';
   if (normalized.includes('cafe') || normalized.includes('marron')) return '#6F4E37';
   if (normalized.includes('miel')) return '#D4A373';
   if (normalized.includes('azul')) return '#1B3F8B';

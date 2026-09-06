@@ -175,11 +175,11 @@ export const POST: APIRoute = async ({ request, clientAddress }) => {
 
         // 1. Obtener Cart-Token y Nonce inicial
         const cartRes = await fetch(`${WC_URL}/wp-json/wc/store/v1/cart`, { headers: forwardHeaders });
-        const cartToken = cartRes.headers.get('Cart-Token') || '';
+        let cartToken = cartRes.headers.get('Cart-Token') || '';
         const nonce = cartRes.headers.get('Nonce') || '';
 
         // 2. Limpiar el carrito antes de agregar ítems (evita contaminación entre sesiones)
-        await fetch(`${WC_URL}/wp-json/wc/store/v1/cart/items`, {
+        const clearRes = await fetch(`${WC_URL}/wp-json/wc/store/v1/cart/items`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
@@ -188,11 +188,12 @@ export const POST: APIRoute = async ({ request, clientAddress }) => {
                 ...forwardHeaders
             }
         });
+        cartToken = clearRes.headers.get('Cart-Token') || cartToken;
 
-        // 3. Agregar cada producto al carrito
+        // 3. Agregar los ítems al carrito (Store API usa el body tal cual lo manda CheckoutPage)
         for (const item of body.items) {
             const itemId = item.variation_id ? item.variation_id : item.product_id;
-            const addRes = await fetch(`${WC_URL}/wp-json/wc/store/v1/cart/add-item`, {
+            const addItemRes = await fetch(`${WC_URL}/wp-json/wc/store/v1/cart/add-item`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -202,12 +203,14 @@ export const POST: APIRoute = async ({ request, clientAddress }) => {
                 },
                 body: JSON.stringify({
                     id: itemId,
-                    quantity: item.quantity,
+                    quantity: item.quantity
                 })
             });
-            if (!addRes.ok) {
-                const addErr = await addRes.json().catch(() => ({}));
-                console.error('[API Store Checkout] Error al agregar ítem al carrito:', addErr);
+            cartToken = addItemRes.headers.get('Cart-Token') || cartToken;
+
+            if (!addItemRes.ok) {
+                const addErr = await addItemRes.json().catch(() => ({}));
+                console.error(`[API Store Checkout] Error al agregar el ítem ${itemId} al carrito:`, addErr);
                 return new Response(
                     JSON.stringify({ error: addErr.message || 'Error al agregar producto al carrito' }),
                     { status: 400 }
@@ -215,121 +218,28 @@ export const POST: APIRoute = async ({ request, clientAddress }) => {
             }
         }
 
-        // 3. Preparar el payload del Checkout (Store API)
-        // 2.5 Aplicar cupón al carrito si viene en el payload
-        if (body.coupon_code) {
-            const couponRes = await fetch(`${WC_URL}/wp-json/wc/store/v1/cart/apply-coupon`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Nonce': nonce,
-                    ...forwardHeaders
-                },
-                body: JSON.stringify({ code: body.coupon_code })
-            });
-            if (!couponRes.ok) {
-                const couponErr = await couponRes.json().catch(() => ({}));
-                console.warn('[API Store Checkout] No se pudo aplicar el cupón manual:', couponErr.message || 'Error desconocido');
-            } else {
-                console.log('[API Store Checkout] Cupón manual aplicado en WooCommerce:', body.coupon_code);
-            }
-        }
-
-        // ─── DESCUENTO 2×1 SUÉTER TEJIDO ESCALERA ───────────────────────────────────
-        // Se calcula server-side con los precios reales de WooCommerce (no los del frontend).
-        // Lógica: entre todos los suéteres escalera en el carrito, por cada par el más barato es gratis.
-        // Se crea un cupón de un solo uso con el monto exacto, se aplica al carrito
-        // y se borra inmediatamente después de crear la orden para mantener WooCommerce limpio.
-        let tempCouponId: number | null = null;
-        let tempCouponCode: string | null = null;
-
+        // NOTA: El descuento 2x1 de Suéter Tejido Escalera ya NO se calcula aquí.
+        // Se maneja de forma nativa en WooCommerce vía el hook
+        // `woocommerce_cart_calculate_fees` (fee automático server-side, no requiere
+        // cupón). Mantener ambos mecanismos activos causaba riesgo de doble descuento.
         try {
-            // 1. Leer el carrito real de WooCommerce para obtener precios auténticos
-            const liveCartRes = await fetch(`${WC_URL}/wp-json/wc/store/v1/cart`, {
-                headers: { 'Cart-Token': cartToken, 'Nonce': nonce, ...forwardHeaders }
-            });
-            const liveCart = await liveCartRes.json();
-
-            // 2. Identificar suéteres escalera por slug o nombre
-            const escaleraSweaters: number[] = [];
-            if (Array.isArray(liveCart.items)) {
-                for (const cartItem of liveCart.items) {
-                    const slug = String(cartItem.slug || '').toLowerCase();
-                    const name = String(cartItem.name || '').toLowerCase();
-                    const isEscalera = slug.includes('escalera') || name.includes('escalera');
-                    if (isEscalera) {
-                        const minorUnit = liveCart.totals?.currency_minor_unit ?? 0;
-                        const divisor = Math.pow(10, minorUnit);
-                        const priceRaw = cartItem.prices?.price ?? cartItem.prices?.regular_price ?? '0';
-                        const unitPrice = Math.round(Number(priceRaw) / divisor);
-                        // Expandir por cantidad (ej: qty=3 → [precio, precio, precio])
-                        for (let q = 0; q < (cartItem.quantity || 1); q++) {
-                            escaleraSweaters.push(unitPrice);
-                        }
-                    }
-                }
-            }
-
-            if (escaleraSweaters.length >= 2) {
-                escaleraSweaters.sort((a, b) => b - a);
-                let discount2x1 = 0;
-                for (let i = 1; i < escaleraSweaters.length; i += 2) {
-                    discount2x1 += escaleraSweaters[i];
-                }
-
-                if (discount2x1 > 0) {
-                    tempCouponCode = `2x1esc_${Date.now()}`;
-                    const createdCoupon = await wcFetch('coupons', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({
-                            code: tempCouponCode,
-                            amount: String(discount2x1),
-                            discount_type: 'fixed_cart',
-                            usage_limit: 1,
-                            description: 'Descuento 2x1 Suéter Tejido Escalera (automático, temporal)'
-                        })
-                    });
-
-                    if (createdCoupon && createdCoupon.id) {
-                        tempCouponId = createdCoupon.id;
-                        console.log(`[2x1 Escalera] Cupón creado en WooCommerce: ${tempCouponCode} por $${discount2x1}`);
-                    } else {
-                        console.error('[2x1 Escalera] FALLO CRÍTICO: No se pudo crear el cupón en WooCommerce.', createdCoupon);
-                        return new Response(JSON.stringify({ error: 'Error del sistema: No se pudo generar el descuento 2x1. Intenta nuevamente.' }), { status: 500 });
-                    }
-
-                    let couponApplied = false;
-                    for (let attempt = 1; attempt <= 3; attempt++) {
-                        const applyCouponRes = await fetch(`${WC_URL}/wp-json/wc/store/v1/cart/apply-coupon`, {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json', 'Nonce': nonce, 'Cart-Token': cartToken, ...forwardHeaders },
-                            body: JSON.stringify({ code: tempCouponCode })
-                        });
-
-                        if (applyCouponRes.ok) {
-                            console.log(`[2x1 Escalera] Descuento $${discount2x1} aplicado correctamente (Intento ${attempt}).`);
-                            couponApplied = true;
-                            break;
-                        } else {
-                            const err = await applyCouponRes.json().catch(() => ({}));
-                            console.warn(`[2x1 Escalera] Falló al aplicar cupón (Intento ${attempt}):`, err.message);
-                            if (attempt < 3) await new Promise(res => setTimeout(res, 1000));
-                        }
-                    }
-
-                    if (!couponApplied) {
-                        wcFetch(`coupons/${tempCouponId}?force=true`, { method: 'DELETE' }).catch(() => {});
-                        return new Response(JSON.stringify({ error: 'Error al aplicar el descuento 2x1 en el carrito. Por favor, intenta de nuevo.' }), { status: 400 });
-                    }
+            // Aplicar cupón manual al carrito si el cliente ingresó uno
+            if (body.coupon_code) {
+                const applyCouponRes = await fetch(`${WC_URL}/wp-json/wc/store/v1/cart/apply-coupon`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Nonce': nonce, 'Cart-Token': cartToken, ...forwardHeaders },
+                    body: JSON.stringify({ code: body.coupon_code })
+                });
+                cartToken = applyCouponRes.headers.get('Cart-Token') || cartToken;
+                if (!applyCouponRes.ok) {
+                    const couponErr = await applyCouponRes.json().catch(() => ({}));
+                    console.warn('[API Store Checkout] No se pudo aplicar el cupón manual:', couponErr.message || 'Error desconocido');
+                } else {
+                    console.log('[API Store Checkout] Cupón manual aplicado en WooCommerce:', body.coupon_code);
                 }
             }
         } catch (err: any) {
-            console.error('[2x1 Escalera] Error calculando descuento server-side:', err.message);
-            return new Response(
-                JSON.stringify({ error: 'Error interno de red al calcular promociones. Por favor, intenta nuevamente.' }),
-                { status: 500 }
-            );
+            console.error('[API Store Checkout] Error aplicando cupón manual:', err.message);
         }
         // ─────────────────────────────────────────────────────────────────────────────
 
@@ -412,14 +322,7 @@ export const POST: APIRoute = async ({ request, clientAddress }) => {
             );
         }
 
-        // 5. Borrar el cupón temporal 2x1 (si se creó) → WooCommerce queda limpio
-        if (tempCouponId) {
-            wcFetch(`coupons/${tempCouponId}?force=true`, { method: 'DELETE' })
-                .then(() => console.log(`[2x1 Escalera] Cupón temporal ${tempCouponCode} eliminado.`))
-                .catch((e: any) => console.warn('[2x1 Escalera] No se pudo eliminar cupón temporal:', e.message));
-        }
-
-        // 6. (Híbrido) Inyectar Meta Datos de Cédula y capturar order_key para el fallback
+        // 5. (Híbrido) Inyectar Meta Datos de Cédula y capturar order_key para el fallback
         // wcFetch retorna el JSON directamente (no un Response), o null si hay error
         let orderKey = '';
         let fullOrderData = null;

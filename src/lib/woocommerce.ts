@@ -583,7 +583,7 @@ function mapV3ToStore(p: any, isLightweight = true) {
         if (prices.length > 0) rawPrice = Math.min(...prices);
     }
 
-    const inclusivePrice = hasTax ? Math.round(rawPrice * 1.19) : Math.round(rawPrice);
+    const inclusivePrice = Math.round(rawPrice);
 
     // NUEVO: Soporte para WPC Additional Variation Images
     const wpcImagesMap: Record<string, any[]> = {};
@@ -634,9 +634,9 @@ function mapV3ToStore(p: any, isLightweight = true) {
         prices: {
             price: (inclusivePrice || 0).toString(),
             regular_price: p.regular_price
-                ? Math.round(parseFloat(p.regular_price) * (hasTax ? 1.19 : 1)).toString()
+                ? Math.round(parseFloat(p.regular_price)).toString()
                 : (p.on_sale ? "" : (inclusivePrice || 0).toString()),
-            sale_price: p.sale_price ? Math.round(parseFloat(p.sale_price) * (hasTax ? 1.19 : 1)).toString() : "",
+            sale_price: p.sale_price ? Math.round(parseFloat(p.sale_price)).toString() : "",
             currency_code: "COP",
             currency_symbol: "$",
             currency_minor_unit: 0,
@@ -677,9 +677,9 @@ function mapV3ToStore(p: any, isLightweight = true) {
         cross_sell_ids: p.cross_sell_ids || [],
         variations: isLightweight ? [] : (p.variations_data?.map((v: any) => {
             const vRawPrice = parseFloat(v.price || v.regular_price || "0");
-            const vIncPrice = hasTax ? Math.round(vRawPrice * 1.19) : Math.round(vRawPrice);
+            const vIncPrice = Math.round(vRawPrice);
             const vRegRaw = parseFloat(v.regular_price || v.price || "0");
-            const vIncRegPrice = hasTax ? Math.round(vRegRaw * 1.19) : Math.round(vRegRaw);
+            const vIncRegPrice = Math.round(vRegRaw);
 
             return {
                 id: v.id,
@@ -830,10 +830,10 @@ function mapV3ToStore(p: any, isLightweight = true) {
         });
 
         if (maxRegular > 0) {
-            mapped.prices.regular_price = Math.round(maxRegular * (hasTax ? 1.19 : 1)).toString();
+            mapped.prices.regular_price = Math.round(maxRegular).toString();
         }
         if (minPrice !== Infinity) {
-            mapped.prices.price = Math.round(minPrice * (hasTax ? 1.19 : 1)).toString();
+            mapped.prices.price = Math.round(minPrice).toString();
         }
     }
 
