@@ -4,6 +4,10 @@
  */
 
 import dns from 'node:dns';
+import pLimit from 'p-limit';
+
+const wcLimit = pLimit(3); // Limitamos a 3 peticiones concurrentes a WordPress para no tumbar la DB de Hostinger
+
 
 // Resolver global de DNS públicas (Google / Cloudflare) para tienda.winstonandharrystore.com
 // Esto soluciona los problemas de envenenamiento de DNS local o enrutadores locales que devuelven IPs inactivas.
@@ -217,6 +221,10 @@ async function setBuildCache(url: string, data: any) {
 }
 
 export async function wcFetch(path: string, options: RequestInit = {}, retries = 3, delay = 1500) {
+    return wcLimit(() => _wcFetch(path, options, retries, delay));
+}
+
+async function _wcFetch(path: string, options: RequestInit = {}, retries = 3, delay = 1500) {
     // Leemos las claves en RUNTIME
     const CK = (getEnv('WC_CONSUMER_KEY') || getEnv('WP_CONSUMER_KEY') || "").trim();
     const CS = (getEnv('WC_CONSUMER_SECRET') || getEnv('WP_CONSUMER_SECRET') || "").trim();
