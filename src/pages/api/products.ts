@@ -76,10 +76,10 @@ export const GET: APIRoute = async ({ url }) => {
                 throw fetchErr;
             }
         }
-        // Ordenamiento de productos nuevos (<= 30 días) primero
+        // Ordenamiento de productos nuevos (<= 60 días) primero
         if (allProducts && allProducts.length > 0) {
             const now = new Date();
-            const thirtyDaysAgo = new Date(now.getTime() - (30 * 24 * 60 * 60 * 1000));
+            const thirtyDaysAgo = new Date(now.getTime() - (60 * 24 * 60 * 60 * 1000));
             
             const newProducts: any[] = [];
             const otherProducts: any[] = [];

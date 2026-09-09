@@ -501,7 +501,7 @@ export default function ProductCard({ product, isSelected, onSelectionToggle, on
                                 const created = new Date(product.date_created);
                                 const now = new Date();
                                 const days = (now.getTime() - created.getTime()) / (1000 * 60 * 60 * 24);
-                                if (days <= 30) {
+                                if (days <= 60) {
                                     return (
                                         <div className="badge new-badge">
                                             NUEVO
