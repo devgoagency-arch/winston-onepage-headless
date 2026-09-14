@@ -49,7 +49,7 @@ export default function OrderConfirmation() {
                         setOrder(orderData); // Siempre settear la orden completa
                         
                         if (!sessionStorage.getItem('tracked_order_' + orderId)) {
-                            const validStatuses = ['processing', 'completed', 'on-hold'];
+                            const validStatuses = ['processing', 'completed'];
                             const isZeroOrder = parseColPrice(orderData.total) === 0;
                             if (validStatuses.includes(orderData.status) || isZeroOrder) {
                                 dispatchWhenReady(orderData);
@@ -113,7 +113,7 @@ export default function OrderConfirmation() {
         }, {
             // Pasar email como userData para mejorar el matching
             em: order.email?.toLowerCase().trim()
-        });
+        }, String(order.id));
 
         sessionStorage.setItem('tracked_order_' + order.id, 'true');
     }

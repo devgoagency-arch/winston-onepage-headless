@@ -8,6 +8,7 @@ export const prerender = false;
 
 import type { APIRoute } from 'astro';
 import { sendMetaServerEvent } from '../../lib/metaEvents';
+import { wcFetch } from '../../lib/woocommerce';
 
 export const POST: APIRoute = async ({ request }) => {
     try {
@@ -20,6 +21,45 @@ export const POST: APIRoute = async ({ request }) => {
                 headers: { 'Content-Type': 'application/json' },
             });
         }
+
+        // --- CAPI SERVER-SIDE LOCK PARA COMPRAS ---
+        if (eventName === 'Purchase') {
+            try {
+                const orderData = await wcFetch(`/orders/${eventId}`);
+                if (!orderData || !orderData.id) {
+                    console.error(`[MetaCAP] Orden ${eventId} no encontrada para validación CAPI.`);
+                    return new Response(JSON.stringify({ error: 'Order not found for CAPI lock' }), { status: 400 });
+                }
+
+                const validStatuses = ['processing', 'completed'];
+                if (!validStatuses.includes(orderData.status) && parseFloat(orderData.total || '0') > 0) {
+                    console.error(`[MetaCAP] Orden ${eventId} tiene estado inválido (${orderData.status}) para Purchase.`);
+                    return new Response(JSON.stringify({ error: 'Order status invalid for Purchase' }), { status: 400 });
+                }
+
+                const isSent = orderData.meta_data?.some((m: any) => m.key === '_meta_capi_sent' && m.value === 'true');
+                if (isSent) {
+                    console.log(`[MetaCAP] Evento Purchase para orden ${eventId} ya fue enviado previamente. Ignorando.`);
+                    return new Response(JSON.stringify({ ok: true, message: 'Already tracked' }), { 
+                        status: 200,
+                        headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' }
+                    });
+                }
+
+                // Escribir el lock en WooCommerce
+                await wcFetch(`/orders/${eventId}`, {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        meta_data: [{ key: '_meta_capi_sent', value: 'true' }]
+                    })
+                });
+            } catch (err: any) {
+                console.error(`[MetaCAP] Error al procesar lock para la orden ${eventId}:`, err.message);
+                // Permitimos que continúe si WooCommerce falla para no perder el evento si es fallo temporal de la API
+            }
+        }
+        // ------------------------------------------
 
         // Extraer IP real del visitante (Vercel pone la IP en x-forwarded-for)
         const clientIp =

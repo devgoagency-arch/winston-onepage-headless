@@ -30,16 +30,18 @@ function normalizeValue(value: any): number {
  * @param eventName  Nombre estándar Meta: 'PageView', 'ViewContent', 'AddToCart', etc.
  * @param customData Parámetros del evento (value, currency, content_ids, etc.)
  * @param userData   Datos opcionales del usuario para mejorar el matching (email hasheado, etc.)
+ * @param customEventId ID del evento personalizado (ej: order.id para deduplicación exacta)
  */
 export function trackMetaEvent(
     eventName: string,
     customData: Record<string, any> = {},
-    userData: Record<string, string> = {}
+    userData: Record<string, string> = {},
+    customEventId?: string
 ): void {
     if (typeof window === 'undefined') return;
 
-    // 1. Generar event_id único para deduplicación browser ↔ servidor
-    const eventId = generateEventId(eventName);
+    // 1. Generar event_id único para deduplicación browser ↔ servidor (o usar el custom)
+    const eventId = customEventId || generateEventId(eventName);
 
     // 2. Normalizar parámetros obligatorios
     const normalized: Record<string, any> = { ...customData };
