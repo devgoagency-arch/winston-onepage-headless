@@ -46,20 +46,37 @@ export const POST: APIRoute = async ({ request }) => {
                     });
                 }
 
-                // Escribir el lock en WooCommerce
-                await wcFetch(`/orders/${eventId}`, {
+                // Escribir el lock en WooCommerce — SI FALLA, ABORTAMOS para no disparar el evento sin lock
+                const lockResult = await wcFetch(`/orders/${eventId}`, {
                     method: 'PUT',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
                         meta_data: [{ key: '_meta_capi_sent', value: 'true' }]
                     })
                 });
+
+                if (!lockResult || lockResult.code) {
+                    // wcFetch devuelve el JSON de error de WooCommerce si hay fallo de auth/permisos
+                    const errorMsg = lockResult?.message || 'Lock write failed (unknown error)';
+                    console.error(`[MetaCAP] ⛔ LOCK FALLIDO para orden ${eventId}: ${errorMsg}`);
+                    console.error(`[MetaCAP] ⛔ Abortando envío a Meta para evitar duplicados sin lock. Revisa permisos de la API key de WooCommerce (necesita Lectura+Escritura).`);
+                    return new Response(JSON.stringify({ error: 'WooCommerce lock failed — event NOT sent to Meta', details: errorMsg }), {
+                        status: 503,
+                        headers: { 'Content-Type': 'application/json' }
+                    });
+                }
+
+                console.log(`[MetaCAP] ✅ Lock guardado correctamente en WooCommerce para orden ${eventId}.`);
             } catch (err: any) {
-                console.error(`[MetaCAP] Error al procesar lock para la orden ${eventId}:`, err.message);
-                // Permitimos que continúe si WooCommerce falla para no perder el evento si es fallo temporal de la API
+                console.error(`[MetaCAP] ⛔ Excepción al escribir lock para orden ${eventId}:`, err.message);
+                return new Response(JSON.stringify({ error: 'WooCommerce lock exception — event NOT sent to Meta', details: err.message }), {
+                    status: 503,
+                    headers: { 'Content-Type': 'application/json' }
+                });
             }
         }
         // ------------------------------------------
+
 
         // Extraer IP real del visitante (Vercel pone la IP en x-forwarded-for)
         const clientIp =
