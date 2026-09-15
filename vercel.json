@@ -62,11 +62,6 @@
   ],
   "redirects": [
     {
-      "source": "/:path+/",
-      "destination": "/:path+",
-      "permanent": true
-    },
-    {
       "source": "/zapatos",
       "destination": "/categoria/zapatos-cuero-hombre",
       "permanent": true
@@ -514,6 +509,11 @@
     {
       "source": "/product/:slug",
       "destination": "/productos/:slug",
+      "permanent": true
+    },
+    {
+      "source": "/:path+/",
+      "destination": "/:path+",
       "permanent": true
     }
   ],

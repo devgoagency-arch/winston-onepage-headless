@@ -33,7 +33,7 @@ function flattenCategoryUrl(url: string) {
     if (clean.includes("/product-category/")) {
         const segments = clean.split("/").filter(Boolean);
         const lastSegment = segments[segments.length - 1];
-        return `/categoria/${lastSegment}/`;
+        return `/categoria/${lastSegment}`;
     }
 
     if (!clean || clean === "" || clean === "/") return "/";
