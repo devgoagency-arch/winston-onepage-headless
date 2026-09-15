@@ -38,6 +38,7 @@ function flattenCategoryUrl(url: string) {
 
     if (!clean || clean === "" || clean === "/") return "/";
     if (!clean.startsWith("/")) clean = "/" + clean;
+    clean = clean.replace(/\/$/, '');
     return clean;
 }
 ---
