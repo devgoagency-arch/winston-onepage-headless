@@ -41,25 +41,57 @@ export default function OrderConfirmation() {
         const params = new URLSearchParams(window.location.search);
         orderId = orderId || params.get('order_id') || params.get('external_reference') || '';
 
+        const mpStatus = params.get('status') || params.get('collection_status');
+        const isApprovedInUrl = mpStatus === 'approved';
+
         if (orderId) {
-            fetch(`/api/get-order?id=${orderId}`)
-                .then(r => r.json())
-                .then(orderData => {
+            const triggerTracking = (orderData: any) => {
+                if (window.location.hostname === 'www.winstonandharrystore.com') {
+                    dispatchWhenReady(orderData);
+                } else {
+                    console.log('[Tracking Debug] Eventos prevenidos. Hostname no autorizado:', window.location.hostname);
+                }
+            };
+
+            const checkOrder = async (attempts = 0) => {
+                try {
+                    const r = await fetch(`/api/get-order?id=${orderId}`);
+                    const orderData = await r.json();
+                    
                     if (orderData?.id) {
                         setOrder(orderData); // Siempre settear la orden completa
                         
-                        if (!sessionStorage.getItem('tracked_order_' + orderId)) {
-                            const validStatuses = ['processing', 'completed'];
+                        let isTracked = false;
+                        try {
+                            isTracked = localStorage.getItem('tracked_order_' + orderData.id) === 'true';
+                        } catch(e) {}
+                        
+                        if (!isTracked) {
+                            const validStatuses = ['processing', 'completed', 'transaccion-aprobada'];
                             const isZeroOrder = parseColPrice(orderData.total) === 0;
-                            if (validStatuses.includes(orderData.status) || isZeroOrder) {
-                                dispatchWhenReady(orderData);
+                            
+                            const isValidStatus = validStatuses.includes(orderData.status);
+                            const isPending = orderData.status === 'pending';
+                            
+                            if (isValidStatus || isZeroOrder) {
+                                triggerTracking(orderData);
+                            } else if (isPending && attempts < 7) {
+                                // Reintento cada 2s hasta ~14s (7 intentos)
+                                setTimeout(() => checkOrder(attempts + 1), 2000);
+                            } else if (isPending && isApprovedInUrl) {
+                                // Si agotó reintentos y sigue pending, pero la URL de Mercado Pago dice approved
+                                triggerTracking(orderData);
                             } else {
-                                console.log('[GA4 Purchase Debug] Compra no trackeada debido a estado:', orderData.status);
+                                console.log('[Tracking Debug] Compra no trackeada debido a estado:', orderData.status);
                             }
                         }
                     }
-                })
-                .catch(err => console.error('Error fetching order for tracking:', err));
+                } catch(err) {
+                    console.error('Error fetching order for tracking:', err);
+                }
+            };
+
+            checkOrder();
         }
     }, []);
 
@@ -115,7 +147,11 @@ export default function OrderConfirmation() {
             em: order.email?.toLowerCase().trim()
         }, String(order.id));
 
-        sessionStorage.setItem('tracked_order_' + order.id, 'true');
+        try {
+            localStorage.setItem('tracked_order_' + order.id, 'true');
+        } catch(e) {
+            console.warn('[Tracking Debug] localStorage no disponible');
+        }
     }
 
     return (
