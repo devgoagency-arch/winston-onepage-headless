@@ -25,12 +25,51 @@ function normalizeValue(value: any): number {
 }
 
 /**
+ * Lee las cookies de Meta click ID (_fbc) y browser ID (_fbp).
+ * - _fbc: si no existe cookie pero la URL tiene fbclid, lo construye manualmente
+ *   con el formato oficial fb.1.<timestamp>.<fbclid> (cubre Safari/iOS con ITP).
+ * - _fbp: lo genera el Pixel de Meta en el primer PageView; si no existe, se omite.
+ * Ambos se devuelven sin hashear — Meta los requiere en texto plano en user_data.
+ */
+function getMetaClickIds(): { fbc?: string; fbp?: string } {
+    if (typeof document === 'undefined') return {};
+
+    const getCookie = (name: string): string | undefined => {
+        const match = document.cookie
+            .split(';')
+            .map(c => c.trim())
+            .find(c => c.startsWith(name + '='));
+        return match ? decodeURIComponent(match.split('=').slice(1).join('=')) : undefined;
+    };
+
+    let fbc = getCookie('_fbc');
+
+    // Si no hay cookie _fbc pero la URL trae fbclid (caso típico en Safari con ITP),
+    // construir el fbc manualmente con el formato estándar de Meta.
+    if (!fbc) {
+        const fbclid = new URLSearchParams(window.location.search).get('fbclid');
+        if (fbclid) {
+            fbc = `fb.1.${Date.now()}.${fbclid}`;
+        }
+    }
+
+    const fbp = getCookie('_fbp');
+
+    // Solo incluir los campos que existen — nunca dejar undefined en el payload
+    const result: { fbc?: string; fbp?: string } = {};
+    if (fbc) result.fbc = fbc;
+    if (fbp) result.fbp = fbp;
+    return result;
+}
+
+/**
  * Dispara un evento Meta Pixel en el browser Y lo envía server-side vía /api/meta-event.
  *
- * @param eventName  Nombre estándar Meta: 'PageView', 'ViewContent', 'AddToCart', etc.
- * @param customData Parámetros del evento (value, currency, content_ids, etc.)
- * @param userData   Datos opcionales del usuario para mejorar el matching (email hasheado, etc.)
- * @param customEventId ID del evento personalizado (ej: order.id para deduplicación exacta)
+ * @param eventName     Nombre estándar Meta: 'PageView', 'ViewContent', 'AddToCart', etc.
+ * @param customData    Parámetros del evento (value, currency, content_ids, etc.)
+ * @param userData      Datos PII del usuario para hashear SHA-256 en el servidor (em, ph).
+ *                      Solo disponibles en eventos post-identificación (checkout, compra).
+ * @param customEventId ID personalizado para deduplicación exacta (ej: order.id).
  */
 export function trackMetaEvent(
     eventName: string,
@@ -51,14 +90,19 @@ export function trackMetaEvent(
     // currency: siempre 'COP' (ISO 4217), nunca símbolo ni número
     normalized.currency = 'COP';
 
-    // 3. Browser: fbq('track', eventName, customData, { eventID })
+    // 3. Leer cookies de Meta (fbc/fbp) — texto plano, NO se hashean
+    const clientIds = getMetaClickIds();
+
+    // 4. Browser: fbq('track', eventName, customData, { eventID })
     //    El tercer argumento { eventID } es lo que Meta usa para deduplicar
     if (typeof (window as any).fbq === 'function') {
         (window as any).fbq('track', eventName, normalized, { eventID: eventId });
     }
 
-    // 4. Server-side: fire-and-forget a /api/meta-event
-    //    No await — no bloquea la UI aunque falle
+    // 5. Server-side: fire-and-forget a /api/meta-event
+    //    - userData: PII que el servidor hasheará SHA-256 (em, ph)
+    //    - clientIds: cookies Meta que el servidor pasa en texto plano (fbc, fbp)
+    //    Separados para que el servidor no aplique hash donde no debe.
     fetch('/api/meta-event', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -68,6 +112,7 @@ export function trackMetaEvent(
             eventSourceUrl: window.location.href,
             customData: normalized,
             userData,
+            clientIds,
         }),
     }).catch((e) => {
         // Silencioso: el browser-side ya trackea aunque el server falle

@@ -13,7 +13,7 @@ import { wcFetch } from '../../lib/woocommerce';
 export const POST: APIRoute = async ({ request }) => {
     try {
         const body = await request.json();
-        const { eventName, eventId, eventSourceUrl, customData, userData } = body;
+        const { eventName, eventId, eventSourceUrl, customData, userData, clientIds } = body;
 
         if (!eventName || !eventId) {
             return new Response(JSON.stringify({ error: 'eventName y eventId son requeridos' }), {
@@ -93,6 +93,7 @@ export const POST: APIRoute = async ({ request }) => {
             clientIp,
             clientUserAgent,
             userData: userData || {},
+            clientIds: clientIds || {},
             customData: customData || {},
         });
 
