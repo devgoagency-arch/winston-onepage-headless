@@ -104,6 +104,16 @@ export default function OrderConfirmation() {
 
     // Extraer la lógica de tracking a una función separada para reutilizarla
     function fireTrackingEvents(order: any) {
+        // Marcar ANTES de disparar cualquier evento para cerrar la ventana de carrera
+        // donde un segundo checkOrder podría pasar el guard !isTracked antes de que
+        // el primer disparo completara el setItem. Trade-off aceptado: si los eventos
+        // fallan después, la orden queda marcada — pero previene duplicados a Meta.
+        try {
+            localStorage.setItem('tracked_order_' + order.id, 'true');
+        } catch(e) {
+            console.warn('[Tracking Debug] localStorage no disponible');
+        }
+
         const orderTotal = parseColPrice(order.total);
         const orderItems = order.items || [];
 
@@ -146,12 +156,6 @@ export default function OrderConfirmation() {
             // Pasar email como userData para mejorar el matching
             em: order.email?.toLowerCase().trim()
         }, String(order.id));
-
-        try {
-            localStorage.setItem('tracked_order_' + order.id, 'true');
-        } catch(e) {
-            console.warn('[Tracking Debug] localStorage no disponible');
-        }
     }
 
     return (

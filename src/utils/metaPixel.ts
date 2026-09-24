@@ -53,7 +53,26 @@ function getMetaClickIds(): { fbc?: string; fbp?: string } {
         }
     }
 
-    const fbp = getCookie('_fbp');
+    let fbp = getCookie('_fbp');
+
+    // Si _fbp no existe (usuario nuevo que aún no tuvo tiempo de cargar el SDK de Meta,
+    // que se inicializa 2.5s después del load), generamos una sintética con el mismo
+    // formato y algoritmo que usa fbevents.js internamente:
+    //   fb.1.<timestamp_ms>.<uint32_sin_signo>
+    // El SDK detecta la cookie en fbq('init', ...) con `if (existing) return existing`
+    // y la usa sin modificar. Solo se activa cuando _fbp no existe — nunca sobrescribe.
+    if (!fbp) {
+        // Math.random() * 0x100000000 | 0 genera un entero sin signo de 32 bits,
+        // idéntico al algoritmo interno de fbevents.js
+        const syntheticFbp = `fb.1.${Date.now()}.${Math.random() * 0x100000000 | 0}`;
+        try {
+            const expires = new Date(Date.now() + 90 * 24 * 60 * 60 * 1000).toUTCString();
+            document.cookie = `_fbp=${syntheticFbp}; expires=${expires}; path=/; SameSite=Lax`;
+            fbp = syntheticFbp;
+        } catch (e) {
+            // Si no se puede escribir la cookie (navegadores muy restrictivos), omitir fbp
+        }
+    }
 
     // Solo incluir los campos que existen — nunca dejar undefined en el payload
     const result: { fbc?: string; fbp?: string } = {};
