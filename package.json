@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "fetch:menus": "node scripts/fetch-menus.mjs",
+    "catalog": "node scripts/generate-catalog.mjs",
     "prebuild": "node scripts/fetch-menus.mjs",
     "build": "astro build",
     "preview": "astro preview",

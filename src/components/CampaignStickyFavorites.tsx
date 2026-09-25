@@ -20,7 +20,7 @@ const CATEGORIES = [
     { id: '921', name: 'Regalos menos de $350K', shortName: '-$300k', slug: 'menos-de-350000', maxPrice: 300000 },
     { id: '955', name: 'Suéteres y Chalecos', shortName: 'Suéteres', slug: 'sueteres-chalecos-hombre' },
     { id: '63', name: 'Zapatos', shortName: 'Zapatos', slug: 'zapatos-cuero-hombre' },
-    { id: '190', name: 'Maletas', shortName: 'Maletas', slug: 'maletas-morrales-cuero' },
+    { id: '190', name: 'Maletas', shortName: 'Maletas', slug: 'maletas-morrales-cuero-hombre' },
     { id: '249', name: 'Ropa', shortName: 'Ropa', slug: 'ropa-hombre-colombia' }
 ];
 
@@ -88,7 +88,7 @@ export default function CampaignStickyFavorites({
   const [categorySlugs, setCategorySlugs] = useState<Record<string, string>>({
     '955': 'sueteres-chalecos-hombre',
     '63': 'zapatos-cuero-hombre',
-    '190': 'maletas-morrales-cuero',
+    '190': 'maletas-morrales-cuero-hombre',
     '249': 'ropa-hombre-colombia',
     'all': 'tienda',
     '921': 'menos-de-350000'

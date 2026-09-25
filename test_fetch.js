@@ -1,0 +1,1 @@
+fetch('http://[::1]:4321/').then(r=>r.text()).then(t => { console.log(t.includes('/categoria/accesorios-hombre/') ? 'FAIL: Found trailing slash' : (t.includes('/categoria/accesorios-hombre') ? 'SUCCESS: No trailing slash' : 'MISSING: Not found')) }).catch(console.error)
