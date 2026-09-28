@@ -25,6 +25,32 @@ function hashData(value: string | undefined): string | undefined {
     return crypto.createHash('sha256').update(normalized).digest('hex');
 }
 
+/**
+ * Normaliza un número de teléfono colombiano al formato E.164 sin "+":
+ * solo dígitos, con código de país 57 al inicio.
+ *
+ * Casos manejados:
+ *   "3013902574"        → "573013902574"  (10 dígitos locales → prepend 57)
+ *   "+57 301 390-2574"  → "573013902574"  (limpia y detecta 12 dígitos con 57)
+ *   "57 3013902574"     → "573013902574"  (idem con espacio)
+ *   "(301) 390-2574"    → "573013902574"  (limpia paréntesis y guiones)
+ *
+ * Devuelve undefined si el resultado no tiene 10 ni 12 dígitos (con prefijo 57)
+ * para evitar hashear basura que Meta no puede usar para matching.
+ * En ningún caso se imprime el valor en texto plano en los logs.
+ */
+function normalizePhone(raw: string | undefined): string | undefined {
+    if (!raw) return undefined;
+    // Quitar todo lo que no sea dígito
+    const digits = raw.replace(/\D/g, '');
+    // 12 dígitos que ya empiezan con 57 → ya está en formato correcto
+    if (digits.startsWith('57') && digits.length === 12) return digits;
+    // 10 dígitos → número local colombiano, anteponer 57
+    if (digits.length === 10) return `57${digits}`;
+    // Cualquier otra longitud → inválido, omitir del payload
+    return undefined;
+}
+
 interface MetaEventPayload {
     eventName: string;
     eventId: string;
@@ -59,8 +85,23 @@ export async function sendMetaServerEvent(payload: MetaEventPayload): Promise<vo
     // - Campos PII (em, ph, etc.)  → hashear SHA-256
     // - IP y User-Agent            → texto plano, sin hashear (Meta los usa para matching)
     // - fbc y fbp                  → texto plano, sin hashear (son tokens de atribución)
+
+    // Pre-normalizar ph ANTES del hashing para garantizar formato E.164 sin "+".
+    // Si normalizePhone devuelve undefined (número vacío, muy corto o formato inválido),
+    // se elimina la clave del mapa → ph queda fuera del payload final sin romper nada.
+    // El valor raw nunca se imprime en logs: solo el hash resultante sale en el payload.
+    const normalizedUserData = { ...(payload.userData || {}) };
+    if ('ph' in normalizedUserData) {
+        const normalizedPhone = normalizePhone(normalizedUserData.ph);
+        if (normalizedPhone) {
+            normalizedUserData.ph = normalizedPhone;
+        } else {
+            delete normalizedUserData.ph; // número inválido → omitir ph del payload
+        }
+    }
+
     const hashedPII = Object.fromEntries(
-        Object.entries(payload.userData || {})
+        Object.entries(normalizedUserData)
             .filter(([k]) => PII_FIELDS.has(k))
             .map(([k, v]) => [k, hashData(v)])
             .filter((entry): entry is [string, string] => entry[1] !== undefined)

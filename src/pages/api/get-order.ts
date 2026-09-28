@@ -62,6 +62,7 @@ export const GET: APIRoute = async ({ url, request }) => {
             shipping_total: wcOrder.shipping_total,
             total_tax: wcOrder.total_tax,
             email: wcOrder.billing?.email,
+            phone: wcOrder.billing?.phone || null,
             items: wcOrder.line_items?.map((item: any) => ({
                 id: item.product_id,
                 name: item.name,

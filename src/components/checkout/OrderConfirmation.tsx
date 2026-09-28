@@ -19,6 +19,7 @@ interface OrderData {
     id: number;
     number: string;
     email: string;
+    phone?: string | null;
     total: any;
     shipping_total?: any;
     total_tax?: any;
@@ -153,8 +154,15 @@ export default function OrderConfirmation() {
             currency: 'COP',
             num_items: orderItems.reduce((acc: number, item: any) => acc + (item.quantity || 1), 0)
         }, {
-            // Pasar email como userData para mejorar el matching
-            em: order.email?.toLowerCase().trim()
+            // Datos de identidad para Advanced Matching de Meta.
+            // El servidor los hashea SHA-256 en metaEvents.ts antes de enviar a Meta.
+            // Si alguno está ausente, se omite del payload (nunca se pasa undefined).
+            em: order.email?.toLowerCase().trim() || undefined,
+            // order.phone viene de get-order.ts (billing.phone de WooCommerce).
+            // Si el pedido no tiene teléfono, order.phone es null → se omite ph.
+            // La normalización (quitar guiones, prefijo 57, validar longitud)
+            // la hace metaEvents.ts del lado servidor — aquí se pasa el valor raw.
+            ...(order.phone ? { ph: order.phone } : {}),
         }, String(order.id));
     }
 
