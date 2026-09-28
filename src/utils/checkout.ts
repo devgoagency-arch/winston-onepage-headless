@@ -67,13 +67,18 @@ export async function redirectToCheckout(path: string = '/', coupon: string = ''
         const cartValue = items.reduce((acc: number, item: any) => acc + (item.price * item.quantity), 0);
         const itemIds = items.map((item: any) => item.id.toString());
         
+        const { userSession } = await import('../store/user');
+        const session = userSession.get();
+        const userData: Record<string, string> = {};
+        if (session.user_email) userData.em = session.user_email;
+
         trackMetaEvent('InitiateCheckout', {
             content_ids: itemIds,
             content_type: 'product',
             value: cartValue,
             currency: 'COP',
             num_items: items.reduce((acc: number, item: any) => acc + item.quantity, 0)
-        });
+        }, userData);
     }
 
     window.location.href = finalUrl;

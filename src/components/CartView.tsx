@@ -2,6 +2,7 @@
 import React, { useMemo } from 'react';
 import { useStore } from '@nanostores/react';
 import { cartItems, removeFromCart, updateQuantity, updateCartItemVariation, calculateComboDiscount, calculateSweater2x1Discount, type CartItem } from '../store/cart';
+import { userSession } from '../store/user';
 import { redirectToCheckout } from '../utils/checkout';
 import { trackMetaEvent } from '../utils/metaPixel';
 export default function CartView() {
@@ -99,9 +100,14 @@ React.useEffect(() => {
                 currency: 'COP', value: total,
                 items: items.map(item => ({ item_id: String(item.id), item_name: item.name, price: item.price, quantity: item.quantity }))
             });
+
+            const session = userSession.get();
+            const userData: Record<string, string> = {};
+            if (session.user_email) userData.em = session.user_email;
+
             trackMetaEvent('InitiateCheckout', {
                 content_ids: items.map(item => String(item.id)), content_type: 'product', value: total, currency: 'COP', num_items: items.length
-            });
+            }, userData);
         }
         window.location.href = couponCode ? `/checkout?coupon=${couponCode}` : '/checkout';
     };

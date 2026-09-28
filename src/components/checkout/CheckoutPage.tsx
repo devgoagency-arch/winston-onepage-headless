@@ -206,13 +206,19 @@ export default function CheckoutPage() {
             }
         });
         
+        const session = userSession.get();
+        const userData: Record<string, string> = {};
+        if (session.user_email) userData.em = session.user_email;
+        // Si quisieras agregar ph, se podría hacer si está en form.phone o userSession, 
+        // pero la sesión de login (WP) a menudo no trae phone, solo email.
+
         trackMetaEvent('InitiateCheckout', {
             content_ids: items.map(item => String(item.id)),
             content_type: 'product',
             value: subtotal,
             currency: 'COP',
             num_items: items.reduce((acc, i) => acc + i.quantity, 0)
-        });
+        }, userData);
 
         // 4. Log de éxito
         console.log("✅ GTM TRACKING EXITOSO: begin_checkout & InitiateCheckout");
