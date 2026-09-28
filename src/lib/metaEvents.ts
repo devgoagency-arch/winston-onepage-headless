@@ -131,6 +131,15 @@ export async function sendMetaServerEvent(payload: MetaEventPayload): Promise<vo
     };
 
     try {
+        // [DEBUG LOGGING] Mostrar qué keys se están enviando y si están hasheadas
+        const debugUserData = Object.fromEntries(
+            Object.entries(user_data).map(([k, v]) => [
+                k, 
+                v ? (PII_FIELDS.has(k) ? `[HASHED SHA-256 length:${v.length}]` : `[PLAIN length:${v.length}]`) : 'null'
+            ])
+        );
+        console.log(`[MetaCAP Debug] Payload userData a enviar para ${payload.eventName}:`, debugUserData);
+
         const res = await fetch(
             `https://graph.facebook.com/v19.0/${PIXEL_ID}/events?access_token=${accessToken}`,
             {
@@ -139,13 +148,17 @@ export async function sendMetaServerEvent(payload: MetaEventPayload): Promise<vo
                 body: JSON.stringify(body),
             }
         );
+        
+        const responseData = await res.json();
+        
         if (!res.ok) {
-            const err = await res.text();
-            console.error('[MetaCAP] Error de la API:', err);
+            console.error('[MetaCAP] Error de la API:', JSON.stringify(responseData));
         } else {
             console.log(`[MetaCAP] ✅ Evento "${payload.eventName}" enviado (id: ${payload.eventId})`);
+            // [DEBUG LOGGING] Imprimir la respuesta exacta de Meta para ver warnings y events_received
+            console.log(`[MetaCAP Debug] Respuesta de Meta:`, JSON.stringify(responseData));
         }
-    } catch (e) {
-        console.error('[MetaCAP] Fetch error:', e);
+    } catch (e: any) {
+        console.error('[MetaCAP] Fetch error:', e?.message || e);
     }
 }
