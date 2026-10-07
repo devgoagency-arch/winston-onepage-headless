@@ -115,6 +115,13 @@ export function trackMetaEvent(
     // 4. Browser: fbq('track', eventName, customData, { eventID })
     //    El tercer argumento { eventID } es lo que Meta usa para deduplicar
     if (typeof (window as any).fbq === 'function') {
+        if (eventName === 'Purchase') {
+            console.log('[DEBUG Meta Pixel] Disparando fbq() para Purchase. Parámetros exactos:', {
+                eventName,
+                customData: normalized,
+                options: { eventID: eventId }
+            });
+        }
         (window as any).fbq('track', eventName, normalized, { eventID: eventId });
     }
 

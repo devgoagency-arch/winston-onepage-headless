@@ -57,7 +57,7 @@ const getEnv = (key: string) => {
            (typeof process !== 'undefined' ? process.env[`PUBLIC_${key}`] : undefined);
 };
 
-export const PUBLIC_WP_URL = import.meta.env.PUBLIC_WP_URL || 'https://tienda.winstonandharrystore.com';
+export const PUBLIC_WP_URL = (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.PUBLIC_WP_URL) || 'https://tienda.winstonandharrystore.com';
 
 // Función auxiliar para parsear IDs de imágenes de variaciones (Soporta CSV, JSON array y Array directo)
 function parseVariationImageIds(metaVal: any): string[] {
@@ -454,9 +454,11 @@ function mapV3ToStore(p: any, isLightweight = true) {
                     ...v,
                     // Usar la imagen de la REST API v3 si existe
                     image: vDetails?.image || v.image || null,
-                    stock_status: v.is_in_stock !== undefined 
+                    manage_stock: vDetails?.manage_stock ?? v.manage_stock,
+                    stock_quantity: vDetails?.stock_quantity ?? v.stock_quantity,
+                    stock_status: vDetails?.stock_status ?? (v.is_in_stock !== undefined 
                         ? (v.is_in_stock ? 'instock' : 'outofstock') 
-                        : (v.stock_status || 'instock'),
+                        : (v.stock_status || 'instock')),
                     // Normalize variation prices
                     price: (vPrices.price && normalizePriceStr(vPrices.price) !== "0") ? normalizePriceStr(vPrices.price) : p.prices.price,
                     regular_price: (vPrices.regular_price && normalizePriceStr(vPrices.regular_price) !== "0") ? normalizePriceStr(vPrices.regular_price) : (vPrices.price ? normalizePriceStr(vPrices.price) : p.prices.regular_price),

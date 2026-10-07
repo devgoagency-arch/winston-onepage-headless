@@ -129,6 +129,8 @@ export default function CheckoutPage() {
     const [couponError, setCouponError] = useState('');
     const [couponLoading, setCouponLoading] = useState(false);
 
+    const [useSameForBilling, setUseSameForBilling] = useState(true);
+
     // Calcular opciones de ciudad en base al departamento seleccionado
     const billingCitiesOptions = useMemo(() => {
         if (!form.state) return [];
@@ -304,14 +306,15 @@ export default function CheckoutPage() {
         if (!form.document_id.trim()) e.document_id = 'Requerido';
         if (!form.email.trim() || !/\S+@\S+\.\S+/.test(form.email)) e.email = 'Email inválido';
         if (!form.phone.trim()) e.phone = 'Requerido';
-        if (!form.address_1.trim()) e.address_1 = 'Requerido';
-        if (!form.city.trim()) e.city = 'Requerido';
 
-        if (form.ship_to_different_address) {
-            if (!form.shipping_first_name.trim()) e.shipping_first_name = 'Requerido';
-            if (!form.shipping_last_name.trim()) e.shipping_last_name = 'Requerido';
-            if (!form.shipping_address_1.trim()) e.shipping_address_1 = 'Requerido';
-            if (!form.shipping_city.trim()) e.shipping_city = 'Requerido';
+        if (!form.shipping_address_1.trim()) e.shipping_address_1 = 'Requerido';
+        if (!form.shipping_city.trim()) e.shipping_city = 'Requerido';
+        if (!form.shipping_state.trim()) e.shipping_state = 'Requerido';
+
+        if (!useSameForBilling) {
+            if (!form.address_1.trim()) e.address_1 = 'Requerido';
+            if (!form.city.trim()) e.city = 'Requerido';
+            if (!form.state.trim()) e.state = 'Requerido';
         }
 
         setErrors(e);
@@ -320,15 +323,30 @@ export default function CheckoutPage() {
 
     const handleSubmit = async () => {
         if (!validate()) {
-            // Scroll to top or show error alert
             return;
         }
         setSubmitting(true);
         setServerError('');
 
         try {
+            const payloadForm = { ...form };
+            if (useSameForBilling) {
+                payloadForm.address_1 = form.shipping_address_1;
+                payloadForm.address_2 = form.shipping_address_2;
+                payloadForm.city = form.shipping_city;
+                payloadForm.state = form.shipping_state;
+                payloadForm.postcode = form.shipping_postcode;
+                payloadForm.ship_to_different_address = false;
+                payloadForm.shipping_first_name = form.first_name;
+                payloadForm.shipping_last_name = form.last_name;
+            } else {
+                payloadForm.ship_to_different_address = true;
+                payloadForm.shipping_first_name = form.first_name;
+                payloadForm.shipping_last_name = form.last_name;
+            }
+
             const payload = {
-                ...form,
+                ...payloadForm,
                 shipping_cost: shippingCost,
                 coupon_code: appliedCoupon?.code || null,
                 items: items.map(item => {
@@ -368,7 +386,6 @@ export default function CheckoutPage() {
             setStep('processing');
 
             // Redirigir a pasarela de pago
-            // payment_url viene de WooCommerce con el token de sesión correcto (válido tanto para Addi como para MercadoPago)
             window.location.href = data.payment_url;
 
         } catch (err: any) {
@@ -442,7 +459,7 @@ export default function CheckoutPage() {
 
                 {/* TÍTULO Y VOLVER (Pegado al formulario) */}
                 <div className="checkout-title-bar" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginTop: '20px', marginBottom: '10px', paddingBottom: '10px', borderBottom: '2px solid #f0f0f0' }}>
-                    <h1 style={{ margin: 0, fontSize: '1.5rem', color: '#155338' }}>DETALLES DE FACTURACIÓN</h1>
+                    <h1 style={{ margin: 0, fontSize: '1.5rem', color: '#155338' }}>FINALIZAR COMPRA</h1>
                     <a href="/carrito" className="back-to-cart" style={{ color: '#155338', fontWeight: 600, textDecoration: 'none', fontSize: '0.9rem' }}>
                         &larr; Volver al carrito
                     </a>
@@ -482,7 +499,7 @@ export default function CheckoutPage() {
                                     <div className="document-grid" style={{ display: 'grid', gridTemplateColumns: '100px 1fr', gap: '15px', marginBottom: '20px' }}>
                                         <div>
                                             <label className="standard-label">Tipo</label>
-                                            <select defaultValue="CC" className="checkout-select" onChange={(e) => { /* opcional guardar tipo */ }}>
+                                            <select defaultValue="CC" className="checkout-select" onChange={(e) => { set('document_type', e.target.value) }}>
                                                 <option value="CC">CC</option>
                                                 <option value="CE">CE</option>
                                                 <option value="NIT">NIT</option>
@@ -522,40 +539,39 @@ export default function CheckoutPage() {
                                     <div style={{ display: 'none' }}>
                                         <input type="hidden" value="CO" />
                                     </div>
-                                    <Field label="Dirección de la calle" field="address_1" form={form} errors={errors} set={set} required placeholder="Número de la casa y nombre de la calle" />
-                                    <Field label="Apartamento, habitación, etc. (opcional)" field="address_2" form={form} errors={errors} set={set} placeholder="Apto, Unidad, Edificio" />
+                                    
+                                    <h3 style={{ marginBottom: '15px', color: '#155338', fontSize: '1.2rem' }}>DATOS DE ENTREGA</h3>
+
+                                    <Field label="Dirección de entrega" field="shipping_address_1" form={form} errors={errors} set={set} required placeholder="Ej: Carrera 7A # 127C-63, Apto 101 Ed. Valbella" />
+                                    <Field label="Barrio" field="shipping_address_2" form={form} errors={errors} set={set} placeholder="Ej: Usaquén" />
 
                                     <div className="fields-grid">
-                                        <Field label="Departamento" field="state" form={form} errors={errors} set={set} options={COLOMBIA_STATES} required placeholder="Selecciona un Departamento" />
-                                        <Field label="Ciudad" field="city" form={form} errors={errors} set={set} options={billingCitiesOptions} required placeholder="Selecciona una Ciudad" />
+                                        <Field label="Departamento" field="shipping_state" form={form} errors={errors} set={set} options={COLOMBIA_STATES} required placeholder="Selecciona un Departamento" />
+                                        <Field label="Ciudad / Localidad" field="shipping_city" form={form} errors={errors} set={set} options={shippingCitiesOptions} required placeholder="Selecciona una Ciudad" />
                                     </div>
 
-                                    <Field label="Código Postal (Opcional)" field="postcode" form={form} errors={errors} set={set} />
                                     <Field label="Teléfono Celular" field="phone" form={form} errors={errors} set={set} type="tel" required />
 
-                                    <label className="checkbox-different-address" style={{ marginTop: '20px', display: 'block', fontSize: '11px', fontWeight: 600, color: '#555', textTransform: 'uppercase' }}>
+                                    <label className="checkbox-different-address" style={{ marginTop: '20px', display: 'block', fontSize: '12px', fontWeight: 600, color: '#333', textTransform: 'uppercase' }}>
                                         <input 
                                             type="checkbox" 
-                                            checked={form.ship_to_different_address}
-                                            onChange={(e) => setForm({...form, ship_to_different_address: e.target.checked})}
+                                            checked={useSameForBilling}
+                                            onChange={(e) => setUseSameForBilling(e.target.checked)}
                                             style={{ width: 'auto', marginRight: '8px' }}
                                         />
-                                        ¿ENVIAR A UNA DIRECCIÓN DIFERENTE?
+                                        USAR LOS MISMOS DATOS PARA FACTURACIÓN
                                     </label>
 
-                                    {form.ship_to_different_address && (
-                                        <div className="shipping-section" style={{ marginTop: '20px', padding: '20px', backgroundColor: '#fafafa', borderRadius: '4px' }}>
+                                    {!useSameForBilling && (
+                                        <div className="shipping-section" style={{ marginTop: '20px', padding: '20px', backgroundColor: '#fafafa', borderRadius: '4px', border: '1px solid #e0e0e0' }}>
+                                            <h4 style={{ marginTop: 0, marginBottom: '15px', color: '#155338', fontSize: '1rem' }}>DATOS DE FACTURACIÓN</h4>
+                                            
+                                            <Field label="Dirección de facturación" field="address_1" form={form} errors={errors} set={set} required />
+                                            <Field label="Barrio (facturación)" field="address_2" form={form} errors={errors} set={set} />
                                             <div className="fields-grid">
-                                                <Field label="Nombre" field="shipping_first_name" form={form} errors={errors} set={set} required />
-                                                <Field label="Apellidos" field="shipping_last_name" form={form} errors={errors} set={set} required />
+                                                <Field label="Departamento" field="state" form={form} errors={errors} set={set} options={COLOMBIA_STATES} required placeholder="Selecciona un Departamento" />
+                                                <Field label="Ciudad / Localidad" field="city" form={form} errors={errors} set={set} options={billingCitiesOptions} required placeholder="Selecciona una Ciudad" />
                                             </div>
-                                            <Field label="Dirección de la calle" field="shipping_address_1" form={form} errors={errors} set={set} required />
-                                            <Field label="Apartamento, etc. (opcional)" field="shipping_address_2" form={form} errors={errors} set={set} />
-                                            <div className="fields-grid">
-                                                <Field label="Departamento" field="shipping_state" form={form} errors={errors} set={set} options={COLOMBIA_STATES} required placeholder="Selecciona un Departamento" />
-                                                <Field label="Ciudad" field="shipping_city" form={form} errors={errors} set={set} options={shippingCitiesOptions} required placeholder="Selecciona una Ciudad" />
-                                            </div>
-                                            <Field label="Código postal (opcional)" field="shipping_postcode" form={form} errors={errors} set={set} />
                                         </div>
                                     )}
 
@@ -584,8 +600,12 @@ export default function CheckoutPage() {
                                             className="btn-solid-green" 
                                             style={{ width: 'auto', padding: '16px 30px' }}
                                             onClick={() => {
-                                                if (!form.address_1 || !form.city || !form.state || !form.phone) {
-                                                    alert('Por favor completa los campos obligatorios de envío.');
+                                                if (!form.shipping_address_1 || !form.shipping_city || !form.shipping_state || !form.phone) {
+                                                    alert('Por favor completa los campos obligatorios de entrega.');
+                                                    return;
+                                                }
+                                                if (!useSameForBilling && (!form.address_1 || !form.city || !form.state)) {
+                                                    alert('Por favor completa los campos obligatorios de facturación.');
                                                     return;
                                                 }
                                                 setStep(3);

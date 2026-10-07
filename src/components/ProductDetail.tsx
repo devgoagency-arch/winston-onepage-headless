@@ -115,18 +115,18 @@ export default function ProductDetail({ initialProduct }: Props) {
   const [enrichedProduct, setEnrichedProduct] = useState<Product | null>(null);
   const [isFetchingVariations, setIsFetchingVariations] = useState(false);
 
-  // Re-hidratar el producto con datos frescos si es un producto variable
+  // Re-hidratar el producto con datos frescos para inventario real
   useEffect(() => {
-    if (product.type !== 'variable' || enrichedProduct || isFetchingVariations) return;
+    if (enrichedProduct || isFetchingVariations) return;
 
     const fetchFullProduct = async () => {
       setIsFetchingVariations(true);
       try {
         // Cargamos desde el JSON estático pre-generado
-        const res = await fetch(`/data/products/${product.slug}.json`);
+        const res = await fetch(`/api/products?slug=${product.slug}`);
         if (res.ok) {
           const fullData = await res.json();
-          if (fullData && fullData.variations) {
+          if (fullData) {
             setEnrichedProduct(fullData);
           }
         }
