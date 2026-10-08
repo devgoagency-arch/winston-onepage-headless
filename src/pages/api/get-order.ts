@@ -7,8 +7,8 @@ const WC_KEY = import.meta.env.WC_CONSUMER_KEY;
 const WC_SECRET = import.meta.env.WC_CONSUMER_SECRET;
 
 export const GET: APIRoute = async ({ url, request }) => {
-    console.log('API get-order URL:', url.href, 'Request URL:', request.url);
     const orderId = url.searchParams.get('id') || new URL(request.url).searchParams.get('id');
+    const orderKey = url.searchParams.get('key') || new URL(request.url).searchParams.get('key');
 
     if (!orderId || isNaN(Number(orderId))) {
         return new Response(JSON.stringify({ error: 'Invalid order ID' }), { status: 400 });
@@ -25,6 +25,10 @@ export const GET: APIRoute = async ({ url, request }) => {
         }
 
         const wcOrder = await res.json();
+
+        if (wcOrder.order_key !== orderKey) {
+            return new Response(JSON.stringify({ error: 'Unauthorized: Invalid order key' }), { status: 401 });
+        }
 
         // Obtener IDs de productos que no trajeron imagen en la orden
         const productIds = wcOrder.line_items
@@ -62,6 +66,14 @@ export const GET: APIRoute = async ({ url, request }) => {
             shipping_total: wcOrder.shipping_total,
             total_tax: wcOrder.total_tax,
             email: wcOrder.billing?.email,
+            billing: wcOrder.billing ? {
+                first_name: wcOrder.billing.first_name,
+                last_name: wcOrder.billing.last_name,
+                city: wcOrder.billing.city,
+                state: wcOrder.billing.state,
+                postcode: wcOrder.billing.postcode,
+                country: wcOrder.billing.country
+            } : undefined,
             phone: wcOrder.billing?.phone || null,
             items: wcOrder.line_items?.map((item: any) => ({
                 id: item.product_id,

@@ -50,6 +50,12 @@ function getMetaClickIds(): { fbc?: string; fbp?: string } {
         const fbclid = new URLSearchParams(window.location.search).get('fbclid');
         if (fbclid) {
             fbc = `fb.1.${Date.now()}.${fbclid}`;
+            try {
+                const expires = new Date(Date.now() + 90 * 24 * 60 * 60 * 1000).toUTCString();
+                document.cookie = `_fbc=${fbc}; expires=${expires}; path=/; domain=.winstonandharrystore.com; SameSite=Lax`;
+            } catch (e) {
+                // Silencioso
+            }
         }
     }
 

@@ -157,6 +157,16 @@ const getValidStateCode = (stateName: string): string => {
 export const POST: APIRoute = async ({ request, clientAddress }) => {
     try {
         const body = await request.json();
+
+        let validatedUtms: { key: string; value: string }[] = [];
+        if (body.utm_data && typeof body.utm_data === 'object') {
+            const allowedKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'fbclid'];
+            for (const k of allowedKeys) {
+                if (typeof body.utm_data[k] === 'string') {
+                    validatedUtms.push({ key: k, value: body.utm_data[k].substring(0, 200) });
+                }
+            }
+        }
         const WC_URL = PUBLIC_WP_URL;
 
         // Capturar cabeceras reales del navegador para evitar bloqueos antifraude de Addi
@@ -281,6 +291,7 @@ export const POST: APIRoute = async ({ request, clientAddress }) => {
             customer_note: body.order_notes || '',
             payment_method: paymentMethodId,
             meta_data: [
+                ...validatedUtms,
                 { key: 'billing_cedula', value: body.document_id },
                 { key: 'addi_cedula', value: body.document_id },
                 { key: '_billing_cedula', value: body.document_id },
@@ -331,6 +342,7 @@ export const POST: APIRoute = async ({ request, clientAddress }) => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
                 meta_data: [
+                    ...validatedUtms,
                     { key: '_billing_cedula', value: body.document_id || '' },
                     { key: 'billing_cedula', value: body.document_id || '' },
                     { key: '_billing_dni', value: body.document_id || '' }
@@ -383,7 +395,7 @@ export const POST: APIRoute = async ({ request, clientAddress }) => {
             try {
                 const mpUrl = new URL(rawMpUrl);
                 // Mercado Pago respeta back_url como query param en su checkout
-                mpUrl.searchParams.set('back_url', 'https://www.winstonandharrystore.com/gracias');
+                mpUrl.searchParams.set('back_url', `https://www.winstonandharrystore.com/gracias?order_id=${checkoutData.order_id}&key=${orderKey}`);
                 finalPaymentUrl = mpUrl.toString();
             } catch {
                 // Si la URL no es parseable, usarla tal cual como fallback
@@ -398,6 +410,7 @@ export const POST: APIRoute = async ({ request, clientAddress }) => {
             JSON.stringify({
                 order_id: checkoutData.order_id,
                 order_number: checkoutData.order_id,
+                order_key: orderKey,
                 payment_url: finalPaymentUrl,
                 status: 'pending',
             }),

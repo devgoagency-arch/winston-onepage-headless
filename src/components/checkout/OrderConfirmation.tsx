@@ -28,19 +28,23 @@ interface OrderData {
 
 export default function OrderConfirmation() {
     const [order, setOrder] = useState<OrderData | null>(null);
+    const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
     useEffect(() => {
         let orderId = '';
+        let orderKey = '';
         const raw = sessionStorage.getItem('wh_last_order');
         if (raw) {
             const parsedOrder = JSON.parse(raw);
             orderId = parsedOrder.id;
+            orderKey = parsedOrder.key || '';
             sessionStorage.removeItem('wh_last_order');
             clearCart();
         }
 
         const params = new URLSearchParams(window.location.search);
         orderId = orderId || params.get('order_id') || params.get('external_reference') || '';
+        orderKey = orderKey || params.get('key') || params.get('order_key') || '';
 
         const mpStatus = params.get('status') || params.get('collection_status');
         const isApprovedInUrl = mpStatus === 'approved';
@@ -56,9 +60,18 @@ export default function OrderConfirmation() {
 
             const checkOrder = async (attempts = 0) => {
                 try {
-                    const r = await fetch(`/api/get-order?id=${orderId}`);
+                    const r = await fetch(`/api/get-order?id=${orderId}&key=${orderKey}`);
                     const orderData = await r.json();
                     
+                    if (r.status === 401) {
+                        setErrorMsg('No tienes permiso para ver los detalles de este pedido.');
+                        return;
+                    }
+                    if (r.status === 404) {
+                        setErrorMsg('El pedido no fue encontrado.');
+                        return;
+                    }
+
                     if (orderData?.id) {
                         setOrder(orderData); // Siempre settear la orden completa
                         
@@ -163,6 +176,12 @@ export default function OrderConfirmation() {
             // La normalización (quitar guiones, prefijo 57, validar longitud)
             // la hace metaEvents.ts del lado servidor — aquí se pasa el valor raw.
             ...(order.phone ? { ph: order.phone } : {}),
+            ...(order.billing?.first_name ? { fn: order.billing.first_name } : {}),
+            ...(order.billing?.last_name ? { ln: order.billing.last_name } : {}),
+            ...(order.billing?.city ? { ct: order.billing.city } : {}),
+            ...(order.billing?.state ? { st: order.billing.state } : {}),
+            ...(order.billing?.postcode ? { zp: order.billing.postcode } : {}),
+            ...(order.billing?.country ? { country: order.billing.country } : {})
         }, String(order.id));
     }
 
@@ -179,7 +198,9 @@ export default function OrderConfirmation() {
 
                     <h1>¡Gracias por tu compra!</h1>
 
-                    {order ? (
+                    {errorMsg ? (
+                        <p className="order-note" style={{color: 'red', borderColor: 'red'}}>{errorMsg}</p>
+                    ) : order ? (
                         <>
                             <p className="order-number">
                                 Pedido <strong>#{order.number}</strong>

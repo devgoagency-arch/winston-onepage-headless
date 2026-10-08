@@ -380,6 +380,7 @@ export default function CheckoutPage() {
             sessionStorage.setItem('wh_last_order', JSON.stringify({
                 id: data.order_id,
                 number: data.order_number,
+                key: data.order_key,
                 email: form.email,
             }));
 
