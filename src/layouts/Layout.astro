@@ -97,6 +97,26 @@ seo.canonical = customCanonical ?? `https://www.winstonandharrystore.com${cleanP
         <!-- End Google Tag Manager -->
 
         <meta charset="UTF-8" />
+        <script is:inline>
+            (function() {
+                try {
+                    const urlParams = new URLSearchParams(window.location.search);
+                    const paramsToTrack = ['utm_source', 'utm_medium', 'utm_campaign', 'fbclid'];
+                    const hasAnyNew = paramsToTrack.some(param => urlParams.get(param));
+                    if (hasAnyNew) {
+                        const newStored = {};
+                        paramsToTrack.forEach(param => {
+                            let val = urlParams.get(param);
+                            if (typeof val === 'string') {
+                                val = val.trim();
+                                if (val) newStored[param] = val;
+                            }
+                        });
+                        localStorage.setItem('wh_utm_data', JSON.stringify(newStored));
+                    }
+                } catch (e) {}
+            })();
+        </script>
         {noindex && <meta name="robots" content="noindex, nofollow" />}
         <meta name="description" content={seo.description} />
         <meta name="viewport" content="width=device-width" />
