@@ -724,6 +724,12 @@ export default function CheckoutPage() {
                                         {form.payment_method === 'mercadopago' ? 'PAGAR CON MERCADO PAGO' : 'FINALIZAR CON ADDI'}
                                     </button>
 
+                                    {serverError && (
+                                        <div style={{ color: '#d9534f', backgroundColor: '#fdf7f7', border: '1px solid #eed3d7', padding: '12px 16px', borderRadius: '6px', marginTop: '15px', fontSize: '0.9rem', textAlign: 'center', fontWeight: 500 }}>
+                                            ⚠️ {serverError}
+                                        </div>
+                                    )}
+
                                     <div style={{ textAlign: 'center', marginTop: '15px' }}>
                                         <button type="button" className="btn-back" onClick={() => setStep(2)}>
                                             &larr; VOLVER A OPCIONES DE ENVÍO

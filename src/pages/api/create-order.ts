@@ -59,26 +59,26 @@ async function createAddiApplication(token: string, body: any, orderData: any): 
             category:  'simple'
         }],
         client: {
-            firstName:            body.first_name || 'Cliente',
-            lastName:             body.last_name || 'Winston',
+            firstName:            body.first_name || '',
+            lastName:             body.last_name || '',
             idType:               body.document_type || 'CC',
             idNumber:             body.document_id   || '',
             email:                body.email,
             cellphone:            (body.phone || '').replace(/\D/g, '').slice(-10),
             cellphoneCountryCode: '+57',
             address: {
-                lineOne: body.address_1 || 'No proporcionada',
-                city:    body.city      || 'Bogotá',
+                lineOne: body.address_1 || '',
+                city:    body.city      || '',
                 country: 'CO'
             }
         },
         shippingAddress: {
             lineOne: body.ship_to_different_address
-                ? (body.shipping_address_1 || body.address_1 || 'No proporcionada')
-                : (body.address_1 || 'No proporcionada'),
+                ? (body.shipping_address_1 || body.address_1 || '')
+                : (body.address_1 || ''),
             city: body.ship_to_different_address
-                ? (body.shipping_city || body.city || 'Bogotá')
-                : (body.city || 'Bogotá'),
+                ? (body.shipping_city || body.city || '')
+                : (body.city || ''),
             country: 'CO'
         },
         allyUrlRedirection: {
@@ -114,19 +114,60 @@ async function createAddiApplication(token: string, body: any, orderData: any): 
 }
 // ────────────────────────────────────────────────────────────────────────────
 
+// Mapa exhaustivo de códigos de departamento para WooCommerce Colombia
+export const WC_STATES_MAP: Record<string, string> = {
+  'AMZ': 'AMZ', 'AMA': 'AMZ',
+  'ANT': 'ANT',
+  'ARU': 'ARU', 'ARA': 'ARU',
+  'ATL': 'ATL',
+  'BOG': 'BOG', 'DC': 'BOG',
+  'BOL': 'BOL',
+  'BOY': 'BOY',
+  'CAL': 'CAL',
+  'CAQ': 'CAQ',
+  'CAS': 'CAS',
+  'CAU': 'CAU',
+  'CES': 'CES',
+  'CHO': 'CHO',
+  'COR': 'COR',
+  'CUN': 'CUN',
+  'GUA': 'GUA',
+  'GUV': 'GUV',
+  'HUI': 'HUI',
+  'GUJ': 'GUJ', 'LAG': 'GUJ',
+  'MAG': 'MAG',
+  'MET': 'MET',
+  'NAR': 'NAR',
+  'NOR': 'NOR', 'NSA': 'NOR',
+  'PUT': 'PUT',
+  'QUI': 'QUI',
+  'RIS': 'RIS',
+  'SAP': 'SAP',
+  'SAN': 'SAN',
+  'SUC': 'SUC',
+  'TOL': 'TOL',
+  'VAC': 'VAC',
+  'VAU': 'VAU',
+  'VIC': 'VIC', 'VID': 'VIC'
+};
+
 // Función para mapear a códigos de departamento válidos en WooCommerce (Colombia)
-const getValidStateCode = (stateName: string): string => {
-  if (!stateName) return "BOG";
+export const getValidStateCode = (stateName: string): string | null => {
+  if (!stateName) return null;
+  const upper = stateName.toUpperCase().trim();
+  if (WC_STATES_MAP[upper]) return WC_STATES_MAP[upper];
+
   const s = stateName.toLowerCase();
-  if (s.includes("amazona")) return "AMA";
+  if (s.includes("amazona")) return "AMZ";
   if (s.includes("antioqui") || s.includes("antioq")) return "ANT";
-  if (s.includes("arauca")) return "ARA";
+  if (s.includes("arauca")) return "ARU";
   if (s.includes("atlán") || s.includes("atlan")) return "ATL";
   if (s.includes("bolívar") || s.includes("bolivar")) return "BOL";
   if (s.includes("boyac")) return "BOY";
   if (s.includes("caldas")) return "CAL";
   if (s.includes("caquetá") || s.includes("caqueta")) return "CAQ";
   if (s.includes("casanare")) return "CAS";
+  if (s.includes("valle")) return "VAC"; // DEBE IR ANTES DE CAUCA ("Valle del Cauca" contiene "cauca")
   if (s.includes("cauca")) return "CAU";
   if (s.includes("cesar")) return "CES";
   if (s.includes("chocó") || s.includes("choco")) return "CHO";
@@ -135,28 +176,66 @@ const getValidStateCode = (stateName: string): string => {
   if (s.includes("guainía") || s.includes("guainia")) return "GUA";
   if (s.includes("guaviare")) return "GUV";
   if (s.includes("huila")) return "HUI";
-  if (s.includes("la guajira") || s.includes("guajira")) return "LAG";
+  if (s.includes("la guajira") || s.includes("guajira")) return "GUJ";
   if (s.includes("magdalena")) return "MAG";
   if (s.includes("meta")) return "MET";
   if (s.includes("nariño") || s.includes("narino")) return "NAR";
-  if (s.includes("norte de santander") || s.includes("n. santander")) return "NSA";
+  if (s.includes("norte de santander") || s.includes("n. santander")) return "NOR"; // DEBE IR ANTES DE SANTANDER
   if (s.includes("putumayo")) return "PUT";
   if (s.includes("quindío") || s.includes("quindio")) return "QUI";
   if (s.includes("risaralda")) return "RIS";
   if (s.includes("san andrés") || s.includes("san andres")) return "SAP";
-  if (s.includes("santander")) return "SAN"; // debe ir DESPUÉS de norte de santander
+  if (s.includes("santander")) return "SAN";
   if (s.includes("sucre")) return "SUC";
   if (s.includes("tolima")) return "TOL";
-  if (s.includes("valle")) return "VAC";
   if (s.includes("vaupés") || s.includes("vaupes")) return "VAU";
-  if (s.includes("vichada")) return "VID";
+  if (s.includes("vichada")) return "VIC";
   if (s.includes("bog") || s.includes("d.c") || s.includes("capital")) return "BOG";
-  return "BOG"; // fallback seguro
+  return null; // NUNCA caer en BOG por defecto: si no es válido, se rechaza
 };
 
 export const POST: APIRoute = async ({ request, clientAddress }) => {
     try {
         const body = await request.json();
+
+        // Validación estricta en servidor de campos obligatorios
+        if (!body.first_name?.trim()) {
+            return new Response(JSON.stringify({ error: 'Nombre requerido', details: 'El nombre es obligatorio.' }), { status: 400 });
+        }
+        if (!body.last_name?.trim()) {
+            return new Response(JSON.stringify({ error: 'Apellido requerido', details: 'El apellido es obligatorio.' }), { status: 400 });
+        }
+        if (!body.phone?.trim()) {
+            return new Response(JSON.stringify({ error: 'Teléfono requerido', details: 'El teléfono celular es obligatorio.' }), { status: 400 });
+        }
+        if (!body.address_1?.trim()) {
+            return new Response(JSON.stringify({ error: 'Dirección requerida', details: 'La dirección es obligatoria.' }), { status: 400 });
+        }
+        if (!body.city?.trim()) {
+            return new Response(JSON.stringify({ error: 'Ciudad requerida', details: 'La ciudad es obligatoria.' }), { status: 400 });
+        }
+        if (!body.state?.trim()) {
+            return new Response(JSON.stringify({ error: 'Departamento requerido', details: 'El departamento es obligatorio.' }), { status: 400 });
+        }
+
+        // Validación estricta cuando se envía a otra dirección
+        if (body.ship_to_different_address) {
+            if (!body.shipping_first_name?.trim()) {
+                return new Response(JSON.stringify({ error: 'Nombre de entrega requerido', details: 'El nombre de entrega es obligatorio.' }), { status: 400 });
+            }
+            if (!body.shipping_last_name?.trim()) {
+                return new Response(JSON.stringify({ error: 'Apellido de entrega requerido', details: 'El apellido de entrega es obligatorio.' }), { status: 400 });
+            }
+            if (!body.shipping_address_1?.trim()) {
+                return new Response(JSON.stringify({ error: 'Dirección de entrega requerida', details: 'La dirección de entrega es obligatoria.' }), { status: 400 });
+            }
+            if (!body.shipping_city?.trim()) {
+                return new Response(JSON.stringify({ error: 'Ciudad de entrega requerida', details: 'La ciudad de entrega es obligatoria.' }), { status: 400 });
+            }
+            if (!body.shipping_state?.trim()) {
+                return new Response(JSON.stringify({ error: 'Departamento de entrega requerido', details: 'El departamento de entrega es obligatorio.' }), { status: 400 });
+            }
+        }
 
         let validatedUtms: { key: string; value: string }[] = [];
         if (body.utm_data && typeof body.utm_data === 'object') {
@@ -257,35 +336,55 @@ export const POST: APIRoute = async ({ request, clientAddress }) => {
         const paymentMethodId = body.payment_method === 'addi' ? 'addi' : 'woo-mercado-pago-basic';
         
         const validState = getValidStateCode(body.state);
+        if (!validState) {
+            return new Response(
+                JSON.stringify({ 
+                    error: 'Departamento no válido', 
+                    details: `El departamento "${body.state}" no fue reconocido. Por favor selecciona uno válido de la lista.` 
+                }),
+                { status: 400 }
+            );
+        }
+
         const validShippingState = body.ship_to_different_address ? getValidStateCode(body.shipping_state) : validState;
+        if (body.ship_to_different_address && !validShippingState) {
+            return new Response(
+                JSON.stringify({ 
+                    error: 'Departamento de entrega no válido', 
+                    details: `El departamento de entrega "${body.shipping_state}" no fue reconocido. Por favor selecciona uno válido de la lista.` 
+                }),
+                { status: 400 }
+            );
+        }
         
-        const validPostcode = body.postcode || '110010';
-        const validShippingPostcode = body.ship_to_different_address ? (body.shipping_postcode || '110010') : validPostcode;
+        // Código postal: Si el cliente no lo llena, se envía vacío (WooCommerce Colombia no lo exige)
+        const validPostcode = body.postcode || '';
+        const validShippingPostcode = body.ship_to_different_address ? (body.shipping_postcode || '') : validPostcode;
 
         const checkoutPayload = {
             billing_address: {
-                first_name: body.first_name || 'Cliente',
-                last_name: body.last_name || 'Winston',
-                address_1: body.address_1 || 'No proporcionada',
+                first_name: body.first_name || '',
+                last_name: body.last_name || '',
+                address_1: body.address_1 || '',
                 address_2: body.address_2 || '',
-                city: body.city || 'Bogotá',
+                city: body.city || '',
                 state: validState,
                 postcode: validPostcode,
                 country: 'CO',
                 email: body.email,
-                phone: body.phone || '0000000000',
+                phone: body.phone || '',
                 "addi/cedula-id": body.document_id
             },
             shipping_address: {
-                first_name: body.ship_to_different_address ? (body.shipping_first_name || 'Cliente') : (body.first_name || 'Cliente'),
-                last_name: body.ship_to_different_address ? (body.shipping_last_name || 'Winston') : (body.last_name || 'Winston'),
-                address_1: body.ship_to_different_address ? (body.shipping_address_1 || 'No proporcionada') : (body.address_1 || 'No proporcionada'),
+                first_name: body.ship_to_different_address ? (body.shipping_first_name || '') : (body.first_name || ''),
+                last_name: body.ship_to_different_address ? (body.shipping_last_name || '') : (body.last_name || ''),
+                address_1: body.ship_to_different_address ? (body.shipping_address_1 || '') : (body.address_1 || ''),
                 address_2: body.ship_to_different_address ? (body.shipping_address_2 || '') : (body.address_2 || ''),
-                city: body.ship_to_different_address ? (body.shipping_city || 'Bogotá') : (body.city || 'Bogotá'),
+                city: body.ship_to_different_address ? (body.shipping_city || '') : (body.city || ''),
                 state: validShippingState,
                 postcode: validShippingPostcode,
                 country: 'CO',
-                phone: body.phone || '0000000000',
+                phone: body.phone || '',
                 "addi/cedula-id": body.document_id
             },
             customer_note: body.order_notes || '',
