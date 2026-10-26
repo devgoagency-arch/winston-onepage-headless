@@ -6,12 +6,23 @@ const WC_URL = import.meta.env.WC_URL || 'https://tienda.winstonandharrystore.co
 const WC_KEY = import.meta.env.WC_CONSUMER_KEY;
 const WC_SECRET = import.meta.env.WC_CONSUMER_SECRET;
 
+/** Generic fail-closed response — same for missing/wrong key and missing order (no ID oracle). */
+function notFound() {
+    return new Response(JSON.stringify({ error: 'Order not found' }), { status: 404 });
+}
+
 export const GET: APIRoute = async ({ url, request }) => {
     const orderId = url.searchParams.get('id') || new URL(request.url).searchParams.get('id');
-    const orderKey = url.searchParams.get('key') || new URL(request.url).searchParams.get('key');
+    const orderKeyRaw = url.searchParams.get('key') || new URL(request.url).searchParams.get('key');
+    const orderKey = typeof orderKeyRaw === 'string' ? orderKeyRaw.trim() : '';
 
     if (!orderId || isNaN(Number(orderId))) {
         return new Response(JSON.stringify({ error: 'Invalid order ID' }), { status: 400 });
+    }
+
+    // Require a non-empty key BEFORE calling WooCommerce (avoid loading PII without auth).
+    if (!orderKey) {
+        return notFound();
     }
 
     try {
@@ -21,13 +32,13 @@ export const GET: APIRoute = async ({ url, request }) => {
         });
 
         if (!res.ok) {
-            return new Response(JSON.stringify({ error: 'Order not found' }), { status: 404 });
+            return notFound();
         }
 
         const wcOrder = await res.json();
 
-        if (wcOrder.order_key !== orderKey) {
-            return new Response(JSON.stringify({ error: 'Unauthorized: Invalid order key' }), { status: 401 });
+        if (!wcOrder?.order_key || wcOrder.order_key !== orderKey) {
+            return notFound();
         }
 
         // Obtener IDs de productos que no trajeron imagen en la orden
