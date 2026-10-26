@@ -35,21 +35,33 @@ export default function OrderConfirmation() {
         let orderKey = '';
         const raw = sessionStorage.getItem('wh_last_order');
         if (raw) {
-            const parsedOrder = JSON.parse(raw);
-            orderId = parsedOrder.id;
-            orderKey = parsedOrder.key || '';
+            try {
+                const parsedOrder = JSON.parse(raw);
+                orderId = String(parsedOrder.id || '');
+                orderKey = parsedOrder.key || '';
+            } catch (e) {
+                console.warn('[OrderConfirmation] wh_last_order inválido');
+            }
             sessionStorage.removeItem('wh_last_order');
             clearCart();
         }
 
         const params = new URLSearchParams(window.location.search);
         orderId = orderId || params.get('order_id') || params.get('external_reference') || '';
-        orderKey = orderKey || params.get('key') || params.get('order_key') || '';
+        orderKey = (orderKey || params.get('key') || params.get('order_key') || '').trim();
 
         const mpStatus = params.get('status') || params.get('collection_status');
         const isApprovedInUrl = mpStatus === 'approved';
 
-        if (orderId) {
+        const NOT_FOUND_MSG = 'Pedido no encontrado.';
+
+        // Fail closed: order id without a non-empty key → safe state, no API call, no tracking.
+        if (orderId && !orderKey) {
+            setErrorMsg(NOT_FOUND_MSG);
+            return;
+        }
+
+        if (orderId && orderKey) {
             const triggerTracking = (orderData: any) => {
                 if (window.location.hostname === 'www.winstonandharrystore.com') {
                     dispatchWhenReady(orderData);
@@ -60,20 +72,17 @@ export default function OrderConfirmation() {
 
             const checkOrder = async (attempts = 0) => {
                 try {
-                    const r = await fetch(`/api/get-order?id=${orderId}&key=${orderKey}`);
-                    const orderData = await r.json();
-                    
-                    if (r.status === 401) {
-                        setErrorMsg('No tienes permiso para ver los detalles de este pedido.');
-                        return;
-                    }
-                    if (r.status === 404) {
-                        setErrorMsg('El pedido no fue encontrado.');
+                    const r = await fetch(`/api/get-order?id=${encodeURIComponent(orderId)}&key=${encodeURIComponent(orderKey)}`);
+                    const orderData = await r.json().catch(() => null);
+
+                    // Any non-OK (missing/wrong key, not found, server error) → no PII, no purchase events.
+                    if (!r.ok) {
+                        setErrorMsg(NOT_FOUND_MSG);
                         return;
                     }
 
                     if (orderData?.id) {
-                        setOrder(orderData); // Siempre settear la orden completa
+                        setOrder(orderData);
                         
                         let isTracked = false;
                         try {
@@ -99,9 +108,12 @@ export default function OrderConfirmation() {
                                 console.log('[Tracking Debug] Compra no trackeada debido a estado:', orderData.status);
                             }
                         }
+                    } else {
+                        setErrorMsg(NOT_FOUND_MSG);
                     }
                 } catch(err) {
                     console.error('Error fetching order for tracking:', err);
+                    setErrorMsg(NOT_FOUND_MSG);
                 }
             };
 
@@ -196,30 +208,41 @@ export default function OrderConfirmation() {
                         </svg>
                     </div>
 
-                    <h1>¡Gracias por tu compra!</h1>
-
                     {errorMsg ? (
-                        <p className="order-note" style={{color: 'red', borderColor: 'red'}}>{errorMsg}</p>
-                    ) : order ? (
                         <>
-                            <p className="order-number">
-                                Pedido <strong>#{order.number}</strong>
-                            </p>
-                            <p className="order-email">
-                                Recibirás una confirmación en <strong>{order.email}</strong>
+                            <h1>Pedido no encontrado</h1>
+                            <p className="order-note" style={{color: '#8a1f1f', borderColor: '#e0b4b4'}}>{errorMsg}</p>
+                            <p className="order-note">
+                                Si acabas de pagar, revisa el enlace de confirmación en tu correo o escríbenos a{' '}
+                                <a href="mailto:info@winstonandharrystore.com">
+                                    info@winstonandharrystore.com
+                                </a>
                             </p>
                         </>
                     ) : (
-                        <p className="order-email">Tu pedido ha sido recibido.</p>
+                        <>
+                            <h1>¡Gracias por tu compra!</h1>
+                            {order ? (
+                                <>
+                                    <p className="order-number">
+                                        Pedido <strong>#{order.number}</strong>
+                                    </p>
+                                    <p className="order-email">
+                                        Recibirás una confirmación en <strong>{order.email}</strong>
+                                    </p>
+                                </>
+                            ) : (
+                                <p className="order-email">Tu pedido ha sido recibido.</p>
+                            )}
+                            <p className="order-note">
+                                Nuestro equipo procesará tu pedido y te contactará para coordinar la entrega.
+                                Si tienes dudas escríbenos a{' '}
+                                <a href="mailto:info@winstonandharrystore.com">
+                                    info@winstonandharrystore.com
+                                </a>
+                            </p>
+                        </>
                     )}
-
-                    <p className="order-note">
-                        Nuestro equipo procesará tu pedido y te contactará para coordinar la entrega.
-                        Si tienes dudas escríbenos a{' '}
-                        <a href="mailto:info@winstonandharrystore.com">
-                            info@winstonandharrystore.com
-                        </a>
-                    </p>
 
                     {order?.items && order.items.length > 0 && (
                         <div className="order-summary">
