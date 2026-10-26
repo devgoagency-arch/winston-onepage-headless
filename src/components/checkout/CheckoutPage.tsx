@@ -345,10 +345,23 @@ export default function CheckoutPage() {
                 payloadForm.shipping_last_name = form.last_name;
             }
 
+            // UTM / click IDs captured in Layout.astro → order meta for GA4/ads attribution
+            let utm_data: Record<string, string> | undefined;
+            try {
+                const raw = localStorage.getItem('wh_utm_data');
+                if (raw) {
+                    const parsed = JSON.parse(raw);
+                    if (parsed && typeof parsed === 'object' && Object.keys(parsed).length > 0) {
+                        utm_data = parsed;
+                    }
+                }
+            } catch (_) { /* ignore corrupt storage */ }
+
             const payload = {
                 ...payloadForm,
                 shipping_cost: shippingCost,
                 coupon_code: appliedCoupon?.code || null,
+                ...(utm_data ? { utm_data } : {}),
                 items: items.map(item => {
                     return {
                         product_id: item.product_id || Number(String(item.key).split('-')[0]), // Fallback for old carts

@@ -84,7 +84,8 @@ async function createAddiApplication(token: string, body: any, orderData: any): 
         allyUrlRedirection: {
             logoUrl:        'https://www.winstonandharrystore.com/wp-content/uploads/logo-winston.png',
             callbackUrl:    `${PUBLIC_WP_URL}/?wc-api=wc_addi_gateway`,
-            redirectionUrl: `${PUBLIC_WP_URL}/checkout/order-received/${orderId}/?key=${orderKey}`
+            // Browser return after Addi (approved/cancelled) → Astro /gracias for GA4/GTM
+            redirectionUrl: `https://www.winstonandharrystore.com/gracias?order_id=${orderId}&key=${orderKey}`
         }
     };
 
