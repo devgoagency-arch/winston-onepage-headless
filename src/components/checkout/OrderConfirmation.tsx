@@ -121,20 +121,51 @@ export default function OrderConfirmation() {
         }
     }, []);
 
+    // Pedidos cuyo disparo está esperando a GTM (evita doble disparo por checkOrder concurrentes).
+    const pendingTracking = new Set<string>();
+
+    function isGtmReady(): boolean {
+        const w = window as any;
+        if (!w.dataLayer) return false;
+        if (w.google_tag_manager) return true;
+        return Array.isArray(w.dataLayer) &&
+            w.dataLayer.some((e: any) => e && typeof e === 'object' && e.event === 'gtm.js' && 'gtm.start' in e);
+    }
+
     function dispatchWhenReady(order: any) {
-        // Al empujar directamente al dataLayer (que es un array normal antes de que GTM cargue),
-        // no necesitamos esperar a que GTM ni Partytown estén listos. GTM procesará 
-        // la cola automáticamente en cuanto se inicialice.
-        fireTrackingEvents(order);
+        // GTM en /gracias carga inmediato, pero si empujamos 'purchase' antes de que el
+        // contenedor cargue, GA4-Purchase puede perderlo. Esperamos a que window.dataLayer exista
+        // Y (google_tag_manager exista O se haya visto 'gtm.js' con gtm.start), con timeout máx 4s.
+        const key = String(order.id);
+        if (pendingTracking.has(key)) return;
+        pendingTracking.add(key);
+
+        const POLL_MS = 150;
+        const MAX_WAIT_MS = 4000;
+        const startedAt = Date.now();
+
+        const tick = () => {
+            const w = window as any;
+            const timedOut = Date.now() - startedAt >= MAX_WAIT_MS;
+            if ((w.dataLayer && isGtmReady()) || timedOut) {
+                if (timedOut && !isGtmReady()) {
+                    console.warn('[Tracking Debug] Timeout esperando GTM; disparando purchase de todos modos');
+                }
+                pendingTracking.delete(key);
+                fireTrackingEvents(order);
+                return;
+            }
+            setTimeout(tick, POLL_MS);
+        };
+        tick();
     }
 
     // Extraer la lógica de tracking a una función separada para reutilizarla
     function fireTrackingEvents(order: any) {
-        // Marcar ANTES de disparar cualquier evento para cerrar la ventana de carrera
-        // donde un segundo checkOrder podría pasar el guard !isTracked antes de que
-        // el primer disparo completara el setItem. Trade-off aceptado: si los eventos
-        // fallan después, la orden queda marcada — pero previene duplicados a Meta.
+        // Guard: re-verificar y marcar SOLO cuando realmente vamos a disparar (después de la
+        // espera por GTM). No se marca si nunca llegamos a disparar.
         try {
+            if (localStorage.getItem('tracked_order_' + order.id) === 'true') return;
             localStorage.setItem('tracked_order_' + order.id, 'true');
         } catch(e) {
             console.warn('[Tracking Debug] localStorage no disponible');
