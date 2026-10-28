@@ -2,9 +2,8 @@
  * HubSpot Abandoned Cart API Route (`/api/abandoned-cart`)
  *
  * Environment variables:
- * - `HUBSPOT_ABANDONED_CART_FORM_ID`: HubSpot Forms API v3 form GUID used to upsert
- *   abandoned-cart contact properties on portal `22727126`. Falls back to the
- *   placeholder constant `REPLACE_ABANDONED_CART_FORM_ID` until configured.
+ * - `HUBSPOT_ACCESS_TOKEN`: HubSpot Private App access token used to upsert
+ *   abandoned-cart contact properties via CRM Contacts batch upsert.
  */
 export const prerender = false;
 
@@ -14,8 +13,8 @@ import path from 'node:path';
 import { PUBLIC_WP_URL, wcFetch } from '../../lib/woocommerce';
 import type { CartItem } from '../../store/cart';
 
-const HUBSPOT_PORTAL_ID = '22727126';
-const DEFAULT_ABANDONED_CART_FORM_ID = 'REPLACE_ABANDONED_CART_FORM_ID';
+const HUBSPOT_CONTACTS_BATCH_UPSERT_URL =
+    'https://api.hubapi.com/crm/v3/objects/contacts/batch/upsert';
 const RECOVERY_BASE_URL = 'https://www.winstonandharrystore.com/checkout?restore=';
 
 interface AbandonedCartRequestBody {
@@ -373,27 +372,30 @@ export const POST: APIRoute = async ({ request }) => {
     }
 
     const cleanEmail = email.trim();
-    const portalId = HUBSPOT_PORTAL_ID;
-    const formId =
-        import.meta.env.HUBSPOT_ABANDONED_CART_FORM_ID ||
-        (typeof process !== 'undefined' ? process.env.HUBSPOT_ABANDONED_CART_FORM_ID : undefined) ||
-        DEFAULT_ABANDONED_CART_FORM_ID;
+    const accessToken =
+        import.meta.env.HUBSPOT_ACCESS_TOKEN ||
+        (typeof process !== 'undefined' ? process.env.HUBSPOT_ACCESS_TOKEN : undefined);
 
-    const endpoint = `https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formId}`;
+    if (!accessToken) {
+        return new Response(
+            JSON.stringify({ ok: false, error: 'HubSpot access token is not configured' }),
+            { status: 500, headers: { 'Content-Type': 'application/json' } }
+        );
+    }
 
-    const fields: { objectTypeId: string; name: string; value: string }[] = [
-        { objectTypeId: '0-1', name: 'email', value: cleanEmail },
-    ];
+    const properties: Record<string, string> = {
+        email: cleanEmail,
+    };
 
     if (firstname && firstname.trim()) {
-        fields.push({ objectTypeId: '0-1', name: 'firstname', value: firstname.trim() });
+        properties.firstname = firstname.trim();
     }
     if (lastname && lastname.trim()) {
-        fields.push({ objectTypeId: '0-1', name: 'lastname', value: lastname.trim() });
+        properties.lastname = lastname.trim();
     }
     if (phone && phone.trim()) {
-        fields.push({ objectTypeId: '0-1', name: 'phone', value: phone.trim() });
-        fields.push({ objectTypeId: '0-1', name: 'mobilephone', value: phone.trim() });
+        properties.phone = phone.trim();
+        properties.mobilephone = phone.trim();
     }
 
     if (action === 'capture') {
@@ -421,42 +423,47 @@ export const POST: APIRoute = async ({ request }) => {
         );
         const cartDate = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
 
-        fields.push(
-            { objectTypeId: '0-1', name: 'current_abandoned_cart', value: 'yes' },
-            { objectTypeId: '0-1', name: 'abandoned_cart_url', value: recoveryUrl },
-            { objectTypeId: '0-1', name: 'abandoned_cart_products', value: productNames },
-            { objectTypeId: '0-1', name: 'abandoned_cart_products_html', value: productsHtml },
-            { objectTypeId: '0-1', name: 'abandoned_cart_products_skus', value: productSkus },
-            { objectTypeId: '0-1', name: 'abandoned_cart_subtotal', value: String(subtotal) },
-            { objectTypeId: '0-1', name: 'abandoned_cart_total_value', value: String(subtotal) },
-            { objectTypeId: '0-1', name: 'abandoned_cart_date', value: cartDate },
-            { objectTypeId: '0-1', name: 'abandoned_cart_counter', value: String(totalCount) }
-        );
+        Object.assign(properties, {
+            current_abandoned_cart: 'yes',
+            abandoned_cart_url: recoveryUrl,
+            abandoned_cart_products: productNames,
+            abandoned_cart_products_html: productsHtml,
+            abandoned_cart_products_skus: productSkus,
+            abandoned_cart_subtotal: String(subtotal),
+            abandoned_cart_total_value: String(subtotal),
+            abandoned_cart_date: cartDate,
+            abandoned_cart_counter: String(totalCount),
+        });
     } else {
-        fields.push(
-            { objectTypeId: '0-1', name: 'current_abandoned_cart', value: 'no' },
-            { objectTypeId: '0-1', name: 'abandoned_cart_url', value: '' },
-            { objectTypeId: '0-1', name: 'abandoned_cart_products', value: '' },
-            { objectTypeId: '0-1', name: 'abandoned_cart_products_html', value: '' },
-            { objectTypeId: '0-1', name: 'abandoned_cart_products_skus', value: '' },
-            { objectTypeId: '0-1', name: 'abandoned_cart_subtotal', value: '0' },
-            { objectTypeId: '0-1', name: 'abandoned_cart_total_value', value: '0' },
-            { objectTypeId: '0-1', name: 'abandoned_cart_counter', value: '0' }
-        );
+        Object.assign(properties, {
+            current_abandoned_cart: 'no',
+            abandoned_cart_url: '',
+            abandoned_cart_products: '',
+            abandoned_cart_products_html: '',
+            abandoned_cart_products_skus: '',
+            abandoned_cart_subtotal: '0',
+            abandoned_cart_total_value: '0',
+            abandoned_cart_counter: '0',
+        });
     }
 
     const hsPayload = {
-        fields,
-        context: {
-            pageUri: 'https://www.winstonandharrystore.com/checkout',
-            pageName: 'Finalizar Compra | Winston & Harry',
-        },
+        inputs: [
+            {
+                idProperty: 'email',
+                id: cleanEmail,
+                properties,
+            },
+        ],
     };
 
     try {
-        const hsRes = await fetch(endpoint, {
+        const hsRes = await fetch(HUBSPOT_CONTACTS_BATCH_UPSERT_URL, {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${accessToken}`,
+            },
             body: JSON.stringify(hsPayload),
         });
 
@@ -468,7 +475,7 @@ export const POST: APIRoute = async ({ request }) => {
             return new Response(
                 JSON.stringify({
                     ok: false,
-                    error: 'HubSpot Forms API error',
+                    error: 'HubSpot CRM batch upsert error',
                     details,
                 }),
                 {
@@ -486,7 +493,7 @@ export const POST: APIRoute = async ({ request }) => {
         return new Response(
             JSON.stringify({
                 ok: false,
-                error: 'Failed to submit to HubSpot Forms API',
+                error: 'Failed to upsert contact via HubSpot CRM',
                 details: err?.message || String(err),
             }),
             {
