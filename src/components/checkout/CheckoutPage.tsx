@@ -67,6 +67,7 @@ interface FieldProps {
     required?: boolean;
     placeholder?: string;
     options?: { label: string; value: string }[];
+    onBlur?: () => void;
 }
 
 const COLOMBIA_STATES = [
@@ -84,7 +85,7 @@ const COLOMBIA_STATES = [
 ];
 
 const Field = ({
-    label, field, form, errors, set, type = 'text', required = false, placeholder = '', options
+    label, field, form, errors, set, type = 'text', required = false, placeholder = '', options, onBlur
 }: FieldProps) => (
     <div className={`field ${errors[field] ? 'field-error' : ''}`}>
         <label>
@@ -107,12 +108,44 @@ const Field = ({
                 type={type}
                 value={form[field] as string}
                 onChange={e => set(field, e.target.value)}
+                onBlur={onBlur}
                 placeholder={placeholder}
             />
         )}
         {errors[field] && <span className="error-msg">{errors[field]}</span>}
     </div>
 );
+
+function parseRestoreQuery(raw: string): { id: number; quantity: number; color: string | null; size: string | null }[] {
+    if (!raw) return [];
+    let decoded = raw.trim();
+    if (decoded.includes('%3A') || decoded.includes('%2C') || decoded.includes('%3a') || decoded.includes('%2c')) {
+        try {
+            decoded = decodeURIComponent(decoded);
+        } catch (_) {}
+    }
+
+    const deduped = new Map<string, { id: number; quantity: number; color: string | null; size: string | null }>();
+    for (const part of decoded.split(',')) {
+        const trimmed = part.trim();
+        if (!trimmed) continue;
+        const [idRaw, qtyRaw, colorRaw, sizeRaw] = trimmed.split(':');
+        const id = parseInt(idRaw, 10);
+        if (!Number.isFinite(id) || id <= 0) continue;
+        const quantity = Math.max(1, parseInt(qtyRaw || '1', 10) || 1);
+        let color: string | null = null;
+        let size: string | null = null;
+        if (colorRaw && colorRaw.trim()) {
+            try { color = decodeURIComponent(colorRaw.trim()); } catch (_) { color = colorRaw.trim(); }
+        }
+        if (sizeRaw && sizeRaw.trim()) {
+            try { size = decodeURIComponent(sizeRaw.trim()); } catch (_) { size = sizeRaw.trim(); }
+        }
+        const key = `${id}:${(color || '').toLowerCase()}:${(size || '').toLowerCase()}`;
+        deduped.set(key, { id, quantity, color, size });
+    }
+    return Array.from(deduped.values());
+}
 
 export default function CheckoutPage() {
     const $cartItems = useStore(cartItems);
@@ -130,6 +163,107 @@ export default function CheckoutPage() {
     const [couponLoading, setCouponLoading] = useState(false);
 
     const [useSameForBilling, setUseSameForBilling] = useState(true);
+    const [restoring, setRestoring] = useState<boolean>(() => {
+        if (typeof window === 'undefined') return false;
+        return new URLSearchParams(window.location.search).has('restore');
+    });
+    const hasRestoredRef = useRef(false);
+    const lastSentAbandonedSigRef = useRef<string>('');
+    const abandonedDebounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+    // Restore cart on checkout mount if ?restore= is present (idempotent)
+    useEffect(() => {
+        if (typeof window === 'undefined' || hasRestoredRef.current) return;
+        const url = new URL(window.location.href);
+        const restoreParam = url.searchParams.get('restore');
+
+        if (!restoreParam) {
+            try {
+                if (Object.keys(cartItems.get()).length === 0) {
+                    const legacyRaw = localStorage.getItem('winston:cart');
+                    if (legacyRaw) {
+                        const legacyItems = JSON.parse(legacyRaw);
+                        if (Array.isArray(legacyItems) && legacyItems.length > 0) {
+                            legacyItems.forEach((item: any) => {
+                                if (item && item.id) {
+                                    const baseId = item.product_id || item.id;
+                                    const key = `${baseId}-${String(item.color || 'no-color').toLowerCase()}-${String(item.size || 'no-size').toLowerCase()}-${item.id}`;
+                                    cartItems.setKey(key, JSON.stringify({
+                                        id: Number(item.id),
+                                        product_id: Number(baseId),
+                                        name: item.name || `Producto #${item.id}`,
+                                        price: Number(item.price) || 0,
+                                        color: item.color ?? null,
+                                        size: item.size ?? null,
+                                        quantity: Math.max(1, Number(item.quantity) || 1),
+                                        image: item.image || '',
+                                        slug: item.slug || '',
+                                    }));
+                                }
+                            });
+                        }
+                    }
+                }
+            } catch (_) {}
+            setRestoring(false);
+            return;
+        }
+
+        hasRestoredRef.current = true;
+
+        // Strip restore from URL immediately so refresh does not duplicate
+        url.searchParams.delete('restore');
+        const cleanUrl = url.pathname + (url.search ? url.search : '') + url.hash;
+        window.history.replaceState({}, '', cleanUrl);
+
+        const parsed = parseRestoreQuery(restoreParam);
+        if (parsed.length === 0) {
+            setRestoring(false);
+            return;
+        }
+
+        (async () => {
+            let restoredItems: CartItem[] = [];
+            try {
+                const res = await fetch(`/api/abandoned-cart?restore=${encodeURIComponent(restoreParam)}`);
+                if (res.ok) {
+                    const data = await res.json();
+                    if (Array.isArray(data?.items) && data.items.length > 0) {
+                        restoredItems = data.items;
+                    }
+                }
+            } catch (err) {
+                console.warn('[AbandonedCart] Restore lookup fallback:', err);
+            }
+
+            if (restoredItems.length === 0) {
+                restoredItems = parsed.map((entry) => ({
+                    id: entry.id,
+                    product_id: entry.id,
+                    name: `Producto #${entry.id}`,
+                    price: 0,
+                    color: entry.color,
+                    size: entry.size,
+                    quantity: entry.quantity,
+                    image: '',
+                    slug: '',
+                }));
+            }
+
+            clearCart();
+            for (const item of restoredItems) {
+                const baseId = item.product_id || item.id;
+                const key = item.color || item.size
+                    ? `${baseId}-${String(item.color || 'no-color').toLowerCase()}-${String(item.size || 'no-size').toLowerCase()}`
+                    : `${baseId}-no-color-no-size-${item.id}`;
+                cartItems.setKey(key, JSON.stringify(item));
+            }
+            try {
+                localStorage.setItem('winston:cart', JSON.stringify(restoredItems));
+            } catch (_) {}
+            setRestoring(false);
+        })();
+    }, []);
 
     // Calcular opciones de ciudad en base al departamento seleccionado
     const billingCitiesOptions = useMemo(() => {
@@ -246,14 +380,85 @@ export default function CheckoutPage() {
 
     const fmt = (n: number) => '$' + new Intl.NumberFormat('es-CO').format(n);
 
-    // Redirigir si carrito vacío (pero no si estamos procesando el pago)
+    // Redirigir si carrito vacío (pero no si estamos procesando el pago o restaurando)
     useEffect(() => {
-        if (Object.keys($cartItems).length === 0 && step !== 'processing') {
+        if (Object.keys($cartItems).length === 0 && step !== 'processing' && !restoring) {
             isCartOpen.set(false);
             document.body.style.overflow = 'auto';
             window.location.href = '/carrito';
         }
-    }, [$cartItems, step]);
+    }, [$cartItems, step, restoring]);
+
+    const sendAbandonedCartCapture = () => {
+        const cleanEmail = form.email.trim();
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(cleanEmail)) return;
+        if (!items || items.length === 0) return;
+
+        const itemsSig = items
+            .map((i) => `${i.id}:${i.quantity}`)
+            .sort()
+            .join(',');
+        const signature = `${cleanEmail.toLowerCase()}|${itemsSig}`;
+
+        if (lastSentAbandonedSigRef.current === signature) return;
+        lastSentAbandonedSigRef.current = signature;
+
+        fetch('/api/abandoned-cart', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                action: 'capture',
+                email: cleanEmail,
+                firstname: form.first_name.trim() || undefined,
+                lastname: form.last_name.trim() || undefined,
+                phone: form.phone.trim() || undefined,
+                items,
+            }),
+        })
+            .then((res) => {
+                if (!res.ok) {
+                    console.warn('[AbandonedCart] HubSpot capture non-OK status:', res.status);
+                }
+            })
+            .catch((err) => {
+                console.warn('[AbandonedCart] HubSpot capture failed:', err);
+            });
+    };
+
+    const handleEmailBlur = () => {
+        if (abandonedDebounceRef.current) {
+            clearTimeout(abandonedDebounceRef.current);
+            abandonedDebounceRef.current = null;
+        }
+        sendAbandonedCartCapture();
+    };
+
+    useEffect(() => {
+        const cleanEmail = form.email.trim();
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(cleanEmail) || !items || items.length === 0) {
+            if (abandonedDebounceRef.current) {
+                clearTimeout(abandonedDebounceRef.current);
+                abandonedDebounceRef.current = null;
+            }
+            return;
+        }
+
+        if (abandonedDebounceRef.current) {
+            clearTimeout(abandonedDebounceRef.current);
+        }
+
+        abandonedDebounceRef.current = setTimeout(() => {
+            abandonedDebounceRef.current = null;
+            sendAbandonedCartCapture();
+        }, 2000);
+
+        return () => {
+            if (abandonedDebounceRef.current) {
+                clearTimeout(abandonedDebounceRef.current);
+                abandonedDebounceRef.current = null;
+            }
+        };
+    }, [form.email, form.first_name, form.last_name, form.phone, items]);
 
     const set = (field: keyof FormData, value: string) => {
         setForm(f => ({ ...f, [field]: value }));
@@ -397,6 +602,24 @@ export default function CheckoutPage() {
                 email: form.email,
             }));
 
+            // Clear abandoned cart flag in HubSpot (fire-and-forget)
+            if (abandonedDebounceRef.current) {
+                clearTimeout(abandonedDebounceRef.current);
+                abandonedDebounceRef.current = null;
+            }
+            fetch('/api/abandoned-cart', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    action: 'clear',
+                    email: form.email.trim(),
+                    items: [],
+                }),
+                keepalive: true,
+            }).catch((err) => {
+                console.warn('[AbandonedCart] HubSpot clear failed:', err);
+            });
+
             setStep('processing');
 
             // Redirigir a pasarela de pago
@@ -508,7 +731,7 @@ export default function CheckoutPage() {
                             {/* 3. PASO 1 (Identidad) */}
                             {step === 1 && (
                                 <section className="checkout-section">
-                                    <Field label="Dirección de correo electrónico" field="email" form={form} errors={errors} set={set} type="email" required />
+                                    <Field label="Dirección de correo electrónico" field="email" form={form} errors={errors} set={set} type="email" required onBlur={handleEmailBlur} />
                                     
                                     <div className="document-grid" style={{ display: 'grid', gridTemplateColumns: '100px 1fr', gap: '15px', marginBottom: '20px' }}>
                                         <div>
