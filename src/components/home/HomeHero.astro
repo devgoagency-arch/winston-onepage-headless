@@ -55,7 +55,7 @@ const mobileUrl = image_mobile || image_desktop;
 
   <div class="hh__scrim" aria-hidden="true"></div>
 
-  <!-- Contenido editorial al fondo de la imagen -->
+  <!-- Contenido editorial centrado verticalmente en la imagen -->
   <div class="hh__content">
     {eyebrow && (
       <p class="hh__eyebrow hh__anim" style={`color:${eyebrow_color};--delay:0.3s`}>{eyebrow}</p>
@@ -76,8 +76,8 @@ const mobileUrl = image_mobile || image_desktop;
   .hh {
     position: relative;
     display: grid;
-    /* Texto pegado al fondo, alineado a la izquierda */
-    align-items: end;
+    /* Texto centrado verticalmente, alineado a la izquierda */
+    align-items: center;
     justify-items: start;
     min-height: calc(100svh - 90px);
     margin-top: 90px;
@@ -113,25 +113,25 @@ const mobileUrl = image_mobile || image_desktop;
     to   { transform: scale(1); }
   }
 
-  /* ── Scrim — degradado solo en la parte inferior ── */
+  /* ── Scrim — degradado desde la izquierda en desktop ── */
   .hh__scrim {
     position: absolute;
     inset: 0;
     pointer-events: none;
     background: linear-gradient(
-      to top,
-      rgba(10, 10, 10, 0.80) 0%,
-      rgba(10, 10, 10, 0.20) 35%,
-      rgba(10, 10, 10, 0)    60%
+      to right,
+      rgba(10, 10, 10, 0.65) 0%,
+      rgba(10, 10, 10, 0.25) 40%,
+      rgba(10, 10, 10, 0)    65%
     );
   }
 
-  /* ── Caja de texto: pegada al fondo ─────────── */
+  /* ── Caja de texto: centrada verticalmente ─────────── */
   .hh__content {
     position: relative;
     z-index: 1;
-    /* Padding inferior generoso para separar del borde */
-    padding: 0 clamp(1.5rem, 5vw, 4rem) clamp(2.5rem, 5vw, 4.5rem);
+    /* Padding vertical simétrico para mantener el centrado */
+    padding: clamp(2.5rem, 5vw, 4.5rem) clamp(1.5rem, 5vw, 4rem);
     max-width: 48rem;
     line-height: normal;
     pointer-events: none;
@@ -209,13 +209,33 @@ const mobileUrl = image_mobile || image_desktop;
 
   /* ── Responsive ─────────────────────────────── */
   @media (max-width: 768px) {
+    /* Mobile: texto abajo y centrado */
     .hh {
       min-height: calc(100svh - 65px);
       margin-top: 65px;
+      align-items: end;
+      justify-items: center;
     }
 
     .hh__content {
-      padding-bottom: 0;
+      text-align: center;
+      /* Margen inferior para no quedar pegado al borde (+ notch iOS) */
+      padding: 0 1.5rem calc(clamp(2.5rem, 8svh, 4rem) + env(safe-area-inset-bottom, 0px));
+    }
+
+    .hh__subtitle {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Degradado desde abajo para leer el texto */
+    .hh__scrim {
+      background: linear-gradient(
+        to top,
+        rgba(10, 10, 10, 0.80) 0%,
+        rgba(10, 10, 10, 0.25) 40%,
+        rgba(10, 10, 10, 0)    65%
+      );
     }
   }
 
