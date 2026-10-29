@@ -1,9 +1,10 @@
 /**
- * HubSpot Abandoned Cart API Route (`/api/abandoned-cart`)
+ * Digapp Commerce (Supabase) Abandoned Cart API Route (`/api/abandoned-cart`)
  *
  * Environment variables:
- * - `HUBSPOT_ACCESS_TOKEN`: HubSpot Private App access token used to upsert
- *   abandoned-cart contact properties via CRM Contacts batch upsert.
+ * - `DIGAPP_COMMERCE_URL`: Supabase project URL (defaults to `https://oxmpgcqpsdgdrhecixgv.supabase.co`).
+ * - `DIGAPP_COMMERCE_SERVICE_ROLE_KEY`: Server-only Supabase `service_role` key (required).
+ * - `DIGAPP_TIENDA_SLUG`: Store identifier slug (defaults to `winston-harry`).
  */
 export const prerender = false;
 
@@ -13,8 +14,8 @@ import path from 'node:path';
 import { PUBLIC_WP_URL, wcFetch } from '../../lib/woocommerce';
 import type { CartItem } from '../../store/cart';
 
-const HUBSPOT_CONTACTS_BATCH_UPSERT_URL =
-    'https://api.hubapi.com/crm/v3/objects/contacts/batch/upsert';
+const DEFAULT_DIGAPP_COMMERCE_URL = 'https://oxmpgcqpsdgdrhecixgv.supabase.co';
+const DEFAULT_DIGAPP_TIENDA_SLUG = 'winston-harry';
 const RECOVERY_BASE_URL = 'https://www.winstonandharrystore.com/checkout?restore=';
 
 interface AbandonedCartRequestBody {
@@ -50,15 +51,6 @@ let catalogIndexCache: Map<number, CatalogEntry> | null = null;
 
 function isValidEmail(email: unknown): email is string {
     return typeof email === 'string' && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
-}
-
-function escapeHtml(str: string): string {
-    return str
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#39;');
 }
 
 function sanitizePayloadToken(val?: string | null): string {
@@ -372,110 +364,92 @@ export const POST: APIRoute = async ({ request }) => {
     }
 
     const cleanEmail = email.trim();
-    const accessToken =
-        import.meta.env.HUBSPOT_ACCESS_TOKEN ||
-        (typeof process !== 'undefined' ? process.env.HUBSPOT_ACCESS_TOKEN : undefined);
+    const rawBaseUrl =
+        import.meta.env.DIGAPP_COMMERCE_URL ||
+        (typeof process !== 'undefined' ? process.env.DIGAPP_COMMERCE_URL : undefined) ||
+        DEFAULT_DIGAPP_COMMERCE_URL;
+    const baseUrl = String(rawBaseUrl).trim().replace(/\/+$/, '');
 
-    if (!accessToken) {
+    const serviceRoleKey =
+        import.meta.env.DIGAPP_COMMERCE_SERVICE_ROLE_KEY ||
+        (typeof process !== 'undefined' ? process.env.DIGAPP_COMMERCE_SERVICE_ROLE_KEY : undefined);
+
+    if (!serviceRoleKey) {
         return new Response(
-            JSON.stringify({ ok: false, error: 'HubSpot access token is not configured' }),
+            JSON.stringify({ ok: false, error: 'DIGAPP_COMMERCE_SERVICE_ROLE_KEY is not configured' }),
             { status: 500, headers: { 'Content-Type': 'application/json' } }
         );
     }
 
-    const properties: Record<string, string> = {
-        email: cleanEmail,
-    };
+    const rawTiendaSlug =
+        import.meta.env.DIGAPP_TIENDA_SLUG ||
+        (typeof process !== 'undefined' ? process.env.DIGAPP_TIENDA_SLUG : undefined) ||
+        DEFAULT_DIGAPP_TIENDA_SLUG;
+    const tiendaSlug = String(rawTiendaSlug).trim() || DEFAULT_DIGAPP_TIENDA_SLUG;
 
-    if (firstname && firstname.trim()) {
-        properties.firstname = firstname.trim();
-    }
-    if (lastname && lastname.trim()) {
-        properties.lastname = lastname.trim();
-    }
-    if (phone && phone.trim()) {
-        properties.phone = phone.trim();
-        properties.mobilephone = phone.trim();
-    }
+    const rpcName = action === 'capture' ? 'carrito_upsert' : 'carrito_marcar_recuperado';
+    const endpoint = `${baseUrl}/rest/v1/rpc/${rpcName}`;
+
+    let rpcPayload: Record<string, unknown>;
 
     if (action === 'capture') {
         const validItems = items!;
         const recoveryUrl = buildRecoveryUrl(validItems);
-        const productNames = validItems
-            .map((i) => (i.name ? String(i.name).trim() : `Producto #${i.id}`))
-            .join(', ');
-        const productsHtml = `<ul>${validItems
-            .map((i) => {
-                const name = escapeHtml(i.name ? String(i.name).trim() : `Producto #${i.id}`);
-                const qty = Math.max(1, Number(i.quantity) || 1);
-                const attrs = [i.color, i.size].filter(Boolean).map((a) => escapeHtml(String(a))).join(' / ');
-                return `<li>${name}${attrs ? ` (${attrs})` : ''} x ${qty}</li>`;
-            })
-            .join('')}</ul>`;
-        const productSkus = validItems.map((i) => String(i.id)).join(', ');
+        const restoreToken = recoveryUrl.slice(RECOVERY_BASE_URL.length) || null;
         const subtotal = validItems.reduce(
             (sum, i) => sum + (Number(i.price) || 0) * Math.max(1, Number(i.quantity) || 1),
             0
         );
-        const totalCount = validItems.reduce(
-            (sum, i) => sum + Math.max(1, Number(i.quantity) || 1),
-            0
-        );
-        const cartDate = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
+        const metadata: Record<string, string> = {};
+        if (firstname && firstname.trim()) {
+            metadata.firstname = firstname.trim();
+        }
+        if (lastname && lastname.trim()) {
+            metadata.lastname = lastname.trim();
+        }
 
-        Object.assign(properties, {
-            current_abandoned_cart: 'yes',
-            abandoned_cart_url: recoveryUrl,
-            abandoned_cart_products: productNames,
-            abandoned_cart_products_html: productsHtml,
-            abandoned_cart_products_skus: productSkus,
-            abandoned_cart_subtotal: String(subtotal),
-            abandoned_cart_total_value: String(subtotal),
-            abandoned_cart_date: cartDate,
-            abandoned_cart_counter: String(totalCount),
-        });
+        rpcPayload = {
+            p_tienda_slug: tiendaSlug,
+            p_email: cleanEmail,
+            p_telefono: phone && phone.trim() ? phone.trim() : null,
+            p_items: validItems,
+            p_total: Number.isFinite(subtotal) ? subtotal : null,
+            p_moneda: 'COP',
+            p_restore_url: recoveryUrl,
+            p_restore_token: restoreToken,
+            p_consentimiento: true,
+            p_opt_in_wa: false,
+            p_metadata: metadata,
+        };
     } else {
-        Object.assign(properties, {
-            current_abandoned_cart: 'no',
-            abandoned_cart_url: '',
-            abandoned_cart_products: '',
-            abandoned_cart_products_html: '',
-            abandoned_cart_products_skus: '',
-            abandoned_cart_subtotal: '0',
-            abandoned_cart_total_value: '0',
-            abandoned_cart_counter: '0',
-        });
+        rpcPayload = {
+            p_tienda_slug: tiendaSlug,
+            p_email: cleanEmail,
+            p_carrito_id: null,
+        };
     }
 
-    const hsPayload = {
-        inputs: [
-            {
-                idProperty: 'email',
-                id: cleanEmail,
-                properties,
-            },
-        ],
-    };
-
     try {
-        const hsRes = await fetch(HUBSPOT_CONTACTS_BATCH_UPSERT_URL, {
+        const rpcRes = await fetch(endpoint, {
             method: 'POST',
             headers: {
+                apikey: serviceRoleKey,
+                Authorization: `Bearer ${serviceRoleKey}`,
                 'Content-Type': 'application/json',
-                Authorization: `Bearer ${accessToken}`,
+                Prefer: 'return=representation',
             },
-            body: JSON.stringify(hsPayload),
+            body: JSON.stringify(rpcPayload),
         });
 
-        if (!hsRes.ok) {
-            const details = await hsRes
+        if (!rpcRes.ok) {
+            const details = await rpcRes
                 .json()
-                .catch(async () => ({ raw: await hsRes.text().catch(() => '') }));
-            const status = hsRes.status >= 400 && hsRes.status < 600 ? hsRes.status : 502;
+                .catch(async () => ({ raw: await rpcRes.text().catch(() => '') }));
+            const status = rpcRes.status >= 400 && rpcRes.status < 600 ? rpcRes.status : 502;
             return new Response(
                 JSON.stringify({
                     ok: false,
-                    error: 'HubSpot CRM batch upsert error',
+                    error: `Digapp Commerce RPC ${rpcName} error`,
                     details,
                 }),
                 {
@@ -485,7 +459,8 @@ export const POST: APIRoute = async ({ request }) => {
             );
         }
 
-        return new Response(JSON.stringify({ ok: true }), {
+        const data = await rpcRes.json().catch(() => null);
+        return new Response(JSON.stringify({ ok: true, data }), {
             status: 200,
             headers: { 'Content-Type': 'application/json' },
         });
@@ -493,7 +468,7 @@ export const POST: APIRoute = async ({ request }) => {
         return new Response(
             JSON.stringify({
                 ok: false,
-                error: 'Failed to upsert contact via HubSpot CRM',
+                error: `Failed to call Digapp Commerce RPC ${rpcName}`,
                 details: err?.message || String(err),
             }),
             {
