@@ -31,12 +31,21 @@ export function getProductRegularPrice(p: any): number {
     );
 }
 
-/** Devuelve true si el producto tiene un descuento real. */
+/** Devuelve true si el producto tiene un descuento real (incluye variaciones en oferta). */
 export function isOnSale(p: any): boolean {
     if (p?.on_sale) return true;
     const regular = getProductRegularPrice(p);
     const price   = getProductPrice(p);
-    return regular > price && price > 0;
+    if (regular > price && price > 0) return true;
+    // Productos variables: el padre puede no estar marcado, pero alguna variación sí
+    const vars = Array.isArray(p?.variations) ? p.variations
+        : Array.isArray(p?.variations_data) ? p.variations_data : [];
+    return vars.some((v: any) => {
+        const vPrice = parsePrice(v?.price);
+        const vRegular = parsePrice(v?.regular_price);
+        const vSale = parsePrice(v?.sale_price);
+        return (vRegular > vPrice && vPrice > 0) || (vSale > 0 && vRegular > vSale);
+    });
 }
 
 // ─── Filtros ─────────────────────────────────────────────────────────────────

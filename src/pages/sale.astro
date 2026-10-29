@@ -8,6 +8,7 @@ import {
     PUBLIC_WP_URL
 } from "../lib/woocommerce";
 import FilteredProductList from "../components/FilteredProductList";
+import { isOnSale } from "../lib/productFilters";
 import fs from "node:fs";
 import path from "node:path";
 
@@ -27,60 +28,41 @@ let allSaleProducts: any[] = [];
 // Acumulador para extraer todas las categorías que tengan productos en SALE
 const seenCategories = new Map<number, { id: number, name: string, slug: string }>();
 
+// IMPORTANTE: NO usamos on_sale=true de WooCommerce. Ese filtro omite productos variables
+// cuyas variaciones están en oferta pero el padre no está marcado. Descargamos TODO el
+// catálogo publicado y filtramos aquí con isOnSale() (revisa producto y variaciones).
+// Tampoco se reutiliza caché de disco: congelaba listas viejas de ofertas.
 while (hasMore) {
     try {
-        let pageProducts;
-        const filePath = path.join(catalogDir, `sale-p${page}.json`);
+        console.log(`[SSG Sale] Descargando catálogo - página ${page}`);
+        const rawPage = await getAllProducts(50, page, "menu_order", "asc", false);
+        const pageProducts = Array.isArray(rawPage) ? rawPage.filter(isOnSale) : [];
 
-        // Si ya existe el caché (dev o prod), lo leemos de disco para no repetir la descarga
-        if (fs.existsSync(filePath)) {
-            try {
-                const cachedData = JSON.parse(fs.readFileSync(filePath, "utf-8"));
-                pageProducts = cachedData;
-            } catch (e) {
-                pageProducts = null;
+        allSaleProducts = allSaleProducts.concat(pageProducts);
+
+        // Acumulamos las categorías de todos los productos en sale
+        pageProducts.forEach(product => {
+            if (Array.isArray(product.categories)) {
+                product.categories.forEach((cat: any) => {
+                    if (cat && cat.id && cat.name && cat.slug) {
+                        seenCategories.set(cat.id, {
+                            id: cat.id,
+                            name: cat.name,
+                            slug: cat.slug
+                        });
+                    }
+                });
             }
-        }
+        });
 
-        if (!pageProducts) {
-            console.log(`[SSG Sale] Descargando de API SALE - página ${page}`);
-            pageProducts = await getAllProducts(16, page, "menu_order", "asc", true);
-            // Guardamos los productos en el JSON
-            fs.writeFileSync(filePath, JSON.stringify(pageProducts, null, 2), "utf-8");
-        } else {
-            console.log(`[SSG Sale] Cargando página ${page} desde caché local para mayor velocidad.`);
-        }
-
-        if (page === 1) {
-            products = pageProducts;
-        }
-
-        if (Array.isArray(pageProducts)) {
-            allSaleProducts = allSaleProducts.concat(pageProducts);
-            
-            // Acumulamos las categorías de todos los productos en sale
-            pageProducts.forEach(product => {
-                if (Array.isArray(product.categories)) {
-                    product.categories.forEach((cat: any) => {
-                        if (cat && cat.id && cat.name && cat.slug) {
-                            seenCategories.set(cat.id, {
-                                id: cat.id,
-                                name: cat.name,
-                                slug: cat.slug
-                            });
-                        }
-                    });
-                }
-            });
-        }
-
-        if (!pageProducts || pageProducts.length === 0) {
+        // Fin: la API devolvió una página vacía (la API ya no tiene más productos)
+        if (!Array.isArray(rawPage) || rawPage.length === 0) {
             hasMore = false;
         } else {
             page++;
         }
 
-        if (page > 20) break; // Límite de seguridad
+        if (page > 40) break; // Límite de seguridad
         await new Promise((r) => setTimeout(r, 200));
     } catch (err: any) {
         console.error(`[SSG Sale] Error pre-generando página ${page}:`, err.message);
@@ -88,11 +70,8 @@ while (hasMore) {
     }
 }
 
-// Guardar página final vacía para garantizar que el scroll infinito sepa cuándo detenerse
-const emptyFilePath = path.join(catalogDir, `sale-p${page}.json`);
-if (!fs.existsSync(emptyFilePath)) {
-    fs.writeFileSync(emptyFilePath, JSON.stringify([], null, 2), "utf-8");
-}
+// Los primeros 16 productos en oferta se renderizan en el HTML inicial
+products = allSaleProducts.slice(0, 16);
 
 // NUEVO: Guardar el archivo unificado que el cliente de React usa para paginar y filtrar
 const allFilePath = path.join(catalogDir, `sale-all.json`);
@@ -163,6 +142,28 @@ const seoData = {
     title="Sale | Winston & Harry"
     seoData={seoData}
 >
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "CollectionPage",
+                "@id": "https://www.winstonandharrystore.com/sale#webpage",
+                "url": "https://www.winstonandharrystore.com/sale",
+                "name": "Sale | Winston & Harry",
+                "description": categoryDesc,
+                "isPartOf": { "@type": "WebSite", "name": "Winston & Harry", "url": "https://www.winstonandharrystore.com" },
+                "inLanguage": "es-CO"
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.winstonandharrystore.com/" },
+                    { "@type": "ListItem", "position": 2, "name": "Sale", "item": "https://www.winstonandharrystore.com/sale" }
+                ]
+            }
+        ]
+    })} />
+
     <Header />
 
     <!-- Breadcrumbs -->
