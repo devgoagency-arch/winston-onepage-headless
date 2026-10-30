@@ -389,7 +389,9 @@ export default function CheckoutPage() {
         }
     }, [$cartItems, step, restoring]);
 
-    const sendAbandonedCartCapture = () => {
+    const sendAbandonedCartCapture = (keepalive = false) => {
+        // No recrear el carrito después del "clear" del pedido
+        if (step === 'processing') return;
         const cleanEmail = form.email.trim();
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(cleanEmail)) return;
         if (!items || items.length === 0) return;
@@ -414,16 +416,44 @@ export default function CheckoutPage() {
                 phone: form.phone.trim() || undefined,
                 items,
             }),
+            keepalive,
         })
             .then((res) => {
                 if (!res.ok) {
+                    // Permitir reintento con la misma firma
+                    lastSentAbandonedSigRef.current = '';
                     console.warn('[AbandonedCart] HubSpot capture non-OK status:', res.status);
                 }
             })
             .catch((err) => {
+                lastSentAbandonedSigRef.current = '';
                 console.warn('[AbandonedCart] HubSpot capture failed:', err);
             });
     };
+
+    // Versión más reciente para los listeners de cierre de página
+    const captureRef = useRef(sendAbandonedCartCapture);
+    captureRef.current = sendAbandonedCartCapture;
+
+    // Captura al cerrar u ocultar la página (autocompletar puede no disparar el debounce)
+    useEffect(() => {
+        const flush = () => {
+            if (abandonedDebounceRef.current) {
+                clearTimeout(abandonedDebounceRef.current);
+                abandonedDebounceRef.current = null;
+            }
+            captureRef.current(true);
+        };
+        const onVisibility = () => {
+            if (document.visibilityState === 'hidden') flush();
+        };
+        window.addEventListener('pagehide', flush);
+        document.addEventListener('visibilitychange', onVisibility);
+        return () => {
+            window.removeEventListener('pagehide', flush);
+            document.removeEventListener('visibilitychange', onVisibility);
+        };
+    }, []);
 
     const handleEmailBlur = () => {
         if (abandonedDebounceRef.current) {
@@ -762,6 +792,12 @@ export default function CheckoutPage() {
                                                 alert('Por favor, completa todos los campos de contacto obligatorios.');
                                                 return;
                                             }
+                                            // Capturar carrito abandonado antes de pasar al envío
+                                            if (abandonedDebounceRef.current) {
+                                                clearTimeout(abandonedDebounceRef.current);
+                                                abandonedDebounceRef.current = null;
+                                            }
+                                            sendAbandonedCartCapture();
                                             setStep(2);
                                         }}
                                     >
