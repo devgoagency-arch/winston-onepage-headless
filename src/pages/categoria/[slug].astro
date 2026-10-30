@@ -573,10 +573,11 @@ const seoData = {
 
     .banner-content h1 {
         font-family: var(--font-titles);
-        font-size: 1.25rem;
+        font-size: clamp(1.5rem, 3.75vw, 2.7rem);
+        line-height: 1.06;
         margin-bottom: 1rem;
-        letter-spacing: 2px;
-        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        text-transform: none;
         max-width: 600px;
         color: #fff !important;
     }

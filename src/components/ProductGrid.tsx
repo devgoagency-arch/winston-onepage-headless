@@ -349,7 +349,7 @@ export default function ProductGrid({
       <div className="container-full">
         <div className="section-title">
           <span className="subtitle">ACCESORIOS Y ZAPATOS DE CUERO PARA HOMBRE</span>
-          <h2>LOS FAVORITOS</h2>
+          <h2>Los favoritos</h2>
           <p className="description">
             Ropa, zapatos 100 % cuero y accesorios diseñados para hombres contemporáneos que valoran la calidad, el detalle y el carácter.
           </p>
@@ -630,7 +630,7 @@ export default function ProductGrid({
         .section-title { text-align: center; margin-bottom: 2rem; max-width: 800px; margin-left: auto; margin-right: auto; padding: 0 1rem; }
         .subtitle { font-size: 0.8rem; color: #999; letter-spacing: 2px; text-transform: uppercase; display: block; margin-bottom: 0.5rem; font-family: var(--font-paragraphs); }
         .section-title h2 { font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--color-green); line-height: 1; letter-spacing: 4px; font-weight: 700; }
-        .description { font-size: 0.85rem; color: #333; line-height: 1.6; font-family: var(--font-paragraphs); max-width: 600px; margin: 0 auto; }
+        .description { font-size: 1rem; color: #333; line-height: 1.6; font-family: var(--font-paragraphs); max-width: 600px; margin: 0 auto; }
 
         .category-filters-wrapper {
           position: sticky;
@@ -1066,7 +1066,7 @@ export default function ProductGrid({
 
         @media (max-width: 768px) {
           .section-title h2 { font-size: 1.25rem; }
-          .description { font-size: 0.75rem; }
+          .description { font-size: 0.9rem; }
           .category-filters { 
             display: grid;
             grid-template-columns: repeat(3, 1fr);

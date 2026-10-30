@@ -12,7 +12,7 @@
   --section-padding-mobile: 1rem 0;
 
   /* Font Families */
-  --font-titles: 'darkmode-off', 'Antonio', sans-serif;
+  --font-titles: 'hardcover-vf', Georgia, serif;
   --font-paragraphs: 'Helvetica', 'Arial', sans-serif;
   --font-products: 'darkmode-off', 'Antonio', sans-serif;
 }
@@ -25,6 +25,8 @@
 
 body {
   font-family: var(--font-paragraphs);
+  /* Hardcover (títulos) siempre en light, aunque el componente pida negrita. Solo afecta fuentes variables. */
+  font-variation-settings: 'wght' 300;
   background-color: var(--color-white);
   color: var(--color-black);
   line-height: 1.6;
@@ -38,8 +40,8 @@ h3,
 h4 {
   font-family: var(--font-titles);
   color: var(--color-green);
-  text-transform: uppercase;
-  letter-spacing: 2px;
+  text-transform: none;
+  letter-spacing: 0.5px;
   font-weight: 700;
   font-size: 1.25rem;
   /* 20px aprox */

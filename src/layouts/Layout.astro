@@ -130,8 +130,10 @@ seo.canonical = customCanonical ?? `https://www.winstonandharrystore.com${cleanP
         <link rel="preconnect" href={PUBLIC_WP_URL} crossorigin />
         <link rel="dns-prefetch" href={PUBLIC_WP_URL} />
         
-        <!-- Fuentes auto-hospedadas en local (Cero CDNs de bloqueo) -->
-        <link rel="stylesheet" href="/fonts/typekit/typekit.css" />
+        <!-- Adobe Fonts: hardcover-vf (títulos) y darkmode-off (productos) -->
+        <link rel="preconnect" href="https://use.typekit.net" crossorigin />
+        <link rel="preconnect" href="https://p.typekit.net" crossorigin />
+        <link rel="stylesheet" href="https://use.typekit.net/lpl0lgn.css" />
         <link rel="stylesheet" href="/fonts/font-awesome/all.css" />
 
         <meta name="generator" content={Astro.generator} />

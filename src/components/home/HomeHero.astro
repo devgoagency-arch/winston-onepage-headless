@@ -141,8 +141,8 @@ const mobileUrl = image_mobile || image_desktop;
   .hh__eyebrow {
     font-family: var(--font-titles, 'Antonio', sans-serif);
     font-size: clamp(1.05rem, 2.1vw, 1.65rem);
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-transform: none;
     font-weight: 700;
     margin: 0 0 0.5rem;
     line-height: 1;
@@ -154,15 +154,15 @@ const mobileUrl = image_mobile || image_desktop;
     font-size: clamp(1.5rem, 3.75vw, 2.7rem);
     font-weight: 700;
     line-height: 1.06;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    text-transform: none;
+    letter-spacing: 0.5px;
     margin: 0 0 0.75rem;
   }
 
   /* Subtitle: -25% */
   .hh__subtitle {
     font-family: var(--font-paragraphs, sans-serif);
-    font-size: clamp(0.64rem, 1.05vw, 0.75rem);
+    font-size: clamp(0.95rem, 1.2vw, 1rem);
     margin: 0 0 1.75rem;
     max-width: 34rem;
     line-height: 1.6;
@@ -171,10 +171,11 @@ const mobileUrl = image_mobile || image_desktop;
   /* CTA: -25% */
   .hh__cta {
     display: inline-block;
-    padding: 0.64rem 1.5rem;
+    padding: 0.85rem 1.75rem;
     border: 1.5px solid;
     font-family: var(--font-titles, 'Antonio', sans-serif);
-    font-size: 0.64rem;
+    font-size: 0.85rem;
+    font-variation-settings: 'wght' 700; /* mismo peso que los botones de Favoritos */
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;

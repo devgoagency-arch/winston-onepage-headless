@@ -92,6 +92,7 @@ const banner = await getHomeBanner();
 					subtitle:  banner.right.subtitle,
 					cta_label: banner.right.cta_label,
 					cta_href:  banner.right.cta_href,
+					badge:     /2x1/i.test(banner.right.title) ? "2x1" : undefined,
 				}}
 			/>
 			<FeaturesBanner />
