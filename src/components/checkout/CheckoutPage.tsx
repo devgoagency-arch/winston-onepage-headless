@@ -779,8 +779,8 @@ export default function CheckoutPage() {
                                     <Field label="Dirección de correo electrónico" field="email" form={form} errors={errors} set={set} type="email" required onBlur={handleEmailBlur} />
                                     
                                     <div className="document-grid" style={{ display: 'grid', gridTemplateColumns: '100px 1fr', gap: '15px', marginBottom: '20px' }}>
-                                        <div>
-                                            <label className="standard-label">Tipo</label>
+                                        <div className="field">
+                                            <label>Tipo</label>
                                             <select defaultValue="CC" className="checkout-select" onChange={(e) => { set('document_type', e.target.value) }}>
                                                 <option value="CC">CC</option>
                                                 <option value="CE">CE</option>
@@ -1222,8 +1222,10 @@ export default function CheckoutPage() {
                 .coupon-input-group input {
                     flex: 1;
                     max-width: 300px;
-                    height: 44px;
-                    padding: 0 15px;
+                    min-height: 44px;
+                    height: auto;
+                    padding: 10px 15px;
+                    box-sizing: border-box;
                     border: 1px solid #ccc;
                     outline: none;
                 }
