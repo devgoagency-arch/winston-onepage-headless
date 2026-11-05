@@ -314,7 +314,16 @@ export default function CheckoutPage() {
         [items]
     );
 
+    const ecommerceItems = useMemo(() => items.map((item, index) => ({
+        item_id: String(item.id),
+        item_name: item.name,
+        price: item.price,
+        quantity: item.quantity,
+        index: index
+    })), [items]);
+
     const hasFired = useRef(false);
+    const hasFiredShippingInfo = useRef(false);
 
     useEffect(() => {
         // 1. Si el carrito está vacío, abortar.
@@ -332,13 +341,7 @@ export default function CheckoutPage() {
             ecommerce: {
                 currency: 'COP',
                 value: subtotal,
-                items: items.map((item, index) => ({
-                    item_id: String(item.id),
-                    item_name: item.name,
-                    price: item.price,
-                    quantity: item.quantity,
-                    index: index
-                }))
+                items: ecommerceItems
             }
         });
         
@@ -358,7 +361,7 @@ export default function CheckoutPage() {
 
         // 4. Log de éxito
         console.log("✅ GTM TRACKING EXITOSO: begin_checkout & InitiateCheckout");
-    }, [items, subtotal]);
+    }, [items, subtotal, ecommerceItems]);
 
     const discount = useMemo(() => {
         return calculateComboDiscount(items);
@@ -650,6 +653,18 @@ export default function CheckoutPage() {
                 console.warn('[AbandonedCart] HubSpot clear failed:', err);
             });
 
+            (window as any).dataLayer = (window as any).dataLayer || [];
+            (window as any).dataLayer.push({ ecommerce: null });
+            (window as any).dataLayer.push({
+                event: 'add_payment_info',
+                ecommerce: {
+                    currency: 'COP',
+                    value: total,
+                    payment_type: form.payment_method,
+                    items: ecommerceItems
+                }
+            });
+
             setStep('processing');
 
             // Redirigir a pasarela de pago
@@ -880,6 +895,20 @@ export default function CheckoutPage() {
                                                 if (!useSameForBilling && (!form.address_1 || !form.city || !form.state)) {
                                                     alert('Por favor completa los campos obligatorios de facturación.');
                                                     return;
+                                                }
+                                                if (!hasFiredShippingInfo.current) {
+                                                    (window as any).dataLayer = (window as any).dataLayer || [];
+                                                    (window as any).dataLayer.push({ ecommerce: null });
+                                                    (window as any).dataLayer.push({
+                                                        event: 'add_shipping_info',
+                                                        ecommerce: {
+                                                            currency: 'COP',
+                                                            value: total,
+                                                            shipping_tier: 'Estandar',
+                                                            items: ecommerceItems
+                                                        }
+                                                    });
+                                                    hasFiredShippingInfo.current = true;
                                                 }
                                                 setStep(3);
                                             }}
@@ -1286,8 +1315,10 @@ export default function CheckoutPage() {
                 .checkout-page textarea,
                 .checkout-select {
                     width: 100%;
-                    height: 48px;
-                    padding: 15px;
+                    min-height: 48px;
+                    height: auto;
+                    line-height: 1.5;
+                    padding: 11px 15px;
                     border: 1px solid #e0e0e0;
                     background: #fff;
                     font-size: 0.95rem;
@@ -1828,13 +1859,22 @@ export default function CheckoutPage() {
 
                 .field-input, .checkout-select, .field input {
                     width: 100%;
+                    min-height: 48px;
+                    height: auto;
+                    line-height: 1.5;
+                    box-sizing: border-box;
                     background: #fff;
                     border: 1px solid #e0e0e0;
-                    padding: 15px;
+                    padding: 11px 15px;
                     border-radius: 4px;
                     transition: border-color 0.3s ease;
                     font-size: 1rem;
                     color: #333;
+                }
+
+                .checkout-select {
+                    -webkit-appearance: menulist;
+                    appearance: auto;
                 }
 
                 .field-input:focus, .checkout-select:focus, .field input:focus {
