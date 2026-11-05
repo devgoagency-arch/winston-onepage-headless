@@ -88,6 +88,18 @@ const SearchDrawer: React.FC = () => {
                             </div>
                         )}
 
+                        {!loading && results.length > 0 && results[0]._corrected && (
+                            <p className="search-suggested-note">
+                                ✨ Mostrando resultados de “{results[0]._corrected}”
+                            </p>
+                        )}
+
+                        {!loading && results.some((p) => p._suggested) && (
+                            <p className="search-suggested-note">
+                                No tenemos “{query}” exacto. Te sugerimos estas opciones:
+                            </p>
+                        )}
+
                         {!loading && results.length > 0 && (
                             <div className="search-results-grid">
                                 {results.map((product) => (
@@ -217,6 +229,13 @@ const SearchDrawer: React.FC = () => {
                 .search-results-container {
                     flex: 1;
                     overflow-y: auto;
+                }
+
+                .search-suggested-note {
+                    margin: 0 0 1.2rem 0;
+                    font-family: var(--font-paragraphs);
+                    font-size: 0.85rem;
+                    color: #666;
                 }
 
                 .search-loading {

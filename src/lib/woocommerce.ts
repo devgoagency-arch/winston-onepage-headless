@@ -1526,11 +1526,120 @@ export async function getAllProducts(
 
 let globalSearchCache: any[] | null = null;
 
-export async function searchProducts(query: string, perPage = 20) {
+/** Minúsculas y sin tildes, para comparar "pantalón" con "pantalon". */
+function foldText(s: string): string {
+    return (s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().trim();
+}
+
+/**
+ * Búsqueda por intención: el cliente escribe una ocasión ("boda", "traje") que no
+ * aparece literalmente en el catálogo. Se traduce a los productos que sí vendemos.
+ * Las claves van sin tildes; los términos relacionados se buscan por separado (OR).
+ */
+const SEARCH_INTENTS: { triggers: string[]; related: string[] }[] = [
+    {
+        triggers: ['traje', 'trajes', 'terno', 'smoking', 'esmoquin', 'tuxedo', 'saco', 'sacos', 'formal', 'formales', 'elegante', 'etiqueta', 'gala', 'ejecutivo', 'oficina'],
+        related: ['blazer', 'camisa', 'pantalon', 'cordon', 'cinturon'],
+    },
+    {
+        triggers: ['boda', 'bodas', 'matrimonio', 'novio', 'padrino', 'ceremonia', 'evento', 'fiesta', 'grado', 'graduacion', 'bautizo', 'comunion'],
+        related: ['blazer', 'camisa', 'cordon', 'cinturon', 'pantalon'],
+    },
+    {
+        triggers: ['entrevista', 'trabajo', 'reunion'],
+        related: ['blazer', 'camisa', 'cordon', 'maletin'],
+    },
+    {
+        triggers: ['viaje', 'viajar', 'vacaciones', 'aeropuerto'],
+        related: ['maletas', 'morral', 'accesorios de viaje'],
+    },
+    {
+        triggers: ['regalo', 'regalar', 'detalle', 'cumpleanos', 'aniversario'],
+        related: ['billetera', 'cinturon', 'accesorios'],
+    },
+    {
+        triggers: ['frio', 'invierno', 'lluvia'],
+        related: ['chaqueta', 'sueter', 'bota'],
+    },
+];
+
+function expandSearchIntent(term: string): string[] {
+    const words = foldText(term).split(/\s+/).filter(Boolean);
+    const related = new Set<string>();
+    for (const intent of SEARCH_INTENTS) {
+        if (words.some(w => intent.triggers.includes(w))) intent.related.forEach(r => related.add(r));
+    }
+    return [...related];
+}
+
+/** Distancia de Damerau-Levenshtein (cuenta una letra cambiada, sobrante, faltante o dos intercambiadas). */
+function editDistance(a: string, b: string): number {
+    const dp: number[][] = Array.from({ length: a.length + 1 }, (_, i) => [i, ...Array(b.length).fill(0)]);
+    for (let j = 1; j <= b.length; j++) dp[0][j] = j;
+    for (let i = 1; i <= a.length; i++) {
+        for (let j = 1; j <= b.length; j++) {
+            const cost = a[i - 1] === b[j - 1] ? 0 : 1;
+            dp[i][j] = Math.min(dp[i - 1][j] + 1, dp[i][j - 1] + 1, dp[i - 1][j - 1] + cost);
+            if (i > 1 && j > 1 && a[i - 1] === b[j - 2] && a[i - 2] === b[j - 1]) {
+                dp[i][j] = Math.min(dp[i][j], dp[i - 2][j - 2] + 1);
+            }
+        }
+    }
+    return dp[a.length][b.length];
+}
+
+let searchVocabulary: Map<string, number> | null = null;
+
+/** Palabras reales del catálogo (nombres, categorías, tags) con su frecuencia. */
+function buildVocabulary(products: any[]): Map<string, number> {
+    const vocab = new Map<string, number>();
+    for (const p of products) {
+        const text = foldText([p.name, ...(p.categories || []).map((c: any) => c.name), ...(p.tags || []).map((t: any) => t.name)].join(' '));
+        for (const w of text.split(/[^a-z0-9]+/)) {
+            if (w.length >= 4) vocab.set(w, (vocab.get(w) || 0) + 1);
+        }
+    }
+    return vocab;
+}
+
+/**
+ * Corrige errores de tipeo ("camista" → "camisa"). Palabras cortas no se corrigen
+ * (evita convertir "boda" en "bota"). Devuelve null si no hay nada que corregir.
+ */
+function correctTypos(term: string, vocab: Map<string, number>): string[] {
+    const words = term.split(/\s+/);
+    const options = words.map(word => {
+        if (word.length < 5 || vocab.has(word)) return [word];
+        const maxDist = word.length >= 8 ? 2 : 1;
+        const found: { cand: string; d: number; freq: number }[] = [];
+        for (const [candidate, freq] of vocab) {
+            if (candidate.length < word.length - maxDist) continue;
+            // Compara con la palabra completa y con su inicio (para plurales: "mocacin" → "mocasines")
+            const d = Math.min(
+                editDistance(word, candidate),
+                candidate.length > word.length ? editDistance(word, candidate.slice(0, word.length)) : 99
+            );
+            if (d <= maxDist) found.push({ cand: candidate, d, freq });
+        }
+        found.sort((a, b) => a.d - b.d || b.freq - a.freq);
+        if (found.length === 0) return [word];
+        // Ante empate de distancia (camisa / camiseta) se ofrecen hasta 2 alternativas
+        const names = found.filter(f => f.d === found[0].d).map(f => f.cand);
+        // Descarta plurales de otra alternativa (camisa / camisas → camisa)
+        const unique = names.filter(n => !names.some(o => o !== n && (n === o + 's' || n === o + 'es')));
+        return unique.slice(0, 2);
+    });
+    // Una sola palabra: hasta 2 alternativas. Varias palabras: la mejor de cada una.
+    if (words.length === 1) return options[0][0] === words[0] ? [] : options[0];
+    const joined = options.map(o => o[0]).join(' ');
+    return joined === term ? [] : [joined];
+}
+
+export async function searchProducts(query: string, perPage = 20, _expanded = false): Promise<any[]> {
     if (!query || query.length < 2) return [];
 
     const normalizeQuery = (q: string) => {
-        const lower = q.toLowerCase().trim();
+        const lower = foldText(q);
         const commonTypos: Record<string, string> = {
             'roap': 'ropa', 'rospa': 'ropa', 'ropps': 'ropa',
             'zapato': 'zapatos', 'sapato': 'zapatos', 'zapatoz': 'zapatos',
@@ -1557,12 +1666,19 @@ export async function searchProducts(query: string, perPage = 20) {
 
             // Cargar el catálogo completo generado por SSG en lugar de los archivos paginados viejos
             try {
-                const res = await fetch(`${SITE}/data/catalog/tienda-all.json`);
-                if (res.ok) {
-                    const page = await res.json();
-                    if (Array.isArray(page) && page.length > 0) {
-                        newCache.push(...page);
-                    }
+                let page: any = null;
+                if (import.meta.env.DEV) {
+                    // En desarrollo el puerto cambia (4321 puede estar ocupado por otro proyecto): leer de disco
+                    const fs = await import('node:fs');
+                    const path = await import('node:path');
+                    const file = path.join(process.cwd(), 'public', 'data', 'catalog', 'tienda-all.json');
+                    if (fs.existsSync(file)) page = JSON.parse(fs.readFileSync(file, 'utf-8'));
+                } else {
+                    const res = await fetch(`${SITE}/data/catalog/tienda-all.json`);
+                    if (res.ok) page = await res.json();
+                }
+                if (Array.isArray(page) && page.length > 0) {
+                    newCache.push(...page);
                 }
             } catch (e) {
                 console.warn("[searchProducts] Error fetching tienda-all.json:", e);
@@ -1596,7 +1712,7 @@ export async function searchProducts(query: string, perPage = 20) {
                 return '';
             });
 
-            const fullText = [
+            const fullText = foldText([
                 p.name,
                 p.description,
                 p.short_description,
@@ -1604,7 +1720,7 @@ export async function searchProducts(query: string, perPage = 20) {
                 ...(p.categories?.map((c: any) => c.name) || []),
                 ...topLevelAttrs,
                 ...variationAttrs
-            ].join(' ').toLowerCase();
+            ].join(' '));
 
             let matchesAll = true;
             let localScore = 0;
@@ -1626,7 +1742,7 @@ export async function searchProducts(query: string, perPage = 20) {
 
             if (matchesAll) {
                 p._score = localScore;
-                if (p.name && p.name.toLowerCase().includes(term)) {
+                if (p.name && foldText(p.name).includes(term)) {
                     p._exactMatch = true;
                     p._score += 10;
                 }
@@ -1646,6 +1762,41 @@ export async function searchProducts(query: string, perPage = 20) {
             delete p._exactMatch;
             delete p._score;
         });
+
+        // 5. Sin coincidencia literal: sugerir por intención (traje, boda, formal...)
+        if (allMatchedProducts.length === 0 && !_expanded) {
+            const seen = new Set<number>();
+            const suggested: any[] = [];
+            const relatedTerms = expandSearchIntent(term);
+            // Repartir cupos entre términos para mostrar variedad (blazer + camisa + zapatos...)
+            const perTerm = Math.max(2, Math.ceil(perPage / Math.max(relatedTerms.length, 1)));
+            for (const rel of relatedTerms) {
+                const found = await searchProducts(rel, perTerm, true);
+                for (const p of found) {
+                    if (!seen.has(p.id)) {
+                        seen.add(p.id);
+                        suggested.push({ ...p, _suggested: true });
+                    }
+                }
+            }
+            if (suggested.length > 0) return suggested.slice(0, perPage);
+
+            // 6. Tampoco es una ocasión conocida: probar con errores de tipeo
+            if (!searchVocabulary) searchVocabulary = buildVocabulary(globalSearchCache);
+            const alternatives = correctTypos(term, searchVocabulary);
+            if (alternatives.length > 0) {
+                const label = alternatives.join(' / ');
+                const seen = new Set<number>();
+                const merged: any[] = [];
+                const perAlt = Math.max(2, Math.ceil(perPage / alternatives.length));
+                for (const alt of alternatives) {
+                    for (const p of await searchProducts(alt, perAlt, true)) {
+                        if (!seen.has(p.id)) { seen.add(p.id); merged.push({ ...p, _corrected: label }); }
+                    }
+                }
+                return merged.slice(0, perPage);
+            }
+        }
 
         return allMatchedProducts.slice(0, perPage);
     } catch (error) {

@@ -42,11 +42,12 @@ if (query.length > 0) {
                     }
                 </h1>
                 <p class="results-count">
-                    {products.length}
                     {
-                        products.length === 1
-                            ? "producto encontrado"
-                            : "productos encontrados"
+                        products.length > 0 && (products[0] as any)._corrected
+                            ? `✨ Mostrando ${products.length} ${products.length === 1 ? "resultado" : "resultados"} de "${(products[0] as any)._corrected}"`
+                            : products.some((p: any) => p._suggested)
+                            ? `No tenemos "${query}" exacto. Te sugerimos ${products.length} ${products.length === 1 ? "opción" : "opciones"}:`
+                            : `${products.length} ${products.length === 1 ? "producto encontrado" : "productos encontrados"}`
                     }
                 </p>
                 {

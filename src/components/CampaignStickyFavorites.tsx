@@ -3,6 +3,7 @@ import ProductCard from './ProductCard';
 import { MENU_CATEGORIES, EXCLUDED_SLUGS } from '../lib/menuCategories';
 
 interface Product {
+  on_sale?: boolean;
   id: number;
   name: string;
   slug: string;
@@ -71,17 +72,25 @@ function getProductMainCategoryOrderIndex(product: any): number {
 
 export default function CampaignStickyFavorites({ 
   initialProducts = [], 
-  initialCache = null 
+  initialCache = null,
+  blackDays = false
 }: { 
+  blackDays?: boolean;
   initialProducts?: Product[]; 
   initialCache?: Record<string | number, Product[]> | null;
 }) {
+  const campaignCategories = blackDays ? [
+    { id: '63', name: 'Zapatos en oferta', shortName: 'Zapatos', slug: 'zapatos-cuero-hombre', maxPrice: undefined },
+    CATEGORIES[5], CATEGORIES[4],
+    { id: '126', name: 'Accesorios', shortName: 'Accesorios', slug: 'accesorios-hombre', maxPrice: undefined },
+    CATEGORIES[2], { ...CATEGORIES[0], name: 'Todos' },
+  ] : CATEGORIES;
   const defaultCache = initialCache || { 'all': initialProducts };
-  const defaultProducts = initialCache ? (initialCache['all'] || []) : initialProducts;
+  const defaultProducts = initialCache ? (initialCache[blackDays ? '63' : 'all'] || []) : initialProducts;
 
   const [products, setProducts] = useState<Product[]>(defaultProducts);
   const [categoryCache, setCategoryCache] = useState<Record<string | number, Product[]>>(defaultCache);
-  const [activeCategory, setActiveCategory] = useState(CATEGORIES[0]);
+  const [activeCategory, setActiveCategory] = useState(campaignCategories[0]);
   const [visibleCount, setVisibleCount] = useState(12);
   const [loading, setLoading] = useState(!initialCache && initialProducts.length === 0);
   const [error, setError] = useState<string | null>(null);
@@ -129,12 +138,12 @@ export default function CampaignStickyFavorites({
         setError(null);
 
         const results = await Promise.all(
-          CATEGORIES.map(async (cat) => {
+          campaignCategories.map(async (cat) => {
             // 1. Intentar cargar el JSON estático si no es la categoría especial de precios
             let data: Product[] = [];
             let jsonSuccess = false;
             
-            if (cat.id !== '921') {
+            if (cat.id !== '921' && !blackDays) {
               try {
                 const staticUrl = `/data/catalog/${cat.slug}-all.json`;
                 const staticRes = await fetch(staticUrl);
@@ -153,6 +162,7 @@ export default function CampaignStickyFavorites({
                   ? `/api/products?orderby=popularity&per_page=100`
                   : `/api/products?category=${cat.id}&orderby=popularity&per_page=100`;
               
+              if (blackDays && cat.id === '63') url += '&on_sale=true';
               if (cat.maxPrice) url += `&max_price=${cat.maxPrice}`;
 
               const res = await fetch(url);
@@ -228,7 +238,7 @@ export default function CampaignStickyFavorites({
 
       const normalizedTab = normalize(tabName);
 
-      const matchedCategory = CATEGORIES.find(cat => 
+      const matchedCategory = campaignCategories.find(cat =>
         normalize(cat.shortName) === normalizedTab ||
         normalize(cat.name).includes(normalizedTab) ||
         normalize(cat.id) === normalizedTab
@@ -275,7 +285,7 @@ export default function CampaignStickyFavorites({
         str.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
       const normalizedTab = normalize(initialTab);
 
-      const matchedCategory = CATEGORIES.find(cat => 
+      const matchedCategory = campaignCategories.find(cat =>
         normalize(cat.shortName) === normalizedTab ||
         normalize(cat.name).includes(normalizedTab) ||
         normalize(cat.id) === normalizedTab
@@ -298,13 +308,13 @@ export default function CampaignStickyFavorites({
       else setLoadingMore(true);
       setError(null);
 
-      const cat = CATEGORIES.find(c => String(c.id) === String(categoryId));
+      const cat = campaignCategories.find(c => String(c.id) === String(categoryId));
       if (!cat) return;
 
       let data: Product[] = [];
       let jsonSuccess = false;
       
-      if (cat.id !== '921') {
+      if (cat.id !== '921' && !blackDays) {
         try {
           const staticUrl = `/data/catalog/${cat.slug}-all.json`;
           const staticRes = await fetch(staticUrl);
@@ -317,13 +327,14 @@ export default function CampaignStickyFavorites({
         }
       }
 
+      const PER_PAGE = 100;
       if (!jsonSuccess) {
-        const PER_PAGE = 100;
         let url = cat.id === 'all'
             ? `/api/products?orderby=popularity&per_page=${PER_PAGE}`
             : `/api/products?category=${cat.id}&orderby=popularity&per_page=${PER_PAGE}`;
 
-        if (cat.maxPrice) url += `&max_price=${cat.maxPrice}`;
+        if (blackDays && cat.id === '63') url += '&on_sale=true';
+              if (cat.maxPrice) url += `&max_price=${cat.maxPrice}`;
 
         const response = await fetch(url);
         if (!response.ok) throw new Error('Error al cargar productos');
@@ -516,6 +527,10 @@ export default function CampaignStickyFavorites({
   // Filtrado y Ordenación en Cliente
   const filteredAndSortedProducts = useMemo(() => {
     let result = [...products];
+    if (blackDays && activeCategory.id === '63') {
+      result = result.filter(p => p.on_sale === true && Number(p.prices?.price) < Number(p.prices?.regular_price));
+      result.sort((a, b) => (1 - Number(b.prices.price) / Number(b.prices.regular_price)) - (1 - Number(a.prices.price) / Number(a.prices.regular_price)));
+    }
 
     // 0. Filtrar por Categorías y Subcategorías
     if (selectedSubcats.length > 0) {
@@ -603,7 +618,7 @@ export default function CampaignStickyFavorites({
 
     console.log('productos filtrados:', result.length);
     return result;
-  }, [products, selectedSubcats, selectedColors, selectedTallas, priceRange, sort, activeCategory.id]);
+  }, [products, selectedSubcats, selectedColors, selectedTallas, priceRange, sort, activeCategory.id, blackDays]);
 
   const displayedProducts = filteredAndSortedProducts.slice(0, visibleCount);
 
@@ -621,15 +636,15 @@ export default function CampaignStickyFavorites({
       <div className="container-full">
         <div className="section-title">
           <span className="subtitle">SELECCIÓN EXCLUSIVA</span>
-          <h2>REGALOS PARA PAPÁ</h2>
+          <h2>{blackDays ? 'BLACK DAYS' : 'REGALOS PARA PAPÁ'}</h2>
           <p className="description">
-            Encuentra el regalo perfecto para él. Hemos seleccionado nuestros mejores artículos de cuero, zapatos y accesorios para celebrar su día
+            {blackDays ? 'Zapatos hasta 70 % off. Arma tu Black con productos sin descuento.' : 'Encuentra el regalo perfecto para él. Hemos seleccionado nuestros mejores artículos de cuero, zapatos y accesorios para celebrar su día'}
           </p>
         </div>
 
         <div className={`category-filters-wrapper ${isHeaderHidden ? 'is-hidden-top' : ''}`}>
           <div className="category-filters">
-            {CATEGORIES.map((cat) => (
+            {campaignCategories.map((cat) => (
               <button
                 key={cat.id}
                 className={`filter-btn ${activeCategory.id === cat.id ? 'active' : ''}`}

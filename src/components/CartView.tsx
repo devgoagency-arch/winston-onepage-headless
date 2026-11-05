@@ -1,3 +1,4 @@
+import ArmaTuBlackProgress, { useArmaTuBlack } from './ArmaTuBlackProgress';
 
 import React, { useMemo } from 'react';
 import { useStore } from '@nanostores/react';
@@ -84,7 +85,9 @@ React.useEffect(() => {
         return calculateSweater2x1Discount(items);
     }, [items]);
 
-    const totalDiscount = discount + sweater2x1Discount;
+    const black = useArmaTuBlack(items);
+    const armaTuBlackDiscount = black.active ? black.discount : 0;
+    const totalDiscount = discount + sweater2x1Discount + armaTuBlackDiscount;
 
     const FREE_SHIPPING_THRESHOLD = shippingSettings.free_shipping_threshold;
     const SHIPPING_COST = shippingSettings.flat_rate;
@@ -416,7 +419,14 @@ React.useEffect(() => {
                                     <span>-${new Intl.NumberFormat('es-CO').format(discount)}</span>
                                 </div>
                             )}
-                            {sweater2x1Discount > 0 && (
+                            {black.active && <ArmaTuBlackProgress count={black.eligibleCount} />}
+                        {armaTuBlackDiscount > 0 && (
+                            <div style={{ display: 'flex', justifyContent: 'space-between', gap: 12, padding: '10px 0', fontFamily: 'var(--font-paragraphs)' }}>
+                                <span>🖤 Arma tu Black</span>
+                                <span>−${new Intl.NumberFormat('es-CO').format(armaTuBlackDiscount)}</span>
+                            </div>
+                        )}
+                        {sweater2x1Discount > 0 && (
                                 <div className="summary-row" style={{ color: '#d9534f' }}>
                                     <span>🎁 2x1 Suéter Escalera</span>
                                     <span>-${new Intl.NumberFormat('es-CO').format(sweater2x1Discount)}</span>

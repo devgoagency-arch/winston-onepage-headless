@@ -1,3 +1,4 @@
+import ArmaTuBlackProgress, { useArmaTuBlack } from './ArmaTuBlackProgress';
 import { useStore } from '@nanostores/react';
 import { cartItems, isCartOpen, removeFromCart, updateQuantity, updateCartItemVariation, calculateComboDiscount, calculateSweater2x1Discount, type CartItem } from '../store/cart';
 import { useEffect, useState, useMemo } from 'react';
@@ -37,7 +38,9 @@ export default function SideCart() {
         return calculateSweater2x1Discount(items);
     }, [items]);
 
-    const totalDiscount = discount + sweater2x1Discount;
+    const black = useArmaTuBlack(items);
+    const armaTuBlackDiscount = black.active ? black.discount : 0;
+    const totalDiscount = discount + sweater2x1Discount + armaTuBlackDiscount;
 
     const total = subtotal - totalDiscount;
 
@@ -223,6 +226,13 @@ export default function SideCart() {
                                         -${new Intl.NumberFormat('es-CO').format(discount)}
                                     </span>
                                 </div>
+                            </div>
+                        )}
+                        {black.active && <ArmaTuBlackProgress count={black.eligibleCount} />}
+                        {armaTuBlackDiscount > 0 && (
+                            <div style={{ display: 'flex', justifyContent: 'space-between', gap: 12, padding: '10px 0', fontFamily: 'var(--font-paragraphs)' }}>
+                                <span>🖤 Arma tu Black</span>
+                                <span>−${new Intl.NumberFormat('es-CO').format(armaTuBlackDiscount)}</span>
                             </div>
                         )}
                         {sweater2x1Discount > 0 && (

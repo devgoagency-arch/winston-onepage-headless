@@ -1,3 +1,4 @@
+import { calculateArmaTuBlack, isBlackDaysActive, isSweaterEscalera } from '../lib/blackDays';
 import { persistentMap } from '@nanostores/persistent';
 import { atom } from 'nanostores';
 import { trackMetaEvent } from '../utils/metaPixel';
@@ -6,6 +7,9 @@ export interface CartItem {
     id: number;
     name: string;
     price: number;
+    regular_price?: number;
+    on_sale?: boolean;
+    tags?: { id: number }[];
     color: string | null;
     size: string | null;
     quantity: number;
@@ -111,6 +115,9 @@ export function addToCart(product: any, quantity: number, color: string | null, 
                 item.quantity += quantity;
                 // Actualizamos el ID por si acaso
                 item.id = finalId;
+                item.regular_price = product.prices.regular_price ? Number(product.prices.regular_price) / (10 ** currencyMinorUnit) : undefined;
+                item.on_sale = product.on_sale;
+                item.tags = product.tags || [];
                 cartItems.setKey(itemId, JSON.stringify(item));
             } catch (e) {
                 const newItem = createCartItem(finalId, product.id, product, processedPrice, color, size, quantity, image);
@@ -144,6 +151,9 @@ function createCartItem(id: number, product_id: number, product: any, price: num
         product_id,
         name: product.name,
         price,
+        regular_price: product.prices.regular_price ? Number(product.prices.regular_price) / (10 ** (product.prices.currency_minor_unit || 0)) : undefined,
+        on_sale: product.on_sale,
+        tags: product.tags || [],
         color,
         size,
         quantity,
@@ -294,44 +304,9 @@ export function calculateComboDiscount(items: (CartItem & { key?: string })[]) {
  * y suma los precios en posiciones pares (0-indexed: 1, 3, 5...) como descuento.
  */
 export function calculateSweater2x1Discount(items: (CartItem & { key?: string })[]): number {
-    // Tag ID conocido: 937 ("2×1 en Suéteres tejidos Rombo y Escalera")
-    const TAG_2X1_ID = 937;
-    const TAG_2X1_SLUG = '2x1-en-sueteres-tejidos-rombo-y-escalera';
-    const CAT_SUETERES = 955; // "Suéteres y Chalecos"
-
-    // Recopilar todos los suéteres escalera expandidos por cantidad
     const precios: number[] = [];
-
     items.forEach(item => {
-        let es_sueter_escalera = false;
-
-        // Primero verificar por tags (más preciso)
-        if (item.categories && Array.isArray(item.categories)) {
-            // Verificar si tiene el tag 2x1
-        }
-        // Verificar en tags (guardados en el item como parte de categories? No, en este proyecto las tags se guardan separado)
-        // Fallback por slug/nombre — el producto es "Sueter Tejido Escalera"
-        const slug = String(item.slug || '').toLowerCase();
-        const name = String(item.name || '').toLowerCase();
-
-        // Detectar por slug o nombre del producto
-        const slugStr = slug || '';
-        const nameStr = name || '';
-        const esEscalera = slugStr.includes('escalera') || nameStr.includes('escalera');
-
-        // Verificar por categoría si está disponible
-        if (item.categories && item.categories.length > 0) {
-            const catIds = item.categories.map((c: any) => c.id);
-            const esSueterCategoria = catIds.includes(CAT_SUETERES);
-
-            if (esSueterCategoria && esEscalera) {
-                es_sueter_escalera = true;
-            } else if (esEscalera) {
-                es_sueter_escalera = true;
-            }
-        } else {
-            es_sueter_escalera = esEscalera;
-        }
+        const es_sueter_escalera = isSweaterEscalera(item);
 
         if (es_sueter_escalera) {
             // Expandir por quantity
@@ -364,13 +339,20 @@ export function calculateSweater2x1Discount(items: (CartItem & { key?: string })
 export function calculateTotalDiscount(items: (CartItem & { key?: string })[]): {
     comboDiscount: number;
     sweater2x1Discount: number;
+    armaTuBlackDiscount: number;
     total: number;
 } {
     const comboDiscount = calculateComboDiscount(items);
     const sweater2x1Discount = calculateSweater2x1Discount(items);
+    const armaTuBlackDiscount = calculateArmaTuBlackDiscount(items);
     return {
+        armaTuBlackDiscount,
         comboDiscount,
         sweater2x1Discount,
-        total: comboDiscount + sweater2x1Discount,
+        total: comboDiscount + sweater2x1Discount + armaTuBlackDiscount,
     };
+}
+
+export function calculateArmaTuBlackDiscount(items: CartItem[], now = new Date()): number {
+    return isBlackDaysActive(now) ? calculateArmaTuBlack(items).discount : 0;
 }

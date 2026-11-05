@@ -1,141 +1,58 @@
 ---
-import { CAMPANA_DIA_PADRE } from "../config/campaign";
-
-// Verificar si la campaña está activa y si no ha pasado la fecha de fin
-const isActive = CAMPANA_DIA_PADRE.activa;
-const now = new Date();
-const endDate = new Date(CAMPANA_DIA_PADRE.fecha_fin);
-// Agregamos un día más para que termine al final del día 22
-endDate.setDate(endDate.getDate() + 1);
-
-const showBanner = isActive && now < endDate;
+import { CAMPANA_BLACK_DAYS } from '../config/campaign';
+import { isBlackDaysActive, isBlackDaysPreviewBuild } from '../lib/blackDays';
+interface Props { clockOnly?: boolean }
+const { clockOnly = false } = Astro.props;
+const start = Date.parse(CAMPANA_BLACK_DAYS.fecha_inicio);
+const end = Date.parse(CAMPANA_BLACK_DAYS.fecha_fin) + 1000;
+const enabled = CAMPANA_BLACK_DAYS.activa;
+const dev = import.meta.env.DEV;
+const preview = isBlackDaysPreviewBuild();
+const activeAtBuild = dev || (preview ? Astro.url.pathname.startsWith('/black-days') : enabled && isBlackDaysActive());
 ---
-
-{showBanner && (
-    <>
-        <style is:global>
-            :root {
-                --global-banner-height: 44px;
-            }
-            @media (max-width: 768px) {
-                :root {
-                    --global-banner-height: 34px;
-                }
-            }
-            
-            /* Empujar el header hacia abajo si es fixed */
-            .header {
-                top: var(--global-banner-height, 0px) !important;
-            }
-            
-            /* Empujar Hero y otros elementos fijos como los tabs de campaña */
-            body {
-                padding-top: var(--global-banner-height, 0px);
-            }
-        </style>
-
-        <div class="cintillo-global" id="cintillo-dia-padre">
-            <div class="cintillo-inner">
-                <span class="cintillo-text desktop-only">
-                    🎁 <span class="accent">Día del Padre</span> · Regalos para los hombres que dejan huella
-                </span>
-                <span class="cintillo-text mobile-only">
-                    Día del Padre · Regalos para papá
-                </span>
-                <a href="/regalos-dia-del-padre?utm_source=cintillo&utm_medium=site&utm_campaign=dia-del-padre-2026" class="cintillo-cta">
-                    Ver regalos &rarr;
-                </a>
-            </div>
-        </div>
-    </>
+{clockOnly ? (
+    <script is:inline define:vars={{ start, end, enabled, dev, preview }}>
+        // Ejecutado en head antes del primer pintado: sin salto por hidratación.
+        (() => {
+            let timer;
+            const isActive = pathname => dev || (preview ? pathname.startsWith('/black-days') : enabled && Date.now() >= start && Date.now() < end);
+            const sync = () => {
+                clearTimeout(timer);
+                const now = Date.now();
+                document.documentElement.classList.toggle('black-days-active', isActive(location.pathname));
+                const boundary = [start, end].find(t => t > now);
+                if (!preview && !dev && boundary) timer = setTimeout(sync, Math.min(boundary - now, 2147483647));
+            };
+            sync();
+            window.addEventListener('focus', sync);
+            document.addEventListener('visibilitychange', sync);
+            document.addEventListener('astro:page-load', sync);
+            // Preparar el documento entrante antes del swap evita un frame con otra altura.
+            document.addEventListener('astro:before-swap', event => {
+                event.newDocument.documentElement.classList.toggle('black-days-active', isActive(event.to.pathname));
+            });
+        })();
+    </script>
+) : (
+    <div class="cintillo-global" data-active-at-build={activeAtBuild}>
+        <span class="desktop-only">🖤 Black Days · hasta 70 % off en zapatos + Arma tu Black · 23 al 30 nov</span>
+        <span class="mobile-only">🖤 Black Days · hasta 70 %</span>
+        <a href="/black-days?utm_source=cintillo&utm_medium=site&utm_campaign=black-days-2026">Ver Black Days →</a>
+    </div>
 )}
-
-<style>
-    .cintillo-global {
-        background-color: #000000;
-        color: #ffffff;
-        width: 100%;
-        padding: 10px 0;
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 2000;
-        transition: transform 0.3s ease-in-out;
-    }
-
-    /* Cuando el header hace scroll down y se oculta, el cintillo desaparece?
-       Mejor que el cintillo global siempre esté visible, o se esconda junto con el header. */
-    :global(body.is-header-hidden) .cintillo-global {
-        transform: translateY(-100%);
-    }
-
-    .cintillo-inner {
-        max-width: var(--container-max-width, 1600px);
-        margin: 0 auto;
-        padding: 0 2rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
-    }
-
-    .cintillo-text {
-        font-family: var(--font-paragraphs, sans-serif);
-        font-size: 0.85rem;
-        letter-spacing: 1px;
-    }
-
-    .cintillo-text .accent {
-        color: #D4A853; /* Dorado W&H */
-        font-weight: 600;
-    }
-
-    .cintillo-cta {
-        background-color: transparent;
-        color: #ffffff;
-        border: 1px solid #D4A853;
-        padding: 4px 16px;
-        border-radius: 50px; /* Pill shape */
-        font-family: var(--font-paragraphs, sans-serif);
-        font-size: 0.75rem;
-        text-transform: uppercase;
-        text-decoration: none;
-        letter-spacing: 1px;
-        font-weight: 600;
-        transition: all 0.3s ease;
-        white-space: nowrap;
-    }
-
-    .cintillo-cta:hover {
-        background-color: #D4A853;
-        color: #000000;
-    }
-
-    .mobile-only {
-        display: none;
-    }
-
+<style is:global>
+    :root { --global-banner-height: 0px; }
+    :root.black-days-active { --global-banner-height: 44px; }
+    .black-days-active .header { top: var(--global-banner-height, 0px) !important; }
+    .black-days-active body { padding-top: var(--global-banner-height, 0px); }
+    .cintillo-global { display: none; position: fixed; top: 0; left: 0; width: 100%; height: var(--global-banner-height); z-index: 2000; background: #000; color: #fff; align-items: center; justify-content: center; gap: 20px; font-family: var(--font-paragraphs); font-size: 13px; }
+    .black-days-active .cintillo-global { display: flex; }
+    .cintillo-global a { color: #D4A853; white-space: nowrap; }
+    .cintillo-global .mobile-only { display: none; }
     @media (max-width: 768px) {
-        .desktop-only {
-            display: none;
-        }
-        .mobile-only {
-            display: inline;
-        }
-        .cintillo-global {
-            padding: 8px 0;
-        }
-        .cintillo-inner {
-            padding: 0 1rem;
-            justify-content: space-between;
-            gap: 10px;
-        }
-        .cintillo-text {
-            font-size: 0.75rem;
-        }
-        .cintillo-cta {
-            padding: 4px 12px;
-            font-size: 0.7rem;
-        }
+        :root.black-days-active { --global-banner-height: 34px; }
+        .cintillo-global { gap: 10px; font-size: 11px; }
+        .cintillo-global .desktop-only { display: none; }
+        .cintillo-global .mobile-only { display: inline; }
     }
 </style>

@@ -1,5 +1,5 @@
 ---
-const cards = [
+const defaultCards = [
     {
         title: "Algunos regalos se recuerdan",
         highlight: "-$300k",
@@ -29,6 +29,8 @@ const cards = [
         targetTab: "zapatos"
     }
 ];
+interface Props { cards?: typeof defaultCards }
+const { cards = defaultCards } = Astro.props;
 ---
 
 <section class="campaign-cards">
@@ -36,7 +38,7 @@ const cards = [
         {cards.map(card => (
             <a href="#favoritos-sticky" class="campaign-card" data-tab={card.targetTab}>
                 <div class="card-image-wrapper">
-                    <img src={card.image} alt={card.alt} loading="lazy" decoding="async" />
+                    {card.image && <img src={card.image} alt={card.alt} loading="lazy" decoding="async" />}
                     <div class="card-overlay"></div>
                     <div class="card-content-wrapper">
                         <h3 class="card-title">{card.title}</h3>
@@ -72,6 +74,7 @@ const cards = [
     }
 
     .card-image-wrapper {
+        background: #000;
         position: absolute;
         top: 0;
         left: 0;

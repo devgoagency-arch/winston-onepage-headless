@@ -1,0 +1,25 @@
+name: Deploy BLACK DAYS 2026
+on:
+  schedule:
+    # 23 nov 04:30 UTC = 22 nov 23:30 America/Bogota.
+    - cron: '30 4 23 11 *'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # Crear Deploy Hook en Vercel > Settings > Git para la rama de producción.
+      # Guardar URL en GitHub > Settings > Secrets and variables > Actions,
+      # secret VERCEL_DEPLOY_HOOK_URL. Nunca escribir la URL aquí.
+      - name: Verificar año y solicitar deploy
+        env:
+          VERCEL_DEPLOY_HOOK_URL: ${{ secrets.VERCEL_DEPLOY_HOOK_URL }}
+        run: |
+          if [ "$(date -u +%Y)" != "2026" ]; then
+            echo "Campaña limitada a 2026; no se solicita deploy."
+            exit 0
+          fi
+          test -n "$VERCEL_DEPLOY_HOOK_URL"
+          curl -fsS -X POST "$VERCEL_DEPLOY_HOOK_URL"

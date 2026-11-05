@@ -35,6 +35,17 @@ const CATEGORIES_TO_GENERATE = [
   { slug: 'accesorios-hombre',              id: '220', name: 'Accesorios' },
 ];
 
+/** Quita etiquetas HTML y espacios sobrantes, y recorta a `max` caracteres. */
+function stripHtml(html, max) {
+  return String(html || '')
+    .replace(/<[^>]*>/g, ' ')
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&amp;/g, '&')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .slice(0, max);
+}
+
 /**
  * Hace una petición HTTPS a la API de WooCommerce
  */
@@ -139,6 +150,11 @@ async function fetchAllProductsForCategory(categoryId, categoryName) {
               : { id: opt.id || idx, name: opt.name, slug: opt.slug }
           ),
         })),
+        // Texto para el buscador (boda, traje, casual, elegante...). Sin HTML y acotado
+        // para no inflar el archivo; searchProducts() ya lee estos campos.
+        short_description: stripHtml(p.short_description, 400),
+        description: stripHtml(p.description, 800),
+        tags: (p.tags || []).map(t => ({ id: t.id, name: t.name, slug: t.slug })),
         variations: [], // Las variaciones completas son muy pesadas; se cargan on-demand
         stock_status: p.stock_status,
         on_sale: p.on_sale || false,

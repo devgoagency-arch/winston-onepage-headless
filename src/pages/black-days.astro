@@ -1,0 +1,553 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CampaignCategoryCards from '../components/CampaignCategoryCards.astro';
+import CampaignStickyFavorites from '../components/CampaignStickyFavorites';
+import LookOfTheWeek from '../components/LookOfTheWeek.astro';
+import { getLookOfTheWeekData } from '../lib/look';
+import { getHomeBanner } from '../lib/homeBanner';
+import { getAllProducts, getProductsByCategory } from '../lib/woocommerce';
+// Arte nuevo pendiente: configurar una ruta local cuando esté aprobado.
+const BLACK_DAYS_HERO_IMAGE: string = '';
+const stores = [
+    {
+        name: "C.C. Unicentro",
+        address: "Local 2-99. Bogotá, Colombia.",
+        phone: "+57 314 5453177",
+        phoneUrl: "tel:+573145453177",
+        mapUrl: "https://maps.app.goo.gl/SEm6LxGMjWuCCfQc6",
+        hours: [
+            "Lunes a Sábado: 10:00 am - 8:00 pm",
+            "Domingos: 11:00 am - 6:30 pm",
+        ],
+        image: "/images/store-unicentro.avif",
+    },
+    {
+        name: "C.C. El Retiro",
+        address: "Local 1-115. Bogotá, Colombia.",
+        phone: "+57 310 3075540",
+        phoneUrl: "tel:+573103075540",
+        mapUrl: "https://maps.app.goo.gl/T44a5ifgj7QBpQG69",
+        hours: [
+            "Lunes a Sábado: 10:00 am - 8:00 pm",
+            "Domingos: 11:00 am - 6:30 pm",
+        ],
+        image: "/images/store-retiro.avif",
+    },
+    {
+        name: "C.C. Hacienda Santa Bárbara",
+        address: "Local 2-28 D. Bogotá, Colombia.",
+        phone: "+57 314 2426124",
+        phoneUrl: "tel:+573142426124",
+        mapUrl: "https://maps.app.goo.gl/9kjEpbfGN39Sy9xV8",
+        hours: [
+            "Lunes a Sábado: 10:00 am - 8:00 pm",
+            "Domingos: 11:00 am - 7:00 pm",
+            "Festivos: Cerrado",
+        ],
+        image: "/images/store-hacienda.avif",
+    },
+    {
+        name: "C.C. Palatino",
+        address: "Local 211, Cra. 7 #138-33, Bogotá, Colombia.",
+        phone: "+57 321 6940612",
+        phoneUrl: "tel:+573216940612",
+        mapUrl: "https://maps.app.goo.gl/ArwB2aRxPYy6nFnU8",
+        hours: [
+            "Lunes a Jueves: 10:00 am - 8:00 pm",
+            "Viernes y Sábado: 10:00 am - 9:00 pm",
+            "Domingos: 11:00 am - 7:00 pm",
+        ],
+        image: "/images/store-palatino.avif",
+    },
+];
+
+
+const [lookData, productsAll, zapatos, ropa, maletas, accesorios, sueteres, banner] = await Promise.all([
+    getLookOfTheWeekData(), getAllProducts(100, 1, 'menu_order', 'asc'),
+    getProductsByCategory('63', 100, 1, 'price', 'asc', true),
+    getProductsByCategory('249', 100, 1, 'menu_order', 'asc'),
+    getProductsByCategory('190', 100, 1, 'menu_order', 'asc'),
+    getProductsByCategory('126', 100, 1, 'menu_order', 'asc'),
+    getProductsByCategory('955', 100, 1, 'menu_order', 'asc'),
+    getHomeBanner(),
+]);
+const heroDesktop = BLACK_DAYS_HERO_IMAGE || banner.hero.image_desktop;
+const heroMobile = BLACK_DAYS_HERO_IMAGE || banner.hero.image_mobile || heroDesktop;
+const productsZapatos = zapatos.filter((p: any) => p.on_sale && Number(p.prices.price) < Number(p.prices.regular_price))
+    .sort((a: any, b: any) => (1 - Number(b.prices.price) / Number(b.prices.regular_price)) - (1 - Number(a.prices.price) / Number(a.prices.regular_price)));
+const initialCache = { all: productsAll, '63': productsZapatos, '249': ropa, '190': maletas, '126': accesorios, '955': sueteres };
+const cards = [
+    { title: 'Hasta 70 % off', highlight: 'Zapatos', targetTab: '63', image: '/images/zapatos.jpg', alt: 'Zapatos de cuero para hombre Winston & Harry' },
+    { title: 'Arma tu Black', highlight: 'Ropa', targetTab: '249', image: '/images/ropa.jpg', alt: 'Colección de ropa para hombre Winston & Harry' },
+    { title: 'Arma tu Black', highlight: 'Maletas', targetTab: '190', image: '/images/maletas.jpg', alt: 'Maletas Winston & Harry' },
+    { title: 'Arma tu Black', highlight: 'Accesorios', targetTab: '126', image: '/images/accesorios.jpg', alt: 'Accesorios para hombre Winston & Harry' },
+];
+---
+<Layout title="BLACK DAYS | Winston & Harry" description="Hasta 70 % off en zapatos y Arma tu Black en todo lo demás. Del 23 al 30 de noviembre de 2026." canonical="https://www.winstonandharrystore.com/black-days" noindex={true}>
+    <Header />
+    <main class="black-days-main">
+        <section class="black-hero">
+            <picture class="black-hero-background">
+                <source media="(max-width: 767px)" srcset={heroMobile} />
+                <img src={heroDesktop} alt="" fetchpriority="high" />
+            </picture>
+            <div class="black-hero-content">
+                <p class="black-hero-kicker">23 al 30 de noviembre</p>
+                <h1>BLACK DAYS</h1>
+                <p class="black-hero-offer" aria-label="Hasta 70 % off"><span class="black-hero-hasta">HASTA</span> <span class="black-hero-discount">70 % <span class="black-hero-off">OFF</span></span></p>
+                <p class="black-hero-subtitle">En zapatos y Arma tu Black en todo lo demás</p>
+                <a href="#favoritos-sticky">Ver Black Days ↓</a>
+                <a href="/contacto">Disponible en tiendas</a>
+            </div>
+        </section>
+        <section class="black-rules" aria-labelledby="arma-title">
+            <h2 id="arma-title">Arma tu Black</h2>
+            <p>Combina productos sin descuento. Ordenamos las unidades de mayor a menor precio.</p>
+            <ol>
+                <li>
+                    <div class="rule-heading"><span class="rule-eyebrow">Al comprar</span><strong>1 producto</strong></div>
+                    <div class="rule-benefit"><span class="rule-percent">15%<sup>OFF</sup></span><span class="rule-badge">Tu producto</span></div>
+                </li>
+                <li>
+                    <div class="rule-heading"><span class="rule-eyebrow">Al comprar</span><strong>2 productos</strong></div>
+                    <div class="rule-benefit"><span class="rule-percent">50%<sup>OFF</sup></span><span class="rule-badge">Segundo producto</span></div>
+                </li>
+                <li class="rule-double">
+                    <div class="rule-heading"><span class="rule-eyebrow">Al comprar</span><strong>3 productos</strong></div>
+                    <div class="rule-benefit"><span class="rule-percent">15%<sup>OFF</sup></span><span class="rule-badge">Segundo producto</span></div>
+                    <div class="rule-benefit"><span class="rule-percent">50%<sup>OFF</sup></span><span class="rule-badge">Tercer producto</span></div>
+                </li>
+                <li>
+                    <div class="rule-heading"><span class="rule-eyebrow">Al comprar</span><strong>4 productos</strong></div>
+                    <div class="rule-benefit"><span class="rule-percent">50%<sup>OFF</sup></span><span class="rule-badge">Tercer y cuarto producto</span></div>
+                    <span class="rule-extra">Y <strong>15 %</strong> en el segundo</span>
+                </li>
+            </ol>
+            <p class="black-legal">Arma tu Black aplica solo a productos sin descuento. Los zapatos con descuento de hasta 70 % no se suman a Arma tu Black: se compran a su precio con descuento.</p>
+            <p class="black-legal">Se ordenan los productos de mayor a menor precio y el descuento va a los de menor precio. Desde el 5.º producto, precio completo (se mantienen los beneficios de los 4 primeros). Suéter Escalera 2x1 excluido.</p>
+            <small class="black-legal">Válido del 23 al 30 de noviembre de 2026, hora Colombia.</small>
+        </section>
+        <div class="content-wrapper">
+            <CampaignCategoryCards cards={cards} />
+            <CampaignStickyFavorites client:load blackDays={true} initialProducts={productsZapatos} initialCache={initialCache} />
+            <LookOfTheWeek initialData={lookData} />
+            <section class="black-rules"><h2>Vive Black Days en nuestras tiendas</h2><a href="/contacto">Encuentra tu tienda →</a></section>
+        </div>
+    </main>
+    <Footer hideBlog={true} />
+    <!-- Stores Modal for Día del Padre page -->
+    <div id="stores-modal" class="stores-modal-overlay" aria-hidden="true">
+        <div class="stores-modal-container">
+            <button id="close-stores-modal" class="stores-modal-close" aria-label="Cerrar modal">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="stores-modal-header">
+                <span class="modal-pre-title">Nuestras Ubicaciones</span>
+                <h2 class="modal-title">TIENDAS Winston & Harry</h2>
+                <p class="modal-subtitle">Visítanos en nuestras tiendas exclusivas y experimenta la maestría del cuero artesanal.</p>
+            </div>
+            <div class="stores-modal-content">
+                <div class="modal-stores-grid">
+                    {stores.map(store => (
+                        <div class="modal-store-card">
+                            <div class="modal-store-image">
+                                <img src={store.image} alt={store.name} />
+                            </div>
+                            <div class="modal-store-info">
+                                <h3 class="modal-store-name">{store.name}</h3>
+                                <div class="modal-store-details">
+                                    <div class="modal-detail-item">
+                                        <span class="modal-detail-label">Dirección</span>
+                                        <p class="modal-detail-value">{store.address}</p>
+                                    </div>
+                                    <div class="modal-detail-item">
+                                        <span class="modal-detail-label">Teléfono</span>
+                                        <a href={store.phoneUrl} class="modal-detail-value link">{store.phone}</a>
+                                    </div>
+                                    <div class="modal-detail-item">
+                                        <span class="modal-detail-label">Horarios</span>
+                                        <div class="modal-hours-list">
+                                            {store.hours.map(hour => (
+                                                <p class="modal-hour-line">{hour}</p>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-store-actions">
+                                    <a href={store.mapUrl} target="_blank" rel="noopener noreferrer" class="modal-btn-map">
+                                        <span>Ver en Google Maps</span>
+                                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5">
+                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                            <polyline points="15 3 21 3 21 9" />
+                                            <line x1="10" y1="14" x2="21" y2="3" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </div>
+    </div>
+</Layout>
+
+<script is:inline>
+    function initStoresModal() {
+        const modal = document.getElementById('stores-modal');
+        const closeBtn = document.getElementById('close-stores-modal');
+
+        function openModal() {
+            if (!modal) return;
+            modal.classList.add('active');
+            modal.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            if (!modal) return;
+            modal.classList.remove('active');
+            modal.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+        }
+
+        if (closeBtn) {
+            closeBtn.addEventListener('click', closeModal);
+        }
+
+        if (modal) {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) closeModal();
+            });
+        }
+
+        // Interceptar clicks a tiendas únicamente en esta página
+        document.addEventListener('click', (e) => {
+            const target = e.target.closest('a, button');
+            if (!target) return;
+
+            const text = (target.textContent || '').toUpperCase();
+            const href = target.getAttribute('href') || '';
+
+            // Solo interceptar si es un botón de tienda y no el del menú burger, ni header, ni footer
+            if (target.classList.contains('burger-menu') || target.closest('.mobile-nav') || target.closest('.header') || target.closest('.footer')) {
+                return;
+            }
+
+            if (
+                text.includes('TIENDA') ||
+                href.includes('/tienda') ||
+                (href.includes('/contacto') && text.includes('TIENDA'))
+            ) {
+                e.preventDefault();
+                e.stopPropagation();
+                openModal();
+            }
+        });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initStoresModal);
+    } else {
+        initStoresModal();
+    }
+    document.addEventListener('astro:page-load', initStoresModal);
+</script>
+
+<style is:global>
+    html {
+        scroll-behavior: smooth;
+    }
+
+    .content-wrapper {
+        position: relative;
+        z-index: 10;
+        background-color: var(--color-white, #ffffff);
+    }
+
+    /* Dynamic Stores Modal Styles */
+    .stores-modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(8px);
+        z-index: 99999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        padding: 2rem;
+    }
+
+    .stores-modal-overlay.active {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .stores-modal-container {
+        background-color: #ffffff;
+        width: 100%;
+        max-width: 1200px;
+        max-height: 90vh;
+        overflow-y: auto;
+        position: relative;
+        padding: 4rem 3rem 3rem;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        transform: scale(0.95);
+        transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    .stores-modal-overlay.active .stores-modal-container {
+        transform: scale(1);
+    }
+
+    .stores-modal-close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: #121212;
+        padding: 8px;
+        transition: opacity 0.2s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .stores-modal-close:hover {
+        opacity: 0.6;
+    }
+
+    .stores-modal-header {
+        text-align: center;
+        margin-bottom: 3rem;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .modal-pre-title {
+        display: block;
+        font-family: var(--font-paragraphs);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        color: var(--color-beige, #B1915F);
+        margin-bottom: 0.8rem;
+    }
+
+    .modal-title {
+        font-family: var(--font-titles);
+        font-size: 1.8rem;
+        color: var(--color-green, #155338);
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        margin-bottom: 1rem;
+        font-weight: 700;
+    }
+
+    .modal-subtitle {
+        font-family: var(--font-paragraphs);
+        font-size: 0.85rem;
+        color: #666;
+        line-height: 1.6;
+    }
+
+    .modal-stores-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+    }
+
+    .modal-store-card {
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        border: 1px solid #eee;
+        background-color: #fff;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    }
+
+    .modal-store-image {
+        height: 100%;
+        min-height: 250px;
+        overflow: hidden;
+    }
+
+    .modal-store-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .modal-store-info {
+        padding: 1.5rem 1.8rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .modal-store-name {
+        font-family: var(--font-titles);
+        font-size: 1.15rem;
+        color: var(--color-green, #155338);
+        margin-top: 0;
+        margin-bottom: 1.2rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        border-bottom: 1px solid #f0f0f0;
+        padding-bottom: 0.6rem;
+    }
+
+    .modal-store-details {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .modal-detail-item {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+    }
+
+    .modal-detail-label {
+        font-family: var(--font-titles);
+        font-size: 0.6rem;
+        text-transform: uppercase;
+        color: #999;
+        letter-spacing: 1px;
+    }
+
+    .modal-detail-value {
+        font-family: var(--font-paragraphs);
+        font-size: 0.78rem;
+        color: #333;
+        line-height: 1.4;
+        margin: 0;
+    }
+
+    .modal-detail-value.link {
+        color: var(--color-green, #155338);
+        text-decoration: none;
+        transition: color 0.2s;
+        font-weight: 500;
+    }
+
+    .modal-detail-value.link:hover {
+        color: var(--color-beige, #B1915F);
+    }
+
+    .modal-hours-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.1rem;
+    }
+
+    .modal-hour-line {
+        font-family: var(--font-paragraphs);
+        font-size: 0.75rem;
+        color: #555;
+        margin: 0;
+    }
+
+    .modal-btn-map {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.75rem 1rem;
+        border: 1px solid #e0e0e0;
+        font-family: var(--font-titles);
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #121212;
+        text-decoration: none;
+        transition: all 0.3s;
+    }
+
+    .modal-btn-map:hover {
+        background-color: var(--color-green, #155338);
+        color: #fff;
+        border-color: var(--color-green, #155338);
+    }
+
+    @media (max-width: 1024px) {
+        .modal-stores-grid {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+        .stores-modal-container {
+            padding: 3rem 2rem 2rem;
+            max-width: 600px;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .modal-store-card {
+            grid-template-columns: 1fr;
+        }
+        .modal-store-image {
+            min-height: 180px;
+        }
+        .stores-modal-overlay {
+            padding: 1rem;
+        }
+        .stores-modal-container {
+            padding: 2.5rem 1.2rem 1.2rem;
+        }
+    }
+</style>
+
+<style>
+    /* El body ya compensa el cintillo; aquí solo se reserva el header fijo. */
+    .black-days-main { --black-header-height: 80px; padding-top: var(--black-header-height); }
+    @media(max-width: 768px) { .black-days-main { --black-header-height: 64px; } }
+    .black-hero, .black-rules { background: #000; color: #D4A853; text-align: center; padding: 64px 24px; font-family: var(--font-paragraphs); }
+    .black-hero { position: relative; overflow: hidden; min-height: calc(100svh - var(--global-banner-height, 0px) - var(--black-header-height)); box-sizing: border-box; display: grid; place-items: center; padding: 24px 16px; }
+    .black-hero h1 { color: #fff !important; }
+    .black-hero-background, .black-hero-background img { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; }
+    .black-hero-background img { object-fit: cover; }
+    .black-hero::before { content: ''; position: absolute; inset: 0; z-index: 1; background: linear-gradient(rgba(0, 0, 0, .55), rgba(0, 0, 0, .75)); pointer-events: none; }
+    .black-hero-content { position: relative; z-index: 1; width: 100%; }
+    .black-hero-kicker { margin: 0 0 16px; font-size: .85rem; letter-spacing: .12em; }
+    .black-hero h1 { font-family: var(--font-titles); font-size: clamp(2.5rem, 7vw, 6rem); line-height: 1.1; margin: 0 0 20px; }
+    .black-hero-offer { color: #fff; font-family: var(--font-titles); font-size: clamp(3.5rem, 13vw, 11rem); font-weight: 800; line-height: 1; margin: 0; letter-spacing: -.04em; }
+    .black-hero-hasta { display: block; font-size: .4em; letter-spacing: .12em; margin-bottom: .2em; }
+    .black-hero-discount { white-space: nowrap; }
+    .black-hero-off { color: #D4A853; }
+    .black-hero-subtitle { max-width: 800px; margin: 24px auto 8px; color: #fff; font-size: clamp(1.1rem, 2.4vw, 1.75rem); line-height: 1.45; }
+    .black-hero a, .black-rules a { display: inline-block; color: #D4A853; border: 1px solid; padding: 12px 20px; margin: 16px 8px; }
+    .black-rules h2 { color: #D4A853 !important; font-family: var(--font-titles); font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.15; margin: 0 0 24px; }
+    .black-rules p, .black-rules small { display: block; max-width: 1000px; margin: 16px auto; color: #fff; font-size: 1rem; line-height: 1.6; }
+    .black-rules .black-legal { max-width: 720px; font-size: .825rem; color: #D4A853; line-height: 1.65; }
+    .black-rules ol { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); list-style: none; gap: 16px; padding: 0; margin: 32px auto; max-width: 1200px; }
+    .black-rules li { container-type: inline-size; box-sizing: border-box; aspect-ratio: 1 / 1; min-width: 0; border: 1px solid #D4A853; padding: clamp(8px, 1.2vw, 16px); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: clamp(4px, .8vw, 12px); background: #000; }
+    .rule-heading { display: grid; gap: 2cqw; }
+    .rule-eyebrow { color: #fff; font-size: clamp(.55rem, 4cqw, .75rem); line-height: 1.2; letter-spacing: .25em; text-transform: uppercase; }
+    .rule-heading strong { color: #D4A853; font-family: var(--font-titles); font-size: clamp(.75rem, 6cqw, 1.3rem); line-height: 1.2; letter-spacing: .12em; text-transform: uppercase; }
+    .rule-benefit { width: 100%; display: flex; flex-direction: column; align-items: center; gap: 2cqw; }
+    .rule-percent { color: #fff; font-family: var(--font-titles); font-size: clamp(2.5rem, 32cqw, 6rem); line-height: 1; white-space: nowrap; }
+    .rule-percent sup { display: inline-block; font-family: var(--font-paragraphs); font-size: .19em; vertical-align: super; letter-spacing: .06em; margin-left: .15em; }
+    .rule-badge { box-sizing: border-box; max-width: 100%; padding: .35em .5em; background: #000; color: #fff; border: 1px solid #fff; font-family: var(--font-paragraphs); font-size: clamp(.55rem, 4.3cqw, .85rem); font-weight: 700; line-height: 1.2; letter-spacing: .08em; text-transform: uppercase; text-wrap: balance; }
+    .black-rules .rule-double { gap: clamp(3px, .5vw, 8px); }
+    .rule-double .rule-percent { font-size: clamp(1.8rem, 21cqw, 4rem); }
+    .rule-extra { color: #fff; font-size: clamp(.8rem, 6cqw, 1.2rem); line-height: 1.25; text-wrap: balance; }
+    .rule-extra strong { color: #D4A853; font-size: 1.2em; font-weight: 800; white-space: nowrap; }
+    @media(max-width: 768px) { .black-rules { padding: 48px 16px; } .black-rules ol { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; } }
+</style>
