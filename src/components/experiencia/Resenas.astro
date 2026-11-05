@@ -1,0 +1,236 @@
+---
+import { CORREO_CONTACTO, RESUMEN_GOOGLE, TIENDAS } from "../../config/experiencia";
+
+const nota = RESUMEN_GOOGLE.nota.toFixed(1);
+---
+
+<section id="resenas" class="exp-seccion exp-resenas">
+    <div class="container">
+        <div class="exp-cabecera">
+            <h2>Tu opinión también cuenta.</h2>
+            <p>
+                Nos gustaría conocer tu experiencia con Winston &amp; Harry. Tus comentarios nos ayudan a seguir
+                mejorando.
+            </p>
+        </div>
+
+        <div class="exp-google">
+            <img src="/images/experiencia/google-reviews-logo.svg" alt="Google Reviews" width="98" height="40" loading="lazy" />
+            <span class="exp-google__nota">{nota}</span>
+            <span class="exp-google__estrellas" role="img" aria-label={`${nota} de 5 estrellas`}>
+                <span style={`width: ${(RESUMEN_GOOGLE.nota / 5) * 100}%`}></span>
+            </span>
+            <span class="exp-google__total">{RESUMEN_GOOGLE.total} reseñas en Google</span>
+        </div>
+
+        <details class="exp-resena">
+            <summary class="btn">Dejar una reseña</summary>
+            <div class="exp-resena__canales">
+                <h3>Compré en tienda física</h3>
+                <div class="exp-tiendas">
+                    {
+                        TIENDAS.map((t) => (
+                            <a
+                                class="exp-tienda"
+                                href={t.resena}
+                                target="_blank"
+                                rel="noopener"
+                                data-exp-evento="resena"
+                                data-exp-canal="tienda_fisica"
+                                data-exp-tienda={t.id}
+                            >
+                                <span class="exp-tienda__foto">
+                                    <img src={t.imagen} alt="" width="400" height="300" loading="lazy" decoding="async" />
+                                </span>
+                                <span class="exp-tienda__nombre">{t.nombre}</span>
+                                <span class="exp-tienda__accion">Escribir en Google</span>
+                            </a>
+                        ))
+                    }
+                </div>
+                <div class="exp-resena__web">
+                    <h3>Compré en la página web</h3>
+                    <p>
+                        Cuéntanos cómo te fue en{" "}
+                        <a
+                            href={`mailto:${CORREO_CONTACTO}?subject=${encodeURIComponent("Mi experiencia con Winston & Harry")}`}
+                            data-exp-evento="resena"
+                            data-exp-canal="pagina_web"
+                        >
+                            {CORREO_CONTACTO}
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </details>
+    </div>
+</section>
+
+<style>
+    .exp-resenas {
+        background: #f9f9f9;
+    }
+
+    .exp-google {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem 1rem;
+        width: fit-content;
+        max-width: 100%;
+        margin: 0 auto 2rem;
+        padding: 1rem 1.5rem;
+        background: #fff;
+        border: 1px solid #f0f0f0;
+    }
+
+    .exp-google img {
+        width: auto;
+        height: 40px;
+    }
+
+    .exp-google__nota {
+        color: var(--color-green);
+        font-family: var(--font-titles);
+        font-size: 1.9rem;
+        line-height: 1;
+    }
+
+    .exp-google__estrellas {
+        position: relative;
+        display: inline-block;
+        color: #ddd;
+        font-size: 1.25rem;
+        letter-spacing: 1px;
+        line-height: 1;
+    }
+
+    .exp-google__estrellas::before {
+        content: "★★★★★";
+    }
+
+    .exp-google__estrellas span {
+        position: absolute;
+        inset: 0 auto 0 0;
+        overflow: hidden;
+        color: var(--color-beige);
+        white-space: nowrap;
+    }
+
+    .exp-google__estrellas span::before {
+        content: "★★★★★";
+    }
+
+    .exp-google__total {
+        color: #555;
+        font-size: 0.9rem;
+    }
+
+    .exp-resena {
+        text-align: center;
+    }
+
+    .exp-resena summary {
+        display: inline-block;
+        list-style: none;
+    }
+
+    .exp-resena summary::-webkit-details-marker {
+        display: none;
+    }
+
+    .exp-resena__canales {
+        margin-top: 3rem;
+        text-align: left;
+    }
+
+    .exp-resena__canales h3 {
+        margin-bottom: 1.5rem;
+        font-size: 1.25rem;
+        text-align: center;
+    }
+
+    .exp-tiendas {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .exp-tienda {
+        display: flex;
+        flex-direction: column;
+        background: #fff;
+        border: 1px solid #f0f0f0;
+        transition: box-shadow 0.3s ease;
+    }
+
+    .exp-tienda:hover {
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
+    }
+
+    .exp-tienda__foto {
+        display: block;
+        aspect-ratio: 4 / 3;
+        overflow: hidden;
+    }
+
+    .exp-tienda__foto img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    .exp-tienda:hover img {
+        transform: scale(1.05);
+    }
+
+    .exp-tienda__nombre {
+        position: relative;
+        padding: 1rem 1rem 0.9rem;
+        color: var(--color-green);
+        font-family: var(--font-titles);
+        font-size: 1rem;
+        line-height: 1.25;
+    }
+
+    .exp-tienda__nombre::after {
+        content: "";
+        position: absolute;
+        left: 1rem;
+        bottom: 0.3rem;
+        width: 40px;
+        height: 1px;
+        background: var(--color-beige);
+    }
+
+    .exp-tienda__accion {
+        margin-top: auto;
+        padding: 0.5rem 1rem 1rem;
+        color: #555;
+        font-size: 0.75rem;
+    }
+
+    .exp-resena__web {
+        margin-top: 3rem;
+        text-align: center;
+    }
+
+    .exp-resena__web h3 {
+        margin-bottom: 0.5rem;
+    }
+
+    .exp-resena__web a {
+        color: var(--color-green);
+        text-decoration: underline;
+        word-break: break-word;
+    }
+
+    @media (min-width: 900px) {
+        .exp-tiendas {
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+    }
+</style>

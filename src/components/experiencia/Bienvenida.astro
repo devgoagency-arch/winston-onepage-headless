@@ -1,0 +1,127 @@
+---
+// Banner: reemplazar hero-mobile.webp (1080x864) y hero-desktop.webp (2000x1347) en public/images/experiencia.
+---
+
+<section class="exp-hero">
+    <picture class="exp-hero__foto">
+        <source media="(min-width: 1024px)" srcset="/images/experiencia/hero-desktop.webp" />
+        <img
+            src="/images/experiencia/hero-mobile.webp"
+            alt="Mocasines de cuero vinotinto Winston & Harry"
+            width="1080"
+            height="864"
+            fetchpriority="high"
+            decoding="async"
+            class="is-visible"
+        />
+    </picture>
+    <div class="exp-hero__contenido">
+        <div class="exp-hero__texto">
+            <a href="/" class="exp-hero__logo">
+                <img src="/images/experiencia/logo-w-h.png" alt="Winston & Harry" width="240" height="58" class="is-visible" />
+            </a>
+            <p class="exp-hero__sello">Hecho en Colombia</p>
+            <h1>Tu estilo continúa aquí.</h1>
+            <p>
+                Gracias por elegir Winston &amp; Harry. Descubre cómo cuidar tu nueva pieza, encuentra inspiración para
+                combinarla y comparte tu experiencia con nosotros.
+            </p>
+            <nav class="exp-hero__acciones" aria-label="Qué puedes hacer aquí">
+                <a href="#suscribete" class="btn">Suscríbete y obtén 10% OFF</a>
+                <a href="#resenas" class="btn btn-outline">Deja tu reseña en un minuto</a>
+                <a href="#guias" class="btn btn-outline">Guías de estilo y cuidado</a>
+            </nav>
+        </div>
+    </div>
+</section>
+
+<style>
+    .exp-hero {
+        position: relative;
+        padding: 0;
+        background: var(--exp-crema);
+    }
+
+    .exp-hero__foto {
+        display: block;
+        aspect-ratio: 5 / 4;
+        width: 100%;
+    }
+
+    .exp-hero__foto img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .exp-hero__contenido {
+        padding: 2rem 1.25rem 3rem;
+    }
+
+    .exp-hero__logo {
+        display: block;
+        width: 200px;
+        margin-bottom: 0.5rem;
+    }
+
+    .exp-hero__logo img {
+        width: 100%;
+        height: auto;
+    }
+
+    .exp-hero__sello {
+        margin-bottom: 2rem;
+        color: #55524b;
+        font-size: 0.7rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+    }
+
+    .exp-hero__acciones {
+        display: grid;
+        gap: 0.75rem;
+        margin-top: 2rem;
+    }
+
+    .exp-hero__acciones .btn {
+        padding-inline: 0.75rem;
+        font-size: 0.75rem;
+        letter-spacing: 1px;
+    }
+
+    @media (min-width: 1024px) {
+        .exp-hero {
+            min-height: min(calc(100vh - 92px), 820px);
+            display: flex;
+            align-items: center;
+        }
+
+        .exp-hero__foto {
+            position: absolute;
+            inset: 0;
+            aspect-ratio: auto;
+            height: 100%;
+        }
+
+        .exp-hero__foto img {
+            object-position: right center;
+        }
+
+        .exp-hero__contenido {
+            position: relative;
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .exp-hero__texto {
+            max-width: 46%;
+            min-width: 440px;
+        }
+
+        .exp-hero__acciones {
+            max-width: 22rem;
+        }
+    }
+</style>

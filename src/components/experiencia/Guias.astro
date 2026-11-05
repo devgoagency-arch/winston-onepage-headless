@@ -1,0 +1,127 @@
+---
+import { GUIAS, SITIO } from "../../config/experiencia";
+---
+
+<section id="guias" class="exp-seccion">
+    <div class="container">
+        <div class="exp-cabecera">
+            <h2>El buen estilo está en los detalles.</h2>
+            <p>
+                Descubre recomendaciones para cuidar tus piezas favoritas, combinarlas mejor y conservarlas por mucho
+                más tiempo.
+            </p>
+        </div>
+
+        <div class="exp-guias">
+            {
+                GUIAS.map((g) => (
+                    <article class="exp-guia reveal-on-scroll">
+                        <a
+                            href={g.href}
+                            class="exp-guia__foto"
+                            data-exp-evento="blog"
+                            data-exp-articulo={g.id}
+                            aria-label={`Leer: ${g.titulo}`}
+                        >
+                            <img src={g.imagen} alt={g.alt} width="720" height="1280" loading="lazy" decoding="async" />
+                        </a>
+                        <a href={g.href} class="exp-guia__titulo" data-exp-evento="blog" data-exp-articulo={g.id}>
+                            <h3>{g.titulo}</h3>
+                        </a>
+                        <a href={g.href} class="exp-guia__leer" data-exp-evento="blog" data-exp-articulo={g.id}>
+                            Leer artículo
+                        </a>
+                    </article>
+                ))
+            }
+        </div>
+
+        <div class="exp-guias__acciones">
+            <a href={`${SITIO}/blog`} class="btn btn-outline" data-exp-evento="blog" data-exp-articulo="blog">
+                Ver todas las publicaciones
+            </a>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Mismas tarjetas de BlogHome.astro */
+    .exp-guias {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem 1rem;
+        margin-bottom: 3rem;
+    }
+
+    .exp-guia:last-child {
+        grid-column: 1 / -1;
+        justify-self: center;
+        width: calc(50% - 0.5rem);
+    }
+
+    .exp-guia__foto {
+        display: block;
+        aspect-ratio: 9 / 16;
+        margin-bottom: 1.5rem;
+        overflow: hidden;
+        background: #e0dcd5;
+    }
+
+    .exp-guia__foto img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .exp-guia:hover .exp-guia__foto img {
+        transform: scale(1.05);
+    }
+
+    .exp-guia h3 {
+        margin-bottom: 1rem;
+        min-height: 2.8em;
+        font-size: 0.85rem;
+        line-height: 1.4;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    .exp-guia__leer {
+        padding-bottom: 2px;
+        border-bottom: 1px solid rgba(21, 83, 56, 0.3);
+        color: var(--color-green);
+        font-family: var(--font-titles);
+        font-size: 0.75rem;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+    }
+
+    .exp-guia:hover .exp-guia__leer {
+        border-bottom-color: var(--color-beige);
+        color: var(--color-beige);
+    }
+
+    .exp-guias__acciones {
+        display: flex;
+        justify-content: center;
+    }
+
+    @media (min-width: 769px) {
+        .exp-guias {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1050px;
+            margin: 0 auto 4rem;
+        }
+
+        .exp-guia:last-child {
+            grid-column: auto;
+            width: auto;
+        }
+
+        .exp-guia h3 {
+            font-size: 1rem;
+        }
+    }
+</style>

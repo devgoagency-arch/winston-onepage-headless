@@ -1,0 +1,112 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Bienvenida from "../components/experiencia/Bienvenida.astro";
+import Suscripcion from "../components/experiencia/Suscripcion.astro";
+import Guias from "../components/experiencia/Guias.astro";
+import Resenas from "../components/experiencia/Resenas.astro";
+import Novedades from "../components/experiencia/Novedades.astro";
+---
+
+<Layout
+    title="Tu estilo continúa aquí | Winston & Harry"
+    description="Deja tu reseña, suscríbete y descubre guías de estilo y cuidado de Winston & Harry."
+    image="https://www.winstonandharrystore.com/images/experiencia/hero-desktop.webp"
+    noindex={true}
+>
+    <Header />
+    <main class="exp">
+        <Bienvenida />
+        <Suscripcion />
+        <Resenas />
+        <Guias />
+        <Novedades />
+    </main>
+    <Footer hideBlog={true} hideReviews={true} />
+</Layout>
+
+<script>
+    import "../scripts/experiencia";
+</script>
+
+<style is:global>
+    .exp {
+        --exp-crema: #ece5d9;
+        --exp-tenue: #666;
+        --exp-linea: #e6e6e6;
+        padding-top: 65px;
+        background: #fff;
+        color: var(--color-black);
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .exp h1 {
+        font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+        line-height: 1.06;
+        letter-spacing: 0.5px;
+        margin-bottom: 1rem;
+    }
+
+    .exp h2 {
+        font-size: clamp(1.75rem, 3vw, 2.25rem);
+        line-height: 1.15;
+        letter-spacing: 0.5px;
+        margin-bottom: 1rem;
+    }
+
+    .exp-seccion {
+        padding: 4rem 0;
+        scroll-margin-top: 75px;
+    }
+
+    .exp-cabecera {
+        max-width: 620px;
+        margin: 0 auto 3rem;
+        text-align: center;
+    }
+
+    .exp-cabecera p {
+        color: #333;
+    }
+
+    .exp .btn {
+        font-family: var(--font-paragraphs);
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    .exp .btn:disabled {
+        opacity: 0.6;
+        cursor: wait;
+    }
+
+    .exp a:focus-visible,
+    .exp button:focus-visible,
+    .exp summary:focus-visible,
+    .exp input:focus-visible,
+    .exp select:focus-visible {
+        outline: 2px solid var(--color-beige);
+        outline-offset: 2px;
+    }
+
+    @media (min-width: 900px) {
+        .exp-seccion {
+            padding: 6rem 0;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .exp {
+            padding-top: 92px;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .exp * {
+            transition: none !important;
+        }
+    }
+</style>

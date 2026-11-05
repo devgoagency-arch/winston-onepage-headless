@@ -1,0 +1,15 @@
+{
+  "name": "experiencia-qr",
+  "private": true,
+  "type": "module",
+  "description": "Genera los QR de /experiencia. Dependencias aisladas para no tocar el build del sitio.",
+  "scripts": {
+    "generar": "node generar.mjs"
+  },
+  "dependencies": {
+    "jsqr": "1.4.0",
+    "potrace": "2.1.8",
+    "qrcode": "1.5.4",
+    "sharp": "0.34.5"
+  }
+}

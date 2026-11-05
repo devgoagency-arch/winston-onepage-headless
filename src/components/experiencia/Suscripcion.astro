@@ -1,0 +1,211 @@
+---
+import { POLITICA_PRIVACIDAD } from "../../config/experiencia";
+---
+
+<section id="suscribete" class="exp-suscribe">
+    <div class="container">
+        <h2>Suscríbete y obtén 10% OFF</h2>
+
+        <form id="exp-suscribe-form" novalidate>
+            <div class="exp-suscribe__campos">
+                <div class="exp-campo">
+                    <label for="exp-correo">Correo electrónico *</label>
+                    <input id="exp-correo" name="correo" type="email" autocomplete="email" inputmode="email" maxlength="160" required placeholder="tu@email.com" aria-describedby="exp-error-correo" />
+                    <p id="exp-error-correo" class="exp-error" data-error-de="correo" aria-live="polite"></p>
+                </div>
+                <div class="exp-campo">
+                    <label for="exp-telefono">Número de teléfono móvil *</label>
+                    <input id="exp-telefono" name="telefono" type="tel" autocomplete="tel" inputmode="tel" maxlength="20" required placeholder="+57 --- --- ----" aria-describedby="exp-error-telefono" />
+                    <p id="exp-error-telefono" class="exp-error" data-error-de="telefono" aria-live="polite"></p>
+                </div>
+                <div class="exp-campo">
+                    <label for="exp-nombre">Nombre *</label>
+                    <input id="exp-nombre" name="nombre" type="text" autocomplete="given-name" maxlength="80" required placeholder="Tu nombre" aria-describedby="exp-error-nombre" />
+                    <p id="exp-error-nombre" class="exp-error" data-error-de="nombre" aria-live="polite"></p>
+                </div>
+                <div class="exp-campo">
+                    <label for="exp-apellido">Apellido *</label>
+                    <input id="exp-apellido" name="apellido" type="text" autocomplete="family-name" maxlength="80" required placeholder="Tu apellido" aria-describedby="exp-error-apellido" />
+                    <p id="exp-error-apellido" class="exp-error" data-error-de="apellido" aria-live="polite"></p>
+                </div>
+            </div>
+
+            <div class="exp-trampa" aria-hidden="true">
+                <label for="exp-sitio">Sitio web</label>
+                <input id="exp-sitio" name="sitio" type="text" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <div class="exp-casilla">
+                <input id="exp-datos" name="datos" type="checkbox" required aria-describedby="exp-error-datos" />
+                <label for="exp-datos">
+                    Autorizo el tratamiento de mis datos personales teniendo en cuenta la{" "}
+                    <a href={POLITICA_PRIVACIDAD} target="_blank" rel="noopener">Política de Tratamiento de Datos</a>{" "}
+                    de Winston &amp; Harry. Aplican T&amp;C.
+                </label>
+            </div>
+            <p id="exp-error-datos" class="exp-error" data-error-de="datos" aria-live="polite"></p>
+
+            <p id="exp-estado" class="exp-estado" role="alert" hidden></p>
+
+            <button type="submit" class="exp-suscribe__enviar">Suscribirme</button>
+        </form>
+
+        <div id="exp-suscribe-exito" class="exp-exito" tabindex="-1" hidden>
+            <p>¡Gracias por suscribirte! Pronto recibirás nuestras novedades.</p>
+        </div>
+    </div>
+</section>
+
+<style>
+    .exp-suscribe {
+        padding: 3.5rem 0;
+        background: var(--color-green);
+        color: #fff;
+        scroll-margin-top: 92px;
+    }
+
+    .exp-suscribe h2 {
+        margin-bottom: 2rem;
+        color: #fff;
+        text-align: center;
+    }
+
+    #exp-suscribe-form {
+        max-width: 860px;
+        margin: 0 auto;
+    }
+
+    .exp-suscribe__campos {
+        display: grid;
+        gap: 1.25rem;
+    }
+
+    .exp-campo label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: #fff;
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+    }
+
+    .exp-campo input {
+        width: 100%;
+        min-height: 50px;
+        padding: 0.65rem 0.85rem;
+        background: #fff;
+        border: 1px solid #fff;
+        border-radius: 0;
+        color: #000;
+        font-family: var(--font-paragraphs);
+        font-size: 1rem;
+    }
+
+    .exp-campo input::placeholder {
+        color: #767676;
+    }
+
+    .exp-campo [aria-invalid="true"] {
+        border-color: #ffb4a8;
+        box-shadow: 0 0 0 1px #ffb4a8;
+    }
+
+    .exp-error {
+        margin-top: 0.35rem;
+        color: #fff;
+        font-size: 0.8rem;
+    }
+
+    .exp-error:empty {
+        display: none;
+    }
+
+    .exp-casilla {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+        margin-top: 1.5rem;
+        font-size: 0.875rem;
+    }
+
+    .exp-casilla input {
+        flex: none;
+        width: 20px;
+        height: 20px;
+        margin-top: 1px;
+        accent-color: var(--color-beige);
+    }
+
+    .exp-casilla a {
+        color: #fff;
+        text-decoration: underline;
+    }
+
+    .exp-trampa {
+        position: absolute;
+        left: -9999px;
+    }
+
+    .exp-estado {
+        margin-top: 1rem;
+        padding: 0.75rem 1rem;
+        background: #fff;
+        color: #a12a1f;
+        font-size: 0.875rem;
+    }
+
+    .exp-suscribe__enviar {
+        display: block;
+        width: 100%;
+        min-height: 52px;
+        margin-top: 1.5rem;
+        background: #fff;
+        border: none;
+        color: var(--color-green);
+        font-family: var(--font-paragraphs);
+        font-size: 0.85rem;
+        font-weight: 700;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: var(--transition-smooth);
+    }
+
+    .exp-suscribe__enviar:hover {
+        background: var(--color-beige);
+        color: #fff;
+    }
+
+    .exp-suscribe__enviar:disabled {
+        opacity: 0.6;
+        cursor: wait;
+    }
+
+    .exp-exito {
+        max-width: 640px;
+        margin: 0 auto;
+        padding: 1.5rem;
+        background: #fff;
+        color: var(--color-green);
+        font-weight: 600;
+        text-align: center;
+        outline: none;
+    }
+
+    @media (min-width: 769px) {
+        .exp-suscribe {
+            padding: 5rem 0;
+        }
+
+        .exp-suscribe__campos {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem 2rem;
+        }
+
+        .exp-suscribe__enviar {
+            width: 320px;
+            margin: 2rem auto 0;
+        }
+    }
+</style>
