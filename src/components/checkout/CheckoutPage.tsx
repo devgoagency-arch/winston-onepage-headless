@@ -1,6 +1,6 @@
-import ArmaTuBlackProgress, { useArmaTuBlack } from '../ArmaTuBlackProgress';
+import ArmaTuBlackProgress, { ArmaTuBlackGroupHeading, ArmaTuBlackLineBadge, ArmaTuBlackLinePrice, sortForArmaTuBlack, useArmaTuBlack } from '../ArmaTuBlackProgress';
 import { useStore } from '@nanostores/react';
-import { useState, useMemo, useEffect, useRef } from 'react';
+import { Fragment, useState, useMemo, useEffect, useRef } from 'react';
 import { cartItems, clearCart, isCartOpen, calculateComboDiscount, calculateSweater2x1Discount, type CartItem } from '../../store/cart';
 import { userSession } from '../../store/user';
 import colombiaCities from '../../lib/colombiaCities.json';
@@ -1064,8 +1064,10 @@ export default function CheckoutPage() {
 
                             {/* Listado Visual de Productos */}
                             <div className="checkout-summary-items">
-                                {items.map((item, idx) => (
-                                    <div key={`${item.id}-${idx}`} className="checkout-summary-item">
+                                {sortForArmaTuBlack(items, black.byItem, black.active).map(({ item, index: idx, heading }) => (
+                                    <Fragment key={`${item.id}-${idx}`}>
+                                    {heading && <ArmaTuBlackGroupHeading group={heading} />}
+                                    <div className="checkout-summary-item">
                                         <div className="checkout-item-image">
                                             {item.image ? (
                                                 <a href={`/productos/${item.slug}`} style={{ display: 'block', width: '100%', height: '100%' }}>
@@ -1088,11 +1090,15 @@ export default function CheckoutPage() {
                                             {item.size && (
                                                 <span className="checkout-item-attr">Talla: {item.size}</span>
                                             )}
+                                            {black.active && black.byItem[idx]?.eligible && <ArmaTuBlackLineBadge pcts={black.byItem[idx].pcts} />}
                                         </div>
                                         <div className="checkout-item-price">
-                                            {fmt(item.price * item.quantity)}
+                                            {black.active
+                                                ? <ArmaTuBlackLinePrice total={item.price * item.quantity} discount={black.byItem[idx]?.discount ?? 0} />
+                                                : fmt(item.price * item.quantity)}
                                         </div>
                                     </div>
+                                    </Fragment>
                                 ))}
                             </div>
 

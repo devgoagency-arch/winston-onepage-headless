@@ -1,0 +1,581 @@
+{
+  "id": 26847,
+  "name": "Cumbria II",
+  "slug": "cumbria-ii",
+  "permalink": "https://tienda.winstonandharrystore.com/product/cumbria-ii/",
+  "type": "variable",
+  "status": "publish",
+  "date_created": "2022-10-27T18:00:04",
+  "description": "<p>Nuestro Cumbria II es un mocasín de gamuza minimalista para la mente informal. Es perfecto para un atuendo casual durante la semana o incluso durante el fin de semana. La comodidad, la flexibilidad y la simplicidad sin esfuerzo se encuentran en el núcleo del concepto del diseño. Aquellos con buen ojo, notarán que este nuevo mocasín de corte entero está irrevocablemente vinculado a nuestro modelo icónico del Cornwall.</p>\n",
+  "short_description": "<p>El mocasín Cumbria II de gamuza representa el concepto de minimalismo perfecto para la mente informal.</p>\n",
+  "prices": {
+    "price": "531300",
+    "regular_price": "759000",
+    "sale_price": "",
+    "currency_code": "COP",
+    "currency_symbol": "$",
+    "currency_minor_unit": 0,
+    "currency_prefix": "$",
+    "price_range": null
+  },
+  "images": [
+    {
+      "id": 85880,
+      "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-cumbria-ii-cafe-03.jpg",
+      "alt": "Cumbria II",
+      "name": "winston-and-harry-mocasines-cumbria-ii-cafe-03"
+    },
+    {
+      "id": 85882,
+      "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-cumbria-ii-cafe-02.jpg",
+      "alt": "Cumbria II",
+      "name": "winston-and-harry-mocasines-cumbria-ii-cafe-02"
+    },
+    {
+      "id": 85881,
+      "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-cumbria-ii-cafe-01.jpg",
+      "alt": "Cumbria II",
+      "name": "winston-and-harry-mocasines-cumbria-ii-cafe-01"
+    }
+  ],
+  "attributes": [
+    {
+      "id": 3,
+      "name": "Selecciona el Color",
+      "slug": "pa_selecciona-el-color",
+      "terms": [
+        {
+          "id": 0,
+          "name": "Café",
+          "slug": "cafe"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Selecciona una Talla",
+      "slug": "pa_selecciona-una-talla",
+      "terms": [
+        {
+          "id": 0,
+          "name": "37",
+          "slug": "37"
+        },
+        {
+          "id": 1,
+          "name": "38",
+          "slug": "38"
+        },
+        {
+          "id": 2,
+          "name": "39",
+          "slug": "39"
+        },
+        {
+          "id": 3,
+          "name": "40",
+          "slug": "40"
+        },
+        {
+          "id": 4,
+          "name": "41",
+          "slug": "41"
+        },
+        {
+          "id": 5,
+          "name": "42",
+          "slug": "42"
+        },
+        {
+          "id": 6,
+          "name": "43",
+          "slug": "43"
+        },
+        {
+          "id": 7,
+          "name": "44",
+          "slug": "44"
+        },
+        {
+          "id": 8,
+          "name": "45",
+          "slug": "45"
+        }
+      ]
+    },
+    {
+      "id": 0,
+      "name": "Suela",
+      "slug": "Suela",
+      "terms": [
+        {
+          "id": 0,
+          "name": "Goma",
+          "slug": "goma"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Capellada",
+      "slug": "pa_capellada",
+      "terms": [
+        {
+          "id": 0,
+          "name": "100% Cuero",
+          "slug": "100-cuero"
+        }
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "id": 424,
+      "name": "Ideas de regalo",
+      "slug": "ideas-regalo-hombre"
+    },
+    {
+      "id": 195,
+      "name": "Mocasines",
+      "slug": "mocasines-cuero-hombre"
+    },
+    {
+      "id": 438,
+      "name": "Tallas Grandes",
+      "slug": "tallas-grandes-zapatos-hombre"
+    },
+    {
+      "id": 63,
+      "name": "Zapatos",
+      "slug": "zapatos-cuero-hombre"
+    },
+    {
+      "id": 410,
+      "name": "Zapatos y Maletas",
+      "slug": "zapatos-maletas-cuero-hombre"
+    }
+  ],
+  "category_ids": [
+    424,
+    195,
+    438,
+    63,
+    410
+  ],
+  "tags": [
+    {
+      "id": 426,
+      "name": "Colección - Semana Santa",
+      "slug": "coleccion-semana-santa"
+    },
+    {
+      "id": 223,
+      "name": "Cuero",
+      "slug": "cuero"
+    },
+    {
+      "id": 218,
+      "name": "Cumbria",
+      "slug": "cumbria"
+    },
+    {
+      "id": 226,
+      "name": "Gamuza",
+      "slug": "gamuza"
+    },
+    {
+      "id": 265,
+      "name": "leather",
+      "slug": "leather"
+    },
+    {
+      "id": 165,
+      "name": "mocasin",
+      "slug": "mocasin"
+    },
+    {
+      "id": 264,
+      "name": "nobuk",
+      "slug": "nobuk"
+    },
+    {
+      "id": 87,
+      "name": "shoes",
+      "slug": "shoes"
+    },
+    {
+      "id": 73,
+      "name": "zapato",
+      "slug": "zapato"
+    },
+    {
+      "id": 88,
+      "name": "zapatos",
+      "slug": "zapatos"
+    }
+  ],
+  "variation_ids": [
+    26868,
+    26869,
+    26870,
+    26871,
+    26872,
+    26873,
+    26874,
+    26875,
+    26876
+  ],
+  "on_sale": false,
+  "featured": false,
+  "upsell_ids": [
+    24163,
+    24164,
+    24166,
+    24167
+  ],
+  "cross_sell_ids": [],
+  "variations": [
+    {
+      "id": 26876,
+      "image": {
+        "id": 85880,
+        "date_created": "2026-07-27T14:44:46",
+        "date_created_gmt": "2026-07-27T14:44:46",
+        "date_modified": "2026-07-27T17:03:52",
+        "date_modified_gmt": "2026-07-27T17:03:52",
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-cumbria-ii-cafe-03.jpg",
+        "name": "winston-and-harry-mocasines-cumbria-ii-cafe-03",
+        "alt": ""
+      },
+      "manage_stock": true,
+      "stock_quantity": 0,
+      "sale_price": "",
+      "price": "759000",
+      "regular_price": "759000",
+      "stock_status": "outofstock",
+      "attributes": [
+        {
+          "id": 3,
+          "name": "Selecciona el Color",
+          "slug": "pa_selecciona-el-color",
+          "option": "Café",
+          "value": "Café"
+        },
+        {
+          "id": 4,
+          "name": "Selecciona una Talla",
+          "slug": "pa_selecciona-una-talla",
+          "option": "45",
+          "value": "45"
+        }
+      ]
+    },
+    {
+      "id": 26875,
+      "image": {
+        "id": 85880,
+        "date_created": "2026-07-27T14:44:46",
+        "date_created_gmt": "2026-07-27T14:44:46",
+        "date_modified": "2026-07-27T17:03:52",
+        "date_modified_gmt": "2026-07-27T17:03:52",
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-cumbria-ii-cafe-03.jpg",
+        "name": "winston-and-harry-mocasines-cumbria-ii-cafe-03",
+        "alt": ""
+      },
+      "manage_stock": true,
+      "stock_quantity": 0,
+      "sale_price": "531300",
+      "price": "531300",
+      "regular_price": "759000",
+      "stock_status": "outofstock",
+      "attributes": [
+        {
+          "id": 3,
+          "name": "Selecciona el Color",
+          "slug": "pa_selecciona-el-color",
+          "option": "Café",
+          "value": "Café"
+        },
+        {
+          "id": 4,
+          "name": "Selecciona una Talla",
+          "slug": "pa_selecciona-una-talla",
+          "option": "44",
+          "value": "44"
+        }
+      ]
+    },
+    {
+      "id": 26874,
+      "image": {
+        "id": 85880,
+        "date_created": "2026-07-27T14:44:46",
+        "date_created_gmt": "2026-07-27T14:44:46",
+        "date_modified": "2026-07-27T17:03:52",
+        "date_modified_gmt": "2026-07-27T17:03:52",
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-cumbria-ii-cafe-03.jpg",
+        "name": "winston-and-harry-mocasines-cumbria-ii-cafe-03",
+        "alt": ""
+      },
+      "manage_stock": true,
+      "stock_quantity": 0,
+      "sale_price": "531300",
+      "price": "531300",
+      "regular_price": "759000",
+      "stock_status": "outofstock",
+      "attributes": [
+        {
+          "id": 3,
+          "name": "Selecciona el Color",
+          "slug": "pa_selecciona-el-color",
+          "option": "Café",
+          "value": "Café"
+        },
+        {
+          "id": 4,
+          "name": "Selecciona una Talla",
+          "slug": "pa_selecciona-una-talla",
+          "option": "43",
+          "value": "43"
+        }
+      ]
+    },
+    {
+      "id": 26873,
+      "image": {
+        "id": 85880,
+        "date_created": "2026-07-27T14:44:46",
+        "date_created_gmt": "2026-07-27T14:44:46",
+        "date_modified": "2026-07-27T17:03:52",
+        "date_modified_gmt": "2026-07-27T17:03:52",
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-cumbria-ii-cafe-03.jpg",
+        "name": "winston-and-harry-mocasines-cumbria-ii-cafe-03",
+        "alt": ""
+      },
+      "manage_stock": true,
+      "stock_quantity": 0,
+      "sale_price": "531300",
+      "price": "531300",
+      "regular_price": "759000",
+      "stock_status": "outofstock",
+      "attributes": [
+        {
+          "id": 3,
+          "name": "Selecciona el Color",
+          "slug": "pa_selecciona-el-color",
+          "option": "Café",
+          "value": "Café"
+        },
+        {
+          "id": 4,
+          "name": "Selecciona una Talla",
+          "slug": "pa_selecciona-una-talla",
+          "option": "42",
+          "value": "42"
+        }
+      ]
+    },
+    {
+      "id": 26872,
+      "image": {
+        "id": 85880,
+        "date_created": "2026-07-27T14:44:46",
+        "date_created_gmt": "2026-07-27T14:44:46",
+        "date_modified": "2026-07-27T17:03:52",
+        "date_modified_gmt": "2026-07-27T17:03:52",
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-cumbria-ii-cafe-03.jpg",
+        "name": "winston-and-harry-mocasines-cumbria-ii-cafe-03",
+        "alt": ""
+      },
+      "manage_stock": true,
+      "stock_quantity": 0,
+      "sale_price": "531300",
+      "price": "531300",
+      "regular_price": "759000",
+      "stock_status": "outofstock",
+      "attributes": [
+        {
+          "id": 3,
+          "name": "Selecciona el Color",
+          "slug": "pa_selecciona-el-color",
+          "option": "Café",
+          "value": "Café"
+        },
+        {
+          "id": 4,
+          "name": "Selecciona una Talla",
+          "slug": "pa_selecciona-una-talla",
+          "option": "41",
+          "value": "41"
+        }
+      ]
+    },
+    {
+      "id": 26871,
+      "image": {
+        "id": 85880,
+        "date_created": "2026-07-27T14:44:46",
+        "date_created_gmt": "2026-07-27T14:44:46",
+        "date_modified": "2026-07-27T17:03:52",
+        "date_modified_gmt": "2026-07-27T17:03:52",
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-cumbria-ii-cafe-03.jpg",
+        "name": "winston-and-harry-mocasines-cumbria-ii-cafe-03",
+        "alt": ""
+      },
+      "manage_stock": true,
+      "stock_quantity": 0,
+      "sale_price": "531300",
+      "price": "531300",
+      "regular_price": "759000",
+      "stock_status": "outofstock",
+      "attributes": [
+        {
+          "id": 3,
+          "name": "Selecciona el Color",
+          "slug": "pa_selecciona-el-color",
+          "option": "Café",
+          "value": "Café"
+        },
+        {
+          "id": 4,
+          "name": "Selecciona una Talla",
+          "slug": "pa_selecciona-una-talla",
+          "option": "40",
+          "value": "40"
+        }
+      ]
+    },
+    {
+      "id": 26870,
+      "image": {
+        "id": 85880,
+        "date_created": "2026-07-27T14:44:46",
+        "date_created_gmt": "2026-07-27T14:44:46",
+        "date_modified": "2026-07-27T17:03:52",
+        "date_modified_gmt": "2026-07-27T17:03:52",
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-cumbria-ii-cafe-03.jpg",
+        "name": "winston-and-harry-mocasines-cumbria-ii-cafe-03",
+        "alt": ""
+      },
+      "manage_stock": true,
+      "stock_quantity": 0,
+      "sale_price": "531300",
+      "price": "531300",
+      "regular_price": "759000",
+      "stock_status": "outofstock",
+      "attributes": [
+        {
+          "id": 3,
+          "name": "Selecciona el Color",
+          "slug": "pa_selecciona-el-color",
+          "option": "Café",
+          "value": "Café"
+        },
+        {
+          "id": 4,
+          "name": "Selecciona una Talla",
+          "slug": "pa_selecciona-una-talla",
+          "option": "39",
+          "value": "39"
+        }
+      ]
+    },
+    {
+      "id": 26869,
+      "image": {
+        "id": 85880,
+        "date_created": "2026-07-27T14:44:46",
+        "date_created_gmt": "2026-07-27T14:44:46",
+        "date_modified": "2026-07-27T17:03:52",
+        "date_modified_gmt": "2026-07-27T17:03:52",
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-cumbria-ii-cafe-03.jpg",
+        "name": "winston-and-harry-mocasines-cumbria-ii-cafe-03",
+        "alt": ""
+      },
+      "manage_stock": true,
+      "stock_quantity": 0,
+      "sale_price": "531300",
+      "price": "531300",
+      "regular_price": "759000",
+      "stock_status": "outofstock",
+      "attributes": [
+        {
+          "id": 3,
+          "name": "Selecciona el Color",
+          "slug": "pa_selecciona-el-color",
+          "option": "Café",
+          "value": "Café"
+        },
+        {
+          "id": 4,
+          "name": "Selecciona una Talla",
+          "slug": "pa_selecciona-una-talla",
+          "option": "38",
+          "value": "38"
+        }
+      ]
+    },
+    {
+      "id": 26868,
+      "image": {
+        "id": 85880,
+        "date_created": "2026-07-27T14:44:46",
+        "date_created_gmt": "2026-07-27T14:44:46",
+        "date_modified": "2026-07-27T17:03:52",
+        "date_modified_gmt": "2026-07-27T17:03:52",
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-cumbria-ii-cafe-03.jpg",
+        "name": "winston-and-harry-mocasines-cumbria-ii-cafe-03",
+        "alt": ""
+      },
+      "manage_stock": true,
+      "stock_quantity": 0,
+      "sale_price": "531300",
+      "price": "531300",
+      "regular_price": "759000",
+      "stock_status": "outofstock",
+      "attributes": [
+        {
+          "id": 3,
+          "name": "Selecciona el Color",
+          "slug": "pa_selecciona-el-color",
+          "option": "Café",
+          "value": "Café"
+        },
+        {
+          "id": 4,
+          "name": "Selecciona una Talla",
+          "slug": "pa_selecciona-una-talla",
+          "option": "37",
+          "value": "37"
+        }
+      ]
+    }
+  ],
+  "variation_images_map": {
+    "cafe": [
+      {
+        "id": 85880,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-cumbria-ii-cafe-03.jpg",
+        "alt": "winston-and-harry-mocasines-cumbria-ii-cafe-03",
+        "name": "winston-and-harry-mocasines-cumbria-ii-cafe-03"
+      },
+      {
+        "id": 85882,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-cumbria-ii-cafe-02.jpg",
+        "alt": "winston-and-harry-mocasines-cumbria-ii-cafe-02",
+        "name": "winston-and-harry-mocasines-cumbria-ii-cafe-02"
+      },
+      {
+        "id": 85881,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-cumbria-ii-cafe-01.jpg",
+        "alt": "winston-and-harry-mocasines-cumbria-ii-cafe-01",
+        "name": "winston-and-harry-mocasines-cumbria-ii-cafe-01"
+      }
+    ]
+  },
+  "stock_status": "instock",
+  "manage_stock": true,
+  "stock_quantity": 1,
+  "yoast_head_json": null,
+  "rank_math_seo": null
+}

@@ -1,5 +1,7 @@
 import { useState, useEffect, useMemo } from 'react';
 import { getOptimizedUrl, getImageSrcSet } from '../utils/image';
+import { addToCart } from '../store/cart';
+import { getLiveStock, type LiveVariation } from '../utils/liveStock';
 
 // Elimina sufijos de miniaturas de WordPress (ej: -150x150) para cargar la imagen original
 function getOriginalImageUrl(url: string): string {
@@ -63,6 +65,19 @@ export default function ProductCard({ product, isSelected, onSelectionToggle, on
     const [isCardHovered, setIsCardHovered] = useState(false);
     const [failedSyntheticColors, setFailedSyntheticColors] = useState<string[]>([]);
     const [selectedSize, setSelectedSize] = useState<string | null>(initialSize || null);
+    const [quickOpen, setQuickOpen] = useState(false);
+    const [quickSize, setQuickSize] = useState<string | null>(null);
+    const [quickAdded, setQuickAdded] = useState(false);
+    // undefined = cargando, null = falló (usar JSON estático), array = stock en vivo
+    const [liveStock, setLiveStock] = useState<LiveVariation[] | null | undefined>(undefined);
+
+    useEffect(() => {
+        if (product.type !== 'variable' || onSelectionToggle) return;
+        let active = true;
+        setLiveStock(undefined);
+        getLiveStock(product.id).then(v => { if (active) setLiveStock(v); });
+        return () => { active = false; };
+    }, [product.id, product.type, onSelectionToggle]);
 
     // Update state when initial props change
     useEffect(() => {
@@ -85,7 +100,7 @@ export default function ProductCard({ product, isSelected, onSelectionToggle, on
     useEffect(() => {
         // Solo cargar si es variable, no tenemos datos aún, y hay interacción (hover o tap en selector)
         if (product.type !== 'variable' || enrichedProduct || isFetchingVariations) return;
-        if (!isCardHovered && !selectedColor && !selectedSize) return;
+        if (!isCardHovered && !selectedColor && !selectedSize && !quickOpen) return;
 
         const fetchFullProduct = async () => {
             setIsFetchingVariations(true);
@@ -104,7 +119,7 @@ export default function ProductCard({ product, isSelected, onSelectionToggle, on
         };
 
         fetchFullProduct();
-    }, [product.slug, product.type, isCardHovered, selectedColor, selectedSize, enrichedProduct, isFetchingVariations]);
+    }, [product.slug, product.type, isCardHovered, selectedColor, selectedSize, enrichedProduct, isFetchingVariations, quickOpen]);
 
 
 
@@ -486,6 +501,110 @@ export default function ProductCard({ product, isSelected, onSelectionToggle, on
     const isEscalera = (product.slug || '').toLowerCase().includes('escalera') 
                      || (product.name || '').toLowerCase().includes('escalera');
 
+    // Agregar rápido: tallas del color activo con su stock
+    const isSizeAttr = (a: any) => {
+        const n = String(a?.name || '').toLowerCase();
+        return n.includes('talla') || n.includes('size') || n.includes('numero');
+    };
+    const isColorAttr = (a: any) => String(a?.name || '').toLowerCase().includes('color');
+    const attrVal = (a: any) => normalizeAttr(a?.value || a?.option || '');
+
+    // Convierte nombres en vivo ("Café", "45") al slug del término para reutilizar la misma lógica
+    const toTermSlug = (value: string | null, attr: any) => {
+        if (!value) return '';
+        const n = normalizeAttr(value);
+        const term = attr?.terms.find((t: any) => normalizeAttr(t.name) === n || normalizeAttr(t.slug) === n);
+        return term?.slug || value;
+    };
+
+    const quickVariations: any[] = useMemo(() => {
+        if (Array.isArray(liveStock)) {
+            return liveStock.map(v => ({
+                id: v.id,
+                stock_status: 'instock',
+                attributes: [
+                    ...(v.color ? [{ name: 'Selecciona el Color', value: toTermSlug(v.color, colorAttribute) }] : []),
+                    ...(v.size ? [{ name: 'Selecciona una Talla', value: toTermSlug(v.size, sizeAttribute) }] : []),
+                ],
+            }));
+        }
+        return enrichedProduct?.variations || [];
+    }, [liveStock, enrichedProduct, colorAttribute, sizeAttribute]);
+    const quickReady = Array.isArray(liveStock) || !!enrichedProduct;
+    const quickColor = useMemo(() => {
+        if (activeColor) return activeColor;
+        if (!colorAttribute) return null;
+        const withStock = colorAttribute.terms.find(t => quickVariations.some(v =>
+            v.stock_status === 'instock' && v.attributes?.some((a: any) => isColorAttr(a) && attrVal(a) === normalizeAttr(t.slug))
+        ));
+        return (withStock || colorAttribute.terms[0])?.slug || null;
+    }, [activeColor, colorAttribute, quickVariations]);
+
+    const quickSizes = useMemo(() => {
+        if (!sizeAttribute) return [];
+        return sizeAttribute.terms.map(term => {
+            const matches = quickVariations.filter(v => {
+                const s = v.attributes?.find(isSizeAttr);
+                const c = v.attributes?.find(isColorAttr);
+                const sizeOk = !s || attrVal(s) === normalizeAttr(term.slug);
+                const colorOk = !quickColor || !c || !attrVal(c) || attrVal(c) === normalizeAttr(quickColor);
+                return sizeOk && colorOk;
+            });
+            // El catálogo omite las variaciones agotadas: talla sin variación = agotada
+            return {
+                slug: term.slug,
+                name: term.name,
+                inStock: matches.some(v => v.stock_status === 'instock')
+            };
+        });
+    }, [sizeAttribute, quickVariations, quickColor]);
+
+    const visibleQuickSizes = quickSizes;
+    const hasStockInColor = quickSizes.some(s => s.inStock);
+    const showQuickAdd = product.type === 'variable' && !!sizeAttribute && !onSelectionToggle;
+    const quickColorName = colorAttribute?.terms.find(t => t.slug === quickColor)?.name;
+    const quickColorTerms = useMemo(() => {
+        if (!colorAttribute) return [];
+        if (quickVariations.length === 0) return colorAttribute.terms;
+        const filtered = colorAttribute.terms.filter(t => quickVariations.some(v =>
+            v.attributes?.some((a: any) => isColorAttr(a) && attrVal(a) === normalizeAttr(t.slug))
+        ));
+        return filtered.length > 0 ? filtered : colorAttribute.terms;
+    }, [colorAttribute, quickVariations]);
+
+    // Si cambia el color y la talla elegida ya no está disponible, se limpia
+    useEffect(() => {
+        if (quickSize && !quickSizes.some(s => s.slug === quickSize && s.inStock)) setQuickSize(null);
+    }, [quickColor, quickSizes]);
+
+    const handleQuickAdd = () => {
+        if (!quickReady || !quickSize) return;
+        const base: any = enrichedProduct || product;
+        const cartProduct = { ...base, variations: quickVariations };
+        addToCart(cartProduct, 1, quickColor, quickSize, mainImage?.src || product.images[0]?.src || ''); // abre el carrito lateral
+
+        const price = Number(base.prices?.price || 0) / (10 ** (base.prices?.currency_minor_unit || 0));
+        try {
+            (window as any).dataLayer = (window as any).dataLayer || [];
+            (window as any).dataLayer.push({ ecommerce: null });
+            (window as any).dataLayer.push({
+                event: 'add_to_cart',
+                ecommerce: {
+                    currency: 'COP',
+                    value: price,
+                    items: [{ item_id: String(base.id), item_name: base.name, price, quantity: 1, item_variant: [quickColor, quickSize].filter(Boolean).join(' / ') }]
+                }
+            });
+        } catch (e) { }
+
+        setQuickAdded(true);
+        setTimeout(() => {
+            setQuickAdded(false);
+            setQuickSize(null);
+            setQuickOpen(false);
+        }, 1200);
+    };
+
     return (
         <div
             className="product-card"
@@ -680,6 +799,79 @@ export default function ProductCard({ product, isSelected, onSelectionToggle, on
                         )}
                     </div>
                 </a>
+
+                {showQuickAdd && (
+                    <div className={`quick-add-layer ${quickOpen ? 'open' : ''}`}>
+                        <button
+                            type="button"
+                            className="quick-add-toggle"
+                            aria-label={quickOpen ? 'Cerrar agregar rápido' : 'Agregar rápido'}
+                            onClick={(e) => { e.preventDefault(); e.stopPropagation(); setQuickOpen(!quickOpen); }}
+                        >
+                            {quickOpen ? '×' : '+'}
+                        </button>
+                        <div className="quick-add-panel">
+                            <div className="quick-add-head">
+                                <p className="quick-add-title">
+                                    Elige tu talla{quickColorName ? <span> · {quickColorName}</span> : null}
+                                </p>
+                                {quickColorTerms.length > 1 && (
+                                    <div className="quick-add-colors">
+                                        {quickColorTerms.map((term: any) => (
+                                            <button
+                                                key={term.id}
+                                                type="button"
+                                                className={`color-swatch-btn ${quickColor === term.slug ? 'active' : ''}`}
+                                                onClick={(e) => { e.preventDefault(); e.stopPropagation(); setSelectedColor(term.slug); setHoveredColor(null); }}
+                                                onMouseEnter={() => setHoveredColor(term.slug)}
+                                                onMouseLeave={() => setHoveredColor(null)}
+                                                title={term.name}
+                                                aria-label={`Color ${term.name}`}
+                                            >
+                                                <span className="color-circle" style={{ backgroundColor: getColorCode(term.slug) }} />
+                                            </button>
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
+                            {!quickReady ? (
+                                <p className="quick-add-loading">Cargando tallas…</p>
+                            ) : !hasStockInColor ? (
+                                <p className="quick-add-loading">Agotado en este color</p>
+                            ) : (
+                                <>
+                                    <div className="quick-add-sizes">
+                                        {visibleQuickSizes.map(s => (
+                                            <button
+                                                key={s.slug}
+                                                type="button"
+                                                className={`quick-size ${quickSize === s.slug ? 'selected' : ''} ${s.inStock ? '' : 'sold-out'}`}
+                                                disabled={!s.inStock}
+                                                aria-pressed={quickSize === s.slug}
+                                                aria-label={s.inStock ? `Talla ${s.name}` : `Talla ${s.name} agotada`}
+                                                onClick={(e) => { e.preventDefault(); e.stopPropagation(); setQuickSize(s.slug); }}
+                                            >
+                                                {s.name}
+                                            </button>
+                                        ))}
+                                    </div>
+                                    <div className="quick-add-actions">
+                                        <a href={`/productos/${product.slug}${quickColor ? `?color=${quickColor}` : ''}`} className="quick-add-details">
+                                            Ver detalles
+                                        </a>
+                                        <button
+                                            type="button"
+                                            className={`quick-add-btn ${quickSize ? 'ready' : ''} ${quickAdded ? 'added' : ''}`}
+                                            onClick={(e) => { e.preventDefault(); e.stopPropagation(); handleQuickAdd(); }}
+                                        >
+                                            {quickAdded ? 'Añadido ✓' : <>Añadir<span className="qa-long"> al carrito</span></>}
+                                        </button>
+                                    </div>
+                                </>
+                            )}
+                        </div>
+                    </div>
+                )}
 
                 {onSelectionToggle && (
                     <div
@@ -1077,6 +1269,157 @@ export default function ProductCard({ product, isSelected, onSelectionToggle, on
 
         .selection-overlay:hover .check-button {
             transform: scale(1.1);
+        }
+
+        .card-content { position: relative; }
+
+        .quick-add-layer {
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            aspect-ratio: 1 / 1;
+            pointer-events: none;
+            z-index: 16;
+        }
+
+        .quick-add-panel {
+            position: absolute;
+            left: 8px; right: 8px; bottom: 8px;
+            background: rgba(255, 255, 255, 0.96);
+            padding: 8px 10px 10px;
+            opacity: 0;
+            transform: translateY(6px);
+            transition: opacity 0.2s ease, transform 0.2s ease;
+            pointer-events: none;
+        }
+
+        .quick-add-layer.open .quick-add-panel {
+            opacity: 1; transform: none; pointer-events: auto;
+        }
+
+        .quick-add-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            margin: 0 0 6px;
+        }
+        .quick-add-colors { display: flex; gap: 6px; align-items: center; padding-right: 2px; }
+        .quick-add-colors .color-circle { border-color: #e6e6e6; box-shadow: none; }
+
+        .quick-add-title {
+            margin: 0;
+            font-family: var(--font-paragraphs);
+            font-size: 0.68rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            color: #121212;
+        }
+        .quick-add-title span { color: #888; text-transform: none; letter-spacing: 0; }
+
+        .quick-add-loading { margin: 0; font-size: 0.72rem; color: #888; }
+
+        .quick-add-sizes { display: flex; flex-wrap: wrap; gap: 4px; }
+
+        .quick-size {
+            min-width: 32px;
+            height: 28px;
+            padding: 0 6px;
+            border: 1px solid #d8d8d8;
+            background: #fff;
+            color: #121212;
+            font-family: var(--font-paragraphs);
+            font-size: 0.72rem;
+            cursor: pointer;
+            transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+        }
+        .quick-size { position: relative; overflow: hidden; }
+        .quick-size:hover:not(:disabled) { border-color: #121212; }
+        .quick-size.selected { background: #121212; color: #fff; border-color: #121212; }
+        .quick-size.sold-out { color: #bdbdbd; border-color: #e6e6e6; cursor: default; }
+        .quick-size.sold-out::before,
+        .quick-size.sold-out::after {
+            content: '';
+            position: absolute;
+            top: 50%; left: 50%;
+            width: 140%; height: 1px;
+            background: #d0d0d0;
+            transform: translate(-50%, -50%) rotate(40deg);
+        }
+        .quick-size.sold-out::after { transform: translate(-50%, -50%) rotate(-40deg); }
+
+        .quick-add-actions {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .quick-add-details {
+            font-family: var(--font-paragraphs);
+            font-size: 0.68rem;
+            color: #555;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            white-space: nowrap;
+        }
+        .quick-add-details:hover { color: #121212; }
+
+        .quick-add-btn {
+            height: 28px;
+            padding: 0 12px;
+            border: 1px solid #121212;
+            background: #fff;
+            color: #121212;
+            font-family: var(--font-paragraphs);
+            font-size: 0.68rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            white-space: nowrap;
+            cursor: pointer;
+            opacity: 0.45;
+            transition: background 0.15s ease, color 0.15s ease, opacity 0.15s ease;
+        }
+        .quick-add-btn.ready { opacity: 1; background: #121212; color: #fff; }
+        .quick-add-btn.ready:hover { background: #333; }
+        .quick-add-btn.added { opacity: 1; background: #155338; border-color: #155338; color: #fff; }
+
+        @media (max-width: 640px) {
+            .qa-long { display: none; }
+        }
+
+        .quick-add-toggle {
+            position: absolute;
+            left: 10px; bottom: 10px;
+            width: 30px; height: 30px;
+            border-radius: 50%;
+            border: none;
+            background: rgba(255, 255, 255, 0.95);
+            color: #121212;
+            font-size: 1.1rem;
+            line-height: 1;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            pointer-events: auto;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+            z-index: 2;
+        }
+        .quick-add-layer.open .quick-add-toggle {
+            left: auto; right: 12px; bottom: 12px;
+            width: 26px; height: 26px; box-shadow: none; background: transparent;
+        }
+
+        @media (hover: hover) {
+            .product-card:hover .quick-add-panel { opacity: 1; transform: none; pointer-events: auto; }
+            .product-card:hover .card-colors-overlay { opacity: 0; pointer-events: none; }
+        }
+        .product-card:has(.quick-add-layer.open) .card-colors-overlay { opacity: 0; pointer-events: none; }
+
+        @media (hover: none) {
+            .quick-add-toggle { display: flex; }
+            .quick-add-layer.open .quick-add-panel { padding-right: 34px; }
         }
 
         .fade-in { animation: fadeIn 0.4s ease-out; }

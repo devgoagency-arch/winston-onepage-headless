@@ -3,7 +3,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { runInNewContext } from 'node:vm';
-import { calculateArmaTuBlack, getArmaTuBlackHint, isBlackDaysActive, isBlackDaysPreviewBuild, EXTRA_UNITS_DISCOUNT } from '../src/lib/blackDays.ts';
+import { allocateArmaTuBlack, calculateArmaTuBlack, getArmaTuBlackHint, isBlackDaysActive, isBlackDaysPreviewBuild, EXTRA_UNITS_DISCOUNT } from '../src/lib/blackDays.ts';
 const prices = [100000, 80000, 60000, 40000, 20000];
 const discounts = [0, 15000, 40000, 42000, 62000, 62000];
 const rates = [[], [15], [0, 50], [0, 15, 50], [0, 15, 50, 50], [0, 15, 50, 50, 0]];
@@ -99,4 +99,20 @@ test('cintillo: rutas de preview, reloj de campaña, DEV y View Transitions', ()
             }
         }
     }
+});
+
+test('reparto por línea del carrito (el del ejemplo: 825k, 979k, 825k)', () => {
+    const items = [{ price: 825000 }, { price: 979000 }, { price: 825000 }];
+    const lines = allocateArmaTuBlack(items);
+    assert.deepEqual(lines.map(l => l.pcts), [[15], [0], [50]]);
+    assert.deepEqual(lines.map(l => l.discount), [123750, 0, 412500]);
+    assert.equal(lines.reduce((s, l) => s + l.discount, 0), calculateArmaTuBlack(items).discount);
+});
+test('reparto: con descuento propio queda fuera y una línea con cantidad mezcla tasas', () => {
+    const items = [{ price: 500000, on_sale: true }, { price: 100000, quantity: 3 }];
+    const lines = allocateArmaTuBlack(items);
+    assert.deepEqual(lines.map(l => l.eligible), [false, true]);
+    assert.deepEqual(lines[0].pcts, []);
+    assert.deepEqual(lines[1].pcts, [0, 15, 50]);
+    assert.equal(lines[1].discount, 65000);
 });

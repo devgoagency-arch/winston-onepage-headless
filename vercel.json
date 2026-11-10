@@ -7,7 +7,7 @@
   ],
   "headers": [
     {
-      "source": "/api/(.*)",
+      "source": "/api/((?!stock).*)",
       "headers": [
         {
           "key": "Cache-Control",

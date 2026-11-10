@@ -39,17 +39,46 @@ export function getArmaTuBlackHint(n: number): string {
     ][Math.min(4, Math.max(0, Math.floor(n)))];
 }
 
+// Productos sin descuento propio (los zapatos con banda y el suéter Escalera quedan fuera).
+export function isArmaTuBlackEligible(item: BlackUnit): boolean {
+    return !item.on_sale
+        && !(item.regular_price !== undefined && item.price < item.regular_price)
+        && !isSweaterEscalera(item) && !item.tags?.some(tag => tag.id === 937)
+        && Number.isFinite(item.price) && item.price >= 0;
+}
+
+// Escalera de descuentos, de mayor a menor precio: el más barato lleva el descuento más hondo.
+function ladderRates(eligibleCount: number): number[] {
+    return eligibleCount === 1 ? [15] : eligibleCount === 2 ? [0, 50] : [0, 15, 50, 50];
+}
+
+// Reparte el descuento entre las líneas del carrito (mismo orden que `items`).
+// `pcts` trae un porcentaje por unidad de la línea; `discount` es el ahorro de toda la línea.
+export function allocateArmaTuBlack(items: BlackUnit[]): { eligible: boolean; pcts: number[]; discount: number }[] {
+    const units: { line: number; price: number }[] = [];
+    items.forEach((item, line) => {
+        if (!isArmaTuBlackEligible(item)) return;
+        for (let i = 0; i < Math.max(0, Math.floor(item.quantity ?? 1)); i++) units.push({ line, price: item.price });
+    });
+    units.sort((a, b) => b.price - a.price);
+    const rates = ladderRates(units.length);
+    const result = items.map(item => ({ eligible: isArmaTuBlackEligible(item), pcts: [] as number[], discount: 0 }));
+    units.forEach((unit, index) => {
+        const pct = rates[index] ?? EXTRA_UNITS_DISCOUNT;
+        result[unit.line].pcts.push(pct);
+        result[unit.line].discount += Math.round(unit.price * pct / 100);
+    });
+    return result;
+}
+
 // Cálculo puro independiente del reloj; el consumidor aplica la ventana.
 // Acepta unidades o líneas con quantity, sin mutar la entrada.
 export function calculateArmaTuBlack(units: BlackUnit[]) {
-    const prices = units.filter(item => !item.on_sale
-        && !(item.regular_price !== undefined && item.price < item.regular_price)
-        && !isSweaterEscalera(item) && !item.tags?.some(tag => tag.id === 937)
-        && Number.isFinite(item.price) && item.price >= 0)
+    const prices = units.filter(isArmaTuBlackEligible)
         .flatMap(item => Array.from({ length: Math.max(0, Math.floor(item.quantity ?? 1)) }, () => item.price))
         .sort((a, b) => b - a);
     const eligibleCount = prices.length;
-    const rates = eligibleCount === 1 ? [15] : eligibleCount === 2 ? [0, 50] : [0, 15, 50, 50];
+    const rates = ladderRates(eligibleCount);
     const lines = prices.map((price, index) => {
         const pct = rates[index] ?? EXTRA_UNITS_DISCOUNT;
         return { price, pct, amount: Math.round(price * pct / 100) };

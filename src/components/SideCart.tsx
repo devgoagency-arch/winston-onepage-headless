@@ -1,7 +1,7 @@
-import ArmaTuBlackProgress, { useArmaTuBlack } from './ArmaTuBlackProgress';
+import ArmaTuBlackProgress, { ArmaTuBlackGroupHeading, ArmaTuBlackLineBadge, ArmaTuBlackLinePrice, sortForArmaTuBlack, useArmaTuBlack } from './ArmaTuBlackProgress';
 import { useStore } from '@nanostores/react';
 import { cartItems, isCartOpen, removeFromCart, updateQuantity, updateCartItemVariation, calculateComboDiscount, calculateSweater2x1Discount, type CartItem } from '../store/cart';
-import { useEffect, useState, useMemo } from 'react';
+import { Fragment, useEffect, useState, useMemo } from 'react';
 import { redirectToCheckout } from '../utils/checkout';
 
 export default function SideCart() {
@@ -97,7 +97,9 @@ export default function SideCart() {
                             <button className="btn-buy" onClick={handleClose}>Seguir Comprando</button>
                         </div>
                     ) : (
-                        items.map((item) => {
+                        sortForArmaTuBlack(items, black.byItem, black.active).map(({ item, index, heading }) => {
+                            const line = black.active ? black.byItem[index] : undefined;
+                            const lineDiscount = line?.discount ?? 0;
                             const colorAttr = item.attributes?.find(a => {
                                 const name = String(a.name || '').toLowerCase();
                                 const id = String(a.id || '').toLowerCase();
@@ -115,7 +117,9 @@ export default function SideCart() {
 
                             const itemSlug = item.slug || item.name?.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
                             return (
-                                <div key={item.key} className="cart-item">
+                                <Fragment key={item.key}>
+                                {heading && <ArmaTuBlackGroupHeading group={heading} />}
+                                <div className="cart-item">
                                     <div className="item-image">
                                         {itemSlug ? (
                                             <img
@@ -199,10 +203,13 @@ export default function SideCart() {
                                             </div>
                                             <div className="item-price-calc">
                                                 × <span>${new Intl.NumberFormat('es-CO').format(item.price)}</span>
+                                                {lineDiscount > 0 && <> = <span><ArmaTuBlackLinePrice total={item.price * item.quantity} discount={lineDiscount} /></span></>}
                                             </div>
                                         </div>
+                                        {line?.eligible && <ArmaTuBlackLineBadge pcts={line.pcts} />}
                                     </div>
                                 </div>
+                                </Fragment>
                             );
                         })
                     )}

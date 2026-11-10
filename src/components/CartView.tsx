@@ -1,4 +1,4 @@
-import ArmaTuBlackProgress, { useArmaTuBlack } from './ArmaTuBlackProgress';
+import ArmaTuBlackProgress, { ArmaTuBlackGroupHeading, ArmaTuBlackLineBadge, ArmaTuBlackLinePrice, sortForArmaTuBlack, useArmaTuBlack } from './ArmaTuBlackProgress';
 
 import React, { useMemo } from 'react';
 import { useStore } from '@nanostores/react';
@@ -288,7 +288,9 @@ React.useEffect(() => {
                         </div>
 
                         <div className="cart-items-list">
-                            {items.map((item) => {
+                            {sortForArmaTuBlack(items, black.byItem, black.active).map(({ item, index, heading }) => {
+                                const line = black.active ? black.byItem[index] : undefined;
+                                const lineDiscount = line?.discount ?? 0;
                                 const colorAttr = item.attributes?.find(a => {
                                     const name = String(a.name || '').toLowerCase();
                                     const id = String(a.id || '').toLowerCase();
@@ -301,7 +303,9 @@ React.useEffect(() => {
                                 });
 
                                 return (
-                                    <div key={item.key} className="cart-item-row">
+                                    <React.Fragment key={item.key}>
+                                    {heading && <ArmaTuBlackGroupHeading group={heading} />}
+                                    <div className="cart-item-row">
                                         <div className="col-product item-info">
                                             <div className="item-img">
                                                 <a href={`/productos/${item.slug}`}>
@@ -355,6 +359,7 @@ React.useEffect(() => {
                                                         </div>
                                                     )}
                                                 </div>
+                                                {line?.eligible && <div><ArmaTuBlackLineBadge pcts={line.pcts} /></div>}
                                                 <button className="btn-remove desktop-only" onClick={() => removeFromCart(item.key)}>ELIMINAR</button>
 
                                                 {/* Mobile Qty and Price (matches SideCart) */}
@@ -366,6 +371,7 @@ React.useEffect(() => {
                                                     </div>
                                                     <div className="item-price-mobile">
                                                         × <span>${new Intl.NumberFormat('es-CO').format(item.price)}</span>
+                                                        {lineDiscount > 0 && <> = <span><ArmaTuBlackLinePrice total={item.price * item.quantity} discount={lineDiscount} /></span></>}
                                                     </div>
                                                 </div>
                                             </div>
@@ -382,9 +388,10 @@ React.useEffect(() => {
                                             </div>
                                         </div>
                                         <div className="col-total desktop-only">
-                                            ${new Intl.NumberFormat('es-CO').format(item.price * item.quantity)}
+                                            <ArmaTuBlackLinePrice total={item.price * item.quantity} discount={lineDiscount} />
                                         </div>
                                     </div>
+                                    </React.Fragment>
                                 );
                             })}
                         </div>
