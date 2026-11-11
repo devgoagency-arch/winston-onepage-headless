@@ -1,13 +1,16 @@
-import { HUBSPOT, TEXTO_DATOS } from '../config/experiencia';
+import { HUBSPOT, TEXTO_DATOS, TIENDAS } from '../config/experiencia';
 import {
     armarEnvioHubspot,
     errorHubspot,
     normalizarOrigen,
+    normalizarTiendaOrigen,
     validarSuscripcion,
     type DatosSuscripcion,
 } from '../lib/experiencia';
 
 const LLAVE_ORIGEN = 'wh_experiencia_origen';
+const LLAVE_TIENDA = 'wh_experiencia_tienda';
+const IDS_TIENDAS = TIENDAS.map((t) => t.id);
 const TIEMPO_MAXIMO_MS = 12000;
 
 function leerOrigen() {
@@ -22,11 +25,24 @@ function leerOrigen() {
 
 const origen = leerOrigen();
 
+// Tienda del QR/NFC (`?tienda=`). Se llama tienda_origen para no chocar con `tienda` de reseñas y tiendas.
+function leerTiendaOrigen() {
+    const delaUrl = normalizarTiendaOrigen(new URLSearchParams(window.location.search).get('tienda'), IDS_TIENDAS);
+    try {
+        if (delaUrl !== 'ninguna') sessionStorage.setItem(LLAVE_TIENDA, delaUrl);
+        return normalizarTiendaOrigen(sessionStorage.getItem(LLAVE_TIENDA), IDS_TIENDAS);
+    } catch {
+        return delaUrl;
+    }
+}
+
+const tiendaOrigen = leerTiendaOrigen();
+
 // GTM es la única vía a GA4: aquí solo se escribe en dataLayer y nunca van datos personales.
 function medir(event: string, parametros: Record<string, string> = {}) {
     const w = window as any;
     w.dataLayer = w.dataLayer || [];
-    w.dataLayer.push({ event, origen, ...parametros });
+    w.dataLayer.push({ event, origen, tienda_origen: tiendaOrigen, ...parametros });
 }
 
 function iniciarSuscripcion() {

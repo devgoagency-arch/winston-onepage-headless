@@ -1,7 +1,7 @@
 // node --test tests/experiencia.test.mjs
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { armarEnvioHubspot, errorHubspot, normalizarOrigen, validarSuscripcion } from '../src/lib/experiencia.ts';
+import { armarEnvioHubspot, errorHubspot, normalizarOrigen, normalizarTiendaOrigen, validarSuscripcion } from '../src/lib/experiencia.ts';
 
 const base = {
     correo: 'ana@correo.co',
@@ -16,6 +16,14 @@ test('origen solo admite qr y nfc', () => {
     assert.equal(normalizarOrigen(' nfc '), 'nfc');
     assert.equal(normalizarOrigen('<script>'), 'directo');
     assert.equal(normalizarOrigen(null), 'directo');
+});
+
+test('tienda_origen solo admite ids de tiendas', () => {
+    const ids = ['unicentro', 'retiro', 'santa_barbara', 'palatino'];
+    assert.equal(normalizarTiendaOrigen(' Retiro ', ids), 'retiro');
+    assert.equal(normalizarTiendaOrigen('santa_barbara', ids), 'santa_barbara');
+    assert.equal(normalizarTiendaOrigen('andino', ids), 'ninguna');
+    assert.equal(normalizarTiendaOrigen(null, ids), 'ninguna');
 });
 
 test('validación exige todos los campos y la autorización de datos', () => {

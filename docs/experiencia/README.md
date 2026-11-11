@@ -15,7 +15,7 @@ QR/NFC queda en la URL de envío (`pageUri`). Hacer un envío real de prueba al 
 
 La página solo escribe en `dataLayer`; GTM ya carga en el Layout. Crear en GTM una etiqueta de evento GA4 con
 activador de evento personalizado `^postpurchase_` (regex) y estos parámetros como variables de capa de datos:
-`origen`, `canal`, `tienda`, `articulo`, `destino`. Registrarlos como dimensiones personalizadas en GA4.
+`origen`, `tienda_origen`, `canal`, `tienda`, `articulo`, `destino`. Registrarlos como dimensiones personalizadas en GA4.
 
 | Evento | Parámetros |
 | --- | --- |
@@ -27,6 +27,8 @@ activador de evento personalizado `^postpurchase_` (regex) y estos parámetros c
 | `postpurchase_review_click` | `origen`, `canal`, `tienda`, `destino` |
 
 `origen` es `qr`, `nfc` o `directo`; se conserva durante la sesión. Nunca se envían nombre ni correo.
+
+Todos los eventos llevan además `tienda_origen`: la tienda del QR/NFC (`?tienda=`), uno de `unicentro`, `retiro`, `santa_barbara`, `palatino`, o `ninguna`. También se conserva durante la sesión. No confundir con `tienda`, que es la tienda que el cliente toca en la página.
 
 ### 3. Reseñas
 
@@ -52,7 +54,7 @@ El hero usa la imagen entregada para la landing. Para cambiarlo, reemplazar con 
 
 En `docs/experiencia/qr/`: SVG, PNG 3038×3038, PDF vectorial de 40 mm y TXT con la URL NFC. Versión 6, corrección H,
 zona de seguridad de 4 módulos, negro sobre blanco, con el símbolo del logo al centro. El script comprueba la lectura del PNG con un decodificador; **falta
-leerlo con un celular real, ya publicada la página, antes de enviarlo a imprenta**. Tamaño mínimo sugerido: 25 mm. Hay un QR general para las cajas y uno por tienda en `tiendas/<id>/` (unicentro, retiro, santa_barbara, palatino), con `&tienda=<id>` en la URL (versión 8, módulo de 0,70 mm a 40 mm). Cada carpeta trae también su TXT con la URL NFC. Por ahora `tienda` solo queda en `page_location` de GA4; los eventos del dataLayer no la llevan.
+leerlo con un celular real, ya publicada la página, antes de enviarlo a imprenta**. Tamaño mínimo sugerido: 25 mm. Hay un QR general para las cajas y uno por tienda en `tiendas/<id>/` (unicentro, retiro, santa_barbara, palatino), con `&tienda=<id>` en la URL (versión 8, módulo de 0,70 mm a 40 mm). Cada carpeta trae también su TXT con la URL NFC. Los eventos la envían como `tienda_origen` (ver sección 2).
 
 ```bash
 cd scripts/experiencia-qr

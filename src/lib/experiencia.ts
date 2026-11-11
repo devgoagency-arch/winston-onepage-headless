@@ -23,6 +23,12 @@ export function normalizarOrigen(valor: string | null | undefined): 'qr' | 'nfc'
     return limpio === 'qr' || limpio === 'nfc' ? limpio : 'directo';
 }
 
+/** Tienda del QR/NFC: solo un `id` de TIENDAS; cualquier otro valor cuenta como ninguna. */
+export function normalizarTiendaOrigen(valor: string | null | undefined, ids: readonly string[]): string {
+    const limpio = (valor ?? '').trim().toLowerCase();
+    return ids.includes(limpio) ? limpio : 'ninguna';
+}
+
 export function validarSuscripcion(d: DatosSuscripcion): Record<string, string> {
     const errores: Record<string, string> = {};
     if (!CORREO.test(d.correo.trim())) errores.correo = 'Escribe un correo válido.';
