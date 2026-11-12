@@ -492,7 +492,9 @@ export default function ProductCard({ product, isSelected, onSelectionToggle, on
     const regularPrice = Number(priceData.regular_price || 0);
     const price = Number(priceData.price || 0);
 
-    const isSale = product.on_sale || (regularPrice > price && price > 0);
+    // Solo es oferta si hay un descuento real en los precios mostrados (evita "OFERTA" sin porcentaje
+    // ni precio tachado igual al actual cuando el flag on_sale llega sin precios de oferta).
+    const isSale = regularPrice > price && price > 0;
 
     const renderRegularPrice = regularPrice / (10 ** currencyMinorUnit);
     const renderPrice = price / (10 ** currencyMinorUnit);

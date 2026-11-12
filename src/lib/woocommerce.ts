@@ -829,21 +829,30 @@ function mapV3ToStore(p: any, isLightweight = true) {
 
     // Para productos variables, si tenemos datos de variaciones, intentamos extraer los precios reales
     if (p.type === 'variable' && p.variations_data && p.variations_data.length > 0) {
-        let maxRegular = 0;
-        let minPrice = Infinity;
+        // El precio "desde" y su precio normal deben salir de la MISMA variación.
+        // Antes se tomaba el menor precio de una variación y el mayor precio normal de otra,
+        // lo que inventaba descuentos (ej. Wallet: negro 150.000 vs miel 165.000).
+        const parsed = p.variations_data
+            .map((v: any) => {
+                const price = parseFloat(v.price || "0");
+                const regular = parseFloat(v.regular_price || v.price || "0");
+                return { price, regular: regular > 0 ? regular : price, inStock: (v.stock_status || 'instock') === 'instock' };
+            })
+            .filter((v: any) => v.price > 0);
 
-        p.variations_data.forEach((v: any) => {
-            const vPrice = parseFloat(v.price || "0");
-            const vRegular = parseFloat(v.regular_price || v.price || "0");
-            if (vRegular > maxRegular) maxRegular = vRegular;
-            if (vPrice > 0 && vPrice < minPrice) minPrice = vPrice;
-        });
+        // Si hay variaciones con stock, se usan solo esas; si todo está agotado, todas.
+        const inStock = parsed.filter((v: any) => v.inStock);
+        const candidates = inStock.length > 0 ? inStock : parsed;
 
-        if (maxRegular > 0) {
-            mapped.prices.regular_price = Math.round(maxRegular).toString();
-        }
-        if (minPrice !== Infinity) {
-            mapped.prices.price = Math.round(minPrice).toString();
+        if (candidates.length > 0) {
+            const byPrice = (a: any, b: any) => a.price - b.price;
+            const cheapest = [...candidates].sort(byPrice)[0];
+            // Si la más barata no tiene descuento pero otra sí, mostramos la de descuento real más barata
+            const discounted = candidates.filter((v: any) => v.regular > v.price).sort(byPrice)[0];
+            const rep = (cheapest.regular > cheapest.price || !discounted) ? cheapest : discounted;
+
+            mapped.prices.regular_price = Math.round(rep.regular).toString();
+            mapped.prices.price = Math.round(rep.price).toString();
         }
     }
 
