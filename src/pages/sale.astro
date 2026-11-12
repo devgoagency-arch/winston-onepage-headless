@@ -8,7 +8,7 @@ import {
     PUBLIC_WP_URL
 } from "../lib/woocommerce";
 import FilteredProductList from "../components/FilteredProductList";
-import { isOnSale, isInStock } from "../lib/productFilters";
+import { isOnSale, isInStock, getProductPrice, getProductRegularPrice } from "../lib/productFilters";
 import fs from "node:fs";
 import path from "node:path";
 
@@ -75,21 +75,58 @@ while (hasMore) {
 // Los primeros 16 productos en oferta se renderizan en el HTML inicial
 products = allSaleProducts.slice(0, 16);
 
-// NUEVO: Guardar el archivo unificado que el cliente de React usa para paginar y filtrar
-const allFilePath = path.join(catalogDir, `sale-all.json`);
-fs.writeFileSync(allFilePath, JSON.stringify(allSaleProducts), "utf-8");
+// Las 12 ofertas con mayor descuento para la sección SALE del home (src/components/SaleHome.tsx).
+// Se ordena por % de descuento real (desempate: el orden del catálogo) y se descartan las que no tengan descuento.
+const discountRatio = (p: any) => {
+    const regular = getProductRegularPrice(p);
+    const price = getProductPrice(p);
+    return regular > 0 && price > 0 ? (regular - price) / regular : 0;
+};
+// Para que la fila tenga variedad, se admiten máximo 2 productos del mismo tipo (primera palabra del
+// nombre: "Billetera", "Collar"...). Si así no se llegan a 12, se completa con los que quedaron fuera.
+const rankedSale = allSaleProducts
+    .map((p, index) => ({ p, index, d: discountRatio(p) }))
+    .filter((x) => x.d > 0)
+    .sort((a, b) => b.d - a.d || a.index - b.index);
+const typeCount = new Map<string, number>();
+const diverse: any[] = [];
+const leftovers: any[] = [];
+for (const x of rankedSale) {
+    const type = String(x.p.name || "").trim().split(/\s+/)[0].toLowerCase();
+    const n = typeCount.get(type) || 0;
+    if (n < 2) {
+        typeCount.set(type, n + 1);
+        diverse.push(x);
+    } else {
+        leftovers.push(x);
+    }
+}
+const saleHomeProducts = [...diverse, ...leftovers]
+    .slice(0, 12)
+    .sort((a, b) => b.d - a.d || a.index - b.index)
+    .map((x) => x.p);
+
+// Guardar los archivos que usa el cliente de React: el unificado (paginar y filtrar) y el del home
+const catalogFiles: Record<string, string> = {
+    "sale-all.json": JSON.stringify(allSaleProducts),
+    "sale-home.json": JSON.stringify(saleHomeProducts),
+};
+for (const [fileName, json] of Object.entries(catalogFiles)) {
+    fs.writeFileSync(path.join(catalogDir, fileName), json, "utf-8");
+}
 
 // INYECCIÓN PARA PRODUCCIÓN: Astro copia `public` antes de renderizar, así que lo escrito arriba
 // NO llega a Vercel (sale-all.json daba 404 y la página se quedaba en los primeros 16 productos).
 // Se escribe también en la carpeta de salida, igual que hace categoria/[slug].astro.
 if (!import.meta.env.DEV) {
-    const saleJson = JSON.stringify(allSaleProducts);
     for (const baseDir of ["dist", "dist/client", ".vercel/output/static"]) {
         const base = path.join(process.cwd(), ...baseDir.split("/"));
         if (!fs.existsSync(base)) continue;
         const outCatalogDir = path.join(base, "data", "catalog");
         fs.mkdirSync(outCatalogDir, { recursive: true });
-        fs.writeFileSync(path.join(outCatalogDir, "sale-all.json"), saleJson, "utf-8");
+        for (const [fileName, json] of Object.entries(catalogFiles)) {
+            fs.writeFileSync(path.join(outCatalogDir, fileName), json, "utf-8");
+        }
     }
 }
 
