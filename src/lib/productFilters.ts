@@ -31,21 +31,52 @@ export function getProductRegularPrice(p: any): number {
     );
 }
 
-/** Devuelve true si el producto tiene un descuento real (incluye variaciones en oferta). */
+/** Variaciones del producto (si el producto las trae). */
+function getVariations(p: any): any[] {
+    return Array.isArray(p?.variations) ? p.variations
+        : Array.isArray(p?.variations_data) ? p.variations_data : [];
+}
+
+/** True/false si la variación informa su stock; undefined si no trae ese dato. */
+function variationInStock(v: any): boolean | undefined {
+    if (v?.stock_status !== undefined) return v.stock_status !== 'outofstock';
+    if (v?.is_in_stock !== undefined) return !!v.is_in_stock;
+    return undefined;
+}
+
+/**
+ * Devuelve false si el producto está agotado por completo: el producto está marcado sin stock
+ * o todas sus variaciones (colores/tallas) están agotadas. Es automático: en cuanto se carga
+ * inventario en WooCommerce y se regenera el sitio, el producto vuelve a considerarse disponible.
+ */
+export function isInStock(p: any): boolean {
+    if (p?.stock_status === 'outofstock' || p?.is_in_stock === false) return false;
+    const known = getVariations(p).map(variationInStock).filter((s) => s !== undefined);
+    if (known.length > 0 && !known.some(Boolean)) return false;
+    return true;
+}
+
+/**
+ * Devuelve true si el producto tiene un descuento real (incluye variaciones en oferta).
+ * Solo cuenta variaciones con stock: un descuento en un color agotado no es una oferta comprable.
+ */
 export function isOnSale(p: any): boolean {
-    if (p?.on_sale) return true;
     const regular = getProductRegularPrice(p);
     const price   = getProductPrice(p);
     if (regular > price && price > 0) return true;
     // Productos variables: el padre puede no estar marcado, pero alguna variación sí
-    const vars = Array.isArray(p?.variations) ? p.variations
-        : Array.isArray(p?.variations_data) ? p.variations_data : [];
-    return vars.some((v: any) => {
+    const vars = getVariations(p);
+    const inStockVars = vars.filter((v: any) => variationInStock(v) !== false);
+    const candidates = inStockVars.length > 0 ? inStockVars : vars;
+    if (candidates.some((v: any) => {
         const vPrice = parsePrice(v?.price);
         const vRegular = parsePrice(v?.regular_price);
         const vSale = parsePrice(v?.sale_price);
         return (vRegular > vPrice && vPrice > 0) || (vSale > 0 && vRegular > vSale);
-    });
+    })) return true;
+    // Sin datos de precios ni variaciones para comprobarlo, se confía en la marca de WooCommerce.
+    // Si hay precios y no hay descuento real, el flag on_sale se ignora (evita falsas ofertas).
+    return !!p?.on_sale && regular === 0 && vars.length === 0;
 }
 
 // ─── Filtros ─────────────────────────────────────────────────────────────────

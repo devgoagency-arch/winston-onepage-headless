@@ -8,7 +8,7 @@ import {
     PUBLIC_WP_URL
 } from "../lib/woocommerce";
 import FilteredProductList from "../components/FilteredProductList";
-import { isOnSale } from "../lib/productFilters";
+import { isOnSale, isInStock } from "../lib/productFilters";
 import fs from "node:fs";
 import path from "node:path";
 
@@ -36,7 +36,9 @@ while (hasMore) {
     try {
         console.log(`[SSG Sale] Descargando catálogo - página ${page}`);
         const rawPage = await getAllProducts(50, page, "menu_order", "asc", false);
-        const pageProducts = Array.isArray(rawPage) ? rawPage.filter(isOnSale) : [];
+        // Solo ofertas reales y con stock: lo agotado en todos sus colores no se muestra.
+        // Es automático: cuando se carga inventario, el siguiente build lo vuelve a incluir.
+        const pageProducts = Array.isArray(rawPage) ? rawPage.filter((p: any) => isOnSale(p) && isInStock(p)) : [];
 
         allSaleProducts = allSaleProducts.concat(pageProducts);
 
@@ -76,6 +78,20 @@ products = allSaleProducts.slice(0, 16);
 // NUEVO: Guardar el archivo unificado que el cliente de React usa para paginar y filtrar
 const allFilePath = path.join(catalogDir, `sale-all.json`);
 fs.writeFileSync(allFilePath, JSON.stringify(allSaleProducts), "utf-8");
+
+// INYECCIÓN PARA PRODUCCIÓN: Astro copia `public` antes de renderizar, así que lo escrito arriba
+// NO llega a Vercel (sale-all.json daba 404 y la página se quedaba en los primeros 16 productos).
+// Se escribe también en la carpeta de salida, igual que hace categoria/[slug].astro.
+if (!import.meta.env.DEV) {
+    const saleJson = JSON.stringify(allSaleProducts);
+    for (const baseDir of ["dist", "dist/client", ".vercel/output/static"]) {
+        const base = path.join(process.cwd(), ...baseDir.split("/"));
+        if (!fs.existsSync(base)) continue;
+        const outCatalogDir = path.join(base, "data", "catalog");
+        fs.mkdirSync(outCatalogDir, { recursive: true });
+        fs.writeFileSync(path.join(outCatalogDir, "sale-all.json"), saleJson, "utf-8");
+    }
+}
 
 console.log(`[SSG Sale] ✓ Catálogos estáticos de SALE pre-generados exitosamente. Total productos: ${allSaleProducts.length}`);
 
