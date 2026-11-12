@@ -1,4 +1,5 @@
 import { useState, useEffect, useMemo } from 'react';
+import { createPortal } from 'react-dom';
 import { getOptimizedUrl, getImageSrcSet } from '../utils/image';
 import { addToCart } from '../store/cart';
 import { getLiveStock, type LiveVariation } from '../utils/liveStock';
@@ -68,6 +69,31 @@ export default function ProductCard({ product, isSelected, onSelectionToggle, on
     const [quickOpen, setQuickOpen] = useState(false);
     const [quickSize, setQuickSize] = useState<string | null>(null);
     const [quickAdded, setQuickAdded] = useState(false);
+    // En pantallas táctiles el "añadir rápido" se abre como hoja inferior (bottom sheet)
+    const [isTouch, setIsTouch] = useState(false);
+    useEffect(() => {
+        try {
+            const mq = window.matchMedia('(hover: none)');
+            setIsTouch(mq.matches);
+            const onChange = (e: MediaQueryListEvent) => setIsTouch(e.matches);
+            mq.addEventListener?.('change', onChange);
+            return () => mq.removeEventListener?.('change', onChange);
+        } catch (e) { }
+    }, []);
+
+    const sheetOpen = isTouch && quickOpen;
+    useEffect(() => {
+        if (!sheetOpen) return;
+        const prevOverflow = document.body.style.overflow;
+        document.body.style.overflow = 'hidden';
+        const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setQuickOpen(false); };
+        window.addEventListener('keydown', onKey);
+        return () => {
+            document.body.style.overflow = prevOverflow;
+            window.removeEventListener('keydown', onKey);
+        };
+    }, [sheetOpen]);
+
     // undefined = cargando, null = falló (usar JSON estático), array = stock en vivo
     const [liveStock, setLiveStock] = useState<LiveVariation[] | null | undefined>(undefined);
 
@@ -599,6 +625,13 @@ export default function ProductCard({ product, isSelected, onSelectionToggle, on
             });
         } catch (e) { }
 
+        if (isTouch) {
+            // En la hoja cerramos de inmediato para que se vea el carrito lateral
+            setQuickSize(null);
+            setQuickOpen(false);
+            return;
+        }
+
         setQuickAdded(true);
         setTimeout(() => {
             setQuickAdded(false);
@@ -810,7 +843,7 @@ export default function ProductCard({ product, isSelected, onSelectionToggle, on
                             aria-label={quickOpen ? 'Cerrar agregar rápido' : 'Agregar rápido'}
                             onClick={(e) => { e.preventDefault(); e.stopPropagation(); setQuickOpen(!quickOpen); }}
                         >
-                            {quickOpen ? '×' : '+'}
+                            {quickOpen && !isTouch ? '×' : '+'}
                         </button>
                         <div className="quick-add-panel">
                             <div className="quick-add-head">
@@ -873,6 +906,79 @@ export default function ProductCard({ product, isSelected, onSelectionToggle, on
                             )}
                         </div>
                     </div>
+                )}
+
+                {showQuickAdd && sheetOpen && typeof document !== 'undefined' && createPortal(
+                    <div className="qa-sheet-backdrop" onClick={() => setQuickOpen(false)}>
+                        <div
+                            className="qa-sheet"
+                            role="dialog"
+                            aria-modal="true"
+                            aria-label={`Elige tu talla: ${product.name}`}
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <div className="qa-sheet-head">
+                                <p className="qa-sheet-title">Elige tu talla</p>
+                                <button type="button" className="qa-sheet-close" aria-label="Cerrar" onClick={() => setQuickOpen(false)}>
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"><path d="M6 6l12 12M18 6L6 18" /></svg>
+                                </button>
+                            </div>
+                            <p className="qa-sheet-product">
+                                {product.name}{quickColorName ? ` · ${quickColorName}` : ''} · {currencySymbol}{new Intl.NumberFormat('es-CO').format(renderPrice)}
+                            </p>
+
+                            {quickColorTerms.length > 1 && (
+                                <div className="qa-sheet-colors">
+                                    {quickColorTerms.map((term: any) => (
+                                        <button
+                                            key={term.id}
+                                            type="button"
+                                            className={`qa-sheet-color ${quickColor === term.slug ? 'active' : ''}`}
+                                            onClick={() => { setSelectedColor(term.slug); setHoveredColor(null); }}
+                                            aria-label={`Color ${term.name}`}
+                                            aria-pressed={quickColor === term.slug}
+                                        >
+                                            <span style={{ backgroundColor: getColorCode(term.slug) }} />
+                                        </button>
+                                    ))}
+                                </div>
+                            )}
+
+                            {!quickReady ? (
+                                <p className="qa-sheet-msg">Cargando tallas…</p>
+                            ) : !hasStockInColor ? (
+                                <p className="qa-sheet-msg">Agotado en este color</p>
+                            ) : (
+                                <div className="qa-sheet-sizes">
+                                    {visibleQuickSizes.map(s => (
+                                        <button
+                                            key={s.slug}
+                                            type="button"
+                                            className={`qa-sheet-size ${quickSize === s.slug ? 'selected' : ''} ${s.inStock ? '' : 'sold-out'}`}
+                                            disabled={!s.inStock}
+                                            aria-pressed={quickSize === s.slug}
+                                            aria-label={s.inStock ? `Talla ${s.name}` : `Talla ${s.name} agotada`}
+                                            onClick={() => setQuickSize(s.slug)}
+                                        >
+                                            {s.name}
+                                        </button>
+                                    ))}
+                                </div>
+                            )}
+
+                            <button
+                                type="button"
+                                className={`qa-sheet-add ${quickSize ? 'ready' : ''}`}
+                                onClick={handleQuickAdd}
+                            >
+                                Añadir al carrito
+                            </button>
+                            <a href={`/productos/${product.slug}${quickColor ? `?color=${quickColor}` : ''}`} className="qa-sheet-details">
+                                Ver detalles del producto
+                            </a>
+                        </div>
+                    </div>,
+                    document.body
                 )}
 
                 {onSelectionToggle && (
@@ -1421,8 +1527,102 @@ export default function ProductCard({ product, isSelected, onSelectionToggle, on
 
         @media (hover: none) {
             .quick-add-toggle { display: flex; }
-            .quick-add-layer.open .quick-add-panel { padding-right: 34px; }
+            .quick-add-panel { display: none; }
+            .quick-add-layer.open .quick-add-toggle { left: 10px; right: auto; bottom: 10px; width: 30px; height: 30px; background: rgba(255,255,255,0.95); }
         }
+
+        /* Hoja inferior de tallas (celular) */
+        .qa-sheet-backdrop {
+            position: fixed;
+            inset: 0;
+            z-index: 10000; /* por encima del aviso de cookies y la barra inferior */
+            background: rgba(255, 255, 255, 0.35);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            display: flex;
+            align-items: flex-end;
+            animation: qaFade 0.2s ease-out;
+        }
+        .qa-sheet {
+            width: 100%;
+            background: #fff;
+            border-radius: 14px 14px 0 0;
+            box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.12);
+            padding: 20px 20px calc(18px + env(safe-area-inset-bottom));
+            animation: qaUp 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+            font-family: var(--font-paragraphs);
+        }
+        .qa-sheet-head { display: flex; align-items: center; justify-content: space-between; }
+        .qa-sheet-title { margin: 0; font-size: 1.05rem; font-weight: 600; color: #121212; }
+        .qa-sheet-close { background: none; border: none; padding: 4px; margin: -4px; color: #121212; cursor: pointer; display: flex; }
+        .qa-sheet-product { margin: 10px 0 14px; font-size: 0.85rem; color: #666; line-height: 1.4; }
+        .qa-sheet-colors { display: flex; gap: 12px; margin-bottom: 14px; }
+        .qa-sheet-color {
+            width: 30px; height: 30px;
+            border-radius: 50%;
+            border: 1px solid transparent;
+            background: none;
+            padding: 3px;
+            cursor: pointer;
+        }
+        .qa-sheet-color span { display: block; width: 100%; height: 100%; border-radius: 50%; border: 1px solid #e3e3e3; }
+        .qa-sheet-color.active { border-color: #121212; }
+        .qa-sheet-msg { margin: 6px 0 16px; font-size: 0.85rem; color: #888; }
+        .qa-sheet-sizes {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 8px;
+            margin-bottom: 18px;
+        }
+        .qa-sheet-size {
+            position: relative;
+            overflow: hidden;
+            height: 46px;
+            border: 1px solid #e3e3e3;
+            border-radius: 4px;
+            background: #fff;
+            color: #121212;
+            font-family: var(--font-paragraphs);
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+        .qa-sheet-size.selected { border: 1.5px solid #121212; }
+        .qa-sheet-size.sold-out { background: #f5f5f5; color: #bdbdbd; cursor: default; }
+        .qa-sheet-size.sold-out::before,
+        .qa-sheet-size.sold-out::after {
+            content: '';
+            position: absolute;
+            top: 50%; left: 50%;
+            width: 70%; height: 1px;
+            background: #d0d0d0;
+            transform: translate(-50%, -50%) rotate(30deg);
+        }
+        .qa-sheet-size.sold-out::after { transform: translate(-50%, -50%) rotate(-30deg); }
+        .qa-sheet-add {
+            width: 100%;
+            height: 50px;
+            border: none;
+            border-radius: 30px;
+            background: #d6d6d6;
+            color: #fff;
+            font-family: var(--font-paragraphs);
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.15s ease;
+        }
+        .qa-sheet-add.ready { background: #121212; }
+        .qa-sheet-details {
+            display: block;
+            text-align: center;
+            margin-top: 12px;
+            font-size: 0.8rem;
+            color: #555;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+        @keyframes qaUp { from { transform: translateY(100%); } to { transform: none; } }
+        @keyframes qaFade { from { opacity: 0; } to { opacity: 1; } }
 
         .fade-in { animation: fadeIn 0.4s ease-out; }
         @keyframes fadeIn { from { opacity: 0.5; } to { opacity: 1; } }
