@@ -1355,11 +1355,19 @@ export async function getProductBySlug(slug: string) {
                         const variations = await getProductVariations(productId);
                         storeProduct.variations_data = variations;
                         
-                        // NUEVO: Resolver imágenes de WPC si existen
+                        // Resolver imágenes de WPC + gallery_image_ids que no estén en p.images
+                        const productImageIds = new Set((storeProduct.images || []).map((img: any) => String(img.id)));
                         const allWpcIds = new Set<string>();
                         variations.forEach((v: any) => {
                             const meta = v.meta_data?.find((m: any) => (m.key === 'wpcvi_images' || m.key === 'wd_additional_variation_images_data') && m.value);
                             if (meta?.value) parseVariationImageIds(meta.value).forEach((id: string) => { if (id) allWpcIds.add(id.trim()); });
+                            // La galería nativa de la variación (ej. Blazer Manhattan gris: doblado, cuello)
+                            if (Array.isArray(v.gallery_image_ids)) {
+                                v.gallery_image_ids.forEach((id: number) => {
+                                    const sid = String(id);
+                                    if (!productImageIds.has(sid)) allWpcIds.add(sid);
+                                });
+                            }
                         });
 
                         if (allWpcIds.size > 0) {
