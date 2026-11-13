@@ -161,6 +161,8 @@ export default defineConfig({
     '/productos/clip-card-holder': '/categoria/billeteras-cuero-hombre',
     '/productos/crema-humectante': '/categoria/limpieza-cuidado-zapatos',
     '/productos/botas-chelsea-marron-winston': '/productos/bota-chelsea-marron',
+    // El producto se llamaba "Norflok" (error de escritura); Google aún tiene indexada la URL vieja
+    '/productos/norflok': '/productos/norfolk',
     '/productos/sueter-tejido-escalera-negro': '/categoria/sueteres-chalecos-hombre',
     '/productos/bono-de-regalo': '/',
     '/productos/bono-de-regalo-2': '/',
