@@ -4,6 +4,7 @@ import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import ProductDetail from "../../components/ProductDetail";
 import { getProductBySlug, getProductsPool, getAllProducts, wcFetch } from "../../lib/woocommerce";
+import { productSchemaImages, fullSizeImageUrl } from "../../lib/structuredImages";
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -215,7 +216,7 @@ const seoData = {
     description: rankMathDesc || product?.yoast_head_json?.description || seoFallbackDesc,
     opengraph_title: rankMathTitle || product?.yoast_head_json?.og_title || seoFallbackTitle,
     opengraph_description: rankMathDesc || product?.yoast_head_json?.og_description || seoFallbackDesc,
-    opengraph_image: product?.yoast_head_json?.og_image || product?.images?.[0]?.src || null,
+    opengraph_image: product?.yoast_head_json?.og_image || (product?.images?.[0]?.src ? fullSizeImageUrl(product.images[0].src) : null),
     opengraph_type: "website"
 };
 
@@ -286,7 +287,8 @@ const schemaData = (product && schemaPrice > 0 && !isNaN(schemaPrice))
       "name": product.name,
       "description": (product.short_description || product.description || "")
         .replace(/<[^>]+>/g, "").trim(),
-      "image": product.images?.[0]?.src,
+      // Lista con todas las fotos (destacada primero) para que Google reciba la galería completa
+      "image": productSchemaImages(product.images),
       "sku": product.sku || product.id?.toString(),
       "brand": { "@type": "Brand", "name": "Winston & Harry" },
       ...(product.rating_count > 0 && {
