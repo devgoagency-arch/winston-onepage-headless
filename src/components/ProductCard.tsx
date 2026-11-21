@@ -1521,7 +1521,8 @@ export default function ProductCard({ product, isSelected, onSelectionToggle, on
 
         @media (hover: hover) {
             .product-card:hover .quick-add-panel { opacity: 1; transform: none; pointer-events: auto; }
-            .product-card:hover .card-colors-overlay { opacity: 0; pointer-events: none; }
+            /* Solo en tarjetas con panel de tallas: los colores pasan al panel */
+            .product-card:hover:has(.quick-add-layer) .card-colors-overlay { opacity: 0; pointer-events: none; }
         }
         .product-card:has(.quick-add-layer.open) .card-colors-overlay { opacity: 0; pointer-events: none; }
 
