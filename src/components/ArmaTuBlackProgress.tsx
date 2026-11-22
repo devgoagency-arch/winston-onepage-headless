@@ -1,5 +1,16 @@
 import { useEffect, useMemo, useState } from 'react';
+import { useStore } from '@nanostores/react';
+import { cartItems } from '../store/cart';
 import { BLACK_DAYS_START, BLACK_DAYS_END, allocateArmaTuBlack, calculateArmaTuBlack, getArmaTuBlackHint, isBlackDaysActive, type BlackUnit } from '../lib/blackDays';
+
+// Lleva a quien arma su Black a la pestaña "Arma tu Black" de la landing (en la landing solo cambia de pestaña).
+export function goToArmaTuBlack(source = 'carrito') {
+    if (window.location.pathname.startsWith('/black-days')) {
+        window.dispatchEvent(new CustomEvent('campaign-tab-changed', { detail: { tab: 'arma' } }));
+    } else {
+        window.location.href = `/black-days?campaigntab=arma&utm_source=${source}&utm_medium=site&utm_campaign=black-days-2026#favoritos-sticky`;
+    }
+}
 
 export function useArmaTuBlack(items: BlackUnit[]) {
     // Evita diferencias entre HTML estático e hidratación.
@@ -103,17 +114,23 @@ export function ArmaTuBlackLinePrice({ total, discount }: { total: number; disco
 
 const TIERS = [
     { n: 1, text: '15 % off al producto' },
-    { n: 2, text: '50 % off al más barato' },
-    { n: 3, text: '50 % al más barato + 15 % al siguiente' },
-    { n: 4, text: '50 % a los 2 más baratos + 15 % al siguiente' },
+    { n: 2, text: '50 % off al de menor precio' },
+    { n: 3, text: '50 % al de menor precio + 15 % al siguiente' },
+    { n: 4, text: '50 % a los 2 de menor precio + 15 % al siguiente' },
 ];
 
 // Resumen compacto: una fila por escalón, el actual resaltado. El detalle por producto va en cada línea del carrito.
-export default function ArmaTuBlackProgress({ count }: { count: number }) {
+// `compact` (carrito lateral): sin la lista de escalones, para que el listado de productos conserve su altura.
+export default function ArmaTuBlackProgress({ count, onContinue, compact = false }: { count: number; onContinue?: () => void; compact?: boolean }) {
     const tier = Math.min(4, count);
-    return <aside aria-label="Progreso Arma tu Black" style={{ background: '#000', color: '#D4A853', padding: '14px 16px', margin: '12px 0', fontFamily: 'var(--font-paragraphs)' }}>
-        <strong style={{ fontFamily: 'var(--font-titles)', letterSpacing: 1, fontSize: 13 }}>ARMA TU BLACK</strong>
-        <ol style={{ listStyle: 'none', padding: 0, margin: '10px 0' }}>
+    return <aside aria-label="Progreso Arma tu Black" style={{ background: '#000', color: '#D4A853', padding: compact ? '10px 12px' : '14px 16px', margin: '12px 0', fontFamily: 'var(--font-paragraphs)' }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 8 }}>
+            <strong style={{ fontFamily: 'var(--font-titles)', letterSpacing: 1, fontSize: 13 }}>ARMA TU BLACK{compact && count > 0 ? ` · ${count}` : ''}</strong>
+            {compact && <span aria-hidden="true" style={{ display: 'flex', gap: 5 }}>
+                {[1, 2, 3, 4].map(n => <span key={n} style={{ width: 10, height: 10, borderRadius: '50%', border: '1px solid #D4A853', background: tier >= n ? '#D4A853' : 'transparent' }} />)}
+            </span>}
+        </div>
+        {!compact && <ol style={{ listStyle: 'none', padding: 0, margin: '10px 0' }}>
             {TIERS.map(({ n, text }) => {
                 const current = tier === n;
                 return <li key={n} aria-current={current ? 'step' : undefined} style={{
@@ -124,7 +141,52 @@ export default function ArmaTuBlackProgress({ count }: { count: number }) {
                     <span style={{ minWidth: 14 }}>{n}</span><span>{text}</span>
                 </li>;
             })}
-        </ol>
-        <p aria-live="polite" style={{ fontSize: 12.5, margin: 0, lineHeight: 1.4 }}>{getArmaTuBlackHint(count)}</p>
+        </ol>}
+        <p aria-live="polite" style={{ fontSize: 12.5, margin: compact ? '6px 0 0' : 0, lineHeight: 1.4 }}>{getArmaTuBlackHint(count)}</p>
+        {onContinue && count < 4 && <button type="button" onClick={onContinue} style={{
+            marginTop: compact ? 8 : 10, width: '100%', padding: '10px 12px', background: '#D4A853', color: '#000', border: 0, cursor: 'pointer',
+            fontFamily: 'var(--font-paragraphs)', fontSize: 12, fontWeight: 700, letterSpacing: 1, textTransform: 'uppercase',
+        }}>Seguir armando mi Black →</button>}
     </aside>;
+}
+
+// Franja de la landing: progreso en vivo de Arma tu Black y puente desde la pestaña de zapatos en oferta.
+export function ArmaTuBlackStrip({ tab, onGoArma }: { tab: string; onGoArma: () => void }) {
+    const $cart = useStore(cartItems);
+    const items = useMemo(() => Object.values($cart).filter(Boolean).map(v => {
+        try { return JSON.parse(v as string) as BlackUnit; } catch { return null; }
+    }).filter((i): i is BlackUnit => i !== null), [$cart]);
+    const black = useArmaTuBlack(items);
+    if (!black.active) return null;
+    const count = black.eligibleCount;
+    const onArma = tab === 'arma';
+    return <div className="arma-strip" role="region" aria-label="Arma tu Black">
+        <style>{`
+            .arma-strip { position: relative; box-sizing: border-box; width: 100%; margin: 0 auto 20px; padding: 18px 300px; background: #000; color: #D4A853; border: 1px solid #D4A853; text-align: center; font-family: var(--font-paragraphs); }
+            .arma-strip-title { display: block; margin-bottom: .5rem; font-family: var(--font-titles); font-size: 1.5rem; line-height: 1; letter-spacing: 4px; font-weight: 700; }
+            .arma-strip-hint { margin: 4px 0 0; font-size: 15px; line-height: 1.4; color: #fff; }
+            .arma-strip-side { position: absolute; top: 50%; right: 18px; transform: translateY(-50%); display: flex; align-items: center; gap: 14px; }
+            .arma-strip-dots { display: flex; gap: 6px; }
+            .arma-strip-dots span { width: 14px; height: 14px; border-radius: 50%; border: 1px solid #D4A853; }
+            .arma-strip-dots span.on { background: #D4A853; }
+            .arma-strip-btn { padding: 10px 16px; background: #D4A853; color: #000; border: 0; cursor: pointer; font-family: var(--font-paragraphs); font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+            @media (max-width: 1200px) {
+                .arma-strip { padding: 18px; }
+                .arma-strip-side { position: static; transform: none; justify-content: center; flex-wrap: wrap; margin-top: 10px; }
+            }
+            @media (max-width: 768px) {
+                .arma-strip-title { font-size: 1.25rem; }
+            }
+        `}</style>
+        <strong className="arma-strip-title">🖤 ARMA TU BLACK{count > 0 ? ` · LLEVAS ${count}` : ''}</strong>
+        <p className="arma-strip-hint" aria-live="polite">
+            {tab === '63' ? 'Estos zapatos ya traen su descuento y no suman a Arma tu Black. Suma ropa, maletas y accesorios sin descuento.' : getArmaTuBlackHint(count)}
+        </p>
+        <div className="arma-strip-side">
+            <div className="arma-strip-dots" aria-hidden="true">
+                {[1, 2, 3, 4].map(n => <span key={n} className={count >= n ? 'on' : undefined} />)}
+            </div>
+            {!onArma && <button type="button" className="arma-strip-btn" onClick={onGoArma}>Armar mi Black →</button>}
+        </div>
+    </div>;
 }

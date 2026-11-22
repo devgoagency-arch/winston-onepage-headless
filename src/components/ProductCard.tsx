@@ -526,8 +526,10 @@ export default function ProductCard({ product, isSelected, onSelectionToggle, on
     const renderPrice = price / (10 ** currencyMinorUnit);
     const currencySymbol = priceData.currency_prefix || priceData.currency_symbol;
 
-    const isEscalera = (product.slug || '').toLowerCase().includes('escalera') 
+    const isEscalera = (product.slug || '').toLowerCase().includes('escalera')
                      || (product.name || '').toLowerCase().includes('escalera');
+    // Entra a Arma tu Black: sin descuento propio. La chapa solo se ve con la campaña activa (CSS en GlobalBanner).
+    const isArmaEligible = !isSale && !product.on_sale && !isEscalera;
 
     // Agregar rápido: tallas del color activo con su stock
     const isSizeAttr = (a: any) => {
@@ -678,6 +680,11 @@ export default function ProductCard({ product, isSelected, onSelectionToggle, on
                             {product.featured && (
                                 <div className="badge hot-badge">
                                     HOT
+                                </div>
+                            )}
+                            {isArmaEligible && (
+                                <div className="badge black-chip">
+                                    🖤 ARMA TU BLACK
                                 </div>
                             )}
                         </div>

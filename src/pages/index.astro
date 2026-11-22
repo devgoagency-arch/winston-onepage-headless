@@ -4,6 +4,8 @@ import Header from "../components/Header.astro";
 import Hero from "../components/Hero.astro";
 import HeroPromo from "../components/HeroPromo.astro";
 import HomeHero from "../components/home/HomeHero.astro";
+import BlackDaysHomeHero from "../components/home/BlackDaysHomeHero.astro";
+import BlackDaysPopup from "../components/home/BlackDaysPopup.astro";
 import SplitBanners from "../components/home/SplitBanners.astro";
 import ScrollRevealBanner from "../components/ScrollRevealBanner.astro";
 import ProductGrid from "../components/ProductGrid";
@@ -59,19 +61,23 @@ const banner = await getHomeBanner();
 
 	<main>
 		<!-- Banner dinámico desde WordPress CPT home_banner -->
-		<HomeHero
-			image_desktop={banner.hero.image_desktop}
-			image_mobile={banner.hero.image_mobile}
-			eyebrow={banner.hero.eyebrow}
-			title={banner.hero.title}
-			subtitle={banner.hero.subtitle}
-			cta_label={banner.hero.cta_label}
-			cta_href={banner.hero.cta_href}
-			eyebrow_color={banner.hero.eyebrow_color}
-			title_color={banner.hero.title_color}
-			subtitle_color={banner.hero.subtitle_color}
-			cta_color={banner.hero.cta_color}
-		/>
+		<!-- Del 23 al 30 de nov el hero normal se oculta y entra el de Black Days (reglas en GlobalBanner.astro) -->
+		<div class="home-hero-slot">
+			<HomeHero
+				image_desktop={banner.hero.image_desktop}
+				image_mobile={banner.hero.image_mobile}
+				eyebrow={banner.hero.eyebrow}
+				title={banner.hero.title}
+				subtitle={banner.hero.subtitle}
+				cta_label={banner.hero.cta_label}
+				cta_href={banner.hero.cta_href}
+				eyebrow_color={banner.hero.eyebrow_color}
+				title_color={banner.hero.title_color}
+				subtitle_color={banner.hero.subtitle_color}
+				cta_color={banner.hero.cta_color}
+			/>
+		</div>
+		<BlackDaysHomeHero />
 
 		<!-- Backup (descomentar para volver al banner anterior) -->
 		<!-- <HeroPromo /> -->
@@ -112,6 +118,7 @@ const banner = await getHomeBanner();
 	</main>
 
 	<Footer />
+	<BlackDaysPopup />
 
 	<script type="application/ld+json" is:inline set:html={JSON.stringify({
 		"@context": "https://schema.org",

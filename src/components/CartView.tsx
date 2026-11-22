@@ -137,7 +137,7 @@ React.useEffect(() => {
                         <h2>¿QUÉ ESTABAS BUSCANDO?</h2>
                         <div className="cart-empty-grid">
                             <a href="/categoria/zapatos-cuero-hombre" className="cart-empty-link">
-                                <span className="nav-title">Calzado de Cuero</span>
+                                <span className="nav-title">Zapatos de Cuero</span>
                                 <span className="nav-arrow">→</span>
                             </a>
                             <a href="/categoria/ropa-hombre-colombia" className="cart-empty-link">

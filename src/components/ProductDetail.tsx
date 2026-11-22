@@ -4,6 +4,7 @@ import ProductCard from './ProductCard';
 import { addToCart } from '../store/cart';
 import { redirectToCheckout } from '../utils/checkout';
 import { trackMetaEvent } from '../utils/metaPixel';
+import { isArmaCatalogProduct } from '../lib/blackDays';
 // Función de normalización robusta para comparar slugs/nombres con acentos
 function normalizeAttr(str: any): string {
   if (!str) return '';
@@ -962,6 +963,13 @@ export default function ProductDetail({ initialProduct }: Props) {
                   <p className="product-price">{formatPrice(product.prices.price)}</p>
                 )}
               </div>
+
+              {isArmaCatalogProduct(product) && (
+                <p className="black-pdp-note">
+                  <strong>🖤 Arma tu Black</strong> · 15 % off en tu producto y 50 % en el de menor precio si llevas 2.{' '}
+                  <a href="/black-days?campaigntab=arma&utm_source=producto&utm_medium=site&utm_campaign=black-days-2026#favoritos-sticky">Ver cómo →</a>
+                </p>
+              )}
 
               <div className="product-short-description" dangerouslySetInnerHTML={{ __html: product.short_description }} />
 

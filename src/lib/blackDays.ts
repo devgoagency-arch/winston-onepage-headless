@@ -1,7 +1,8 @@
 // America/Bogota no cambia de UTC-5. El fin incluye todo el último segundo.
 export const BLACK_DAYS_START = '2026-11-23T00:00:00-05:00';
 export const BLACK_DAYS_END = '2026-11-30T23:59:59-05:00';
-export const BLACK_DAYS_PREVIEW_START = '2026-11-22T23:00:00-05:00';
+// El Deploy Hook corre a las 11 pm del domingo 22; el margen de 15 min evita que un retraso del cron deje el build en vista previa.
+export const BLACK_DAYS_PREVIEW_START = '2026-11-22T22:45:00-05:00';
 export const EXTRA_UNITS_DISCOUNT = 0; // por confirmar con negocio
 
 export function isBlackDaysPreviewBuild(nowMs = Date.now()): boolean {
@@ -47,7 +48,14 @@ export function isArmaTuBlackEligible(item: BlackUnit): boolean {
         && Number.isFinite(item.price) && item.price >= 0;
 }
 
-// Escalera de descuentos, de mayor a menor precio: el más barato lleva el descuento más hondo.
+// Misma regla para un producto del catálogo (Store API): sin precio de oferta y fuera del suéter Escalera.
+export function isArmaCatalogProduct(p: { slug?: string; name?: string; on_sale?: boolean; prices?: { price?: string; regular_price?: string } }): boolean {
+    const price = Number(p.prices?.price || 0), regular = Number(p.prices?.regular_price || 0);
+    return !p.on_sale && !(regular > price && price > 0)
+        && !`${p.slug || ''} ${p.name || ''}`.toLowerCase().includes('escalera');
+}
+
+// Escalera de descuentos, de mayor a menor precio: el de menor precio lleva el descuento más hondo.
 function ladderRates(eligibleCount: number): number[] {
     return eligibleCount === 1 ? [15] : eligibleCount === 2 ? [0, 50] : [0, 15, 50, 50];
 }

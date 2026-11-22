@@ -737,8 +737,8 @@ const FilteredProductList: React.FC<FilteredProductListProps> = ({
 
             <style>{`
                 .filter-bar-container { width: 100%; border-bottom: 1px solid #eee; background: #fff; }
-                .sticky-filters { position: sticky; top: 80px; z-index: 100; background: #fff; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: top 0.3s ease-in-out; }
-                .sticky-filters.is-hidden-top { top: 0; }
+                .sticky-filters { position: sticky; top: calc(80px + var(--global-banner-height, 0px)); z-index: 100; background: #fff; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: top 0.3s ease-in-out; }
+                .sticky-filters.is-hidden-top { top: var(--global-banner-height, 0px); }
                 .filter-bar { max-width: var(--container-max-width); margin: 0 auto; display: flex; justify-content: center; align-items: center; padding: 1rem 2rem; position: relative; }
                 .filter-left, .filter-right { display: flex; align-items: center; gap: 1rem; }
                 

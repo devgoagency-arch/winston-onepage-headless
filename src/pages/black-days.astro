@@ -98,7 +98,8 @@ const cards = [
                 <h1>BLACK DAYS</h1>
                 <p class="black-hero-offer" aria-label="Hasta 70 % off"><span class="black-hero-hasta">HASTA</span> <span class="black-hero-discount">70 % <span class="black-hero-off">OFF</span></span></p>
                 <p class="black-hero-subtitle">En zapatos y Arma tu Black en todo lo demás</p>
-                <a href="#favoritos-sticky">Ver Black Days ↓</a>
+                <a href="#favoritos-sticky" data-bd-tab="63">Zapatos hasta 70 % ↓</a>
+                <a href="#favoritos-sticky" data-bd-tab="arma">Arma tu Black ↓</a>
                 <a href="/contacto">Disponible en tiendas</a>
             </div>
         </section>
@@ -125,8 +126,9 @@ const cards = [
                     <span class="rule-extra">Y <strong>15 %</strong> en el segundo</span>
                 </li>
             </ol>
-            <p class="black-legal">Arma tu Black aplica solo a productos sin descuento. Los zapatos con descuento de hasta 70 % no se suman a Arma tu Black: se compran a su precio con descuento.</p>
-            <p class="black-legal">Se ordenan los productos de mayor a menor precio y el descuento va a los de menor precio. Desde el 5.º producto, precio completo (se mantienen los beneficios de los 4 primeros). Suéter Escalera 2x1 excluido.</p>
+            <a href="#favoritos-sticky" data-bd-tab="arma">Armar mi Black →</a>
+            <p class="black-legal">Arma tu Black es para productos sin descuento. Los zapatos con descuento de Black Days no se suman: se compran a su precio rebajado.</p>
+            <p class="black-legal">El mayor descuento es para el producto de menor precio. Los beneficios aplican a 4 productos; desde el 5.º, precio completo. No incluye el suéter Escalera 2x1.</p>
             <small class="black-legal">Válido del 23 al 30 de noviembre de 2026, hora Colombia.</small>
         </section>
         <div class="content-wrapper">
@@ -551,3 +553,11 @@ const cards = [
     .rule-extra strong { color: #D4A853; font-size: 1.2em; font-weight: 800; white-space: nowrap; }
     @media(max-width: 768px) { .black-rules { padding: 48px 16px; } .black-rules ol { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; } }
 </style>
+
+<script>
+    // Los botones del hero y de la escalera abren la pestaña correspondiente de la sección de productos.
+    document.querySelectorAll<HTMLElement>('[data-bd-tab]').forEach(el => el.addEventListener('click', event => {
+        event.preventDefault();
+        window.dispatchEvent(new CustomEvent('campaign-tab-changed', { detail: { tab: el.dataset.bdTab } }));
+    }));
+</script>

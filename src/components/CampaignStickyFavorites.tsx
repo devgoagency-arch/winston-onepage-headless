@@ -1,6 +1,22 @@
 import { useState, useEffect, useMemo } from 'react';
 import ProductCard from './ProductCard';
+import { ArmaTuBlackStrip } from './ArmaTuBlackProgress';
+import { isArmaCatalogProduct } from '../lib/blackDays';
 import { MENU_CATEGORIES, EXCLUDED_SLUGS } from '../lib/menuCategories';
+
+// Pestaña "Arma tu Black": productos sin descuento de todas las categorías ya cargadas (sin repetir).
+function buildArmaPool(cache: Record<string | number, any[]>): any[] {
+  const seen = new Set<number>();
+  const pool: any[] = [];
+  for (const key of ['249', '190', '126', '955', 'all']) {
+    for (const p of cache[key] || []) {
+      if (seen.has(p.id) || !isArmaCatalogProduct(p)) continue;
+      seen.add(p.id);
+      pool.push(p);
+    }
+  }
+  return pool;
+}
 
 interface Product {
   on_sale?: boolean;
@@ -81,6 +97,7 @@ export default function CampaignStickyFavorites({
 }) {
   const campaignCategories = blackDays ? [
     { id: '63', name: 'Zapatos en oferta', shortName: 'Zapatos', slug: 'zapatos-cuero-hombre', maxPrice: undefined },
+    { id: 'arma', name: 'Arma tu Black', shortName: '🖤 Arma tu Black', slug: 'tienda', maxPrice: undefined },
     CATEGORIES[5], CATEGORIES[4],
     { id: '126', name: 'Accesorios', shortName: 'Accesorios', slug: 'accesorios-hombre', maxPrice: undefined },
     CATEGORIES[2], { ...CATEGORIES[0], name: 'Todos' },
@@ -123,6 +140,11 @@ export default function CampaignStickyFavorites({
     precio: false
   });
 
+  // La pestaña Arma tu Black se deriva de las demás: se recalcula cuando llegan más productos al caché.
+  useEffect(() => {
+    if (blackDays && activeCategory.id === 'arma') setProducts(buildArmaPool(categoryCache));
+  }, [blackDays, activeCategory.id, categoryCache]);
+
   const toggleSubcat = (slug: string) => {
     setSelectedSubcats(prev => prev.includes(slug) ? prev.filter(s => s !== slug) : [...prev, slug]);
     setVisibleCount(12);
@@ -138,7 +160,8 @@ export default function CampaignStickyFavorites({
         setError(null);
 
         const results = await Promise.all(
-          campaignCategories.map(async (cat) => {
+          // 'arma' no existe en WooCommerce: se arma con las demás categorías (buildArmaPool).
+          campaignCategories.filter(cat => cat.id !== 'arma').map(async (cat) => {
             // 1. Intentar cargar el JSON estático si no es la categoría especial de precios
             let data: Product[] = [];
             let jsonSuccess = false;
@@ -181,8 +204,9 @@ export default function CampaignStickyFavorites({
           })
         );
 
-        const newCache: Record<string | number, Product[]> = {};
-        results.forEach(res => { newCache[res.id] = res.data; });
+        // Si la API devuelve vacío para una categoría, se conserva lo que ya había (render del servidor).
+        const newCache: Record<string | number, Product[]> = { ...defaultCache };
+        results.forEach(res => { if (res.data.length > 0 || !newCache[res.id]) newCache[res.id] = res.data; });
         setCategoryCache(newCache);
 
         if (newCache[activeCategory.id]) {
@@ -257,10 +281,10 @@ export default function CampaignStickyFavorites({
 
         if (categoryCache[matchedCategory.id]) {
           setProducts(categoryCache[matchedCategory.id]);
-        } else {
+        } else if (matchedCategory.id !== 'arma') {
           fetchProducts(matchedCategory.id);
         }
-        
+
         // Smooth scroll to the sticky filters section with offset
         setTimeout(() => {
           const element = document.getElementById('favoritos-sticky');
@@ -391,6 +415,8 @@ export default function CampaignStickyFavorites({
 
     if (categoryCache[category.id]) {
       setProducts(categoryCache[category.id]);
+    } else if (category.id === 'arma') {
+      setProducts(buildArmaPool(categoryCache));
     } else {
       fetchProducts(category.id);
     }
@@ -641,6 +667,8 @@ export default function CampaignStickyFavorites({
             {blackDays ? 'Zapatos hasta 70 % off. Arma tu Black con productos sin descuento.' : 'Encuentra el regalo perfecto para él. Hemos seleccionado nuestros mejores artículos de cuero, zapatos y accesorios para celebrar su día'}
           </p>
         </div>
+
+        {blackDays && <div className="arma-strip-wrap"><ArmaTuBlackStrip tab={String(activeCategory.id)} onGoArma={() => handleCategoryChange(campaignCategories[1])} /></div>}
 
         <div className={`category-filters-wrapper ${isHeaderHidden ? 'is-hidden-top' : ''}`}>
           <div className="category-filters">
@@ -950,7 +978,9 @@ export default function CampaignStickyFavorites({
         .section-title { text-align: center; margin-bottom: 2rem; max-width: 800px; margin-left: auto; margin-right: auto; padding: 0 1rem; }
         .subtitle { font-size: 0.8rem; color: #999; letter-spacing: 2px; text-transform: uppercase; display: block; margin-bottom: 0.5rem; font-family: var(--font-paragraphs); }
         .section-title h2 { font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--color-green); line-height: 1; letter-spacing: 4px; font-weight: 700; }
-        .description { font-size: 0.85rem; color: #333; line-height: 1.6; font-family: var(--font-paragraphs); max-width: 600px; margin: 0 auto; }
+        .description { font-size: 1rem; color: #333; line-height: 1.6; font-family: var(--font-paragraphs); max-width: 600px; margin: 0 auto; }
+        /* Misma caja que la fila de botones de categoría: la franja Arma tu Black llega de lado a lado de los botones. */
+        .arma-strip-wrap { max-width: 1600px; margin: 0 auto; padding: 0 2rem; box-sizing: border-box; }
 
         .category-filters-wrapper {
           position: sticky;
@@ -963,7 +993,7 @@ export default function CampaignStickyFavorites({
         }
 
         .category-filters-wrapper.is-hidden-top {
-          top: 0;
+          top: var(--global-banner-height, 0px);
         }
 
         .category-filters {
@@ -1386,7 +1416,8 @@ export default function CampaignStickyFavorites({
 
         @media (max-width: 768px) {
           .section-title h2 { font-size: 1.25rem; }
-          .description { font-size: 0.75rem; }
+          .arma-strip-wrap { padding: 0 1rem; }
+          .description { font-size: 0.9rem; }
           .category-filters { 
             display: grid;
             grid-template-columns: repeat(3, 1fr);

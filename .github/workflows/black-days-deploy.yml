@@ -1,8 +1,8 @@
 name: Deploy BLACK DAYS 2026
 on:
   schedule:
-    # 23 nov 04:30 UTC = 22 nov 23:30 America/Bogota.
-    - cron: '30 4 23 11 *'
+    # 23 nov 04:00 UTC = 22 nov 23:00 (11 pm) America/Bogota.
+    - cron: '0 4 23 11 *'
   workflow_dispatch:
 permissions:
   contents: read

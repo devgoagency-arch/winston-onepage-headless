@@ -1,0 +1,74 @@
+---
+// Aviso de Black Days: se abre una sola vez por sesión, solo con la ventana activa (ver GlobalBanner.astro).
+const utm = 'utm_source=popup&utm_medium=site&utm_campaign=black-days-2026';
+---
+<div class="bd-popup" id="bd-popup" role="dialog" aria-modal="true" aria-labelledby="bd-popup-title">
+    <div class="bd-popup-backdrop" data-bd-close></div>
+    <div class="bd-popup-card">
+        <button type="button" class="bd-popup-x" data-bd-close aria-label="Cerrar">×</button>
+        <p class="bd-popup-kicker">23 al 30 de noviembre</p>
+        <h2 id="bd-popup-title">BLACK DAYS</h2>
+        <p class="bd-popup-offer"><span>HASTA</span> 70 % <em>OFF</em></p>
+        <p class="bd-popup-sub">En zapatos y Arma tu Black en todo lo demás</p>
+        <a class="bd-popup-cta bd-popup-solid" href={`/black-days?campaigntab=63&${utm}#favoritos-sticky`}>Zapatos hasta 70 %</a>
+        <a class="bd-popup-cta" href={`/black-days?campaigntab=arma&${utm}#favoritos-sticky`}>Arma tu Black</a>
+        <button type="button" class="bd-popup-skip" data-bd-close>Seguir en la tienda</button>
+    </div>
+</div>
+
+<style>
+    .bd-popup { position: fixed; inset: 0; z-index: 3000; display: none; place-items: center; padding: 16px; }
+    .bd-popup.is-open { display: grid; }
+    .bd-popup-backdrop { position: absolute; inset: 0; background: rgba(0, 0, 0, .7); }
+    .bd-popup-card { position: relative; width: min(440px, 100%); box-sizing: border-box; padding: 36px 24px 24px; background: #000; color: #D4A853; border: 1px solid #D4A853; text-align: center; font-family: var(--font-paragraphs); }
+    .bd-popup-x { position: absolute; top: 6px; right: 10px; width: 44px; height: 44px; background: none; border: 0; color: #D4A853; font-size: 28px; line-height: 1; cursor: pointer; }
+    .bd-popup-kicker { margin: 0 0 8px; font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; }
+    .bd-popup-card h2 { margin: 0 0 12px; color: #fff; font-family: var(--font-titles); font-size: 2.25rem; line-height: 1.1; }
+    .bd-popup-offer { margin: 0; color: #fff; font-family: var(--font-titles); font-size: 4rem; font-weight: 800; line-height: 1; }
+    .bd-popup-offer span { display: block; margin-bottom: 4px; font-size: .3em; letter-spacing: .12em; }
+    .bd-popup-offer em { color: #D4A853; font-style: normal; }
+    .bd-popup-sub { margin: 16px 0 20px; color: #fff; font-size: 1rem; line-height: 1.45; }
+    .bd-popup-cta { display: block; margin-top: 10px; padding: 14px; border: 1px solid #D4A853; color: #D4A853; text-decoration: none; letter-spacing: .08em; text-transform: uppercase; font-size: .8rem; font-weight: 700; }
+    .bd-popup-solid { background: #D4A853; color: #000; }
+    .bd-popup-skip { margin-top: 14px; padding: 10px; background: none; border: 0; color: #fff; font-size: .8rem; text-decoration: underline; cursor: pointer; }
+</style>
+
+<script>
+    function initBlackPopup() {
+        const popup = document.getElementById('bd-popup');
+        if (!popup || popup.dataset.bdReady) return;
+        popup.dataset.bdReady = '1';
+        const KEY = 'bd-popup-visto';
+        const read = () => { try { return sessionStorage.getItem(KEY) === '1'; } catch { return false; } };
+        const write = () => { try { sessionStorage.setItem(KEY, '1'); } catch { /* sin storage: puede repetirse */ } };
+        if (!document.documentElement.classList.contains('black-days-active') || read()) return;
+
+        let lastFocus: Element | null = null;
+        const focusables = () => Array.from(popup.querySelectorAll<HTMLElement>('a[href], button'));
+        const onKey = (event: KeyboardEvent) => {
+            if (event.key === 'Escape') return close();
+            if (event.key !== 'Tab') return;
+            const list = focusables();
+            const first = list[0], last = list[list.length - 1];
+            if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+            else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+        };
+        function close() {
+            popup!.classList.remove('is-open');
+            document.removeEventListener('keydown', onKey);
+            write();
+            (lastFocus as HTMLElement | null)?.focus?.();
+        }
+        popup.querySelectorAll('[data-bd-close]').forEach(el => el.addEventListener('click', close));
+        popup.querySelectorAll('a').forEach(el => el.addEventListener('click', write));
+        setTimeout(() => {
+            if (read()) return;
+            lastFocus = document.activeElement;
+            popup.classList.add('is-open');
+            document.addEventListener('keydown', onKey);
+            popup.querySelector<HTMLElement>('.bd-popup-x')?.focus();
+        }, 1500);
+    }
+    initBlackPopup();
+    document.addEventListener('astro:page-load', initBlackPopup);
+</script>

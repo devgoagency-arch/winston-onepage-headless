@@ -1,0 +1,41 @@
+---
+// Hero de la home durante Black Days. Siempre está en el HTML pero solo se ve con la ventana activa
+// (clase `black-days-active` del <html>, la misma del cintillo); el hero normal queda oculto en esas fechas.
+// Las reglas de visibilidad viven en GlobalBanner.astro.
+const utm = 'utm_source=home&utm_medium=site&utm_campaign=black-days-2026';
+---
+<section class="bd-home-hero" aria-label="Black Days">
+    <div class="bd-home-inner">
+        <p class="bd-kicker">23 al 30 de noviembre</p>
+        <h2 class="bd-title">BLACK DAYS</h2>
+        <p class="bd-offer" aria-label="Hasta 70 % off"><span class="bd-hasta">HASTA</span> <span class="bd-pct">70 % <span class="bd-off">OFF</span></span></p>
+        <p class="bd-sub">En zapatos y Arma tu Black en todo lo demás</p>
+        <div class="bd-ctas">
+            <a class="bd-cta bd-cta-solid" href={`/black-days?campaigntab=63&${utm}#favoritos-sticky`}>Zapatos hasta 70 %</a>
+            <a class="bd-cta" href={`/black-days?campaigntab=arma&${utm}#favoritos-sticky`}>Arma tu Black</a>
+        </div>
+    </div>
+</section>
+
+<style>
+    .bd-home-hero {
+        --bd-header: 80px;
+        display: grid; place-items: center; text-align: center; box-sizing: border-box;
+        min-height: clamp(520px, 80svh, 840px); padding: calc(var(--bd-header) + 32px) 16px 48px;
+        background: radial-gradient(ellipse at 50% 35%, rgba(212, 168, 83, .18), transparent 60%), #000;
+        color: #D4A853; font-family: var(--font-paragraphs);
+    }
+    .bd-home-inner { width: 100%; max-width: 1100px; }
+    .bd-kicker { margin: 0 0 16px; font-size: .85rem; letter-spacing: .12em; text-transform: uppercase; }
+    .bd-title { margin: 0 0 20px; color: #fff; font-family: var(--font-titles); font-size: clamp(2.5rem, 7vw, 6rem); line-height: 1.1; }
+    .bd-offer { margin: 0; color: #fff; font-family: var(--font-titles); font-size: clamp(3.5rem, 13vw, 10rem); font-weight: 800; line-height: 1; letter-spacing: -.04em; }
+    .bd-hasta { display: block; margin-bottom: .2em; font-size: .4em; letter-spacing: .12em; }
+    .bd-pct { white-space: nowrap; }
+    .bd-off { color: #D4A853; }
+    .bd-sub { max-width: 800px; margin: 24px auto 8px; color: #fff; font-size: clamp(1.1rem, 2.4vw, 1.75rem); line-height: 1.45; }
+    .bd-ctas { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 16px; margin-top: 24px; }
+    .bd-cta { display: inline-block; padding: 14px 24px; border: 1px solid #D4A853; color: #D4A853; text-decoration: none; letter-spacing: .08em; text-transform: uppercase; font-size: .85rem; font-weight: 700; }
+    .bd-cta-solid { background: #D4A853; color: #000; }
+    .bd-cta:hover, .bd-cta:focus-visible { background: #fff; border-color: #fff; color: #000; }
+    @media (max-width: 768px) { .bd-home-hero { --bd-header: 64px; } .bd-cta { flex: 1 1 100%; } }
+</style>

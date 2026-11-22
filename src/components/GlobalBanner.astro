@@ -34,20 +34,29 @@ const activeAtBuild = dev || (preview ? Astro.url.pathname.startsWith('/black-da
         })();
     </script>
 ) : (
-    <div class="cintillo-global" data-active-at-build={activeAtBuild}>
+    <a class="cintillo-global" data-active-at-build={activeAtBuild} href="/black-days?utm_source=cintillo&utm_medium=site&utm_campaign=black-days-2026">
         <span class="desktop-only">🖤 Black Days · hasta 70 % off en zapatos + Arma tu Black · 23 al 30 nov</span>
         <span class="mobile-only">🖤 Black Days · hasta 70 %</span>
-        <a href="/black-days?utm_source=cintillo&utm_medium=site&utm_campaign=black-days-2026">Ver Black Days →</a>
-    </div>
+        <span class="cintillo-cta">Ver Black Days →</span>
+    </a>
 )}
 <style is:global>
+    /* Piezas Black Days del resto del sitio: solo existen con la ventana activa (misma clase del cintillo). */
+    :root:not(.black-days-active) :is(.black-chip, .black-pdp-note, .black-menu-item, .black-menu-sep, .bd-home-hero, .bd-popup) { display: none !important; }
+    .black-days-active .home-hero-slot { display: none; }
+    .black-chip { background: #000; color: #D4A853; border: 1px solid #D4A853; }
+    .black-pdp-note { margin: 12px 0 0; padding: 10px 12px; background: #000; color: #fff; font-family: var(--font-paragraphs); font-size: 13px; line-height: 1.5; }
+    .black-pdp-note strong, .black-pdp-note a { color: #D4A853; }
+    .black-menu-link { display: inline-block; background: #000; color: #D4A853 !important; padding: 6px 12px; letter-spacing: .08em; }
     :root { --global-banner-height: 0px; }
     :root.black-days-active { --global-banner-height: 44px; }
     .black-days-active .header { top: var(--global-banner-height, 0px) !important; }
     .black-days-active body { padding-top: var(--global-banner-height, 0px); }
     .cintillo-global { display: none; position: fixed; top: 0; left: 0; width: 100%; height: var(--global-banner-height); z-index: 2000; background: #000; color: #fff; align-items: center; justify-content: center; gap: 20px; font-family: var(--font-paragraphs); font-size: 13px; }
     .black-days-active .cintillo-global { display: flex; }
-    .cintillo-global a { color: #D4A853; white-space: nowrap; }
+    .cintillo-global { color: #fff; text-decoration: none; cursor: pointer; }
+    .cintillo-cta { color: #D4A853; white-space: nowrap; }
+    .cintillo-global:hover .cintillo-cta, .cintillo-global:focus-visible .cintillo-cta { text-decoration: underline; }
     .cintillo-global .mobile-only { display: none; }
     @media (max-width: 768px) {
         :root.black-days-active { --global-banner-height: 34px; }

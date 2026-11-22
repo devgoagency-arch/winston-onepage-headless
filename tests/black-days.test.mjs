@@ -52,7 +52,9 @@ test('ventana Colombia, incluyendo los dos límites', () => {
 });
 
 test('build de vista previa: antes, en y después del límite Bogotá', () => {
-    assert.equal(isBlackDaysPreviewBuild(Date.parse('2026-11-23T03:59:59.999Z')), true);
+    assert.equal(isBlackDaysPreviewBuild(Date.parse('2026-11-22T22:44:59-05:00')), true);
+    assert.equal(isBlackDaysPreviewBuild(Date.parse('2026-11-22T22:45:00-05:00')), false);
+    // Deploy Hook de las 11 pm (04:00 UTC) ya es build de campaña.
     assert.equal(isBlackDaysPreviewBuild(Date.parse('2026-11-23T04:00:00Z')), false);
     assert.equal(isBlackDaysPreviewBuild(Date.parse('2026-11-22T23:30:00-05:00')), false);
     assert.equal(isBlackDaysActive(new Date('2026-11-22T23:30:00-05:00')), false);

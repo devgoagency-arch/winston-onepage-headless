@@ -220,6 +220,45 @@ async function setBuildCache(url: string, data: any) {
     }
 }
 
+// ─── CACHÉ SOLO PARA DESARROLLO LOCAL ──────────────────────────────────────
+// Cada render de la home o de /black-days pedía cientos de URLs (catálogo + variaciones) y escribía cada
+// respuesta en public/data/build-cache (carpeta de OneDrive). En `astro dev` se guardan en memoria y en la
+// carpeta temporal del sistema (fuera de OneDrive), 2 h. Para datos frescos: WC_DEV_FRESH=1 o borrar
+// %TEMP%\wh-dev-wc-cache. Nada de esto corre en el build ni en producción.
+const DEV_CACHE_TTL = 1000 * 60 * 120;
+const devMemoryCache = new Map<string, { t: number; data: any }>();
+
+async function devCacheFile(key: string) {
+    const [{ createHash }, os, path] = await Promise.all([import('node:crypto'), import('node:os'), import('node:path')]);
+    return { dir: path.join(os.tmpdir(), 'wh-dev-wc-cache'), name: createHash('sha1').update(key).digest('hex') + '.json', join: path.join };
+}
+
+async function getDevCache(key: string): Promise<any | undefined> {
+    const mem = devMemoryCache.get(key);
+    if (mem && Date.now() - mem.t < DEV_CACHE_TTL) return mem.data;
+    try {
+        const fs = await import('node:fs/promises');
+        const f = await devCacheFile(key);
+        const entry = JSON.parse(await fs.readFile(f.join(f.dir, f.name), 'utf-8'));
+        if (Date.now() - entry.t < DEV_CACHE_TTL) {
+            devMemoryCache.set(key, entry);
+            return entry.data;
+        }
+    } catch { /* sin caché: se pide a WordPress */ }
+    return undefined;
+}
+
+async function setDevCache(key: string, data: any) {
+    const entry = { t: Date.now(), data };
+    devMemoryCache.set(key, entry);
+    try {
+        const fs = await import('node:fs/promises');
+        const f = await devCacheFile(key);
+        await fs.mkdir(f.dir, { recursive: true });
+        await fs.writeFile(f.join(f.dir, f.name), JSON.stringify(entry), 'utf-8');
+    } catch { /* si no se puede escribir, queda solo en memoria */ }
+}
+
 export async function wcFetch(path: string, options: RequestInit = {}, retries = 3, delay = 1500) {
     return wcLimit(() => _wcFetch(path, options, retries, delay));
 }
@@ -295,10 +334,18 @@ async function _wcFetch(path: string, options: RequestInit = {}, retries = 3, de
         // que es lo ideal para la mayoría de wp/v2/pages o posts.
     }
 
+    const useDevCache = import.meta.env.DEV && import.meta.env.SSR && !process.env.WC_DEV_FRESH
+        && (options.method || 'GET').toUpperCase() === 'GET';
+    const devKey = getCacheKeyUrl(url);
+    if (useDevCache) {
+        const hit = await getDevCache(devKey);
+        if (hit !== undefined) return hit;
+    }
+
     for (let i = 0; i < retries; i++) {
         try {
             const startTime = Date.now();
-            const res = await fetch(url, { 
+            const res = await fetch(url, {
                 ...options, 
                 headers,
                 signal: AbortSignal.timeout(30000)
@@ -335,7 +382,12 @@ async function _wcFetch(path: string, options: RequestInit = {}, retries = 3, de
             }
 
             if (parsed) {
-                await setBuildCache(url, parsed);
+                // En desarrollo no se escribe la caché de build (143 MB en OneDrive): solo la caché de desarrollo.
+                if (import.meta.env.DEV) {
+                    if (useDevCache) await setDevCache(devKey, parsed);
+                } else {
+                    await setBuildCache(url, parsed);
+                }
             }
             return parsed;
         } catch (error: any) {
@@ -1067,7 +1119,7 @@ export const STRICT_CATEGORIES = [
         id: 192, 
         slug: 'tenis-hombre', 
         name: 'Tenis',
-        description: 'Nuestros tenis de cuero combinan la comodidad del calzado casual con la distinción y resistencia del cuero legítimo. Perfectos para el día a día.',
+        description: 'Nuestros tenis de cuero combinan la comodidad del zapato casual con la distinción y resistencia del cuero legítimo. Perfectos para el día a día.',
         image: 'https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-zapatos-tenis-m.jpg'
     },
     { 
@@ -1095,7 +1147,7 @@ export const STRICT_CATEGORIES = [
         id: 422, 
         slug: 'zapatos-hechos-colombia-hombre', 
         name: 'Línea Colombia',
-        description: 'Edición especial de calzado artesanal que exalta la tradición zapatera colombiana. 100% hecho a mano con materiales nacionales de calidad premium.',
+        description: 'Edición especial de zapatos artesanales que exalta la tradición zapatera colombiana. 100% hecho a mano con materiales nacionales de calidad premium.',
         image: 'https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-linea-colombia-m.jpg'
     },
     { 
@@ -1898,9 +1950,6 @@ export async function getProductsByCategory(
                               if (!p) return false;
                               
                               const categories = p.categories || [];
-                              // Log para ver qué recibe Vercel realmente (Míralo en los Logs de Vercel)
-                              console.log(`[DEBUG] Producto: ${p.name} (ID: ${p.id}) | Categorías:`, JSON.stringify(categories));
-                              
                               const categoryMatch = categories.some((c: any) => {
                                   const catId = (typeof c === 'object' ? c.id : c)?.toString();
                                   if (!catId) return false;

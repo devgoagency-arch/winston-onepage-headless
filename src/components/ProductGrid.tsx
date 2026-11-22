@@ -643,7 +643,7 @@ export default function ProductGrid({
         }
 
         .category-filters-wrapper.is-hidden-top {
-          top: 0;
+          top: var(--global-banner-height, 0px);
         }
 
         .category-filters {

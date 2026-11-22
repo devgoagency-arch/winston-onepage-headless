@@ -1,4 +1,4 @@
-import ArmaTuBlackProgress, { ArmaTuBlackGroupHeading, ArmaTuBlackLineBadge, ArmaTuBlackLinePrice, sortForArmaTuBlack, useArmaTuBlack } from './ArmaTuBlackProgress';
+import ArmaTuBlackProgress, { ArmaTuBlackGroupHeading, ArmaTuBlackLineBadge, ArmaTuBlackLinePrice, goToArmaTuBlack, sortForArmaTuBlack, useArmaTuBlack } from './ArmaTuBlackProgress';
 import { useStore } from '@nanostores/react';
 import { cartItems, isCartOpen, removeFromCart, updateQuantity, updateCartItemVariation, calculateComboDiscount, calculateSweater2x1Discount, type CartItem } from '../store/cart';
 import { Fragment, useEffect, useState, useMemo } from 'react';
@@ -235,7 +235,7 @@ export default function SideCart() {
                                 </div>
                             </div>
                         )}
-                        {black.active && <ArmaTuBlackProgress count={black.eligibleCount} />}
+                        {black.active && <ArmaTuBlackProgress compact count={black.eligibleCount} onContinue={() => { isCartOpen.set(false); goToArmaTuBlack('carrito'); }} />}
                         {armaTuBlackDiscount > 0 && (
                             <div style={{ display: 'flex', justifyContent: 'space-between', gap: 12, padding: '10px 0', fontFamily: 'var(--font-paragraphs)' }}>
                                 <span>🖤 Arma tu Black</span>
