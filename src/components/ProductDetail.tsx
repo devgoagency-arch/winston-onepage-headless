@@ -967,7 +967,7 @@ export default function ProductDetail({ initialProduct }: Props) {
               {isArmaCatalogProduct(product) && (
                 <p className="black-pdp-note">
                   <strong>🖤 Arma tu Black</strong> · 15 % off en tu producto y 50 % en el de menor precio si llevas 2.{' '}
-                  <a href="/black-days?campaigntab=249&utm_source=producto&utm_medium=site&utm_campaign=black-days-2026#favoritos-sticky">Ver cómo →</a>
+                  <a href="/black-days?campaigntab=249#favoritos-sticky">Ver cómo →</a>
                 </p>
               )}
 

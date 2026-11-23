@@ -1,6 +1,5 @@
 ---
 // Aviso de Black Days: se abre una sola vez por sesión, solo con la ventana activa (ver GlobalBanner.astro).
-const utm = 'utm_source=popup&utm_medium=site&utm_campaign=black-days-2026';
 ---
 <div class="bd-popup" id="bd-popup" role="dialog" aria-modal="true" aria-labelledby="bd-popup-title">
     <div class="bd-popup-backdrop" data-bd-close></div>
@@ -10,8 +9,8 @@ const utm = 'utm_source=popup&utm_medium=site&utm_campaign=black-days-2026';
         <h2 id="bd-popup-title">BLACK DAYS</h2>
         <p class="bd-popup-offer"><span>HASTA</span> 70 % <em>OFF</em></p>
         <p class="bd-popup-sub">En zapatos y Arma tu Black en todo lo demás</p>
-        <a class="bd-popup-cta bd-popup-solid" href={`/black-days?campaigntab=sale&${utm}#favoritos-sticky`}>Ver ofertas hasta 70 %</a>
-        <a class="bd-popup-cta" href={`/black-days?campaigntab=249&${utm}#favoritos-sticky`}>Arma tu Black</a>
+        <a class="bd-popup-cta bd-popup-solid" href={`/black-days?campaigntab=sale#favoritos-sticky`}>Ver ofertas hasta 70 %</a>
+        <a class="bd-popup-cta" href={`/black-days?campaigntab=249#favoritos-sticky`}>Arma tu Black</a>
         <button type="button" class="bd-popup-skip" data-bd-close>Seguir en la tienda</button>
     </div>
 </div>

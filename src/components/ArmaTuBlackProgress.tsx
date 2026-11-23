@@ -3,12 +3,12 @@ import { useStore } from '@nanostores/react';
 import { cartItems } from '../store/cart';
 import { BLACK_DAYS_START, BLACK_DAYS_END, allocateArmaTuBlack, calculateArmaTuBlack, getArmaTuBlackHint, isBlackDaysActive, type BlackUnit } from '../lib/blackDays';
 
-// Lleva a quien arma su Black a la pestaña "Arma tu Black" de la landing (en la landing solo cambia de pestaña).
+// Lleva a quien arma su Black a la pestaña Ropa de la landing (en la landing solo cambia de pestaña). Sin UTM: los enlaces internos no deben pisar la fuente real en GA4.
 export function goToArmaTuBlack(source = 'carrito') {
     if (window.location.pathname.startsWith('/black-days')) {
         window.dispatchEvent(new CustomEvent('campaign-tab-changed', { detail: { tab: '249' } }));
     } else {
-        window.location.href = `/black-days?campaigntab=249&utm_source=${source}&utm_medium=site&utm_campaign=black-days-2026#favoritos-sticky`;
+        window.location.href = `/black-days?campaigntab=249#favoritos-sticky`;
     }
 }
 
