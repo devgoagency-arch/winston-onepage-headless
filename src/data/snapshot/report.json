@@ -1,0 +1,417 @@
+{
+  "generatedAt": "2026-11-23T21:40:02.324Z",
+  "durationSeconds": 91.4,
+  "totalHttpRequests": 475,
+  "productsPublishable": 336,
+  "omittedTotal": 28,
+  "skipped404": [],
+  "skippedInvalid": [],
+  "omittedAllVariationsOutOfStock": [
+    {
+      "slug": "calzador",
+      "id": 32535,
+      "name": "Calzador",
+      "reason": "all_variations_out_of_stock_store_api_404"
+    },
+    {
+      "slug": "limpiador-en-seco",
+      "id": 32533,
+      "name": "Limpiador en seco",
+      "reason": "all_variations_out_of_stock_store_api_404"
+    },
+    {
+      "slug": "maicao",
+      "id": 29526,
+      "name": "Maicao",
+      "reason": "all_variations_out_of_stock_store_api_404"
+    },
+    {
+      "slug": "cumbria-ii",
+      "id": 26847,
+      "name": "Cumbria II",
+      "reason": "all_variations_out_of_stock_store_api_404"
+    },
+    {
+      "slug": "reata-680",
+      "id": 26192,
+      "name": "Reata 275-26",
+      "reason": "all_variations_out_of_stock_store_api_404"
+    },
+    {
+      "slug": "cauca",
+      "id": 25377,
+      "name": "Cauca",
+      "reason": "all_variations_out_of_stock_store_api_404"
+    },
+    {
+      "slug": "morral-viscount",
+      "id": 24783,
+      "name": "Morral Viscount",
+      "reason": "all_variations_out_of_stock_store_api_404"
+    },
+    {
+      "slug": "walsall",
+      "id": 24751,
+      "name": "Walsall",
+      "reason": "all_variations_out_of_stock_store_api_404"
+    },
+    {
+      "slug": "cesar",
+      "id": 24119,
+      "name": "Cesar",
+      "reason": "all_variations_out_of_stock_store_api_404"
+    },
+    {
+      "slug": "amberley",
+      "id": 24116,
+      "name": "Amberley",
+      "reason": "all_variations_out_of_stock_store_api_404"
+    },
+    {
+      "slug": "huntingdon",
+      "id": 24111,
+      "name": "Huntingdon",
+      "reason": "all_variations_out_of_stock_store_api_404"
+    }
+  ],
+  "omittedProducts": [
+    {
+      "slug": "kit-animales-2",
+      "id": 52059,
+      "name": "Kit Animales",
+      "reason": "price_zero_or_invalid"
+    },
+    {
+      "slug": "bono-de-regalo-2",
+      "id": 49749,
+      "name": "Bono de Regalo",
+      "reason": "price_zero_or_invalid"
+    },
+    {
+      "slug": "calzador",
+      "id": 32535,
+      "name": "Calzador",
+      "reason": "all_variations_out_of_stock_store_api_404"
+    },
+    {
+      "slug": "limpiador-en-seco",
+      "id": 32533,
+      "name": "Limpiador en seco",
+      "reason": "all_variations_out_of_stock_store_api_404"
+    },
+    {
+      "slug": "warwick",
+      "id": 31123,
+      "name": "Warwick",
+      "reason": "parent_out_of_stock"
+    },
+    {
+      "slug": "maicao",
+      "id": 29526,
+      "name": "Maicao",
+      "reason": "all_variations_out_of_stock_store_api_404"
+    },
+    {
+      "slug": "neiva",
+      "id": 28355,
+      "name": "Neiva",
+      "reason": "parent_out_of_stock"
+    },
+    {
+      "slug": "bono-de-regalo",
+      "id": 27884,
+      "name": "Bono de Regalo",
+      "reason": "price_zero_or_invalid"
+    },
+    {
+      "slug": "kit-animales",
+      "id": 27061,
+      "name": "Kit Animales",
+      "reason": "parent_out_of_stock"
+    },
+    {
+      "slug": "cumbria-ii",
+      "id": 26847,
+      "name": "Cumbria II",
+      "reason": "all_variations_out_of_stock_store_api_404"
+    },
+    {
+      "slug": "reata-680",
+      "id": 26192,
+      "name": "Reata 275-26",
+      "reason": "all_variations_out_of_stock_store_api_404"
+    },
+    {
+      "slug": "rutland",
+      "id": 25606,
+      "name": "Rutland",
+      "reason": "parent_out_of_stock"
+    },
+    {
+      "slug": "cauca",
+      "id": 25377,
+      "name": "Cauca",
+      "reason": "all_variations_out_of_stock_store_api_404"
+    },
+    {
+      "slug": "berkshire",
+      "id": 25317,
+      "name": "Berkshire",
+      "reason": "parent_out_of_stock"
+    },
+    {
+      "slug": "hoodie",
+      "id": 25256,
+      "name": "Hoodie",
+      "reason": "parent_out_of_stock"
+    },
+    {
+      "slug": "maleta-kent-lona",
+      "id": 24815,
+      "name": "Maleta Kent Lona",
+      "reason": "parent_out_of_stock"
+    },
+    {
+      "slug": "exester",
+      "id": 24813,
+      "name": "Exester",
+      "reason": "parent_out_of_stock"
+    },
+    {
+      "slug": "morral-viscount",
+      "id": 24783,
+      "name": "Morral Viscount",
+      "reason": "all_variations_out_of_stock_store_api_404"
+    },
+    {
+      "slug": "walsall",
+      "id": 24751,
+      "name": "Walsall",
+      "reason": "all_variations_out_of_stock_store_api_404"
+    },
+    {
+      "slug": "dorset",
+      "id": 24750,
+      "name": "Dorset",
+      "reason": "parent_out_of_stock"
+    },
+    {
+      "slug": "wiltshire",
+      "id": 24366,
+      "name": "Wiltshire",
+      "reason": "parent_out_of_stock"
+    },
+    {
+      "slug": "manchester",
+      "id": 24362,
+      "name": "Manchester",
+      "reason": "parent_out_of_stock"
+    },
+    {
+      "slug": "bedford",
+      "id": 24331,
+      "name": "Bedford",
+      "reason": "parent_out_of_stock"
+    },
+    {
+      "slug": "ramsey",
+      "id": 24170,
+      "name": "Ramsey",
+      "reason": "parent_out_of_stock"
+    },
+    {
+      "slug": "poole",
+      "id": 24151,
+      "name": "Poole",
+      "reason": "parent_out_of_stock"
+    },
+    {
+      "slug": "cesar",
+      "id": 24119,
+      "name": "Cesar",
+      "reason": "all_variations_out_of_stock_store_api_404"
+    },
+    {
+      "slug": "amberley",
+      "id": 24116,
+      "name": "Amberley",
+      "reason": "all_variations_out_of_stock_store_api_404"
+    },
+    {
+      "slug": "huntingdon",
+      "id": 24111,
+      "name": "Huntingdon",
+      "reason": "all_variations_out_of_stock_store_api_404"
+    }
+  ],
+  "staleOr404SlugsRemoved": [
+    {
+      "slug": "amberley",
+      "id": 24116,
+      "name": "Amberley",
+      "reason": "all_variations_out_of_stock_store_api_404"
+    },
+    {
+      "slug": "bedford",
+      "id": 24331,
+      "name": "Bedford",
+      "reason": "parent_out_of_stock"
+    },
+    {
+      "slug": "berkshire",
+      "id": 25317,
+      "name": "Berkshire",
+      "reason": "parent_out_of_stock"
+    },
+    {
+      "slug": "bono-de-regalo",
+      "id": 27884,
+      "name": "Bono de Regalo",
+      "reason": "price_zero_or_invalid"
+    },
+    {
+      "slug": "bono-de-regalo-2",
+      "id": 49749,
+      "name": "Bono de Regalo",
+      "reason": "price_zero_or_invalid"
+    },
+    {
+      "slug": "calzador",
+      "id": 32535,
+      "name": "Calzador",
+      "reason": "all_variations_out_of_stock_store_api_404"
+    },
+    {
+      "slug": "cauca",
+      "id": 25377,
+      "name": "Cauca",
+      "reason": "all_variations_out_of_stock_store_api_404"
+    },
+    {
+      "slug": "cesar",
+      "id": 24119,
+      "name": "Cesar",
+      "reason": "all_variations_out_of_stock_store_api_404"
+    },
+    {
+      "slug": "cumbria-ii",
+      "id": 26847,
+      "name": "Cumbria II",
+      "reason": "all_variations_out_of_stock_store_api_404"
+    },
+    {
+      "slug": "dorset",
+      "id": 24750,
+      "name": "Dorset",
+      "reason": "parent_out_of_stock"
+    },
+    {
+      "slug": "exester",
+      "id": 24813,
+      "name": "Exester",
+      "reason": "parent_out_of_stock"
+    },
+    {
+      "slug": "hoodie",
+      "id": 25256,
+      "name": "Hoodie",
+      "reason": "parent_out_of_stock"
+    },
+    {
+      "slug": "huntingdon",
+      "id": 24111,
+      "name": "Huntingdon",
+      "reason": "all_variations_out_of_stock_store_api_404"
+    },
+    {
+      "slug": "kit-animales",
+      "id": 27061,
+      "name": "Kit Animales",
+      "reason": "parent_out_of_stock"
+    },
+    {
+      "slug": "kit-animales-2",
+      "id": 52059,
+      "name": "Kit Animales",
+      "reason": "price_zero_or_invalid"
+    },
+    {
+      "slug": "limpiador-en-seco",
+      "id": 32533,
+      "name": "Limpiador en seco",
+      "reason": "all_variations_out_of_stock_store_api_404"
+    },
+    {
+      "slug": "maicao",
+      "id": 29526,
+      "name": "Maicao",
+      "reason": "all_variations_out_of_stock_store_api_404"
+    },
+    {
+      "slug": "maleta-kent-lona",
+      "id": 24815,
+      "name": "Maleta Kent Lona",
+      "reason": "parent_out_of_stock"
+    },
+    {
+      "slug": "manchester",
+      "id": 24362,
+      "name": "Manchester",
+      "reason": "parent_out_of_stock"
+    },
+    {
+      "slug": "morral-viscount",
+      "id": 24783,
+      "name": "Morral Viscount",
+      "reason": "all_variations_out_of_stock_store_api_404"
+    },
+    {
+      "slug": "neiva",
+      "id": 28355,
+      "name": "Neiva",
+      "reason": "parent_out_of_stock"
+    },
+    {
+      "slug": "poole",
+      "id": 24151,
+      "name": "Poole",
+      "reason": "parent_out_of_stock"
+    },
+    {
+      "slug": "ramsey",
+      "id": 24170,
+      "name": "Ramsey",
+      "reason": "parent_out_of_stock"
+    },
+    {
+      "slug": "reata-680",
+      "id": 26192,
+      "name": "Reata 275-26",
+      "reason": "all_variations_out_of_stock_store_api_404"
+    },
+    {
+      "slug": "rutland",
+      "id": 25606,
+      "name": "Rutland",
+      "reason": "parent_out_of_stock"
+    },
+    {
+      "slug": "walsall",
+      "id": 24751,
+      "name": "Walsall",
+      "reason": "all_variations_out_of_stock_store_api_404"
+    },
+    {
+      "slug": "warwick",
+      "id": 31123,
+      "name": "Warwick",
+      "reason": "parent_out_of_stock"
+    },
+    {
+      "slug": "wiltshire",
+      "id": 24366,
+      "name": "Wiltshire",
+      "reason": "parent_out_of_stock"
+    }
+  ]
+}

@@ -40,8 +40,7 @@ src/pages/api/store-api-debug.ts
 debug-auth.ts
 debug-auth.js
 *.json
-!public/data/products/*.json
-!public/data/catalog/tienda-p*.json
+!src/data/snapshot/*.json
 !package.json
 !tsconfig.json
 !vercel.json
