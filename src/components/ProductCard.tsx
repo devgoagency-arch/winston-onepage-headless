@@ -603,11 +603,17 @@ export default function ProductCard({ product, isSelected, onSelectionToggle, on
         return filtered.length > 0 ? filtered : colorAttribute.terms;
     }, [colorAttribute, quickVariations]);
 
-    // Si solo queda un color con stock, la foto y los puntos pasan a ese color (antes la foto era de un color agotado).
+    // Si la foto principal es de un color agotado (o solo queda un color con stock), la tarjeta pasa al color disponible:
+    // así la foto, los puntos y el texto "Elige tu talla · color" coinciden.
     useEffect(() => {
-        if (!quickReady || quickVariations.length === 0 || selectedColor || hoveredColor) return;
-        if (quickColorTerms.length === 1) setSelectedColor(quickColorTerms[0].slug);
-    }, [quickReady, quickVariations, quickColorTerms, selectedColor, hoveredColor]);
+        if (!quickReady || quickVariations.length === 0 || selectedColor || hoveredColor || quickColorTerms.length === 0) return;
+        const mainSrc = normalizeAttr(((enrichedProduct || product).images?.[0]?.src || '').split('/').pop() || '');
+        const mainColor = [...(colorAttribute?.terms || [])]
+            .filter((t: any) => mainSrc.includes(normalizeAttr(t.slug)) || mainSrc.includes(normalizeAttr(t.name)))
+            .sort((x: any, y: any) => y.slug.length - x.slug.length)[0];
+        const mainOutOfStock = !!mainColor && !quickColorTerms.some((t: any) => t.slug === mainColor.slug);
+        if (quickColorTerms.length === 1 || mainOutOfStock) setSelectedColor(quickColorTerms[0].slug);
+    }, [quickReady, quickVariations, quickColorTerms, selectedColor, hoveredColor, enrichedProduct, colorAttribute]);
 
     // Si cambia el color y la talla elegida ya no está disponible, se limpia
     useEffect(() => {
