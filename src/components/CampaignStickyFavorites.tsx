@@ -1,22 +1,19 @@
 import { useState, useEffect, useMemo } from 'react';
 import ProductCard from './ProductCard';
 import { ArmaTuBlackStrip } from './ArmaTuBlackProgress';
-import { isArmaCatalogProduct } from '../lib/blackDays';
+import { isArmaLowPriority } from '../lib/blackDays';
 import { MENU_CATEGORIES, EXCLUDED_SLUGS } from '../lib/menuCategories';
 
-// Pestaña "Arma tu Black": productos sin descuento de todas las categorías ya cargadas (sin repetir).
-function buildArmaPool(cache: Record<string | number, any[]>): any[] {
-  const seen = new Set<number>();
-  const pool: any[] = [];
-  for (const key of ['249', '190', '126', '955', 'all']) {
-    for (const p of cache[key] || []) {
-      if (seen.has(p.id) || !isArmaCatalogProduct(p)) continue;
-      seen.add(p.id);
-      pool.push(p);
-    }
-  }
-  return pool;
+// Black Days: con descuento primero (mayor %), luego el resto; las medias siempre al final (siguen disponibles).
+// Mismo criterio que la tarjeta (precio menor al normal): así el orden y la pestaña coinciden con lo que se ve.
+const isOnSaleProduct = (p: any) => Number(p.prices?.price) > 0 && Number(p.prices?.regular_price) > Number(p.prices?.price);
+const discountOf = (p: any) => 1 - Number(p.prices?.price) / Number(p.prices?.regular_price);
+function orderBlackDays(list: any[]): any[] {
+  const sorted = (group: any[]) => [...group.filter(isOnSaleProduct).sort((a, b) => discountOf(b) - discountOf(a)), ...group.filter(p => !isOnSaleProduct(p))];
+  return [...sorted(list.filter(p => !isArmaLowPriority(p))), ...sorted(list.filter(isArmaLowPriority))];
 }
+// Enlaces viejos (anuncios) a la pestaña "Arma tu Black" ahora llevan a Ropa.
+const tabAlias = (tab: string) => (tab === 'arma' ? '249' : tab);
 
 interface Product {
   on_sale?: boolean;
@@ -96,14 +93,23 @@ export default function CampaignStickyFavorites({
   initialCache?: Record<string | number, Product[]> | null;
 }) {
   const campaignCategories = blackDays ? [
-    { id: '63', name: 'Zapatos en oferta', shortName: 'Zapatos', slug: 'zapatos-cuero-hombre', maxPrice: undefined },
-    { id: 'arma', name: 'Arma tu Black', shortName: '🖤 Arma tu Black', slug: 'tienda', maxPrice: undefined },
+    { id: 'sale', name: 'Hasta 70 % off', shortName: 'Hasta 70 % off', slug: 'tienda', maxPrice: undefined },
+    { id: '63', name: 'Zapatos', shortName: 'Zapatos', slug: 'zapatos-cuero-hombre', maxPrice: undefined },
     CATEGORIES[5], CATEGORIES[4],
     { id: '126', name: 'Accesorios', shortName: 'Accesorios', slug: 'accesorios-hombre', maxPrice: undefined },
     CATEGORIES[2], { ...CATEGORIES[0], name: 'Todos' },
   ] : CATEGORIES;
+  // 'sale' = todo lo que tiene descuento (WooCommerce on_sale); 'all' y 'sale' no filtran por categoría.
+  const buildProductsUrl = (cat: { id: string | number; maxPrice?: number }, page: number) => {
+    const noCategory = cat.id === 'all' || cat.id === 'sale';
+    let url = noCategory ? '/api/products?orderby=popularity&per_page=100' : `/api/products?category=${cat.id}&orderby=popularity&per_page=100`;
+    if (blackDays && cat.id === 'sale') url += '&on_sale=true';
+    if (cat.maxPrice) url += `&max_price=${cat.maxPrice}`;
+    if (page > 1) url += `&page=${page}`;
+    return url;
+  };
   const defaultCache = initialCache || { 'all': initialProducts };
-  const defaultProducts = initialCache ? (initialCache[blackDays ? '63' : 'all'] || []) : initialProducts;
+  const defaultProducts = initialCache ? (initialCache[blackDays ? 'sale' : 'all'] || []) : initialProducts;
 
   const [products, setProducts] = useState<Product[]>(defaultProducts);
   const [categoryCache, setCategoryCache] = useState<Record<string | number, Product[]>>(defaultCache);
@@ -140,10 +146,15 @@ export default function CampaignStickyFavorites({
     precio: false
   });
 
-  // La pestaña Arma tu Black se deriva de las demás: se recalcula cuando llegan más productos al caché.
+
+  // "Hasta 70 % off" reúne todo lo que tiene descuento en cualquier categoría ya cargada (sin repetir).
+  const salePool = useMemo(() => {
+    const seen = new Set<number>();
+    return Object.values(categoryCache).flat().filter((p: any) => p && isOnSaleProduct(p) && !seen.has(p.id) && seen.add(p.id));
+  }, [categoryCache]);
   useEffect(() => {
-    if (blackDays && activeCategory.id === 'arma') setProducts(buildArmaPool(categoryCache));
-  }, [blackDays, activeCategory.id, categoryCache]);
+    if (blackDays && activeCategory.id === 'sale') setProducts(salePool);
+  }, [blackDays, activeCategory.id, salePool]);
 
   const toggleSubcat = (slug: string) => {
     setSelectedSubcats(prev => prev.includes(slug) ? prev.filter(s => s !== slug) : [...prev, slug]);
@@ -160,8 +171,7 @@ export default function CampaignStickyFavorites({
         setError(null);
 
         const results = await Promise.all(
-          // 'arma' no existe en WooCommerce: se arma con las demás categorías (buildArmaPool).
-          campaignCategories.filter(cat => cat.id !== 'arma').map(async (cat) => {
+          campaignCategories.map(async (cat) => {
             // 1. Intentar cargar el JSON estático si no es la categoría especial de precios
             let data: Product[] = [];
             let jsonSuccess = false;
@@ -181,16 +191,17 @@ export default function CampaignStickyFavorites({
 
             // 2. Si falla o es la de precios, usar la API de Astro/WooCommerce
             if (!jsonSuccess) {
-              let url = cat.id === 'all' 
-                  ? `/api/products?orderby=popularity&per_page=100`
-                  : `/api/products?category=${cat.id}&orderby=popularity&per_page=100`;
-              
-              if (blackDays && cat.id === '63') url += '&on_sale=true';
-              if (cat.maxPrice) url += `&max_price=${cat.maxPrice}`;
-
-              const res = await fetch(url);
+              const res = await fetch(buildProductsUrl(cat, 1));
               if (!res.ok) return { id: cat.id, data: [] };
               data = await res.json();
+              // Black Days: catálogos de más de 100 productos (zapatos, todos) se piden por páginas.
+              let last = data;
+              for (let page = 2; blackDays && page <= 3 && last.length >= 100; page++) {
+                const more = await fetch(buildProductsUrl(cat, page));
+                if (!more.ok) break;
+                last = await more.json();
+                data = [...data, ...last];
+              }
             }
 
             const seenIds = new Set<number>();
@@ -260,7 +271,7 @@ export default function CampaignStickyFavorites({
       const normalize = (str: string) => 
         str.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 
-      const normalizedTab = normalize(tabName);
+      const normalizedTab = tabAlias(normalize(tabName));
 
       const matchedCategory = campaignCategories.find(cat =>
         normalize(cat.shortName) === normalizedTab ||
@@ -281,7 +292,7 @@ export default function CampaignStickyFavorites({
 
         if (categoryCache[matchedCategory.id]) {
           setProducts(categoryCache[matchedCategory.id]);
-        } else if (matchedCategory.id !== 'arma') {
+        } else {
           fetchProducts(matchedCategory.id);
         }
 
@@ -307,7 +318,7 @@ export default function CampaignStickyFavorites({
     if (initialTab) {
       const normalize = (str: string) => 
         str.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-      const normalizedTab = normalize(initialTab);
+      const normalizedTab = tabAlias(normalize(initialTab));
 
       const matchedCategory = campaignCategories.find(cat =>
         normalize(cat.shortName) === normalizedTab ||
@@ -353,14 +364,7 @@ export default function CampaignStickyFavorites({
 
       const PER_PAGE = 100;
       if (!jsonSuccess) {
-        let url = cat.id === 'all'
-            ? `/api/products?orderby=popularity&per_page=${PER_PAGE}`
-            : `/api/products?category=${cat.id}&orderby=popularity&per_page=${PER_PAGE}`;
-
-        if (blackDays && cat.id === '63') url += '&on_sale=true';
-              if (cat.maxPrice) url += `&max_price=${cat.maxPrice}`;
-
-        const response = await fetch(url);
+        const response = await fetch(buildProductsUrl(cat, page));
         if (!response.ok) throw new Error('Error al cargar productos');
         data = await response.json();
       }
@@ -415,8 +419,6 @@ export default function CampaignStickyFavorites({
 
     if (categoryCache[category.id]) {
       setProducts(categoryCache[category.id]);
-    } else if (category.id === 'arma') {
-      setProducts(buildArmaPool(categoryCache));
     } else {
       fetchProducts(category.id);
     }
@@ -553,9 +555,9 @@ export default function CampaignStickyFavorites({
   // Filtrado y Ordenación en Cliente
   const filteredAndSortedProducts = useMemo(() => {
     let result = [...products];
-    if (blackDays && activeCategory.id === '63') {
-      result = result.filter(p => p.on_sale === true && Number(p.prices?.price) < Number(p.prices?.regular_price));
-      result.sort((a, b) => (1 - Number(b.prices.price) / Number(b.prices.regular_price)) - (1 - Number(a.prices.price) / Number(a.prices.regular_price)));
+    if (blackDays) {
+      if (activeCategory.id === 'sale') result = result.filter(isOnSaleProduct);
+      result = orderBlackDays(result);
     }
 
     // 0. Filtrar por Categorías y Subcategorías
@@ -664,11 +666,11 @@ export default function CampaignStickyFavorites({
           <span className="subtitle">SELECCIÓN EXCLUSIVA</span>
           <h2>{blackDays ? 'BLACK DAYS' : 'REGALOS PARA PAPÁ'}</h2>
           <p className="description">
-            {blackDays ? 'Zapatos hasta 70 % off. Arma tu Black con productos sin descuento.' : 'Encuentra el regalo perfecto para él. Hemos seleccionado nuestros mejores artículos de cuero, zapatos y accesorios para celebrar su día'}
+            {blackDays ? 'Hasta 70 % off y Arma tu Black en los productos sin descuento.' : 'Encuentra el regalo perfecto para él. Hemos seleccionado nuestros mejores artículos de cuero, zapatos y accesorios para celebrar su día'}
           </p>
         </div>
 
-        {blackDays && <div className="arma-strip-wrap"><ArmaTuBlackStrip tab={String(activeCategory.id)} onGoArma={() => handleCategoryChange(campaignCategories[1])} /></div>}
+        {blackDays && <div className="arma-strip-wrap"><ArmaTuBlackStrip tab={String(activeCategory.id)} onGoArma={() => handleCategoryChange(campaignCategories.find(c => String(c.id) === '249') || campaignCategories[1])} /></div>}
 
         <div className={`category-filters-wrapper ${isHeaderHidden ? 'is-hidden-top' : ''}`}>
           <div className="category-filters">

@@ -3,7 +3,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { runInNewContext } from 'node:vm';
-import { allocateArmaTuBlack, calculateArmaTuBlack, getArmaTuBlackHint, isBlackDaysActive, isBlackDaysPreviewBuild, EXTRA_UNITS_DISCOUNT } from '../src/lib/blackDays.ts';
+import { isArmaLowPriority, isArmaCatalogProduct, allocateArmaTuBlack, calculateArmaTuBlack, getArmaTuBlackHint, isBlackDaysActive, isBlackDaysPreviewBuild, EXTRA_UNITS_DISCOUNT } from '../src/lib/blackDays.ts';
 const prices = [100000, 80000, 60000, 40000, 20000];
 const discounts = [0, 15000, 40000, 42000, 62000, 62000];
 const rates = [[], [15], [0, 50], [0, 15, 50], [0, 15, 50, 50], [0, 15, 50, 50, 0]];
@@ -117,4 +117,12 @@ test('reparto: con descuento propio queda fuera y una línea con cantidad mezcla
     assert.deepEqual(lines[0].pcts, []);
     assert.deepEqual(lines[1].pcts, [0, 15, 50]);
     assert.equal(lines[1].discount, 65000);
+});
+
+test('medias: siguen elegibles en Arma tu Black pero van al final', () => {
+    for (const slug of ['medias-gatos', 'medias-perros-winston', 'calcetines-negros'])
+        assert.equal(isArmaLowPriority({ slug, name: '' }), true, slug);
+    for (const slug of ['cinturon-doble-faz', 'camisa-mediana', 'winsdor-v'])
+        assert.equal(isArmaLowPriority({ slug, name: '' }), false, slug);
+    assert.equal(isArmaCatalogProduct({ slug: 'medias-gatos', name: 'Medias Gatos', on_sale: false, prices: { price: '30000', regular_price: '30000' } }), true);
 });

@@ -49,6 +49,11 @@ export function isArmaTuBlackEligible(item: BlackUnit): boolean {
 }
 
 // Misma regla para un producto del catálogo (Store API): sin precio de oferta y fuera del suéter Escalera.
+// Las medias siguen siendo elegibles, pero van al final de la pestaña Arma tu Black aunque sean nuevas.
+export function isArmaLowPriority(p: { slug?: string; name?: string }): boolean {
+    return /(^|[^a-z])(medias?|calcetines?)([^a-z]|$)/.test(`${p.slug || ''} ${p.name || ''}`.toLowerCase());
+}
+
 export function isArmaCatalogProduct(p: { slug?: string; name?: string; on_sale?: boolean; prices?: { price?: string; regular_price?: string } }): boolean {
     const price = Number(p.prices?.price || 0), regular = Number(p.prices?.regular_price || 0);
     return !p.on_sale && !(regular > price && price > 0)

@@ -6,9 +6,9 @@ import { BLACK_DAYS_START, BLACK_DAYS_END, allocateArmaTuBlack, calculateArmaTuB
 // Lleva a quien arma su Black a la pestaña "Arma tu Black" de la landing (en la landing solo cambia de pestaña).
 export function goToArmaTuBlack(source = 'carrito') {
     if (window.location.pathname.startsWith('/black-days')) {
-        window.dispatchEvent(new CustomEvent('campaign-tab-changed', { detail: { tab: 'arma' } }));
+        window.dispatchEvent(new CustomEvent('campaign-tab-changed', { detail: { tab: '249' } }));
     } else {
-        window.location.href = `/black-days?campaigntab=arma&utm_source=${source}&utm_medium=site&utm_campaign=black-days-2026#favoritos-sticky`;
+        window.location.href = `/black-days?campaigntab=249&utm_source=${source}&utm_medium=site&utm_campaign=black-days-2026#favoritos-sticky`;
     }
 }
 
@@ -159,7 +159,6 @@ export function ArmaTuBlackStrip({ tab, onGoArma }: { tab: string; onGoArma: () 
     const black = useArmaTuBlack(items);
     if (!black.active) return null;
     const count = black.eligibleCount;
-    const onArma = tab === 'arma';
     return <div className="arma-strip" role="region" aria-label="Arma tu Black">
         <style>{`
             .arma-strip { position: relative; box-sizing: border-box; width: 100%; margin: 0 auto 20px; padding: 18px 300px; background: #000; color: #D4A853; border: 1px solid #D4A853; text-align: center; font-family: var(--font-paragraphs); }
@@ -180,13 +179,13 @@ export function ArmaTuBlackStrip({ tab, onGoArma }: { tab: string; onGoArma: () 
         `}</style>
         <strong className="arma-strip-title">🖤 ARMA TU BLACK{count > 0 ? ` · LLEVAS ${count}` : ''}</strong>
         <p className="arma-strip-hint" aria-live="polite">
-            {tab === '63' ? 'Estos zapatos ya traen su descuento y no suman a Arma tu Black. Suma ropa, maletas y accesorios sin descuento.' : getArmaTuBlackHint(count)}
+            {tab === 'sale' ? 'Estos productos ya traen su descuento y no suman a Arma tu Black. Suma los que no tienen descuento.' : getArmaTuBlackHint(count)}
         </p>
         <div className="arma-strip-side">
             <div className="arma-strip-dots" aria-hidden="true">
                 {[1, 2, 3, 4].map(n => <span key={n} className={count >= n ? 'on' : undefined} />)}
             </div>
-            {!onArma && <button type="button" className="arma-strip-btn" onClick={onGoArma}>Armar mi Black →</button>}
+            <button type="button" className="arma-strip-btn" onClick={onGoArma}>Armar mi Black →</button>
         </div>
     </div>;
 }

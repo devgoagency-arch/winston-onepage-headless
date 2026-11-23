@@ -64,9 +64,11 @@ const stores = [
 ];
 
 
-const [lookData, productsAll, zapatos, ropa, maletas, accesorios, sueteres, banner] = await Promise.all([
+const [lookData, productsAll, ofertas, zapatos, zapatos2, ropa, maletas, accesorios, sueteres, banner] = await Promise.all([
     getLookOfTheWeekData(), getAllProducts(100, 1, 'menu_order', 'asc'),
-    getProductsByCategory('63', 100, 1, 'price', 'asc', true),
+    getAllProducts(100, 1, 'price', 'asc', true),
+    getProductsByCategory('63', 100, 1, 'menu_order', 'asc'),
+    getProductsByCategory('63', 100, 2, 'menu_order', 'asc').catch(() => []),
     getProductsByCategory('249', 100, 1, 'menu_order', 'asc'),
     getProductsByCategory('190', 100, 1, 'menu_order', 'asc'),
     getProductsByCategory('126', 100, 1, 'menu_order', 'asc'),
@@ -75,9 +77,10 @@ const [lookData, productsAll, zapatos, ropa, maletas, accesorios, sueteres, bann
 ]);
 const heroDesktop = BLACK_DAYS_HERO_IMAGE || banner.hero.image_desktop;
 const heroMobile = BLACK_DAYS_HERO_IMAGE || banner.hero.image_mobile || heroDesktop;
-const productsZapatos = zapatos.filter((p: any) => p.on_sale && Number(p.prices.price) < Number(p.prices.regular_price))
+// Pestaña "Hasta 70 % off": todo lo que tiene descuento, de cualquier categoría, de mayor a menor %.
+const productsOfertas = ofertas.filter((p: any) => p.on_sale && Number(p.prices.price) < Number(p.prices.regular_price))
     .sort((a: any, b: any) => (1 - Number(b.prices.price) / Number(b.prices.regular_price)) - (1 - Number(a.prices.price) / Number(a.prices.regular_price)));
-const initialCache = { all: productsAll, '63': productsZapatos, '249': ropa, '190': maletas, '126': accesorios, '955': sueteres };
+const initialCache = { all: productsAll, sale: productsOfertas, '63': [...zapatos, ...zapatos2], '249': ropa, '190': maletas, '126': accesorios, '955': sueteres };
 const cards = [
     { title: 'Hasta 70 % off', highlight: 'Zapatos', targetTab: '63', image: '/images/zapatos.jpg', alt: 'Zapatos de cuero para hombre Winston & Harry' },
     { title: 'Arma tu Black', highlight: 'Ropa', targetTab: '249', image: '/images/ropa.jpg', alt: 'Colección de ropa para hombre Winston & Harry' },
@@ -98,8 +101,8 @@ const cards = [
                 <h1>BLACK DAYS</h1>
                 <p class="black-hero-offer" aria-label="Hasta 70 % off"><span class="black-hero-hasta">HASTA</span> <span class="black-hero-discount">70 % <span class="black-hero-off">OFF</span></span></p>
                 <p class="black-hero-subtitle">En zapatos y Arma tu Black en todo lo demás</p>
-                <a href="#favoritos-sticky" data-bd-tab="63">Zapatos hasta 70 % ↓</a>
-                <a href="#favoritos-sticky" data-bd-tab="arma">Arma tu Black ↓</a>
+                <a href="#favoritos-sticky" data-bd-tab="sale">Ofertas hasta 70 % ↓</a>
+                <a href="#favoritos-sticky" data-bd-tab="249">Arma tu Black ↓</a>
                 <a href="/contacto">Disponible en tiendas</a>
             </div>
         </section>
@@ -126,14 +129,14 @@ const cards = [
                     <span class="rule-extra">Y <strong>15 %</strong> en el segundo</span>
                 </li>
             </ol>
-            <a href="#favoritos-sticky" data-bd-tab="arma">Armar mi Black →</a>
+            <a href="#favoritos-sticky" data-bd-tab="249">Armar mi Black →</a>
             <p class="black-legal">Arma tu Black es para productos sin descuento. Los zapatos con descuento de Black Days no se suman: se compran a su precio rebajado.</p>
             <p class="black-legal">El mayor descuento es para el producto de menor precio. Los beneficios aplican a 4 productos; desde el 5.º, precio completo. No incluye el suéter Escalera 2x1.</p>
             <small class="black-legal">Válido del 23 al 30 de noviembre de 2026, hora Colombia.</small>
         </section>
         <div class="content-wrapper">
             <CampaignCategoryCards cards={cards} />
-            <CampaignStickyFavorites client:load blackDays={true} initialProducts={productsZapatos} initialCache={initialCache} />
+            <CampaignStickyFavorites client:load blackDays={true} initialProducts={productsOfertas} initialCache={initialCache} />
             <LookOfTheWeek initialData={lookData} />
             <section class="black-rules"><h2>Vive Black Days en nuestras tiendas</h2><a href="/contacto">Encuentra tu tienda →</a></section>
         </div>
