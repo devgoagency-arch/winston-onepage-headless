@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom';
 import { getOptimizedUrl, getImageSrcSet } from '../utils/image';
 import { addToCart } from '../store/cart';
 import { getLiveStock, type LiveVariation } from '../utils/liveStock';
+import { useArmaSaving } from '../lib/armaSaving';
 
 // Elimina sufijos de miniaturas de WordPress (ej: -150x150) para cargar la imagen original
 function getOriginalImageUrl(url: string): string {
@@ -525,6 +526,8 @@ export default function ProductCard({ product, isSelected, onSelectionToggle, on
 
     const renderRegularPrice = regularPrice / (10 ** currencyMinorUnit);
     const renderPrice = price / (10 ** currencyMinorUnit);
+    // Etiqueta de Arma tu Black: 15 % con el carrito vacío; con productos en el carrito, cuánto ahorra al sumarlo.
+    const armaSaving = useArmaSaving(renderPrice, product.slug, product.name, product.tags);
     const currencySymbol = priceData.currency_prefix || priceData.currency_symbol;
 
     const isEscalera = (product.slug || '').toLowerCase().includes('escalera')
@@ -697,7 +700,11 @@ export default function ProductCard({ product, isSelected, onSelectionToggle, on
                             )}
                             {isArmaEligible && (
                                 <div className="badge black-chip">
-                                    🖤 ARMA TU BLACK
+                                    {armaSaving.inCart === 0
+                                        ? '🖤 ARMA TU BLACK · 15 % OFF'
+                                        : armaSaving.saving > 0
+                                            ? `🖤 SÚMALO Y AHORRAS $${new Intl.NumberFormat('es-CO').format(armaSaving.saving)}`
+                                            : '🖤 ARMA TU BLACK'}
                                 </div>
                             )}
                         </div>
@@ -1100,6 +1107,11 @@ export default function ProductCard({ product, isSelected, onSelectionToggle, on
                         ) : (
                             <span className="current-price">
                                 {currencySymbol}{new Intl.NumberFormat('es-CO').format(renderPrice)}
+                            </span>
+                        )}
+                        {isArmaEligible && armaSaving.inCart === 0 && armaSaving.saving > 0 && (
+                            <span className="black-price-note">
+                                {currencySymbol}{new Intl.NumberFormat('es-CO').format(renderPrice - armaSaving.saving)} con Arma tu Black
                             </span>
                         )}
                     </div>

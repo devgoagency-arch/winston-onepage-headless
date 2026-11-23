@@ -5,8 +5,8 @@ import { readFileSync } from 'node:fs';
 import { runInNewContext } from 'node:vm';
 import { isArmaLowPriority, isArmaCatalogProduct, allocateArmaTuBlack, calculateArmaTuBlack, getArmaTuBlackHint, isBlackDaysActive, isBlackDaysPreviewBuild, EXTRA_UNITS_DISCOUNT } from '../src/lib/blackDays.ts';
 const prices = [100000, 80000, 60000, 40000, 20000];
-const discounts = [0, 15000, 40000, 42000, 62000, 62000];
-const rates = [[], [15], [0, 50], [0, 15, 50], [0, 15, 50, 50], [0, 15, 50, 50, 0]];
+const discounts = [0, 15000, 55000, 57000, 77000, 77000];
+const rates = [[], [15], [15, 50], [15, 15, 50], [15, 15, 50, 50], [15, 15, 50, 50, 0]];
 for (let n = 0; n <= 5; n++) {
     test(`N=${n}: tasas, importe y progreso`, () => {
         const input = prices.slice(0, n).reverse().map(price => ({ price }));
@@ -23,10 +23,10 @@ for (let n = 0; n <= 5; n++) {
 }
 test('empates, cantidades y redondeo por unidad', () => {
     const result = calculateArmaTuBlack([{ price: 101, quantity: 4 }]);
-    assert.deepEqual(result.lines.map(l => l.amount), [0, 15, 51, 51]);
-    assert.equal(result.discount, 117);
+    assert.deepEqual(result.lines.map(l => l.amount), [15, 15, 51, 51]);
+    assert.equal(result.discount, 132);
     assert.equal(EXTRA_UNITS_DISCOUNT, 0);
-    assert.equal(calculateArmaTuBlack([{ price: 100, quantity: 8 }]).discount, 115);
+    assert.equal(calculateArmaTuBlack([{ price: 100, quantity: 8 }]).discount, 130);
 });
 test('excluye ofertas, Escalera y tag 937; admite carritos antiguos', () => {
     const result = calculateArmaTuBlack([
@@ -38,7 +38,7 @@ test('excluye ofertas, Escalera y tag 937; admite carritos antiguos', () => {
         { price: 100 }, { price: 100, regular_price: 100, on_sale: false },
     ]);
     assert.equal(result.eligibleCount, 2);
-    assert.equal(result.discount, 50);
+    assert.equal(result.discount, 65);
 });
 test('ventana Colombia, incluyendo los dos límites', () => {
     for (const [date, active] of [
@@ -106,8 +106,8 @@ test('cintillo: rutas de preview, reloj de campaña, DEV y View Transitions', ()
 test('reparto por línea del carrito (el del ejemplo: 825k, 979k, 825k)', () => {
     const items = [{ price: 825000 }, { price: 979000 }, { price: 825000 }];
     const lines = allocateArmaTuBlack(items);
-    assert.deepEqual(lines.map(l => l.pcts), [[15], [0], [50]]);
-    assert.deepEqual(lines.map(l => l.discount), [123750, 0, 412500]);
+    assert.deepEqual(lines.map(l => l.pcts), [[15], [15], [50]]);
+    assert.deepEqual(lines.map(l => l.discount), [123750, 146850, 412500]);
     assert.equal(lines.reduce((s, l) => s + l.discount, 0), calculateArmaTuBlack(items).discount);
 });
 test('reparto: con descuento propio queda fuera y una línea con cantidad mezcla tasas', () => {
@@ -115,8 +115,8 @@ test('reparto: con descuento propio queda fuera y una línea con cantidad mezcla
     const lines = allocateArmaTuBlack(items);
     assert.deepEqual(lines.map(l => l.eligible), [false, true]);
     assert.deepEqual(lines[0].pcts, []);
-    assert.deepEqual(lines[1].pcts, [0, 15, 50]);
-    assert.equal(lines[1].discount, 65000);
+    assert.deepEqual(lines[1].pcts, [15, 15, 50]);
+    assert.equal(lines[1].discount, 80000);
 });
 
 test('medias: siguen elegibles en Arma tu Black pero van al final', () => {
@@ -125,4 +125,12 @@ test('medias: siguen elegibles en Arma tu Black pero van al final', () => {
     for (const slug of ['cinturon-doble-faz', 'camisa-mediana', 'winsdor-v'])
         assert.equal(isArmaLowPriority({ slug, name: '' }), false, slug);
     assert.equal(isArmaCatalogProduct({ slug: 'medias-gatos', name: 'Medias Gatos', on_sale: false, prices: { price: '30000', regular_price: '30000' } }), true);
+});
+
+test('regla C: sumar un 2.º producto nunca baja el descuento total', () => {
+    for (const a of [100000, 510000, 890000]) for (const b of [20000, 27500, 150000, a]) {
+        const before = calculateArmaTuBlack([{ price: a }]).discount;
+        const after = calculateArmaTuBlack([{ price: a }, { price: b }]).discount;
+        assert.ok(after >= before, `${a} + ${b}: ${after} < ${before}`);
+    }
 });

@@ -42,7 +42,8 @@ const activeAtBuild = dev || (preview ? Astro.url.pathname.startsWith('/black-da
 )}
 <style is:global>
     /* Piezas Black Days del resto del sitio: solo existen con la ventana activa (misma clase del cintillo). */
-    :root:not(.black-days-active) :is(.black-chip, .black-pdp-note, .black-menu-item, .black-menu-sep, .bd-home-hero, .bd-popup) { display: none !important; }
+    :root:not(.black-days-active) :is(.black-chip, .black-price-note, .black-pdp-note, .black-menu-item, .black-menu-sep, .bd-home-hero, .bd-popup) { display: none !important; }
+    .black-price-note { display: block; margin-top: 2px; font-family: var(--font-paragraphs); font-size: 12px; font-weight: 700; color: #8a6a1f; letter-spacing: .01em; }
     .black-days-active .home-hero-slot { display: none; }
     .black-chip { background: #000; color: #D4A853; border: 1px solid #D4A853; }
     .black-pdp-note { margin: 12px 0 0; padding: 10px 12px; background: #000; color: #fff; font-family: var(--font-paragraphs); font-size: 13px; line-height: 1.5; }

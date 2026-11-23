@@ -114,9 +114,9 @@ export function ArmaTuBlackLinePrice({ total, discount }: { total: number; disco
 
 const TIERS = [
     { n: 1, text: '15 % off al producto' },
-    { n: 2, text: '50 % off al de menor precio' },
-    { n: 3, text: '50 % al de menor precio + 15 % al siguiente' },
-    { n: 4, text: '50 % a los 2 de menor precio + 15 % al siguiente' },
+    { n: 2, text: '15 % al de mayor precio + 50 % al de menor precio' },
+    { n: 3, text: '15 % a los 2 de mayor precio + 50 % al de menor precio' },
+    { n: 4, text: '15 % a los 2 de mayor precio + 50 % a los 2 de menor precio' },
 ];
 
 // Resumen compacto: una fila por escalón, el actual resaltado. El detalle por producto va en cada línea del carrito.

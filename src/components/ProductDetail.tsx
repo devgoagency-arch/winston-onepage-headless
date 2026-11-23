@@ -5,6 +5,7 @@ import { addToCart } from '../store/cart';
 import { redirectToCheckout } from '../utils/checkout';
 import { trackMetaEvent } from '../utils/metaPixel';
 import { isArmaCatalogProduct } from '../lib/blackDays';
+import { useArmaSaving } from '../lib/armaSaving';
 // Función de normalización robusta para comparar slugs/nombres con acentos
 function normalizeAttr(str: any): string {
   if (!str) return '';
@@ -518,6 +519,8 @@ export default function ProductDetail({ initialProduct }: Props) {
   const galleryRef = useRef<HTMLDivElement>(null);
   const productDetailRef = useRef<HTMLDivElement>(null);
   const selectorsRef = useRef<HTMLDivElement>(null);
+  // Descuento de Arma tu Black de este producto según lo que haya en el carrito.
+  const armaSaving = useArmaSaving(Number(product.prices?.price || 0) / (10 ** (product.prices?.currency_minor_unit || 0)), product.slug, product.name, product.tags);
   const [showStickyBar, setShowStickyBar] = useState(false);
   const [bottomSheetOpen, setBottomSheetOpen] = useState(false);
 
@@ -966,7 +969,12 @@ export default function ProductDetail({ initialProduct }: Props) {
 
               {isArmaCatalogProduct(product) && (
                 <p className="black-pdp-note">
-                  <strong>🖤 Arma tu Black</strong> · 15 % off en tu producto y 50 % en el de menor precio si llevas 2.{' '}
+                  <strong>🖤 Arma tu Black</strong> ·{' '}
+                  {armaSaving.inCart === 0
+                    ? `15 % off en este producto: queda en $${new Intl.NumberFormat('es-CO').format(Math.round(Number(product.prices?.price || 0) / (10 ** (product.prices?.currency_minor_unit || 0))) - armaSaving.saving)}. Suma otro y el de menor precio lleva 50 %.`
+                    : armaSaving.saving > 0
+                      ? `Súmalo a tu carrito y ahorras $${new Intl.NumberFormat('es-CO').format(armaSaving.saving)} en total.`
+                      : '15 % off en tu producto; si llevas 2, el de menor precio lleva 50 %.'}{' '}
                   <a href="/black-days?campaigntab=249#favoritos-sticky">Ver cómo →</a>
                 </p>
               )}
