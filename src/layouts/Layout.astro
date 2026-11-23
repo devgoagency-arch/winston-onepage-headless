@@ -87,6 +87,10 @@ const seo = rawSeo || {
 };
 
 seo.canonical = customCanonical ?? `https://www.winstonandharrystore.com${cleanPath === '/' ? '' : cleanPath}`;
+
+// Imagen que se ve al compartir el enlace: la misma en la home y en Black Days (1200x630).
+const isShareImagePage = cleanPath === '/' || cleanPath === '/black-days';
+if (isShareImagePage) seo.ogImage = `${SITE_URL}/images/og-winston-harry.jpg`;
 ---
 
 <!doctype html>
@@ -150,6 +154,9 @@ seo.canonical = customCanonical ?? `https://www.winstonandharrystore.com${cleanP
             content={seo.ogDescription || seo.description}
         />
         <meta property="og:image" content={seo.ogImage} />
+        {isShareImagePage && <meta property="og:image:type" content="image/jpeg" />}
+        {isShareImagePage && <meta property="og:image:width" content="1200" />}
+        {isShareImagePage && <meta property="og:image:height" content="630" />}
 
         <!-- Twitter -->
         <meta property="twitter:card" content="summary_large_image" />
