@@ -71,9 +71,20 @@ export async function getStaticPaths() {
     console.log(`[SSG Total] Iniciando pre-generación de catálogos estáticos para ${astroSlugsToGen.length} categorías...`);
     
     // También agregamos "all" para la tienda completa
-    const categoriesToGen = [...astroSlugsToGen, { id: 'all', slug: 'tienda', name: 'Tienda' }];
+    // "tienda" va primero: es el índice del buscador y el catálogo más importante.
+    const categoriesToGen = [{ id: 'all', slug: 'tienda', name: 'Tienda' }, ...astroSlugsToGen];
+
+    // Si WooCommerce va lento, el build no puede quedarse horas esperando: presupuesto de tiempo y corte tras 3 fallos seguidos.
+    // Un catálogo omitido se pide en vivo por /api/products; un catálogo vacío nunca se escribe.
+    const catalogStartedAt = Date.now();
+    const CATALOG_BUDGET_MS = 8 * 60 * 1000;
+    let consecutiveFailures = 0;
 
     for (const cat of categoriesToGen) {
+        if (Date.now() - catalogStartedAt > CATALOG_BUDGET_MS || consecutiveFailures >= 3) {
+            console.warn(`[SSG Total] Presupuesto de tiempo agotado o WooCommerce no responde: se omite ${cat.slug}`);
+            continue;
+        }
         try {
             console.log(`[SSG Total] Pre-generando catálogo para: ${cat.slug}`);
             let allCategoryProducts: any[] = [];
@@ -104,6 +115,11 @@ export async function getStaticPaths() {
                     if (page > 10) break; // Límite de seguridad
                     await new Promise(r => setTimeout(r, 300));
                 }
+
+                if (allCategoryProducts.length === 0) {
+                    throw new Error('WooCommerce no devolvió productos: no se escribe un catálogo vacío');
+                }
+                consecutiveFailures = 0;
 
                 // Mapeo ligero para reducir el tamaño del JSON
                 const lightweightProducts = allCategoryProducts
@@ -163,6 +179,7 @@ export async function getStaticPaths() {
             await new Promise(r => setTimeout(r, 500));
 
         } catch (catErr: any) {
+            consecutiveFailures++;
             console.error(`[SSG Total] Error pre-generando catálogo para ${cat.slug}:`, catErr.message);
         }
     }

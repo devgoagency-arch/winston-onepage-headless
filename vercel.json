@@ -7,7 +7,7 @@
   ],
   "headers": [
     {
-      "source": "/api/((?!stock).*)",
+      "source": "/api/((?!stock|products).*)",
       "headers": [
         {
           "key": "Cache-Control",
