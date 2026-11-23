@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>825,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>825,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -202,6 +202,8 @@
         "name": "Leeds-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -231,35 +233,8 @@
         "name": "Leeds-Miel-Winstonandharry-1",
         "alt": ""
       },
-      "stock_status": "instock",
-      "price": "825000",
-      "regular_price": "825000",
-      "sale_price": ""
-    },
-    {
-      "id": 24430,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "miel",
-          "option": "miel"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "39",
-          "option": "39"
-        }
-      ],
-      "image": {
-        "id": 60860,
-        "date_created": "2025-03-02T05:03:56",
-        "date_created_gmt": "2025-03-02T05:03:56",
-        "date_modified": "2025-03-03T03:13:55",
-        "date_modified_gmt": "2025-03-03T03:13:55",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/03/Leeds-Miel-Winstonandharry-1-e1752771882322.jpg",
-        "name": "Leeds-Miel-Winstonandharry-1",
-        "alt": ""
-      },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -289,6 +264,8 @@
         "name": "Leeds-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -318,6 +295,8 @@
         "name": "Leeds-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -347,6 +326,8 @@
         "name": "Leeds-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -376,6 +357,8 @@
         "name": "Leeds-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -405,6 +388,8 @@
         "name": "Leeds-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -434,6 +419,8 @@
         "name": "Leeds-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -463,6 +450,8 @@
         "name": "Leeds-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -492,6 +481,8 @@
         "name": "Leeds-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -521,6 +512,8 @@
         "name": "Leeds-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -550,6 +543,8 @@
         "name": "Leeds-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -579,6 +574,8 @@
         "name": "Leeds-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -608,6 +605,8 @@
         "name": "Leeds-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -637,6 +636,8 @@
         "name": "Leeds-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -1398,8 +1399,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:32:06",
       "date_created_gmt": "2022-08-25T22:32:06",
-      "date_modified": "2026-05-07T23:05:27",
-      "date_modified_gmt": "2026-05-07T23:05:27",
+      "date_modified": "2026-10-27T19:15:14",
+      "date_modified_gmt": "2026-10-27T19:15:14",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/leeds/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=44",
       "sku": "7020302044",
@@ -1422,7 +1423,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 2,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -2046,7 +2047,7 @@
         {
           "id": 2259672,
           "key": "_last_change_time",
-          "value": "1778184200"
+          "value": "1793122930"
         },
         {
           "id": 2314846,
@@ -2778,8 +2779,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:32:06",
       "date_created_gmt": "2022-08-25T22:32:06",
-      "date_modified": "2026-05-07T23:05:27",
-      "date_modified_gmt": "2026-05-07T23:05:27",
+      "date_modified": "2026-11-04T17:52:59",
+      "date_modified_gmt": "2026-11-04T17:52:59",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/leeds/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=42",
       "sku": "7020302042",
@@ -2802,7 +2803,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 6,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -3426,7 +3427,7 @@
         {
           "id": 2259670,
           "key": "_last_change_time",
-          "value": "1778184199"
+          "value": "1793814779"
         },
         {
           "id": 2314844,
@@ -4158,8 +4159,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:32:05",
       "date_created_gmt": "2022-08-25T22:32:05",
-      "date_modified": "2026-06-02T17:35:08",
-      "date_modified_gmt": "2026-06-02T17:35:08",
+      "date_modified": "2026-10-27T19:15:14",
+      "date_modified_gmt": "2026-10-27T19:15:14",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/leeds/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=40",
       "sku": "7020302040",
@@ -4182,7 +4183,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 2,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -4806,7 +4807,7 @@
         {
           "id": 2259668,
           "key": "_last_change_time",
-          "value": "1780421708"
+          "value": "1793122929"
         },
         {
           "id": 2314853,
@@ -8992,8 +8993,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:32:05",
       "date_created_gmt": "2022-08-25T22:32:05",
-      "date_modified": "2026-05-07T23:05:21",
-      "date_modified_gmt": "2026-05-07T23:05:21",
+      "date_modified": "2026-10-05T21:50:15",
+      "date_modified_gmt": "2026-10-05T21:50:15",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/leeds/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=42",
       "sku": "7020326042",
@@ -9016,7 +9017,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 7,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -9643,7 +9644,7 @@
         {
           "id": 2259681,
           "key": "_last_change_time",
-          "value": "1778184148"
+          "value": "1791237015"
         },
         {
           "id": 2314854,
@@ -9685,8 +9686,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:31:52",
       "date_created_gmt": "2022-08-25T22:31:52",
-      "date_modified": "2026-06-02T17:35:08",
-      "date_modified_gmt": "2026-06-02T17:35:08",
+      "date_modified": "2026-09-08T17:13:01",
+      "date_modified_gmt": "2026-09-08T17:13:01",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/leeds/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=41",
       "sku": "7020326041",
@@ -9709,7 +9710,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 3,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -10336,7 +10337,7 @@
         {
           "id": 2258467,
           "key": "_last_change_time",
-          "value": "1780421708"
+          "value": "1788887581"
         },
         {
           "id": 2314860,
@@ -10378,8 +10379,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:31:52",
       "date_created_gmt": "2022-08-25T22:31:52",
-      "date_modified": "2026-06-02T17:35:08",
-      "date_modified_gmt": "2026-06-02T17:35:08",
+      "date_modified": "2026-09-08T17:13:01",
+      "date_modified_gmt": "2026-09-08T17:13:01",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/leeds/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=40",
       "sku": "7020326040",
@@ -10402,7 +10403,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 4,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -11029,7 +11030,7 @@
         {
           "id": 2250069,
           "key": "_last_change_time",
-          "value": "1780421708"
+          "value": "1788887581"
         },
         {
           "id": 2314859,
@@ -11071,8 +11072,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:31:52",
       "date_created_gmt": "2022-08-25T22:31:52",
-      "date_modified": "2026-05-07T23:05:21",
-      "date_modified_gmt": "2026-05-07T23:05:21",
+      "date_modified": "2026-09-08T17:13:01",
+      "date_modified_gmt": "2026-09-08T17:13:01",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/leeds/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=39",
       "sku": "7020326039",
@@ -11095,8 +11096,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -11722,7 +11723,7 @@
         {
           "id": 2259680,
           "key": "_last_change_time",
-          "value": "1778184147"
+          "value": "1788887581"
         },
         {
           "id": 2314858,
@@ -13147,6 +13148,8 @@
     }
   ],
   "wpc_resolved_media": {
+    "17407": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/04/061-zapato-cenital.jpg",
+    "17408": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/04/061-zapato-lateral.jpg",
     "60861": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/03/Leeds-Miel-Winstonandharry-2-e1752771893250.jpg",
     "60862": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/03/Leeds-Miel-Winstonandharry-3-e1752771909529.jpg",
     "60863": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/03/Leeds-Miel-Winstonandharry-4-e1752771945582.jpg",
@@ -13169,6 +13172,16 @@
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/03/Leeds-Miel-Winstonandharry-1-e1752771882322.jpg",
         "alt": "Leeds-Miel-Winstonandharry-1",
         "name": "Leeds-Miel-Winstonandharry-1"
+      },
+      {
+        "id": 17408,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/04/061-zapato-lateral.jpg",
+        "alt": "Leeds"
+      },
+      {
+        "id": 17407,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/04/061-zapato-cenital.jpg",
+        "alt": "Leeds"
       },
       {
         "id": 60861,

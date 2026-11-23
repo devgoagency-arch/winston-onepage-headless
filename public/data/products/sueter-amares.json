@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>350,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>350,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -180,6 +180,8 @@
         "name": "Winston and Harry Sueter Amares azul oscuto frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 16,
       "stock_status": "instock",
       "price": "350000",
       "regular_price": "350000",
@@ -209,6 +211,8 @@
         "name": "Winston and Harry Sueter Amares azul oscuto frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 15,
       "stock_status": "instock",
       "price": "350000",
       "regular_price": "350000",
@@ -238,6 +242,8 @@
         "name": "Winston and Harry Sueter Amares azul oscuto frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "350000",
       "regular_price": "350000",
@@ -267,6 +273,8 @@
         "name": "Winston and Harry Sueter Amares azul oscuto frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 9,
       "stock_status": "instock",
       "price": "350000",
       "regular_price": "350000",
@@ -296,6 +304,8 @@
         "name": "Winston and Harry Sueter Amares azul oscuto frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "350000",
       "regular_price": "350000",
@@ -325,6 +335,8 @@
         "name": "Winston-and-Harry-Sueter-Amares-perlado-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 17,
       "stock_status": "instock",
       "price": "350000",
       "regular_price": "350000",
@@ -354,6 +366,8 @@
         "name": "Winston-and-Harry-Sueter-Amares-perlado-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 16,
       "stock_status": "instock",
       "price": "350000",
       "regular_price": "350000",
@@ -383,6 +397,8 @@
         "name": "Winston-and-Harry-Sueter-Amares-perlado-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "350000",
       "regular_price": "350000",
@@ -412,6 +428,8 @@
         "name": "Winston-and-Harry-Sueter-Amares-perlado-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 8,
       "stock_status": "instock",
       "price": "350000",
       "regular_price": "350000",
@@ -441,6 +459,8 @@
         "name": "Winston-and-Harry-Sueter-Amares-perlado-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "350000",
       "regular_price": "350000",
@@ -3746,8 +3766,8 @@
       "type": "variation",
       "date_created": "2026-05-08T02:41:02",
       "date_created_gmt": "2026-05-08T02:41:02",
-      "date_modified": "2026-07-16T22:45:12",
-      "date_modified_gmt": "2026-07-16T22:45:12",
+      "date_modified": "2026-10-14T06:13:46",
+      "date_modified_gmt": "2026-10-14T06:13:46",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/sueter-amares/?attribute_pa_selecciona-el-color=perlado&attribute_pa_selecciona-una-talla=m",
       "sku": "6160825034",
@@ -3770,7 +3790,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 17,
+      "stock_quantity": 16,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -3817,7 +3837,7 @@
         {
           "id": 2342755,
           "key": "_last_change_time",
-          "value": "1784241912"
+          "value": "1791958426"
         },
         {
           "id": 2342756,
@@ -4824,8 +4844,8 @@
       "type": "variation",
       "date_created": "2026-05-08T02:41:02",
       "date_created_gmt": "2026-05-08T02:41:02",
-      "date_modified": "2026-08-13T00:03:42",
-      "date_modified_gmt": "2026-08-13T00:03:42",
+      "date_modified": "2026-09-23T22:56:07",
+      "date_modified_gmt": "2026-09-23T22:56:07",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/sueter-amares/?attribute_pa_selecciona-el-color=perlado&attribute_pa_selecciona-una-talla=l",
       "sku": "6160825036",
@@ -4848,7 +4868,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 18,
+      "stock_quantity": 17,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -4895,7 +4915,7 @@
         {
           "id": 2342741,
           "key": "_last_change_time",
-          "value": "1786579422"
+          "value": "1790204167"
         },
         {
           "id": 2342742,
@@ -5902,8 +5922,8 @@
       "type": "variation",
       "date_created": "2026-05-08T02:41:01",
       "date_created_gmt": "2026-05-08T02:41:01",
-      "date_modified": "2026-06-16T17:44:55",
-      "date_modified_gmt": "2026-06-16T17:44:55",
+      "date_modified": "2026-11-23T04:40:01",
+      "date_modified_gmt": "2026-11-23T04:40:01",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/sueter-amares/?attribute_pa_selecciona-el-color=azul-oscuro&attribute_pa_selecciona-una-talla=xxl",
       "sku": "6160837040",
@@ -5926,7 +5946,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 3,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -5973,7 +5993,7 @@
         {
           "id": 2342727,
           "key": "_last_change_time",
-          "value": "1781631895"
+          "value": "1795408801"
         },
         {
           "id": 2342728,
@@ -6980,8 +7000,8 @@
       "type": "variation",
       "date_created": "2026-05-08T02:41:01",
       "date_created_gmt": "2026-05-08T02:41:01",
-      "date_modified": "2026-06-02T17:42:45",
-      "date_modified_gmt": "2026-06-02T17:42:45",
+      "date_modified": "2026-09-16T16:53:16",
+      "date_modified_gmt": "2026-09-16T16:53:16",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/sueter-amares/?attribute_pa_selecciona-el-color=azul-oscuro&attribute_pa_selecciona-una-talla=xl",
       "sku": "6160837038",
@@ -7004,7 +7024,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 10,
+      "stock_quantity": 9,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -7051,7 +7071,7 @@
         {
           "id": 2342714,
           "key": "_last_change_time",
-          "value": "1780422165"
+          "value": "1789577596"
         },
         {
           "id": 2342715,
@@ -8058,8 +8078,8 @@
       "type": "variation",
       "date_created": "2026-05-08T02:41:01",
       "date_created_gmt": "2026-05-08T02:41:01",
-      "date_modified": "2026-08-13T00:03:42",
-      "date_modified_gmt": "2026-08-13T00:03:42",
+      "date_modified": "2026-10-05T21:49:56",
+      "date_modified_gmt": "2026-10-05T21:49:56",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/sueter-amares/?attribute_pa_selecciona-el-color=azul-oscuro&attribute_pa_selecciona-una-talla=s",
       "sku": "6160837032",
@@ -8082,7 +8102,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 4,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -8129,7 +8149,7 @@
         {
           "id": 2342701,
           "key": "_last_change_time",
-          "value": "1786579422"
+          "value": "1791236996"
         },
         {
           "id": 2342702,
@@ -9136,8 +9156,8 @@
       "type": "variation",
       "date_created": "2026-05-08T02:41:01",
       "date_created_gmt": "2026-05-08T02:41:01",
-      "date_modified": "2026-06-02T17:42:45",
-      "date_modified_gmt": "2026-06-02T17:42:45",
+      "date_modified": "2026-10-05T21:49:56",
+      "date_modified_gmt": "2026-10-05T21:49:56",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/sueter-amares/?attribute_pa_selecciona-el-color=azul-oscuro&attribute_pa_selecciona-una-talla=m",
       "sku": "6160837034",
@@ -9160,7 +9180,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 17,
+      "stock_quantity": 15,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -9207,7 +9227,7 @@
         {
           "id": 2342688,
           "key": "_last_change_time",
-          "value": "1780422165"
+          "value": "1791236996"
         },
         {
           "id": 2342689,
@@ -10214,8 +10234,8 @@
       "type": "variation",
       "date_created": "2026-05-08T02:41:01",
       "date_created_gmt": "2026-05-08T02:41:01",
-      "date_modified": "2026-06-02T17:42:45",
-      "date_modified_gmt": "2026-06-02T17:42:45",
+      "date_modified": "2026-11-23T04:40:01",
+      "date_modified_gmt": "2026-11-23T04:40:01",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/sueter-amares/?attribute_pa_selecciona-el-color=azul-oscuro&attribute_pa_selecciona-una-talla=l",
       "sku": "6160837036",
@@ -10238,7 +10258,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 19,
+      "stock_quantity": 16,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -10285,7 +10305,7 @@
         {
           "id": 2342675,
           "key": "_last_change_time",
-          "value": "1780422165"
+          "value": "1795408801"
         },
         {
           "id": 2342676,
@@ -11293,10 +11313,12 @@
     "84647": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-Sueter-Amares-azul-oscuto-manga.png",
     "84649": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-Sueter-Amares-azul-oscuro-hombro-5.png",
     "84650": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-Sueter-Amares-azul-oscuto-detalle.png",
+    "84651": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-Sueter-Amares-perlado-doblado.jpg",
     "84652": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-Sueter-Amares-perlado-espalda.jpg",
     "84654": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-Sueter-Amares-perlado-hombro.jpg",
     "84655": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-Sueter-Amares-perlado-inferior.jpg",
-    "84656": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-Sueter-Amares-perlado-manga.jpg"
+    "84656": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-Sueter-Amares-perlado-manga.jpg",
+    "84657": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-Sueter-Amares-perlado-cuello.jpg"
   },
   "stock_status": "instock",
   "variation_images_map": {
@@ -11346,6 +11368,16 @@
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-Sueter-Amares-perlado-frente.jpg",
         "alt": "Winston-and-Harry-Sueter-Amares-perlado-frente",
         "name": "Winston-and-Harry-Sueter-Amares-perlado-frente"
+      },
+      {
+        "id": 84651,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-Sueter-Amares-perlado-doblado.jpg",
+        "alt": "Sueter Amares"
+      },
+      {
+        "id": 84657,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-Sueter-Amares-perlado-cuello.jpg",
+        "alt": "Sueter Amares"
       },
       {
         "id": 84652,

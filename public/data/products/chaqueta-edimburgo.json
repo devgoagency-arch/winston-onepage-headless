@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>890,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>890,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -190,6 +190,8 @@
         "name": "Chaqueta-Edimburgo-Azul-Winstonandharry-3",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "890000",
       "regular_price": "890000",
@@ -219,6 +221,8 @@
         "name": "Chaqueta-Edimburgo-Azul-Winstonandharry-3",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "890000",
       "regular_price": "890000",
@@ -248,6 +252,8 @@
         "name": "Chaqueta-Edimburgo-Azul-Winstonandharry-3",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "890000",
       "regular_price": "890000",
@@ -277,6 +283,8 @@
         "name": "Chaqueta-Edimburgo-Azul-Winstonandharry-3",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "890000",
       "regular_price": "890000",
@@ -306,6 +314,8 @@
         "name": "Chaqueta-Edimburgo-Azul-Winstonandharry-3",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "890000",
       "regular_price": "890000",
@@ -335,6 +345,8 @@
         "name": "Chaqueta-Edimburgo-Gris-Winstonandharry-6",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "890000",
       "regular_price": "890000",
@@ -364,6 +376,8 @@
         "name": "Chaqueta-Edimburgo-Gris-Winstonandharry-6",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "890000",
       "regular_price": "890000",
@@ -393,6 +407,8 @@
         "name": "Chaqueta-Edimburgo-Gris-Winstonandharry-6",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "price": "890000",
       "regular_price": "890000",
@@ -422,6 +438,8 @@
         "name": "Chaqueta-Edimburgo-Gris-Winstonandharry-6",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "890000",
       "regular_price": "890000",
@@ -451,6 +469,8 @@
         "name": "Chaqueta-Edimburgo-Gris-Winstonandharry-6",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "890000",
       "regular_price": "890000",
@@ -480,6 +500,8 @@
         "name": "Chaqueta-Edimburgo-Vino-Winstonandharry-6",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "890000",
       "regular_price": "890000",
@@ -509,6 +531,8 @@
         "name": "Chaqueta-Edimburgo-Vino-Winstonandharry-6",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "890000",
       "regular_price": "890000",
@@ -538,6 +562,8 @@
         "name": "Chaqueta-Edimburgo-Vino-Winstonandharry-6",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "890000",
       "regular_price": "890000",
@@ -567,6 +593,8 @@
         "name": "Chaqueta-Edimburgo-Vino-Winstonandharry-6",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "price": "890000",
       "regular_price": "890000",
@@ -596,6 +624,8 @@
         "name": "Chaqueta-Edimburgo-Vino-Winstonandharry-6",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "890000",
       "regular_price": "890000",
@@ -3247,8 +3277,8 @@
       "type": "variation",
       "date_created": "2025-10-30T21:24:45",
       "date_created_gmt": "2025-10-30T21:24:45",
-      "date_modified": "2026-05-07T23:01:08",
-      "date_modified_gmt": "2026-05-07T23:01:08",
+      "date_modified": "2026-09-16T16:54:28",
+      "date_modified_gmt": "2026-09-16T16:54:28",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/chaqueta-edimburgo/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=l",
       "sku": "19199901036",
@@ -3271,7 +3301,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 3,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -4065,7 +4095,7 @@
         {
           "id": 2219128,
           "key": "_last_change_time",
-          "value": "1778177789"
+          "value": "1789577668"
         },
         {
           "id": 2310953,
@@ -4107,8 +4137,8 @@
       "type": "variation",
       "date_created": "2025-10-30T21:24:45",
       "date_created_gmt": "2025-10-30T21:24:45",
-      "date_modified": "2026-05-07T23:01:08",
-      "date_modified_gmt": "2026-05-07T23:01:08",
+      "date_modified": "2026-09-23T22:57:41",
+      "date_modified_gmt": "2026-09-23T22:57:41",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/chaqueta-edimburgo/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=m",
       "sku": "19199901034",
@@ -4131,7 +4161,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 4,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -4925,7 +4955,7 @@
         {
           "id": 2257416,
           "key": "_last_change_time",
-          "value": "1778177789"
+          "value": "1790204261"
         },
         {
           "id": 2310952,
@@ -8407,8 +8437,8 @@
       "type": "variation",
       "date_created": "2025-09-02T23:04:59",
       "date_created_gmt": "2025-09-02T23:04:59",
-      "date_modified": "2026-05-07T23:01:08",
-      "date_modified_gmt": "2026-05-07T23:01:08",
+      "date_modified": "2026-11-23T04:39:15",
+      "date_modified_gmt": "2026-11-23T04:39:15",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/chaqueta-edimburgo/?attribute_pa_selecciona-el-color=vinotinto&attribute_pa_selecciona-una-talla=l",
       "sku": "19199919036",
@@ -8431,7 +8461,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 3,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -9225,7 +9255,7 @@
         {
           "id": 2219095,
           "key": "_last_change_time",
-          "value": "1778177789"
+          "value": "1795408755"
         },
         {
           "id": 2311189,
@@ -14427,8 +14457,8 @@
       "type": "variation",
       "date_created": "2025-09-02T23:04:59",
       "date_created_gmt": "2025-09-02T23:04:59",
-      "date_modified": "2026-05-07T23:01:00",
-      "date_modified_gmt": "2026-05-07T23:01:00",
+      "date_modified": "2026-11-04T17:54:53",
+      "date_modified_gmt": "2026-11-04T17:54:53",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/chaqueta-edimburgo/?attribute_pa_selecciona-el-color=gris&attribute_pa_selecciona-una-talla=m",
       "sku": "19199903034",
@@ -14451,7 +14481,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 3,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -15245,7 +15275,7 @@
         {
           "id": 2254938,
           "key": "_last_change_time",
-          "value": "1778177782"
+          "value": "1793814893"
         },
         {
           "id": 2311193,

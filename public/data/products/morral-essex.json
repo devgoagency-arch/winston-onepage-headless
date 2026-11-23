@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>836,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>836,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -153,6 +153,8 @@
         "name": "Morral-Essex-Cuero-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "price": "836000",
       "regular_price": "836000",
@@ -177,6 +179,8 @@
         "name": "Morral-Essex-Cuero-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 8,
       "stock_status": "instock",
       "price": "836000",
       "regular_price": "836000",
@@ -254,8 +258,8 @@
       "type": "variation",
       "date_created": "2023-06-08T16:36:17",
       "date_created_gmt": "2023-06-08T16:36:17",
-      "date_modified": "2026-05-07T23:06:59",
-      "date_modified_gmt": "2026-05-07T23:06:59",
+      "date_modified": "2026-10-14T06:14:44",
+      "date_modified_gmt": "2026-10-14T06:14:44",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/morral-essex/?attribute_pa_selecciona-el-color=cafe",
       "sku": "15150704000",
@@ -278,7 +282,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 2,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -891,7 +895,7 @@
         {
           "id": 2261943,
           "key": "_last_change_time",
-          "value": "1778184396"
+          "value": "1791958484"
         }
       ],
       "name": "Café",
@@ -928,8 +932,8 @@
       "type": "variation",
       "date_created": "2023-06-08T16:36:17",
       "date_created_gmt": "2023-06-08T16:36:17",
-      "date_modified": "2026-08-24T20:31:48",
-      "date_modified_gmt": "2026-08-24T20:31:48",
+      "date_modified": "2026-09-16T16:54:27",
+      "date_modified_gmt": "2026-09-16T16:54:27",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/morral-essex/?attribute_pa_selecciona-el-color=negro",
       "sku": "15150702000",
@@ -1565,7 +1569,7 @@
         {
           "id": 2261941,
           "key": "_last_change_time",
-          "value": "1787603446"
+          "value": "1789577667"
         },
         {
           "id": 2313200,
@@ -1607,8 +1611,8 @@
       "type": "variation",
       "date_created": "2023-06-08T16:36:17",
       "date_created_gmt": "2023-06-08T16:36:17",
-      "date_modified": "2026-06-02T17:37:25",
-      "date_modified_gmt": "2026-06-02T17:37:25",
+      "date_modified": "2026-10-05T21:51:15",
+      "date_modified_gmt": "2026-10-05T21:51:15",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/morral-essex/?attribute_pa_selecciona-el-color=miel",
       "sku": "15150726000",
@@ -1631,7 +1635,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 4,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -2244,7 +2248,7 @@
         {
           "id": 2261944,
           "key": "_last_change_time",
-          "value": "1780421845"
+          "value": "1791237075"
         },
         {
           "id": 2313199,

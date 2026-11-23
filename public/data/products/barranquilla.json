@@ -11,9 +11,9 @@
   "description": "",
   "on_sale": true,
   "prices": {
-    "price": "492800",
+    "price": "352000",
     "regular_price": "704000",
-    "sale_price": "492800",
+    "sale_price": "352000",
     "price_range": null,
     "currency_code": "COP",
     "currency_symbol": "$",
@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>704,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;704,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>492,800</span></ins><span class=\"screen-reader-text\">Current price is: &#036;492,800.</span>",
+  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>704,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;704,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>352,000</span></ins><span class=\"screen-reader-text\">Current price is: &#036;352,000.</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -208,8 +208,10 @@
         "name": "Barranquilla-zapato-hebilla-miel-winstonandharry (6)",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
-      "price": "492800",
+      "price": "352000",
       "regular_price": "704000",
       "sale_price": ""
     },
@@ -237,8 +239,10 @@
         "name": "Barranquilla-zapato-hebilla-miel-winstonandharry (6)",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "492800",
+      "price": "352000",
       "regular_price": "704000",
       "sale_price": ""
     },
@@ -266,8 +270,10 @@
         "name": "Barranquilla-zapato-hebilla-miel-winstonandharry (6)",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "492800",
+      "price": "352000",
       "regular_price": "704000",
       "sale_price": ""
     },
@@ -295,8 +301,10 @@
         "name": "Barranquilla-zapato-hebilla-cafe-winstonandharry",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "492800",
+      "price": "352000",
       "regular_price": "704000",
       "sale_price": ""
     },
@@ -324,8 +332,10 @@
         "name": "Barranquilla-zapato-hebilla-cafe-winstonandharry",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "492800",
+      "price": "352000",
       "regular_price": "704000",
       "sale_price": ""
     },
@@ -353,8 +363,10 @@
         "name": "Barranquilla-zapato-hebilla-cafe-winstonandharry",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "492800",
+      "price": "352000",
       "regular_price": "704000",
       "sale_price": ""
     }
@@ -1043,15 +1055,15 @@
       "type": "variation",
       "date_created": "2023-06-08T17:52:39",
       "date_created_gmt": "2023-06-08T17:52:39",
-      "date_modified": "2026-07-03T17:21:37",
-      "date_modified_gmt": "2026-07-03T17:21:37",
+      "date_modified": "2026-11-23T04:31:36",
+      "date_modified_gmt": "2026-11-23T04:31:36",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/barranquilla/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=44",
       "sku": "7308304044",
       "global_unique_id": "",
-      "price": "492800",
+      "price": "352000",
       "regular_price": "704000",
-      "sale_price": "492800",
+      "sale_price": "352000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -1631,7 +1643,7 @@
         {
           "id": 2215650,
           "key": "_last_change_time",
-          "value": "1783099297"
+          "value": "1795408296"
         },
         {
           "id": 2313168,
@@ -1673,15 +1685,15 @@
       "type": "variation",
       "date_created": "2023-06-08T17:52:39",
       "date_created_gmt": "2023-06-08T17:52:39",
-      "date_modified": "2026-05-08T21:40:35",
-      "date_modified_gmt": "2026-05-08T21:40:35",
+      "date_modified": "2026-11-23T04:31:36",
+      "date_modified_gmt": "2026-11-23T04:31:36",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/barranquilla/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=43",
       "sku": "7308304043",
       "global_unique_id": "",
-      "price": "492800",
+      "price": "352000",
       "regular_price": "704000",
-      "sale_price": "492800",
+      "sale_price": "352000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -2256,7 +2268,7 @@
         {
           "id": 2215648,
           "key": "_last_change_time",
-          "value": "1778275710"
+          "value": "1795408296"
         },
         {
           "id": 2313167,
@@ -2298,15 +2310,15 @@
       "type": "variation",
       "date_created": "2023-06-08T17:52:39",
       "date_created_gmt": "2023-06-08T17:52:39",
-      "date_modified": "2026-05-08T21:40:35",
-      "date_modified_gmt": "2026-05-08T21:40:35",
+      "date_modified": "2026-11-23T04:31:36",
+      "date_modified_gmt": "2026-11-23T04:31:36",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/barranquilla/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=42",
       "sku": "7308304042",
       "global_unique_id": "",
-      "price": "492800",
+      "price": "352000",
       "regular_price": "704000",
-      "sale_price": "492800",
+      "sale_price": "352000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -2881,7 +2893,7 @@
         {
           "id": 2215645,
           "key": "_last_change_time",
-          "value": "1778275710"
+          "value": "1795408296"
         },
         {
           "id": 2313166,
@@ -2923,15 +2935,15 @@
       "type": "variation",
       "date_created": "2023-06-08T17:52:39",
       "date_created_gmt": "2023-06-08T17:52:39",
-      "date_modified": "2026-05-08T21:40:35",
-      "date_modified_gmt": "2026-05-08T21:40:35",
+      "date_modified": "2026-11-23T04:31:35",
+      "date_modified_gmt": "2026-11-23T04:31:35",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/barranquilla/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=41",
       "sku": "7308304041",
       "global_unique_id": "",
-      "price": "492800",
+      "price": "352000",
       "regular_price": "704000",
-      "sale_price": "492800",
+      "sale_price": "352000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -3511,7 +3523,7 @@
         {
           "id": 2215643,
           "key": "_last_change_time",
-          "value": "1778275710"
+          "value": "1795408295"
         },
         {
           "id": 2313165,
@@ -3553,15 +3565,15 @@
       "type": "variation",
       "date_created": "2023-06-08T17:52:39",
       "date_created_gmt": "2023-06-08T17:52:39",
-      "date_modified": "2026-05-08T21:40:35",
-      "date_modified_gmt": "2026-05-08T21:40:35",
+      "date_modified": "2026-11-23T04:31:35",
+      "date_modified_gmt": "2026-11-23T04:31:35",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/barranquilla/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=40",
       "sku": "7308304040",
       "global_unique_id": "",
-      "price": "492800",
+      "price": "352000",
       "regular_price": "704000",
-      "sale_price": "492800",
+      "sale_price": "352000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -4126,7 +4138,7 @@
         {
           "id": 2215641,
           "key": "_last_change_time",
-          "value": "1778275710"
+          "value": "1795408295"
         },
         {
           "id": 2313164,
@@ -4168,15 +4180,15 @@
       "type": "variation",
       "date_created": "2023-06-08T17:52:39",
       "date_created_gmt": "2023-06-08T17:52:39",
-      "date_modified": "2026-07-03T17:21:36",
-      "date_modified_gmt": "2026-07-03T17:21:36",
+      "date_modified": "2026-11-23T04:31:35",
+      "date_modified_gmt": "2026-11-23T04:31:35",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/barranquilla/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=39",
       "sku": "7308304039",
       "global_unique_id": "",
-      "price": "492800",
+      "price": "352000",
       "regular_price": "704000",
-      "sale_price": "492800",
+      "sale_price": "352000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -4756,7 +4768,7 @@
         {
           "id": 2215639,
           "key": "_last_change_time",
-          "value": "1783099297"
+          "value": "1795408295"
         },
         {
           "id": 2313163,
@@ -4798,15 +4810,15 @@
       "type": "variation",
       "date_created": "2023-06-08T17:52:39",
       "date_created_gmt": "2023-06-08T17:52:39",
-      "date_modified": "2026-05-08T21:40:35",
-      "date_modified_gmt": "2026-05-08T21:40:35",
+      "date_modified": "2026-11-23T04:31:35",
+      "date_modified_gmt": "2026-11-23T04:31:35",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/barranquilla/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=38",
       "sku": "7308304038",
       "global_unique_id": "",
-      "price": "492800",
+      "price": "352000",
       "regular_price": "704000",
-      "sale_price": "492800",
+      "sale_price": "352000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -5386,7 +5398,7 @@
         {
           "id": 2215637,
           "key": "_last_change_time",
-          "value": "1778275710"
+          "value": "1795408295"
         },
         {
           "id": 2313162,
@@ -5428,15 +5440,15 @@
       "type": "variation",
       "date_created": "2023-06-08T17:52:39",
       "date_created_gmt": "2023-06-08T17:52:39",
-      "date_modified": "2026-05-08T21:40:35",
-      "date_modified_gmt": "2026-05-08T21:40:35",
+      "date_modified": "2026-11-23T04:31:29",
+      "date_modified_gmt": "2026-11-23T04:31:29",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/barranquilla/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=37",
       "sku": "7308304037",
       "global_unique_id": "",
-      "price": "492800",
+      "price": "352000",
       "regular_price": "704000",
-      "sale_price": "492800",
+      "sale_price": "352000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -6016,7 +6028,7 @@
         {
           "id": 2215635,
           "key": "_last_change_time",
-          "value": "1778275709"
+          "value": "1795408289"
         },
         {
           "id": 2313161,
@@ -6683,15 +6695,15 @@
       "type": "variation",
       "date_created": "2023-06-08T17:52:39",
       "date_created_gmt": "2023-06-08T17:52:39",
-      "date_modified": "2026-05-08T21:40:35",
-      "date_modified_gmt": "2026-05-08T21:40:35",
+      "date_modified": "2026-11-23T04:31:29",
+      "date_modified_gmt": "2026-11-23T04:31:29",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/barranquilla/?attribute_pa_selecciona-el-color=tabaco&attribute_pa_selecciona-una-talla=44",
       "sku": "7308310044",
       "global_unique_id": "",
-      "price": "492800",
+      "price": "352000",
       "regular_price": "704000",
-      "sale_price": "492800",
+      "sale_price": "352000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -7271,7 +7283,7 @@
         {
           "id": 2215631,
           "key": "_last_change_time",
-          "value": "1778275709"
+          "value": "1795408289"
         },
         {
           "id": 2313159,
@@ -7313,15 +7325,15 @@
       "type": "variation",
       "date_created": "2023-06-08T17:52:39",
       "date_created_gmt": "2023-06-08T17:52:39",
-      "date_modified": "2026-05-08T21:40:35",
-      "date_modified_gmt": "2026-05-08T21:40:35",
+      "date_modified": "2026-11-23T04:31:29",
+      "date_modified_gmt": "2026-11-23T04:31:29",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/barranquilla/?attribute_pa_selecciona-el-color=tabaco&attribute_pa_selecciona-una-talla=43",
       "sku": "7308310043",
       "global_unique_id": "",
-      "price": "492800",
+      "price": "352000",
       "regular_price": "704000",
-      "sale_price": "492800",
+      "sale_price": "352000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -7896,7 +7908,7 @@
         {
           "id": 2215629,
           "key": "_last_change_time",
-          "value": "1778275709"
+          "value": "1795408289"
         },
         {
           "id": 2313158,
@@ -7938,15 +7950,15 @@
       "type": "variation",
       "date_created": "2023-06-08T17:52:39",
       "date_created_gmt": "2023-06-08T17:52:39",
-      "date_modified": "2026-05-08T21:40:35",
-      "date_modified_gmt": "2026-05-08T21:40:35",
+      "date_modified": "2026-11-23T04:31:29",
+      "date_modified_gmt": "2026-11-23T04:31:29",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/barranquilla/?attribute_pa_selecciona-el-color=tabaco&attribute_pa_selecciona-una-talla=42",
       "sku": "7308310042",
       "global_unique_id": "",
-      "price": "492800",
+      "price": "352000",
       "regular_price": "704000",
-      "sale_price": "492800",
+      "sale_price": "352000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -8511,7 +8523,7 @@
         {
           "id": 2215627,
           "key": "_last_change_time",
-          "value": "1778275709"
+          "value": "1795408289"
         },
         {
           "id": 2313157,
@@ -8553,15 +8565,15 @@
       "type": "variation",
       "date_created": "2023-06-08T17:52:38",
       "date_created_gmt": "2023-06-08T17:52:38",
-      "date_modified": "2026-05-08T21:40:35",
-      "date_modified_gmt": "2026-05-08T21:40:35",
+      "date_modified": "2026-11-23T04:31:29",
+      "date_modified_gmt": "2026-11-23T04:31:29",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/barranquilla/?attribute_pa_selecciona-el-color=tabaco&attribute_pa_selecciona-una-talla=41",
       "sku": "7308310041",
       "global_unique_id": "",
-      "price": "492800",
+      "price": "352000",
       "regular_price": "704000",
-      "sale_price": "492800",
+      "sale_price": "352000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -9136,7 +9148,7 @@
         {
           "id": 2215625,
           "key": "_last_change_time",
-          "value": "1778275709"
+          "value": "1795408289"
         },
         {
           "id": 2313172,
@@ -9178,15 +9190,15 @@
       "type": "variation",
       "date_created": "2023-06-08T17:52:38",
       "date_created_gmt": "2023-06-08T17:52:38",
-      "date_modified": "2026-05-08T21:40:35",
-      "date_modified_gmt": "2026-05-08T21:40:35",
+      "date_modified": "2026-11-23T04:31:29",
+      "date_modified_gmt": "2026-11-23T04:31:29",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/barranquilla/?attribute_pa_selecciona-el-color=tabaco&attribute_pa_selecciona-una-talla=40",
       "sku": "7308310040",
       "global_unique_id": "",
-      "price": "492800",
+      "price": "352000",
       "regular_price": "704000",
-      "sale_price": "492800",
+      "sale_price": "352000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -9761,7 +9773,7 @@
         {
           "id": 2215619,
           "key": "_last_change_time",
-          "value": "1778275709"
+          "value": "1795408289"
         },
         {
           "id": 2313171,
@@ -9803,15 +9815,15 @@
       "type": "variation",
       "date_created": "2023-06-08T17:52:38",
       "date_created_gmt": "2023-06-08T17:52:38",
-      "date_modified": "2026-05-08T21:40:29",
-      "date_modified_gmt": "2026-05-08T21:40:29",
+      "date_modified": "2026-11-23T04:31:28",
+      "date_modified_gmt": "2026-11-23T04:31:28",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/barranquilla/?attribute_pa_selecciona-el-color=tabaco&attribute_pa_selecciona-una-talla=39",
       "sku": "7308310039",
       "global_unique_id": "",
-      "price": "492800",
+      "price": "352000",
       "regular_price": "704000",
-      "sale_price": "492800",
+      "sale_price": "352000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -10391,7 +10403,7 @@
         {
           "id": 2215617,
           "key": "_last_change_time",
-          "value": "1778275700"
+          "value": "1795408288"
         },
         {
           "id": 2313170,
@@ -10433,15 +10445,15 @@
       "type": "variation",
       "date_created": "2023-06-08T17:52:38",
       "date_created_gmt": "2023-06-08T17:52:38",
-      "date_modified": "2026-07-03T17:21:36",
-      "date_modified_gmt": "2026-07-03T17:21:36",
+      "date_modified": "2026-11-23T04:31:28",
+      "date_modified_gmt": "2026-11-23T04:31:28",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/barranquilla/?attribute_pa_selecciona-el-color=tabaco&attribute_pa_selecciona-una-talla=38",
       "sku": "7308310038",
       "global_unique_id": "",
-      "price": "492800",
+      "price": "352000",
       "regular_price": "704000",
-      "sale_price": "492800",
+      "sale_price": "352000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -11021,7 +11033,7 @@
         {
           "id": 2215615,
           "key": "_last_change_time",
-          "value": "1783099296"
+          "value": "1795408288"
         },
         {
           "id": 2313174,
@@ -11063,15 +11075,15 @@
       "type": "variation",
       "date_created": "2023-06-08T17:52:38",
       "date_created_gmt": "2023-06-08T17:52:38",
-      "date_modified": "2026-05-08T21:40:29",
-      "date_modified_gmt": "2026-05-08T21:40:29",
+      "date_modified": "2026-11-23T04:31:28",
+      "date_modified_gmt": "2026-11-23T04:31:28",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/barranquilla/?attribute_pa_selecciona-el-color=tabaco&attribute_pa_selecciona-una-talla=37",
       "sku": "7308310037",
       "global_unique_id": "",
-      "price": "492800",
+      "price": "352000",
       "regular_price": "704000",
-      "sale_price": "492800",
+      "sale_price": "352000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -11636,7 +11648,7 @@
         {
           "id": 2215612,
           "key": "_last_change_time",
-          "value": "1778275700"
+          "value": "1795408288"
         },
         {
           "id": 2313173,

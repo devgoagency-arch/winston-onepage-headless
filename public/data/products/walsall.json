@@ -11,9 +11,9 @@
   "description": "<p>Estos tennis Walsall tienen una personalidad una con un poco mas de diseño y una mezcla materiales y texturas de alta calidad este modelo pude elevar tu estilo y darte el toque que talvez te hacia falta.</p>",
   "on_sale": true,
   "prices": {
-    "price": "323400",
+    "price": "161700",
     "regular_price": "539000",
-    "sale_price": "323400",
+    "sale_price": "161700",
     "price_range": null,
     "currency_code": "COP",
     "currency_symbol": "$",
@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>539,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;539,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>323,400</span></ins><span class=\"screen-reader-text\">Current price is: &#036;323,400.</span>",
+  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>539,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;539,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>161,700</span></ins><span class=\"screen-reader-text\">Current price is: &#036;161,700.</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -220,8 +220,10 @@
         "name": "winston-and-harry-tenis-walsall-azul-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "323400",
+      "price": "161700",
       "regular_price": "539000",
       "sale_price": ""
     }
@@ -1377,15 +1379,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:38:06",
       "date_created_gmt": "2022-08-25T22:38:06",
-      "date_modified": "2026-08-24T17:22:34",
-      "date_modified_gmt": "2026-08-24T17:22:34",
+      "date_modified": "2026-11-23T04:29:10",
+      "date_modified_gmt": "2026-11-23T04:29:10",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/walsall/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=43",
       "sku": "7402801043",
       "global_unique_id": "",
-      "price": "323400",
+      "price": "161700",
       "regular_price": "539000",
-      "sale_price": "323400",
+      "sale_price": "161700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -1883,7 +1885,7 @@
         {
           "id": 2218515,
           "key": "_last_change_time",
-          "value": "1787590671"
+          "value": "1795408150"
         }
       ],
       "name": "Azul, 43",
@@ -1920,15 +1922,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:38:06",
       "date_created_gmt": "2022-08-25T22:38:06",
-      "date_modified": "2026-08-24T17:22:34",
-      "date_modified_gmt": "2026-08-24T17:22:34",
+      "date_modified": "2026-11-23T04:29:10",
+      "date_modified_gmt": "2026-11-23T04:29:10",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/walsall/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=42",
       "sku": "7402801042",
       "global_unique_id": "",
-      "price": "323400",
+      "price": "161700",
       "regular_price": "539000",
-      "sale_price": "323400",
+      "sale_price": "161700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -2426,7 +2428,7 @@
         {
           "id": 2218514,
           "key": "_last_change_time",
-          "value": "1787590671"
+          "value": "1795408150"
         }
       ],
       "name": "Azul, 42",
@@ -2463,15 +2465,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:38:06",
       "date_created_gmt": "2022-08-25T22:38:06",
-      "date_modified": "2026-08-24T17:22:34",
-      "date_modified_gmt": "2026-08-24T17:22:34",
+      "date_modified": "2026-11-23T04:29:10",
+      "date_modified_gmt": "2026-11-23T04:29:10",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/walsall/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=41",
       "sku": "7402801041",
       "global_unique_id": "",
-      "price": "323400",
+      "price": "161700",
       "regular_price": "539000",
-      "sale_price": "323400",
+      "sale_price": "161700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -2969,7 +2971,7 @@
         {
           "id": 2218513,
           "key": "_last_change_time",
-          "value": "1787590671"
+          "value": "1795408150"
         }
       ],
       "name": "Azul, 41",
@@ -3006,15 +3008,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:38:05",
       "date_created_gmt": "2022-08-25T22:38:05",
-      "date_modified": "2026-08-24T17:22:34",
-      "date_modified_gmt": "2026-08-24T17:22:34",
+      "date_modified": "2026-11-23T04:29:03",
+      "date_modified_gmt": "2026-11-23T04:29:03",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/walsall/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=40",
       "sku": "7402801040",
       "global_unique_id": "",
-      "price": "323400",
+      "price": "161700",
       "regular_price": "539000",
-      "sale_price": "323400",
+      "sale_price": "161700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -3512,7 +3514,7 @@
         {
           "id": 2218512,
           "key": "_last_change_time",
-          "value": "1787590671"
+          "value": "1795408143"
         }
       ],
       "name": "Azul, 40",
@@ -3549,15 +3551,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:38:05",
       "date_created_gmt": "2022-08-25T22:38:05",
-      "date_modified": "2026-08-24T17:22:34",
-      "date_modified_gmt": "2026-08-24T17:22:34",
+      "date_modified": "2026-11-23T04:29:03",
+      "date_modified_gmt": "2026-11-23T04:29:03",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/walsall/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=39",
       "sku": "7402801039",
       "global_unique_id": "",
-      "price": "323400",
+      "price": "161700",
       "regular_price": "539000",
-      "sale_price": "323400",
+      "sale_price": "161700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -4055,7 +4057,7 @@
         {
           "id": 2218511,
           "key": "_last_change_time",
-          "value": "1787590671"
+          "value": "1795408143"
         }
       ],
       "name": "Azul, 39",
@@ -4092,15 +4094,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:38:05",
       "date_created_gmt": "2022-08-25T22:38:05",
-      "date_modified": "2026-08-24T17:22:34",
-      "date_modified_gmt": "2026-08-24T17:22:34",
+      "date_modified": "2026-11-23T04:29:03",
+      "date_modified_gmt": "2026-11-23T04:29:03",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/walsall/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=38",
       "sku": "7402801038",
       "global_unique_id": "",
-      "price": "323400",
+      "price": "161700",
       "regular_price": "539000",
-      "sale_price": "323400",
+      "sale_price": "161700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -4588,7 +4590,7 @@
         {
           "id": 2218510,
           "key": "_last_change_time",
-          "value": "1787590671"
+          "value": "1795408143"
         }
       ],
       "name": "Azul, 38",
@@ -4625,15 +4627,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:38:05",
       "date_created_gmt": "2022-08-25T22:38:05",
-      "date_modified": "2026-08-24T17:22:34",
-      "date_modified_gmt": "2026-08-24T17:22:34",
+      "date_modified": "2026-11-23T04:29:03",
+      "date_modified_gmt": "2026-11-23T04:29:03",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/walsall/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=37",
       "sku": "7402801037",
       "global_unique_id": "",
-      "price": "323400",
+      "price": "161700",
       "regular_price": "539000",
-      "sale_price": "323400",
+      "sale_price": "161700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -5121,7 +5123,7 @@
         {
           "id": 2218508,
           "key": "_last_change_time",
-          "value": "1787590671"
+          "value": "1795408143"
         }
       ],
       "name": "Azul, 37",

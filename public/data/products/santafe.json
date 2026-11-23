@@ -9,11 +9,11 @@
   "sku": "790",
   "short_description": "<p>Mocasín hecho a mano por artesanos colombianos, el Santafe lleva capellada de 100% cuero y suela de goma. La hechura artesanal se aplica a un corte de pala continua, sin ataduras de cordón, que se entra en un instante. Es un mocasín de hombre de líneas limpias y origen nacional, pensado para integrarse al guardarropa con la naturalidad de un par cotidiano, de materiales clásicos y un calce inmediato. Hecho en Colombia, se ofrece como un mocasín de pala despejada, de esos que se calzan sin pensar y acompañan el día con sencillez. Disponible en café, miel y negro, tallas 37 a 45.</p>",
   "description": "",
-  "on_sale": false,
+  "on_sale": true,
   "prices": {
-    "price": "560000",
+    "price": "336000",
     "regular_price": "560000",
-    "sale_price": "560000",
+    "sale_price": "336000",
     "price_range": null,
     "currency_code": "COP",
     "currency_symbol": "$",
@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>560,000</span>",
+  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>560,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;560,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>336,000</span></ins><span class=\"screen-reader-text\">Current price is: &#036;336,000.</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -224,8 +224,10 @@
         "name": "winston-and-harry-mocasines-santafe-cafe-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -253,8 +255,10 @@
         "name": "winston-and-harry-mocasines-santafe-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -282,8 +286,10 @@
         "name": "winston-and-harry-mocasines-santafe-cafe-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -311,8 +317,10 @@
         "name": "winston-and-harry-mocasines-santafe-cafe-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -340,8 +348,10 @@
         "name": "winston-and-harry-mocasines-santafe-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -369,8 +379,10 @@
         "name": "winston-and-harry-mocasines-santafe-miel-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -398,8 +410,10 @@
         "name": "winston-and-harry-mocasines-santafe-cafe-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -427,8 +441,10 @@
         "name": "winston-and-harry-mocasines-santafe-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -456,8 +472,10 @@
         "name": "winston-and-harry-mocasines-santafe-miel-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -485,8 +503,10 @@
         "name": "winston-and-harry-mocasines-santafe-cafe-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -514,8 +534,10 @@
         "name": "winston-and-harry-mocasines-santafe-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -543,8 +565,10 @@
         "name": "winston-and-harry-mocasines-santafe-miel-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     }
@@ -608,20 +632,20 @@
       "type": "variation",
       "date_created": "2023-07-11T19:25:10",
       "date_created_gmt": "2023-07-11T19:25:10",
-      "date_modified": "2026-07-27T20:49:40",
-      "date_modified_gmt": "2026-07-27T20:49:40",
+      "date_modified": "2026-11-23T04:32:09",
+      "date_modified_gmt": "2026-11-23T04:32:09",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/santafe/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=39",
       "sku": "7192526039",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -1119,7 +1143,7 @@
         {
           "id": 2322436,
           "key": "_last_change_time",
-          "value": "1785172014"
+          "value": "1795408329"
         },
         {
           "id": 2433955,
@@ -2394,20 +2418,20 @@
       "type": "variation",
       "date_created": "2023-07-11T19:19:12",
       "date_created_gmt": "2023-07-11T19:19:12",
-      "date_modified": "2026-07-27T20:49:40",
-      "date_modified_gmt": "2026-07-27T20:49:40",
+      "date_modified": "2026-11-23T04:32:09",
+      "date_modified_gmt": "2026-11-23T04:32:09",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/santafe/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=44",
       "sku": "7192526044",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -2905,7 +2929,7 @@
         {
           "id": 2260720,
           "key": "_last_change_time",
-          "value": "1785172014"
+          "value": "1795408329"
         },
         {
           "id": 2312781,
@@ -3287,20 +3311,20 @@
       "type": "variation",
       "date_created": "2023-07-11T19:19:12",
       "date_created_gmt": "2023-07-11T19:19:12",
-      "date_modified": "2026-07-27T20:49:40",
-      "date_modified_gmt": "2026-07-27T20:49:40",
+      "date_modified": "2026-11-23T04:32:09",
+      "date_modified_gmt": "2026-11-23T04:32:09",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/santafe/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=43",
       "sku": "7192526043",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -3788,7 +3812,7 @@
         {
           "id": 2260719,
           "key": "_last_change_time",
-          "value": "1785172014"
+          "value": "1795408329"
         },
         {
           "id": 2312780,
@@ -4180,20 +4204,20 @@
       "type": "variation",
       "date_created": "2023-07-11T19:19:12",
       "date_created_gmt": "2023-07-11T19:19:12",
-      "date_modified": "2026-07-27T20:49:40",
-      "date_modified_gmt": "2026-07-27T20:49:40",
+      "date_modified": "2026-11-23T04:32:09",
+      "date_modified_gmt": "2026-11-23T04:32:09",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/santafe/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=42",
       "sku": "7192526042",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -4691,7 +4715,7 @@
         {
           "id": 2260718,
           "key": "_last_change_time",
-          "value": "1785172014"
+          "value": "1795408329"
         },
         {
           "id": 2312779,
@@ -5073,20 +5097,20 @@
       "type": "variation",
       "date_created": "2023-07-11T19:19:12",
       "date_created_gmt": "2023-07-11T19:19:12",
-      "date_modified": "2026-07-27T20:49:40",
-      "date_modified_gmt": "2026-07-27T20:49:40",
+      "date_modified": "2026-11-23T04:32:09",
+      "date_modified_gmt": "2026-11-23T04:32:09",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/santafe/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=41",
       "sku": "7192526041",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -5569,7 +5593,7 @@
         {
           "id": 2260717,
           "key": "_last_change_time",
-          "value": "1785172014"
+          "value": "1795408329"
         },
         {
           "id": 2312778,
@@ -5966,20 +5990,20 @@
       "type": "variation",
       "date_created": "2023-07-11T19:19:12",
       "date_created_gmt": "2023-07-11T19:19:12",
-      "date_modified": "2026-07-27T20:49:40",
-      "date_modified_gmt": "2026-07-27T20:49:40",
+      "date_modified": "2026-11-23T04:32:09",
+      "date_modified_gmt": "2026-11-23T04:32:09",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/santafe/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=40",
       "sku": "7192526040",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -6477,7 +6501,7 @@
         {
           "id": 2254781,
           "key": "_last_change_time",
-          "value": "1785172014"
+          "value": "1795408329"
         },
         {
           "id": 2312777,
@@ -6859,20 +6883,20 @@
       "type": "variation",
       "date_created": "2023-07-11T19:19:11",
       "date_created_gmt": "2023-07-11T19:19:11",
-      "date_modified": "2026-07-27T20:49:40",
-      "date_modified_gmt": "2026-07-27T20:49:40",
+      "date_modified": "2026-11-23T04:32:09",
+      "date_modified_gmt": "2026-11-23T04:32:09",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/santafe/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=38",
       "sku": "7192526038",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -7365,7 +7389,7 @@
         {
           "id": 2260714,
           "key": "_last_change_time",
-          "value": "1785172014"
+          "value": "1795408329"
         },
         {
           "id": 2312784,
@@ -7752,20 +7776,20 @@
       "type": "variation",
       "date_created": "2023-07-11T19:19:11",
       "date_created_gmt": "2023-07-11T19:19:11",
-      "date_modified": "2026-08-24T20:31:48",
-      "date_modified_gmt": "2026-08-24T20:31:48",
+      "date_modified": "2026-11-23T04:32:09",
+      "date_modified_gmt": "2026-11-23T04:32:09",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/santafe/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=37",
       "sku": "7192526037",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -8253,7 +8277,7 @@
         {
           "id": 2260713,
           "key": "_last_change_time",
-          "value": "1787603446"
+          "value": "1795408329"
         },
         {
           "id": 2312783,
@@ -9538,20 +9562,20 @@
       "type": "variation",
       "date_created": "2023-07-11T19:19:11",
       "date_created_gmt": "2023-07-11T19:19:11",
-      "date_modified": "2026-07-27T20:49:40",
-      "date_modified_gmt": "2026-07-27T20:49:40",
+      "date_modified": "2026-11-23T04:32:09",
+      "date_modified_gmt": "2026-11-23T04:32:09",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/santafe/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=44",
       "sku": "7192502044",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -10049,7 +10073,7 @@
         {
           "id": 2260702,
           "key": "_last_change_time",
-          "value": "1785172014"
+          "value": "1795408329"
         },
         {
           "id": 2434647,
@@ -10431,20 +10455,20 @@
       "type": "variation",
       "date_created": "2023-07-11T19:19:11",
       "date_created_gmt": "2023-07-11T19:19:11",
-      "date_modified": "2026-07-27T20:49:41",
-      "date_modified_gmt": "2026-07-27T20:49:41",
+      "date_modified": "2026-11-23T04:32:09",
+      "date_modified_gmt": "2026-11-23T04:32:09",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/santafe/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=43",
       "sku": "7192502043",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -10942,7 +10966,7 @@
         {
           "id": 2260701,
           "key": "_last_change_time",
-          "value": "1785172014"
+          "value": "1795408329"
         },
         {
           "id": 2434716,
@@ -11324,20 +11348,20 @@
       "type": "variation",
       "date_created": "2023-07-11T19:19:11",
       "date_created_gmt": "2023-07-11T19:19:11",
-      "date_modified": "2026-07-27T20:49:41",
-      "date_modified_gmt": "2026-07-27T20:49:41",
+      "date_modified": "2026-11-23T04:32:09",
+      "date_modified_gmt": "2026-11-23T04:32:09",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/santafe/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=42",
       "sku": "7192502042",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -11835,7 +11859,7 @@
         {
           "id": 2260700,
           "key": "_last_change_time",
-          "value": "1785172014"
+          "value": "1795408329"
         },
         {
           "id": 2434785,
@@ -12217,20 +12241,20 @@
       "type": "variation",
       "date_created": "2023-07-11T19:19:11",
       "date_created_gmt": "2023-07-11T19:19:11",
-      "date_modified": "2026-07-27T20:49:41",
-      "date_modified_gmt": "2026-07-27T20:49:41",
+      "date_modified": "2026-11-23T04:32:09",
+      "date_modified_gmt": "2026-11-23T04:32:09",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/santafe/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=41",
       "sku": "7192502041",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -12713,7 +12737,7 @@
         {
           "id": 2260699,
           "key": "_last_change_time",
-          "value": "1785172015"
+          "value": "1795408329"
         },
         {
           "id": 2434854,
@@ -13110,20 +13134,20 @@
       "type": "variation",
       "date_created": "2023-07-11T19:19:11",
       "date_created_gmt": "2023-07-11T19:19:11",
-      "date_modified": "2026-07-27T20:49:41",
-      "date_modified_gmt": "2026-07-27T20:49:41",
+      "date_modified": "2026-11-23T04:32:01",
+      "date_modified_gmt": "2026-11-23T04:32:01",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/santafe/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=40",
       "sku": "7192502040",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -13621,7 +13645,7 @@
         {
           "id": 2250228,
           "key": "_last_change_time",
-          "value": "1785172015"
+          "value": "1795408321"
         },
         {
           "id": 2434926,
@@ -14003,20 +14027,20 @@
       "type": "variation",
       "date_created": "2023-07-11T19:19:10",
       "date_created_gmt": "2023-07-11T19:19:10",
-      "date_modified": "2026-07-27T20:49:41",
-      "date_modified_gmt": "2026-07-27T20:49:41",
+      "date_modified": "2026-11-23T04:32:01",
+      "date_modified_gmt": "2026-11-23T04:32:01",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/santafe/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=39",
       "sku": "7192502039",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -14509,7 +14533,7 @@
         {
           "id": 2260698,
           "key": "_last_change_time",
-          "value": "1785172015"
+          "value": "1795408321"
         },
         {
           "id": 2434995,
@@ -14896,20 +14920,20 @@
       "type": "variation",
       "date_created": "2023-07-11T19:19:10",
       "date_created_gmt": "2023-07-11T19:19:10",
-      "date_modified": "2026-07-27T20:49:41",
-      "date_modified_gmt": "2026-07-27T20:49:41",
+      "date_modified": "2026-11-23T04:32:01",
+      "date_modified_gmt": "2026-11-23T04:32:01",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/santafe/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=38",
       "sku": "7192502038",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -15407,7 +15431,7 @@
         {
           "id": 2260693,
           "key": "_last_change_time",
-          "value": "1785172015"
+          "value": "1795408321"
         },
         {
           "id": 2435065,
@@ -15789,20 +15813,20 @@
       "type": "variation",
       "date_created": "2023-07-11T19:19:09",
       "date_created_gmt": "2023-07-11T19:19:09",
-      "date_modified": "2026-07-27T20:49:41",
-      "date_modified_gmt": "2026-07-27T20:49:41",
+      "date_modified": "2026-11-23T04:32:01",
+      "date_modified_gmt": "2026-11-23T04:32:01",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/santafe/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=37",
       "sku": "7192502037",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -16300,7 +16324,7 @@
         {
           "id": 2260692,
           "key": "_last_change_time",
-          "value": "1785172015"
+          "value": "1795408321"
         },
         {
           "id": 2435134,
@@ -17575,20 +17599,20 @@
       "type": "variation",
       "date_created": "2023-06-08T17:15:37",
       "date_created_gmt": "2023-06-08T17:15:37",
-      "date_modified": "2026-07-27T20:49:47",
-      "date_modified_gmt": "2026-07-27T20:49:47",
+      "date_modified": "2026-11-23T04:31:28",
+      "date_modified_gmt": "2026-11-23T04:31:28",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/santafe/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=44",
       "sku": "7192504044",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -18086,7 +18110,7 @@
         {
           "id": 2260711,
           "key": "_last_change_time",
-          "value": "1785172021"
+          "value": "1795408288"
         },
         {
           "id": 2313187,
@@ -18468,20 +18492,20 @@
       "type": "variation",
       "date_created": "2023-06-08T17:15:37",
       "date_created_gmt": "2023-06-08T17:15:37",
-      "date_modified": "2026-07-27T20:49:47",
-      "date_modified_gmt": "2026-07-27T20:49:47",
+      "date_modified": "2026-11-23T04:31:28",
+      "date_modified_gmt": "2026-11-23T04:31:28",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/santafe/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=43",
       "sku": "7192504043",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -18979,7 +19003,7 @@
         {
           "id": 2260710,
           "key": "_last_change_time",
-          "value": "1785172021"
+          "value": "1795408288"
         },
         {
           "id": 2313186,
@@ -19361,20 +19385,20 @@
       "type": "variation",
       "date_created": "2023-06-08T17:15:37",
       "date_created_gmt": "2023-06-08T17:15:37",
-      "date_modified": "2026-08-13T00:04:32",
-      "date_modified_gmt": "2026-08-13T00:04:32",
+      "date_modified": "2026-11-23T04:31:28",
+      "date_modified_gmt": "2026-11-23T04:31:28",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/santafe/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=42",
       "sku": "7192504042",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -19872,7 +19896,7 @@
         {
           "id": 2260709,
           "key": "_last_change_time",
-          "value": "1786579472"
+          "value": "1795408288"
         },
         {
           "id": 2313185,
@@ -20254,20 +20278,20 @@
       "type": "variation",
       "date_created": "2023-06-08T17:15:37",
       "date_created_gmt": "2023-06-08T17:15:37",
-      "date_modified": "2026-07-27T20:49:47",
-      "date_modified_gmt": "2026-07-27T20:49:47",
+      "date_modified": "2026-11-23T04:31:28",
+      "date_modified_gmt": "2026-11-23T04:31:28",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/santafe/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=41",
       "sku": "7192504041",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -20750,7 +20774,7 @@
         {
           "id": 2260708,
           "key": "_last_change_time",
-          "value": "1785172021"
+          "value": "1795408288"
         },
         {
           "id": 2313184,
@@ -21147,20 +21171,20 @@
       "type": "variation",
       "date_created": "2023-06-08T17:15:37",
       "date_created_gmt": "2023-06-08T17:15:37",
-      "date_modified": "2026-07-27T20:49:47",
-      "date_modified_gmt": "2026-07-27T20:49:47",
+      "date_modified": "2026-11-23T04:31:28",
+      "date_modified_gmt": "2026-11-23T04:31:28",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/santafe/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=40",
       "sku": "7192504040",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -21643,7 +21667,7 @@
         {
           "id": 2260707,
           "key": "_last_change_time",
-          "value": "1785172021"
+          "value": "1795408288"
         },
         {
           "id": 2313191,
@@ -22040,20 +22064,20 @@
       "type": "variation",
       "date_created": "2023-06-08T17:15:37",
       "date_created_gmt": "2023-06-08T17:15:37",
-      "date_modified": "2026-07-27T20:49:41",
-      "date_modified_gmt": "2026-07-27T20:49:41",
+      "date_modified": "2026-11-23T04:31:28",
+      "date_modified_gmt": "2026-11-23T04:31:28",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/santafe/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=39",
       "sku": "7192504039",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -22551,7 +22575,7 @@
         {
           "id": 2260706,
           "key": "_last_change_time",
-          "value": "1785172015"
+          "value": "1795408288"
         },
         {
           "id": 2313190,
@@ -22933,20 +22957,20 @@
       "type": "variation",
       "date_created": "2023-06-08T17:15:37",
       "date_created_gmt": "2023-06-08T17:15:37",
-      "date_modified": "2026-07-27T20:49:41",
-      "date_modified_gmt": "2026-07-27T20:49:41",
+      "date_modified": "2026-11-23T04:31:28",
+      "date_modified_gmt": "2026-11-23T04:31:28",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/santafe/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=38",
       "sku": "7192504038",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -23444,7 +23468,7 @@
         {
           "id": 2260705,
           "key": "_last_change_time",
-          "value": "1785172015"
+          "value": "1795408288"
         },
         {
           "id": 2313189,
@@ -23826,20 +23850,20 @@
       "type": "variation",
       "date_created": "2023-06-08T17:15:36",
       "date_created_gmt": "2023-06-08T17:15:36",
-      "date_modified": "2026-07-27T20:49:48",
-      "date_modified_gmt": "2026-07-27T20:49:48",
+      "date_modified": "2026-11-23T04:31:28",
+      "date_modified_gmt": "2026-11-23T04:31:28",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/santafe/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=37",
       "sku": "7192504037",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -23850,7 +23874,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 3,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -24337,7 +24361,7 @@
         {
           "id": 2260704,
           "key": "_last_change_time",
-          "value": "1785172021"
+          "value": "1795408288"
         },
         {
           "id": 2313192,
@@ -24665,11 +24689,6 @@
           "value": ""
         },
         {
-          "id": 2435819,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2435820,
           "key": "_wc_facebook_product_video_source",
           "value": ""
@@ -24677,11 +24696,6 @@
         {
           "id": 2435821,
           "key": "fb_product_images",
-          "value": ""
-        },
-        {
-          "id": 2435822,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],
@@ -24716,7 +24730,11 @@
     }
   ],
   "wpc_resolved_media": {
-    "84": "https://tienda.winstonandharrystore.com/wp-content/uploads/2017/06/wood-chair.png"
+    "84": "https://tienda.winstonandharrystore.com/wp-content/uploads/2017/06/wood-chair.png",
+    "85925": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-santafe-miel-03.jpg",
+    "85927": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-santafe-miel-02.jpg",
+    "85928": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-santafe-negro-03.jpg",
+    "85930": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-santafe-negro-02.jpg"
   },
   "stock_status": "instock",
   "variation_images_map": {
@@ -24746,6 +24764,16 @@
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-santafe-negro-01.jpg",
         "alt": "winston-and-harry-mocasines-santafe-negro-01",
         "name": "winston-and-harry-mocasines-santafe-negro-01"
+      },
+      {
+        "id": 85930,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-santafe-negro-02.jpg",
+        "alt": "Santafe"
+      },
+      {
+        "id": 85928,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-santafe-negro-03.jpg",
+        "alt": "Santafe"
       }
     ],
     "miel": [
@@ -24754,6 +24782,16 @@
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-santafe-miel-01.jpg",
         "alt": "winston-and-harry-mocasines-santafe-miel-01",
         "name": "winston-and-harry-mocasines-santafe-miel-01"
+      },
+      {
+        "id": 85927,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-santafe-miel-02.jpg",
+        "alt": "Santafe"
+      },
+      {
+        "id": 85925,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-santafe-miel-03.jpg",
+        "alt": "Santafe"
       }
     ]
   }

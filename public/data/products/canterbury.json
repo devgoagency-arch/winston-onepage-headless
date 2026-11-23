@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>825,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>825,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -225,6 +225,8 @@
         "name": "Canterbury-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -254,6 +256,8 @@
         "name": "Canterbury-Azul-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -283,6 +287,8 @@
         "name": "Canterbury-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -312,6 +318,8 @@
         "name": "Canterbury-Azul-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": "parent",
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -341,6 +349,8 @@
         "name": "Canterbury-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -370,6 +380,8 @@
         "name": "Canterbury-Azul-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": "parent",
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -399,6 +411,8 @@
         "name": "Canterbury-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -428,6 +442,8 @@
         "name": "Canterbury-Azul-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": "parent",
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -457,6 +473,8 @@
         "name": "Canterbury-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 7,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -486,6 +504,8 @@
         "name": "Canterbury-Azul-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -515,6 +535,8 @@
         "name": "Canterbury-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -544,6 +566,8 @@
         "name": "Canterbury-Azul-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -573,6 +597,8 @@
         "name": "Canterbury-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -602,6 +628,8 @@
         "name": "Canterbury-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -631,6 +659,8 @@
         "name": "Canterbury-Azul-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -660,6 +690,8 @@
         "name": "Canterbury-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -689,6 +721,8 @@
         "name": "Canterbury-Azul-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -718,6 +752,8 @@
         "name": "Canterbury-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -747,6 +783,8 @@
         "name": "Canterbury-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -776,13 +814,15 @@
         "name": "Canterbury-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
       "sale_price": ""
     },
     {
-      "id": 24507,
+      "id": 24508,
       "attributes": [
         {
           "name": "Selecciona el Color",
@@ -791,8 +831,8 @@
         },
         {
           "name": "Selecciona una Talla",
-          "value": "42",
-          "option": "42"
+          "value": "43",
+          "option": "43"
         }
       ],
       "image": {
@@ -805,6 +845,8 @@
         "name": "Canterbury-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -834,6 +876,8 @@
         "name": "Canterbury-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -8541,8 +8585,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:32:35",
       "date_created_gmt": "2022-08-25T22:32:35",
-      "date_modified": "2026-06-02T17:35:30",
-      "date_modified_gmt": "2026-06-02T17:35:30",
+      "date_modified": "2026-10-27T19:15:14",
+      "date_modified_gmt": "2026-10-27T19:15:14",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/canterbury/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=43",
       "sku": "7021402043",
@@ -8565,8 +8609,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 0,
-      "stock_status": "outofstock",
+      "stock_quantity": 1,
+      "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -9192,7 +9236,7 @@
         {
           "id": 2259732,
           "key": "_last_change_time",
-          "value": "1780421730"
+          "value": "1793122930"
         },
         {
           "id": 2314814,
@@ -9234,8 +9278,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:32:35",
       "date_created_gmt": "2022-08-25T22:32:35",
-      "date_modified": "2026-08-18T17:45:43",
-      "date_modified_gmt": "2026-08-18T17:45:43",
+      "date_modified": "2026-11-23T04:36:29",
+      "date_modified_gmt": "2026-11-23T04:36:29",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/canterbury/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=42",
       "sku": "7021402042",
@@ -9258,8 +9302,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -9890,7 +9934,7 @@
         {
           "id": 2259731,
           "key": "_last_change_time",
-          "value": "1787071620"
+          "value": "1795408589"
         },
         {
           "id": 2314813,
@@ -11328,8 +11372,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:32:35",
       "date_created_gmt": "2022-08-25T22:32:35",
-      "date_modified": "2026-05-07T23:00:36",
-      "date_modified_gmt": "2026-05-07T23:00:36",
+      "date_modified": "2026-11-23T04:36:29",
+      "date_modified_gmt": "2026-11-23T04:36:29",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/canterbury/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=39",
       "sku": "7021402039",
@@ -11352,7 +11396,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 2,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -11984,7 +12028,7 @@
         {
           "id": 2254672,
           "key": "_last_change_time",
-          "value": "1778177756"
+          "value": "1795408589"
         },
         {
           "id": 2314810,
@@ -12026,8 +12070,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:32:35",
       "date_created_gmt": "2022-08-25T22:32:35",
-      "date_modified": "2026-06-02T17:35:29",
-      "date_modified_gmt": "2026-06-02T17:35:29",
+      "date_modified": "2026-10-27T19:15:14",
+      "date_modified_gmt": "2026-10-27T19:15:14",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/canterbury/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=38",
       "sku": "7021402038",
@@ -12682,7 +12726,7 @@
         {
           "id": 2259730,
           "key": "_last_change_time",
-          "value": "1780421729"
+          "value": "1793122930"
         },
         {
           "id": 2314809,
@@ -12724,8 +12768,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:32:35",
       "date_created_gmt": "2022-08-25T22:32:35",
-      "date_modified": "2026-06-02T17:35:08",
-      "date_modified_gmt": "2026-06-02T17:35:08",
+      "date_modified": "2026-10-27T19:15:14",
+      "date_modified_gmt": "2026-10-27T19:15:14",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/canterbury/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=37",
       "sku": "7021402037",
@@ -12748,7 +12792,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 2,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -13380,7 +13424,7 @@
         {
           "id": 2257148,
           "key": "_last_change_time",
-          "value": "1780421708"
+          "value": "1793122930"
         },
         {
           "id": 2314808,
@@ -19674,6 +19718,8 @@
     }
   ],
   "wpc_resolved_media": {
+    "17415": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/04/052-zapato-cenital.jpg",
+    "17416": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/04/052-zapato-lateral.jpg",
     "62021": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/03/Canterbury-Miel-Winstonandharry-2-e1752613927489.jpg",
     "62022": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/03/Canterbury-Miel-Winstonandharry-3-e1752613882913.jpg",
     "62023": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/03/Canterbury-Miel-Winstonandharry-4-e1752613868890.jpg",
@@ -19790,6 +19836,16 @@
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/03/Canterbury-Negro-Winstonandharry-1-e1752613786657.jpg",
         "alt": "Canterbury-Negro-Winstonandharry-1",
         "name": "Canterbury-Negro-Winstonandharry-1"
+      },
+      {
+        "id": 17416,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/04/052-zapato-lateral.jpg",
+        "alt": "Canterbury"
+      },
+      {
+        "id": 17415,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/04/052-zapato-cenital.jpg",
+        "alt": "Canterbury"
       },
       {
         "id": 62030,

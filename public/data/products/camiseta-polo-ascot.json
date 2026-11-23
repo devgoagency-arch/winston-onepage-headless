@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>150,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>150,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -210,6 +210,8 @@
         "name": "winston-and-harry-camiseta-polo-ascot-azul-oscuro-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 18,
       "stock_status": "instock",
       "price": "150000",
       "regular_price": "150000",
@@ -239,6 +241,8 @@
         "name": "winston-and-harry-camiseta-polo-ascot-azul-oscuro-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 33,
       "stock_status": "instock",
       "price": "150000",
       "regular_price": "150000",
@@ -268,6 +272,8 @@
         "name": "winston-and-harry-camiseta-polo-ascot-azul-oscuro-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 36,
       "stock_status": "instock",
       "price": "150000",
       "regular_price": "150000",
@@ -297,6 +303,8 @@
         "name": "winston-and-harry-camiseta-polo-ascot-azul-oscuro-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 11,
       "stock_status": "instock",
       "price": "150000",
       "regular_price": "150000",
@@ -326,6 +334,8 @@
         "name": "winston-and-harry-camiseta-polo-ascot-azul-oscuro-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 17,
       "stock_status": "instock",
       "price": "150000",
       "regular_price": "150000",
@@ -355,6 +365,8 @@
         "name": "winston-and-harry-camiseta-polo-ascot-azul-oscuro-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 34,
       "stock_status": "instock",
       "price": "150000",
       "regular_price": "150000",
@@ -384,6 +396,8 @@
         "name": "winston-and-harry-camiseta-polo-ascot-azul-oscuro-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 33,
       "stock_status": "instock",
       "price": "150000",
       "regular_price": "150000",
@@ -413,6 +427,8 @@
         "name": "winston-and-harry-camiseta-polo-ascot-azul-oscuro-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 8,
       "stock_status": "instock",
       "price": "150000",
       "regular_price": "150000",
@@ -442,6 +458,8 @@
         "name": "winston-and-harry-camiseta-polo-ascot-camel-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 17,
       "stock_status": "instock",
       "price": "150000",
       "regular_price": "150000",
@@ -471,6 +489,8 @@
         "name": "winston-and-harry-camiseta-polo-ascot-camel-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 34,
       "stock_status": "instock",
       "price": "150000",
       "regular_price": "150000",
@@ -500,6 +520,8 @@
         "name": "winston-and-harry-camiseta-polo-ascot-camel-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 32,
       "stock_status": "instock",
       "price": "150000",
       "regular_price": "150000",
@@ -529,6 +551,8 @@
         "name": "winston-and-harry-camiseta-polo-ascot-camel-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 10,
       "stock_status": "instock",
       "price": "150000",
       "regular_price": "150000",
@@ -558,6 +582,8 @@
         "name": "winston-and-harry-camiseta-polo-ascot-gris-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 18,
       "stock_status": "instock",
       "price": "150000",
       "regular_price": "150000",
@@ -587,6 +613,8 @@
         "name": "winston-and-harry-camiseta-polo-ascot-gris-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 35,
       "stock_status": "instock",
       "price": "150000",
       "regular_price": "150000",
@@ -616,6 +644,8 @@
         "name": "winston-and-harry-camiseta-polo-ascot-gris-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 36,
       "stock_status": "instock",
       "price": "150000",
       "regular_price": "150000",
@@ -645,6 +675,8 @@
         "name": "winston-and-harry-camiseta-polo-ascot-gris-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 12,
       "stock_status": "instock",
       "price": "150000",
       "regular_price": "150000",
@@ -674,6 +706,8 @@
         "name": "winston-and-harry-camiseta-polo-ascot-negro-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 18,
       "stock_status": "instock",
       "price": "150000",
       "regular_price": "150000",
@@ -703,6 +737,8 @@
         "name": "winston-and-harry-camiseta-polo-ascot-negro-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 33,
       "stock_status": "instock",
       "price": "150000",
       "regular_price": "150000",
@@ -732,6 +768,8 @@
         "name": "winston-and-harry-camiseta-polo-ascot-negro-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 33,
       "stock_status": "instock",
       "price": "150000",
       "regular_price": "150000",
@@ -761,6 +799,8 @@
         "name": "winston-and-harry-camiseta-polo-ascot-negro-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 11,
       "stock_status": "instock",
       "price": "150000",
       "regular_price": "150000",
@@ -790,6 +830,8 @@
         "name": "winston-and-harry-camiseta-polo-ascot-verde-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 17,
       "stock_status": "instock",
       "price": "150000",
       "regular_price": "150000",
@@ -819,6 +861,8 @@
         "name": "winston-and-harry-camiseta-polo-ascot-verde-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 28,
       "stock_status": "instock",
       "price": "150000",
       "regular_price": "150000",
@@ -848,6 +892,8 @@
         "name": "winston-and-harry-camiseta-polo-ascot-verde-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 33,
       "stock_status": "instock",
       "price": "150000",
       "regular_price": "150000",
@@ -877,6 +923,8 @@
         "name": "winston-and-harry-camiseta-polo-ascot-verde-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 8,
       "stock_status": "instock",
       "price": "150000",
       "regular_price": "150000",
@@ -906,6 +954,8 @@
         "name": "winston-and-harry-camiseta-polo-ascot-vinotinto-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 18,
       "stock_status": "instock",
       "price": "150000",
       "regular_price": "150000",
@@ -935,6 +985,8 @@
         "name": "winston-and-harry-camiseta-polo-ascot-vinotinto-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 28,
       "stock_status": "instock",
       "price": "150000",
       "regular_price": "150000",
@@ -964,6 +1016,8 @@
         "name": "winston-and-harry-camiseta-polo-ascot-vinotinto-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 32,
       "stock_status": "instock",
       "price": "150000",
       "regular_price": "150000",
@@ -993,6 +1047,8 @@
         "name": "winston-and-harry-camiseta-polo-ascot-vinotinto-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 10,
       "stock_status": "instock",
       "price": "150000",
       "regular_price": "150000",
@@ -1022,6 +1078,8 @@
         "name": "winston-and-harry-camiseta-polo-ascot-agua-marina-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 17,
       "stock_status": "instock",
       "price": "150000",
       "regular_price": "150000",
@@ -1051,6 +1109,8 @@
         "name": "winston-and-harry-camiseta-polo-ascot-agua-marina-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 26,
       "stock_status": "instock",
       "price": "150000",
       "regular_price": "150000",
@@ -1080,6 +1140,8 @@
         "name": "winston-and-harry-camiseta-polo-ascot-agua-marina-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 30,
       "stock_status": "instock",
       "price": "150000",
       "regular_price": "150000",
@@ -1109,6 +1171,8 @@
         "name": "winston-and-harry-camiseta-polo-ascot-agua-marina-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 7,
       "stock_status": "instock",
       "price": "150000",
       "regular_price": "150000",
@@ -1138,6 +1202,8 @@
         "name": "winston-and-harry-camiseta-polo-ascot-rosa-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 16,
       "stock_status": "instock",
       "price": "150000",
       "regular_price": "150000",
@@ -1167,6 +1233,8 @@
         "name": "winston-and-harry-camiseta-polo-ascot-rosa-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 30,
       "stock_status": "instock",
       "price": "150000",
       "regular_price": "150000",
@@ -1196,6 +1264,8 @@
         "name": "winston-and-harry-camiseta-polo-ascot-rosa-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 29,
       "stock_status": "instock",
       "price": "150000",
       "regular_price": "150000",
@@ -1225,6 +1295,8 @@
         "name": "winston-and-harry-camiseta-polo-ascot-rosa-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 7,
       "stock_status": "instock",
       "price": "150000",
       "regular_price": "150000",
@@ -1296,8 +1368,8 @@
       "type": "variation",
       "date_created": "2026-09-23T20:30:12",
       "date_created_gmt": "2026-09-23T20:30:12",
-      "date_modified": "2026-09-23T22:26:16",
-      "date_modified_gmt": "2026-09-23T22:26:16",
+      "date_modified": "2026-10-05T21:49:27",
+      "date_modified_gmt": "2026-10-05T21:49:27",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/camiseta-polo-ascot/?attribute_pa_selecciona-el-color=rosado&attribute_pa_selecciona-una-talla=xl",
       "sku": "5056816038",
@@ -1319,8 +1391,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 7,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -2047,7 +2119,7 @@
         {
           "id": 2595041,
           "key": "_last_change_time",
-          "value": ""
+          "value": "1791236967"
         },
         {
           "id": 2595042,
@@ -2135,11 +2207,6 @@
           "value": ""
         },
         {
-          "id": 2595059,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2595060,
           "key": "fb_product_images",
           "value": ""
@@ -2147,11 +2214,6 @@
         {
           "id": 2595061,
           "key": "_wc_facebook_product_video_source",
-          "value": ""
-        },
-        {
-          "id": 2595062,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         },
         {
@@ -2379,8 +2441,8 @@
       "type": "variation",
       "date_created": "2026-09-23T20:30:12",
       "date_created_gmt": "2026-09-23T20:30:12",
-      "date_modified": "2026-09-23T22:26:16",
-      "date_modified_gmt": "2026-09-23T22:26:16",
+      "date_modified": "2026-10-05T21:49:26",
+      "date_modified_gmt": "2026-10-05T21:49:26",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/camiseta-polo-ascot/?attribute_pa_selecciona-el-color=rosado&attribute_pa_selecciona-una-talla=l",
       "sku": "5056816036",
@@ -2402,8 +2464,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 29,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -3130,7 +3192,7 @@
         {
           "id": 2594841,
           "key": "_last_change_time",
-          "value": ""
+          "value": "1791236967"
         },
         {
           "id": 2594842,
@@ -3218,11 +3280,6 @@
           "value": ""
         },
         {
-          "id": 2594859,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2594860,
           "key": "fb_product_images",
           "value": ""
@@ -3230,11 +3287,6 @@
         {
           "id": 2594861,
           "key": "_wc_facebook_product_video_source",
-          "value": ""
-        },
-        {
-          "id": 2594862,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         },
         {
@@ -3462,8 +3514,8 @@
       "type": "variation",
       "date_created": "2026-09-23T20:30:12",
       "date_created_gmt": "2026-09-23T20:30:12",
-      "date_modified": "2026-09-23T22:26:16",
-      "date_modified_gmt": "2026-09-23T22:26:16",
+      "date_modified": "2026-10-14T06:13:12",
+      "date_modified_gmt": "2026-10-14T06:13:12",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/camiseta-polo-ascot/?attribute_pa_selecciona-el-color=rosado&attribute_pa_selecciona-una-talla=m",
       "sku": "5056816034",
@@ -3485,8 +3537,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 30,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -4213,7 +4265,7 @@
         {
           "id": 2594641,
           "key": "_last_change_time",
-          "value": ""
+          "value": "1791958392"
         },
         {
           "id": 2594642,
@@ -4301,11 +4353,6 @@
           "value": ""
         },
         {
-          "id": 2594659,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2594660,
           "key": "fb_product_images",
           "value": ""
@@ -4313,11 +4360,6 @@
         {
           "id": 2594661,
           "key": "_wc_facebook_product_video_source",
-          "value": ""
-        },
-        {
-          "id": 2594662,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         },
         {
@@ -4545,8 +4587,8 @@
       "type": "variation",
       "date_created": "2026-09-23T20:30:12",
       "date_created_gmt": "2026-09-23T20:30:12",
-      "date_modified": "2026-09-23T22:26:16",
-      "date_modified_gmt": "2026-09-23T22:26:16",
+      "date_modified": "2026-10-05T21:49:25",
+      "date_modified_gmt": "2026-10-05T21:49:25",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/camiseta-polo-ascot/?attribute_pa_selecciona-el-color=rosado&attribute_pa_selecciona-una-talla=s",
       "sku": "5056816032",
@@ -4568,8 +4610,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 16,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -5296,7 +5338,7 @@
         {
           "id": 2594441,
           "key": "_last_change_time",
-          "value": ""
+          "value": "1791236965"
         },
         {
           "id": 2594442,
@@ -5384,11 +5426,6 @@
           "value": ""
         },
         {
-          "id": 2594459,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2594460,
           "key": "fb_product_images",
           "value": ""
@@ -5396,11 +5433,6 @@
         {
           "id": 2594461,
           "key": "_wc_facebook_product_video_source",
-          "value": ""
-        },
-        {
-          "id": 2594462,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         },
         {
@@ -5628,8 +5660,8 @@
       "type": "variation",
       "date_created": "2026-09-23T20:30:12",
       "date_created_gmt": "2026-09-23T20:30:12",
-      "date_modified": "2026-09-23T22:26:16",
-      "date_modified_gmt": "2026-09-23T22:26:16",
+      "date_modified": "2026-11-23T04:40:21",
+      "date_modified_gmt": "2026-11-23T04:40:21",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/camiseta-polo-ascot/?attribute_pa_selecciona-el-color=aguamarina&attribute_pa_selecciona-una-talla=xl",
       "sku": "5056829038",
@@ -5651,8 +5683,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 7,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -6379,7 +6411,7 @@
         {
           "id": 2594241,
           "key": "_last_change_time",
-          "value": ""
+          "value": "1795408821"
         },
         {
           "id": 2594242,
@@ -6467,11 +6499,6 @@
           "value": ""
         },
         {
-          "id": 2594259,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2594260,
           "key": "fb_product_images",
           "value": ""
@@ -6479,11 +6506,6 @@
         {
           "id": 2594261,
           "key": "_wc_facebook_product_video_source",
-          "value": ""
-        },
-        {
-          "id": 2594262,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         },
         {
@@ -6711,8 +6733,8 @@
       "type": "variation",
       "date_created": "2026-09-23T20:30:12",
       "date_created_gmt": "2026-09-23T20:30:12",
-      "date_modified": "2026-09-23T22:26:16",
-      "date_modified_gmt": "2026-09-23T22:26:16",
+      "date_modified": "2026-10-27T19:18:00",
+      "date_modified_gmt": "2026-10-27T19:18:00",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/camiseta-polo-ascot/?attribute_pa_selecciona-el-color=aguamarina&attribute_pa_selecciona-una-talla=l",
       "sku": "5056829036",
@@ -6734,8 +6756,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 30,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -7462,7 +7484,7 @@
         {
           "id": 2594041,
           "key": "_last_change_time",
-          "value": ""
+          "value": "1793128680"
         },
         {
           "id": 2594042,
@@ -7550,11 +7572,6 @@
           "value": ""
         },
         {
-          "id": 2594059,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2594060,
           "key": "fb_product_images",
           "value": ""
@@ -7562,11 +7579,6 @@
         {
           "id": 2594061,
           "key": "_wc_facebook_product_video_source",
-          "value": ""
-        },
-        {
-          "id": 2594062,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         },
         {
@@ -7794,8 +7806,8 @@
       "type": "variation",
       "date_created": "2026-09-23T20:30:12",
       "date_created_gmt": "2026-09-23T20:30:12",
-      "date_modified": "2026-09-23T22:26:15",
-      "date_modified_gmt": "2026-09-23T22:26:15",
+      "date_modified": "2026-11-23T04:40:20",
+      "date_modified_gmt": "2026-11-23T04:40:20",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/camiseta-polo-ascot/?attribute_pa_selecciona-el-color=aguamarina&attribute_pa_selecciona-una-talla=m",
       "sku": "5056829034",
@@ -7817,8 +7829,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 26,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -7865,7 +7877,7 @@
         {
           "id": 2587089,
           "key": "_last_change_time",
-          "value": "1790195821"
+          "value": "1795408820"
         },
         {
           "id": 2587090,
@@ -8648,16 +8660,6 @@
           "value": ""
         },
         {
-          "id": 2593861,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2593862,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2593863,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -8882,8 +8884,8 @@
       "type": "variation",
       "date_created": "2026-09-23T20:30:12",
       "date_created_gmt": "2026-09-23T20:30:12",
-      "date_modified": "2026-09-23T22:26:15",
-      "date_modified_gmt": "2026-09-23T22:26:15",
+      "date_modified": "2026-10-05T21:49:30",
+      "date_modified_gmt": "2026-10-05T21:49:30",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/camiseta-polo-ascot/?attribute_pa_selecciona-el-color=aguamarina&attribute_pa_selecciona-una-talla=s",
       "sku": "5056829032",
@@ -8905,8 +8907,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 17,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -8953,7 +8955,7 @@
         {
           "id": 2587076,
           "key": "_last_change_time",
-          "value": "1790195821"
+          "value": "1791236970"
         },
         {
           "id": 2587077,
@@ -9736,16 +9738,6 @@
           "value": ""
         },
         {
-          "id": 2593671,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2593672,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2593673,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -9970,8 +9962,8 @@
       "type": "variation",
       "date_created": "2026-09-23T20:30:12",
       "date_created_gmt": "2026-09-23T20:30:12",
-      "date_modified": "2026-09-23T22:26:15",
-      "date_modified_gmt": "2026-09-23T22:26:15",
+      "date_modified": "2026-11-23T04:40:20",
+      "date_modified_gmt": "2026-11-23T04:40:20",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/camiseta-polo-ascot/?attribute_pa_selecciona-el-color=vinotinto&attribute_pa_selecciona-una-talla=xl",
       "sku": "5056819038",
@@ -9993,8 +9985,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 10,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -10041,7 +10033,7 @@
         {
           "id": 2587062,
           "key": "_last_change_time",
-          "value": "1790195821"
+          "value": "1795408820"
         },
         {
           "id": 2587063,
@@ -10824,16 +10816,6 @@
           "value": ""
         },
         {
-          "id": 2593482,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2593483,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2593484,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -11058,8 +11040,8 @@
       "type": "variation",
       "date_created": "2026-09-23T20:30:12",
       "date_created_gmt": "2026-09-23T20:30:12",
-      "date_modified": "2026-09-23T22:26:15",
-      "date_modified_gmt": "2026-09-23T22:26:15",
+      "date_modified": "2026-11-04T17:55:38",
+      "date_modified_gmt": "2026-11-04T17:55:38",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/camiseta-polo-ascot/?attribute_pa_selecciona-el-color=vinotinto&attribute_pa_selecciona-una-talla=l",
       "sku": "5056819036",
@@ -11081,8 +11063,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 32,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -11129,7 +11111,7 @@
         {
           "id": 2587049,
           "key": "_last_change_time",
-          "value": "1790195821"
+          "value": "1793814938"
         },
         {
           "id": 2587050,
@@ -11912,16 +11894,6 @@
           "value": ""
         },
         {
-          "id": 2593292,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2593293,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2593294,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -12146,8 +12118,8 @@
       "type": "variation",
       "date_created": "2026-09-23T20:30:12",
       "date_created_gmt": "2026-09-23T20:30:12",
-      "date_modified": "2026-09-23T22:26:15",
-      "date_modified_gmt": "2026-09-23T22:26:15",
+      "date_modified": "2026-11-23T04:40:20",
+      "date_modified_gmt": "2026-11-23T04:40:20",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/camiseta-polo-ascot/?attribute_pa_selecciona-el-color=vinotinto&attribute_pa_selecciona-una-talla=m",
       "sku": "5056819034",
@@ -12169,8 +12141,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 28,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -12217,7 +12189,7 @@
         {
           "id": 2587036,
           "key": "_last_change_time",
-          "value": "1790195821"
+          "value": "1795408820"
         },
         {
           "id": 2587037,
@@ -13000,16 +12972,6 @@
           "value": ""
         },
         {
-          "id": 2593102,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2593103,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2593104,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -13234,8 +13196,8 @@
       "type": "variation",
       "date_created": "2026-09-23T20:30:12",
       "date_created_gmt": "2026-09-23T20:30:12",
-      "date_modified": "2026-09-23T22:26:15",
-      "date_modified_gmt": "2026-09-23T22:26:15",
+      "date_modified": "2026-10-05T21:49:28",
+      "date_modified_gmt": "2026-10-05T21:49:28",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/camiseta-polo-ascot/?attribute_pa_selecciona-el-color=vinotinto&attribute_pa_selecciona-una-talla=s",
       "sku": "5056819032",
@@ -13257,8 +13219,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 18,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -13305,7 +13267,7 @@
         {
           "id": 2587023,
           "key": "_last_change_time",
-          "value": "1790195821"
+          "value": "1791236968"
         },
         {
           "id": 2587024,
@@ -14088,16 +14050,6 @@
           "value": ""
         },
         {
-          "id": 2592912,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2592913,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2592914,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -14322,8 +14274,8 @@
       "type": "variation",
       "date_created": "2026-09-23T20:30:12",
       "date_created_gmt": "2026-09-23T20:30:12",
-      "date_modified": "2026-09-23T22:26:15",
-      "date_modified_gmt": "2026-09-23T22:26:15",
+      "date_modified": "2026-11-23T04:40:20",
+      "date_modified_gmt": "2026-11-23T04:40:20",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/camiseta-polo-ascot/?attribute_pa_selecciona-el-color=verde&attribute_pa_selecciona-una-talla=xl",
       "sku": "5056805038",
@@ -14345,8 +14297,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 8,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -14393,7 +14345,7 @@
         {
           "id": 2587009,
           "key": "_last_change_time",
-          "value": "1790195821"
+          "value": "1795408820"
         },
         {
           "id": 2587010,
@@ -15176,16 +15128,6 @@
           "value": ""
         },
         {
-          "id": 2592723,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2592724,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2592725,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -15410,8 +15352,8 @@
       "type": "variation",
       "date_created": "2026-09-23T20:30:11",
       "date_created_gmt": "2026-09-23T20:30:11",
-      "date_modified": "2026-09-23T22:26:15",
-      "date_modified_gmt": "2026-09-23T22:26:15",
+      "date_modified": "2026-11-04T17:55:38",
+      "date_modified_gmt": "2026-11-04T17:55:38",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/camiseta-polo-ascot/?attribute_pa_selecciona-el-color=verde&attribute_pa_selecciona-una-talla=l",
       "sku": "5056805036",
@@ -15433,8 +15375,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 33,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -15481,7 +15423,7 @@
         {
           "id": 2586996,
           "key": "_last_change_time",
-          "value": "1790195820"
+          "value": "1793814938"
         },
         {
           "id": 2586997,
@@ -16264,16 +16206,6 @@
           "value": ""
         },
         {
-          "id": 2592533,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2592534,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2592535,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -16498,8 +16430,8 @@
       "type": "variation",
       "date_created": "2026-09-23T20:30:11",
       "date_created_gmt": "2026-09-23T20:30:11",
-      "date_modified": "2026-09-23T22:26:14",
-      "date_modified_gmt": "2026-09-23T22:26:14",
+      "date_modified": "2026-11-23T04:40:20",
+      "date_modified_gmt": "2026-11-23T04:40:20",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/camiseta-polo-ascot/?attribute_pa_selecciona-el-color=verde&attribute_pa_selecciona-una-talla=m",
       "sku": "5056805034",
@@ -16521,8 +16453,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 28,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -16569,7 +16501,7 @@
         {
           "id": 2586983,
           "key": "_last_change_time",
-          "value": "1790195820"
+          "value": "1795408820"
         },
         {
           "id": 2586984,
@@ -17352,16 +17284,6 @@
           "value": ""
         },
         {
-          "id": 2592343,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2592344,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2592345,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -17586,8 +17508,8 @@
       "type": "variation",
       "date_created": "2026-09-23T20:30:11",
       "date_created_gmt": "2026-09-23T20:30:11",
-      "date_modified": "2026-09-23T22:26:14",
-      "date_modified_gmt": "2026-09-23T22:26:14",
+      "date_modified": "2026-10-27T19:17:59",
+      "date_modified_gmt": "2026-10-27T19:17:59",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/camiseta-polo-ascot/?attribute_pa_selecciona-el-color=verde&attribute_pa_selecciona-una-talla=s",
       "sku": "5056805032",
@@ -17609,8 +17531,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 17,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -17657,7 +17579,7 @@
         {
           "id": 2586970,
           "key": "_last_change_time",
-          "value": "1790195820"
+          "value": "1793128679"
         },
         {
           "id": 2586971,
@@ -18440,16 +18362,6 @@
           "value": ""
         },
         {
-          "id": 2592153,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2592154,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2592155,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -18674,8 +18586,8 @@
       "type": "variation",
       "date_created": "2026-09-23T20:30:11",
       "date_created_gmt": "2026-09-23T20:30:11",
-      "date_modified": "2026-09-23T22:26:14",
-      "date_modified_gmt": "2026-09-23T22:26:14",
+      "date_modified": "2026-11-04T17:55:38",
+      "date_modified_gmt": "2026-11-04T17:55:38",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/camiseta-polo-ascot/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=xl",
       "sku": "5056802038",
@@ -18697,8 +18609,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 11,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -18745,7 +18657,7 @@
         {
           "id": 2586956,
           "key": "_last_change_time",
-          "value": "1790195820"
+          "value": "1793814938"
         },
         {
           "id": 2586957,
@@ -19528,16 +19440,6 @@
           "value": ""
         },
         {
-          "id": 2591964,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2591965,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2591966,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -19762,8 +19664,8 @@
       "type": "variation",
       "date_created": "2026-09-23T20:30:11",
       "date_created_gmt": "2026-09-23T20:30:11",
-      "date_modified": "2026-09-23T22:26:09",
-      "date_modified_gmt": "2026-09-23T22:26:09",
+      "date_modified": "2026-10-14T06:13:12",
+      "date_modified_gmt": "2026-10-14T06:13:12",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/camiseta-polo-ascot/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=l",
       "sku": "5056802036",
@@ -19785,8 +19687,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 33,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -19833,7 +19735,7 @@
         {
           "id": 2586943,
           "key": "_last_change_time",
-          "value": "1790195820"
+          "value": "1791958392"
         },
         {
           "id": 2586944,
@@ -20616,16 +20518,6 @@
           "value": ""
         },
         {
-          "id": 2591773,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2591774,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2591775,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -20850,8 +20742,8 @@
       "type": "variation",
       "date_created": "2026-09-23T20:30:11",
       "date_created_gmt": "2026-09-23T20:30:11",
-      "date_modified": "2026-09-23T22:26:09",
-      "date_modified_gmt": "2026-09-23T22:26:09",
+      "date_modified": "2026-10-27T19:17:59",
+      "date_modified_gmt": "2026-10-27T19:17:59",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/camiseta-polo-ascot/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=m",
       "sku": "5056802034",
@@ -20873,8 +20765,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 33,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -20921,7 +20813,7 @@
         {
           "id": 2586930,
           "key": "_last_change_time",
-          "value": "1790195820"
+          "value": "1793128679"
         },
         {
           "id": 2586931,
@@ -21704,16 +21596,6 @@
           "value": ""
         },
         {
-          "id": 2591583,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2591584,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2591585,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -21938,8 +21820,8 @@
       "type": "variation",
       "date_created": "2026-09-23T20:30:11",
       "date_created_gmt": "2026-09-23T20:30:11",
-      "date_modified": "2026-09-23T22:26:09",
-      "date_modified_gmt": "2026-09-23T22:26:09",
+      "date_modified": "2026-10-05T21:48:54",
+      "date_modified_gmt": "2026-10-05T21:48:54",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/camiseta-polo-ascot/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=s",
       "sku": "5056802032",
@@ -21961,8 +21843,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 18,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -22009,7 +21891,7 @@
         {
           "id": 2586917,
           "key": "_last_change_time",
-          "value": "1790195820"
+          "value": "1791236934"
         },
         {
           "id": 2586918,
@@ -22792,16 +22674,6 @@
           "value": ""
         },
         {
-          "id": 2591393,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2591394,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2591395,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -23026,8 +22898,8 @@
       "type": "variation",
       "date_created": "2026-09-23T20:30:11",
       "date_created_gmt": "2026-09-23T20:30:11",
-      "date_modified": "2026-09-23T22:26:08",
-      "date_modified_gmt": "2026-09-23T22:26:08",
+      "date_modified": "2026-10-14T06:13:12",
+      "date_modified_gmt": "2026-10-14T06:13:12",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/camiseta-polo-ascot/?attribute_pa_selecciona-el-color=gris&attribute_pa_selecciona-una-talla=xl",
       "sku": "5056803038",
@@ -23049,8 +22921,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 12,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -23097,7 +22969,7 @@
         {
           "id": 2586903,
           "key": "_last_change_time",
-          "value": "1790195820"
+          "value": "1791958392"
         },
         {
           "id": 2586904,
@@ -23880,16 +23752,6 @@
           "value": ""
         },
         {
-          "id": 2591204,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2591205,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2591206,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -24114,8 +23976,8 @@
       "type": "variation",
       "date_created": "2026-09-23T20:30:11",
       "date_created_gmt": "2026-09-23T20:30:11",
-      "date_modified": "2026-09-23T22:26:08",
-      "date_modified_gmt": "2026-09-23T22:26:08",
+      "date_modified": "2026-10-05T21:48:54",
+      "date_modified_gmt": "2026-10-05T21:48:54",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/camiseta-polo-ascot/?attribute_pa_selecciona-el-color=gris&attribute_pa_selecciona-una-talla=l",
       "sku": "5056803036",
@@ -24137,8 +23999,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 36,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -24185,7 +24047,7 @@
         {
           "id": 2586890,
           "key": "_last_change_time",
-          "value": "1790195710"
+          "value": "1791236934"
         },
         {
           "id": 2586891,
@@ -24968,16 +24830,6 @@
           "value": ""
         },
         {
-          "id": 2591014,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2591015,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2591016,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -25202,8 +25054,8 @@
       "type": "variation",
       "date_created": "2026-09-23T20:30:11",
       "date_created_gmt": "2026-09-23T20:30:11",
-      "date_modified": "2026-09-23T22:26:08",
-      "date_modified_gmt": "2026-09-23T22:26:08",
+      "date_modified": "2026-10-05T21:48:54",
+      "date_modified_gmt": "2026-10-05T21:48:54",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/camiseta-polo-ascot/?attribute_pa_selecciona-el-color=gris&attribute_pa_selecciona-una-talla=m",
       "sku": "5056803034",
@@ -25225,8 +25077,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 35,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -25273,7 +25125,7 @@
         {
           "id": 2586877,
           "key": "_last_change_time",
-          "value": "1790195710"
+          "value": "1791236934"
         },
         {
           "id": 2586878,
@@ -26056,16 +25908,6 @@
           "value": ""
         },
         {
-          "id": 2590824,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2590825,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2590826,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -26290,8 +26132,8 @@
       "type": "variation",
       "date_created": "2026-09-23T20:30:11",
       "date_created_gmt": "2026-09-23T20:30:11",
-      "date_modified": "2026-09-23T22:26:08",
-      "date_modified_gmt": "2026-09-23T22:26:08",
+      "date_modified": "2026-10-05T21:48:54",
+      "date_modified_gmt": "2026-10-05T21:48:54",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/camiseta-polo-ascot/?attribute_pa_selecciona-el-color=gris&attribute_pa_selecciona-una-talla=s",
       "sku": "5056803032",
@@ -26313,8 +26155,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 18,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -26361,7 +26203,7 @@
         {
           "id": 2586864,
           "key": "_last_change_time",
-          "value": "1790195710"
+          "value": "1791236934"
         },
         {
           "id": 2586865,
@@ -27144,16 +26986,6 @@
           "value": ""
         },
         {
-          "id": 2590634,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2590635,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2590636,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -27378,8 +27210,8 @@
       "type": "variation",
       "date_created": "2026-09-23T20:30:11",
       "date_created_gmt": "2026-09-23T20:30:11",
-      "date_modified": "2026-09-23T22:26:08",
-      "date_modified_gmt": "2026-09-23T22:26:08",
+      "date_modified": "2026-10-05T21:48:55",
+      "date_modified_gmt": "2026-10-05T21:48:55",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/camiseta-polo-ascot/?attribute_pa_selecciona-el-color=camel&attribute_pa_selecciona-una-talla=xl",
       "sku": "5056807038",
@@ -27401,8 +27233,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 10,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -27449,7 +27281,7 @@
         {
           "id": 2586850,
           "key": "_last_change_time",
-          "value": "1790195710"
+          "value": "1791236935"
         },
         {
           "id": 2586851,
@@ -28232,16 +28064,6 @@
           "value": ""
         },
         {
-          "id": 2590445,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2590446,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2590447,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -28466,8 +28288,8 @@
       "type": "variation",
       "date_created": "2026-09-23T20:30:11",
       "date_created_gmt": "2026-09-23T20:30:11",
-      "date_modified": "2026-09-23T22:26:08",
-      "date_modified_gmt": "2026-09-23T22:26:08",
+      "date_modified": "2026-10-05T21:48:55",
+      "date_modified_gmt": "2026-10-05T21:48:55",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/camiseta-polo-ascot/?attribute_pa_selecciona-el-color=camel&attribute_pa_selecciona-una-talla=l",
       "sku": "5056807036",
@@ -28489,8 +28311,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 32,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -28537,7 +28359,7 @@
         {
           "id": 2586837,
           "key": "_last_change_time",
-          "value": "1790195709"
+          "value": "1791236935"
         },
         {
           "id": 2586838,
@@ -29320,16 +29142,6 @@
           "value": ""
         },
         {
-          "id": 2590255,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2590256,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2590257,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -29554,8 +29366,8 @@
       "type": "variation",
       "date_created": "2026-09-23T20:30:11",
       "date_created_gmt": "2026-09-23T20:30:11",
-      "date_modified": "2026-09-23T22:26:08",
-      "date_modified_gmt": "2026-09-23T22:26:08",
+      "date_modified": "2026-10-05T21:48:55",
+      "date_modified_gmt": "2026-10-05T21:48:55",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/camiseta-polo-ascot/?attribute_pa_selecciona-el-color=camel&attribute_pa_selecciona-una-talla=m",
       "sku": "5056807034",
@@ -29577,8 +29389,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 34,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -29625,7 +29437,7 @@
         {
           "id": 2586824,
           "key": "_last_change_time",
-          "value": "1790195709"
+          "value": "1791236935"
         },
         {
           "id": 2586825,
@@ -30408,16 +30220,6 @@
           "value": ""
         },
         {
-          "id": 2590065,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2590066,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2590067,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -30642,8 +30444,8 @@
       "type": "variation",
       "date_created": "2026-09-23T20:30:11",
       "date_created_gmt": "2026-09-23T20:30:11",
-      "date_modified": "2026-09-23T22:26:07",
-      "date_modified_gmt": "2026-09-23T22:26:07",
+      "date_modified": "2026-11-23T04:40:20",
+      "date_modified_gmt": "2026-11-23T04:40:20",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/camiseta-polo-ascot/?attribute_pa_selecciona-el-color=camel&attribute_pa_selecciona-una-talla=s",
       "sku": "5056807032",
@@ -30665,8 +30467,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 17,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -30713,7 +30515,7 @@
         {
           "id": 2586811,
           "key": "_last_change_time",
-          "value": "1790195709"
+          "value": "1795408820"
         },
         {
           "id": 2586812,
@@ -31496,16 +31298,6 @@
           "value": ""
         },
         {
-          "id": 2589875,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2589876,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2589877,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -31730,8 +31522,8 @@
       "type": "variation",
       "date_created": "2026-09-23T20:30:10",
       "date_created_gmt": "2026-09-23T20:30:10",
-      "date_modified": "2026-09-23T22:26:07",
-      "date_modified_gmt": "2026-09-23T22:26:07",
+      "date_modified": "2026-11-04T17:55:38",
+      "date_modified_gmt": "2026-11-04T17:55:38",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/camiseta-polo-ascot/?attribute_pa_selecciona-el-color=blanco&attribute_pa_selecciona-una-talla=xl",
       "sku": "5056815038",
@@ -31753,8 +31545,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 8,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -31801,7 +31593,7 @@
         {
           "id": 2586797,
           "key": "_last_change_time",
-          "value": "1790195709"
+          "value": "1793814938"
         },
         {
           "id": 2586798,
@@ -32584,16 +32376,6 @@
           "value": ""
         },
         {
-          "id": 2589686,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2589687,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2589688,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -32818,8 +32600,8 @@
       "type": "variation",
       "date_created": "2026-09-23T20:30:10",
       "date_created_gmt": "2026-09-23T20:30:10",
-      "date_modified": "2026-09-23T22:26:07",
-      "date_modified_gmt": "2026-09-23T22:26:07",
+      "date_modified": "2026-10-14T06:13:12",
+      "date_modified_gmt": "2026-10-14T06:13:12",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/camiseta-polo-ascot/?attribute_pa_selecciona-el-color=blanco&attribute_pa_selecciona-una-talla=l",
       "sku": "5056815036",
@@ -32841,8 +32623,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 33,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -32889,7 +32671,7 @@
         {
           "id": 2586784,
           "key": "_last_change_time",
-          "value": "1790195709"
+          "value": "1791958392"
         },
         {
           "id": 2586785,
@@ -33672,16 +33454,6 @@
           "value": ""
         },
         {
-          "id": 2589496,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2589497,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2589498,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -33906,8 +33678,8 @@
       "type": "variation",
       "date_created": "2026-09-23T20:30:10",
       "date_created_gmt": "2026-09-23T20:30:10",
-      "date_modified": "2026-09-23T22:26:07",
-      "date_modified_gmt": "2026-09-23T22:26:07",
+      "date_modified": "2026-10-05T21:48:55",
+      "date_modified_gmt": "2026-10-05T21:48:55",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/camiseta-polo-ascot/?attribute_pa_selecciona-el-color=blanco&attribute_pa_selecciona-una-talla=m",
       "sku": "5056815034",
@@ -33929,8 +33701,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 34,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -33977,7 +33749,7 @@
         {
           "id": 2586771,
           "key": "_last_change_time",
-          "value": "1790195709"
+          "value": "1791236935"
         },
         {
           "id": 2586772,
@@ -34760,16 +34532,6 @@
           "value": ""
         },
         {
-          "id": 2589306,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2589307,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2589308,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -34994,8 +34756,8 @@
       "type": "variation",
       "date_created": "2026-09-23T20:30:10",
       "date_created_gmt": "2026-09-23T20:30:10",
-      "date_modified": "2026-09-23T22:26:07",
-      "date_modified_gmt": "2026-09-23T22:26:07",
+      "date_modified": "2026-11-23T04:40:20",
+      "date_modified_gmt": "2026-11-23T04:40:20",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/camiseta-polo-ascot/?attribute_pa_selecciona-el-color=blanco&attribute_pa_selecciona-una-talla=s",
       "sku": "5056815032",
@@ -35017,8 +34779,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 17,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -35065,7 +34827,7 @@
         {
           "id": 2586758,
           "key": "_last_change_time",
-          "value": "1790195709"
+          "value": "1795408820"
         },
         {
           "id": 2586759,
@@ -35848,16 +35610,6 @@
           "value": ""
         },
         {
-          "id": 2589116,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2589117,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2589118,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -36082,8 +35834,8 @@
       "type": "variation",
       "date_created": "2026-09-23T20:30:10",
       "date_created_gmt": "2026-09-23T20:30:10",
-      "date_modified": "2026-09-23T22:26:07",
-      "date_modified_gmt": "2026-09-23T22:26:07",
+      "date_modified": "2026-10-27T19:17:59",
+      "date_modified_gmt": "2026-10-27T19:17:59",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/camiseta-polo-ascot/?attribute_pa_selecciona-el-color=azul-oscuro&attribute_pa_selecciona-una-talla=xl",
       "sku": "5056837038",
@@ -36105,8 +35857,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 11,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -36153,7 +35905,7 @@
         {
           "id": 2586744,
           "key": "_last_change_time",
-          "value": "1790195709"
+          "value": "1793128679"
         },
         {
           "id": 2586745,
@@ -36936,16 +36688,6 @@
           "value": ""
         },
         {
-          "id": 2588927,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2588928,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2588929,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -37170,8 +36912,8 @@
       "type": "variation",
       "date_created": "2026-09-23T20:30:10",
       "date_created_gmt": "2026-09-23T20:30:10",
-      "date_modified": "2026-09-23T22:26:07",
-      "date_modified_gmt": "2026-09-23T22:26:07",
+      "date_modified": "2026-10-05T21:49:32",
+      "date_modified_gmt": "2026-10-05T21:49:32",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/camiseta-polo-ascot/?attribute_pa_selecciona-el-color=azul-oscuro&attribute_pa_selecciona-una-talla=l",
       "sku": "5056837036",
@@ -37193,8 +36935,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 36,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -37241,7 +36983,7 @@
         {
           "id": 2586731,
           "key": "_last_change_time",
-          "value": "1790195709"
+          "value": "1791236972"
         },
         {
           "id": 2586732,
@@ -38024,16 +37766,6 @@
           "value": ""
         },
         {
-          "id": 2588737,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2588738,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2588739,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -38258,8 +37990,8 @@
       "type": "variation",
       "date_created": "2026-09-23T20:30:10",
       "date_created_gmt": "2026-09-23T20:30:10",
-      "date_modified": "2026-09-23T22:26:06",
-      "date_modified_gmt": "2026-09-23T22:26:06",
+      "date_modified": "2026-10-05T21:49:32",
+      "date_modified_gmt": "2026-10-05T21:49:32",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/camiseta-polo-ascot/?attribute_pa_selecciona-el-color=azul-oscuro&attribute_pa_selecciona-una-talla=m",
       "sku": "5056837034",
@@ -38281,8 +38013,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 33,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -38329,7 +38061,7 @@
         {
           "id": 2586718,
           "key": "_last_change_time",
-          "value": "1790195709"
+          "value": "1791236972"
         },
         {
           "id": 2586719,
@@ -39112,16 +38844,6 @@
           "value": ""
         },
         {
-          "id": 2588547,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2588548,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2588549,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -39346,8 +39068,8 @@
       "type": "variation",
       "date_created": "2026-09-23T20:30:10",
       "date_created_gmt": "2026-09-23T20:30:10",
-      "date_modified": "2026-09-23T22:26:06",
-      "date_modified_gmt": "2026-09-23T22:26:06",
+      "date_modified": "2026-10-05T21:49:32",
+      "date_modified_gmt": "2026-10-05T21:49:32",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/camiseta-polo-ascot/?attribute_pa_selecciona-el-color=azul-oscuro&attribute_pa_selecciona-una-talla=s",
       "sku": "5056837032",
@@ -39369,8 +39091,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 18,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -39417,7 +39139,7 @@
         {
           "id": 2586705,
           "key": "_last_change_time",
-          "value": "1790195709"
+          "value": "1791236972"
         },
         {
           "id": 2586706,
@@ -40200,16 +39922,6 @@
           "value": ""
         },
         {
-          "id": 2588357,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2588358,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2588359,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -40431,38 +40143,54 @@
     }
   ],
   "wpc_resolved_media": {
+    "87127": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-agua-marina-cuello-2.jpg",
+    "87128": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-agua-marina-doblada.jpg",
     "87130": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-agua-marina-inferior.jpg",
     "87131": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-agua-marina-logo.jpg",
     "87132": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-agua-marina-manga.png.jpg",
     "87133": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-agua-marina-posterior.jpg",
+    "87134": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-azul-oscuro-doblada.jpg",
     "87136": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-azul-oscuro-inferior.jpg",
     "87137": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-azul-oscuro-logo.jpg",
     "87138": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-azul-oscuro-manga.jpg",
     "87139": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-azul-oscuro-posterior-2.jpg",
+    "87140": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-azul-oscuro-cuello.jpg",
     "87142": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-azul-oscuro-posterior.jpg",
     "87145": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-blanca-inferior.jpg",
     "87146": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-blanca-logo.jpg",
     "87147": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-blanca-manga.jpg",
+    "87148": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-camel-cuello.jpg",
+    "87149": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-camel-doblado.jpg",
     "87150": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-camel-inferior.jpg",
     "87151": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-camel-logo.jpg",
     "87152": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-camel-manga.jpg",
     "87153": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-camel-posterior.jpg",
+    "87155": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-gris-cuello.jpg",
+    "87156": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-gris-doblado.jpg",
     "87158": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-gris-inferior.jpg",
     "87159": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-gris-manga.jpg",
     "87160": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-gris-posterior.jpg",
     "87161": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-gris-logo.jpg",
+    "87162": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-negro-cuello.jpg",
+    "87163": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-negro-doblada.jpg",
     "87165": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-negro-inferior.jpg",
     "87166": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-negro-logo.jpg",
     "87167": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-negro-manga.jpg",
     "87168": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-negro-posterior.jpg",
+    "87169": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-rosa-cuello.jpg",
+    "87170": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-rosa-doblado.jpg",
     "87172": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-rosa-inferior.jpg",
     "87173": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-rosa-manga.jpg",
     "87174": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-rosa-posterior.jpg",
     "87175": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-rosa-logo.jpg",
+    "87176": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-verde-cuello.jpg",
+    "87177": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-verde-doblado.jpg",
     "87179": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-verde-inferior.jpg",
     "87180": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-verde-manga.jpg",
     "87181": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-verde-posterior.jpg",
     "87182": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-verde-logo.jpg",
+    "87183": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-vinotinto-cuello.jpg",
+    "87184": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-vinotinto-doblado.jpg",
     "87186": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-vinotinto-inferior.jpg",
     "87187": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-vinotinto-logo.jpg",
     "87188": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-vinotinto-manga.jpg",
@@ -40476,6 +40204,16 @@
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-azul-oscuro-frente.jpg",
         "alt": "winston-and-harry-camiseta-polo-ascot-azul-oscuro-frente",
         "name": "winston-and-harry-camiseta-polo-ascot-azul-oscuro-frente"
+      },
+      {
+        "id": 87134,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-azul-oscuro-doblada.jpg",
+        "alt": "Camiseta Polo Ascot"
+      },
+      {
+        "id": 87140,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-azul-oscuro-cuello.jpg",
+        "alt": "Camiseta Polo Ascot"
       },
       {
         "id": 87139,
@@ -40546,6 +40284,16 @@
         "name": "winston-and-harry-camiseta-polo-ascot-camel-frente"
       },
       {
+        "id": 87149,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-camel-doblado.jpg",
+        "alt": "Camiseta Polo Ascot"
+      },
+      {
+        "id": 87148,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-camel-cuello.jpg",
+        "alt": "Camiseta Polo Ascot"
+      },
+      {
         "id": 87153,
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-camel-posterior.jpg",
         "alt": "Camiseta Polo Ascot"
@@ -40572,6 +40320,16 @@
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-gris-frente.jpg",
         "alt": "winston-and-harry-camiseta-polo-ascot-gris-frente",
         "name": "winston-and-harry-camiseta-polo-ascot-gris-frente"
+      },
+      {
+        "id": 87156,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-gris-doblado.jpg",
+        "alt": "Camiseta Polo Ascot"
+      },
+      {
+        "id": 87155,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-gris-cuello.jpg",
+        "alt": "Camiseta Polo Ascot"
       },
       {
         "id": 87160,
@@ -40602,6 +40360,16 @@
         "name": "winston-and-harry-camiseta-polo-ascot-negro-frente"
       },
       {
+        "id": 87163,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-negro-doblada.jpg",
+        "alt": "Camiseta Polo Ascot"
+      },
+      {
+        "id": 87162,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-negro-cuello.jpg",
+        "alt": "Camiseta Polo Ascot"
+      },
+      {
         "id": 87168,
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-negro-posterior.jpg",
         "alt": "Camiseta Polo Ascot"
@@ -40628,6 +40396,16 @@
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-verde-frente.jpg",
         "alt": "winston-and-harry-camiseta-polo-ascot-verde-frente",
         "name": "winston-and-harry-camiseta-polo-ascot-verde-frente"
+      },
+      {
+        "id": 87177,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-verde-doblado.jpg",
+        "alt": "Camiseta Polo Ascot"
+      },
+      {
+        "id": 87176,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-verde-cuello.jpg",
+        "alt": "Camiseta Polo Ascot"
       },
       {
         "id": 87181,
@@ -40658,6 +40436,16 @@
         "name": "winston-and-harry-camiseta-polo-ascot-vinotinto-frente"
       },
       {
+        "id": 87184,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-vinotinto-doblado.jpg",
+        "alt": "Camiseta Polo Ascot"
+      },
+      {
+        "id": 87183,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-vinotinto-cuello.jpg",
+        "alt": "Camiseta Polo Ascot"
+      },
+      {
         "id": 87189,
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-vinotinto-posterior.jpg",
         "alt": "Camiseta Polo Ascot"
@@ -40686,6 +40474,16 @@
         "name": "winston-and-harry-camiseta-polo-ascot-agua-marina-frente"
       },
       {
+        "id": 87128,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-agua-marina-doblada.jpg",
+        "alt": "Camiseta Polo Ascot"
+      },
+      {
+        "id": 87127,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-agua-marina-cuello-2.jpg",
+        "alt": "Camiseta Polo Ascot"
+      },
+      {
         "id": 87133,
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-agua-marina-posterior.jpg",
         "alt": "Camiseta Polo Ascot"
@@ -40712,6 +40510,16 @@
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-rosa-frente.jpg",
         "alt": "winston-and-harry-camiseta-polo-ascot-rosa-frente",
         "name": "winston-and-harry-camiseta-polo-ascot-rosa-frente"
+      },
+      {
+        "id": 87170,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-rosa-doblado.jpg",
+        "alt": "Camiseta Polo Ascot"
+      },
+      {
+        "id": 87169,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-camiseta-polo-ascot-rosa-cuello.jpg",
+        "alt": "Camiseta Polo Ascot"
       },
       {
         "id": 87174,

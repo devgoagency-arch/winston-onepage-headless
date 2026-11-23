@@ -9,11 +9,11 @@
   "sku": "498",
   "short_description": "<p>Cinturón de cuero trenzado, con diseño elegante y hebilla metálica. Ideal para un estilo clásico y versátil.</p>",
   "description": "<p>Cinturón elaborado en cuero trenzado, con un diseño artesanal y elegante. Su acabado versátil y hebilla metálica le dan un estilo clásico que combina fácilmente con looks casuales o más formales.</p>",
-  "on_sale": false,
+  "on_sale": true,
   "prices": {
-    "price": "165000",
+    "price": "99000",
     "regular_price": "165000",
-    "sale_price": "165000",
+    "sale_price": "99000",
     "price_range": null,
     "currency_code": "COP",
     "currency_symbol": "$",
@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>165,000</span>",
+  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>165,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;165,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>99,000</span></ins><span class=\"screen-reader-text\">Current price is: &#036;99,000.</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -226,8 +226,10 @@
         "name": "winston-and-harry-cinturon-trenzado-cuero-miel-2740-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 6,
       "stock_status": "instock",
-      "price": "165000",
+      "price": "99000",
       "regular_price": "165000",
       "sale_price": ""
     },
@@ -265,8 +267,10 @@
         "name": "winston-and-harry-cinturon-trenzado-cuero-miel-2740-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 22,
       "stock_status": "instock",
-      "price": "165000",
+      "price": "99000",
       "regular_price": "165000",
       "sale_price": ""
     },
@@ -304,8 +308,10 @@
         "name": "winston-and-harry-cinturon-trenzado-cuero-miel-2740-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 19,
       "stock_status": "instock",
-      "price": "165000",
+      "price": "99000",
       "regular_price": "165000",
       "sale_price": ""
     },
@@ -343,8 +349,10 @@
         "name": "winston-and-harry-cinturon-trenzado-cuero-miel-2740-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 25,
       "stock_status": "instock",
-      "price": "165000",
+      "price": "99000",
       "regular_price": "165000",
       "sale_price": ""
     },
@@ -382,8 +390,10 @@
         "name": "winston-and-harry-cinturon-trenzado-cuero-miel-2740-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 7,
       "stock_status": "instock",
-      "price": "165000",
+      "price": "99000",
       "regular_price": "165000",
       "sale_price": ""
     },
@@ -421,8 +431,10 @@
         "name": "winston-and-harry-cinturon-trenzado-cuero-bicolor-azul-cafe-2740-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 9,
       "stock_status": "instock",
-      "price": "165000",
+      "price": "99000",
       "regular_price": "165000",
       "sale_price": ""
     },
@@ -460,8 +472,10 @@
         "name": "winston-and-harry-cinturon-trenzado-cuero-bicolor-azul-cafe-2740-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 27,
       "stock_status": "instock",
-      "price": "165000",
+      "price": "99000",
       "regular_price": "165000",
       "sale_price": ""
     },
@@ -499,8 +513,10 @@
         "name": "winston-and-harry-cinturon-trenzado-cuero-bicolor-azul-cafe-2740-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 14,
       "stock_status": "instock",
-      "price": "165000",
+      "price": "99000",
       "regular_price": "165000",
       "sale_price": ""
     },
@@ -538,8 +554,10 @@
         "name": "winston-and-harry-cinturon-trenzado-cuero-bicolor-azul-cafe-2740-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 21,
       "stock_status": "instock",
-      "price": "165000",
+      "price": "99000",
       "regular_price": "165000",
       "sale_price": ""
     },
@@ -577,8 +595,10 @@
         "name": "winston-and-harry-cinturon-trenzado-cuero-bicolor-azul-cafe-2740-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
-      "price": "165000",
+      "price": "99000",
       "regular_price": "165000",
       "sale_price": ""
     },
@@ -616,8 +636,10 @@
         "name": "winston-and-harry-cinturon-trenzado-cuero-cafel-2740-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
-      "price": "165000",
+      "price": "99000",
       "regular_price": "165000",
       "sale_price": ""
     },
@@ -655,8 +677,10 @@
         "name": "winston-and-harry-cinturon-trenzado-cuero-cafel-2740-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 23,
       "stock_status": "instock",
-      "price": "165000",
+      "price": "99000",
       "regular_price": "165000",
       "sale_price": ""
     },
@@ -694,8 +718,10 @@
         "name": "winston-and-harry-cinturon-trenzado-cuero-cafel-2740-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 18,
       "stock_status": "instock",
-      "price": "165000",
+      "price": "99000",
       "regular_price": "165000",
       "sale_price": ""
     },
@@ -733,8 +759,10 @@
         "name": "winston-and-harry-cinturon-trenzado-cuero-cafel-2740-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 16,
       "stock_status": "instock",
-      "price": "165000",
+      "price": "99000",
       "regular_price": "165000",
       "sale_price": ""
     },
@@ -772,8 +800,10 @@
         "name": "winston-and-harry-cinturon-trenzado-cuero-cafel-2740-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
-      "price": "165000",
+      "price": "99000",
       "regular_price": "165000",
       "sale_price": ""
     },
@@ -811,8 +841,10 @@
         "name": "winston-and-harry-cinturon-trenzado-cuero-negro-2740-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 6,
       "stock_status": "instock",
-      "price": "165000",
+      "price": "99000",
       "regular_price": "165000",
       "sale_price": ""
     },
@@ -850,8 +882,10 @@
         "name": "winston-and-harry-cinturon-trenzado-cuero-negro-2740-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 18,
       "stock_status": "instock",
-      "price": "165000",
+      "price": "99000",
       "regular_price": "165000",
       "sale_price": ""
     },
@@ -889,8 +923,10 @@
         "name": "winston-and-harry-cinturon-trenzado-cuero-negro-2740-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 12,
       "stock_status": "instock",
-      "price": "165000",
+      "price": "99000",
       "regular_price": "165000",
       "sale_price": ""
     },
@@ -928,8 +964,10 @@
         "name": "winston-and-harry-cinturon-trenzado-cuero-negro-2740-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 20,
       "stock_status": "instock",
-      "price": "165000",
+      "price": "99000",
       "regular_price": "165000",
       "sale_price": ""
     },
@@ -967,8 +1005,10 @@
         "name": "winston-and-harry-cinturon-trenzado-cuero-negro-2740-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 7,
       "stock_status": "instock",
-      "price": "165000",
+      "price": "99000",
       "regular_price": "165000",
       "sale_price": ""
     }
@@ -1032,20 +1072,20 @@
       "type": "variation",
       "date_created": "2026-09-08T12:31:04",
       "date_created_gmt": "2026-09-08T12:31:04",
-      "date_modified": "2026-09-08T17:16:53",
-      "date_modified_gmt": "2026-09-08T17:16:53",
+      "date_modified": "2026-11-23T04:34:08",
+      "date_modified_gmt": "2026-11-23T04:34:08",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cinturon-trenzado-cuero/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=38&attribute_pa_hebilla=acero-inoxidable&attribute_pa_material=100-cuero",
       "sku": "27274026038",
       "global_unique_id": "",
-      "price": "165000",
+      "price": "99000",
       "regular_price": "165000",
-      "sale_price": "",
+      "sale_price": "99000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -1115,7 +1155,7 @@
         {
           "id": 2553707,
           "key": "_last_change_time",
-          "value": "1788887813"
+          "value": "1795408448"
         },
         {
           "id": 2553708,
@@ -2122,20 +2162,20 @@
       "type": "variation",
       "date_created": "2026-09-08T12:31:04",
       "date_created_gmt": "2026-09-08T12:31:04",
-      "date_modified": "2026-09-08T17:16:53",
-      "date_modified_gmt": "2026-09-08T17:16:53",
+      "date_modified": "2026-11-23T04:34:08",
+      "date_modified_gmt": "2026-11-23T04:34:08",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cinturon-trenzado-cuero/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=36&attribute_pa_hebilla=acero-inoxidable&attribute_pa_material=100-cuero",
       "sku": "27274026036",
       "global_unique_id": "",
-      "price": "165000",
+      "price": "99000",
       "regular_price": "165000",
-      "sale_price": "",
+      "sale_price": "99000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -2205,7 +2245,7 @@
         {
           "id": 2553694,
           "key": "_last_change_time",
-          "value": "1788887813"
+          "value": "1795408448"
         },
         {
           "id": 2553695,
@@ -3212,20 +3252,20 @@
       "type": "variation",
       "date_created": "2026-09-08T12:31:04",
       "date_created_gmt": "2026-09-08T12:31:04",
-      "date_modified": "2026-09-08T17:16:53",
-      "date_modified_gmt": "2026-09-08T17:16:53",
+      "date_modified": "2026-11-23T04:34:08",
+      "date_modified_gmt": "2026-11-23T04:34:08",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cinturon-trenzado-cuero/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=34&attribute_pa_hebilla=acero-inoxidable&attribute_pa_material=100-cuero",
       "sku": "27274026034",
       "global_unique_id": "",
-      "price": "165000",
+      "price": "99000",
       "regular_price": "165000",
-      "sale_price": "",
+      "sale_price": "99000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -3236,7 +3276,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 20,
+      "stock_quantity": 19,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -3295,7 +3335,7 @@
         {
           "id": 2553682,
           "key": "_last_change_time",
-          "value": "1788887813"
+          "value": "1795408448"
         },
         {
           "id": 2553683,
@@ -4302,20 +4342,20 @@
       "type": "variation",
       "date_created": "2026-09-08T12:31:04",
       "date_created_gmt": "2026-09-08T12:31:04",
-      "date_modified": "2026-09-08T17:16:53",
-      "date_modified_gmt": "2026-09-08T17:16:53",
+      "date_modified": "2026-11-23T04:34:08",
+      "date_modified_gmt": "2026-11-23T04:34:08",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cinturon-trenzado-cuero/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=32&attribute_pa_hebilla=acero-inoxidable&attribute_pa_material=100-cuero",
       "sku": "27274026032",
       "global_unique_id": "",
-      "price": "165000",
+      "price": "99000",
       "regular_price": "165000",
-      "sale_price": "",
+      "sale_price": "99000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -4385,7 +4425,7 @@
         {
           "id": 2553670,
           "key": "_last_change_time",
-          "value": "1788887813"
+          "value": "1795408448"
         },
         {
           "id": 2553671,
@@ -5392,20 +5432,20 @@
       "type": "variation",
       "date_created": "2026-09-08T12:31:04",
       "date_created_gmt": "2026-09-08T12:31:04",
-      "date_modified": "2026-09-08T17:16:52",
-      "date_modified_gmt": "2026-09-08T17:16:52",
+      "date_modified": "2026-11-23T04:34:08",
+      "date_modified_gmt": "2026-11-23T04:34:08",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cinturon-trenzado-cuero/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=30&attribute_pa_hebilla=acero-inoxidable&attribute_pa_material=100-cuero",
       "sku": "27274026030",
       "global_unique_id": "",
-      "price": "165000",
+      "price": "99000",
       "regular_price": "165000",
-      "sale_price": "",
+      "sale_price": "99000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -5475,7 +5515,7 @@
         {
           "id": 2553658,
           "key": "_last_change_time",
-          "value": "1788887812"
+          "value": "1795408448"
         },
         {
           "id": 2553659,
@@ -6482,20 +6522,20 @@
       "type": "variation",
       "date_created": "2026-09-08T12:24:53",
       "date_created_gmt": "2026-09-08T12:24:53",
-      "date_modified": "2026-09-08T17:16:52",
-      "date_modified_gmt": "2026-09-08T17:16:52",
+      "date_modified": "2026-11-23T04:34:08",
+      "date_modified_gmt": "2026-11-23T04:34:08",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cinturon-trenzado-cuero/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=38&attribute_pa_hebilla=acero-inoxidable&attribute_pa_material=100-cuero",
       "sku": "27274002038",
       "global_unique_id": "",
-      "price": "165000",
+      "price": "99000",
       "regular_price": "165000",
-      "sale_price": "",
+      "sale_price": "99000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -6565,7 +6605,7 @@
         {
           "id": 2553542,
           "key": "_last_change_time",
-          "value": "1788887812"
+          "value": "1795408448"
         },
         {
           "id": 2553543,
@@ -7572,20 +7612,20 @@
       "type": "variation",
       "date_created": "2026-09-08T12:24:53",
       "date_created_gmt": "2026-09-08T12:24:53",
-      "date_modified": "2026-09-08T17:16:52",
-      "date_modified_gmt": "2026-09-08T17:16:52",
+      "date_modified": "2026-11-23T04:34:08",
+      "date_modified_gmt": "2026-11-23T04:34:08",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cinturon-trenzado-cuero/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=36&attribute_pa_hebilla=acero-inoxidable&attribute_pa_material=100-cuero",
       "sku": "27274002036",
       "global_unique_id": "",
-      "price": "165000",
+      "price": "99000",
       "regular_price": "165000",
-      "sale_price": "",
+      "sale_price": "99000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -7655,7 +7695,7 @@
         {
           "id": 2553509,
           "key": "_last_change_time",
-          "value": "1788887812"
+          "value": "1795408448"
         },
         {
           "id": 2553510,
@@ -8662,20 +8702,20 @@
       "type": "variation",
       "date_created": "2026-09-08T12:24:53",
       "date_created_gmt": "2026-09-08T12:24:53",
-      "date_modified": "2026-09-08T17:16:52",
-      "date_modified_gmt": "2026-09-08T17:16:52",
+      "date_modified": "2026-11-23T04:34:08",
+      "date_modified_gmt": "2026-11-23T04:34:08",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cinturon-trenzado-cuero/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=34&attribute_pa_hebilla=acero-inoxidable&attribute_pa_material=100-cuero",
       "sku": "27274002034",
       "global_unique_id": "",
-      "price": "165000",
+      "price": "99000",
       "regular_price": "165000",
-      "sale_price": "",
+      "sale_price": "99000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -8745,7 +8785,7 @@
         {
           "id": 2553477,
           "key": "_last_change_time",
-          "value": "1788887812"
+          "value": "1795408448"
         },
         {
           "id": 2553478,
@@ -9752,20 +9792,20 @@
       "type": "variation",
       "date_created": "2026-09-08T12:24:53",
       "date_created_gmt": "2026-09-08T12:24:53",
-      "date_modified": "2026-09-08T17:16:52",
-      "date_modified_gmt": "2026-09-08T17:16:52",
+      "date_modified": "2026-11-23T04:34:08",
+      "date_modified_gmt": "2026-11-23T04:34:08",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cinturon-trenzado-cuero/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=32&attribute_pa_hebilla=acero-inoxidable&attribute_pa_material=100-cuero",
       "sku": "27274002032",
       "global_unique_id": "",
-      "price": "165000",
+      "price": "99000",
       "regular_price": "165000",
-      "sale_price": "",
+      "sale_price": "99000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -9776,7 +9816,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 17,
+      "stock_quantity": 18,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -9835,7 +9875,7 @@
         {
           "id": 2553445,
           "key": "_last_change_time",
-          "value": "1788887812"
+          "value": "1795408448"
         },
         {
           "id": 2553446,
@@ -10842,20 +10882,20 @@
       "type": "variation",
       "date_created": "2026-09-08T12:24:53",
       "date_created_gmt": "2026-09-08T12:24:53",
-      "date_modified": "2026-09-08T17:16:52",
-      "date_modified_gmt": "2026-09-08T17:16:52",
+      "date_modified": "2026-11-23T04:34:08",
+      "date_modified_gmt": "2026-11-23T04:34:08",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cinturon-trenzado-cuero/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=30&attribute_pa_hebilla=acero-inoxidable&attribute_pa_material=100-cuero",
       "sku": "27274002030",
       "global_unique_id": "",
-      "price": "165000",
+      "price": "99000",
       "regular_price": "165000",
-      "sale_price": "",
+      "sale_price": "99000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -10925,7 +10965,7 @@
         {
           "id": 2553413,
           "key": "_last_change_time",
-          "value": "1788887812"
+          "value": "1795408448"
         },
         {
           "id": 2553414,
@@ -11932,20 +11972,20 @@
       "type": "variation",
       "date_created": "2026-09-08T12:24:53",
       "date_created_gmt": "2026-09-08T12:24:53",
-      "date_modified": "2026-09-08T17:16:52",
-      "date_modified_gmt": "2026-09-08T17:16:52",
+      "date_modified": "2026-11-23T04:34:08",
+      "date_modified_gmt": "2026-11-23T04:34:08",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cinturon-trenzado-cuero/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=38&attribute_pa_hebilla=acero-inoxidable&attribute_pa_material=100-cuero",
       "sku": "27274004038",
       "global_unique_id": "",
-      "price": "165000",
+      "price": "99000",
       "regular_price": "165000",
-      "sale_price": "",
+      "sale_price": "99000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -12015,7 +12055,7 @@
         {
           "id": 2553380,
           "key": "_last_change_time",
-          "value": "1788887812"
+          "value": "1795408448"
         },
         {
           "id": 2553381,
@@ -13022,20 +13062,20 @@
       "type": "variation",
       "date_created": "2026-09-08T12:24:53",
       "date_created_gmt": "2026-09-08T12:24:53",
-      "date_modified": "2026-09-08T17:16:52",
-      "date_modified_gmt": "2026-09-08T17:16:52",
+      "date_modified": "2026-11-23T04:34:08",
+      "date_modified_gmt": "2026-11-23T04:34:08",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cinturon-trenzado-cuero/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=36&attribute_pa_hebilla=acero-inoxidable&attribute_pa_material=100-cuero",
       "sku": "27274004036",
       "global_unique_id": "",
-      "price": "165000",
+      "price": "99000",
       "regular_price": "165000",
-      "sale_price": "",
+      "sale_price": "99000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -13105,7 +13145,7 @@
         {
           "id": 2553347,
           "key": "_last_change_time",
-          "value": "1788887812"
+          "value": "1795408448"
         },
         {
           "id": 2553348,
@@ -14112,20 +14152,20 @@
       "type": "variation",
       "date_created": "2026-09-08T12:24:53",
       "date_created_gmt": "2026-09-08T12:24:53",
-      "date_modified": "2026-09-08T17:16:52",
-      "date_modified_gmt": "2026-09-08T17:16:52",
+      "date_modified": "2026-11-23T04:34:08",
+      "date_modified_gmt": "2026-11-23T04:34:08",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cinturon-trenzado-cuero/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=34&attribute_pa_hebilla=acero-inoxidable&attribute_pa_material=100-cuero",
       "sku": "27274004034",
       "global_unique_id": "",
-      "price": "165000",
+      "price": "99000",
       "regular_price": "165000",
-      "sale_price": "",
+      "sale_price": "99000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -14195,7 +14235,7 @@
         {
           "id": 2553315,
           "key": "_last_change_time",
-          "value": "1788887812"
+          "value": "1795408448"
         },
         {
           "id": 2553316,
@@ -15202,20 +15242,20 @@
       "type": "variation",
       "date_created": "2026-09-08T12:24:53",
       "date_created_gmt": "2026-09-08T12:24:53",
-      "date_modified": "2026-09-08T17:16:52",
-      "date_modified_gmt": "2026-09-08T17:16:52",
+      "date_modified": "2026-11-23T04:34:08",
+      "date_modified_gmt": "2026-11-23T04:34:08",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cinturon-trenzado-cuero/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=32&attribute_pa_hebilla=acero-inoxidable&attribute_pa_material=100-cuero",
       "sku": "27274004032",
       "global_unique_id": "",
-      "price": "165000",
+      "price": "99000",
       "regular_price": "165000",
-      "sale_price": "",
+      "sale_price": "99000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -15285,7 +15325,7 @@
         {
           "id": 2553283,
           "key": "_last_change_time",
-          "value": "1788887812"
+          "value": "1795408448"
         },
         {
           "id": 2553284,
@@ -16292,20 +16332,20 @@
       "type": "variation",
       "date_created": "2026-09-08T12:24:53",
       "date_created_gmt": "2026-09-08T12:24:53",
-      "date_modified": "2026-09-08T17:16:52",
-      "date_modified_gmt": "2026-09-08T17:16:52",
+      "date_modified": "2026-11-23T04:34:08",
+      "date_modified_gmt": "2026-11-23T04:34:08",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cinturon-trenzado-cuero/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=30&attribute_pa_hebilla=acero-inoxidable&attribute_pa_material=100-cuero",
       "sku": "27274004030",
       "global_unique_id": "",
-      "price": "165000",
+      "price": "99000",
       "regular_price": "165000",
-      "sale_price": "",
+      "sale_price": "99000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -16375,7 +16415,7 @@
         {
           "id": 2553251,
           "key": "_last_change_time",
-          "value": "1788887812"
+          "value": "1795408448"
         },
         {
           "id": 2553252,
@@ -17382,20 +17422,20 @@
       "type": "variation",
       "date_created": "2026-09-08T12:24:53",
       "date_created_gmt": "2026-09-08T12:24:53",
-      "date_modified": "2026-09-08T17:16:52",
-      "date_modified_gmt": "2026-09-08T17:16:52",
+      "date_modified": "2026-11-23T04:34:08",
+      "date_modified_gmt": "2026-11-23T04:34:08",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cinturon-trenzado-cuero/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=38&attribute_pa_hebilla=acero-inoxidable&attribute_pa_material=100-cuero",
       "sku": "27274001038",
       "global_unique_id": "",
-      "price": "165000",
+      "price": "99000",
       "regular_price": "165000",
-      "sale_price": "",
+      "sale_price": "99000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -17465,7 +17505,7 @@
         {
           "id": 2553218,
           "key": "_last_change_time",
-          "value": "1788887812"
+          "value": "1795408448"
         },
         {
           "id": 2553219,
@@ -18472,20 +18512,20 @@
       "type": "variation",
       "date_created": "2026-09-08T12:24:53",
       "date_created_gmt": "2026-09-08T12:24:53",
-      "date_modified": "2026-09-08T17:16:52",
-      "date_modified_gmt": "2026-09-08T17:16:52",
+      "date_modified": "2026-11-23T04:40:20",
+      "date_modified_gmt": "2026-11-23T04:40:20",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cinturon-trenzado-cuero/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=36&attribute_pa_hebilla=acero-inoxidable&attribute_pa_material=100-cuero",
       "sku": "27274001036",
       "global_unique_id": "",
-      "price": "165000",
+      "price": "99000",
       "regular_price": "165000",
-      "sale_price": "",
+      "sale_price": "99000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -18496,7 +18536,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 22,
+      "stock_quantity": 21,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -18555,7 +18595,7 @@
         {
           "id": 2553185,
           "key": "_last_change_time",
-          "value": "1788887812"
+          "value": "1795408820"
         },
         {
           "id": 2553186,
@@ -19562,20 +19602,20 @@
       "type": "variation",
       "date_created": "2026-09-08T12:24:52",
       "date_created_gmt": "2026-09-08T12:24:52",
-      "date_modified": "2026-09-08T17:16:52",
-      "date_modified_gmt": "2026-09-08T17:16:52",
+      "date_modified": "2026-11-23T04:34:08",
+      "date_modified_gmt": "2026-11-23T04:34:08",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cinturon-trenzado-cuero/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=34&attribute_pa_hebilla=acero-inoxidable&attribute_pa_material=100-cuero",
       "sku": "27274001034",
       "global_unique_id": "",
-      "price": "165000",
+      "price": "99000",
       "regular_price": "165000",
-      "sale_price": "",
+      "sale_price": "99000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -19645,7 +19685,7 @@
         {
           "id": 2553153,
           "key": "_last_change_time",
-          "value": "1788887812"
+          "value": "1795408448"
         },
         {
           "id": 2553154,
@@ -20652,20 +20692,20 @@
       "type": "variation",
       "date_created": "2026-09-08T12:24:52",
       "date_created_gmt": "2026-09-08T12:24:52",
-      "date_modified": "2026-09-08T17:16:52",
-      "date_modified_gmt": "2026-09-08T17:16:52",
+      "date_modified": "2026-11-23T04:34:08",
+      "date_modified_gmt": "2026-11-23T04:34:08",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cinturon-trenzado-cuero/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=32&attribute_pa_hebilla=acero-inoxidable&attribute_pa_material=100-cuero",
       "sku": "27274001032",
       "global_unique_id": "",
-      "price": "165000",
+      "price": "99000",
       "regular_price": "165000",
-      "sale_price": "",
+      "sale_price": "99000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -20735,7 +20775,7 @@
         {
           "id": 2553121,
           "key": "_last_change_time",
-          "value": "1788887812"
+          "value": "1795408448"
         },
         {
           "id": 2553122,
@@ -21742,20 +21782,20 @@
       "type": "variation",
       "date_created": "2026-09-08T12:24:52",
       "date_created_gmt": "2026-09-08T12:24:52",
-      "date_modified": "2026-09-08T17:16:52",
-      "date_modified_gmt": "2026-09-08T17:16:52",
+      "date_modified": "2026-11-23T04:34:08",
+      "date_modified_gmt": "2026-11-23T04:34:08",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cinturon-trenzado-cuero/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=30&attribute_pa_hebilla=acero-inoxidable&attribute_pa_material=100-cuero",
       "sku": "27274001030",
       "global_unique_id": "",
-      "price": "165000",
+      "price": "99000",
       "regular_price": "165000",
-      "sale_price": "",
+      "sale_price": "99000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -21825,7 +21865,7 @@
         {
           "id": 2553089,
           "key": "_last_change_time",
-          "value": "1788887812"
+          "value": "1795408448"
         },
         {
           "id": 2553090,
@@ -22829,17 +22869,23 @@
     }
   ],
   "wpc_resolved_media": {
+    "86776": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-cinturon-trenzado-cuero-bicolor-azul-cafe-2740-02.jpg",
     "86777": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-cinturon-trenzado-cuero-bicolor-azul-cafe-2740-04.jpg",
+    "86778": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-cinturon-trenzado-cuero-bicolor-azul-cafe-2740-04-copy.jpg",
     "86779": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-cinturon-trenzado-cuero-bicolor-azul-cafe-2740-05.jpg",
     "86780": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-cinturon-trenzado-cuero-bicolor-azul-cafe-2740-06.jpg",
     "86784": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-cinturon-trenzado-cuero-cafel-2740-04.jpg",
     "86785": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-cinturon-trenzado-cuero-cafel-2740-05.jpg",
     "86786": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-cinturon-trenzado-cuero-cafel-2740-06.jpg",
+    "86789": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-cinturon-trenzado-cuero-miel-2740-02.jpg",
+    "86790": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-cinturon-trenzado-cuero-miel-2740-03.jpg",
     "86791": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-cinturon-trenzado-cuero-miel-2740-04.jpg",
     "86792": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-cinturon-trenzado-cuero-miel-2740-05.jpg",
     "86793": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-cinturon-trenzado-cuero-miel-2740-06.jpg",
+    "86795": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-cinturon-trenzado-cuero-negro-2740-02.jpg",
     "86796": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-cinturon-trenzado-cuero-negro-2740-03.jpg",
-    "86797": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-cinturon-trenzado-cuero-negro-2740-04.jpg"
+    "86797": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-cinturon-trenzado-cuero-negro-2740-04.jpg",
+    "86798": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-cinturon-trenzado-cuero-negro-2740-05.jpg"
   },
   "stock_status": "instock",
   "variation_images_map": {
@@ -22849,6 +22895,16 @@
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-cinturon-trenzado-cuero-miel-2740-01.jpg",
         "alt": "winston-and-harry-cinturon-trenzado-cuero-miel-2740-01",
         "name": "winston-and-harry-cinturon-trenzado-cuero-miel-2740-01"
+      },
+      {
+        "id": 86789,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-cinturon-trenzado-cuero-miel-2740-02.jpg",
+        "alt": "Cinturon Trenzado Cuero"
+      },
+      {
+        "id": 86790,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-cinturon-trenzado-cuero-miel-2740-03.jpg",
+        "alt": "Cinturon Trenzado Cuero"
       },
       {
         "id": 86791,
@@ -22872,6 +22928,16 @@
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-cinturon-trenzado-cuero-bicolor-azul-cafe-2740-01.jpg",
         "alt": "winston-and-harry-cinturon-trenzado-cuero-bicolor-azul-cafe-2740-01",
         "name": "winston-and-harry-cinturon-trenzado-cuero-bicolor-azul-cafe-2740-01"
+      },
+      {
+        "id": 86776,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-cinturon-trenzado-cuero-bicolor-azul-cafe-2740-02.jpg",
+        "alt": "Cinturon Trenzado Cuero"
+      },
+      {
+        "id": 86778,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-cinturon-trenzado-cuero-bicolor-azul-cafe-2740-04-copy.jpg",
+        "alt": "Cinturon Trenzado Cuero"
       },
       {
         "id": 86777,
@@ -22930,6 +22996,16 @@
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-cinturon-trenzado-cuero-negro-2740-01.jpg",
         "alt": "winston-and-harry-cinturon-trenzado-cuero-negro-2740-01",
         "name": "winston-and-harry-cinturon-trenzado-cuero-negro-2740-01"
+      },
+      {
+        "id": 86795,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-cinturon-trenzado-cuero-negro-2740-02.jpg",
+        "alt": "Cinturon Trenzado Cuero"
+      },
+      {
+        "id": 86798,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-cinturon-trenzado-cuero-negro-2740-05.jpg",
+        "alt": "Cinturon Trenzado Cuero"
       },
       {
         "id": 86796,

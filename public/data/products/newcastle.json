@@ -11,9 +11,9 @@
   "description": "<p>Las botas Newcastle son la convergencia entre la formalidad y un estilo mas casual. Une la tradicion milenaria de la bota con las tendencias modernas de suela en goma blanca. Su plantilla aporta a su durabilidad y comodidad</p>",
   "on_sale": true,
   "prices": {
-    "price": "392000",
+    "price": "168000",
     "regular_price": "560000",
-    "sale_price": "392000",
+    "sale_price": "168000",
     "price_range": null,
     "currency_code": "COP",
     "currency_symbol": "$",
@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>560,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;560,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>392,000</span></ins><span class=\"screen-reader-text\">Current price is: &#036;392,000.</span>",
+  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>560,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;560,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>168,000</span></ins><span class=\"screen-reader-text\">Current price is: &#036;168,000.</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -250,8 +250,10 @@
         "name": "winston-and-harry-botas-newcastle-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "392000",
+      "price": "168000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -279,8 +281,10 @@
         "name": "winston-and-harry-botas-newcastle-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "392000",
+      "price": "168000",
       "regular_price": "560000",
       "sale_price": ""
     }
@@ -2136,15 +2140,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:44:33",
       "date_created_gmt": "2022-08-25T22:44:33",
-      "date_modified": "2026-08-04T16:56:54",
-      "date_modified_gmt": "2026-08-04T16:56:54",
+      "date_modified": "2026-11-23T04:29:37",
+      "date_modified_gmt": "2026-11-23T04:29:37",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/newcastle/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=43",
       "sku": "7408802043",
       "global_unique_id": "",
-      "price": "392000",
+      "price": "168000",
       "regular_price": "560000",
-      "sale_price": "392000",
+      "sale_price": "168000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -2642,7 +2646,7 @@
         {
           "id": 2261529,
           "key": "_last_change_time",
-          "value": "1778184437"
+          "value": "1795408177"
         },
         {
           "id": 2314296,
@@ -3029,15 +3033,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:44:33",
       "date_created_gmt": "2022-08-25T22:44:33",
-      "date_modified": "2026-08-04T16:56:54",
-      "date_modified_gmt": "2026-08-04T16:56:54",
+      "date_modified": "2026-11-23T04:29:37",
+      "date_modified_gmt": "2026-11-23T04:29:37",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/newcastle/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=42",
       "sku": "7408802042",
       "global_unique_id": "",
-      "price": "392000",
+      "price": "168000",
       "regular_price": "560000",
-      "sale_price": "392000",
+      "sale_price": "168000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -3535,7 +3539,7 @@
         {
           "id": 2261528,
           "key": "_last_change_time",
-          "value": "1780421750"
+          "value": "1795408177"
         },
         {
           "id": 2314305,
@@ -3922,15 +3926,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:44:33",
       "date_created_gmt": "2022-08-25T22:44:33",
-      "date_modified": "2026-08-04T16:56:54",
-      "date_modified_gmt": "2026-08-04T16:56:54",
+      "date_modified": "2026-11-23T04:29:37",
+      "date_modified_gmt": "2026-11-23T04:29:37",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/newcastle/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=41",
       "sku": "7408802041",
       "global_unique_id": "",
-      "price": "392000",
+      "price": "168000",
       "regular_price": "560000",
-      "sale_price": "392000",
+      "sale_price": "168000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -4428,7 +4432,7 @@
         {
           "id": 2261527,
           "key": "_last_change_time",
-          "value": "1778184437"
+          "value": "1795408177"
         },
         {
           "id": 2314304,
@@ -4815,15 +4819,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:44:33",
       "date_created_gmt": "2022-08-25T22:44:33",
-      "date_modified": "2026-08-04T16:56:54",
-      "date_modified_gmt": "2026-08-04T16:56:54",
+      "date_modified": "2026-11-23T04:29:37",
+      "date_modified_gmt": "2026-11-23T04:29:37",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/newcastle/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=40",
       "sku": "7408802040",
       "global_unique_id": "",
-      "price": "392000",
+      "price": "168000",
       "regular_price": "560000",
-      "sale_price": "392000",
+      "sale_price": "168000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -5321,7 +5325,7 @@
         {
           "id": 2261526,
           "key": "_last_change_time",
-          "value": "1778184437"
+          "value": "1795408177"
         },
         {
           "id": 2314303,
@@ -5708,15 +5712,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:44:33",
       "date_created_gmt": "2022-08-25T22:44:33",
-      "date_modified": "2026-08-04T16:56:54",
-      "date_modified_gmt": "2026-08-04T16:56:54",
+      "date_modified": "2026-11-23T04:29:37",
+      "date_modified_gmt": "2026-11-23T04:29:37",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/newcastle/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=39",
       "sku": "7408802039",
       "global_unique_id": "",
-      "price": "392000",
+      "price": "168000",
       "regular_price": "560000",
-      "sale_price": "392000",
+      "sale_price": "168000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -6214,7 +6218,7 @@
         {
           "id": 2261525,
           "key": "_last_change_time",
-          "value": "1778184437"
+          "value": "1795408177"
         },
         {
           "id": 2314302,
@@ -6601,15 +6605,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:44:33",
       "date_created_gmt": "2022-08-25T22:44:33",
-      "date_modified": "2026-08-04T16:56:54",
-      "date_modified_gmt": "2026-08-04T16:56:54",
+      "date_modified": "2026-11-23T04:29:37",
+      "date_modified_gmt": "2026-11-23T04:29:37",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/newcastle/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=38",
       "sku": "7408802038",
       "global_unique_id": "",
-      "price": "392000",
+      "price": "168000",
       "regular_price": "560000",
-      "sale_price": "392000",
+      "sale_price": "168000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -7107,7 +7111,7 @@
         {
           "id": 2261524,
           "key": "_last_change_time",
-          "value": "1778184437"
+          "value": "1795408177"
         },
         {
           "id": 2314301,
@@ -7494,15 +7498,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:44:33",
       "date_created_gmt": "2022-08-25T22:44:33",
-      "date_modified": "2026-08-04T16:56:54",
-      "date_modified_gmt": "2026-08-04T16:56:54",
+      "date_modified": "2026-11-23T04:29:37",
+      "date_modified_gmt": "2026-11-23T04:29:37",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/newcastle/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=37",
       "sku": "7408802037",
       "global_unique_id": "",
-      "price": "392000",
+      "price": "168000",
       "regular_price": "560000",
-      "sale_price": "392000",
+      "sale_price": "168000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -8000,7 +8004,7 @@
         {
           "id": 2261522,
           "key": "_last_change_time",
-          "value": "1778184437"
+          "value": "1795408177"
         },
         {
           "id": 2314300,
@@ -16424,7 +16428,9 @@
     "16087": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/02/25-suela-capellada-4088.jpg",
     "16088": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/02/25-lateral-4088.jpg",
     "16090": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/02/26-suela-capellada-4088.jpg",
-    "16091": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/02/26-lateral-4088.jpg"
+    "16091": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/02/26-lateral-4088.jpg",
+    "86122": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-botas-newcastle-negro-02.jpg",
+    "86123": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-botas-newcastle-negro-03.jpg"
   },
   "stock_status": "instock",
   "variation_images_map": {
@@ -16434,6 +16440,16 @@
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-botas-newcastle-negro-01.jpg",
         "alt": "winston-and-harry-botas-newcastle-negro-01",
         "name": "winston-and-harry-botas-newcastle-negro-01"
+      },
+      {
+        "id": 86122,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-botas-newcastle-negro-02.jpg",
+        "alt": "Newcastle"
+      },
+      {
+        "id": 86123,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-botas-newcastle-negro-03.jpg",
+        "alt": "Newcastle"
       },
       {
         "id": 16088,

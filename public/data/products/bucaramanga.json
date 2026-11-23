@@ -11,9 +11,9 @@
   "description": "<p>Los Tenis Bucaramanga están hechos a mano por artesanos colombianos. Tiene una pieza en contraste que evoca la grandeza de las montañas en sus tierras. Combina los grises y los negros para poder darle un toque único a tu atuendo. Estos zapatos están hechos en 100% cuero y son extremadamente livianos.</p>",
   "on_sale": true,
   "prices": {
-    "price": "458150",
+    "price": "323400",
     "regular_price": "539000",
-    "sale_price": "458150",
+    "sale_price": "323400",
     "price_range": null,
     "currency_code": "COP",
     "currency_symbol": "$",
@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>539,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;539,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>458,150</span></ins><span class=\"screen-reader-text\">Current price is: &#036;458,150.</span>",
+  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>539,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;539,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>323,400</span></ins><span class=\"screen-reader-text\">Current price is: &#036;323,400.</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -231,8 +231,10 @@
         "name": "Bucaramanga-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "458150",
+      "price": "323400",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -260,8 +262,10 @@
         "name": "Bucaramanga-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
-      "price": "458150",
+      "price": "323400",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -289,8 +293,10 @@
         "name": "Bucaramanga-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
-      "price": "458150",
+      "price": "323400",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -318,8 +324,10 @@
         "name": "Bucaramanga-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
-      "price": "458150",
+      "price": "323400",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -347,8 +355,10 @@
         "name": "Bucaramanga-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
-      "price": "458150",
+      "price": "323400",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -376,8 +386,10 @@
         "name": "Bucaramanga-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
-      "price": "458150",
+      "price": "323400",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -405,8 +417,10 @@
         "name": "Bucaramanga-Gris-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "458150",
+      "price": "323400",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -434,8 +448,10 @@
         "name": "Bucaramanga-Gris-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
-      "price": "458150",
+      "price": "323400",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -463,8 +479,10 @@
         "name": "Bucaramanga-Gris-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
-      "price": "458150",
+      "price": "323400",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -492,8 +510,10 @@
         "name": "Bucaramanga-Gris-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
-      "price": "458150",
+      "price": "323400",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -521,8 +541,10 @@
         "name": "Bucaramanga-Gris-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "458150",
+      "price": "323400",
       "regular_price": "539000",
       "sale_price": ""
     }
@@ -2677,15 +2699,15 @@
       "type": "variation",
       "date_created": "2023-01-11T20:52:51",
       "date_created_gmt": "2023-01-11T20:52:51",
-      "date_modified": "2026-05-08T21:42:29",
-      "date_modified_gmt": "2026-05-08T21:42:29",
+      "date_modified": "2026-11-23T04:31:15",
+      "date_modified_gmt": "2026-11-23T04:31:15",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bucaramanga/?attribute_pa_selecciona-el-color=gris&attribute_pa_selecciona-una-talla=43",
       "sku": "7501003043",
       "global_unique_id": "",
-      "price": "458150",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "458150",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -3315,7 +3337,7 @@
         {
           "id": 2215767,
           "key": "_last_change_time",
-          "value": "1778177562"
+          "value": "1795408275"
         },
         {
           "id": 2313328,
@@ -3372,15 +3394,15 @@
       "type": "variation",
       "date_created": "2023-01-11T20:52:51",
       "date_created_gmt": "2023-01-11T20:52:51",
-      "date_modified": "2026-05-08T21:42:29",
-      "date_modified_gmt": "2026-05-08T21:42:29",
+      "date_modified": "2026-11-23T04:31:15",
+      "date_modified_gmt": "2026-11-23T04:31:15",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bucaramanga/?attribute_pa_selecciona-el-color=gris&attribute_pa_selecciona-una-talla=42",
       "sku": "7501003042",
       "global_unique_id": "",
-      "price": "458150",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "458150",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -4010,7 +4032,7 @@
         {
           "id": 2215766,
           "key": "_last_change_time",
-          "value": "1778177562"
+          "value": "1795408275"
         },
         {
           "id": 2313327,
@@ -4067,15 +4089,15 @@
       "type": "variation",
       "date_created": "2023-01-11T20:52:51",
       "date_created_gmt": "2023-01-11T20:52:51",
-      "date_modified": "2026-05-08T21:42:29",
-      "date_modified_gmt": "2026-05-08T21:42:29",
+      "date_modified": "2026-11-23T04:31:15",
+      "date_modified_gmt": "2026-11-23T04:31:15",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bucaramanga/?attribute_pa_selecciona-el-color=gris&attribute_pa_selecciona-una-talla=41",
       "sku": "7501003041",
       "global_unique_id": "",
-      "price": "458150",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "458150",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -4710,7 +4732,7 @@
         {
           "id": 2215765,
           "key": "_last_change_time",
-          "value": "1778177562"
+          "value": "1795408275"
         },
         {
           "id": 2313326,
@@ -4767,15 +4789,15 @@
       "type": "variation",
       "date_created": "2023-01-11T20:52:51",
       "date_created_gmt": "2023-01-11T20:52:51",
-      "date_modified": "2026-05-08T21:42:29",
-      "date_modified_gmt": "2026-05-08T21:42:29",
+      "date_modified": "2026-11-23T04:31:15",
+      "date_modified_gmt": "2026-11-23T04:31:15",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bucaramanga/?attribute_pa_selecciona-el-color=gris&attribute_pa_selecciona-una-talla=40",
       "sku": "7501003040",
       "global_unique_id": "",
-      "price": "458150",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "458150",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -5410,7 +5432,7 @@
         {
           "id": 2215764,
           "key": "_last_change_time",
-          "value": "1778177562"
+          "value": "1795408275"
         },
         {
           "id": 2313325,
@@ -5467,15 +5489,15 @@
       "type": "variation",
       "date_created": "2023-01-11T20:52:51",
       "date_created_gmt": "2023-01-11T20:52:51",
-      "date_modified": "2026-05-08T21:42:29",
-      "date_modified_gmt": "2026-05-08T21:42:29",
+      "date_modified": "2026-11-23T04:31:15",
+      "date_modified_gmt": "2026-11-23T04:31:15",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bucaramanga/?attribute_pa_selecciona-el-color=gris&attribute_pa_selecciona-una-talla=39",
       "sku": "7501003039",
       "global_unique_id": "",
-      "price": "458150",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "458150",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -6110,7 +6132,7 @@
         {
           "id": 2215763,
           "key": "_last_change_time",
-          "value": "1778177562"
+          "value": "1795408275"
         },
         {
           "id": 2313324,
@@ -6167,15 +6189,15 @@
       "type": "variation",
       "date_created": "2023-01-11T20:52:51",
       "date_created_gmt": "2023-01-11T20:52:51",
-      "date_modified": "2026-05-08T21:42:29",
-      "date_modified_gmt": "2026-05-08T21:42:29",
+      "date_modified": "2026-11-23T04:31:15",
+      "date_modified_gmt": "2026-11-23T04:31:15",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bucaramanga/?attribute_pa_selecciona-el-color=gris&attribute_pa_selecciona-una-talla=38",
       "sku": "7501003038",
       "global_unique_id": "",
-      "price": "458150",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "458150",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -6810,7 +6832,7 @@
         {
           "id": 2215762,
           "key": "_last_change_time",
-          "value": "1778177562"
+          "value": "1795408275"
         },
         {
           "id": 2313323,
@@ -6867,15 +6889,15 @@
       "type": "variation",
       "date_created": "2023-01-11T20:52:51",
       "date_created_gmt": "2023-01-11T20:52:51",
-      "date_modified": "2026-05-08T21:42:29",
-      "date_modified_gmt": "2026-05-08T21:42:29",
+      "date_modified": "2026-11-23T04:31:15",
+      "date_modified_gmt": "2026-11-23T04:31:15",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bucaramanga/?attribute_pa_selecciona-el-color=gris&attribute_pa_selecciona-una-talla=37",
       "sku": "7501003037",
       "global_unique_id": "",
-      "price": "458150",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "458150",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -7510,7 +7532,7 @@
         {
           "id": 2215761,
           "key": "_last_change_time",
-          "value": "1778177562"
+          "value": "1795408275"
         },
         {
           "id": 2313322,
@@ -8262,15 +8284,15 @@
       "type": "variation",
       "date_created": "2023-01-11T20:52:39",
       "date_created_gmt": "2023-01-11T20:52:39",
-      "date_modified": "2026-05-08T21:42:29",
-      "date_modified_gmt": "2026-05-08T21:42:29",
+      "date_modified": "2026-11-23T04:31:15",
+      "date_modified_gmt": "2026-11-23T04:31:15",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bucaramanga/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=43",
       "sku": "7501002043",
       "global_unique_id": "",
-      "price": "458150",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "458150",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -8900,7 +8922,7 @@
         {
           "id": 2215759,
           "key": "_last_change_time",
-          "value": "1778177562"
+          "value": "1795408275"
         },
         {
           "id": 2313330,
@@ -8957,15 +8979,15 @@
       "type": "variation",
       "date_created": "2023-01-11T20:52:39",
       "date_created_gmt": "2023-01-11T20:52:39",
-      "date_modified": "2026-05-08T21:42:29",
-      "date_modified_gmt": "2026-05-08T21:42:29",
+      "date_modified": "2026-11-23T04:31:15",
+      "date_modified_gmt": "2026-11-23T04:31:15",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bucaramanga/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=42",
       "sku": "7501002042",
       "global_unique_id": "",
-      "price": "458150",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "458150",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -9600,7 +9622,7 @@
         {
           "id": 2215758,
           "key": "_last_change_time",
-          "value": "1778177562"
+          "value": "1795408275"
         },
         {
           "id": 2313337,
@@ -9657,15 +9679,15 @@
       "type": "variation",
       "date_created": "2023-01-11T20:52:39",
       "date_created_gmt": "2023-01-11T20:52:39",
-      "date_modified": "2026-05-08T21:42:29",
-      "date_modified_gmt": "2026-05-08T21:42:29",
+      "date_modified": "2026-11-23T04:31:15",
+      "date_modified_gmt": "2026-11-23T04:31:15",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bucaramanga/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=41",
       "sku": "7501002041",
       "global_unique_id": "",
-      "price": "458150",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "458150",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -10300,7 +10322,7 @@
         {
           "id": 2215757,
           "key": "_last_change_time",
-          "value": "1778177562"
+          "value": "1795408275"
         },
         {
           "id": 2313336,
@@ -10357,15 +10379,15 @@
       "type": "variation",
       "date_created": "2023-01-11T20:52:39",
       "date_created_gmt": "2023-01-11T20:52:39",
-      "date_modified": "2026-05-08T21:42:28",
-      "date_modified_gmt": "2026-05-08T21:42:28",
+      "date_modified": "2026-11-23T04:31:15",
+      "date_modified_gmt": "2026-11-23T04:31:15",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bucaramanga/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=40",
       "sku": "7501002040",
       "global_unique_id": "",
-      "price": "458150",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "458150",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -11000,7 +11022,7 @@
         {
           "id": 2215756,
           "key": "_last_change_time",
-          "value": "1778177562"
+          "value": "1795408275"
         },
         {
           "id": 2313335,
@@ -11057,15 +11079,15 @@
       "type": "variation",
       "date_created": "2023-01-11T20:52:39",
       "date_created_gmt": "2023-01-11T20:52:39",
-      "date_modified": "2026-05-08T21:42:28",
-      "date_modified_gmt": "2026-05-08T21:42:28",
+      "date_modified": "2026-11-23T04:31:15",
+      "date_modified_gmt": "2026-11-23T04:31:15",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bucaramanga/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=39",
       "sku": "7501002039",
       "global_unique_id": "",
-      "price": "458150",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "458150",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -11700,7 +11722,7 @@
         {
           "id": 2215755,
           "key": "_last_change_time",
-          "value": "1778177562"
+          "value": "1795408275"
         },
         {
           "id": 2313334,
@@ -11757,15 +11779,15 @@
       "type": "variation",
       "date_created": "2023-01-11T20:52:39",
       "date_created_gmt": "2023-01-11T20:52:39",
-      "date_modified": "2026-05-08T21:42:28",
-      "date_modified_gmt": "2026-05-08T21:42:28",
+      "date_modified": "2026-11-23T04:31:15",
+      "date_modified_gmt": "2026-11-23T04:31:15",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bucaramanga/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=38",
       "sku": "7501002038",
       "global_unique_id": "",
-      "price": "458150",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "458150",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -12400,7 +12422,7 @@
         {
           "id": 2215754,
           "key": "_last_change_time",
-          "value": "1778177562"
+          "value": "1795408275"
         },
         {
           "id": 2313333,
@@ -12457,15 +12479,15 @@
       "type": "variation",
       "date_created": "2023-01-11T20:52:39",
       "date_created_gmt": "2023-01-11T20:52:39",
-      "date_modified": "2026-05-08T21:42:16",
-      "date_modified_gmt": "2026-05-08T21:42:16",
+      "date_modified": "2026-11-23T04:31:15",
+      "date_modified_gmt": "2026-11-23T04:31:15",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bucaramanga/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=37",
       "sku": "7501002037",
       "global_unique_id": "",
-      "price": "458150",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "458150",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -13100,7 +13122,7 @@
         {
           "id": 2215753,
           "key": "_last_change_time",
-          "value": "1778177562"
+          "value": "1795408275"
         },
         {
           "id": 2313332,

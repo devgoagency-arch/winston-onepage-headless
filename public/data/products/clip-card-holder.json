@@ -9,11 +9,11 @@
   "sku": "319",
   "short_description": "",
   "description": "<p>Como su nombre lo indica, el Clip Card Holder es la unión de nuestro Clip Wallet y Card Holder. En la parte delantera tiene 3 ranuras para guardar tarjetas, además cuenta con un bolsillo lateral forrado con nuestro forro insignia, para transportar cómodamente hasta 3 tarjetas. El imán en la parte trasera crea un clip para guardar los billetes doblados. Este modelo es ideal para esas personas de estilo simple que cargan con lo necesario.</p>",
-  "on_sale": false,
+  "on_sale": true,
   "prices": {
-    "price": "99000",
+    "price": "59400",
     "regular_price": "99000",
-    "sale_price": "99000",
+    "sale_price": "59400",
     "price_range": null,
     "currency_code": "COP",
     "currency_symbol": "$",
@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>99,000</span>",
+  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>99,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;99,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>59,400</span></ins><span class=\"screen-reader-text\">Current price is: &#036;59,400.</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -153,8 +153,10 @@
         "name": "3-tarjetero-iman-horizontal",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
-      "price": "99000",
+      "price": "59400",
       "regular_price": "99000",
       "sale_price": ""
     }
@@ -230,20 +232,20 @@
       "type": "variation",
       "date_created": "2022-08-29T21:01:51",
       "date_created_gmt": "2022-08-29T21:01:51",
-      "date_modified": "2026-07-16T22:39:59",
-      "date_modified_gmt": "2026-07-16T22:39:59",
+      "date_modified": "2026-11-23T04:30:47",
+      "date_modified_gmt": "2026-11-23T04:30:47",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/clip-card-holder/?attribute_pa_selecciona-el-color=miel",
       "sku": "33338326000",
       "global_unique_id": "",
-      "price": "99000",
+      "price": "59400",
       "regular_price": "99000",
-      "sale_price": "",
+      "sale_price": "59400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -727,7 +729,7 @@
         {
           "id": 2262274,
           "key": "_last_change_time",
-          "value": "1784241599"
+          "value": "1795408247"
         }
       ],
       "name": "Miel",
@@ -764,20 +766,20 @@
       "type": "variation",
       "date_created": "2022-08-25T22:40:26",
       "date_created_gmt": "2022-08-25T22:40:26",
-      "date_modified": "2026-05-07T23:02:01",
-      "date_modified_gmt": "2026-05-07T23:02:01",
+      "date_modified": "2026-11-23T04:29:10",
+      "date_modified_gmt": "2026-11-23T04:29:10",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/clip-card-holder/?attribute_pa_selecciona-el-color=azul",
       "sku": "33338201000",
       "global_unique_id": "",
-      "price": "150000",
+      "price": "90000",
       "regular_price": "150000",
-      "sale_price": "",
+      "sale_price": "90000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -1251,7 +1253,7 @@
         {
           "id": 2262270,
           "key": "_last_change_time",
-          "value": "1778177845"
+          "value": "1795408150"
         }
       ],
       "name": "Azul",

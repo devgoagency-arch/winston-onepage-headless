@@ -11,9 +11,9 @@
   "description": "<p>• Hecho a mano 100% por artesanos colombianos.</p>\n<p>• Capellada en cuero.</p>\n<p>• Forro interior en cuero para mayor frescura.</p>\n<p>• Un estilo con textura que combinando tradición y modernidad.</p>\n<p>• Su construcción y su plantilla en espuma de latex, generan mayor comodidad y cuidado a tu salud.</p>\n<p>• Suela en goma muy liviana.</p>\n<p>• Los mejores materiales para mayor durabilidad.</p>",
   "on_sale": true,
   "prices": {
-    "price": "297000",
+    "price": "148500",
     "regular_price": "495000",
-    "sale_price": "297000",
+    "sale_price": "148500",
     "price_range": null,
     "currency_code": "COP",
     "currency_symbol": "$",
@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>495,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;495,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>297,000</span></ins><span class=\"screen-reader-text\">Current price is: &#036;297,000.</span>",
+  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>495,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;495,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>148,500</span></ins><span class=\"screen-reader-text\">Current price is: &#036;148,500.</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -262,8 +262,10 @@
         "name": "winston-and-harry-mocasines-armenia-azul-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "297000",
+      "price": "148500",
       "regular_price": "495000",
       "sale_price": ""
     },
@@ -291,8 +293,10 @@
         "name": "winston-and-harry-mocasines-armenia-azul-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "297000",
+      "price": "148500",
       "regular_price": "495000",
       "sale_price": ""
     }
@@ -2148,15 +2152,15 @@
       "type": "variation",
       "date_created": "2023-06-09T17:28:37",
       "date_created_gmt": "2023-06-09T17:28:37",
-      "date_modified": "2026-07-27T20:44:46",
-      "date_modified_gmt": "2026-07-27T20:44:46",
+      "date_modified": "2026-11-23T04:31:36",
+      "date_modified_gmt": "2026-11-23T04:31:36",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/armenia/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=43",
       "sku": "7510004043",
       "global_unique_id": "",
-      "price": "297000",
+      "price": "148500",
       "regular_price": "495000",
-      "sale_price": "297000",
+      "sale_price": "148500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -2654,7 +2658,7 @@
         {
           "id": 2215530,
           "key": "_last_change_time",
-          "value": "1785171724"
+          "value": "1795408296"
         },
         {
           "id": 2313147,
@@ -3041,15 +3045,15 @@
       "type": "variation",
       "date_created": "2023-06-09T17:28:37",
       "date_created_gmt": "2023-06-09T17:28:37",
-      "date_modified": "2026-07-27T20:44:47",
-      "date_modified_gmt": "2026-07-27T20:44:47",
+      "date_modified": "2026-11-23T04:31:36",
+      "date_modified_gmt": "2026-11-23T04:31:36",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/armenia/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=42",
       "sku": "7510004042",
       "global_unique_id": "",
-      "price": "297000",
+      "price": "148500",
       "regular_price": "495000",
-      "sale_price": "297000",
+      "sale_price": "148500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -3547,7 +3551,7 @@
         {
           "id": 2215529,
           "key": "_last_change_time",
-          "value": "1785171725"
+          "value": "1795408296"
         },
         {
           "id": 2313146,
@@ -3934,15 +3938,15 @@
       "type": "variation",
       "date_created": "2023-06-09T17:28:37",
       "date_created_gmt": "2023-06-09T17:28:37",
-      "date_modified": "2026-07-27T20:44:47",
-      "date_modified_gmt": "2026-07-27T20:44:47",
+      "date_modified": "2026-11-23T04:31:36",
+      "date_modified_gmt": "2026-11-23T04:31:36",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/armenia/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=41",
       "sku": "7510004041",
       "global_unique_id": "",
-      "price": "297000",
+      "price": "148500",
       "regular_price": "495000",
-      "sale_price": "297000",
+      "sale_price": "148500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -4430,7 +4434,7 @@
         {
           "id": 2215528,
           "key": "_last_change_time",
-          "value": "1785171725"
+          "value": "1795408296"
         },
         {
           "id": 2313145,
@@ -4827,15 +4831,15 @@
       "type": "variation",
       "date_created": "2023-06-09T17:28:37",
       "date_created_gmt": "2023-06-09T17:28:37",
-      "date_modified": "2026-07-27T20:44:47",
-      "date_modified_gmt": "2026-07-27T20:44:47",
+      "date_modified": "2026-11-23T04:31:36",
+      "date_modified_gmt": "2026-11-23T04:31:36",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/armenia/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=40",
       "sku": "7510004040",
       "global_unique_id": "",
-      "price": "297000",
+      "price": "148500",
       "regular_price": "495000",
-      "sale_price": "297000",
+      "sale_price": "148500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -5323,7 +5327,7 @@
         {
           "id": 2215527,
           "key": "_last_change_time",
-          "value": "1785171725"
+          "value": "1795408296"
         },
         {
           "id": 2313144,
@@ -5720,15 +5724,15 @@
       "type": "variation",
       "date_created": "2023-06-09T17:28:37",
       "date_created_gmt": "2023-06-09T17:28:37",
-      "date_modified": "2026-07-27T20:44:47",
-      "date_modified_gmt": "2026-07-27T20:44:47",
+      "date_modified": "2026-11-23T04:31:36",
+      "date_modified_gmt": "2026-11-23T04:31:36",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/armenia/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=39",
       "sku": "7510004039",
       "global_unique_id": "",
-      "price": "297000",
+      "price": "148500",
       "regular_price": "495000",
-      "sale_price": "297000",
+      "sale_price": "148500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -6226,7 +6230,7 @@
         {
           "id": 2215526,
           "key": "_last_change_time",
-          "value": "1785171725"
+          "value": "1795408296"
         },
         {
           "id": 2313143,
@@ -6613,15 +6617,15 @@
       "type": "variation",
       "date_created": "2023-06-09T17:28:37",
       "date_created_gmt": "2023-06-09T17:28:37",
-      "date_modified": "2026-07-27T20:44:47",
-      "date_modified_gmt": "2026-07-27T20:44:47",
+      "date_modified": "2026-11-23T04:31:36",
+      "date_modified_gmt": "2026-11-23T04:31:36",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/armenia/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=38",
       "sku": "7510004038",
       "global_unique_id": "",
-      "price": "297000",
+      "price": "148500",
       "regular_price": "495000",
-      "sale_price": "297000",
+      "sale_price": "148500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -7119,7 +7123,7 @@
         {
           "id": 2215519,
           "key": "_last_change_time",
-          "value": "1785171725"
+          "value": "1795408296"
         },
         {
           "id": 2313142,
@@ -10185,15 +10189,15 @@
       "type": "variation",
       "date_created": "2023-06-09T17:28:36",
       "date_created_gmt": "2023-06-09T17:28:36",
-      "date_modified": "2026-07-27T20:44:53",
-      "date_modified_gmt": "2026-07-27T20:44:53",
+      "date_modified": "2026-11-23T04:31:36",
+      "date_modified_gmt": "2026-11-23T04:31:36",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/armenia/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=43",
       "sku": "7510001043",
       "global_unique_id": "",
-      "price": "297000",
+      "price": "148500",
       "regular_price": "495000",
-      "sale_price": "297000",
+      "sale_price": "148500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -10691,7 +10695,7 @@
         {
           "id": 2215507,
           "key": "_last_change_time",
-          "value": "1785171733"
+          "value": "1795408296"
         },
         {
           "id": 2313154,
@@ -11078,15 +11082,15 @@
       "type": "variation",
       "date_created": "2023-06-09T17:28:36",
       "date_created_gmt": "2023-06-09T17:28:36",
-      "date_modified": "2026-08-13T00:05:17",
-      "date_modified_gmt": "2026-08-13T00:05:17",
+      "date_modified": "2026-11-23T04:31:36",
+      "date_modified_gmt": "2026-11-23T04:31:36",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/armenia/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=42",
       "sku": "7510001042",
       "global_unique_id": "",
-      "price": "297000",
+      "price": "148500",
       "regular_price": "495000",
-      "sale_price": "297000",
+      "sale_price": "148500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -11584,7 +11588,7 @@
         {
           "id": 2215506,
           "key": "_last_change_time",
-          "value": "1786579517"
+          "value": "1795408296"
         },
         {
           "id": 2313153,
@@ -11966,15 +11970,15 @@
       "type": "variation",
       "date_created": "2023-06-09T17:28:36",
       "date_created_gmt": "2023-06-09T17:28:36",
-      "date_modified": "2026-07-27T20:44:53",
-      "date_modified_gmt": "2026-07-27T20:44:53",
+      "date_modified": "2026-11-23T04:31:36",
+      "date_modified_gmt": "2026-11-23T04:31:36",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/armenia/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=41",
       "sku": "7510001041",
       "global_unique_id": "",
-      "price": "297000",
+      "price": "148500",
       "regular_price": "495000",
-      "sale_price": "297000",
+      "sale_price": "148500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -12472,7 +12476,7 @@
         {
           "id": 2215505,
           "key": "_last_change_time",
-          "value": "1785171733"
+          "value": "1795408296"
         },
         {
           "id": 2313152,
@@ -12859,15 +12863,15 @@
       "type": "variation",
       "date_created": "2023-06-09T17:28:36",
       "date_created_gmt": "2023-06-09T17:28:36",
-      "date_modified": "2026-07-27T20:44:53",
-      "date_modified_gmt": "2026-07-27T20:44:53",
+      "date_modified": "2026-11-23T04:31:36",
+      "date_modified_gmt": "2026-11-23T04:31:36",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/armenia/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=40",
       "sku": "7510001040",
       "global_unique_id": "",
-      "price": "297000",
+      "price": "148500",
       "regular_price": "495000",
-      "sale_price": "297000",
+      "sale_price": "148500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -13365,7 +13369,7 @@
         {
           "id": 2215504,
           "key": "_last_change_time",
-          "value": "1785171733"
+          "value": "1795408296"
         },
         {
           "id": 2313151,
@@ -13752,15 +13756,15 @@
       "type": "variation",
       "date_created": "2023-06-09T17:28:36",
       "date_created_gmt": "2023-06-09T17:28:36",
-      "date_modified": "2026-07-27T20:44:53",
-      "date_modified_gmt": "2026-07-27T20:44:53",
+      "date_modified": "2026-11-23T04:31:36",
+      "date_modified_gmt": "2026-11-23T04:31:36",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/armenia/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=39",
       "sku": "7510001039",
       "global_unique_id": "",
-      "price": "297000",
+      "price": "148500",
       "regular_price": "495000",
-      "sale_price": "297000",
+      "sale_price": "148500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -14248,7 +14252,7 @@
         {
           "id": 2215503,
           "key": "_last_change_time",
-          "value": "1785171733"
+          "value": "1795408296"
         },
         {
           "id": 2313150,
@@ -14645,15 +14649,15 @@
       "type": "variation",
       "date_created": "2023-06-09T17:28:36",
       "date_created_gmt": "2023-06-09T17:28:36",
-      "date_modified": "2026-07-27T20:44:53",
-      "date_modified_gmt": "2026-07-27T20:44:53",
+      "date_modified": "2026-11-23T04:31:36",
+      "date_modified_gmt": "2026-11-23T04:31:36",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/armenia/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=38",
       "sku": "7510001038",
       "global_unique_id": "",
-      "price": "297000",
+      "price": "148500",
       "regular_price": "495000",
-      "sale_price": "297000",
+      "sale_price": "148500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -15141,7 +15145,7 @@
         {
           "id": 2215502,
           "key": "_last_change_time",
-          "value": "1785171733"
+          "value": "1795408296"
         },
         {
           "id": 2313149,
@@ -16427,7 +16431,10 @@
       }
     }
   ],
-  "wpc_resolved_media": {},
+  "wpc_resolved_media": {
+    "85854": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-armenia-cafe-02.jpg",
+    "85855": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-armenia-cafe-03.jpg"
+  },
   "stock_status": "instock",
   "variation_images_map": {
     "azul": [
@@ -16450,6 +16457,17 @@
         "name": "winston-and-harry-mocasines-armenia-azul-03"
       }
     ],
-    "cafe": []
+    "cafe": [
+      {
+        "id": 85854,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-armenia-cafe-02.jpg",
+        "alt": "Armenia"
+      },
+      {
+        "id": 85855,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-armenia-cafe-03.jpg",
+        "alt": "Armenia"
+      }
+    ]
   }
 }

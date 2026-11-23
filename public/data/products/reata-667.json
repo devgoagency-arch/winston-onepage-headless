@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>99,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>99,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -202,6 +202,8 @@
         "name": "IMG_2358",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "99000",
       "regular_price": "99000",
@@ -231,6 +233,8 @@
         "name": "IMG_2358",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 7,
       "stock_status": "instock",
       "price": "99000",
       "regular_price": "99000",
@@ -260,6 +264,8 @@
         "name": "IMG_2358",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "price": "99000",
       "regular_price": "99000",
@@ -289,6 +295,8 @@
         "name": "IMG_2358",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 15,
       "stock_status": "instock",
       "price": "99000",
       "regular_price": "99000",
@@ -318,6 +326,8 @@
         "name": "IMG_2358",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "99000",
       "regular_price": "99000",
@@ -2563,8 +2573,8 @@
       "type": "variation",
       "date_created": "2022-08-29T21:08:59",
       "date_created_gmt": "2022-08-29T21:08:59",
-      "date_modified": "2026-07-16T22:40:29",
-      "date_modified_gmt": "2026-07-16T22:40:29",
+      "date_modified": "2026-11-04T17:53:00",
+      "date_modified_gmt": "2026-11-04T17:53:00",
       "description": "<p>Nosotros sabemos que la regla número uno cuando se usa cuero, es siempre combinar los colores &#8211; “match your leathers”. Nuestros cinturones Trent están hechos en piel de becerro de manera artesanal, pintados a mano para llegar a ser el accesorio perfecto al usar con nuestros zapatos. Su diseño sencillo y hebilla clásica le da un toque de elegancia que sobresaltará en cualquier ocasión que te encuentres.</p>\n",
       "permalink": "https://tienda.winstonandharrystore.com/product/reata-667/?attribute_pa_selecciona-el-color=rosa&attribute_pa_selecciona-una-talla=xs",
       "sku": "28001101030",
@@ -2587,7 +2597,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 5,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -3066,7 +3076,7 @@
         {
           "id": 2262110,
           "key": "_last_change_time",
-          "value": "1784241629"
+          "value": "1793814780"
         }
       ],
       "name": "Rosa, XS",

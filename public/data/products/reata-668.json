@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>99,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>99,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -196,6 +196,8 @@
         "name": "IMG_2356",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "99000",
       "regular_price": "99000",
@@ -225,35 +227,8 @@
         "name": "IMG_2356",
         "alt": ""
       },
-      "stock_status": "instock",
-      "price": "99000",
-      "regular_price": "99000",
-      "sale_price": ""
-    },
-    {
-      "id": 26239,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "azul",
-          "option": "azul"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "m",
-          "option": "m"
-        }
-      ],
-      "image": {
-        "id": 26069,
-        "date_created": "2022-08-29T17:11:51",
-        "date_created_gmt": "2022-08-29T17:11:51",
-        "date_modified": "2022-08-29T17:11:51",
-        "date_modified_gmt": "2022-08-29T17:11:51",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2022/08/IMG_2356.jpg",
-        "name": "IMG_2356",
-        "alt": ""
-      },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "99000",
       "regular_price": "99000",
@@ -283,6 +258,8 @@
         "name": "IMG_2356",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "99000",
       "regular_price": "99000",
@@ -312,6 +289,8 @@
         "name": "IMG_2356",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "99000",
       "regular_price": "99000",
@@ -1437,8 +1416,8 @@
       "type": "variation",
       "date_created": "2022-08-29T21:09:10",
       "date_created_gmt": "2022-08-29T21:09:10",
-      "date_modified": "2026-07-16T22:40:29",
-      "date_modified_gmt": "2026-07-16T22:40:29",
+      "date_modified": "2026-09-08T17:13:05",
+      "date_modified_gmt": "2026-09-08T17:13:05",
       "description": "<p>Nosotros sabemos que la regla número uno cuando se usa cuero, es siempre combinar los colores &#8211; “match your leathers”. Nuestros cinturones Trent están hechos en piel de becerro de manera artesanal, pintados a mano para llegar a ser el accesorio perfecto al usar con nuestros zapatos. Su diseño sencillo y hebilla clásica le da un toque de elegancia que sobresaltará en cualquier ocasión que te encuentres.</p>\n",
       "permalink": "https://tienda.winstonandharrystore.com/product/reata-668/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=m",
       "sku": "28833226034",
@@ -1461,8 +1440,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -1930,7 +1909,7 @@
         {
           "id": 2262229,
           "key": "_last_change_time",
-          "value": "1784241629"
+          "value": "1788887585"
         }
       ],
       "name": "Azul, M",
@@ -1967,8 +1946,8 @@
       "type": "variation",
       "date_created": "2022-08-29T21:09:10",
       "date_created_gmt": "2022-08-29T21:09:10",
-      "date_modified": "2026-07-16T22:40:29",
-      "date_modified_gmt": "2026-07-16T22:40:29",
+      "date_modified": "2026-09-16T16:54:29",
+      "date_modified_gmt": "2026-09-16T16:54:29",
       "description": "<p>Nosotros sabemos que la regla número uno cuando se usa cuero, es siempre combinar los colores &#8211; “match your leathers”. Nuestros cinturones Trent están hechos en piel de becerro de manera artesanal, pintados a mano para llegar a ser el accesorio perfecto al usar con nuestros zapatos. Su diseño sencillo y hebilla clásica le da un toque de elegancia que sobresaltará en cualquier ocasión que te encuentres.</p>\n",
       "permalink": "https://tienda.winstonandharrystore.com/product/reata-668/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=s",
       "sku": "28833226032",
@@ -1991,7 +1970,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 3,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -2460,7 +2439,7 @@
         {
           "id": 2233308,
           "key": "_last_change_time",
-          "value": "1784241629"
+          "value": "1789577669"
         }
       ],
       "name": "Azul, S",

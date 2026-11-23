@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>150,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>150,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -210,6 +210,8 @@
         "name": "_MG_5208",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 13,
       "stock_status": "instock",
       "price": "150000",
       "regular_price": "150000",
@@ -239,35 +241,8 @@
         "name": "_MG_5208",
         "alt": ""
       },
-      "stock_status": "instock",
-      "price": "150000",
-      "regular_price": "150000",
-      "sale_price": ""
-    },
-    {
-      "id": 24984,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "verde",
-          "option": "verde"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "l",
-          "option": "l"
-        }
-      ],
-      "image": {
-        "id": 30250,
-        "date_created": "2023-06-21T21:42:18",
-        "date_created_gmt": "2023-06-21T21:42:18",
-        "date_modified": "2023-06-21T21:42:18",
-        "date_modified_gmt": "2023-06-21T21:42:18",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2023/06/MG_5208.jpg",
-        "name": "_MG_5208",
-        "alt": ""
-      },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "150000",
       "regular_price": "150000",
@@ -297,6 +272,8 @@
         "name": "_MG_5208",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 9,
       "stock_status": "instock",
       "price": "150000",
       "regular_price": "150000",
@@ -326,6 +303,8 @@
         "name": "_MG_5208",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "price": "150000",
       "regular_price": "150000",
@@ -2021,8 +2000,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:42:26",
       "date_created_gmt": "2022-08-25T22:42:26",
-      "date_modified": "2026-07-16T22:39:55",
-      "date_modified_gmt": "2026-07-16T22:39:55",
+      "date_modified": "2026-10-05T21:48:54",
+      "date_modified_gmt": "2026-10-05T21:48:54",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/camiseta-polo-6/?attribute_pa_selecciona-el-color=verde&attribute_pa_selecciona-una-talla=l",
       "sku": "5056105036",
@@ -2045,8 +2024,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -2521,7 +2500,7 @@
         {
           "id": 2239402,
           "key": "_last_change_time",
-          "value": "1784241595"
+          "value": "1791236934"
         },
         {
           "id": 2314495,
@@ -3654,6 +3633,7 @@
     }
   ],
   "wpc_resolved_media": {
+    "15976": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/01/camiseta-04a.jpg",
     "30248": "https://tienda.winstonandharrystore.com/wp-content/uploads/2023/06/MG_5199.jpg",
     "30282": "https://tienda.winstonandharrystore.com/wp-content/uploads/2023/06/MG_5203-1.jpg"
   },
@@ -3665,6 +3645,11 @@
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2023/06/MG_5208.jpg",
         "alt": "_MG_5208",
         "name": "_MG_5208"
+      },
+      {
+        "id": 15976,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/01/camiseta-04a.jpg",
+        "alt": "Camiseta Polo"
       },
       {
         "id": 30248,

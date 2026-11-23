@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>560,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>560,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -224,6 +224,8 @@
         "name": "Watford II-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "560000",
       "regular_price": "560000",
@@ -253,6 +255,8 @@
         "name": "Watford II-Azul-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "560000",
       "regular_price": "560000",
@@ -282,6 +286,8 @@
         "name": "Watford II-Azul-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "560000",
       "regular_price": "560000",
@@ -311,6 +317,8 @@
         "name": "Watford II-Azul-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "560000",
       "regular_price": "560000",
@@ -340,6 +348,8 @@
         "name": "Watford II-Azul-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "560000",
       "regular_price": "560000",
@@ -369,6 +379,8 @@
         "name": "Watford II-Azul-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "560000",
       "regular_price": "560000",
@@ -398,6 +410,8 @@
         "name": "Watford II-Azul-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "560000",
       "regular_price": "560000",
@@ -427,6 +441,8 @@
         "name": "Watford II-Azul-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "560000",
       "regular_price": "560000",
@@ -456,6 +472,8 @@
         "name": "Watford II-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "560000",
       "regular_price": "560000",
@@ -485,6 +503,8 @@
         "name": "Watford II-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "560000",
       "regular_price": "560000",
@@ -514,6 +534,8 @@
         "name": "Watford II-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "560000",
       "regular_price": "560000",
@@ -543,6 +565,8 @@
         "name": "Watford II-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "560000",
       "regular_price": "560000",
@@ -572,6 +596,8 @@
         "name": "Watford II-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "560000",
       "regular_price": "560000",
@@ -12403,8 +12429,8 @@
       "type": "variation",
       "date_created": "2022-11-24T20:56:15",
       "date_created_gmt": "2022-11-24T20:56:15",
-      "date_modified": "2026-05-07T23:11:59",
-      "date_modified_gmt": "2026-05-07T23:11:59",
+      "date_modified": "2026-09-23T22:57:13",
+      "date_modified_gmt": "2026-09-23T22:57:13",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/watford-ii/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=37",
       "sku": "7402401037",
@@ -12427,7 +12453,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 4,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -13056,7 +13082,7 @@
         {
           "id": 2261373,
           "key": "_last_change_time",
-          "value": "1778190564"
+          "value": "1790204233"
         },
         {
           "id": 2313470,

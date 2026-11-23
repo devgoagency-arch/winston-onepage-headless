@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>450,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>450,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -181,6 +181,8 @@
         "name": "winston-and-harry-pantalon-nomad-azul-frente-completo-2",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "450000",
       "regular_price": "450000",
@@ -210,6 +212,8 @@
         "name": "winston-and-harry-pantalon-nomad-azul-frente-completo-2",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "450000",
       "regular_price": "450000",
@@ -239,6 +243,8 @@
         "name": "winston-and-harry-pantalon-nomad-azul-frente-completo-2",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "450000",
       "regular_price": "450000",
@@ -3574,8 +3580,8 @@
       "type": "variation",
       "date_created": "2026-08-12T05:50:38",
       "date_created_gmt": "2026-08-12T05:50:38",
-      "date_modified": "2026-08-21T21:04:05",
-      "date_modified_gmt": "2026-08-21T21:04:05",
+      "date_modified": "2026-10-05T21:48:54",
+      "date_modified_gmt": "2026-10-05T21:48:54",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/pantalon-nomad-ii/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=32",
       "sku": "3031101032",
@@ -3598,7 +3604,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -3645,7 +3651,7 @@
         {
           "id": 2501500,
           "key": "_last_change_time",
-          "value": "1786513679"
+          "value": "1791236934"
         },
         {
           "id": 2501501,
@@ -4425,16 +4431,6 @@
         {
           "id": 2524401,
           "key": "_oembed_time_3efc152008105e0533b1d0735c932ef8",
-          "value": ""
-        },
-        {
-          "id": 2524402,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2524403,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         },
         {

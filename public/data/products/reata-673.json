@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>99,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>99,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -173,35 +173,6 @@
   ],
   "variations": [
     {
-      "id": 26261,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "cafe",
-          "option": "cafe"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "xs",
-          "option": "xs"
-        }
-      ],
-      "image": {
-        "id": 26044,
-        "date_created": "2022-08-29T17:10:43",
-        "date_created_gmt": "2022-08-29T17:10:43",
-        "date_modified": "2022-08-29T17:10:43",
-        "date_modified_gmt": "2022-08-29T17:10:43",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2022/08/IMG_2325.jpg",
-        "name": "IMG_2325",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "99000",
-      "regular_price": "99000",
-      "sale_price": ""
-    },
-    {
       "id": 26262,
       "attributes": [
         {
@@ -225,6 +196,8 @@
         "name": "IMG_2325",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "99000",
       "regular_price": "99000",
@@ -254,6 +227,8 @@
         "name": "IMG_2325",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 27,
       "stock_status": "instock",
       "price": "99000",
       "regular_price": "99000",
@@ -283,6 +258,8 @@
         "name": "IMG_2325",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 32,
       "stock_status": "instock",
       "price": "99000",
       "regular_price": "99000",
@@ -312,6 +289,8 @@
         "name": "IMG_2325",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "99000",
       "regular_price": "99000",
@@ -912,8 +891,8 @@
       "type": "variation",
       "date_created": "2022-08-29T21:09:42",
       "date_created_gmt": "2022-08-29T21:09:42",
-      "date_modified": "2026-07-16T22:40:43",
-      "date_modified_gmt": "2026-07-16T22:40:43",
+      "date_modified": "2026-10-05T21:52:06",
+      "date_modified_gmt": "2026-10-05T21:52:06",
       "description": "<p>Nosotros sabemos que la regla número uno cuando se usa cuero, es siempre combinar los colores &#8211; “match your leathers”. Nuestros cinturones Trent están hechos en piel de becerro de manera artesanal, pintados a mano para llegar a ser el accesorio perfecto al usar con nuestros zapatos. Su diseño sencillo y hebilla clásica le da un toque de elegancia que sobresaltará en cualquier ocasión que te encuentres.</p>\n",
       "permalink": "https://tienda.winstonandharrystore.com/product/reata-673/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=l",
       "sku": "28011304036",
@@ -936,7 +915,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 33,
+      "stock_quantity": 32,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -1410,7 +1389,7 @@
         {
           "id": 2257196,
           "key": "_last_change_time",
-          "value": "1784241643"
+          "value": "1791237126"
         }
       ],
       "name": "Café, L",
@@ -1447,8 +1426,8 @@
       "type": "variation",
       "date_created": "2022-08-29T21:09:42",
       "date_created_gmt": "2022-08-29T21:09:42",
-      "date_modified": "2026-07-16T22:40:43",
-      "date_modified_gmt": "2026-07-16T22:40:43",
+      "date_modified": "2026-11-23T04:36:49",
+      "date_modified_gmt": "2026-11-23T04:36:49",
       "description": "<p>Nosotros sabemos que la regla número uno cuando se usa cuero, es siempre combinar los colores &#8211; “match your leathers”. Nuestros cinturones Trent están hechos en piel de becerro de manera artesanal, pintados a mano para llegar a ser el accesorio perfecto al usar con nuestros zapatos. Su diseño sencillo y hebilla clásica le da un toque de elegancia que sobresaltará en cualquier ocasión que te encuentres.</p>\n",
       "permalink": "https://tienda.winstonandharrystore.com/product/reata-673/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=m",
       "sku": "28011304034",
@@ -1471,7 +1450,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 31,
+      "stock_quantity": 27,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -1945,7 +1924,7 @@
         {
           "id": 2233312,
           "key": "_last_change_time",
-          "value": "1784241643"
+          "value": "1795408609"
         }
       ],
       "name": "Café, M",
@@ -1982,8 +1961,8 @@
       "type": "variation",
       "date_created": "2022-08-29T21:09:42",
       "date_created_gmt": "2022-08-29T21:09:42",
-      "date_modified": "2026-07-16T22:40:43",
-      "date_modified_gmt": "2026-07-16T22:40:43",
+      "date_modified": "2026-10-14T06:15:17",
+      "date_modified_gmt": "2026-10-14T06:15:17",
       "description": "<p>Nosotros sabemos que la regla número uno cuando se usa cuero, es siempre combinar los colores &#8211; “match your leathers”. Nuestros cinturones Trent están hechos en piel de becerro de manera artesanal, pintados a mano para llegar a ser el accesorio perfecto al usar con nuestros zapatos. Su diseño sencillo y hebilla clásica le da un toque de elegancia que sobresaltará en cualquier ocasión que te encuentres.</p>\n",
       "permalink": "https://tienda.winstonandharrystore.com/product/reata-673/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=s",
       "sku": "28011304032",
@@ -2006,7 +1985,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 4,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -2480,7 +2459,7 @@
         {
           "id": 2254737,
           "key": "_last_change_time",
-          "value": "1784241643"
+          "value": "1791958517"
         }
       ],
       "name": "Café, S",
@@ -2517,8 +2496,8 @@
       "type": "variation",
       "date_created": "2022-08-29T21:09:42",
       "date_created_gmt": "2022-08-29T21:09:42",
-      "date_modified": "2026-07-16T22:40:43",
-      "date_modified_gmt": "2026-07-16T22:40:43",
+      "date_modified": "2026-11-23T04:36:49",
+      "date_modified_gmt": "2026-11-23T04:36:49",
       "description": "<p>Nosotros sabemos que la regla número uno cuando se usa cuero, es siempre combinar los colores &#8211; “match your leathers”. Nuestros cinturones Trent están hechos en piel de becerro de manera artesanal, pintados a mano para llegar a ser el accesorio perfecto al usar con nuestros zapatos. Su diseño sencillo y hebilla clásica le da un toque de elegancia que sobresaltará en cualquier ocasión que te encuentres.</p>\n",
       "permalink": "https://tienda.winstonandharrystore.com/product/reata-673/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=xs",
       "sku": "28011304030",
@@ -2541,8 +2520,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -3015,7 +2994,7 @@
         {
           "id": 2233310,
           "key": "_last_change_time",
-          "value": "1784241643"
+          "value": "1795408609"
         }
       ],
       "name": "Café, XS",

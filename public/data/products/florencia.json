@@ -11,10 +11,13 @@
   "description": "",
   "on_sale": true,
   "prices": {
-    "price": "377300",
+    "price": "323400",
     "regular_price": "539000",
-    "sale_price": "377300",
-    "price_range": null,
+    "sale_price": "323400",
+    "price_range": {
+      "min_amount": "323400",
+      "max_amount": "377300"
+    },
     "currency_code": "COP",
     "currency_symbol": "$",
     "currency_minor_unit": 0,
@@ -23,7 +26,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>539,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;539,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>377,300</span></ins><span class=\"screen-reader-text\">Current price is: &#036;377,300.</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\" aria-hidden=\"true\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>323,400</span> <span aria-hidden=\"true\">&ndash;</span> <span class=\"woocommerce-Price-amount amount\" aria-hidden=\"true\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>377,300</span><span class=\"screen-reader-text\">Price range: &#036;323,400 through &#036;377,300</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -243,8 +246,10 @@
         "name": "winston-and-harry-mocasines-florencia-miel-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "377300",
+      "price": "323400",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -272,8 +277,10 @@
         "name": "winston-and-harry-mocasines-florencia-miel-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "377300",
+      "price": "323400",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -301,8 +308,10 @@
         "name": "winston-and-harry-mocasines-florencia-miel-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "377300",
+      "price": "323400",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -330,8 +339,10 @@
         "name": "winston-and-harry-mocasines-florencia-miel-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "377300",
+      "price": "323400",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -359,8 +370,10 @@
         "name": "winston-and-harry-mocasines-florencia-miel-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "377300",
+      "price": "323400",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -388,8 +401,10 @@
         "name": "winston-and-harry-mocasines-florencia-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
-      "price": "377300",
+      "price": "323400",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -417,8 +432,10 @@
         "name": "winston-and-harry-mocasines-florencia-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "377300",
+      "price": "323400",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -446,8 +463,10 @@
         "name": "winston-and-harry-mocasines-florencia-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "377300",
+      "price": "323400",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -475,8 +494,10 @@
         "name": "winston-and-harry-mocasines-florencia-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "377300",
+      "price": "323400",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -504,37 +525,10 @@
         "name": "winston-and-harry-mocasines-florencia-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
-      "price": "377300",
-      "regular_price": "539000",
-      "sale_price": ""
-    },
-    {
-      "id": 61361,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "cafe",
-          "option": "cafe"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "37",
-          "option": "37"
-        }
-      ],
-      "image": {
-        "id": 85883,
-        "date_created": "2026-07-27T14:46:08",
-        "date_created_gmt": "2026-07-27T14:46:08",
-        "date_modified": "2026-07-27T17:04:17",
-        "date_modified_gmt": "2026-07-27T17:04:17",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-florencia-miel-01.jpg",
-        "name": "winston-and-harry-mocasines-florencia-miel-01",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "377300",
+      "price": "323400",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -562,8 +556,10 @@
         "name": "winston-and-harry-mocasines-florencia-miel-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "377300",
+      "price": "323400",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -591,8 +587,10 @@
         "name": "winston-and-harry-mocasines-florencia-miel-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "377300",
+      "price": "323400",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -620,8 +618,10 @@
         "name": "winston-and-harry-mocasines-florencia-miel-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
-      "price": "377300",
+      "price": "323400",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -649,8 +649,10 @@
         "name": "winston-and-harry-mocasines-florencia-miel-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
-      "price": "377300",
+      "price": "323400",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -678,8 +680,10 @@
         "name": "winston-and-harry-mocasines-florencia-miel-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "377300",
+      "price": "323400",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -707,8 +711,9 @@
         "name": "winston-and-harry-mocasines-florencia-miel-01",
         "alt": ""
       },
+      "manage_stock": false,
       "stock_status": "instock",
-      "price": "377300",
+      "price": "323400",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -736,8 +741,9 @@
         "name": "winston-and-harry-mocasines-florencia-miel-01",
         "alt": ""
       },
+      "manage_stock": false,
       "stock_status": "instock",
-      "price": "377300",
+      "price": "323400",
       "regular_price": "539000",
       "sale_price": ""
     }
@@ -2597,15 +2603,15 @@
       "type": "variation",
       "date_created": "2025-03-03T07:49:13",
       "date_created_gmt": "2025-03-03T07:49:13",
-      "date_modified": "2026-07-27T20:47:00",
-      "date_modified_gmt": "2026-07-27T20:47:00",
+      "date_modified": "2026-11-23T04:33:36",
+      "date_modified_gmt": "2026-11-23T04:33:36",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/florencia/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=43",
       "sku": "7500704043",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -2728,7 +2734,7 @@
         {
           "id": 2240428,
           "key": "_last_change_time",
-          "value": "1785171859"
+          "value": "1795408416"
         },
         {
           "id": 2415123,
@@ -3495,15 +3501,15 @@
       "type": "variation",
       "date_created": "2025-03-03T07:49:13",
       "date_created_gmt": "2025-03-03T07:49:13",
-      "date_modified": "2026-07-27T20:47:00",
-      "date_modified_gmt": "2026-07-27T20:47:00",
+      "date_modified": "2026-11-23T04:33:36",
+      "date_modified_gmt": "2026-11-23T04:33:36",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/florencia/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=42",
       "sku": "7500704042",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -3626,7 +3632,7 @@
         {
           "id": 2240427,
           "key": "_last_change_time",
-          "value": "1785171859"
+          "value": "1795408416"
         },
         {
           "id": 2414977,
@@ -4393,15 +4399,15 @@
       "type": "variation",
       "date_created": "2025-03-03T07:49:13",
       "date_created_gmt": "2025-03-03T07:49:13",
-      "date_modified": "2026-07-27T20:47:00",
-      "date_modified_gmt": "2026-07-27T20:47:00",
+      "date_modified": "2026-11-23T04:33:36",
+      "date_modified_gmt": "2026-11-23T04:33:36",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/florencia/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=41",
       "sku": "7500704041",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -4524,7 +4530,7 @@
         {
           "id": 2240426,
           "key": "_last_change_time",
-          "value": "1785171859"
+          "value": "1795408416"
         },
         {
           "id": 2414831,
@@ -5291,15 +5297,15 @@
       "type": "variation",
       "date_created": "2025-03-03T07:49:13",
       "date_created_gmt": "2025-03-03T07:49:13",
-      "date_modified": "2026-07-27T20:47:00",
-      "date_modified_gmt": "2026-07-27T20:47:00",
+      "date_modified": "2026-11-23T04:33:36",
+      "date_modified_gmt": "2026-11-23T04:33:36",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/florencia/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=40",
       "sku": "7500704040",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -5422,7 +5428,7 @@
         {
           "id": 2240425,
           "key": "_last_change_time",
-          "value": "1785171859"
+          "value": "1795408416"
         },
         {
           "id": 2414685,
@@ -6189,15 +6195,15 @@
       "type": "variation",
       "date_created": "2025-03-03T07:49:13",
       "date_created_gmt": "2025-03-03T07:49:13",
-      "date_modified": "2026-07-27T20:46:59",
-      "date_modified_gmt": "2026-07-27T20:46:59",
+      "date_modified": "2026-11-23T04:33:36",
+      "date_modified_gmt": "2026-11-23T04:33:36",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/florencia/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=39",
       "sku": "7500704039",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -6320,7 +6326,7 @@
         {
           "id": 2219036,
           "key": "_last_change_time",
-          "value": "1785171859"
+          "value": "1795408416"
         },
         {
           "id": 2414539,
@@ -7087,15 +7093,15 @@
       "type": "variation",
       "date_created": "2025-03-03T07:49:13",
       "date_created_gmt": "2025-03-03T07:49:13",
-      "date_modified": "2026-07-27T20:46:59",
-      "date_modified_gmt": "2026-07-27T20:46:59",
+      "date_modified": "2026-11-23T04:33:36",
+      "date_modified_gmt": "2026-11-23T04:33:36",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/florencia/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=38",
       "sku": "7500704038",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -7218,7 +7224,7 @@
         {
           "id": 2240424,
           "key": "_last_change_time",
-          "value": "1785171859"
+          "value": "1795408416"
         },
         {
           "id": 2414393,
@@ -7985,15 +7991,15 @@
       "type": "variation",
       "date_created": "2025-03-03T07:49:13",
       "date_created_gmt": "2025-03-03T07:49:13",
-      "date_modified": "2026-07-27T20:46:59",
-      "date_modified_gmt": "2026-07-27T20:46:59",
+      "date_modified": "2026-11-23T04:33:36",
+      "date_modified_gmt": "2026-11-23T04:33:36",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/florencia/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=37",
       "sku": "7500704037",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -8009,8 +8015,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -8116,7 +8122,7 @@
         {
           "id": 2240423,
           "key": "_last_change_time",
-          "value": "1785171859"
+          "value": "1795408416"
         },
         {
           "id": 2414247,
@@ -10679,15 +10685,15 @@
       "type": "variation",
       "date_created": "2023-06-09T20:28:56",
       "date_created_gmt": "2023-06-09T20:28:56",
-      "date_modified": "2026-07-27T20:47:00",
-      "date_modified_gmt": "2026-07-27T20:47:00",
+      "date_modified": "2026-11-23T04:31:48",
+      "date_modified_gmt": "2026-11-23T04:31:48",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/florencia/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=43",
       "sku": "7500702043",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -11200,7 +11206,7 @@
         {
           "id": 2216476,
           "key": "_last_change_time",
-          "value": "1785171860"
+          "value": "1795408308"
         },
         {
           "id": 2313091,
@@ -11577,15 +11583,15 @@
       "type": "variation",
       "date_created": "2023-06-09T20:28:56",
       "date_created_gmt": "2023-06-09T20:28:56",
-      "date_modified": "2026-07-27T20:47:00",
-      "date_modified_gmt": "2026-07-27T20:47:00",
+      "date_modified": "2026-11-23T04:31:42",
+      "date_modified_gmt": "2026-11-23T04:31:42",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/florencia/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=42",
       "sku": "7500702042",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -12088,7 +12094,7 @@
         {
           "id": 2216475,
           "key": "_last_change_time",
-          "value": "1785171860"
+          "value": "1795408302"
         },
         {
           "id": 2313090,
@@ -12475,15 +12481,15 @@
       "type": "variation",
       "date_created": "2023-06-09T20:28:56",
       "date_created_gmt": "2023-06-09T20:28:56",
-      "date_modified": "2026-07-27T20:47:00",
-      "date_modified_gmt": "2026-07-27T20:47:00",
+      "date_modified": "2026-11-23T04:31:42",
+      "date_modified_gmt": "2026-11-23T04:31:42",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/florencia/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=41",
       "sku": "7500702041",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -12986,7 +12992,7 @@
         {
           "id": 2216474,
           "key": "_last_change_time",
-          "value": "1785171860"
+          "value": "1795408302"
         },
         {
           "id": 2313089,
@@ -13373,15 +13379,15 @@
       "type": "variation",
       "date_created": "2023-06-09T20:28:56",
       "date_created_gmt": "2023-06-09T20:28:56",
-      "date_modified": "2026-07-27T20:47:00",
-      "date_modified_gmt": "2026-07-27T20:47:00",
+      "date_modified": "2026-11-23T04:31:42",
+      "date_modified_gmt": "2026-11-23T04:31:42",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/florencia/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=40",
       "sku": "7500702040",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -13884,7 +13890,7 @@
         {
           "id": 2216473,
           "key": "_last_change_time",
-          "value": "1785171860"
+          "value": "1795408302"
         },
         {
           "id": 2313088,
@@ -14271,15 +14277,15 @@
       "type": "variation",
       "date_created": "2023-06-09T20:28:56",
       "date_created_gmt": "2023-06-09T20:28:56",
-      "date_modified": "2026-07-27T20:47:01",
-      "date_modified_gmt": "2026-07-27T20:47:01",
+      "date_modified": "2026-11-23T04:31:42",
+      "date_modified_gmt": "2026-11-23T04:31:42",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/florencia/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=39",
       "sku": "7500702039",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -14782,7 +14788,7 @@
         {
           "id": 2216472,
           "key": "_last_change_time",
-          "value": "1785171860"
+          "value": "1795408302"
         },
         {
           "id": 2313087,
@@ -15169,15 +15175,15 @@
       "type": "variation",
       "date_created": "2023-06-09T20:28:56",
       "date_created_gmt": "2023-06-09T20:28:56",
-      "date_modified": "2026-07-27T20:47:01",
-      "date_modified_gmt": "2026-07-27T20:47:01",
+      "date_modified": "2026-11-23T04:31:42",
+      "date_modified_gmt": "2026-11-23T04:31:42",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/florencia/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=38",
       "sku": "7500702038",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -15680,7 +15686,7 @@
         {
           "id": 2216471,
           "key": "_last_change_time",
-          "value": "1785171860"
+          "value": "1795408302"
         },
         {
           "id": 2313086,
@@ -16067,15 +16073,15 @@
       "type": "variation",
       "date_created": "2023-06-09T20:28:56",
       "date_created_gmt": "2023-06-09T20:28:56",
-      "date_modified": "2026-07-27T20:47:01",
-      "date_modified_gmt": "2026-07-27T20:47:01",
+      "date_modified": "2026-11-23T04:31:42",
+      "date_modified_gmt": "2026-11-23T04:31:42",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/florencia/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=37",
       "sku": "7500702037",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -16578,7 +16584,7 @@
         {
           "id": 2216470,
           "key": "_last_change_time",
-          "value": "1785171860"
+          "value": "1795408302"
         },
         {
           "id": 2313085,
@@ -18761,15 +18767,15 @@
       "type": "variation",
       "date_created": "2023-06-09T20:28:56",
       "date_created_gmt": "2023-06-09T20:28:56",
-      "date_modified": "2026-07-27T20:47:01",
-      "date_modified_gmt": "2026-07-27T20:47:01",
+      "date_modified": "2026-11-23T04:31:42",
+      "date_modified_gmt": "2026-11-23T04:31:42",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/florencia/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=43",
       "sku": "7500726043",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -19272,7 +19278,7 @@
         {
           "id": 2216467,
           "key": "_last_change_time",
-          "value": "1785171860"
+          "value": "1795408302"
         },
         {
           "id": 2313082,
@@ -19659,15 +19665,15 @@
       "type": "variation",
       "date_created": "2023-06-09T20:28:56",
       "date_created_gmt": "2023-06-09T20:28:56",
-      "date_modified": "2026-07-27T20:47:01",
-      "date_modified_gmt": "2026-07-27T20:47:01",
+      "date_modified": "2026-11-23T04:31:42",
+      "date_modified_gmt": "2026-11-23T04:31:42",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/florencia/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=42",
       "sku": "7500726042",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -20170,7 +20176,7 @@
         {
           "id": 2216466,
           "key": "_last_change_time",
-          "value": "1785171860"
+          "value": "1795408302"
         },
         {
           "id": 2313081,
@@ -20557,15 +20563,15 @@
       "type": "variation",
       "date_created": "2023-06-09T20:28:56",
       "date_created_gmt": "2023-06-09T20:28:56",
-      "date_modified": "2026-07-27T20:47:01",
-      "date_modified_gmt": "2026-07-27T20:47:01",
+      "date_modified": "2026-11-23T04:31:42",
+      "date_modified_gmt": "2026-11-23T04:31:42",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/florencia/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=41",
       "sku": "7500726041",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -21068,7 +21074,7 @@
         {
           "id": 2216465,
           "key": "_last_change_time",
-          "value": "1785171860"
+          "value": "1795408302"
         },
         {
           "id": 2313080,
@@ -21455,15 +21461,15 @@
       "type": "variation",
       "date_created": "2023-06-09T20:28:55",
       "date_created_gmt": "2023-06-09T20:28:55",
-      "date_modified": "2026-07-27T20:47:01",
-      "date_modified_gmt": "2026-07-27T20:47:01",
+      "date_modified": "2026-11-23T04:37:16",
+      "date_modified_gmt": "2026-11-23T04:37:16",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/florencia/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=40",
       "sku": "7500726040",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -21479,7 +21485,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 3,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -21966,7 +21972,7 @@
         {
           "id": 2216464,
           "key": "_last_change_time",
-          "value": "1785171860"
+          "value": "1795408636"
         },
         {
           "id": 2313092,
@@ -22312,11 +22318,6 @@
           "id": 2416406,
           "key": "_wc_push_notification_sent_low_stock",
           "value": ""
-        },
-        {
-          "id": 2416407,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
         }
       ],
       "name": "Miel, 40",
@@ -22353,15 +22354,15 @@
       "type": "variation",
       "date_created": "2023-06-09T20:28:55",
       "date_created_gmt": "2023-06-09T20:28:55",
-      "date_modified": "2026-07-27T20:47:02",
-      "date_modified_gmt": "2026-07-27T20:47:02",
+      "date_modified": "2026-11-23T04:31:42",
+      "date_modified_gmt": "2026-11-23T04:31:42",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/florencia/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=39",
       "sku": "7500726039",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -22864,7 +22865,7 @@
         {
           "id": 2216457,
           "key": "_last_change_time",
-          "value": "1785171861"
+          "value": "1795408302"
         },
         {
           "id": 2313095,
@@ -23251,15 +23252,15 @@
       "type": "variation",
       "date_created": "2023-06-09T20:28:55",
       "date_created_gmt": "2023-06-09T20:28:55",
-      "date_modified": "2026-07-27T20:47:02",
-      "date_modified_gmt": "2026-07-27T20:47:02",
+      "date_modified": "2026-11-23T04:31:42",
+      "date_modified_gmt": "2026-11-23T04:31:42",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/florencia/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=38",
       "sku": "7500726038",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -23762,7 +23763,7 @@
         {
           "id": 2216456,
           "key": "_last_change_time",
-          "value": "1785171861"
+          "value": "1795408302"
         },
         {
           "id": 2313094,
@@ -24149,15 +24150,15 @@
       "type": "variation",
       "date_created": "2023-06-09T20:28:55",
       "date_created_gmt": "2023-06-09T20:28:55",
-      "date_modified": "2026-07-27T20:47:02",
-      "date_modified_gmt": "2026-07-27T20:47:02",
+      "date_modified": "2026-11-23T04:31:42",
+      "date_modified_gmt": "2026-11-23T04:31:42",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/florencia/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=37",
       "sku": "7500726037",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -24660,7 +24661,7 @@
         {
           "id": 2216455,
           "key": "_last_change_time",
-          "value": "1785171861"
+          "value": "1795408302"
         },
         {
           "id": 2313093,
@@ -25044,7 +25045,9 @@
     }
   ],
   "wpc_resolved_media": {
-    "29": "https://tienda.winstonandharrystore.com/wp-content/uploads/2017/06/swatch-main-demo-1-3.jpg"
+    "29": "https://tienda.winstonandharrystore.com/wp-content/uploads/2017/06/swatch-main-demo-1-3.jpg",
+    "85886": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-florencia-negro-03.jpg",
+    "85888": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-florencia-negro-02.jpg"
   },
   "stock_status": "instock",
   "variation_images_map": {
@@ -25074,6 +25077,16 @@
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-florencia-negro-01.jpg",
         "alt": "winston-and-harry-mocasines-florencia-negro-01",
         "name": "winston-and-harry-mocasines-florencia-negro-01"
+      },
+      {
+        "id": 85888,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-florencia-negro-02.jpg",
+        "alt": "Florencia"
+      },
+      {
+        "id": 85886,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-florencia-negro-03.jpg",
+        "alt": "Florencia"
       }
     ],
     "cafe": [

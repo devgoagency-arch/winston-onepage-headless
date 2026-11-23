@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>99,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>99,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -173,35 +173,6 @@
   ],
   "variations": [
     {
-      "id": 26201,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "gris",
-          "option": "gris"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "xs",
-          "option": "xs"
-        }
-      ],
-      "image": {
-        "id": 26040,
-        "date_created": "2022-08-29T17:10:34",
-        "date_created_gmt": "2022-08-29T17:10:34",
-        "date_modified": "2022-08-29T17:10:34",
-        "date_modified_gmt": "2022-08-29T17:10:34",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2022/08/IMG_2320.jpg",
-        "name": "IMG_2320",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "99000",
-      "regular_price": "99000",
-      "sale_price": ""
-    },
-    {
       "id": 26204,
       "attributes": [
         {
@@ -225,6 +196,8 @@
         "name": "IMG_2320",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "99000",
       "regular_price": "99000",
@@ -254,6 +227,8 @@
         "name": "IMG_2320",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "99000",
       "regular_price": "99000",
@@ -849,8 +824,8 @@
       "type": "variation",
       "date_created": "2022-08-29T21:08:37",
       "date_created_gmt": "2022-08-29T21:08:37",
-      "date_modified": "2026-07-16T22:40:28",
-      "date_modified_gmt": "2026-07-16T22:40:28",
+      "date_modified": "2026-11-23T04:36:48",
+      "date_modified_gmt": "2026-11-23T04:36:48",
       "description": "<p>Nosotros sabemos que la regla número uno cuando se usa cuero, es siempre combinar los colores &#8211; “match your leathers”. Nuestros cinturones Trent están hechos en piel de becerro de manera artesanal, pintados a mano para llegar a ser el accesorio perfecto al usar con nuestros zapatos. Su diseño sencillo y hebilla clásica le da un toque de elegancia que sobresaltará en cualquier ocasión que te encuentres.</p>\n",
       "permalink": "https://tienda.winstonandharrystore.com/product/reata-662/?attribute_pa_selecciona-el-color=gris&attribute_pa_selecciona-una-talla=l",
       "sku": "28125902036",
@@ -873,7 +848,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 2,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -1342,7 +1317,7 @@
         {
           "id": 2218916,
           "key": "_last_change_time",
-          "value": "1784241628"
+          "value": "1795408608"
         }
       ],
       "name": "Gris, L",
@@ -2439,8 +2414,8 @@
       "type": "variation",
       "date_created": "2022-08-29T21:08:37",
       "date_created_gmt": "2022-08-29T21:08:37",
-      "date_modified": "2026-07-16T22:40:28",
-      "date_modified_gmt": "2026-07-16T22:40:28",
+      "date_modified": "2026-11-23T04:36:48",
+      "date_modified_gmt": "2026-11-23T04:36:48",
       "description": "<p>Nosotros sabemos que la regla número uno cuando se usa cuero, es siempre combinar los colores &#8211; “match your leathers”. Nuestros cinturones Trent están hechos en piel de becerro de manera artesanal, pintados a mano para llegar a ser el accesorio perfecto al usar con nuestros zapatos. Su diseño sencillo y hebilla clásica le da un toque de elegancia que sobresaltará en cualquier ocasión que te encuentres.</p>\n",
       "permalink": "https://tienda.winstonandharrystore.com/product/reata-662/?attribute_pa_selecciona-el-color=gris&attribute_pa_selecciona-una-talla=xs",
       "sku": "28125902030",
@@ -2463,8 +2438,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -2932,7 +2907,7 @@
         {
           "id": 2262141,
           "key": "_last_change_time",
-          "value": "1784241628"
+          "value": "1795408608"
         }
       ],
       "name": "Gris, XS",

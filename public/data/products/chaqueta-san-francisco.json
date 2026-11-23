@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>700,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>700,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -185,6 +185,8 @@
         "name": "Chaqueta-San Francisco-Beige-Winstonandharry-6",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "700000",
       "regular_price": "700000",
@@ -214,6 +216,8 @@
         "name": "Chaqueta-San Francisco-Beige-Winstonandharry-6",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "price": "700000",
       "regular_price": "700000",
@@ -243,6 +247,8 @@
         "name": "Chaqueta-San Francisco-Beige-Winstonandharry-6",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "700000",
       "regular_price": "700000",
@@ -272,6 +278,8 @@
         "name": "Chaqueta-San Francisco-Beige-Winstonandharry-6",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "700000",
       "regular_price": "700000",
@@ -301,6 +309,8 @@
         "name": "Chaqueta-San Francisco-Beige-Winstonandharry-6",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "700000",
       "regular_price": "700000",
@@ -330,6 +340,8 @@
         "name": "Chaqueta-San Francisco-Verde-Winstonandharry-6",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "700000",
       "regular_price": "700000",
@@ -359,6 +371,8 @@
         "name": "Chaqueta-San Francisco-Verde-Winstonandharry-6",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "700000",
       "regular_price": "700000",
@@ -388,6 +402,8 @@
         "name": "Chaqueta-San Francisco-Verde-Winstonandharry-6",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "price": "700000",
       "regular_price": "700000",
@@ -417,6 +433,8 @@
         "name": "Chaqueta-San Francisco-Verde-Winstonandharry-6",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "700000",
       "regular_price": "700000",
@@ -446,6 +464,8 @@
         "name": "Chaqueta-San Francisco-Verde-Winstonandharry-6",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "700000",
       "regular_price": "700000",
@@ -4817,8 +4837,8 @@
       "type": "variation",
       "date_created": "2025-09-02T23:15:41",
       "date_created_gmt": "2025-09-02T23:15:41",
-      "date_modified": "2026-05-07T23:01:20",
-      "date_modified_gmt": "2026-05-07T23:01:20",
+      "date_modified": "2026-10-27T19:17:02",
+      "date_modified_gmt": "2026-10-27T19:17:02",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/chaqueta-san-francisco/?attribute_pa_selecciona-el-color=verde&attribute_pa_selecciona-una-talla=s",
       "sku": "19200005032",
@@ -4841,7 +4861,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 2,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -5635,7 +5655,7 @@
         {
           "id": 2257375,
           "key": "_last_change_time",
-          "value": "1778177802"
+          "value": "1793128622"
         },
         {
           "id": 2311181,
@@ -9977,8 +9997,8 @@
       "type": "variation",
       "date_created": "2025-09-02T23:15:41",
       "date_created_gmt": "2025-09-02T23:15:41",
-      "date_modified": "2026-05-07T23:01:20",
-      "date_modified_gmt": "2026-05-07T23:01:20",
+      "date_modified": "2026-11-23T04:39:15",
+      "date_modified_gmt": "2026-11-23T04:39:15",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/chaqueta-san-francisco/?attribute_pa_selecciona-el-color=beige&attribute_pa_selecciona-una-talla=s",
       "sku": "19200006032",
@@ -10001,7 +10021,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 3,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -10795,7 +10815,7 @@
         {
           "id": 2219096,
           "key": "_last_change_time",
-          "value": "1778177802"
+          "value": "1795408755"
         },
         {
           "id": 2311183,

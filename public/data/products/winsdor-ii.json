@@ -9,12 +9,15 @@
   "sku": "899",
   "short_description": "<p>Renovación de un clásico tubular, el Winsdor II mantiene la forma esbelta del original y una placa sutil en el antifaz, con capellada de 100% cuero y suela de goma. La textura del corte le aporta un acento más táctil, sin recargar la línea informal del par. Se calza sin cordones, la pisada es cómoda y el diseño tubular sigue sosteniendo esa facilidad de uso que caracteriza a la familia Winsdor. Hay en él la misma facilidad de calce de la familia Winsdor, de mocasín de hombre tubular, ahora con un acento más táctil en el corte. Disponible en azul, café y miel, tallas 37 a 45.</p>",
   "description": "<p>Los Mocasines Winsdor II son la versión mejorada de un clásico atemporal. Confeccionados en Nobuck, este modelo mantiene la forma esbelta y elegante que caracteriza a los originales, pero con una textura suave y distintiva que le aporta un toque de sofisticación. La sutil placa en el antifaz le da un giro moderno sin perder la esencia de su diseño clásico e informal. Su diseño tubular sigue garantizando una comodidad excepcional, ahora complementada con una suela mejorada que proporciona mayor confort y durabilidad. Los Winsdor II son ideales para quienes buscan estilo y comodidad en cada paso, perfectos para usar con o sin medias y disfrutar de un diseño que combina sofisticación y versatilidad.</p>",
-  "on_sale": false,
+  "on_sale": true,
   "prices": {
-    "price": "560000",
+    "price": "336000",
     "regular_price": "560000",
-    "sale_price": "560000",
-    "price_range": null,
+    "sale_price": "336000",
+    "price_range": {
+      "min_amount": "336000",
+      "max_amount": "560000"
+    },
     "currency_code": "COP",
     "currency_symbol": "$",
     "currency_minor_unit": 0,
@@ -23,7 +26,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>560,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\" aria-hidden=\"true\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>336,000</span> <span aria-hidden=\"true\">&ndash;</span> <span class=\"woocommerce-Price-amount amount\" aria-hidden=\"true\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>560,000</span><span class=\"screen-reader-text\">Price range: &#036;336,000 through &#036;560,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -231,8 +234,10 @@
         "name": "Winsdor II-Azul-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -260,8 +265,10 @@
         "name": "Winsdor II-Azul-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -289,8 +296,10 @@
         "name": "Winsdor II-Azul-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -318,8 +327,10 @@
         "name": "Winsdor II-Azul-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -347,8 +358,10 @@
         "name": "Winsdor II-Azul-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -376,8 +389,10 @@
         "name": "Winsdor II-Azul-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -405,8 +420,10 @@
         "name": "Winsdor II-Azul-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -434,8 +451,10 @@
         "name": "Winsdor II-Azul-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -463,8 +482,10 @@
         "name": "Winsdor II-Azul-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": "parent",
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -492,8 +513,10 @@
         "name": "Winsdor II-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -521,8 +544,10 @@
         "name": "Winsdor II-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -550,8 +575,10 @@
         "name": "Winsdor II-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -579,8 +606,10 @@
         "name": "Winsdor II-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": "parent",
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -608,8 +637,10 @@
         "name": "Winsdor II-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": "parent",
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -637,8 +668,10 @@
         "name": "Winsdor II-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -666,8 +699,10 @@
         "name": "Winsdor II-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -695,8 +730,10 @@
         "name": "Winsdor II-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": "parent",
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -724,8 +761,10 @@
         "name": "Winsdor II-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -753,8 +792,10 @@
         "name": "Winsdor II-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 6,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -782,8 +823,10 @@
         "name": "Winsdor II-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -811,8 +854,10 @@
         "name": "Winsdor II-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -840,8 +885,10 @@
         "name": "Winsdor II-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -869,8 +916,10 @@
         "name": "Winsdor II-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -898,8 +947,10 @@
         "name": "Winsdor II-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -927,8 +978,10 @@
         "name": "Winsdor II-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": "parent",
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     }
@@ -1893,20 +1946,20 @@
       "type": "variation",
       "date_created": "2025-03-03T06:19:54",
       "date_created_gmt": "2025-03-03T06:19:54",
-      "date_modified": "2026-07-27T20:51:33",
-      "date_modified_gmt": "2026-07-27T20:51:33",
+      "date_modified": "2026-11-23T04:33:25",
+      "date_modified_gmt": "2026-11-23T04:33:25",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/winsdor-ii/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=44",
       "sku": "7100426044",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -2541,7 +2594,7 @@
         {
           "id": 2260106,
           "key": "_last_change_time",
-          "value": "1780422006"
+          "value": "1795408405"
         },
         {
           "id": 2311752,
@@ -2788,20 +2841,20 @@
       "type": "variation",
       "date_created": "2025-03-03T06:19:54",
       "date_created_gmt": "2025-03-03T06:19:54",
-      "date_modified": "2026-07-27T20:51:27",
-      "date_modified_gmt": "2026-07-27T20:51:27",
+      "date_modified": "2026-11-23T04:33:25",
+      "date_modified_gmt": "2026-11-23T04:33:25",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/winsdor-ii/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=43",
       "sku": "7100426043",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -3436,7 +3489,7 @@
         {
           "id": 2260105,
           "key": "_last_change_time",
-          "value": "1778190687"
+          "value": "1795408405"
         },
         {
           "id": 2311751,
@@ -3683,20 +3736,20 @@
       "type": "variation",
       "date_created": "2025-03-03T06:19:54",
       "date_created_gmt": "2025-03-03T06:19:54",
-      "date_modified": "2026-07-27T20:51:27",
-      "date_modified_gmt": "2026-07-27T20:51:27",
+      "date_modified": "2026-11-23T04:33:25",
+      "date_modified_gmt": "2026-11-23T04:33:25",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/winsdor-ii/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=42",
       "sku": "7100426042",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -4331,7 +4384,7 @@
         {
           "id": 2260104,
           "key": "_last_change_time",
-          "value": "1778190687"
+          "value": "1795408405"
         },
         {
           "id": 2311750,
@@ -4578,20 +4631,20 @@
       "type": "variation",
       "date_created": "2025-03-03T06:19:54",
       "date_created_gmt": "2025-03-03T06:19:54",
-      "date_modified": "2026-07-27T20:51:27",
-      "date_modified_gmt": "2026-07-27T20:51:27",
+      "date_modified": "2026-11-23T04:33:25",
+      "date_modified_gmt": "2026-11-23T04:33:25",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/winsdor-ii/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=41",
       "sku": "7100426041",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -5226,7 +5279,7 @@
         {
           "id": 2260103,
           "key": "_last_change_time",
-          "value": "1784241776"
+          "value": "1795408405"
         },
         {
           "id": 2311749,
@@ -5473,20 +5526,20 @@
       "type": "variation",
       "date_created": "2025-03-03T06:19:54",
       "date_created_gmt": "2025-03-03T06:19:54",
-      "date_modified": "2026-07-27T20:51:27",
-      "date_modified_gmt": "2026-07-27T20:51:27",
+      "date_modified": "2026-11-23T04:33:25",
+      "date_modified_gmt": "2026-11-23T04:33:25",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/winsdor-ii/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=40",
       "sku": "7100426040",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -6121,7 +6174,7 @@
         {
           "id": 2260102,
           "key": "_last_change_time",
-          "value": "1778190662"
+          "value": "1795408405"
         },
         {
           "id": 2311748,
@@ -6368,20 +6421,20 @@
       "type": "variation",
       "date_created": "2025-03-03T06:19:54",
       "date_created_gmt": "2025-03-03T06:19:54",
-      "date_modified": "2026-07-27T20:51:27",
-      "date_modified_gmt": "2026-07-27T20:51:27",
+      "date_modified": "2026-11-23T04:33:25",
+      "date_modified_gmt": "2026-11-23T04:33:25",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/winsdor-ii/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=39",
       "sku": "7100426039",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -7016,7 +7069,7 @@
         {
           "id": 2260101,
           "key": "_last_change_time",
-          "value": "1781631430"
+          "value": "1795408405"
         },
         {
           "id": 2311747,
@@ -7263,20 +7316,20 @@
       "type": "variation",
       "date_created": "2025-03-03T06:19:54",
       "date_created_gmt": "2025-03-03T06:19:54",
-      "date_modified": "2026-07-27T20:51:27",
-      "date_modified_gmt": "2026-07-27T20:51:27",
+      "date_modified": "2026-11-23T04:33:25",
+      "date_modified_gmt": "2026-11-23T04:33:25",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/winsdor-ii/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=38",
       "sku": "7100426038",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -7911,7 +7964,7 @@
         {
           "id": 2260097,
           "key": "_last_change_time",
-          "value": "1778190661"
+          "value": "1795408405"
         },
         {
           "id": 2311746,
@@ -8158,20 +8211,20 @@
       "type": "variation",
       "date_created": "2025-03-03T06:19:54",
       "date_created_gmt": "2025-03-03T06:19:54",
-      "date_modified": "2026-07-27T20:51:27",
-      "date_modified_gmt": "2026-07-27T20:51:27",
+      "date_modified": "2026-11-23T04:33:25",
+      "date_modified_gmt": "2026-11-23T04:33:25",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/winsdor-ii/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=37",
       "sku": "7100426037",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -8806,7 +8859,7 @@
         {
           "id": 2260096,
           "key": "_last_change_time",
-          "value": "1778190661"
+          "value": "1795408405"
         },
         {
           "id": 2311745,
@@ -9948,20 +10001,20 @@
       "type": "variation",
       "date_created": "2025-03-03T06:19:54",
       "date_created_gmt": "2025-03-03T06:19:54",
-      "date_modified": "2026-07-27T20:51:26",
-      "date_modified_gmt": "2026-07-27T20:51:26",
+      "date_modified": "2026-11-23T04:33:25",
+      "date_modified_gmt": "2026-11-23T04:33:25",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/winsdor-ii/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=44",
       "sku": "7100404044",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -10596,7 +10649,7 @@
         {
           "id": 2260094,
           "key": "_last_change_time",
-          "value": "1778190661"
+          "value": "1795408405"
         },
         {
           "id": 2311743,
@@ -10843,20 +10896,20 @@
       "type": "variation",
       "date_created": "2025-03-03T06:19:54",
       "date_created_gmt": "2025-03-03T06:19:54",
-      "date_modified": "2026-07-27T20:51:26",
-      "date_modified_gmt": "2026-07-27T20:51:26",
+      "date_modified": "2026-11-23T04:33:25",
+      "date_modified_gmt": "2026-11-23T04:33:25",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/winsdor-ii/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=43",
       "sku": "7100404043",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -11491,7 +11544,7 @@
         {
           "id": 2257316,
           "key": "_last_change_time",
-          "value": "1778190660"
+          "value": "1795408405"
         },
         {
           "id": 2311742,
@@ -11738,20 +11791,20 @@
       "type": "variation",
       "date_created": "2025-03-03T06:19:54",
       "date_created_gmt": "2025-03-03T06:19:54",
-      "date_modified": "2026-07-27T20:51:33",
-      "date_modified_gmt": "2026-07-27T20:51:33",
+      "date_modified": "2026-11-23T04:33:25",
+      "date_modified_gmt": "2026-11-23T04:33:25",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/winsdor-ii/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=42",
       "sku": "7100404042",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -12386,7 +12439,7 @@
         {
           "id": 2260093,
           "key": "_last_change_time",
-          "value": "1778190660"
+          "value": "1795408405"
         },
         {
           "id": 2311741,
@@ -12633,20 +12686,20 @@
       "type": "variation",
       "date_created": "2025-03-03T06:19:54",
       "date_created_gmt": "2025-03-03T06:19:54",
-      "date_modified": "2026-07-27T20:51:33",
-      "date_modified_gmt": "2026-07-27T20:51:33",
+      "date_modified": "2026-11-23T04:33:25",
+      "date_modified_gmt": "2026-11-23T04:33:25",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/winsdor-ii/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=41",
       "sku": "7100404041",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -13281,7 +13334,7 @@
         {
           "id": 2260092,
           "key": "_last_change_time",
-          "value": "1778190659"
+          "value": "1795408405"
         },
         {
           "id": 2311740,
@@ -13528,20 +13581,20 @@
       "type": "variation",
       "date_created": "2025-03-03T06:19:54",
       "date_created_gmt": "2025-03-03T06:19:54",
-      "date_modified": "2026-07-27T20:51:33",
-      "date_modified_gmt": "2026-07-27T20:51:33",
+      "date_modified": "2026-11-23T04:33:25",
+      "date_modified_gmt": "2026-11-23T04:33:25",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/winsdor-ii/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=40",
       "sku": "7100404040",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -14176,7 +14229,7 @@
         {
           "id": 2260091,
           "key": "_last_change_time",
-          "value": "1778190659"
+          "value": "1795408405"
         },
         {
           "id": 2311739,
@@ -14423,20 +14476,20 @@
       "type": "variation",
       "date_created": "2025-03-03T06:19:53",
       "date_created_gmt": "2025-03-03T06:19:53",
-      "date_modified": "2026-07-27T20:51:34",
-      "date_modified_gmt": "2026-07-27T20:51:34",
+      "date_modified": "2026-11-23T04:33:25",
+      "date_modified_gmt": "2026-11-23T04:33:25",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/winsdor-ii/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=39",
       "sku": "7100404039",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -15071,7 +15124,7 @@
         {
           "id": 2260090,
           "key": "_last_change_time",
-          "value": "1780422006"
+          "value": "1795408405"
         },
         {
           "id": 2311754,
@@ -15318,20 +15371,20 @@
       "type": "variation",
       "date_created": "2025-03-03T06:19:53",
       "date_created_gmt": "2025-03-03T06:19:53",
-      "date_modified": "2026-08-13T00:04:32",
-      "date_modified_gmt": "2026-08-13T00:04:32",
+      "date_modified": "2026-11-23T04:33:25",
+      "date_modified_gmt": "2026-11-23T04:33:25",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/winsdor-ii/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=38",
       "sku": "7100404038",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -15342,7 +15395,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 3,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -15966,7 +16019,7 @@
         {
           "id": 2260089,
           "key": "_last_change_time",
-          "value": "1786579472"
+          "value": "1795408405"
         },
         {
           "id": 2311765,
@@ -16203,20 +16256,20 @@
       "type": "variation",
       "date_created": "2025-03-03T06:19:53",
       "date_created_gmt": "2025-03-03T06:19:53",
-      "date_modified": "2026-07-27T20:51:33",
-      "date_modified_gmt": "2026-07-27T20:51:33",
+      "date_modified": "2026-11-23T04:33:18",
+      "date_modified_gmt": "2026-11-23T04:33:18",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/winsdor-ii/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=37",
       "sku": "7100404037",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -16851,7 +16904,7 @@
         {
           "id": 2260088,
           "key": "_last_change_time",
-          "value": "1778190658"
+          "value": "1795408398"
         },
         {
           "id": 2311764,
@@ -17993,20 +18046,20 @@
       "type": "variation",
       "date_created": "2025-03-03T06:19:53",
       "date_created_gmt": "2025-03-03T06:19:53",
-      "date_modified": "2026-07-27T20:51:33",
-      "date_modified_gmt": "2026-07-27T20:51:33",
+      "date_modified": "2026-11-23T04:33:18",
+      "date_modified_gmt": "2026-11-23T04:33:18",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/winsdor-ii/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=44",
       "sku": "7100401044",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -18641,7 +18694,7 @@
         {
           "id": 2260086,
           "key": "_last_change_time",
-          "value": "1778190658"
+          "value": "1795408398"
         },
         {
           "id": 2311762,
@@ -18888,20 +18941,20 @@
       "type": "variation",
       "date_created": "2025-03-03T06:19:53",
       "date_created_gmt": "2025-03-03T06:19:53",
-      "date_modified": "2026-07-27T20:51:33",
-      "date_modified_gmt": "2026-07-27T20:51:33",
+      "date_modified": "2026-11-23T04:33:18",
+      "date_modified_gmt": "2026-11-23T04:33:18",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/winsdor-ii/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=43",
       "sku": "7100401043",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -19536,7 +19589,7 @@
         {
           "id": 2260085,
           "key": "_last_change_time",
-          "value": "1778190657"
+          "value": "1795408398"
         },
         {
           "id": 2311761,
@@ -19783,20 +19836,20 @@
       "type": "variation",
       "date_created": "2025-03-03T06:19:53",
       "date_created_gmt": "2025-03-03T06:19:53",
-      "date_modified": "2026-07-27T20:51:33",
-      "date_modified_gmt": "2026-07-27T20:51:33",
+      "date_modified": "2026-11-23T04:33:18",
+      "date_modified_gmt": "2026-11-23T04:33:18",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/winsdor-ii/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=42",
       "sku": "7100401042",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -20431,7 +20484,7 @@
         {
           "id": 2260084,
           "key": "_last_change_time",
-          "value": "1778190657"
+          "value": "1795408398"
         },
         {
           "id": 2311760,
@@ -20678,20 +20731,20 @@
       "type": "variation",
       "date_created": "2025-03-03T06:19:53",
       "date_created_gmt": "2025-03-03T06:19:53",
-      "date_modified": "2026-07-27T20:51:33",
-      "date_modified_gmt": "2026-07-27T20:51:33",
+      "date_modified": "2026-11-23T04:33:18",
+      "date_modified_gmt": "2026-11-23T04:33:18",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/winsdor-ii/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=41",
       "sku": "7100401041",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -20702,7 +20755,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 3,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -21326,7 +21379,7 @@
         {
           "id": 2260083,
           "key": "_last_change_time",
-          "value": "1785174247"
+          "value": "1795408398"
         },
         {
           "id": 2311759,
@@ -21519,11 +21572,6 @@
           "value": ""
         },
         {
-          "id": 2449412,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2449413,
           "key": "_wc_facebook_product_video_source",
           "value": ""
@@ -21531,11 +21579,6 @@
         {
           "id": 2449414,
           "key": "fb_product_images",
-          "value": ""
-        },
-        {
-          "id": 2449415,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],
@@ -21573,20 +21616,20 @@
       "type": "variation",
       "date_created": "2025-03-03T06:19:53",
       "date_created_gmt": "2025-03-03T06:19:53",
-      "date_modified": "2026-07-27T20:51:33",
-      "date_modified_gmt": "2026-07-27T20:51:33",
+      "date_modified": "2026-11-23T04:38:27",
+      "date_modified_gmt": "2026-11-23T04:38:27",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/winsdor-ii/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=40",
       "sku": "7100401040",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -21597,7 +21640,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 3,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -22221,7 +22264,7 @@
         {
           "id": 2219032,
           "key": "_last_change_time",
-          "value": "1778190656"
+          "value": "1795408707"
         },
         {
           "id": 2311758,
@@ -22414,11 +22457,6 @@
           "value": ""
         },
         {
-          "id": 2449371,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2449372,
           "key": "_wc_facebook_product_video_source",
           "value": ""
@@ -22426,11 +22464,6 @@
         {
           "id": 2449373,
           "key": "fb_product_images",
-          "value": ""
-        },
-        {
-          "id": 2449374,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],
@@ -22468,20 +22501,20 @@
       "type": "variation",
       "date_created": "2025-03-03T06:19:53",
       "date_created_gmt": "2025-03-03T06:19:53",
-      "date_modified": "2026-07-27T20:51:33",
-      "date_modified_gmt": "2026-07-27T20:51:33",
+      "date_modified": "2026-11-23T04:33:18",
+      "date_modified_gmt": "2026-11-23T04:33:18",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/winsdor-ii/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=39",
       "sku": "7100401039",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -22492,7 +22525,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 3,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -23116,7 +23149,7 @@
         {
           "id": 2260082,
           "key": "_last_change_time",
-          "value": "1778190656"
+          "value": "1795408398"
         },
         {
           "id": 2311757,
@@ -23309,11 +23342,6 @@
           "value": ""
         },
         {
-          "id": 2449330,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2449331,
           "key": "_wc_facebook_product_video_source",
           "value": ""
@@ -23321,11 +23349,6 @@
         {
           "id": 2449332,
           "key": "fb_product_images",
-          "value": ""
-        },
-        {
-          "id": 2449333,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],
@@ -23363,20 +23386,20 @@
       "type": "variation",
       "date_created": "2025-03-03T06:19:53",
       "date_created_gmt": "2025-03-03T06:19:53",
-      "date_modified": "2026-07-27T20:51:33",
-      "date_modified_gmt": "2026-07-27T20:51:33",
+      "date_modified": "2026-11-23T04:33:17",
+      "date_modified_gmt": "2026-11-23T04:33:17",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/winsdor-ii/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=38",
       "sku": "7100401038",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -24011,7 +24034,7 @@
         {
           "id": 2260081,
           "key": "_last_change_time",
-          "value": "1778190656"
+          "value": "1795408397"
         },
         {
           "id": 2311756,
@@ -24258,20 +24281,20 @@
       "type": "variation",
       "date_created": "2025-03-03T06:19:53",
       "date_created_gmt": "2025-03-03T06:19:53",
-      "date_modified": "2026-07-27T20:51:34",
-      "date_modified_gmt": "2026-07-27T20:51:34",
+      "date_modified": "2026-11-23T04:33:17",
+      "date_modified_gmt": "2026-11-23T04:33:17",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/winsdor-ii/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=37",
       "sku": "7100401037",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -24906,7 +24929,7 @@
         {
           "id": 2260080,
           "key": "_last_change_time",
-          "value": "1778190655"
+          "value": "1795408397"
         },
         {
           "id": 2311755,

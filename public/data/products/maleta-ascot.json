@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>890,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>890,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -111,6 +111,8 @@
         "name": "winston and harry maleta ascot gamuza cafe 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 8,
       "stock_status": "instock",
       "price": "890000",
       "regular_price": "890000",
@@ -135,6 +137,8 @@
         "name": "winston and harry maleta ascot gamuza tabaco 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "price": "890000",
       "regular_price": "890000",
@@ -200,8 +204,8 @@
       "type": "variation",
       "date_created": "2026-09-24T16:21:49",
       "date_created_gmt": "2026-09-24T16:21:49",
-      "date_modified": "2026-09-24T17:11:04",
-      "date_modified_gmt": "2026-09-24T17:11:04",
+      "date_modified": "2026-10-05T21:51:46",
+      "date_modified_gmt": "2026-10-05T21:51:46",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/maleta-ascot/?attribute_pa_selecciona-el-color=tabaco",
       "sku": "15159110000",
@@ -224,7 +228,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 2,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -315,7 +319,7 @@
         {
           "id": 2595887,
           "key": "_last_change_time",
-          "value": ""
+          "value": "1791237106"
         },
         {
           "id": 2595889,
@@ -1048,16 +1052,6 @@
           "value": ""
         },
         {
-          "id": 2596035,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2596036,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2596037,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -1282,8 +1276,8 @@
       "type": "variation",
       "date_created": "2026-09-24T16:21:48",
       "date_created_gmt": "2026-09-24T16:21:48",
-      "date_modified": "2026-09-24T17:11:04",
-      "date_modified_gmt": "2026-09-24T17:11:04",
+      "date_modified": "2026-10-05T21:51:46",
+      "date_modified_gmt": "2026-10-05T21:51:46",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/maleta-ascot/?attribute_pa_selecciona-el-color=cafe",
       "sku": "15159104000",
@@ -1306,7 +1300,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 2,
+      "stock_quantity": 8,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -1397,7 +1391,7 @@
         {
           "id": 2595696,
           "key": "_last_change_time",
-          "value": ""
+          "value": "1791237106"
         },
         {
           "id": 2595698,
@@ -2130,16 +2124,6 @@
           "value": ""
         },
         {
-          "id": 2595844,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2595845,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2595846,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -2367,6 +2351,8 @@
     "87078": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-maleta-ascot-gamuza-cafe-07.jpg",
     "87079": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-maleta-ascot-gamuza-cafe-08.jpg",
     "87080": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-maleta-ascot-gamuza-cafe-09.jpg",
+    "87082": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-maleta-ascot-gamuza-tabaco-02.jpg",
+    "87083": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-maleta-ascot-gamuza-tabaco-03.jpg",
     "87084": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-maleta-ascot-gamuza-tabaco-04.jpg",
     "87085": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-maleta-ascot-gamuza-tabaco-05.jpg",
     "87086": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-maleta-ascot-gamuza-tabaco-06.jpg",
@@ -2432,6 +2418,16 @@
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-maleta-ascot-gamuza-tabaco-01.jpg",
         "alt": "winston and harry maleta ascot gamuza tabaco 01",
         "name": "winston and harry maleta ascot gamuza tabaco 01"
+      },
+      {
+        "id": 87082,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-maleta-ascot-gamuza-tabaco-02.jpg",
+        "alt": "Maleta Ascot"
+      },
+      {
+        "id": 87083,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-maleta-ascot-gamuza-tabaco-03.jpg",
+        "alt": "Maleta Ascot"
       },
       {
         "id": 87084,

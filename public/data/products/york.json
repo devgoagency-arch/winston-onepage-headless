@@ -11,9 +11,9 @@
   "description": "",
   "on_sale": true,
   "prices": {
-    "price": "336000",
+    "price": "168000",
     "regular_price": "560000",
-    "sale_price": "336000",
+    "sale_price": "168000",
     "price_range": null,
     "currency_code": "COP",
     "currency_symbol": "$",
@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>560,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;560,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>336,000</span></ins><span class=\"screen-reader-text\">Current price is: &#036;336,000.</span>",
+  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>560,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;560,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>168,000</span></ins><span class=\"screen-reader-text\">Current price is: &#036;168,000.</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -208,8 +208,10 @@
         "name": "winston-and-harry-botas-york-miel-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "336000",
+      "price": "168000",
       "regular_price": "560000",
       "sale_price": ""
     }
@@ -1166,15 +1168,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:28:37",
       "date_created_gmt": "2022-08-25T22:28:37",
-      "date_modified": "2026-08-04T16:56:47",
-      "date_modified_gmt": "2026-08-04T16:56:47",
+      "date_modified": "2026-11-23T04:27:56",
+      "date_modified_gmt": "2026-11-23T04:27:56",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/york/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=44",
       "sku": "7001726044",
       "global_unique_id": "",
-      "price": "336000",
+      "price": "168000",
       "regular_price": "560000",
-      "sale_price": "336000",
+      "sale_price": "168000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -1677,7 +1679,7 @@
         {
           "id": 2218667,
           "key": "_last_change_time",
-          "value": "1778190812"
+          "value": "1795408076"
         },
         {
           "id": 2389471,
@@ -2059,15 +2061,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:28:37",
       "date_created_gmt": "2022-08-25T22:28:37",
-      "date_modified": "2026-08-04T16:56:47",
-      "date_modified_gmt": "2026-08-04T16:56:47",
+      "date_modified": "2026-11-23T04:27:56",
+      "date_modified_gmt": "2026-11-23T04:27:56",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/york/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=43",
       "sku": "7001726043",
       "global_unique_id": "",
-      "price": "336000",
+      "price": "168000",
       "regular_price": "560000",
-      "sale_price": "336000",
+      "sale_price": "168000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -2570,7 +2572,7 @@
         {
           "id": 2218665,
           "key": "_last_change_time",
-          "value": "1778190812"
+          "value": "1795408076"
         },
         {
           "id": 2471500,
@@ -2952,15 +2954,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:28:37",
       "date_created_gmt": "2022-08-25T22:28:37",
-      "date_modified": "2026-08-04T16:56:47",
-      "date_modified_gmt": "2026-08-04T16:56:47",
+      "date_modified": "2026-11-23T04:27:56",
+      "date_modified_gmt": "2026-11-23T04:27:56",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/york/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=42",
       "sku": "7001726042",
       "global_unique_id": "",
-      "price": "336000",
+      "price": "168000",
       "regular_price": "560000",
-      "sale_price": "336000",
+      "sale_price": "168000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -3458,7 +3460,7 @@
         {
           "id": 2218663,
           "key": "_last_change_time",
-          "value": "1778190811"
+          "value": "1795408076"
         },
         {
           "id": 2471429,
@@ -3845,15 +3847,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:28:37",
       "date_created_gmt": "2022-08-25T22:28:37",
-      "date_modified": "2026-08-04T16:56:47",
-      "date_modified_gmt": "2026-08-04T16:56:47",
+      "date_modified": "2026-11-23T04:27:56",
+      "date_modified_gmt": "2026-11-23T04:27:56",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/york/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=41",
       "sku": "7001726041",
       "global_unique_id": "",
-      "price": "336000",
+      "price": "168000",
       "regular_price": "560000",
-      "sale_price": "336000",
+      "sale_price": "168000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -4351,7 +4353,7 @@
         {
           "id": 2218661,
           "key": "_last_change_time",
-          "value": "1778190811"
+          "value": "1795408076"
         },
         {
           "id": 2471358,
@@ -4738,15 +4740,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:28:37",
       "date_created_gmt": "2022-08-25T22:28:37",
-      "date_modified": "2026-08-04T16:56:46",
-      "date_modified_gmt": "2026-08-04T16:56:46",
+      "date_modified": "2026-11-23T04:27:56",
+      "date_modified_gmt": "2026-11-23T04:27:56",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/york/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=40",
       "sku": "7001726040",
       "global_unique_id": "",
-      "price": "336000",
+      "price": "168000",
       "regular_price": "560000",
-      "sale_price": "336000",
+      "sale_price": "168000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -5244,7 +5246,7 @@
         {
           "id": 2218659,
           "key": "_last_change_time",
-          "value": "1778190811"
+          "value": "1795408076"
         },
         {
           "id": 2471287,
@@ -5631,15 +5633,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:28:37",
       "date_created_gmt": "2022-08-25T22:28:37",
-      "date_modified": "2026-08-04T16:56:46",
-      "date_modified_gmt": "2026-08-04T16:56:46",
+      "date_modified": "2026-11-23T04:27:56",
+      "date_modified_gmt": "2026-11-23T04:27:56",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/york/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=39",
       "sku": "7001726039",
       "global_unique_id": "",
-      "price": "336000",
+      "price": "168000",
       "regular_price": "560000",
-      "sale_price": "336000",
+      "sale_price": "168000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -6137,7 +6139,7 @@
         {
           "id": 2218657,
           "key": "_last_change_time",
-          "value": "1778190810"
+          "value": "1795408076"
         },
         {
           "id": 2471216,
@@ -6524,15 +6526,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:28:37",
       "date_created_gmt": "2022-08-25T22:28:37",
-      "date_modified": "2026-08-04T16:56:46",
-      "date_modified_gmt": "2026-08-04T16:56:46",
+      "date_modified": "2026-11-23T04:27:56",
+      "date_modified_gmt": "2026-11-23T04:27:56",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/york/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=38",
       "sku": "7001726038",
       "global_unique_id": "",
-      "price": "336000",
+      "price": "168000",
       "regular_price": "560000",
-      "sale_price": "336000",
+      "sale_price": "168000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -7035,7 +7037,7 @@
         {
           "id": 2218655,
           "key": "_last_change_time",
-          "value": "1778190810"
+          "value": "1795408076"
         },
         {
           "id": 2471146,
@@ -7417,15 +7419,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:28:37",
       "date_created_gmt": "2022-08-25T22:28:37",
-      "date_modified": "2026-08-04T16:56:45",
-      "date_modified_gmt": "2026-08-04T16:56:45",
+      "date_modified": "2026-11-23T04:27:56",
+      "date_modified_gmt": "2026-11-23T04:27:56",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/york/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=37",
       "sku": "7001726037",
       "global_unique_id": "",
-      "price": "336000",
+      "price": "168000",
       "regular_price": "560000",
-      "sale_price": "336000",
+      "sale_price": "168000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -7923,7 +7925,7 @@
         {
           "id": 2218652,
           "key": "_last_change_time",
-          "value": "1778190810"
+          "value": "1795408076"
         },
         {
           "id": 2471075,

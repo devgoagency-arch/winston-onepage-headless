@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>649,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>649,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -292,6 +292,8 @@
         "name": "winston-and-harry-zapatos-de-cordon-london-ii-cafe-01",
         "alt": ""
       },
+      "manage_stock": "parent",
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -321,6 +323,8 @@
         "name": "winston-and-harry-zapatos-de-cordon-london-ii-cafe-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -350,6 +354,8 @@
         "name": "winston-and-harry-zapatos-de-cordon-london-ii-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -379,6 +385,8 @@
         "name": "winston-and-harry-zapatos-de-cordon-london-ii-cafe-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -408,6 +416,8 @@
         "name": "winston-and-harry-zapatos-de-cordon-london-ii-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -437,6 +447,8 @@
         "name": "winston-and-harry-zapatos-de-cordon-london-ii-cafe-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -466,6 +478,8 @@
         "name": "winston-and-harry-zapatos-de-cordon-london-ii-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -495,6 +509,8 @@
         "name": "winston-and-harry-zapatos-de-cordon-london-ii-cafe-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -524,6 +540,8 @@
         "name": "winston-and-harry-zapatos-de-cordon-london-ii-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -553,6 +571,8 @@
         "name": "winston-and-harry-zapatos-de-cordon-london-ii-cafe-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -582,6 +602,8 @@
         "name": "winston-and-harry-zapatos-de-cordon-london-ii-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -611,6 +633,8 @@
         "name": "winston-and-harry-zapatos-de-cordon-london-ii-cafe-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -640,6 +664,8 @@
         "name": "winston-and-harry-zapatos-de-cordon-london-ii-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -669,6 +695,8 @@
         "name": "winston-and-harry-zapatos-de-cordon-london-ii-cafe-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -698,6 +726,8 @@
         "name": "winston-and-harry-zapatos-de-cordon-london-ii-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -7833,8 +7863,8 @@
       "type": "variation",
       "date_created": "2023-04-26T15:08:11",
       "date_created_gmt": "2023-04-26T15:08:11",
-      "date_modified": "2026-07-31T02:33:11",
-      "date_modified_gmt": "2026-07-31T02:33:11",
+      "date_modified": "2026-10-27T19:16:04",
+      "date_modified_gmt": "2026-10-27T19:16:04",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/london-ii/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=38",
       "sku": "7307002038",
@@ -7857,7 +7887,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 3,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -8359,7 +8389,7 @@
         {
           "id": 2216929,
           "key": "_last_change_time",
-          "value": "1778184321"
+          "value": "1793128564"
         },
         {
           "id": 2313218,
@@ -8674,11 +8704,6 @@
         {
           "id": 2467652,
           "key": "_oembed_time_3efc152008105e0533b1d0735c932ef8",
-          "value": ""
-        },
-        {
-          "id": 2467653,
-          "key": "_wc_push_notification_sent_low_stock",
           "value": ""
         }
       ],
@@ -16663,7 +16688,9 @@
     "28646": "https://tienda.winstonandharrystore.com/wp-content/uploads/2023/04/MG_4365.jpg",
     "28647": "https://tienda.winstonandharrystore.com/wp-content/uploads/2023/04/MG_4366.jpg",
     "28804": "https://tienda.winstonandharrystore.com/wp-content/uploads/2023/04/MG_4564.jpg",
-    "28805": "https://tienda.winstonandharrystore.com/wp-content/uploads/2023/04/MG_4565.jpg"
+    "28805": "https://tienda.winstonandharrystore.com/wp-content/uploads/2023/04/MG_4565.jpg",
+    "86037": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-zapatos-de-cordon-london-ii-negro-02.jpg",
+    "86038": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-zapatos-de-cordon-london-ii-negro-03.jpg"
   },
   "stock_status": "instock",
   "variation_images_map": {
@@ -16703,6 +16730,16 @@
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-zapatos-de-cordon-london-ii-negro-01.jpg",
         "alt": "winston-and-harry-zapatos-de-cordon-london-ii-negro-01",
         "name": "winston-and-harry-zapatos-de-cordon-london-ii-negro-01"
+      },
+      {
+        "id": 86037,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-zapatos-de-cordon-london-ii-negro-02.jpg",
+        "alt": "London II"
+      },
+      {
+        "id": 86038,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-zapatos-de-cordon-london-ii-negro-03.jpg",
+        "alt": "London II"
       },
       {
         "id": 28804,

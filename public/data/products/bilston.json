@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>649,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>649,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -274,6 +274,8 @@
         "name": "Winston and Harry Mocasines Gamusa Bilston Cafe 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -303,6 +305,8 @@
         "name": "Winston and Harry Mocasines Gamusa Bilston Cafe 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 7,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -332,6 +336,8 @@
         "name": "winston-and-harry-mocasines-bilston-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 7,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -361,6 +367,8 @@
         "name": "Winston and Harry Mocasines Gamusa Bilston Cafe 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -390,6 +398,8 @@
         "name": "Winston and Harry Mocasines Gamusa Bilston Cafe 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -419,6 +429,8 @@
         "name": "Winston and Harry Mocasines Gamusa Bilston Cafe 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -448,6 +460,8 @@
         "name": "Winston and Harry Mocasines Gamusa Bilston Cafe 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -477,6 +491,8 @@
         "name": "Winston and Harry Mocasines Gamusa Bilston Cafe 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -506,6 +522,8 @@
         "name": "Winston and Harry Mocasines Gamusa Bilston Cafe 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -535,6 +553,8 @@
         "name": "Winston and Harry Mocasines Gamusa Bilston Cafe 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -564,6 +584,8 @@
         "name": "winston-and-harry-mocasines-bilston-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -593,6 +615,8 @@
         "name": "winston-and-harry-mocasines-bilston-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -622,6 +646,8 @@
         "name": "winston-and-harry-mocasines-bilston-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -651,6 +677,8 @@
         "name": "winston-and-harry-mocasines-bilston-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 8,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -680,6 +708,8 @@
         "name": "winston-and-harry-mocasines-bilston-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -709,6 +739,8 @@
         "name": "winston-and-harry-mocasines-bilston-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -738,6 +770,8 @@
         "name": "winston-and-harry-mocasines-bilston-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -767,6 +801,8 @@
         "name": "winston-and-harry-mocasines-bilston-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -5308,8 +5344,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:48:27",
       "date_created_gmt": "2022-08-25T22:48:27",
-      "date_modified": "2026-07-27T20:45:29",
-      "date_modified_gmt": "2026-07-27T20:45:29",
+      "date_modified": "2026-11-23T04:36:48",
+      "date_modified_gmt": "2026-11-23T04:36:48",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bilston/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=40",
       "sku": "7404802040",
@@ -5332,7 +5368,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 8,
+      "stock_quantity": 7,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -5808,7 +5844,7 @@
         {
           "id": 2215669,
           "key": "_last_change_time",
-          "value": "1785171767"
+          "value": "1795408608"
         },
         {
           "id": 2314088,
@@ -6159,16 +6195,6 @@
           "id": 2400446,
           "key": "_wc_gla_visibility",
           "value": ""
-        },
-        {
-          "id": 2400447,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2400448,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
         }
       ],
       "name": "Negro, 40",
@@ -6205,8 +6231,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:48:27",
       "date_created_gmt": "2022-08-25T22:48:27",
-      "date_modified": "2026-07-27T20:45:29",
-      "date_modified_gmt": "2026-07-27T20:45:29",
+      "date_modified": "2026-11-04T17:53:00",
+      "date_modified_gmt": "2026-11-04T17:53:00",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bilston/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=39",
       "sku": "7404802039",
@@ -6229,7 +6255,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 7,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -6705,7 +6731,7 @@
         {
           "id": 2215668,
           "key": "_last_change_time",
-          "value": "1785171767"
+          "value": "1793814780"
         },
         {
           "id": 2314101,
@@ -7055,16 +7081,6 @@
         {
           "id": 2400512,
           "key": "_wc_gla_visibility",
-          "value": ""
-        },
-        {
-          "id": 2400513,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2400514,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],
@@ -13218,8 +13234,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:48:27",
       "date_created_gmt": "2022-08-25T22:48:27",
-      "date_modified": "2026-08-13T00:05:07",
-      "date_modified_gmt": "2026-08-13T00:05:07",
+      "date_modified": "2026-11-23T04:36:48",
+      "date_modified_gmt": "2026-11-23T04:36:48",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bilston/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=41",
       "sku": "7404804041",
@@ -13242,7 +13258,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 9,
+      "stock_quantity": 7,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -13719,7 +13735,7 @@
         {
           "id": 2215660,
           "key": "_last_change_time",
-          "value": "1786579507"
+          "value": "1795408608"
         },
         {
           "id": 2314094,
@@ -14296,8 +14312,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:48:26",
       "date_created_gmt": "2022-08-25T22:48:26",
-      "date_modified": "2026-08-22T00:03:47",
-      "date_modified_gmt": "2026-08-22T00:03:47",
+      "date_modified": "2026-10-27T19:15:35",
+      "date_modified_gmt": "2026-10-27T19:15:35",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bilston/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=40",
       "sku": "7404804040",
@@ -14320,7 +14336,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 5,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -14787,7 +14803,7 @@
         {
           "id": 2215659,
           "key": "_last_change_time",
-          "value": "1787357027"
+          "value": "1793122977"
         },
         {
           "id": 2314105,
@@ -15374,8 +15390,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:48:26",
       "date_created_gmt": "2022-08-25T22:48:26",
-      "date_modified": "2026-08-18T17:45:43",
-      "date_modified_gmt": "2026-08-18T17:45:43",
+      "date_modified": "2026-10-27T19:15:35",
+      "date_modified_gmt": "2026-10-27T19:15:35",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bilston/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=39",
       "sku": "7404804039",
@@ -15398,7 +15414,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 5,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -15875,7 +15891,7 @@
         {
           "id": 2215656,
           "key": "_last_change_time",
-          "value": "1787071621"
+          "value": "1793122976"
         },
         {
           "id": 2314104,
@@ -16452,8 +16468,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:48:26",
       "date_created_gmt": "2022-08-25T22:48:26",
-      "date_modified": "2026-08-13T00:05:07",
-      "date_modified_gmt": "2026-08-13T00:05:07",
+      "date_modified": "2026-11-23T04:36:48",
+      "date_modified_gmt": "2026-11-23T04:36:48",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bilston/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=38",
       "sku": "7404804038",
@@ -16476,7 +16492,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 4,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -16953,7 +16969,7 @@
         {
           "id": 2215655,
           "key": "_last_change_time",
-          "value": "1786579507"
+          "value": "1795408608"
         },
         {
           "id": 2314103,
@@ -17530,8 +17546,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:48:26",
       "date_created_gmt": "2022-08-25T22:48:26",
-      "date_modified": "2026-08-13T00:05:07",
-      "date_modified_gmt": "2026-08-13T00:05:07",
+      "date_modified": "2026-09-08T17:13:02",
+      "date_modified_gmt": "2026-09-08T17:13:02",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bilston/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=37",
       "sku": "7404804037",
@@ -17554,7 +17570,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 2,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -18036,7 +18052,7 @@
         {
           "id": 2215653,
           "key": "_last_change_time",
-          "value": "1786579507"
+          "value": "1788887582"
         },
         {
           "id": 2314102,
@@ -18611,7 +18627,8 @@
     "85699": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-Mocasines-Gamusa-Bilston-Cafe-07.jpg",
     "85700": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-Mocasines-Gamusa-Bilston-Cafe-08.jpg",
     "85701": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-Mocasines-Gamusa-Bilston-Cafe-09.jpg",
-    "85702": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-Mocasines-Gamusa-Bilston-Cafe-10.jpg"
+    "85702": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-Mocasines-Gamusa-Bilston-Cafe-10.jpg",
+    "85858": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-bilston-negro-02.jpg"
   },
   "stock_status": "instock",
   "variation_images_map": {
@@ -18676,6 +18693,11 @@
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-bilston-negro-01.jpg",
         "alt": "winston-and-harry-mocasines-bilston-negro-01",
         "name": "winston-and-harry-mocasines-bilston-negro-01"
+      },
+      {
+        "id": 85858,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-bilston-negro-02.jpg",
+        "alt": "Bilston"
       }
     ]
   }

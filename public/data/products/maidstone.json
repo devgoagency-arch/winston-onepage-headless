@@ -11,9 +11,9 @@
   "description": "<p>El Mocasín Maidstone, es un zapato versatil con toques clasicos pero con aspectos de color para reflejar tu personalidad</p>",
   "on_sale": true,
   "prices": {
-    "price": "323400",
+    "price": "161700",
     "regular_price": "539000",
-    "sale_price": "323400",
+    "sale_price": "161700",
     "price_range": null,
     "currency_code": "COP",
     "currency_symbol": "$",
@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>539,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;539,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>323,400</span></ins><span class=\"screen-reader-text\">Current price is: &#036;323,400.</span>",
+  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>539,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;539,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>161,700</span></ins><span class=\"screen-reader-text\">Current price is: &#036;161,700.</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -256,8 +256,10 @@
         "name": "winston-and-harry-mocasines-maidstone-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "323400",
+      "price": "161700",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -285,8 +287,10 @@
         "name": "winston-and-harry-mocasines-maidstone-cafe-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "323400",
+      "price": "161700",
       "regular_price": "539000",
       "sale_price": ""
     }
@@ -356,15 +360,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:43:43",
       "date_created_gmt": "2022-08-25T22:43:43",
-      "date_modified": "2026-08-05T00:44:05",
-      "date_modified_gmt": "2026-08-05T00:44:05",
+      "date_modified": "2026-11-23T04:29:31",
+      "date_modified_gmt": "2026-11-23T04:29:31",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/maidstone/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=45",
       "sku": "7304604045",
       "global_unique_id": "",
-      "price": "323400",
+      "price": "161700",
       "regular_price": "539000",
-      "sale_price": "323400",
+      "sale_price": "161700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -862,7 +866,7 @@
         {
           "id": 2217126,
           "key": "_last_change_time",
-          "value": "1785890645"
+          "value": "1795408171"
         },
         {
           "id": 2314386,
@@ -1249,15 +1253,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:43:42",
       "date_created_gmt": "2022-08-25T22:43:42",
-      "date_modified": "2026-07-27T20:47:40",
-      "date_modified_gmt": "2026-07-27T20:47:40",
+      "date_modified": "2026-11-23T04:29:31",
+      "date_modified_gmt": "2026-11-23T04:29:31",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/maidstone/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=44",
       "sku": "7304604044",
       "global_unique_id": "",
-      "price": "323400",
+      "price": "161700",
       "regular_price": "539000",
-      "sale_price": "323400",
+      "sale_price": "161700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -1755,7 +1759,7 @@
         {
           "id": 2217125,
           "key": "_last_change_time",
-          "value": "1785171898"
+          "value": "1795408171"
         },
         {
           "id": 2314401,
@@ -2142,15 +2146,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:43:42",
       "date_created_gmt": "2022-08-25T22:43:42",
-      "date_modified": "2026-07-27T20:47:40",
-      "date_modified_gmt": "2026-07-27T20:47:40",
+      "date_modified": "2026-11-23T04:29:31",
+      "date_modified_gmt": "2026-11-23T04:29:31",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/maidstone/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=43",
       "sku": "7304604043",
       "global_unique_id": "",
-      "price": "323400",
+      "price": "161700",
       "regular_price": "539000",
-      "sale_price": "323400",
+      "sale_price": "161700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -2648,7 +2652,7 @@
         {
           "id": 2217124,
           "key": "_last_change_time",
-          "value": "1785171899"
+          "value": "1795408171"
         },
         {
           "id": 2314400,
@@ -3035,15 +3039,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:43:42",
       "date_created_gmt": "2022-08-25T22:43:42",
-      "date_modified": "2026-07-27T20:47:40",
-      "date_modified_gmt": "2026-07-27T20:47:40",
+      "date_modified": "2026-11-23T04:29:31",
+      "date_modified_gmt": "2026-11-23T04:29:31",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/maidstone/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=42",
       "sku": "7304604042",
       "global_unique_id": "",
-      "price": "323400",
+      "price": "161700",
       "regular_price": "539000",
-      "sale_price": "323400",
+      "sale_price": "161700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -3541,7 +3545,7 @@
         {
           "id": 2217123,
           "key": "_last_change_time",
-          "value": "1785171899"
+          "value": "1795408171"
         },
         {
           "id": 2314399,
@@ -3928,15 +3932,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:43:42",
       "date_created_gmt": "2022-08-25T22:43:42",
-      "date_modified": "2026-07-27T20:47:40",
-      "date_modified_gmt": "2026-07-27T20:47:40",
+      "date_modified": "2026-11-23T04:29:31",
+      "date_modified_gmt": "2026-11-23T04:29:31",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/maidstone/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=41",
       "sku": "7304604041",
       "global_unique_id": "",
-      "price": "323400",
+      "price": "161700",
       "regular_price": "539000",
-      "sale_price": "323400",
+      "sale_price": "161700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -4434,7 +4438,7 @@
         {
           "id": 2217122,
           "key": "_last_change_time",
-          "value": "1785171899"
+          "value": "1795408171"
         },
         {
           "id": 2314398,
@@ -4821,15 +4825,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:43:42",
       "date_created_gmt": "2022-08-25T22:43:42",
-      "date_modified": "2026-07-27T20:47:40",
-      "date_modified_gmt": "2026-07-27T20:47:40",
+      "date_modified": "2026-11-23T04:29:31",
+      "date_modified_gmt": "2026-11-23T04:29:31",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/maidstone/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=40",
       "sku": "7304604040",
       "global_unique_id": "",
-      "price": "323400",
+      "price": "161700",
       "regular_price": "539000",
-      "sale_price": "323400",
+      "sale_price": "161700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -5327,7 +5331,7 @@
         {
           "id": 2217119,
           "key": "_last_change_time",
-          "value": "1785171899"
+          "value": "1795408171"
         },
         {
           "id": 2314397,
@@ -5714,15 +5718,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:43:42",
       "date_created_gmt": "2022-08-25T22:43:42",
-      "date_modified": "2026-07-27T20:47:41",
-      "date_modified_gmt": "2026-07-27T20:47:41",
+      "date_modified": "2026-11-23T04:29:27",
+      "date_modified_gmt": "2026-11-23T04:29:27",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/maidstone/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=39",
       "sku": "7304604039",
       "global_unique_id": "",
-      "price": "323400",
+      "price": "161700",
       "regular_price": "539000",
-      "sale_price": "323400",
+      "sale_price": "161700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -6220,7 +6224,7 @@
         {
           "id": 2217117,
           "key": "_last_change_time",
-          "value": "1785171899"
+          "value": "1795408167"
         },
         {
           "id": 2314396,
@@ -6607,15 +6611,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:43:42",
       "date_created_gmt": "2022-08-25T22:43:42",
-      "date_modified": "2026-07-27T20:47:41",
-      "date_modified_gmt": "2026-07-27T20:47:41",
+      "date_modified": "2026-11-23T04:29:27",
+      "date_modified_gmt": "2026-11-23T04:29:27",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/maidstone/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=38",
       "sku": "7304604038",
       "global_unique_id": "",
-      "price": "323400",
+      "price": "161700",
       "regular_price": "539000",
-      "sale_price": "323400",
+      "sale_price": "161700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -7113,7 +7117,7 @@
         {
           "id": 2217116,
           "key": "_last_change_time",
-          "value": "1785171899"
+          "value": "1795408167"
         },
         {
           "id": 2314408,
@@ -7500,15 +7504,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:43:42",
       "date_created_gmt": "2022-08-25T22:43:42",
-      "date_modified": "2026-07-27T20:47:41",
-      "date_modified_gmt": "2026-07-27T20:47:41",
+      "date_modified": "2026-11-23T04:29:27",
+      "date_modified_gmt": "2026-11-23T04:29:27",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/maidstone/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=37",
       "sku": "7304604037",
       "global_unique_id": "",
-      "price": "323400",
+      "price": "161700",
       "regular_price": "539000",
-      "sale_price": "323400",
+      "sale_price": "161700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -8006,7 +8010,7 @@
         {
           "id": 2217115,
           "key": "_last_change_time",
-          "value": "1785171899"
+          "value": "1795408167"
         },
         {
           "id": 2314407,
@@ -8393,15 +8397,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:43:42",
       "date_created_gmt": "2022-08-25T22:43:42",
-      "date_modified": "2026-07-27T20:47:41",
-      "date_modified_gmt": "2026-07-27T20:47:41",
+      "date_modified": "2026-11-23T04:29:27",
+      "date_modified_gmt": "2026-11-23T04:29:27",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/maidstone/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=45",
       "sku": "7304602045",
       "global_unique_id": "",
-      "price": "323400",
+      "price": "161700",
       "regular_price": "539000",
-      "sale_price": "323400",
+      "sale_price": "161700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -8899,7 +8903,7 @@
         {
           "id": 2217114,
           "key": "_last_change_time",
-          "value": "1785171899"
+          "value": "1795408167"
         },
         {
           "id": 2314406,
@@ -9286,15 +9290,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:43:42",
       "date_created_gmt": "2022-08-25T22:43:42",
-      "date_modified": "2026-07-27T20:47:41",
-      "date_modified_gmt": "2026-07-27T20:47:41",
+      "date_modified": "2026-11-23T04:29:27",
+      "date_modified_gmt": "2026-11-23T04:29:27",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/maidstone/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=44",
       "sku": "7304602044",
       "global_unique_id": "",
-      "price": "323400",
+      "price": "161700",
       "regular_price": "539000",
-      "sale_price": "323400",
+      "sale_price": "161700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -9792,7 +9796,7 @@
         {
           "id": 2217113,
           "key": "_last_change_time",
-          "value": "1785171899"
+          "value": "1795408167"
         },
         {
           "id": 2314405,
@@ -10179,15 +10183,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:43:42",
       "date_created_gmt": "2022-08-25T22:43:42",
-      "date_modified": "2026-07-27T20:47:41",
-      "date_modified_gmt": "2026-07-27T20:47:41",
+      "date_modified": "2026-11-23T04:29:27",
+      "date_modified_gmt": "2026-11-23T04:29:27",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/maidstone/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=43",
       "sku": "7304602043",
       "global_unique_id": "",
-      "price": "323400",
+      "price": "161700",
       "regular_price": "539000",
-      "sale_price": "323400",
+      "sale_price": "161700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -10685,7 +10689,7 @@
         {
           "id": 2217109,
           "key": "_last_change_time",
-          "value": "1785171899"
+          "value": "1795408167"
         },
         {
           "id": 2314404,
@@ -11072,15 +11076,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:43:42",
       "date_created_gmt": "2022-08-25T22:43:42",
-      "date_modified": "2026-07-27T20:47:41",
-      "date_modified_gmt": "2026-07-27T20:47:41",
+      "date_modified": "2026-11-23T04:29:27",
+      "date_modified_gmt": "2026-11-23T04:29:27",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/maidstone/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=42",
       "sku": "7304602042",
       "global_unique_id": "",
-      "price": "323400",
+      "price": "161700",
       "regular_price": "539000",
-      "sale_price": "323400",
+      "sale_price": "161700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -11578,7 +11582,7 @@
         {
           "id": 2217108,
           "key": "_last_change_time",
-          "value": "1785171899"
+          "value": "1795408167"
         },
         {
           "id": 2314403,
@@ -11965,15 +11969,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:43:42",
       "date_created_gmt": "2022-08-25T22:43:42",
-      "date_modified": "2026-07-27T20:47:41",
-      "date_modified_gmt": "2026-07-27T20:47:41",
+      "date_modified": "2026-11-23T04:29:27",
+      "date_modified_gmt": "2026-11-23T04:29:27",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/maidstone/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=41",
       "sku": "7304602041",
       "global_unique_id": "",
-      "price": "323400",
+      "price": "161700",
       "regular_price": "539000",
-      "sale_price": "323400",
+      "sale_price": "161700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -12461,7 +12465,7 @@
         {
           "id": 2217107,
           "key": "_last_change_time",
-          "value": "1785171899"
+          "value": "1795408167"
         },
         {
           "id": 2314402,
@@ -12858,15 +12862,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:43:36",
       "date_created_gmt": "2022-08-25T22:43:36",
-      "date_modified": "2026-07-27T20:47:41",
-      "date_modified_gmt": "2026-07-27T20:47:41",
+      "date_modified": "2026-11-23T04:29:27",
+      "date_modified_gmt": "2026-11-23T04:29:27",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/maidstone/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=40",
       "sku": "7304602040",
       "global_unique_id": "",
-      "price": "323400",
+      "price": "161700",
       "regular_price": "539000",
-      "sale_price": "323400",
+      "sale_price": "161700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -13364,7 +13368,7 @@
         {
           "id": 2217106,
           "key": "_last_change_time",
-          "value": "1785171899"
+          "value": "1795408167"
         },
         {
           "id": 2314412,
@@ -13751,15 +13755,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:43:36",
       "date_created_gmt": "2022-08-25T22:43:36",
-      "date_modified": "2026-07-27T20:47:41",
-      "date_modified_gmt": "2026-07-27T20:47:41",
+      "date_modified": "2026-11-23T04:29:27",
+      "date_modified_gmt": "2026-11-23T04:29:27",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/maidstone/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=39",
       "sku": "7304602039",
       "global_unique_id": "",
-      "price": "323400",
+      "price": "161700",
       "regular_price": "539000",
-      "sale_price": "323400",
+      "sale_price": "161700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -14257,7 +14261,7 @@
         {
           "id": 2217105,
           "key": "_last_change_time",
-          "value": "1785171899"
+          "value": "1795408167"
         },
         {
           "id": 2314411,
@@ -14644,15 +14648,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:43:36",
       "date_created_gmt": "2022-08-25T22:43:36",
-      "date_modified": "2026-07-27T20:47:41",
-      "date_modified_gmt": "2026-07-27T20:47:41",
+      "date_modified": "2026-11-23T04:29:27",
+      "date_modified_gmt": "2026-11-23T04:29:27",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/maidstone/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=38",
       "sku": "7304602038",
       "global_unique_id": "",
-      "price": "323400",
+      "price": "161700",
       "regular_price": "539000",
-      "sale_price": "323400",
+      "sale_price": "161700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -15150,7 +15154,7 @@
         {
           "id": 2217104,
           "key": "_last_change_time",
-          "value": "1785171899"
+          "value": "1795408167"
         },
         {
           "id": 2314410,
@@ -15537,15 +15541,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:43:36",
       "date_created_gmt": "2022-08-25T22:43:36",
-      "date_modified": "2026-07-27T20:47:41",
-      "date_modified_gmt": "2026-07-27T20:47:41",
+      "date_modified": "2026-11-23T04:29:27",
+      "date_modified_gmt": "2026-11-23T04:29:27",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/maidstone/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=37",
       "sku": "7304602037",
       "global_unique_id": "",
-      "price": "323400",
+      "price": "161700",
       "regular_price": "539000",
-      "sale_price": "323400",
+      "sale_price": "161700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -16043,7 +16047,7 @@
         {
           "id": 2217102,
           "key": "_last_change_time",
-          "value": "1785171899"
+          "value": "1795408167"
         },
         {
           "id": 2314409,
@@ -16428,7 +16432,9 @@
   ],
   "wpc_resolved_media": {
     "32": "https://tienda.winstonandharrystore.com/wp-content/uploads/2017/06/slider-main-demo-2-2.jpg",
-    "66": "https://tienda.winstonandharrystore.com/wp-content/uploads/2017/06/brand-hay.png"
+    "66": "https://tienda.winstonandharrystore.com/wp-content/uploads/2017/06/brand-hay.png",
+    "85895": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-maidstone-negro-03.jpg",
+    "85897": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-maidstone-negro-02.jpg"
   },
   "stock_status": "instock",
   "variation_images_map": {
@@ -16438,6 +16444,16 @@
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-maidstone-negro-01.jpg",
         "alt": "winston-and-harry-mocasines-maidstone-negro-01",
         "name": "winston-and-harry-mocasines-maidstone-negro-01"
+      },
+      {
+        "id": 85897,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-maidstone-negro-02.jpg",
+        "alt": "Maidstone"
+      },
+      {
+        "id": 85895,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-maidstone-negro-03.jpg",
+        "alt": "Maidstone"
       }
     ],
     "cafe": [

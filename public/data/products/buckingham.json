@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>825,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>825,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -190,35 +190,6 @@
   ],
   "variations": [
     {
-      "id": 24447,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "miel",
-          "option": "miel"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "38",
-          "option": "38"
-        }
-      ],
-      "image": {
-        "id": 60874,
-        "date_created": "2025-03-02T05:06:31",
-        "date_created_gmt": "2025-03-02T05:06:31",
-        "date_modified": "2025-03-03T03:14:27",
-        "date_modified_gmt": "2025-03-03T03:14:27",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/03/Buckingham-Miel-Winstonandharry-1-e1752772452338.jpg",
-        "name": "Buckingham-Miel-Winstonandharry-1",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "825000",
-      "regular_price": "825000",
-      "sale_price": ""
-    },
-    {
       "id": 24448,
       "attributes": [
         {
@@ -242,6 +213,8 @@
         "name": "Buckingham-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -271,6 +244,8 @@
         "name": "Buckingham-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 7,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -300,6 +275,8 @@
         "name": "Buckingham-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -329,6 +306,8 @@
         "name": "Buckingham-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 8,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -358,6 +337,8 @@
         "name": "Buckingham-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -387,6 +368,8 @@
         "name": "Buckingham-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -416,6 +399,8 @@
         "name": "Buckingham-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -445,6 +430,8 @@
         "name": "Buckingham-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -474,6 +461,8 @@
         "name": "Buckingham-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -503,6 +492,8 @@
         "name": "Buckingham-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -532,6 +523,8 @@
         "name": "Buckingham-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -1296,8 +1289,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:32:13",
       "date_created_gmt": "2022-08-25T22:32:13",
-      "date_modified": "2026-05-07T22:59:16",
-      "date_modified_gmt": "2026-05-07T22:59:16",
+      "date_modified": "2026-10-27T19:15:14",
+      "date_modified_gmt": "2026-10-27T19:15:14",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/buckingham/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=44",
       "sku": "7021202044",
@@ -1320,7 +1313,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 3,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -1947,7 +1940,7 @@
         {
           "id": 2259688,
           "key": "_last_change_time",
-          "value": "1778177568"
+          "value": "1793122930"
         },
         {
           "id": 2314826,
@@ -2682,8 +2675,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:32:12",
       "date_created_gmt": "2022-08-25T22:32:12",
-      "date_modified": "2026-06-16T17:40:49",
-      "date_modified_gmt": "2026-06-16T17:40:49",
+      "date_modified": "2026-10-27T19:15:14",
+      "date_modified_gmt": "2026-10-27T19:15:14",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/buckingham/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=42",
       "sku": "7021202042",
@@ -2706,7 +2699,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 3,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -3333,7 +3326,7 @@
         {
           "id": 2250071,
           "key": "_last_change_time",
-          "value": "1781631263"
+          "value": "1793122930"
         },
         {
           "id": 2314836,
@@ -9590,8 +9583,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:32:12",
       "date_created_gmt": "2022-08-25T22:32:12",
-      "date_modified": "2026-07-16T22:39:21",
-      "date_modified_gmt": "2026-07-16T22:39:21",
+      "date_modified": "2026-11-23T04:36:29",
+      "date_modified_gmt": "2026-11-23T04:36:29",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/buckingham/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=41",
       "sku": "7021226041",
@@ -9614,7 +9607,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 8,
+      "stock_quantity": 7,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -10238,7 +10231,7 @@
         {
           "id": 2259692,
           "key": "_last_change_time",
-          "value": "1784241561"
+          "value": "1795408589"
         },
         {
           "id": 2314840,
@@ -11660,8 +11653,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:32:11",
       "date_created_gmt": "2022-08-25T22:32:11",
-      "date_modified": "2026-05-07T22:59:10",
-      "date_modified_gmt": "2026-05-07T22:59:10",
+      "date_modified": "2026-09-08T17:13:01",
+      "date_modified_gmt": "2026-09-08T17:13:01",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/buckingham/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=38",
       "sku": "7021226038",
@@ -11684,8 +11677,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -12308,7 +12301,7 @@
         {
           "id": 2233268,
           "key": "_last_change_time",
-          "value": "1778177562"
+          "value": "1788887581"
         },
         {
           "id": 2314842,
@@ -13037,6 +13030,8 @@
     }
   ],
   "wpc_resolved_media": {
+    "17409": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/04/032-zapato-cenital.jpg",
+    "17410": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/04/032-zapato-lateral.jpg",
     "60875": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/03/Buckingham-Miel-Winstonandharry-2-e1752772548650.jpg",
     "60876": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/03/Buckingham-Miel-Winstonandharry-3-e1752772574455.jpg",
     "60877": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/03/Buckingham-Miel-Winstonandharry-4-e1752772592850.jpg",
@@ -13103,6 +13098,16 @@
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/03/Buckingham-Negro-Winstonandharry-1-e1752772858106.jpg",
         "alt": "Buckingham-Negro-Winstonandharry-1",
         "name": "Buckingham-Negro-Winstonandharry-1"
+      },
+      {
+        "id": 17410,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/04/032-zapato-lateral.jpg",
+        "alt": "Buckingham"
+      },
+      {
+        "id": 17409,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/04/032-zapato-cenital.jpg",
+        "alt": "Buckingham"
       },
       {
         "id": 60884,

@@ -9,11 +9,11 @@
   "sku": "455-1",
   "short_description": "<p>El Cinturón Unifaz Perforado combina un diseño clásico con detalles perforados que aportan distinción y personalidad. Un accesorio versátil y funcional, ideal para complementar atuendos casuales y formales con elegancia.</p>",
   "description": "<p>El Cinturón Unifaz Perforado se distingue por su diseño clásico y funcional, ideal para complementar diferentes estilos con un toque de elegancia y sofisticación. Su acabado perforado aporta un detalle visual distintivo que realza su diseño y le brinda personalidad, convirtiéndolo en un accesorio versátil para el vestuario masculino.</p>\n<p>Su diseño unifaz permite una apariencia uniforme y fácil de combinar, mientras que su estructura está pensada para ofrecer comodidad y practicidad durante el uso diario. Los detalles de perforación complementan su estética, logrando un equilibrio entre estilo tradicional y un acabado contemporáneo.</p>\n<p>Es el complemento ideal para quienes buscan un accesorio funcional, de diseño atemporal y fácil de integrar en ocasiones casuales o conjuntos más formales.</p>",
-  "on_sale": false,
+  "on_sale": true,
   "prices": {
-    "price": "190000",
+    "price": "114000",
     "regular_price": "190000",
-    "sale_price": "190000",
+    "sale_price": "114000",
     "price_range": null,
     "currency_code": "COP",
     "currency_symbol": "$",
@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>190,000</span>",
+  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>190,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;190,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>114,000</span></ins><span class=\"screen-reader-text\">Current price is: &#036;114,000.</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -229,10 +229,10 @@
         "name": "winston-and-harry-cinturon-uni-perforado-2785-01",
         "alt": ""
       },
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 12,
       "stock_status": "instock",
-      "price": "190000",
+      "price": "114000",
       "regular_price": "190000",
       "sale_price": ""
     },
@@ -270,10 +270,10 @@
         "name": "winston-and-harry-cinturon-uni-perforado-2785-01",
         "alt": ""
       },
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 9,
       "stock_status": "instock",
-      "price": "190000",
+      "price": "114000",
       "regular_price": "190000",
       "sale_price": ""
     },
@@ -311,10 +311,10 @@
         "name": "winston-and-harry-cinturon-uni-perforado-2785-01",
         "alt": ""
       },
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 7,
       "stock_status": "instock",
-      "price": "190000",
+      "price": "114000",
       "regular_price": "190000",
       "sale_price": ""
     },
@@ -352,10 +352,10 @@
         "name": "winston-and-harry-cinturon-uni-perforado-2785-01",
         "alt": ""
       },
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 22,
       "stock_status": "instock",
-      "price": "190000",
+      "price": "114000",
       "regular_price": "190000",
       "sale_price": ""
     },
@@ -393,10 +393,10 @@
         "name": "winston-and-harry-cinturon-uni-perforado-miel-2785-01",
         "alt": ""
       },
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
-      "price": "190000",
+      "price": "114000",
       "regular_price": "190000",
       "sale_price": ""
     },
@@ -434,10 +434,10 @@
         "name": "winston-and-harry-cinturon-uni-perforado-miel-2785-01",
         "alt": ""
       },
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
-      "price": "190000",
+      "price": "114000",
       "regular_price": "190000",
       "sale_price": ""
     },
@@ -475,10 +475,10 @@
         "name": "winston-and-harry-cinturon-uni-perforado-miel-2785-01",
         "alt": ""
       },
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
-      "price": "190000",
+      "price": "114000",
       "regular_price": "190000",
       "sale_price": ""
     },
@@ -516,10 +516,10 @@
         "name": "winston-and-harry-cinturon-uni-perforado-miel-2785-01",
         "alt": ""
       },
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 15,
       "stock_status": "instock",
-      "price": "190000",
+      "price": "114000",
       "regular_price": "190000",
       "sale_price": ""
     }
@@ -583,20 +583,20 @@
       "type": "variation",
       "date_created": "2026-11-19T20:05:08",
       "date_created_gmt": "2026-11-19T20:05:08",
-      "date_modified": "2026-11-22T00:08:37",
-      "date_modified_gmt": "2026-11-22T00:08:37",
+      "date_modified": "2026-11-23T04:40:40",
+      "date_modified_gmt": "2026-11-23T04:40:40",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cinturon-unifaz-perforado/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=38&attribute_pa_hebilla=acero-inoxidable&attribute_pa_material=100-cuero",
       "sku": "27278526038",
       "global_unique_id": "",
-      "price": "190000",
+      "price": "114000",
       "regular_price": "190000",
-      "sale_price": "",
+      "sale_price": "114000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -606,8 +606,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 15,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -666,7 +666,7 @@
         {
           "id": 2624652,
           "key": "_last_change_time",
-          "value": "1795118776"
+          "value": "1795408840"
         },
         {
           "id": 2624653,
@@ -1449,16 +1449,6 @@
           "value": ""
         },
         {
-          "id": 2643817,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2643818,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2643819,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -1683,20 +1673,20 @@
       "type": "variation",
       "date_created": "2026-11-19T20:05:08",
       "date_created_gmt": "2026-11-19T20:05:08",
-      "date_modified": "2026-11-22T00:08:37",
-      "date_modified_gmt": "2026-11-22T00:08:37",
+      "date_modified": "2026-11-23T04:40:40",
+      "date_modified_gmt": "2026-11-23T04:40:40",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cinturon-unifaz-perforado/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=36&attribute_pa_hebilla=acero-inoxidable&attribute_pa_material=100-cuero",
       "sku": "27278526036",
       "global_unique_id": "",
-      "price": "190000",
+      "price": "114000",
       "regular_price": "190000",
-      "sale_price": "",
+      "sale_price": "114000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -1706,8 +1696,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -1766,7 +1756,7 @@
         {
           "id": 2624640,
           "key": "_last_change_time",
-          "value": "1795118776"
+          "value": "1795408840"
         },
         {
           "id": 2624641,
@@ -2549,16 +2539,6 @@
           "value": ""
         },
         {
-          "id": 2643627,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2643628,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2643629,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -2783,20 +2763,20 @@
       "type": "variation",
       "date_created": "2026-11-19T20:05:08",
       "date_created_gmt": "2026-11-19T20:05:08",
-      "date_modified": "2026-11-22T00:08:37",
-      "date_modified_gmt": "2026-11-22T00:08:37",
+      "date_modified": "2026-11-23T04:40:39",
+      "date_modified_gmt": "2026-11-23T04:40:39",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cinturon-unifaz-perforado/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=34&attribute_pa_hebilla=acero-inoxidable&attribute_pa_material=100-cuero",
       "sku": "27278526034",
       "global_unique_id": "",
-      "price": "190000",
+      "price": "114000",
       "regular_price": "190000",
-      "sale_price": "",
+      "sale_price": "114000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -2806,8 +2786,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -2866,7 +2846,7 @@
         {
           "id": 2624628,
           "key": "_last_change_time",
-          "value": "1795118776"
+          "value": "1795408839"
         },
         {
           "id": 2624629,
@@ -3649,16 +3629,6 @@
           "value": ""
         },
         {
-          "id": 2643437,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2643438,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2643439,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -3883,20 +3853,20 @@
       "type": "variation",
       "date_created": "2026-11-19T20:05:07",
       "date_created_gmt": "2026-11-19T20:05:07",
-      "date_modified": "2026-11-22T00:08:36",
-      "date_modified_gmt": "2026-11-22T00:08:36",
+      "date_modified": "2026-11-23T04:40:39",
+      "date_modified_gmt": "2026-11-23T04:40:39",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cinturon-unifaz-perforado/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=32&attribute_pa_hebilla=acero-inoxidable&attribute_pa_material=100-cuero",
       "sku": "27278526032",
       "global_unique_id": "",
-      "price": "190000",
+      "price": "114000",
       "regular_price": "190000",
-      "sale_price": "",
+      "sale_price": "114000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -3906,8 +3876,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -3966,7 +3936,7 @@
         {
           "id": 2624616,
           "key": "_last_change_time",
-          "value": "1795118776"
+          "value": "1795408839"
         },
         {
           "id": 2624617,
@@ -4749,16 +4719,6 @@
           "value": ""
         },
         {
-          "id": 2643247,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2643248,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2643249,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -4983,20 +4943,20 @@
       "type": "variation",
       "date_created": "2026-11-19T20:05:07",
       "date_created_gmt": "2026-11-19T20:05:07",
-      "date_modified": "2026-11-22T00:08:36",
-      "date_modified_gmt": "2026-11-22T00:08:36",
+      "date_modified": "2026-11-23T04:40:39",
+      "date_modified_gmt": "2026-11-23T04:40:39",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cinturon-unifaz-perforado/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=38&attribute_pa_hebilla=acero-inoxidable&attribute_pa_material=100-cuero",
       "sku": "27278504038",
       "global_unique_id": "",
-      "price": "190000",
+      "price": "114000",
       "regular_price": "190000",
-      "sale_price": "",
+      "sale_price": "114000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -5006,8 +4966,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 22,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -5066,7 +5026,7 @@
         {
           "id": 2624604,
           "key": "_last_change_time",
-          "value": "1795118776"
+          "value": "1795408839"
         },
         {
           "id": 2624605,
@@ -5849,16 +5809,6 @@
           "value": ""
         },
         {
-          "id": 2643057,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2643058,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2643059,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -6083,20 +6033,20 @@
       "type": "variation",
       "date_created": "2026-11-19T20:05:07",
       "date_created_gmt": "2026-11-19T20:05:07",
-      "date_modified": "2026-11-22T00:08:36",
-      "date_modified_gmt": "2026-11-22T00:08:36",
+      "date_modified": "2026-11-23T04:40:39",
+      "date_modified_gmt": "2026-11-23T04:40:39",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cinturon-unifaz-perforado/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=36&attribute_pa_hebilla=acero-inoxidable&attribute_pa_material=100-cuero",
       "sku": "27278504036",
       "global_unique_id": "",
-      "price": "190000",
+      "price": "114000",
       "regular_price": "190000",
-      "sale_price": "",
+      "sale_price": "114000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -6106,8 +6056,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 7,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -6166,7 +6116,7 @@
         {
           "id": 2624592,
           "key": "_last_change_time",
-          "value": "1795118776"
+          "value": "1795408839"
         },
         {
           "id": 2624593,
@@ -6949,16 +6899,6 @@
           "value": ""
         },
         {
-          "id": 2642867,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2642868,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2642869,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -7183,20 +7123,20 @@
       "type": "variation",
       "date_created": "2026-11-19T20:05:07",
       "date_created_gmt": "2026-11-19T20:05:07",
-      "date_modified": "2026-11-22T00:08:36",
-      "date_modified_gmt": "2026-11-22T00:08:36",
+      "date_modified": "2026-11-23T04:40:39",
+      "date_modified_gmt": "2026-11-23T04:40:39",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cinturon-unifaz-perforado/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=34&attribute_pa_hebilla=acero-inoxidable&attribute_pa_material=100-cuero",
       "sku": "27278504034",
       "global_unique_id": "",
-      "price": "190000",
+      "price": "114000",
       "regular_price": "190000",
-      "sale_price": "",
+      "sale_price": "114000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -7206,8 +7146,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 9,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -7266,7 +7206,7 @@
         {
           "id": 2624580,
           "key": "_last_change_time",
-          "value": "1795118776"
+          "value": "1795408839"
         },
         {
           "id": 2624581,
@@ -8049,16 +7989,6 @@
           "value": ""
         },
         {
-          "id": 2642677,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2642678,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2642679,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -8283,20 +8213,20 @@
       "type": "variation",
       "date_created": "2026-11-19T20:05:07",
       "date_created_gmt": "2026-11-19T20:05:07",
-      "date_modified": "2026-11-22T00:08:36",
-      "date_modified_gmt": "2026-11-22T00:08:36",
+      "date_modified": "2026-11-23T04:40:39",
+      "date_modified_gmt": "2026-11-23T04:40:39",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cinturon-unifaz-perforado/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=32&attribute_pa_hebilla=acero-inoxidable&attribute_pa_material=100-cuero",
       "sku": "27278504032",
       "global_unique_id": "",
-      "price": "190000",
+      "price": "114000",
       "regular_price": "190000",
-      "sale_price": "",
+      "sale_price": "114000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -8306,8 +8236,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 12,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -8366,7 +8296,7 @@
         {
           "id": 2624568,
           "key": "_last_change_time",
-          "value": "1795118776"
+          "value": "1795408839"
         },
         {
           "id": 2624569,
@@ -9146,16 +9076,6 @@
         {
           "id": 2642486,
           "key": "_oembed_time_3efc152008105e0533b1d0735c932ef8",
-          "value": ""
-        },
-        {
-          "id": 2642487,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2642488,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         },
         {

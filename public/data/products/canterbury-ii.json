@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>649,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>649,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -249,6 +249,8 @@
         "name": "winston-and-harry-zapatos-de-cordon-canterbury-ii-miel-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -278,6 +280,8 @@
         "name": "winston-and-harry-zapatos-de-cordon-canterbury-ii-negro-01",
         "alt": ""
       },
+      "manage_stock": "parent",
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -307,6 +311,8 @@
         "name": "winston-and-harry-zapatos-de-cordon-canterbury-ii-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -336,6 +342,8 @@
         "name": "winston-and-harry-zapatos-de-cordon-canterbury-ii-miel-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -365,6 +373,8 @@
         "name": "winston-and-harry-zapatos-de-cordon-canterbury-ii-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -394,6 +404,8 @@
         "name": "winston-and-harry-zapatos-de-cordon-canterbury-ii-cafe-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -423,6 +435,8 @@
         "name": "winston-and-harry-zapatos-de-cordon-canterbury-ii-cafe-01",
         "alt": ""
       },
+      "manage_stock": "parent",
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -452,6 +466,8 @@
         "name": "winston-and-harry-zapatos-de-cordon-canterbury-ii-miel-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -481,6 +497,8 @@
         "name": "winston-and-harry-zapatos-de-cordon-canterbury-ii-cafe-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -510,6 +528,8 @@
         "name": "winston-and-harry-zapatos-de-cordon-canterbury-ii-cafe-01",
         "alt": ""
       },
+      "manage_stock": "parent",
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -539,6 +559,8 @@
         "name": "winston-and-harry-zapatos-de-cordon-canterbury-ii-cafe-01",
         "alt": ""
       },
+      "manage_stock": "parent",
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -568,6 +590,8 @@
         "name": "winston-and-harry-zapatos-de-cordon-canterbury-ii-cafe-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -597,6 +621,8 @@
         "name": "winston-and-harry-zapatos-de-cordon-canterbury-ii-cafe-01",
         "alt": ""
       },
+      "manage_stock": "parent",
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -626,6 +652,8 @@
         "name": "winston-and-harry-zapatos-de-cordon-canterbury-ii-miel-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -655,6 +683,8 @@
         "name": "winston-and-harry-zapatos-de-cordon-canterbury-ii-cafe-01",
         "alt": ""
       },
+      "manage_stock": "parent",
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -684,6 +714,8 @@
         "name": "winston-and-harry-zapatos-de-cordon-canterbury-ii-cafe-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -713,6 +745,8 @@
         "name": "winston-and-harry-zapatos-de-cordon-canterbury-ii-miel-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -742,6 +776,8 @@
         "name": "winston-and-harry-zapatos-de-cordon-canterbury-ii-cafe-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -771,6 +807,8 @@
         "name": "winston-and-harry-zapatos-de-cordon-canterbury-ii-miel-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -8635,8 +8673,8 @@
       "type": "variation",
       "date_created": "2023-07-17T22:26:50",
       "date_created_gmt": "2023-07-17T22:26:50",
-      "date_modified": "2026-07-31T02:33:13",
-      "date_modified_gmt": "2026-07-31T02:33:13",
+      "date_modified": "2026-11-23T04:37:33",
+      "date_modified_gmt": "2026-11-23T04:37:33",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/canterbury-ii/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=41",
       "sku": "7308104041",
@@ -8659,7 +8697,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 3,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -9161,7 +9199,7 @@
         {
           "id": 2261097,
           "key": "_last_change_time",
-          "value": "1780421868"
+          "value": "1795408653"
         },
         {
           "id": 2312654,
@@ -9476,11 +9514,6 @@
         {
           "id": 2469131,
           "key": "_oembed_time_3efc152008105e0533b1d0735c932ef8",
-          "value": ""
-        },
-        {
-          "id": 2469132,
-          "key": "_wc_push_notification_sent_low_stock",
           "value": ""
         }
       ],
@@ -19226,8 +19259,8 @@
       "type": "variation",
       "date_created": "2023-07-17T22:26:49",
       "date_created_gmt": "2023-07-17T22:26:49",
-      "date_modified": "2026-07-31T02:33:13",
-      "date_modified_gmt": "2026-07-31T02:33:13",
+      "date_modified": "2026-11-23T04:37:33",
+      "date_modified_gmt": "2026-11-23T04:37:33",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/canterbury-ii/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=38",
       "sku": "7308126038",
@@ -19250,7 +19283,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -19752,7 +19785,7 @@
         {
           "id": 2261101,
           "key": "_last_change_time",
-          "value": "1778177761"
+          "value": "1795408653"
         },
         {
           "id": 2312657,
@@ -20068,11 +20101,6 @@
           "id": 2469451,
           "key": "_oembed_time_3efc152008105e0533b1d0735c932ef8",
           "value": ""
-        },
-        {
-          "id": 2469452,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
         }
       ],
       "name": "Miel, 38",
@@ -20109,8 +20137,8 @@
       "type": "variation",
       "date_created": "2023-07-17T22:26:49",
       "date_created_gmt": "2023-07-17T22:26:49",
-      "date_modified": "2026-07-31T02:33:18",
-      "date_modified_gmt": "2026-07-31T02:33:18",
+      "date_modified": "2026-11-23T04:37:33",
+      "date_modified_gmt": "2026-11-23T04:37:33",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/canterbury-ii/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=37",
       "sku": "7308126037",
@@ -20133,7 +20161,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 2,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -20635,7 +20663,7 @@
         {
           "id": 2261100,
           "key": "_last_change_time",
-          "value": "1778177761"
+          "value": "1795408653"
         },
         {
           "id": 2312656,
@@ -20951,11 +20979,6 @@
           "id": 2469970,
           "key": "_oembed_time_3efc152008105e0533b1d0735c932ef8",
           "value": ""
-        },
-        {
-          "id": 2469971,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
         }
       ],
       "name": "Miel, 37",
@@ -20992,7 +21015,11 @@
     "30719": "https://tienda.winstonandharrystore.com/wp-content/uploads/2023/07/30082023-_MG_5508.jpg",
     "30720": "https://tienda.winstonandharrystore.com/wp-content/uploads/2023/07/30082023-_MG_5509.jpg",
     "30722": "https://tienda.winstonandharrystore.com/wp-content/uploads/2023/07/30082023-_MG_5513.jpg",
-    "30723": "https://tienda.winstonandharrystore.com/wp-content/uploads/2023/07/30082023-_MG_5514.jpg"
+    "30723": "https://tienda.winstonandharrystore.com/wp-content/uploads/2023/07/30082023-_MG_5514.jpg",
+    "86014": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-zapatos-de-cordon-canterbury-ii-miel-03.jpg",
+    "86016": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-zapatos-de-cordon-canterbury-ii-miel-02.jpg",
+    "86018": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-zapatos-de-cordon-canterbury-ii-negro-02.jpg",
+    "86019": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-zapatos-de-cordon-canterbury-ii-negro-03.jpg"
   },
   "stock_status": "instock",
   "variation_images_map": {
@@ -21002,6 +21029,16 @@
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-zapatos-de-cordon-canterbury-ii-miel-01.jpg",
         "alt": "winston-and-harry-zapatos-de-cordon-canterbury-ii-miel-01",
         "name": "winston-and-harry-zapatos-de-cordon-canterbury-ii-miel-01"
+      },
+      {
+        "id": 86016,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-zapatos-de-cordon-canterbury-ii-miel-02.jpg",
+        "alt": "Canterbury II"
+      },
+      {
+        "id": 86014,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-zapatos-de-cordon-canterbury-ii-miel-03.jpg",
+        "alt": "Canterbury II"
       },
       {
         "id": 30719,
@@ -21026,6 +21063,16 @@
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-zapatos-de-cordon-canterbury-ii-cafe-01.jpg",
         "alt": "winston-and-harry-zapatos-de-cordon-canterbury-ii-cafe-01",
         "name": "winston-and-harry-zapatos-de-cordon-canterbury-ii-cafe-01"
+      },
+      {
+        "id": 86018,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-zapatos-de-cordon-canterbury-ii-negro-02.jpg",
+        "alt": "Canterbury II"
+      },
+      {
+        "id": 86019,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-zapatos-de-cordon-canterbury-ii-negro-03.jpg",
+        "alt": "Canterbury II"
       }
     ],
     "cafe": [

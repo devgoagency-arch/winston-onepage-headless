@@ -9,11 +9,11 @@
   "sku": "848",
   "short_description": "",
   "description": "<p>Dale un toque de W&amp;H a tus necesidades diarias con la billetera Wallet III. Este lujoso diseño “triflod” de cuero 100% tiene mucho espacio para documentos, tarjetas y billetes. Cuenta con forro RFID para proteger tu información.</p>",
-  "on_sale": false,
+  "on_sale": true,
   "prices": {
-    "price": "240000",
+    "price": "144000",
     "regular_price": "240000",
-    "sale_price": "240000",
+    "sale_price": "144000",
     "price_range": null,
     "currency_code": "COP",
     "currency_symbol": "$",
@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>240,000</span>",
+  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>240,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;240,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>144,000</span></ins><span class=\"screen-reader-text\">Current price is: &#036;144,000.</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -136,8 +136,10 @@
         "name": "Billetera-3Cuerpos-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 26,
       "stock_status": "instock",
-      "price": "240000",
+      "price": "144000",
       "regular_price": "240000",
       "sale_price": ""
     },
@@ -160,8 +162,10 @@
         "name": "Billetera-3Cuerpos-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 15,
       "stock_status": "instock",
-      "price": "240000",
+      "price": "144000",
       "regular_price": "240000",
       "sale_price": ""
     },
@@ -184,8 +188,10 @@
         "name": "Billetera-3Cuerpos-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 14,
       "stock_status": "instock",
-      "price": "240000",
+      "price": "144000",
       "regular_price": "240000",
       "sale_price": ""
     }
@@ -249,20 +255,20 @@
       "type": "variation",
       "date_created": "2024-06-09T22:02:35",
       "date_created_gmt": "2024-06-09T22:02:35",
-      "date_modified": "2026-07-16T22:41:50",
-      "date_modified_gmt": "2026-07-16T22:41:50",
+      "date_modified": "2026-11-23T04:32:37",
+      "date_modified_gmt": "2026-11-23T04:32:37",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wallet-iii/?attribute_pa_selecciona-el-color=negro",
       "sku": "3033002000",
       "global_unique_id": "",
-      "price": "240000",
+      "price": "144000",
       "regular_price": "240000",
-      "sale_price": "",
+      "sale_price": "144000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -871,7 +877,7 @@
         {
           "id": 2233342,
           "key": "_last_change_time",
-          "value": "1784241710"
+          "value": "1795408357"
         },
         {
           "id": 2312308,
@@ -913,20 +919,20 @@
       "type": "variation",
       "date_created": "2024-06-09T22:02:35",
       "date_created_gmt": "2024-06-09T22:02:35",
-      "date_modified": "2026-07-16T22:41:50",
-      "date_modified_gmt": "2026-07-16T22:41:50",
+      "date_modified": "2026-11-23T04:32:37",
+      "date_modified_gmt": "2026-11-23T04:32:37",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wallet-iii/?attribute_pa_selecciona-el-color=miel",
       "sku": "3033026000",
       "global_unique_id": "",
-      "price": "240000",
+      "price": "144000",
       "regular_price": "240000",
-      "sale_price": "",
+      "sale_price": "144000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -937,7 +943,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 16,
+      "stock_quantity": 15,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -1535,7 +1541,7 @@
         {
           "id": 2250272,
           "key": "_last_change_time",
-          "value": "1784241710"
+          "value": "1795408357"
         },
         {
           "id": 2312307,
@@ -1577,20 +1583,20 @@
       "type": "variation",
       "date_created": "2024-06-09T22:02:35",
       "date_created_gmt": "2024-06-09T22:02:35",
-      "date_modified": "2026-07-27T17:43:36",
-      "date_modified_gmt": "2026-07-27T17:43:36",
+      "date_modified": "2026-11-23T04:32:37",
+      "date_modified_gmt": "2026-11-23T04:32:37",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wallet-iii/?attribute_pa_selecciona-el-color=cafe",
       "sku": "3033004000",
       "global_unique_id": "",
-      "price": "240000",
+      "price": "144000",
       "regular_price": "240000",
-      "sale_price": "",
+      "sale_price": "144000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -2199,7 +2205,7 @@
         {
           "id": 2254815,
           "key": "_last_change_time",
-          "value": "1785174216"
+          "value": "1795408357"
         },
         {
           "id": 2312306,

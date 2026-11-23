@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>979,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>979,000</span>",
   "average_rating": "5.00",
   "review_count": 1,
   "images": [
@@ -218,6 +218,8 @@
         "name": "Westminster-Negro-Winstonandharry-401",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "979000",
       "regular_price": "979000",
@@ -247,6 +249,8 @@
         "name": "Westminster-Negro-Winstonandharry-401",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "979000",
       "regular_price": "979000",
@@ -276,6 +280,8 @@
         "name": "Westminster-Negro-Winstonandharry-401",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "979000",
       "regular_price": "979000",
@@ -305,6 +311,8 @@
         "name": "Westminster-Negro-Winstonandharry-401",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "979000",
       "regular_price": "979000",
@@ -334,6 +342,8 @@
         "name": "Westminster-Negro-Winstonandharry-401",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "979000",
       "regular_price": "979000",
@@ -363,6 +373,8 @@
         "name": "Westminster-Negro-Winstonandharry-401",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "979000",
       "regular_price": "979000",
@@ -392,6 +404,8 @@
         "name": "Westminster-Negro-Winstonandharry-401",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "979000",
       "regular_price": "979000",
@@ -421,6 +435,8 @@
         "name": "Westminster-Negro-Winstonandharry-401",
         "alt": ""
       },
+      "manage_stock": "parent",
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "979000",
       "regular_price": "979000",
@@ -450,6 +466,8 @@
         "name": "Westminster-Negro-Winstonandharry-401",
         "alt": ""
       },
+      "manage_stock": "parent",
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "979000",
       "regular_price": "979000",
@@ -479,6 +497,8 @@
         "name": "westminster-botas-miel-winstonandharry",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "979000",
       "regular_price": "979000",
@@ -508,6 +528,8 @@
         "name": "westminster-botas-miel-winstonandharry",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "979000",
       "regular_price": "979000",
@@ -537,6 +559,8 @@
         "name": "westminster-botas-miel-winstonandharry",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "979000",
       "regular_price": "979000",
@@ -566,6 +590,8 @@
         "name": "westminster-botas-miel-winstonandharry",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "price": "979000",
       "regular_price": "979000",
@@ -595,6 +621,8 @@
         "name": "westminster-botas-miel-winstonandharry",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "price": "979000",
       "regular_price": "979000",
@@ -624,6 +652,8 @@
         "name": "westminster-botas-miel-winstonandharry",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "979000",
       "regular_price": "979000",
@@ -653,6 +683,8 @@
         "name": "westminster-botas-miel-winstonandharry",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "979000",
       "regular_price": "979000",
@@ -682,6 +714,8 @@
         "name": "westminster-botas-miel-winstonandharry",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "979000",
       "regular_price": "979000",
@@ -711,6 +745,8 @@
         "name": "westminster-botas-miel-winstonandharry",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "979000",
       "regular_price": "979000",
@@ -740,6 +776,8 @@
         "name": "westminster-botas-cafe-winstonandharry",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "979000",
       "regular_price": "979000",
@@ -769,6 +807,8 @@
         "name": "westminster-botas-cafe-winstonandharry",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "979000",
       "regular_price": "979000",
@@ -798,6 +838,8 @@
         "name": "westminster-botas-cafe-winstonandharry",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "979000",
       "regular_price": "979000",
@@ -827,6 +869,8 @@
         "name": "westminster-botas-cafe-winstonandharry",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "979000",
       "regular_price": "979000",
@@ -856,6 +900,8 @@
         "name": "westminster-botas-cafe-winstonandharry",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "price": "979000",
       "regular_price": "979000",
@@ -885,6 +931,8 @@
         "name": "westminster-botas-cafe-winstonandharry",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "979000",
       "regular_price": "979000",
@@ -914,6 +962,8 @@
         "name": "westminster-botas-cafe-winstonandharry",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "979000",
       "regular_price": "979000",
@@ -943,6 +993,8 @@
         "name": "westminster-botas-cafe-winstonandharry",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "979000",
       "regular_price": "979000",
@@ -15379,8 +15431,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:53:24",
       "date_created_gmt": "2022-08-25T22:53:24",
-      "date_modified": "2026-05-07T23:12:33",
-      "date_modified_gmt": "2026-05-07T23:12:33",
+      "date_modified": "2026-09-08T17:13:04",
+      "date_modified_gmt": "2026-09-08T17:13:04",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/westminster/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=40",
       "sku": "7028026040",
@@ -15403,7 +15455,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 6,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -15972,7 +16024,7 @@
         {
           "id": 2259850,
           "key": "_last_change_time",
-          "value": "1778190605"
+          "value": "1788887584"
         },
         {
           "id": 2313792,

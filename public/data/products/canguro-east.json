@@ -11,9 +11,9 @@
   "description": "<p>El Canguro East combina funcionalidad y diseño en un accesorio compacto de líneas limpias. Fabricado en cuero, cuenta con correa ajustable en tela resistente, cierre metálico y bolsillo frontal de fácil acceso. Su interior espacioso permite llevar lo esencial con estilo. Perfecto para uso diario, viajes o un look casual moderno con toques premium.</p>",
   "on_sale": true,
   "prices": {
-    "price": "364650",
+    "price": "257400",
     "regular_price": "429000",
-    "sale_price": "364650",
+    "sale_price": "257400",
     "price_range": null,
     "currency_code": "COP",
     "currency_symbol": "$",
@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>429,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;429,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>364,650</span></ins><span class=\"screen-reader-text\">Current price is: &#036;364,650.</span>",
+  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>429,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;429,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>257,400</span></ins><span class=\"screen-reader-text\">Current price is: &#036;257,400.</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -159,8 +159,10 @@
         "name": "Canguro-East-Azul-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 8,
       "stock_status": "instock",
-      "price": "364650",
+      "price": "257400",
       "regular_price": "429000",
       "sale_price": ""
     },
@@ -183,8 +185,10 @@
         "name": "Canguro-East-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 11,
       "stock_status": "instock",
-      "price": "364650",
+      "price": "257400",
       "regular_price": "429000",
       "sale_price": ""
     },
@@ -207,8 +211,10 @@
         "name": "Canguro-East-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 11,
       "stock_status": "instock",
-      "price": "364650",
+      "price": "257400",
       "regular_price": "429000",
       "sale_price": ""
     }
@@ -284,15 +290,15 @@
       "type": "variation",
       "date_created": "2025-10-30T04:44:42",
       "date_created_gmt": "2025-10-30T04:44:42",
-      "date_modified": "2026-05-08T21:47:14",
-      "date_modified_gmt": "2026-05-08T21:47:14",
+      "date_modified": "2026-11-23T04:34:00",
+      "date_modified_gmt": "2026-11-23T04:34:00",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/canguro-east/?attribute_pa_selecciona-el-color=negro",
       "sku": "15150902000",
       "global_unique_id": "",
-      "price": "364650",
+      "price": "257400",
       "regular_price": "429000",
-      "sale_price": "364650",
+      "sale_price": "257400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -1086,7 +1092,7 @@
         {
           "id": 2257415,
           "key": "_last_change_time",
-          "value": "1778276834"
+          "value": "1795408440"
         },
         {
           "id": 2310960,
@@ -1143,15 +1149,15 @@
       "type": "variation",
       "date_created": "2025-10-30T04:44:42",
       "date_created_gmt": "2025-10-30T04:44:42",
-      "date_modified": "2026-05-08T21:47:14",
-      "date_modified_gmt": "2026-05-08T21:47:14",
+      "date_modified": "2026-11-23T04:34:00",
+      "date_modified_gmt": "2026-11-23T04:34:00",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/canguro-east/?attribute_pa_selecciona-el-color=miel",
       "sku": "15150932000",
       "global_unique_id": "",
-      "price": "364650",
+      "price": "257400",
       "regular_price": "429000",
-      "sale_price": "364650",
+      "sale_price": "257400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -1945,7 +1951,7 @@
         {
           "id": 2261946,
           "key": "_last_change_time",
-          "value": "1778276834"
+          "value": "1795408440"
         },
         {
           "id": 2310959,
@@ -2002,15 +2008,15 @@
       "type": "variation",
       "date_created": "2025-10-30T04:44:42",
       "date_created_gmt": "2025-10-30T04:44:42",
-      "date_modified": "2026-06-02T17:41:37",
-      "date_modified_gmt": "2026-06-02T17:41:37",
+      "date_modified": "2026-11-23T04:34:00",
+      "date_modified_gmt": "2026-11-23T04:34:00",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/canguro-east/?attribute_pa_selecciona-el-color=azul",
       "sku": "15150901000",
       "global_unique_id": "",
-      "price": "364650",
+      "price": "257400",
       "regular_price": "429000",
-      "sale_price": "364650",
+      "sale_price": "257400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -2026,7 +2032,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 10,
+      "stock_quantity": 8,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -2804,7 +2810,7 @@
         {
           "id": 2261945,
           "key": "_last_change_time",
-          "value": "1780422097"
+          "value": "1795408440"
         },
         {
           "id": 2310958,

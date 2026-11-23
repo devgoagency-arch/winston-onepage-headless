@@ -9,11 +9,11 @@
   "sku": "867",
   "short_description": "",
   "description": "<p>• 100% Cuero de la mejor calidad y resistente</p>\n<p>• Un tamaño ideal para llevar todas tus pertenencias importantes y un poco mas</p>\n<p>• Cuenta con un forro impermeable para el cuidado de tus cosas</p>",
-  "on_sale": false,
+  "on_sale": true,
   "prices": {
-    "price": "544500",
+    "price": "326700",
     "regular_price": "544500",
-    "sale_price": "544500",
+    "sale_price": "326700",
     "price_range": null,
     "currency_code": "COP",
     "currency_symbol": "$",
@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>544,500</span>",
+  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>544,500</span></del> <span class=\"screen-reader-text\">Original price was: &#036;544,500.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>326,700</span></ins><span class=\"screen-reader-text\">Current price is: &#036;326,700.</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -170,8 +170,10 @@
         "name": "Messenger-Azul-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 11,
       "stock_status": "instock",
-      "price": "544500",
+      "price": "326700",
       "regular_price": "544500",
       "sale_price": ""
     },
@@ -194,8 +196,10 @@
         "name": "Messenger-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 21,
       "stock_status": "instock",
-      "price": "544500",
+      "price": "326700",
       "regular_price": "544500",
       "sale_price": ""
     },
@@ -218,8 +222,10 @@
         "name": "Messenger-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 20,
       "stock_status": "instock",
-      "price": "544500",
+      "price": "326700",
       "regular_price": "544500",
       "sale_price": ""
     },
@@ -242,8 +248,10 @@
         "name": "Messenger-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 15,
       "stock_status": "instock",
-      "price": "544500",
+      "price": "326700",
       "regular_price": "544500",
       "sale_price": ""
     }
@@ -319,20 +327,20 @@
       "type": "variation",
       "date_created": "2024-11-29T21:23:23",
       "date_created_gmt": "2024-11-29T21:23:23",
-      "date_modified": "2026-08-13T00:05:18",
-      "date_modified_gmt": "2026-08-13T00:05:18",
+      "date_modified": "2026-11-23T04:32:54",
+      "date_modified_gmt": "2026-11-23T04:32:54",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/morral-messenger/?attribute_pa_selecciona-el-color=negro",
       "sku": "15026402000",
       "global_unique_id": "",
-      "price": "544500",
+      "price": "326700",
       "regular_price": "544500",
-      "sale_price": "",
+      "sale_price": "326700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -936,7 +944,7 @@
         {
           "id": 2229439,
           "key": "_last_change_time",
-          "value": "1786579518"
+          "value": "1795408374"
         },
         {
           "id": 2312167,
@@ -978,20 +986,20 @@
       "type": "variation",
       "date_created": "2024-11-29T21:23:23",
       "date_created_gmt": "2024-11-29T21:23:23",
-      "date_modified": "2026-05-07T23:06:59",
-      "date_modified_gmt": "2026-05-07T23:06:59",
+      "date_modified": "2026-11-23T04:32:54",
+      "date_modified_gmt": "2026-11-23T04:32:54",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/morral-messenger/?attribute_pa_selecciona-el-color=miel",
       "sku": "15026426000",
       "global_unique_id": "",
-      "price": "544500",
+      "price": "326700",
       "regular_price": "544500",
-      "sale_price": "",
+      "sale_price": "326700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -1595,7 +1603,7 @@
         {
           "id": 2218994,
           "key": "_last_change_time",
-          "value": "1778184396"
+          "value": "1795408374"
         },
         {
           "id": 2312166,
@@ -1637,20 +1645,20 @@
       "type": "variation",
       "date_created": "2024-11-29T21:23:23",
       "date_created_gmt": "2024-11-29T21:23:23",
-      "date_modified": "2026-06-02T17:39:15",
-      "date_modified_gmt": "2026-06-02T17:39:15",
+      "date_modified": "2026-11-23T04:32:54",
+      "date_modified_gmt": "2026-11-23T04:32:54",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/morral-messenger/?attribute_pa_selecciona-el-color=cafe",
       "sku": "15026404000",
       "global_unique_id": "",
-      "price": "544500",
+      "price": "326700",
       "regular_price": "544500",
-      "sale_price": "",
+      "sale_price": "326700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -2254,7 +2262,7 @@
         {
           "id": 2229436,
           "key": "_last_change_time",
-          "value": "1780421955"
+          "value": "1795408374"
         },
         {
           "id": 2312165,
@@ -2296,20 +2304,20 @@
       "type": "variation",
       "date_created": "2024-11-29T21:23:23",
       "date_created_gmt": "2024-11-29T21:23:23",
-      "date_modified": "2026-05-07T23:06:59",
-      "date_modified_gmt": "2026-05-07T23:06:59",
+      "date_modified": "2026-11-23T04:32:54",
+      "date_modified_gmt": "2026-11-23T04:32:54",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/morral-messenger/?attribute_pa_selecciona-el-color=azul",
       "sku": "15026401000",
       "global_unique_id": "",
-      "price": "544500",
+      "price": "326700",
       "regular_price": "544500",
-      "sale_price": "",
+      "sale_price": "326700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -2913,7 +2921,7 @@
         {
           "id": 2229434,
           "key": "_last_change_time",
-          "value": "1778184396"
+          "value": "1795408374"
         },
         {
           "id": 2312164,

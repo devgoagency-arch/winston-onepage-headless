@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>913,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>913,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -267,6 +267,8 @@
         "name": "Salvador-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "913000",
       "regular_price": "913000",
@@ -296,6 +298,8 @@
         "name": "Salvador-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "913000",
       "regular_price": "913000",
@@ -325,6 +329,8 @@
         "name": "Salvador-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "913000",
       "regular_price": "913000",
@@ -354,6 +360,8 @@
         "name": "Salvador-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "913000",
       "regular_price": "913000",
@@ -383,6 +391,8 @@
         "name": "Salvador-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "913000",
       "regular_price": "913000",
@@ -412,6 +422,8 @@
         "name": "Salvador-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "913000",
       "regular_price": "913000",
@@ -441,6 +453,8 @@
         "name": "Salvador-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "913000",
       "regular_price": "913000",
@@ -470,64 +484,8 @@
         "name": "Salvador-Negro-Winstonandharry-1",
         "alt": ""
       },
-      "stock_status": "instock",
-      "price": "913000",
-      "regular_price": "913000",
-      "sale_price": ""
-    },
-    {
-      "id": 82029,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "negro",
-          "option": "negro"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "40",
-          "option": "40"
-        }
-      ],
-      "image": {
-        "id": 81695,
-        "date_created": "2025-10-27T19:02:11",
-        "date_created_gmt": "2025-10-27T19:02:11",
-        "date_modified": "2025-11-04T17:19:53",
-        "date_modified_gmt": "2025-11-04T17:19:53",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Salvador-Negro-Winstonandharry-1.jpg",
-        "name": "Salvador-Negro-Winstonandharry-1",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "913000",
-      "regular_price": "913000",
-      "sale_price": ""
-    },
-    {
-      "id": 82030,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "negro",
-          "option": "negro"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "41",
-          "option": "41"
-        }
-      ],
-      "image": {
-        "id": 81695,
-        "date_created": "2025-10-27T19:02:11",
-        "date_created_gmt": "2025-10-27T19:02:11",
-        "date_modified": "2025-11-04T17:19:53",
-        "date_modified_gmt": "2025-11-04T17:19:53",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Salvador-Negro-Winstonandharry-1.jpg",
-        "name": "Salvador-Negro-Winstonandharry-1",
-        "alt": ""
-      },
+      "manage_stock": true,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "price": "913000",
       "regular_price": "913000",
@@ -557,6 +515,8 @@
         "name": "Salvador-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "913000",
       "regular_price": "913000",
@@ -586,6 +546,8 @@
         "name": "Salvador-Tabaco-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "913000",
       "regular_price": "913000",
@@ -615,6 +577,8 @@
         "name": "Salvador-Tabaco-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "913000",
       "regular_price": "913000",
@@ -644,6 +608,8 @@
         "name": "Salvador-Tabaco-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "price": "913000",
       "regular_price": "913000",
@@ -673,6 +639,8 @@
         "name": "Salvador-Tabaco-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "913000",
       "regular_price": "913000",
@@ -702,6 +670,8 @@
         "name": "Salvador-Tabaco-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "913000",
       "regular_price": "913000",
@@ -731,6 +701,8 @@
         "name": "Salvador-Tabaco-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "913000",
       "regular_price": "913000",
@@ -5252,8 +5224,8 @@
       "type": "variation",
       "date_created": "2025-10-29T22:06:56",
       "date_created_gmt": "2025-10-29T22:06:56",
-      "date_modified": "2026-07-27T20:49:30",
-      "date_modified_gmt": "2026-07-27T20:49:30",
+      "date_modified": "2026-11-23T04:39:16",
+      "date_modified_gmt": "2026-11-23T04:39:16",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/salvador/?attribute_pa_selecciona-el-color=tabaco&attribute_pa_selecciona-una-talla=40",
       "sku": "7003110040",
@@ -5276,7 +5248,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 4,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -6070,7 +6042,7 @@
         {
           "id": 2259423,
           "key": "_last_change_time",
-          "value": "1778190030"
+          "value": "1795408756"
         },
         {
           "id": 2311078,
@@ -6088,11 +6060,6 @@
           "value": ""
         },
         {
-          "id": 2433783,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2433784,
           "key": "_wc_facebook_product_video_source",
           "value": ""
@@ -6100,11 +6067,6 @@
         {
           "id": 2433785,
           "key": "fb_product_images",
-          "value": ""
-        },
-        {
-          "id": 2433786,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],
@@ -6142,8 +6104,8 @@
       "type": "variation",
       "date_created": "2025-10-29T22:06:56",
       "date_created_gmt": "2025-10-29T22:06:56",
-      "date_modified": "2026-07-27T20:49:30",
-      "date_modified_gmt": "2026-07-27T20:49:30",
+      "date_modified": "2026-11-23T04:39:16",
+      "date_modified_gmt": "2026-11-23T04:39:16",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/salvador/?attribute_pa_selecciona-el-color=tabaco&attribute_pa_selecciona-una-talla=39",
       "sku": "7003110039",
@@ -6166,7 +6128,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 7,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -6960,7 +6922,7 @@
         {
           "id": 2259422,
           "key": "_last_change_time",
-          "value": "1778190030"
+          "value": "1795408756"
         },
         {
           "id": 2311077,
@@ -6978,11 +6940,6 @@
           "value": ""
         },
         {
-          "id": 2433777,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2433778,
           "key": "_wc_facebook_product_video_source",
           "value": ""
@@ -6990,11 +6947,6 @@
         {
           "id": 2433779,
           "key": "fb_product_images",
-          "value": ""
-        },
-        {
-          "id": 2433780,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],
@@ -7032,8 +6984,8 @@
       "type": "variation",
       "date_created": "2025-10-29T22:06:56",
       "date_created_gmt": "2025-10-29T22:06:56",
-      "date_modified": "2026-07-27T20:49:30",
-      "date_modified_gmt": "2026-07-27T20:49:30",
+      "date_modified": "2026-09-23T22:56:37",
+      "date_modified_gmt": "2026-09-23T22:56:37",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/salvador/?attribute_pa_selecciona-el-color=tabaco&attribute_pa_selecciona-una-talla=38",
       "sku": "7003110038",
@@ -7056,7 +7008,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 4,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -7850,7 +7802,7 @@
         {
           "id": 2259421,
           "key": "_last_change_time",
-          "value": "1778190030"
+          "value": "1790204197"
         },
         {
           "id": 2311076,
@@ -7868,11 +7820,6 @@
           "value": ""
         },
         {
-          "id": 2433771,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2433772,
           "key": "_wc_facebook_product_video_source",
           "value": ""
@@ -7880,11 +7827,6 @@
         {
           "id": 2433773,
           "key": "fb_product_images",
-          "value": ""
-        },
-        {
-          "id": 2433774,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],
@@ -11477,8 +11419,8 @@
       "type": "variation",
       "date_created": "2025-10-29T22:06:56",
       "date_created_gmt": "2025-10-29T22:06:56",
-      "date_modified": "2026-07-27T20:49:31",
-      "date_modified_gmt": "2026-07-27T20:49:31",
+      "date_modified": "2026-11-23T04:39:16",
+      "date_modified_gmt": "2026-11-23T04:39:16",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/salvador/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=42",
       "sku": "7003102042",
@@ -11501,7 +11443,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -12295,7 +12237,7 @@
         {
           "id": 2259406,
           "key": "_last_change_time",
-          "value": "1781631494"
+          "value": "1795408756"
         },
         {
           "id": 2311071,
@@ -12313,11 +12255,6 @@
           "value": ""
         },
         {
-          "id": 2433801,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2433802,
           "key": "_wc_facebook_product_video_source",
           "value": ""
@@ -12325,11 +12262,6 @@
         {
           "id": 2433803,
           "key": "fb_product_images",
-          "value": ""
-        },
-        {
-          "id": 2433804,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],
@@ -12367,8 +12299,8 @@
       "type": "variation",
       "date_created": "2025-10-29T22:06:55",
       "date_created_gmt": "2025-10-29T22:06:55",
-      "date_modified": "2026-07-27T20:49:31",
-      "date_modified_gmt": "2026-07-27T20:49:31",
+      "date_modified": "2026-11-23T04:39:15",
+      "date_modified_gmt": "2026-11-23T04:39:15",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/salvador/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=41",
       "sku": "7003102041",
@@ -12391,8 +12323,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 2,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -13185,7 +13117,7 @@
         {
           "id": 2233405,
           "key": "_last_change_time",
-          "value": "1778190030"
+          "value": "1795408755"
         },
         {
           "id": 2311086,
@@ -13257,8 +13189,8 @@
       "type": "variation",
       "date_created": "2025-10-29T22:06:55",
       "date_created_gmt": "2025-10-29T22:06:55",
-      "date_modified": "2026-08-13T00:04:03",
-      "date_modified_gmt": "2026-08-13T00:04:03",
+      "date_modified": "2026-11-23T04:39:15",
+      "date_modified_gmt": "2026-11-23T04:39:15",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/salvador/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=40",
       "sku": "7003102040",
@@ -13281,8 +13213,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -14075,7 +14007,7 @@
         {
           "id": 2259405,
           "key": "_last_change_time",
-          "value": "1786579443"
+          "value": "1795408755"
         },
         {
           "id": 2311085,
@@ -14142,8 +14074,8 @@
       "type": "variation",
       "date_created": "2025-10-29T22:06:55",
       "date_created_gmt": "2025-10-29T22:06:55",
-      "date_modified": "2026-07-27T20:49:37",
-      "date_modified_gmt": "2026-07-27T20:49:37",
+      "date_modified": "2026-11-23T04:39:15",
+      "date_modified_gmt": "2026-11-23T04:39:15",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/salvador/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=39",
       "sku": "7003102039",
@@ -14960,7 +14892,7 @@
         {
           "id": 2257397,
           "key": "_last_change_time",
-          "value": "1778190030"
+          "value": "1795408755"
         },
         {
           "id": 2311084,
@@ -14978,11 +14910,6 @@
           "value": ""
         },
         {
-          "id": 2433868,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2433869,
           "key": "_wc_facebook_product_video_source",
           "value": ""
@@ -14990,11 +14917,6 @@
         {
           "id": 2433870,
           "key": "fb_product_images",
-          "value": ""
-        },
-        {
-          "id": 2433871,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],
@@ -15922,8 +15844,8 @@
       "type": "variation",
       "date_created": "2025-10-29T22:06:55",
       "date_created_gmt": "2025-10-29T22:06:55",
-      "date_modified": "2026-07-27T20:49:37",
-      "date_modified_gmt": "2026-07-27T20:49:37",
+      "date_modified": "2026-10-05T21:50:14",
+      "date_modified_gmt": "2026-10-05T21:50:14",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/salvador/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=37",
       "sku": "7003102037",
@@ -16740,7 +16662,7 @@
         {
           "id": 2259403,
           "key": "_last_change_time",
-          "value": "1781631493"
+          "value": "1791237014"
         },
         {
           "id": 2311082,
@@ -16770,11 +16692,6 @@
         {
           "id": 2433858,
           "key": "fb_product_images",
-          "value": ""
-        },
-        {
-          "id": 2433859,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],

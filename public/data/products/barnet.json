@@ -9,12 +9,15 @@
   "sku": "446",
   "short_description": "<p>Mocasín de toques clásicos y acentos de color, el Barnet se resuelve en capellada de 100% cuero y suela de goma. Es un corte versátil, de pala despejada, que deja hablar al color sin abandonar la línea tradicional del mocasín de hombre. Al no llevar cordones, se entra en un solo movimiento y acompaña el guardarropa con una presencia serena, ni rígida ni informal del todo. Se deja llevar a diario con una compostura discreta, de esas que no interrumpen el atuendo. Disponible en café, miel y negro, tallas 37 a 45.</p>",
   "description": "<p>El Mocasín Barnet, es un zapato versatil con toques clasicos pero con aspectos de color para reflejar tu personalidad</p>",
-  "on_sale": false,
+  "on_sale": true,
   "prices": {
-    "price": "560000",
+    "price": "336000",
     "regular_price": "560000",
-    "sale_price": "560000",
-    "price_range": null,
+    "sale_price": "336000",
+    "price_range": {
+      "min_amount": "336000",
+      "max_amount": "560000"
+    },
     "currency_code": "COP",
     "currency_symbol": "$",
     "currency_minor_unit": 0,
@@ -23,7 +26,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>560,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\" aria-hidden=\"true\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>336,000</span> <span aria-hidden=\"true\">&ndash;</span> <span class=\"woocommerce-Price-amount amount\" aria-hidden=\"true\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>560,000</span><span class=\"screen-reader-text\">Price range: &#036;336,000 through &#036;560,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -255,8 +258,10 @@
         "name": "Barnet-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -284,8 +289,10 @@
         "name": "Barnet-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -313,8 +320,10 @@
         "name": "Barnet-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -342,8 +351,10 @@
         "name": "Barnet-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -371,8 +382,10 @@
         "name": "Barnet-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -400,8 +413,10 @@
         "name": "Barnet-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -429,8 +444,10 @@
         "name": "Barnet-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -458,8 +475,10 @@
         "name": "Barnet-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -487,8 +506,10 @@
         "name": "Barnet-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -516,8 +537,10 @@
         "name": "Barnet-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -545,8 +568,10 @@
         "name": "Barnet-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -574,8 +599,10 @@
         "name": "Barnet-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -603,8 +630,10 @@
         "name": "Barnet-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -632,8 +661,10 @@
         "name": "Barnet-Cafe-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -661,8 +692,10 @@
         "name": "Barnet-Cafe-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 6,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -690,8 +723,10 @@
         "name": "Barnet-Cafe-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -719,8 +754,10 @@
         "name": "Barnet-Cafe-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -748,8 +785,10 @@
         "name": "Barnet-Cafe-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -777,8 +816,10 @@
         "name": "Barnet-Cafe-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -806,8 +847,10 @@
         "name": "Barnet-Cafe-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -835,8 +878,10 @@
         "name": "Barnet-Cafe-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     }
@@ -6294,20 +6339,20 @@
       "type": "variation",
       "date_created": "2022-08-29T17:47:23",
       "date_created_gmt": "2022-08-29T17:47:23",
-      "date_modified": "2026-07-27T20:44:56",
-      "date_modified_gmt": "2026-07-27T20:44:56",
+      "date_modified": "2026-11-23T04:30:47",
+      "date_modified_gmt": "2026-11-23T04:30:47",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/barnet/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=39",
       "sku": "7300826039",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -6945,7 +6990,7 @@
         {
           "id": 2215587,
           "key": "_last_change_time",
-          "value": "1778175402"
+          "value": "1795408247"
         },
         {
           "id": 2313645,
@@ -10784,20 +10829,20 @@
       "type": "variation",
       "date_created": "2022-08-25T22:42:34",
       "date_created_gmt": "2022-08-25T22:42:34",
-      "date_modified": "2026-07-27T20:44:57",
-      "date_modified_gmt": "2026-07-27T20:44:57",
+      "date_modified": "2026-11-23T04:29:10",
+      "date_modified_gmt": "2026-11-23T04:29:10",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/barnet/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=43",
       "sku": "7300804043",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -11435,7 +11480,7 @@
         {
           "id": 2215575,
           "key": "_last_change_time",
-          "value": "1778175401"
+          "value": "1795408150"
         },
         {
           "id": 2314471,
@@ -20650,20 +20695,20 @@
       "type": "variation",
       "date_created": "2022-08-25T22:42:33",
       "date_created_gmt": "2022-08-25T22:42:33",
-      "date_modified": "2026-07-27T20:44:58",
-      "date_modified_gmt": "2026-07-27T20:44:58",
+      "date_modified": "2026-11-23T04:29:10",
+      "date_modified_gmt": "2026-11-23T04:29:10",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/barnet/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=41",
       "sku": "7300802041",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -21303,7 +21348,7 @@
         {
           "id": 2215543,
           "key": "_last_change_time",
-          "value": "1778175399"
+          "value": "1795408150"
         },
         {
           "id": 2314476,
@@ -21545,8 +21590,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:42:33",
       "date_created_gmt": "2022-08-25T22:42:33",
-      "date_modified": "2026-07-27T20:44:58",
-      "date_modified_gmt": "2026-07-27T20:44:58",
+      "date_modified": "2026-09-08T17:13:01",
+      "date_modified_gmt": "2026-09-08T17:13:01",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/barnet/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=40",
       "sku": "7300902040",
@@ -21569,7 +21614,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 3,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -22193,7 +22238,7 @@
         {
           "id": 2215541,
           "key": "_last_change_time",
-          "value": "1780421750"
+          "value": "1788887581"
         },
         {
           "id": 2314475,
@@ -22386,11 +22431,6 @@
           "value": ""
         },
         {
-          "id": 2396159,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2396160,
           "key": "_wc_facebook_product_video_source",
           "value": ""
@@ -22398,11 +22438,6 @@
         {
           "id": 2396161,
           "key": "fb_product_images",
-          "value": ""
-        },
-        {
-          "id": 2396162,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],
@@ -22440,20 +22475,20 @@
       "type": "variation",
       "date_created": "2022-08-25T22:42:33",
       "date_created_gmt": "2022-08-25T22:42:33",
-      "date_modified": "2026-07-27T20:44:58",
-      "date_modified_gmt": "2026-07-27T20:44:58",
+      "date_modified": "2026-11-23T04:29:10",
+      "date_modified_gmt": "2026-11-23T04:29:10",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/barnet/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=39",
       "sku": "7300802039",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -23088,7 +23123,7 @@
         {
           "id": 2215539,
           "key": "_last_change_time",
-          "value": "1778175398"
+          "value": "1795408150"
         },
         {
           "id": 2314474,
@@ -23335,20 +23370,20 @@
       "type": "variation",
       "date_created": "2022-08-25T22:42:32",
       "date_created_gmt": "2022-08-25T22:42:32",
-      "date_modified": "2026-07-27T20:45:04",
-      "date_modified_gmt": "2026-07-27T20:45:04",
+      "date_modified": "2026-11-23T04:29:10",
+      "date_modified_gmt": "2026-11-23T04:29:10",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/barnet/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=38",
       "sku": "7300802038",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -23988,7 +24023,7 @@
         {
           "id": 2215537,
           "key": "_last_change_time",
-          "value": "1778175398"
+          "value": "1795408150"
         },
         {
           "id": 2314483,
@@ -25122,6 +25157,10 @@
     }
   ],
   "wpc_resolved_media": {
+    "16058": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/02/15-lateral-3008.jpg",
+    "16059": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/02/15-compo-3008.jpg",
+    "16060": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/02/16-lateral-3008.jpg",
+    "16061": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/02/16-suela-capellada-3008.jpg",
     "60948": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/03/Barnet-Cafe-Winstonandharry-2-e1752872926127.jpg",
     "60949": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/03/Barnet-Cafe-Winstonandharry-3-e1752872936580.jpg",
     "60950": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/03/Barnet-Cafe-Winstonandharry-4-e1752872953818.jpg",
@@ -25197,6 +25236,16 @@
         "name": "Barnet-Miel-Winstonandharry-1"
       },
       {
+        "id": 16061,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/02/16-suela-capellada-3008.jpg",
+        "alt": "Barnet"
+      },
+      {
+        "id": 16060,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/02/16-lateral-3008.jpg",
+        "alt": "Barnet"
+      },
+      {
         "id": 60956,
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/03/Barnet-Miel-Winstonandharry-3-e1752875594156.jpg",
         "alt": "Barnet"
@@ -25238,6 +25287,16 @@
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/03/Barnet-Cafe-Winstonandharry-1-e1752872915761.jpg",
         "alt": "Barnet-Cafe-Winstonandharry-1",
         "name": "Barnet-Cafe-Winstonandharry-1"
+      },
+      {
+        "id": 16058,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/02/15-lateral-3008.jpg",
+        "alt": "Barnet"
+      },
+      {
+        "id": 16059,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/02/15-compo-3008.jpg",
+        "alt": "Barnet"
       },
       {
         "id": 60949,

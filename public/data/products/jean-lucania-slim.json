@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>510,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>510,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -181,6 +181,8 @@
         "name": "winston-and-harry-lucania-jean-slim-azul-indigo-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "510000",
       "regular_price": "510000",
@@ -210,6 +212,8 @@
         "name": "winston-and-harry-lucania-jean-slim-azul-indigo-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "510000",
       "regular_price": "510000",
@@ -239,6 +243,8 @@
         "name": "winston-and-harry-lucania-jean-slim-azul-indigo-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "510000",
       "regular_price": "510000",
@@ -268,6 +274,8 @@
         "name": "winston-and-harry-lucania-jean-slim-azul-indigo-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "510000",
       "regular_price": "510000",
@@ -297,6 +305,8 @@
         "name": "winston-and-harry-lucania-jean-slim-azul-indigo-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "510000",
       "regular_price": "510000",
@@ -3602,8 +3612,8 @@
       "type": "variation",
       "date_created": "2026-05-08T02:18:38",
       "date_created_gmt": "2026-05-08T02:18:38",
-      "date_modified": "2026-07-11T02:29:00",
-      "date_modified_gmt": "2026-07-11T02:29:00",
+      "date_modified": "2026-10-05T21:48:54",
+      "date_modified_gmt": "2026-10-05T21:48:54",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/jean-lucania-slim/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=32",
       "sku": "3033601032",
@@ -3626,7 +3636,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 4,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -3673,7 +3683,7 @@
         {
           "id": 2341507,
           "key": "_last_change_time",
-          "value": "1780422152"
+          "value": "1791236934"
         },
         {
           "id": 2341508,
@@ -4680,8 +4690,8 @@
       "type": "variation",
       "date_created": "2026-05-08T02:18:38",
       "date_created_gmt": "2026-05-08T02:18:38",
-      "date_modified": "2026-07-11T02:28:59",
-      "date_modified_gmt": "2026-07-11T02:28:59",
+      "date_modified": "2026-09-08T17:16:20",
+      "date_modified_gmt": "2026-09-08T17:16:20",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/jean-lucania-slim/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=30",
       "sku": "3033601030",
@@ -4704,7 +4714,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 2,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -4751,7 +4761,7 @@
         {
           "id": 2341494,
           "key": "_last_change_time",
-          "value": "1780422152"
+          "value": "1788887780"
         },
         {
           "id": 2341495,

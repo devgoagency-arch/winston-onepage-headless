@@ -124,8 +124,8 @@
         "name": "winston-and-harry-medias-sopa-de-letras-azul-01",
         "alt": ""
       },
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 71,
       "stock_status": "instock",
       "price": "27500",
       "regular_price": "27500",
@@ -150,8 +150,8 @@
         "name": "winston-and-harry-medias-sopa-de-letras-morado-01",
         "alt": ""
       },
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 78,
       "stock_status": "instock",
       "price": "27500",
       "regular_price": "27500",
@@ -176,8 +176,8 @@
         "name": "winston-and-harry-medias-sopa-de-letras-negro-01",
         "alt": ""
       },
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 74,
       "stock_status": "instock",
       "price": "27500",
       "regular_price": "27500",
@@ -249,8 +249,8 @@
       "type": "variation",
       "date_created": "2026-11-20T20:21:44",
       "date_created_gmt": "2026-11-20T20:21:44",
-      "date_modified": "2026-11-22T00:09:16",
-      "date_modified_gmt": "2026-11-22T00:09:16",
+      "date_modified": "2026-11-23T04:41:00",
+      "date_modified_gmt": "2026-11-23T04:41:00",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/medias-sopa-de-letras/?attribute_pa_selecciona-el-color=negro",
       "sku": "11118602000",
@@ -272,8 +272,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 74,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -313,7 +313,7 @@
         {
           "id": 2630392,
           "key": "_last_change_time",
-          "value": "1795206134"
+          "value": "1795408860"
         },
         {
           "id": 2630393,
@@ -1096,16 +1096,6 @@
           "value": ""
         },
         {
-          "id": 2652076,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2652077,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2652078,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -1330,8 +1320,8 @@
       "type": "variation",
       "date_created": "2026-11-20T20:21:44",
       "date_created_gmt": "2026-11-20T20:21:44",
-      "date_modified": "2026-11-22T00:09:16",
-      "date_modified_gmt": "2026-11-22T00:09:16",
+      "date_modified": "2026-11-23T04:41:00",
+      "date_modified_gmt": "2026-11-23T04:41:00",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/medias-sopa-de-letras/?attribute_pa_selecciona-el-color=morado",
       "sku": "11118622000",
@@ -1353,8 +1343,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 78,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -1394,7 +1384,7 @@
         {
           "id": 2630379,
           "key": "_last_change_time",
-          "value": "1795206134"
+          "value": "1795408860"
         },
         {
           "id": 2630380,
@@ -2177,16 +2167,6 @@
           "value": ""
         },
         {
-          "id": 2651886,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2651887,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2651888,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -2411,8 +2391,8 @@
       "type": "variation",
       "date_created": "2026-11-20T20:21:44",
       "date_created_gmt": "2026-11-20T20:21:44",
-      "date_modified": "2026-11-22T00:09:16",
-      "date_modified_gmt": "2026-11-22T00:09:16",
+      "date_modified": "2026-11-23T04:41:00",
+      "date_modified_gmt": "2026-11-23T04:41:00",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/medias-sopa-de-letras/?attribute_pa_selecciona-el-color=azul",
       "sku": "11118601000",
@@ -2434,8 +2414,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 71,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -2475,7 +2455,7 @@
         {
           "id": 2630366,
           "key": "_last_change_time",
-          "value": "1795206134"
+          "value": "1795408860"
         },
         {
           "id": 2630367,
@@ -3255,16 +3235,6 @@
         {
           "id": 2651695,
           "key": "_oembed_time_3efc152008105e0533b1d0735c932ef8",
-          "value": ""
-        },
-        {
-          "id": 2651696,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2651697,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         },
         {

@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>275,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;275,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>165,000</span></ins><span class=\"screen-reader-text\">Current price is: &#036;165,000.</span>",
+  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>275,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;275,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>165,000</span></ins><span class=\"screen-reader-text\">Current price is: &#036;165,000.</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -131,6 +131,8 @@
         "name": "Billetera-Tres Cuerpos-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 31,
       "stock_status": "instock",
       "price": "165000",
       "regular_price": "275000",
@@ -155,6 +157,8 @@
         "name": "Billetera-Tres Cuerpos-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 23,
       "stock_status": "instock",
       "price": "165000",
       "regular_price": "275000",
@@ -232,8 +236,8 @@
       "type": "variation",
       "date_created": "2024-11-30T21:11:57",
       "date_created_gmt": "2024-11-30T21:11:57",
-      "date_modified": "2026-08-22T00:04:25",
-      "date_modified_gmt": "2026-08-22T00:04:25",
+      "date_modified": "2026-11-23T04:37:59",
+      "date_modified_gmt": "2026-11-23T04:37:59",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/billetera-tres-cuerpos/?attribute_pa_selecciona-el-color=negro",
       "sku": "33337602000",
@@ -256,7 +260,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 26,
+      "stock_quantity": 23,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -849,7 +853,7 @@
         {
           "id": 2239442,
           "key": "_last_change_time",
-          "value": "1787357065"
+          "value": "1795408679"
         },
         {
           "id": 2312156,
@@ -916,8 +920,8 @@
       "type": "variation",
       "date_created": "2024-11-30T21:11:57",
       "date_created_gmt": "2024-11-30T21:11:57",
-      "date_modified": "2026-08-22T00:04:25",
-      "date_modified_gmt": "2026-08-22T00:04:25",
+      "date_modified": "2026-11-23T04:37:59",
+      "date_modified_gmt": "2026-11-23T04:37:59",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/billetera-tres-cuerpos/?attribute_pa_selecciona-el-color=cafe",
       "sku": "33337604000",
@@ -940,7 +944,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 34,
+      "stock_quantity": 31,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -1533,7 +1537,7 @@
         {
           "id": 2250307,
           "key": "_last_change_time",
-          "value": "1787357065"
+          "value": "1795408679"
         },
         {
           "id": 2312155,

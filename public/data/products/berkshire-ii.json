@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>715,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>715,000</span>",
   "average_rating": "5.00",
   "review_count": 3,
   "images": [
@@ -244,6 +244,8 @@
         "name": "winston-and-harry-botas-berkshire-ii-cafe-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "715000",
       "regular_price": "715000",
@@ -273,35 +275,8 @@
         "name": "winston-and-harry-botas-berkshire-ii-cafe-01",
         "alt": ""
       },
-      "stock_status": "instock",
-      "price": "715000",
-      "regular_price": "715000",
-      "sale_price": ""
-    },
-    {
-      "id": 26851,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "cafe",
-          "option": "cafe"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "39",
-          "option": "39"
-        }
-      ],
-      "image": {
-        "id": 86089,
-        "date_created": "2026-08-03T03:57:30",
-        "date_created_gmt": "2026-08-03T03:57:30",
-        "date_modified": "2026-08-04T16:57:08",
-        "date_modified_gmt": "2026-08-04T16:57:08",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-botas-berkshire-ii-cafe-01.jpg",
-        "name": "winston-and-harry-botas-berkshire-ii-cafe-01",
-        "alt": ""
-      },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "715000",
       "regular_price": "715000",
@@ -331,6 +306,8 @@
         "name": "winston-and-harry-botas-berkshire-ii-cafe-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "price": "715000",
       "regular_price": "715000",
@@ -360,6 +337,8 @@
         "name": "winston-and-harry-botas-berkshire-ii-cafe-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "715000",
       "regular_price": "715000",
@@ -389,6 +368,8 @@
         "name": "winston-and-harry-botas-berkshire-ii-cafe-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "715000",
       "regular_price": "715000",
@@ -418,6 +399,8 @@
         "name": "winston-and-harry-botas-berkshire-ii-cafe-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "715000",
       "regular_price": "715000",
@@ -447,6 +430,8 @@
         "name": "winston-and-harry-botas-berkshire-ii-cafe-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "715000",
       "regular_price": "715000",
@@ -476,6 +461,8 @@
         "name": "winston-and-harry-botas-berkshire-ii-miel-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "715000",
       "regular_price": "715000",
@@ -505,6 +492,8 @@
         "name": "winston-and-harry-botas-berkshire-ii-miel-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "715000",
       "regular_price": "715000",
@@ -534,6 +523,8 @@
         "name": "winston-and-harry-botas-berkshire-ii-miel-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "price": "715000",
       "regular_price": "715000",
@@ -563,6 +554,8 @@
         "name": "winston-and-harry-botas-berkshire-ii-miel-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "715000",
       "regular_price": "715000",
@@ -592,6 +585,8 @@
         "name": "winston-and-harry-botas-berkshire-ii-miel-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "715000",
       "regular_price": "715000",
@@ -621,6 +616,8 @@
         "name": "winston-and-harry-botas-berkshire-ii-miel-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "price": "715000",
       "regular_price": "715000",
@@ -650,6 +647,8 @@
         "name": "winston-and-harry-botas-berkshire-ii-miel-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "715000",
       "regular_price": "715000",
@@ -679,6 +678,8 @@
         "name": "winston-and-harry-botas-berkshire-ii-miel-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "715000",
       "regular_price": "715000",
@@ -5225,8 +5226,8 @@
       "type": "variation",
       "date_created": "2022-10-27T18:00:12",
       "date_created_gmt": "2022-10-27T18:00:12",
-      "date_modified": "2026-08-04T16:57:08",
-      "date_modified_gmt": "2026-08-04T16:57:08",
+      "date_modified": "2026-11-04T17:53:41",
+      "date_modified_gmt": "2026-11-04T17:53:41",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/berkshire-ii/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=40",
       "sku": "7413626040",
@@ -5249,7 +5250,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 5,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -5726,7 +5727,7 @@
         {
           "id": 2250186,
           "key": "_last_change_time",
-          "value": "1783099295"
+          "value": "1793814821"
         },
         {
           "id": 2253552,
@@ -6076,16 +6077,6 @@
         {
           "id": 2476724,
           "key": "_wc_gla_visibility",
-          "value": ""
-        },
-        {
-          "id": 2476725,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2476726,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],
@@ -10603,8 +10594,8 @@
       "type": "variation",
       "date_created": "2022-10-27T18:00:12",
       "date_created_gmt": "2022-10-27T18:00:12",
-      "date_modified": "2026-08-04T16:57:08",
-      "date_modified_gmt": "2026-08-04T16:57:08",
+      "date_modified": "2026-11-23T04:36:49",
+      "date_modified_gmt": "2026-11-23T04:36:49",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/berkshire-ii/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=43",
       "sku": "7413604043",
@@ -10627,7 +10618,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 4,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -11109,7 +11100,7 @@
         {
           "id": 2250170,
           "key": "_last_change_time",
-          "value": "1778175498"
+          "value": "1795408609"
         },
         {
           "id": 2253522,
@@ -11454,16 +11445,6 @@
         {
           "id": 2477130,
           "key": "_wc_gla_visibility",
-          "value": ""
-        },
-        {
-          "id": 2477131,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2477132,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],
@@ -12389,8 +12370,8 @@
       "type": "variation",
       "date_created": "2022-10-27T18:00:12",
       "date_created_gmt": "2022-10-27T18:00:12",
-      "date_modified": "2026-08-04T16:57:15",
-      "date_modified_gmt": "2026-08-04T16:57:15",
+      "date_modified": "2026-09-16T16:54:05",
+      "date_modified_gmt": "2026-09-16T16:54:05",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/berkshire-ii/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=41",
       "sku": "7413604041",
@@ -12413,7 +12394,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 3,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -12880,7 +12861,7 @@
         {
           "id": 2250168,
           "key": "_last_change_time",
-          "value": "1781631340"
+          "value": "1789577645"
         },
         {
           "id": 2253512,
@@ -13241,16 +13222,6 @@
           "id": 2477271,
           "key": "_wc_gla_visibility",
           "value": ""
-        },
-        {
-          "id": 2477272,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2477273,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
         }
       ],
       "name": "Café, 41",
@@ -13287,8 +13258,8 @@
       "type": "variation",
       "date_created": "2022-10-27T18:00:12",
       "date_created_gmt": "2022-10-27T18:00:12",
-      "date_modified": "2026-08-04T16:57:15",
-      "date_modified_gmt": "2026-08-04T16:57:15",
+      "date_modified": "2026-11-04T17:53:40",
+      "date_modified_gmt": "2026-11-04T17:53:40",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/berkshire-ii/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=40",
       "sku": "7413604040",
@@ -13311,7 +13282,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 6,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -13778,7 +13749,7 @@
         {
           "id": 2250167,
           "key": "_last_change_time",
-          "value": "1783099295"
+          "value": "1793814820"
         },
         {
           "id": 2253507,
@@ -14139,16 +14110,6 @@
           "id": 2477340,
           "key": "_wc_gla_visibility",
           "value": ""
-        },
-        {
-          "id": 2477341,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2477342,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
         }
       ],
       "name": "Café, 40",
@@ -14185,8 +14146,8 @@
       "type": "variation",
       "date_created": "2022-10-27T18:00:12",
       "date_created_gmt": "2022-10-27T18:00:12",
-      "date_modified": "2026-08-04T16:57:15",
-      "date_modified_gmt": "2026-08-04T16:57:15",
+      "date_modified": "2026-09-08T17:13:56",
+      "date_modified_gmt": "2026-09-08T17:13:56",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/berkshire-ii/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=39",
       "sku": "7413604039",
@@ -14209,8 +14170,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 2,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -14676,7 +14637,7 @@
         {
           "id": 2250166,
           "key": "_last_change_time",
-          "value": "1780421809"
+          "value": "1788887636"
         },
         {
           "id": 2253502,
@@ -16879,7 +16840,9 @@
     "26774": "https://tienda.winstonandharrystore.com/wp-content/uploads/2022/10/zapato-2-posi-1.jpg",
     "26775": "https://tienda.winstonandharrystore.com/wp-content/uploads/2022/10/zapato-2-posi-2.jpg",
     "26777": "https://tienda.winstonandharrystore.com/wp-content/uploads/2022/10/zapato-3-posi-1.jpg",
-    "26778": "https://tienda.winstonandharrystore.com/wp-content/uploads/2022/10/zapato-3-posi-2.jpg"
+    "26778": "https://tienda.winstonandharrystore.com/wp-content/uploads/2022/10/zapato-3-posi-2.jpg",
+    "86088": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-botas-berkshire-ii-cafe-03.jpg",
+    "86090": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-botas-berkshire-ii-cafe-02.jpg"
   },
   "stock_status": "instock",
   "variation_images_map": {
@@ -16889,6 +16852,16 @@
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-botas-berkshire-ii-cafe-01.jpg",
         "alt": "winston-and-harry-botas-berkshire-ii-cafe-01",
         "name": "winston-and-harry-botas-berkshire-ii-cafe-01"
+      },
+      {
+        "id": 86090,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-botas-berkshire-ii-cafe-02.jpg",
+        "alt": "Berkshire II"
+      },
+      {
+        "id": 86088,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-botas-berkshire-ii-cafe-03.jpg",
+        "alt": "Berkshire II"
       },
       {
         "id": 26778,

@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>245,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>245,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -211,6 +211,8 @@
         "name": "winston-and-harry-cinturon-reata-bicolor-miel-2149-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 10,
       "stock_status": "instock",
       "price": "245000",
       "regular_price": "245000",
@@ -250,6 +252,8 @@
         "name": "winston-and-harry-cinturon-reata-bicolor-miel-2149-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 18,
       "stock_status": "instock",
       "price": "245000",
       "regular_price": "245000",
@@ -289,6 +293,8 @@
         "name": "winston-and-harry-cinturon-reata-bicolor-miel-2149-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 17,
       "stock_status": "instock",
       "price": "245000",
       "regular_price": "245000",
@@ -328,6 +334,8 @@
         "name": "winston-and-harry-cinturon-reata-bicolor-miel-2149-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 19,
       "stock_status": "instock",
       "price": "245000",
       "regular_price": "245000",
@@ -367,6 +375,8 @@
         "name": "winston-and-harry-cinturon-reata-bicolor-miel-2149-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 8,
       "stock_status": "instock",
       "price": "245000",
       "regular_price": "245000",
@@ -432,8 +442,8 @@
       "type": "variation",
       "date_created": "2026-09-08T12:04:03",
       "date_created_gmt": "2026-09-08T12:04:03",
-      "date_modified": "2026-09-08T17:16:39",
-      "date_modified_gmt": "2026-09-08T17:16:39",
+      "date_modified": "2026-11-04T17:55:37",
+      "date_modified_gmt": "2026-11-04T17:55:37",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cinturon-reata-bicolor/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=38&attribute_pa_hebilla=acero-inoxidable&attribute_pa_material=100-cuero",
       "sku": "27214926038",
@@ -456,7 +466,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 9,
+      "stock_quantity": 8,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -515,7 +525,7 @@
         {
           "id": 2551211,
           "key": "_last_change_time",
-          "value": "1788887799"
+          "value": "1793814937"
         },
         {
           "id": 2551212,
@@ -1522,8 +1532,8 @@
       "type": "variation",
       "date_created": "2026-09-08T12:04:03",
       "date_created_gmt": "2026-09-08T12:04:03",
-      "date_modified": "2026-09-08T17:16:39",
-      "date_modified_gmt": "2026-09-08T17:16:39",
+      "date_modified": "2026-10-27T19:17:59",
+      "date_modified_gmt": "2026-10-27T19:17:59",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cinturon-reata-bicolor/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=36&attribute_pa_hebilla=acero-inoxidable&attribute_pa_material=100-cuero",
       "sku": "27214926036",
@@ -1546,7 +1556,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 20,
+      "stock_quantity": 19,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -1605,7 +1615,7 @@
         {
           "id": 2551198,
           "key": "_last_change_time",
-          "value": "1788887799"
+          "value": "1793128679"
         },
         {
           "id": 2551199,
@@ -3702,8 +3712,8 @@
       "type": "variation",
       "date_created": "2026-09-08T12:04:02",
       "date_created_gmt": "2026-09-08T12:04:02",
-      "date_modified": "2026-09-08T17:16:39",
-      "date_modified_gmt": "2026-09-08T17:16:39",
+      "date_modified": "2026-10-14T06:15:16",
+      "date_modified_gmt": "2026-10-14T06:15:16",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cinturon-reata-bicolor/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=32&attribute_pa_hebilla=acero-inoxidable&attribute_pa_material=100-cuero",
       "sku": "27214926032",
@@ -3726,7 +3736,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 19,
+      "stock_quantity": 18,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -3785,7 +3795,7 @@
         {
           "id": 2551174,
           "key": "_last_change_time",
-          "value": "1788887799"
+          "value": "1791958516"
         },
         {
           "id": 2551175,

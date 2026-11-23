@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>165,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>165,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -152,6 +152,8 @@
         "name": "Gorra WyH-Azul-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 7,
       "stock_status": "instock",
       "price": "165000",
       "regular_price": "165000",
@@ -176,6 +178,8 @@
         "name": "Gorra WyH-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 12,
       "stock_status": "instock",
       "price": "165000",
       "regular_price": "165000",
@@ -200,6 +204,8 @@
         "name": "Gorra WyH-Beige-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 14,
       "stock_status": "instock",
       "price": "165000",
       "regular_price": "165000",
@@ -224,6 +230,8 @@
         "name": "Gorra WyH-Verde-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 12,
       "stock_status": "instock",
       "price": "165000",
       "regular_price": "165000",
@@ -289,8 +297,8 @@
       "type": "variation",
       "date_created": "2025-09-03T17:24:13",
       "date_created_gmt": "2025-09-03T17:24:13",
-      "date_modified": "2026-07-27T17:44:07",
-      "date_modified_gmt": "2026-07-27T17:44:07",
+      "date_modified": "2026-11-23T04:39:15",
+      "date_modified_gmt": "2026-11-23T04:39:15",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/gorras-wh/?attribute_pa_selecciona-el-color=verde",
       "sku": "31310505000",
@@ -313,7 +321,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 14,
+      "stock_quantity": 12,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -1101,7 +1109,7 @@
         {
           "id": 2219099,
           "key": "_last_change_time",
-          "value": "1785174247"
+          "value": "1795408755"
         },
         {
           "id": 2311169,
@@ -1997,8 +2005,8 @@
       "type": "variation",
       "date_created": "2025-09-03T17:20:23",
       "date_created_gmt": "2025-09-03T17:20:23",
-      "date_modified": "2026-07-27T17:44:07",
-      "date_modified_gmt": "2026-07-27T17:44:07",
+      "date_modified": "2026-10-05T21:52:06",
+      "date_modified_gmt": "2026-10-05T21:52:06",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/gorras-wh/?attribute_pa_selecciona-el-color=negro",
       "sku": "31310502000",
@@ -2021,7 +2029,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 13,
+      "stock_quantity": 12,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -2809,7 +2817,7 @@
         {
           "id": 2262256,
           "key": "_last_change_time",
-          "value": "1785174247"
+          "value": "1791237126"
         },
         {
           "id": 2311171,

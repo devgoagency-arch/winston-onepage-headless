@@ -11,9 +11,9 @@
   "description": "<p>Los tenis Ciprano cuentan con perforaciones en la parte delantera del zapato evocando un estilo clásico y conservador. Todo el zapato viene de un solo tono para complementar un estilo sobrio. Su suela gruesa protege el pie pero a su vez hace que el zapato sea cómodo y duradero.</p>",
   "on_sale": true,
   "prices": {
-    "price": "392000",
+    "price": "280000",
     "regular_price": "560000",
-    "sale_price": "392000",
+    "sale_price": "280000",
     "price_range": null,
     "currency_code": "COP",
     "currency_symbol": "$",
@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>560,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;560,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>392,000</span></ins><span class=\"screen-reader-text\">Current price is: &#036;392,000.</span>",
+  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>560,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;560,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>280,000</span></ins><span class=\"screen-reader-text\">Current price is: &#036;280,000.</span>",
   "average_rating": "5.00",
   "review_count": 2,
   "images": [
@@ -224,8 +224,10 @@
         "name": "winston-and-harry-tenis-ciprano-azul-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "392000",
+      "price": "280000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -253,8 +255,10 @@
         "name": "winston-and-harry-tenis-ciprano-azul-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "392000",
+      "price": "280000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -282,8 +286,10 @@
         "name": "winston-and-harry-tenis-ciprano-azul-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "392000",
+      "price": "280000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -311,8 +317,10 @@
         "name": "winston-and-harry-tenis-ciprano-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "392000",
+      "price": "280000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -340,8 +348,10 @@
         "name": "winston-and-harry-tenis-ciprano-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "392000",
+      "price": "280000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -369,8 +379,10 @@
         "name": "winston-and-harry-tenis-ciprano-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "392000",
+      "price": "280000",
       "regular_price": "560000",
       "sale_price": ""
     }
@@ -988,15 +1000,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:52:31",
       "date_created_gmt": "2022-08-25T22:52:31",
-      "date_modified": "2026-08-24T17:22:12",
-      "date_modified_gmt": "2026-08-24T17:22:12",
+      "date_modified": "2026-11-23T04:30:30",
+      "date_modified_gmt": "2026-11-23T04:30:30",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/ciprano/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=44",
       "sku": "7223202044",
       "global_unique_id": "",
-      "price": "392000",
+      "price": "280000",
       "regular_price": "560000",
-      "sale_price": "392000",
+      "sale_price": "280000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -1494,7 +1506,7 @@
         {
           "id": 2216350,
           "key": "_last_change_time",
-          "value": "1787590643"
+          "value": "1795408230"
         },
         {
           "id": 2313856,
@@ -1536,15 +1548,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:52:31",
       "date_created_gmt": "2022-08-25T22:52:31",
-      "date_modified": "2026-08-24T17:22:12",
-      "date_modified_gmt": "2026-08-24T17:22:12",
+      "date_modified": "2026-11-23T04:30:30",
+      "date_modified_gmt": "2026-11-23T04:30:30",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/ciprano/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=43",
       "sku": "7223202043",
       "global_unique_id": "",
-      "price": "392000",
+      "price": "280000",
       "regular_price": "560000",
-      "sale_price": "392000",
+      "sale_price": "280000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -2042,7 +2054,7 @@
         {
           "id": 2216348,
           "key": "_last_change_time",
-          "value": "1787590643"
+          "value": "1795408230"
         },
         {
           "id": 2313855,
@@ -2084,15 +2096,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:52:31",
       "date_created_gmt": "2022-08-25T22:52:31",
-      "date_modified": "2026-08-24T17:22:12",
-      "date_modified_gmt": "2026-08-24T17:22:12",
+      "date_modified": "2026-11-23T04:30:30",
+      "date_modified_gmt": "2026-11-23T04:30:30",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/ciprano/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=42",
       "sku": "7223202042",
       "global_unique_id": "",
-      "price": "392000",
+      "price": "280000",
       "regular_price": "560000",
-      "sale_price": "392000",
+      "sale_price": "280000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -2590,7 +2602,7 @@
         {
           "id": 2216346,
           "key": "_last_change_time",
-          "value": "1787590648"
+          "value": "1795408230"
         },
         {
           "id": 2313854,
@@ -2632,15 +2644,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:52:31",
       "date_created_gmt": "2022-08-25T22:52:31",
-      "date_modified": "2026-08-24T17:22:13",
-      "date_modified_gmt": "2026-08-24T17:22:13",
+      "date_modified": "2026-11-23T04:30:30",
+      "date_modified_gmt": "2026-11-23T04:30:30",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/ciprano/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=41",
       "sku": "7223202041",
       "global_unique_id": "",
-      "price": "392000",
+      "price": "280000",
       "regular_price": "560000",
-      "sale_price": "392000",
+      "sale_price": "280000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -3138,7 +3150,7 @@
         {
           "id": 2216344,
           "key": "_last_change_time",
-          "value": "1787590648"
+          "value": "1795408230"
         },
         {
           "id": 2313852,
@@ -3180,15 +3192,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:52:30",
       "date_created_gmt": "2022-08-25T22:52:30",
-      "date_modified": "2026-08-24T17:22:13",
-      "date_modified_gmt": "2026-08-24T17:22:13",
+      "date_modified": "2026-11-23T04:30:30",
+      "date_modified_gmt": "2026-11-23T04:30:30",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/ciprano/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=40",
       "sku": "7223202040",
       "global_unique_id": "",
-      "price": "392000",
+      "price": "280000",
       "regular_price": "560000",
-      "sale_price": "392000",
+      "sale_price": "280000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -3686,7 +3698,7 @@
         {
           "id": 2216342,
           "key": "_last_change_time",
-          "value": "1787590649"
+          "value": "1795408230"
         },
         {
           "id": 2313868,
@@ -3728,15 +3740,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:52:30",
       "date_created_gmt": "2022-08-25T22:52:30",
-      "date_modified": "2026-08-24T17:22:13",
-      "date_modified_gmt": "2026-08-24T17:22:13",
+      "date_modified": "2026-11-23T04:30:30",
+      "date_modified_gmt": "2026-11-23T04:30:30",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/ciprano/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=39",
       "sku": "7223202039",
       "global_unique_id": "",
-      "price": "392000",
+      "price": "280000",
       "regular_price": "560000",
-      "sale_price": "392000",
+      "sale_price": "280000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -4234,7 +4246,7 @@
         {
           "id": 2216340,
           "key": "_last_change_time",
-          "value": "1787590648"
+          "value": "1795408230"
         },
         {
           "id": 2313867,
@@ -4276,15 +4288,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:52:30",
       "date_created_gmt": "2022-08-25T22:52:30",
-      "date_modified": "2026-08-24T17:22:13",
-      "date_modified_gmt": "2026-08-24T17:22:13",
+      "date_modified": "2026-11-23T04:30:30",
+      "date_modified_gmt": "2026-11-23T04:30:30",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/ciprano/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=38",
       "sku": "7223202038",
       "global_unique_id": "",
-      "price": "392000",
+      "price": "280000",
       "regular_price": "560000",
-      "sale_price": "392000",
+      "sale_price": "280000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -4782,7 +4794,7 @@
         {
           "id": 2216338,
           "key": "_last_change_time",
-          "value": "1787590648"
+          "value": "1795408230"
         },
         {
           "id": 2313866,
@@ -5920,15 +5932,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:52:30",
       "date_created_gmt": "2022-08-25T22:52:30",
-      "date_modified": "2026-08-24T17:22:13",
-      "date_modified_gmt": "2026-08-24T17:22:13",
+      "date_modified": "2026-11-23T04:30:30",
+      "date_modified_gmt": "2026-11-23T04:30:30",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/ciprano/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=44",
       "sku": "7223201044",
       "global_unique_id": "",
-      "price": "392000",
+      "price": "280000",
       "regular_price": "560000",
-      "sale_price": "392000",
+      "sale_price": "280000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -6426,7 +6438,7 @@
         {
           "id": 2216332,
           "key": "_last_change_time",
-          "value": "1787590648"
+          "value": "1795408230"
         },
         {
           "id": 2313863,
@@ -6468,15 +6480,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:52:30",
       "date_created_gmt": "2022-08-25T22:52:30",
-      "date_modified": "2026-08-24T17:22:13",
-      "date_modified_gmt": "2026-08-24T17:22:13",
+      "date_modified": "2026-11-23T04:30:30",
+      "date_modified_gmt": "2026-11-23T04:30:30",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/ciprano/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=43",
       "sku": "7223201043",
       "global_unique_id": "",
-      "price": "392000",
+      "price": "280000",
       "regular_price": "560000",
-      "sale_price": "392000",
+      "sale_price": "280000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -6974,7 +6986,7 @@
         {
           "id": 2216330,
           "key": "_last_change_time",
-          "value": "1787590648"
+          "value": "1795408230"
         },
         {
           "id": 2313862,
@@ -7016,15 +7028,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:52:30",
       "date_created_gmt": "2022-08-25T22:52:30",
-      "date_modified": "2026-08-24T17:22:13",
-      "date_modified_gmt": "2026-08-24T17:22:13",
+      "date_modified": "2026-11-23T04:30:25",
+      "date_modified_gmt": "2026-11-23T04:30:25",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/ciprano/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=42",
       "sku": "7223201042",
       "global_unique_id": "",
-      "price": "392000",
+      "price": "280000",
       "regular_price": "560000",
-      "sale_price": "392000",
+      "sale_price": "280000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -7522,7 +7534,7 @@
         {
           "id": 2216328,
           "key": "_last_change_time",
-          "value": "1787590649"
+          "value": "1795408225"
         },
         {
           "id": 2313861,
@@ -7564,15 +7576,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:52:30",
       "date_created_gmt": "2022-08-25T22:52:30",
-      "date_modified": "2026-08-24T17:22:13",
-      "date_modified_gmt": "2026-08-24T17:22:13",
+      "date_modified": "2026-11-23T04:30:25",
+      "date_modified_gmt": "2026-11-23T04:30:25",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/ciprano/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=41",
       "sku": "7223201041",
       "global_unique_id": "",
-      "price": "392000",
+      "price": "280000",
       "regular_price": "560000",
-      "sale_price": "392000",
+      "sale_price": "280000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -8070,7 +8082,7 @@
         {
           "id": 2216326,
           "key": "_last_change_time",
-          "value": "1787590649"
+          "value": "1795408225"
         },
         {
           "id": 2313869,
@@ -8112,15 +8124,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:52:24",
       "date_created_gmt": "2022-08-25T22:52:24",
-      "date_modified": "2026-08-24T17:22:13",
-      "date_modified_gmt": "2026-08-24T17:22:13",
+      "date_modified": "2026-11-23T04:30:25",
+      "date_modified_gmt": "2026-11-23T04:30:25",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/ciprano/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=40",
       "sku": "7223201040",
       "global_unique_id": "",
-      "price": "392000",
+      "price": "280000",
       "regular_price": "560000",
-      "sale_price": "392000",
+      "sale_price": "280000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -8618,7 +8630,7 @@
         {
           "id": 2216324,
           "key": "_last_change_time",
-          "value": "1787590649"
+          "value": "1795408225"
         },
         {
           "id": 2313877,
@@ -8660,15 +8672,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:52:24",
       "date_created_gmt": "2022-08-25T22:52:24",
-      "date_modified": "2026-08-24T17:22:13",
-      "date_modified_gmt": "2026-08-24T17:22:13",
+      "date_modified": "2026-11-23T04:30:25",
+      "date_modified_gmt": "2026-11-23T04:30:25",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/ciprano/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=39",
       "sku": "7223201039",
       "global_unique_id": "",
-      "price": "392000",
+      "price": "280000",
       "regular_price": "560000",
-      "sale_price": "392000",
+      "sale_price": "280000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -9166,7 +9178,7 @@
         {
           "id": 2216322,
           "key": "_last_change_time",
-          "value": "1787590649"
+          "value": "1795408225"
         },
         {
           "id": 2313876,
@@ -9208,15 +9220,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:52:24",
       "date_created_gmt": "2022-08-25T22:52:24",
-      "date_modified": "2026-08-24T17:22:13",
-      "date_modified_gmt": "2026-08-24T17:22:13",
+      "date_modified": "2026-11-23T04:30:25",
+      "date_modified_gmt": "2026-11-23T04:30:25",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/ciprano/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=38",
       "sku": "7223201038",
       "global_unique_id": "",
-      "price": "392000",
+      "price": "280000",
       "regular_price": "560000",
-      "sale_price": "392000",
+      "sale_price": "280000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -9704,7 +9716,7 @@
         {
           "id": 2216320,
           "key": "_last_change_time",
-          "value": "1787590649"
+          "value": "1795408225"
         },
         {
           "id": 2313875,
@@ -10842,15 +10854,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:52:24",
       "date_created_gmt": "2022-08-25T22:52:24",
-      "date_modified": "2026-08-24T17:22:13",
-      "date_modified_gmt": "2026-08-24T17:22:13",
+      "date_modified": "2026-11-23T04:30:25",
+      "date_modified_gmt": "2026-11-23T04:30:25",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/ciprano/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=44",
       "sku": "7223204044",
       "global_unique_id": "",
-      "price": "392000",
+      "price": "280000",
       "regular_price": "560000",
-      "sale_price": "392000",
+      "sale_price": "280000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -11348,7 +11360,7 @@
         {
           "id": 2216312,
           "key": "_last_change_time",
-          "value": "1787590649"
+          "value": "1795408225"
         },
         {
           "id": 2313872,
@@ -11390,15 +11402,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:52:24",
       "date_created_gmt": "2022-08-25T22:52:24",
-      "date_modified": "2026-08-24T17:22:13",
-      "date_modified_gmt": "2026-08-24T17:22:13",
+      "date_modified": "2026-11-23T04:30:25",
+      "date_modified_gmt": "2026-11-23T04:30:25",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/ciprano/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=43",
       "sku": "7223204043",
       "global_unique_id": "",
-      "price": "392000",
+      "price": "280000",
       "regular_price": "560000",
-      "sale_price": "392000",
+      "sale_price": "280000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -11896,7 +11908,7 @@
         {
           "id": 2216310,
           "key": "_last_change_time",
-          "value": "1787590649"
+          "value": "1795408225"
         },
         {
           "id": 2313871,
@@ -11938,15 +11950,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:52:24",
       "date_created_gmt": "2022-08-25T22:52:24",
-      "date_modified": "2026-08-24T17:22:13",
-      "date_modified_gmt": "2026-08-24T17:22:13",
+      "date_modified": "2026-11-23T04:30:25",
+      "date_modified_gmt": "2026-11-23T04:30:25",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/ciprano/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=42",
       "sku": "7223204042",
       "global_unique_id": "",
-      "price": "392000",
+      "price": "280000",
       "regular_price": "560000",
-      "sale_price": "392000",
+      "sale_price": "280000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -12444,7 +12456,7 @@
         {
           "id": 2216308,
           "key": "_last_change_time",
-          "value": "1787590649"
+          "value": "1795408225"
         },
         {
           "id": 2313870,
@@ -12486,15 +12498,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:52:23",
       "date_created_gmt": "2022-08-25T22:52:23",
-      "date_modified": "2026-08-24T17:22:14",
-      "date_modified_gmt": "2026-08-24T17:22:14",
+      "date_modified": "2026-11-23T04:30:25",
+      "date_modified_gmt": "2026-11-23T04:30:25",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/ciprano/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=41",
       "sku": "7223204041",
       "global_unique_id": "",
-      "price": "392000",
+      "price": "280000",
       "regular_price": "560000",
-      "sale_price": "392000",
+      "sale_price": "280000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -12992,7 +13004,7 @@
         {
           "id": 2216306,
           "key": "_last_change_time",
-          "value": "1787590649"
+          "value": "1795408225"
         },
         {
           "id": 2313882,
@@ -13034,15 +13046,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:52:23",
       "date_created_gmt": "2022-08-25T22:52:23",
-      "date_modified": "2026-08-24T17:22:14",
-      "date_modified_gmt": "2026-08-24T17:22:14",
+      "date_modified": "2026-11-23T04:30:25",
+      "date_modified_gmt": "2026-11-23T04:30:25",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/ciprano/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=40",
       "sku": "7223204040",
       "global_unique_id": "",
-      "price": "392000",
+      "price": "280000",
       "regular_price": "560000",
-      "sale_price": "392000",
+      "sale_price": "280000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -13540,7 +13552,7 @@
         {
           "id": 2216304,
           "key": "_last_change_time",
-          "value": "1787590649"
+          "value": "1795408225"
         },
         {
           "id": 2313881,
@@ -13582,15 +13594,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:52:23",
       "date_created_gmt": "2022-08-25T22:52:23",
-      "date_modified": "2026-08-24T17:22:14",
-      "date_modified_gmt": "2026-08-24T17:22:14",
+      "date_modified": "2026-11-23T04:30:25",
+      "date_modified_gmt": "2026-11-23T04:30:25",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/ciprano/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=39",
       "sku": "7223204039",
       "global_unique_id": "",
-      "price": "392000",
+      "price": "280000",
       "regular_price": "560000",
-      "sale_price": "392000",
+      "sale_price": "280000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -14088,7 +14100,7 @@
         {
           "id": 2216302,
           "key": "_last_change_time",
-          "value": "1787590649"
+          "value": "1795408225"
         },
         {
           "id": 2313880,
@@ -14130,15 +14142,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:52:23",
       "date_created_gmt": "2022-08-25T22:52:23",
-      "date_modified": "2026-08-24T17:22:14",
-      "date_modified_gmt": "2026-08-24T17:22:14",
+      "date_modified": "2026-11-23T04:30:25",
+      "date_modified_gmt": "2026-11-23T04:30:25",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/ciprano/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=38",
       "sku": "7223204038",
       "global_unique_id": "",
-      "price": "392000",
+      "price": "280000",
       "regular_price": "560000",
-      "sale_price": "392000",
+      "sale_price": "280000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -14636,7 +14648,7 @@
         {
           "id": 2216300,
           "key": "_last_change_time",
-          "value": "1787590649"
+          "value": "1795408225"
         },
         {
           "id": 2313879,
@@ -15228,7 +15240,11 @@
     "19113": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/10/ZAPATO-05-capellada-suela.jpg",
     "19115": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/10/ZAPATO-05-lateral.jpg",
     "19116": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/10/ZAPATO-06-capellada-suela.jpg",
-    "19118": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/10/ZAPATO-06-lateral.jpg"
+    "19118": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/10/ZAPATO-06-lateral.jpg",
+    "86598": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-tenis-ciprano-cafe-02.jpg",
+    "86599": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-tenis-ciprano-cafe-03.jpg",
+    "86601": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-tenis-ciprano-negro-02.jpg",
+    "86602": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-tenis-ciprano-negro-03.jpg"
   },
   "stock_status": "instock",
   "variation_images_map": {
@@ -15270,6 +15286,16 @@
         "name": "winston-and-harry-tenis-ciprano-negro-01"
       },
       {
+        "id": 86601,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-tenis-ciprano-negro-02.jpg",
+        "alt": "Ciprano"
+      },
+      {
+        "id": 86602,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-tenis-ciprano-negro-03.jpg",
+        "alt": "Ciprano"
+      },
+      {
         "id": 19118,
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/10/ZAPATO-06-lateral.jpg",
         "alt": "Ciprano"
@@ -15281,6 +15307,16 @@
       }
     ],
     "cafe": [
+      {
+        "id": 86598,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-tenis-ciprano-cafe-02.jpg",
+        "alt": "Ciprano"
+      },
+      {
+        "id": 86599,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-tenis-ciprano-cafe-03.jpg",
+        "alt": "Ciprano"
+      },
       {
         "id": 19112,
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/10/ZAPATO-04-lateral.jpg",

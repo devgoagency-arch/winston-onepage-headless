@@ -11,9 +11,9 @@
   "description": "<p>Estos zapatos están diseñados para que puedas caminar por mucho tiempo con ellos. Son de una modelo versátil que puede complementar cualquier estilo. Su horma permite que el pie este cómodo sin importar el momento del día. Sin duda una gran opción para el día a día.</p>",
   "on_sale": true,
   "prices": {
-    "price": "323400",
+    "price": "161700",
     "regular_price": "539000",
-    "sale_price": "323400",
+    "sale_price": "161700",
     "price_range": null,
     "currency_code": "COP",
     "currency_symbol": "$",
@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>539,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;539,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>323,400</span></ins><span class=\"screen-reader-text\">Current price is: &#036;323,400.</span>",
+  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>539,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;539,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>161,700</span></ins><span class=\"screen-reader-text\">Current price is: &#036;161,700.</span>",
   "average_rating": "5.00",
   "review_count": 2,
   "images": [
@@ -256,8 +256,10 @@
         "name": "winston-and-harry-tenis-bogota-cafe-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "323400",
+      "price": "161700",
       "regular_price": "539000",
       "sale_price": ""
     }
@@ -1423,15 +1425,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:54:22",
       "date_created_gmt": "2022-08-25T22:54:22",
-      "date_modified": "2026-08-24T17:22:57",
-      "date_modified_gmt": "2026-08-24T17:22:57",
+      "date_modified": "2026-11-23T04:30:46",
+      "date_modified_gmt": "2026-11-23T04:30:46",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bogota/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=43",
       "sku": "7000926043",
       "global_unique_id": "",
-      "price": "323400",
+      "price": "161700",
       "regular_price": "539000",
-      "sale_price": "323400",
+      "sale_price": "161700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -1934,7 +1936,7 @@
         {
           "id": 2215697,
           "key": "_last_change_time",
-          "value": "1787590681"
+          "value": "1795408246"
         },
         {
           "id": 2313722,
@@ -1976,15 +1978,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:54:22",
       "date_created_gmt": "2022-08-25T22:54:22",
-      "date_modified": "2026-08-24T17:22:57",
-      "date_modified_gmt": "2026-08-24T17:22:57",
+      "date_modified": "2026-11-23T04:30:46",
+      "date_modified_gmt": "2026-11-23T04:30:46",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bogota/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=42",
       "sku": "7000926042",
       "global_unique_id": "",
-      "price": "323400",
+      "price": "161700",
       "regular_price": "539000",
-      "sale_price": "323400",
+      "sale_price": "161700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -2472,7 +2474,7 @@
         {
           "id": 2215696,
           "key": "_last_change_time",
-          "value": "1787590682"
+          "value": "1795408246"
         },
         {
           "id": 2313721,
@@ -2514,15 +2516,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:54:22",
       "date_created_gmt": "2022-08-25T22:54:22",
-      "date_modified": "2026-08-24T17:22:57",
-      "date_modified_gmt": "2026-08-24T17:22:57",
+      "date_modified": "2026-11-23T04:30:46",
+      "date_modified_gmt": "2026-11-23T04:30:46",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bogota/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=41",
       "sku": "7000926041",
       "global_unique_id": "",
-      "price": "323400",
+      "price": "161700",
       "regular_price": "539000",
-      "sale_price": "323400",
+      "sale_price": "161700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -3025,7 +3027,7 @@
         {
           "id": 2215695,
           "key": "_last_change_time",
-          "value": "1787590682"
+          "value": "1795408246"
         },
         {
           "id": 2313720,
@@ -3067,15 +3069,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:54:22",
       "date_created_gmt": "2022-08-25T22:54:22",
-      "date_modified": "2026-08-24T17:22:57",
-      "date_modified_gmt": "2026-08-24T17:22:57",
+      "date_modified": "2026-11-23T04:30:46",
+      "date_modified_gmt": "2026-11-23T04:30:46",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bogota/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=40",
       "sku": "7000926040",
       "global_unique_id": "",
-      "price": "323400",
+      "price": "161700",
       "regular_price": "539000",
-      "sale_price": "323400",
+      "sale_price": "161700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -3578,7 +3580,7 @@
         {
           "id": 2215694,
           "key": "_last_change_time",
-          "value": "1787590682"
+          "value": "1795408246"
         },
         {
           "id": 2313719,
@@ -3620,15 +3622,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:54:22",
       "date_created_gmt": "2022-08-25T22:54:22",
-      "date_modified": "2026-08-24T17:22:58",
-      "date_modified_gmt": "2026-08-24T17:22:58",
+      "date_modified": "2026-11-23T04:30:46",
+      "date_modified_gmt": "2026-11-23T04:30:46",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bogota/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=39",
       "sku": "7000926039",
       "global_unique_id": "",
-      "price": "323400",
+      "price": "161700",
       "regular_price": "539000",
-      "sale_price": "323400",
+      "sale_price": "161700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -4131,7 +4133,7 @@
         {
           "id": 2215693,
           "key": "_last_change_time",
-          "value": "1787590682"
+          "value": "1795408246"
         },
         {
           "id": 2313718,
@@ -4173,15 +4175,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:54:22",
       "date_created_gmt": "2022-08-25T22:54:22",
-      "date_modified": "2026-08-24T17:22:58",
-      "date_modified_gmt": "2026-08-24T17:22:58",
+      "date_modified": "2026-11-23T04:30:41",
+      "date_modified_gmt": "2026-11-23T04:30:41",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bogota/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=38",
       "sku": "7000926038",
       "global_unique_id": "",
-      "price": "323400",
+      "price": "161700",
       "regular_price": "539000",
-      "sale_price": "323400",
+      "sale_price": "161700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -4679,7 +4681,7 @@
         {
           "id": 2215692,
           "key": "_last_change_time",
-          "value": "1787590689"
+          "value": "1795408241"
         },
         {
           "id": 2313717,
@@ -4721,15 +4723,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:54:22",
       "date_created_gmt": "2022-08-25T22:54:22",
-      "date_modified": "2026-08-24T17:22:58",
-      "date_modified_gmt": "2026-08-24T17:22:58",
+      "date_modified": "2026-11-23T04:30:41",
+      "date_modified_gmt": "2026-11-23T04:30:41",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bogota/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=37",
       "sku": "7000926037",
       "global_unique_id": "",
-      "price": "323400",
+      "price": "161700",
       "regular_price": "539000",
-      "sale_price": "323400",
+      "sale_price": "161700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -5232,7 +5234,7 @@
         {
           "id": 2215691,
           "key": "_last_change_time",
-          "value": "1787590689"
+          "value": "1795408241"
         },
         {
           "id": 2313716,
@@ -6370,15 +6372,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:54:22",
       "date_created_gmt": "2022-08-25T22:54:22",
-      "date_modified": "2026-08-24T17:22:58",
-      "date_modified_gmt": "2026-08-24T17:22:58",
+      "date_modified": "2026-11-23T04:30:41",
+      "date_modified_gmt": "2026-11-23T04:30:41",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bogota/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=43",
       "sku": "7000904043",
       "global_unique_id": "",
-      "price": "323400",
+      "price": "161700",
       "regular_price": "539000",
-      "sale_price": "323400",
+      "sale_price": "161700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -6876,7 +6878,7 @@
         {
           "id": 2215688,
           "key": "_last_change_time",
-          "value": "1787590689"
+          "value": "1795408241"
         },
         {
           "id": 2313727,
@@ -6918,15 +6920,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:54:22",
       "date_created_gmt": "2022-08-25T22:54:22",
-      "date_modified": "2026-08-24T17:22:58",
-      "date_modified_gmt": "2026-08-24T17:22:58",
+      "date_modified": "2026-11-23T04:30:41",
+      "date_modified_gmt": "2026-11-23T04:30:41",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bogota/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=42",
       "sku": "7000904042",
       "global_unique_id": "",
-      "price": "323400",
+      "price": "161700",
       "regular_price": "539000",
-      "sale_price": "323400",
+      "sale_price": "161700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -7429,7 +7431,7 @@
         {
           "id": 2215687,
           "key": "_last_change_time",
-          "value": "1787590689"
+          "value": "1795408241"
         },
         {
           "id": 2313726,
@@ -7471,15 +7473,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:54:22",
       "date_created_gmt": "2022-08-25T22:54:22",
-      "date_modified": "2026-08-24T17:22:58",
-      "date_modified_gmt": "2026-08-24T17:22:58",
+      "date_modified": "2026-11-23T04:30:41",
+      "date_modified_gmt": "2026-11-23T04:30:41",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bogota/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=41",
       "sku": "7000904041",
       "global_unique_id": "",
-      "price": "323400",
+      "price": "161700",
       "regular_price": "539000",
-      "sale_price": "323400",
+      "sale_price": "161700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -7982,7 +7984,7 @@
         {
           "id": 2215686,
           "key": "_last_change_time",
-          "value": "1787590689"
+          "value": "1795408241"
         },
         {
           "id": 2313725,
@@ -8024,15 +8026,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:54:15",
       "date_created_gmt": "2022-08-25T22:54:15",
-      "date_modified": "2026-08-24T17:22:58",
-      "date_modified_gmt": "2026-08-24T17:22:58",
+      "date_modified": "2026-11-23T04:30:41",
+      "date_modified_gmt": "2026-11-23T04:30:41",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bogota/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=40",
       "sku": "7000904040",
       "global_unique_id": "",
-      "price": "323400",
+      "price": "161700",
       "regular_price": "539000",
-      "sale_price": "323400",
+      "sale_price": "161700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -8520,7 +8522,7 @@
         {
           "id": 2215685,
           "key": "_last_change_time",
-          "value": "1787590689"
+          "value": "1795408241"
         },
         {
           "id": 2313732,
@@ -8562,15 +8564,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:54:15",
       "date_created_gmt": "2022-08-25T22:54:15",
-      "date_modified": "2026-08-24T17:22:58",
-      "date_modified_gmt": "2026-08-24T17:22:58",
+      "date_modified": "2026-11-23T04:30:41",
+      "date_modified_gmt": "2026-11-23T04:30:41",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bogota/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=39",
       "sku": "7000904039",
       "global_unique_id": "",
-      "price": "323400",
+      "price": "161700",
       "regular_price": "539000",
-      "sale_price": "323400",
+      "sale_price": "161700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -9073,7 +9075,7 @@
         {
           "id": 2215684,
           "key": "_last_change_time",
-          "value": "1787590689"
+          "value": "1795408241"
         },
         {
           "id": 2313731,
@@ -9115,15 +9117,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:54:15",
       "date_created_gmt": "2022-08-25T22:54:15",
-      "date_modified": "2026-08-24T17:22:58",
-      "date_modified_gmt": "2026-08-24T17:22:58",
+      "date_modified": "2026-11-23T04:30:41",
+      "date_modified_gmt": "2026-11-23T04:30:41",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bogota/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=38",
       "sku": "7000904038",
       "global_unique_id": "",
-      "price": "323400",
+      "price": "161700",
       "regular_price": "539000",
-      "sale_price": "323400",
+      "sale_price": "161700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -9616,7 +9618,7 @@
         {
           "id": 2215683,
           "key": "_last_change_time",
-          "value": "1787590689"
+          "value": "1795408241"
         },
         {
           "id": 2313730,
@@ -9658,15 +9660,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:54:15",
       "date_created_gmt": "2022-08-25T22:54:15",
-      "date_modified": "2026-08-24T17:22:58",
-      "date_modified_gmt": "2026-08-24T17:22:58",
+      "date_modified": "2026-11-23T04:30:41",
+      "date_modified_gmt": "2026-11-23T04:30:41",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bogota/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=37",
       "sku": "7000904037",
       "global_unique_id": "",
-      "price": "323400",
+      "price": "161700",
       "regular_price": "539000",
-      "sale_price": "323400",
+      "sale_price": "161700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -10169,7 +10171,7 @@
         {
           "id": 2215681,
           "key": "_last_change_time",
-          "value": "1787590689"
+          "value": "1795408241"
         },
         {
           "id": 2313729,
@@ -10211,7 +10213,9 @@
     "19660": "https://tienda.winstonandharrystore.com/wp-content/uploads/2022/06/zapatos-16-posicion-3-1.jpg",
     "19661": "https://tienda.winstonandharrystore.com/wp-content/uploads/2022/06/zapatos-15-posicion-1-1.jpg",
     "19663": "https://tienda.winstonandharrystore.com/wp-content/uploads/2022/06/zapatos-15-posicion-3-1.jpg",
-    "19665": "https://tienda.winstonandharrystore.com/wp-content/uploads/2022/06/zapatos-16-posicion-1-1.jpg"
+    "19665": "https://tienda.winstonandharrystore.com/wp-content/uploads/2022/06/zapatos-16-posicion-1-1.jpg",
+    "86573": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-tenis-bogota-miel-02.jpg",
+    "86574": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-tenis-bogota-miel-03.jpg"
   },
   "stock_status": "instock",
   "variation_images_map": {
@@ -10246,6 +10250,16 @@
       }
     ],
     "miel": [
+      {
+        "id": 86573,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-tenis-bogota-miel-02.jpg",
+        "alt": "Bogotá"
+      },
+      {
+        "id": 86574,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-tenis-bogota-miel-03.jpg",
+        "alt": "Bogotá"
+      },
       {
         "id": 19663,
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2022/06/zapatos-15-posicion-3-1.jpg",

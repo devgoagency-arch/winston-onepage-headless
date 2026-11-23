@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>310,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>310,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -180,6 +180,8 @@
         "name": "1503-Btt Down-Fantasia-Azul-Winstonandharry-3",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "310000",
       "regular_price": "310000",
@@ -209,6 +211,8 @@
         "name": "1503-Btt Down-Fantasia-Azul-Winstonandharry-3",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "310000",
       "regular_price": "310000",
@@ -238,6 +242,8 @@
         "name": "1503-Btt Down-Fantasia-Azul-Winstonandharry-3",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "310000",
       "regular_price": "310000",
@@ -267,6 +273,8 @@
         "name": "1503-Btt Down-Fantasia-Azul-Winstonandharry-3",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "310000",
       "regular_price": "310000",
@@ -338,11 +346,11 @@
       "type": "variation",
       "date_created": "2025-10-31T04:42:09",
       "date_created_gmt": "2025-10-31T04:42:09",
-      "date_modified": "2026-05-07T22:59:44",
-      "date_modified_gmt": "2026-05-07T22:59:44",
+      "date_modified": "2026-10-05T21:49:40",
+      "date_modified_gmt": "2026-10-05T21:49:40",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/camisa-button-down-fantasia/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=xxl",
-      "sku": "5150301040",
+      "sku": "5150301044",
       "global_unique_id": "",
       "price": "310000",
       "regular_price": "310000",
@@ -1156,7 +1164,7 @@
         {
           "id": 2257435,
           "key": "_last_change_time",
-          "value": "1778177643"
+          "value": "1791236980"
         },
         {
           "id": 2310904,
@@ -1198,11 +1206,11 @@
       "type": "variation",
       "date_created": "2025-10-31T04:42:09",
       "date_created_gmt": "2025-10-31T04:42:09",
-      "date_modified": "2026-05-07T22:59:44",
-      "date_modified_gmt": "2026-05-07T22:59:44",
+      "date_modified": "2026-09-08T22:19:30",
+      "date_modified_gmt": "2026-09-08T22:19:30",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/camisa-button-down-fantasia/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=xl",
-      "sku": "5150301038",
+      "sku": "5150301042",
       "global_unique_id": "",
       "price": "310000",
       "regular_price": "310000",
@@ -2016,7 +2024,7 @@
         {
           "id": 2257434,
           "key": "_last_change_time",
-          "value": "1778177643"
+          "value": "1788905517"
         },
         {
           "id": 2310903,
@@ -2058,11 +2066,11 @@
       "type": "variation",
       "date_created": "2025-10-31T04:42:09",
       "date_created_gmt": "2025-10-31T04:42:09",
-      "date_modified": "2026-07-16T22:44:56",
-      "date_modified_gmt": "2026-07-16T22:44:56",
+      "date_modified": "2026-09-08T22:19:30",
+      "date_modified_gmt": "2026-09-08T22:19:30",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/camisa-button-down-fantasia/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=xs",
-      "sku": "5150301030",
+      "sku": "5150301034",
       "global_unique_id": "",
       "price": "310000",
       "regular_price": "310000",
@@ -2918,11 +2926,11 @@
       "type": "variation",
       "date_created": "2025-10-31T04:42:09",
       "date_created_gmt": "2025-10-31T04:42:09",
-      "date_modified": "2026-06-02T17:41:48",
-      "date_modified_gmt": "2026-06-02T17:41:48",
+      "date_modified": "2026-09-08T22:19:30",
+      "date_modified_gmt": "2026-09-08T22:19:30",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/camisa-button-down-fantasia/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=l",
-      "sku": "5150301036",
+      "sku": "5150301040",
       "global_unique_id": "",
       "price": "310000",
       "regular_price": "310000",
@@ -3736,7 +3744,7 @@
         {
           "id": 2233444,
           "key": "_last_change_time",
-          "value": "1780422108"
+          "value": "1788905726"
         },
         {
           "id": 2310901,
@@ -3778,11 +3786,11 @@
       "type": "variation",
       "date_created": "2025-10-31T04:42:09",
       "date_created_gmt": "2025-10-31T04:42:09",
-      "date_modified": "2026-06-02T17:41:48",
-      "date_modified_gmt": "2026-06-02T17:41:48",
+      "date_modified": "2026-09-08T22:19:30",
+      "date_modified_gmt": "2026-09-08T22:19:30",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/camisa-button-down-fantasia/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=m",
-      "sku": "5150301034",
+      "sku": "5150301038",
       "global_unique_id": "",
       "price": "310000",
       "regular_price": "310000",
@@ -4596,7 +4604,7 @@
         {
           "id": 2257433,
           "key": "_last_change_time",
-          "value": "1780422108"
+          "value": "1788905726"
         },
         {
           "id": 2310900,
@@ -4638,11 +4646,11 @@
       "type": "variation",
       "date_created": "2025-10-31T04:42:09",
       "date_created_gmt": "2025-10-31T04:42:09",
-      "date_modified": "2026-07-16T22:44:56",
-      "date_modified_gmt": "2026-07-16T22:44:56",
+      "date_modified": "2026-09-08T22:19:30",
+      "date_modified_gmt": "2026-09-08T22:19:30",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/camisa-button-down-fantasia/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=s",
-      "sku": "5150301032",
+      "sku": "5150301036",
       "global_unique_id": "",
       "price": "310000",
       "regular_price": "310000",
@@ -5456,7 +5464,7 @@
         {
           "id": 2259138,
           "key": "_last_change_time",
-          "value": "1784241896"
+          "value": "1788905970"
         },
         {
           "id": 2310899,

@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>825,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>825,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -291,6 +291,8 @@
         "name": "Cumberland-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -320,35 +322,8 @@
         "name": "Cumberland-Miel-Winstonandharry-1",
         "alt": ""
       },
-      "stock_status": "instock",
-      "price": "825000",
-      "regular_price": "825000",
-      "sale_price": ""
-    },
-    {
-      "id": 31192,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "cafe",
-          "option": "cafe"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "38",
-          "option": "38"
-        }
-      ],
-      "image": {
-        "id": 60806,
-        "date_created": "2025-03-02T04:55:07",
-        "date_created_gmt": "2025-03-02T04:55:07",
-        "date_modified": "2025-03-03T03:15:56",
-        "date_modified_gmt": "2025-03-03T03:15:56",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/03/Cumberland-Cafe-Winstonandharry-1-e1752708837499.jpg",
-        "name": "Cumberland-Café-Winstonandharry-1",
-        "alt": ""
-      },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -378,6 +353,8 @@
         "name": "Cumberland-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -407,6 +384,8 @@
         "name": "Cumberland-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -436,6 +415,8 @@
         "name": "Cumberland-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -465,6 +446,8 @@
         "name": "Cumberland-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -494,6 +477,8 @@
         "name": "Cumberland-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -523,6 +508,8 @@
         "name": "Cumberland-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -552,6 +539,8 @@
         "name": "Cumberland-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -581,6 +570,8 @@
         "name": "Cumberland-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -610,6 +601,8 @@
         "name": "Cumberland-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": "parent",
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -639,64 +632,8 @@
         "name": "Cumberland-Miel-Winstonandharry-1",
         "alt": ""
       },
-      "stock_status": "instock",
-      "price": "825000",
-      "regular_price": "825000",
-      "sale_price": ""
-    },
-    {
-      "id": 60570,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "negro",
-          "option": "negro"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "38",
-          "option": "38"
-        }
-      ],
-      "image": {
-        "id": 60821,
-        "date_created": "2025-03-02T04:58:12",
-        "date_created_gmt": "2025-03-02T04:58:12",
-        "date_modified": "2025-03-03T03:15:57",
-        "date_modified_gmt": "2025-03-03T03:15:57",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/03/Cumberland-Negro-Winstonandharry-1-e1752771033941.jpg",
-        "name": "Cumberland-Negro-Winstonandharry-1",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "825000",
-      "regular_price": "825000",
-      "sale_price": ""
-    },
-    {
-      "id": 60571,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "negro",
-          "option": "negro"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "39",
-          "option": "39"
-        }
-      ],
-      "image": {
-        "id": 60821,
-        "date_created": "2025-03-02T04:58:12",
-        "date_created_gmt": "2025-03-02T04:58:12",
-        "date_modified": "2025-03-03T03:15:57",
-        "date_modified_gmt": "2025-03-03T03:15:57",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/03/Cumberland-Negro-Winstonandharry-1-e1752771033941.jpg",
-        "name": "Cumberland-Negro-Winstonandharry-1",
-        "alt": ""
-      },
+      "manage_stock": "parent",
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -726,6 +663,8 @@
         "name": "Cumberland-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -755,6 +694,8 @@
         "name": "Cumberland-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -784,6 +725,8 @@
         "name": "Cumberland-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -813,6 +756,8 @@
         "name": "Cumberland-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -5049,8 +4994,8 @@
       "type": "variation",
       "date_created": "2025-02-27T02:39:46",
       "date_created_gmt": "2025-02-27T02:39:46",
-      "date_modified": "2026-05-07T23:02:43",
-      "date_modified_gmt": "2026-05-07T23:02:43",
+      "date_modified": "2026-11-23T04:38:27",
+      "date_modified_gmt": "2026-11-23T04:38:27",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cumberland/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=39",
       "sku": "7070102039",
@@ -5073,8 +5018,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -5702,7 +5647,7 @@
         {
           "id": 2258578,
           "key": "_last_change_time",
-          "value": "1778177952"
+          "value": "1795408707"
         },
         {
           "id": 2311878,
@@ -5744,8 +5689,8 @@
       "type": "variation",
       "date_created": "2025-02-27T02:39:46",
       "date_created_gmt": "2025-02-27T02:39:46",
-      "date_modified": "2026-06-02T17:40:05",
-      "date_modified_gmt": "2026-06-02T17:40:05",
+      "date_modified": "2026-11-09T04:22:30",
+      "date_modified_gmt": "2026-11-09T04:22:30",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cumberland/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=38",
       "sku": "7070102038",
@@ -5768,8 +5713,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -6397,7 +6342,7 @@
         {
           "id": 2233357,
           "key": "_last_change_time",
-          "value": "1780422005"
+          "value": "1794198150"
         },
         {
           "id": 2311877,
@@ -8524,8 +8469,8 @@
       "type": "variation",
       "date_created": "2025-02-27T02:39:44",
       "date_created_gmt": "2025-02-27T02:39:44",
-      "date_modified": "2026-06-02T17:40:05",
-      "date_modified_gmt": "2026-06-02T17:40:05",
+      "date_modified": "2026-10-27T19:16:34",
+      "date_modified_gmt": "2026-10-27T19:16:34",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cumberland/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=43",
       "sku": "7070126043",
@@ -8548,7 +8493,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -9177,7 +9122,7 @@
         {
           "id": 2260002,
           "key": "_last_change_time",
-          "value": "1780422005"
+          "value": "1793128594"
         },
         {
           "id": 2311881,
@@ -9914,8 +9859,8 @@
       "type": "variation",
       "date_created": "2025-02-27T02:39:43",
       "date_created_gmt": "2025-02-27T02:39:43",
-      "date_modified": "2026-06-02T17:40:05",
-      "date_modified_gmt": "2026-06-02T17:40:05",
+      "date_modified": "2026-10-27T19:16:34",
+      "date_modified_gmt": "2026-10-27T19:16:34",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cumberland/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=41",
       "sku": "7070126041",
@@ -9938,7 +9883,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -10567,7 +10512,7 @@
         {
           "id": 2260000,
           "key": "_last_change_time",
-          "value": "1780422005"
+          "value": "1793128594"
         },
         {
           "id": 2311883,
@@ -10609,8 +10554,8 @@
       "type": "variation",
       "date_created": "2025-02-27T02:39:42",
       "date_created_gmt": "2025-02-27T02:39:42",
-      "date_modified": "2026-06-02T17:40:05",
-      "date_modified_gmt": "2026-06-02T17:40:05",
+      "date_modified": "2026-10-27T19:16:34",
+      "date_modified_gmt": "2026-10-27T19:16:34",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cumberland/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=40",
       "sku": "7070126040",
@@ -10633,7 +10578,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 5,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -11262,7 +11207,7 @@
         {
           "id": 2259999,
           "key": "_last_change_time",
-          "value": "1780422005"
+          "value": "1793128594"
         },
         {
           "id": 2311886,
@@ -12689,8 +12634,8 @@
       "type": "variation",
       "date_created": "2025-02-27T02:39:40",
       "date_created_gmt": "2025-02-27T02:39:40",
-      "date_modified": "2026-06-02T17:40:05",
-      "date_modified_gmt": "2026-06-02T17:40:05",
+      "date_modified": "2026-10-27T19:16:34",
+      "date_modified_gmt": "2026-10-27T19:16:34",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cumberland/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=37",
       "sku": "7070126037",
@@ -12713,7 +12658,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -13342,7 +13287,7 @@
         {
           "id": 2259996,
           "key": "_last_change_time",
-          "value": "1780422005"
+          "value": "1793128594"
         },
         {
           "id": 2311888,
@@ -18234,8 +18179,8 @@
       "type": "variation",
       "date_created": "2023-08-17T23:27:07",
       "date_created_gmt": "2023-08-17T23:27:07",
-      "date_modified": "2026-05-07T23:02:43",
-      "date_modified_gmt": "2026-05-07T23:02:43",
+      "date_modified": "2026-11-21T23:11:11",
+      "date_modified_gmt": "2026-11-21T23:11:11",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cumberland/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=38",
       "sku": "7070104038",
@@ -18258,8 +18203,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -18887,7 +18832,7 @@
         {
           "id": 2259989,
           "key": "_last_change_time",
-          "value": "1778177948"
+          "value": "1795302671"
         },
         {
           "id": 2312550,

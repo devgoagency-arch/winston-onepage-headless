@@ -11,9 +11,9 @@
   "description": "<p>Entendemos que vestirse casual, pero con estilo no siempre es fácil y es por eso que la simplicidad de los Watford hace que estos zapatos sean tu opción más fácil de escoger. Los contrastes sutiles de materiales y colores entre la suela, el forro, la capellada y la pieza en el talón hacen que estos zapatos sean sencillos y reflejen tu personalidad y estilo. Son la mejor opción para combinar sin pensar. Watford es el sinónimo de versatilidad.</p>",
   "on_sale": true,
   "prices": {
-    "price": "392000",
+    "price": "280000",
     "regular_price": "560000",
-    "sale_price": "392000",
+    "sale_price": "280000",
     "price_range": null,
     "currency_code": "COP",
     "currency_symbol": "$",
@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>560,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;560,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>392,000</span></ins><span class=\"screen-reader-text\">Current price is: &#036;392,000.</span>",
+  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>560,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;560,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>280,000</span></ins><span class=\"screen-reader-text\">Current price is: &#036;280,000.</span>",
   "average_rating": "5.00",
   "review_count": 1,
   "images": [
@@ -219,8 +219,10 @@
         "name": "winston-and-harry-tenis-watford-blanco-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
-      "price": "392000",
+      "price": "280000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -248,8 +250,10 @@
         "name": "winston-and-harry-tenis-watford-blanco-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
-      "price": "392000",
+      "price": "280000",
       "regular_price": "560000",
       "sale_price": ""
     }
@@ -867,15 +871,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:52:55",
       "date_created_gmt": "2022-08-25T22:52:55",
-      "date_modified": "2026-08-24T17:22:25",
-      "date_modified_gmt": "2026-08-24T17:22:25",
+      "date_modified": "2026-11-23T04:30:30",
+      "date_modified_gmt": "2026-11-23T04:30:30",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/watford/?attribute_pa_selecciona-el-color=blanco-negro&attribute_pa_selecciona-una-talla=43",
       "sku": "7402302043",
       "global_unique_id": "",
-      "price": "392000",
+      "price": "280000",
       "regular_price": "560000",
-      "sale_price": "392000",
+      "sale_price": "280000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -1363,7 +1367,7 @@
         {
           "id": 2218551,
           "key": "_last_change_time",
-          "value": "1787590662"
+          "value": "1795408230"
         },
         {
           "id": 2313819,
@@ -1405,15 +1409,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:52:55",
       "date_created_gmt": "2022-08-25T22:52:55",
-      "date_modified": "2026-08-24T17:22:25",
-      "date_modified_gmt": "2026-08-24T17:22:25",
+      "date_modified": "2026-11-23T04:30:30",
+      "date_modified_gmt": "2026-11-23T04:30:30",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/watford/?attribute_pa_selecciona-el-color=blanco-negro&attribute_pa_selecciona-una-talla=42",
       "sku": "7402302042",
       "global_unique_id": "",
-      "price": "392000",
+      "price": "280000",
       "regular_price": "560000",
-      "sale_price": "392000",
+      "sale_price": "280000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -1911,7 +1915,7 @@
         {
           "id": 2218549,
           "key": "_last_change_time",
-          "value": "1787590662"
+          "value": "1795408230"
         },
         {
           "id": 2313818,
@@ -1953,15 +1957,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:52:55",
       "date_created_gmt": "2022-08-25T22:52:55",
-      "date_modified": "2026-08-24T17:22:26",
-      "date_modified_gmt": "2026-08-24T17:22:26",
+      "date_modified": "2026-11-23T04:30:30",
+      "date_modified_gmt": "2026-11-23T04:30:30",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/watford/?attribute_pa_selecciona-el-color=blanco-negro&attribute_pa_selecciona-una-talla=41",
       "sku": "7402302041",
       "global_unique_id": "",
-      "price": "392000",
+      "price": "280000",
       "regular_price": "560000",
-      "sale_price": "392000",
+      "sale_price": "280000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -2449,7 +2453,7 @@
         {
           "id": 2218547,
           "key": "_last_change_time",
-          "value": "1787590662"
+          "value": "1795408230"
         },
         {
           "id": 2313825,
@@ -2491,15 +2495,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:52:55",
       "date_created_gmt": "2022-08-25T22:52:55",
-      "date_modified": "2026-08-24T17:22:26",
-      "date_modified_gmt": "2026-08-24T17:22:26",
+      "date_modified": "2026-11-23T04:30:30",
+      "date_modified_gmt": "2026-11-23T04:30:30",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/watford/?attribute_pa_selecciona-el-color=blanco-negro&attribute_pa_selecciona-una-talla=40",
       "sku": "7402302040",
       "global_unique_id": "",
-      "price": "392000",
+      "price": "280000",
       "regular_price": "560000",
-      "sale_price": "392000",
+      "sale_price": "280000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -2997,7 +3001,7 @@
         {
           "id": 2218545,
           "key": "_last_change_time",
-          "value": "1787590662"
+          "value": "1795408230"
         },
         {
           "id": 2313824,
@@ -3039,15 +3043,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:52:55",
       "date_created_gmt": "2022-08-25T22:52:55",
-      "date_modified": "2026-08-24T17:22:26",
-      "date_modified_gmt": "2026-08-24T17:22:26",
+      "date_modified": "2026-11-23T04:30:30",
+      "date_modified_gmt": "2026-11-23T04:30:30",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/watford/?attribute_pa_selecciona-el-color=blanco-negro&attribute_pa_selecciona-una-talla=39",
       "sku": "7402302039",
       "global_unique_id": "",
-      "price": "392000",
+      "price": "280000",
       "regular_price": "560000",
-      "sale_price": "392000",
+      "sale_price": "280000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -3545,7 +3549,7 @@
         {
           "id": 2218543,
           "key": "_last_change_time",
-          "value": "1787590662"
+          "value": "1795408230"
         },
         {
           "id": 2313823,
@@ -3587,15 +3591,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:52:55",
       "date_created_gmt": "2022-08-25T22:52:55",
-      "date_modified": "2026-08-24T17:22:26",
-      "date_modified_gmt": "2026-08-24T17:22:26",
+      "date_modified": "2026-11-23T04:30:30",
+      "date_modified_gmt": "2026-11-23T04:30:30",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/watford/?attribute_pa_selecciona-el-color=blanco-negro&attribute_pa_selecciona-una-talla=38",
       "sku": "7402302038",
       "global_unique_id": "",
-      "price": "392000",
+      "price": "280000",
       "regular_price": "560000",
-      "sale_price": "392000",
+      "sale_price": "280000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -4093,7 +4097,7 @@
         {
           "id": 2218541,
           "key": "_last_change_time",
-          "value": "1787590662"
+          "value": "1795408230"
         },
         {
           "id": 2313822,
@@ -4135,15 +4139,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:52:55",
       "date_created_gmt": "2022-08-25T22:52:55",
-      "date_modified": "2026-08-24T17:22:26",
-      "date_modified_gmt": "2026-08-24T17:22:26",
+      "date_modified": "2026-11-23T04:30:30",
+      "date_modified_gmt": "2026-11-23T04:30:30",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/watford/?attribute_pa_selecciona-el-color=blanco-negro&attribute_pa_selecciona-una-talla=37",
       "sku": "7402302037",
       "global_unique_id": "",
-      "price": "392000",
+      "price": "280000",
       "regular_price": "560000",
-      "sale_price": "392000",
+      "sale_price": "280000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -4641,7 +4645,7 @@
         {
           "id": 2218539,
           "key": "_last_change_time",
-          "value": "1787590662"
+          "value": "1795408230"
         },
         {
           "id": 2313821,
@@ -5231,15 +5235,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:52:54",
       "date_created_gmt": "2022-08-25T22:52:54",
-      "date_modified": "2026-08-24T17:22:26",
-      "date_modified_gmt": "2026-08-24T17:22:26",
+      "date_modified": "2026-11-23T04:30:30",
+      "date_modified_gmt": "2026-11-23T04:30:30",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/watford/?attribute_pa_selecciona-el-color=blanco-azul&attribute_pa_selecciona-una-talla=43",
       "sku": "7402301043",
       "global_unique_id": "",
-      "price": "392000",
+      "price": "280000",
       "regular_price": "560000",
-      "sale_price": "392000",
+      "sale_price": "280000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -5737,7 +5741,7 @@
         {
           "id": 2218535,
           "key": "_last_change_time",
-          "value": "1787590662"
+          "value": "1795408230"
         },
         {
           "id": 2313832,
@@ -5779,15 +5783,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:52:54",
       "date_created_gmt": "2022-08-25T22:52:54",
-      "date_modified": "2026-08-24T17:22:26",
-      "date_modified_gmt": "2026-08-24T17:22:26",
+      "date_modified": "2026-11-23T04:30:30",
+      "date_modified_gmt": "2026-11-23T04:30:30",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/watford/?attribute_pa_selecciona-el-color=blanco-azul&attribute_pa_selecciona-una-talla=42",
       "sku": "7402301042",
       "global_unique_id": "",
-      "price": "392000",
+      "price": "280000",
       "regular_price": "560000",
-      "sale_price": "392000",
+      "sale_price": "280000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -6285,7 +6289,7 @@
         {
           "id": 2218533,
           "key": "_last_change_time",
-          "value": "1787590663"
+          "value": "1795408230"
         },
         {
           "id": 2313831,
@@ -6327,15 +6331,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:52:54",
       "date_created_gmt": "2022-08-25T22:52:54",
-      "date_modified": "2026-08-24T17:22:26",
-      "date_modified_gmt": "2026-08-24T17:22:26",
+      "date_modified": "2026-11-23T04:30:30",
+      "date_modified_gmt": "2026-11-23T04:30:30",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/watford/?attribute_pa_selecciona-el-color=blanco-azul&attribute_pa_selecciona-una-talla=41",
       "sku": "7402301041",
       "global_unique_id": "",
-      "price": "392000",
+      "price": "280000",
       "regular_price": "560000",
-      "sale_price": "392000",
+      "sale_price": "280000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -6833,7 +6837,7 @@
         {
           "id": 2218531,
           "key": "_last_change_time",
-          "value": "1787590663"
+          "value": "1795408230"
         },
         {
           "id": 2313830,
@@ -6875,15 +6879,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:52:54",
       "date_created_gmt": "2022-08-25T22:52:54",
-      "date_modified": "2026-08-24T17:22:26",
-      "date_modified_gmt": "2026-08-24T17:22:26",
+      "date_modified": "2026-11-23T04:30:30",
+      "date_modified_gmt": "2026-11-23T04:30:30",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/watford/?attribute_pa_selecciona-el-color=blanco-azul&attribute_pa_selecciona-una-talla=40",
       "sku": "7402301040",
       "global_unique_id": "",
-      "price": "392000",
+      "price": "280000",
       "regular_price": "560000",
-      "sale_price": "392000",
+      "sale_price": "280000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -7381,7 +7385,7 @@
         {
           "id": 2218529,
           "key": "_last_change_time",
-          "value": "1787590663"
+          "value": "1795408230"
         },
         {
           "id": 2313829,
@@ -7423,15 +7427,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:52:54",
       "date_created_gmt": "2022-08-25T22:52:54",
-      "date_modified": "2026-08-24T17:22:26",
-      "date_modified_gmt": "2026-08-24T17:22:26",
+      "date_modified": "2026-11-23T04:30:30",
+      "date_modified_gmt": "2026-11-23T04:30:30",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/watford/?attribute_pa_selecciona-el-color=blanco-azul&attribute_pa_selecciona-una-talla=39",
       "sku": "7402301039",
       "global_unique_id": "",
-      "price": "392000",
+      "price": "280000",
       "regular_price": "560000",
-      "sale_price": "392000",
+      "sale_price": "280000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -7929,7 +7933,7 @@
         {
           "id": 2218527,
           "key": "_last_change_time",
-          "value": "1787590663"
+          "value": "1795408230"
         },
         {
           "id": 2313828,
@@ -7971,15 +7975,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:52:54",
       "date_created_gmt": "2022-08-25T22:52:54",
-      "date_modified": "2026-08-24T17:22:26",
-      "date_modified_gmt": "2026-08-24T17:22:26",
+      "date_modified": "2026-11-23T04:30:30",
+      "date_modified_gmt": "2026-11-23T04:30:30",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/watford/?attribute_pa_selecciona-el-color=blanco-azul&attribute_pa_selecciona-una-talla=38",
       "sku": "7402301038",
       "global_unique_id": "",
-      "price": "392000",
+      "price": "280000",
       "regular_price": "560000",
-      "sale_price": "392000",
+      "sale_price": "280000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -8477,7 +8481,7 @@
         {
           "id": 2218525,
           "key": "_last_change_time",
-          "value": "1787590663"
+          "value": "1795408230"
         },
         {
           "id": 2313827,
@@ -8519,15 +8523,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:52:54",
       "date_created_gmt": "2022-08-25T22:52:54",
-      "date_modified": "2026-08-24T17:22:26",
-      "date_modified_gmt": "2026-08-24T17:22:26",
+      "date_modified": "2026-11-23T04:30:30",
+      "date_modified_gmt": "2026-11-23T04:30:30",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/watford/?attribute_pa_selecciona-el-color=blanco-azul&attribute_pa_selecciona-una-talla=37",
       "sku": "7402301037",
       "global_unique_id": "",
-      "price": "392000",
+      "price": "280000",
       "regular_price": "560000",
-      "sale_price": "392000",
+      "sale_price": "280000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -9015,7 +9019,7 @@
         {
           "id": 2218522,
           "key": "_last_change_time",
-          "value": "1787590663"
+          "value": "1795408230"
         },
         {
           "id": 2313826,
@@ -9057,7 +9061,9 @@
     "19379": "https://tienda.winstonandharrystore.com/wp-content/uploads/2022/01/foto-zapato-blanco-18-01-2022.jpg",
     "19380": "https://tienda.winstonandharrystore.com/wp-content/uploads/2022/01/foto-zapato-blanco-enero-2022-.jpg",
     "19704": "https://tienda.winstonandharrystore.com/wp-content/uploads/2022/06/zapatos-12-posicion-1.jpg",
-    "19706": "https://tienda.winstonandharrystore.com/wp-content/uploads/2022/06/zapatos-12-posicion-3.jpg"
+    "19706": "https://tienda.winstonandharrystore.com/wp-content/uploads/2022/06/zapatos-12-posicion-3.jpg",
+    "86656": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-tenis-watford-blanco-negro-02.jpg",
+    "86657": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-tenis-watford-blanco-negro-03.jpg"
   },
   "stock_status": "instock",
   "variation_images_map": {
@@ -9067,6 +9073,16 @@
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-tenis-watford-blanco-negro-01.jpg",
         "alt": "winston-and-harry-tenis-watford-blanco-negro-01",
         "name": "winston-and-harry-tenis-watford-blanco-negro-01"
+      },
+      {
+        "id": 86656,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-tenis-watford-blanco-negro-02.jpg",
+        "alt": "Watford"
+      },
+      {
+        "id": 86657,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-tenis-watford-blanco-negro-03.jpg",
+        "alt": "Watford"
       },
       {
         "id": 19706,

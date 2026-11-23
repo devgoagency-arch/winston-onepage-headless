@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>649,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>649,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -261,6 +261,8 @@
         "name": "winston-and-harry-zapatos-de-cordon-minster-miel-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -290,6 +292,8 @@
         "name": "winston-and-harry-zapatos-de-cordon-minster-miel-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -319,6 +323,8 @@
         "name": "winston-and-harry-zapatos-de-cordon-minster-cafe-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -348,6 +354,8 @@
         "name": "winston-and-harry-zapatos-de-cordon-minster-cafe-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -377,6 +385,8 @@
         "name": "winston-and-harry-zapatos-de-cordon-minster-cafe-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -406,6 +416,39 @@
         "name": "winston-and-harry-zapatos-de-cordon-minster-cafe-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
+      "stock_status": "instock",
+      "price": "649000",
+      "regular_price": "649000",
+      "sale_price": ""
+    },
+    {
+      "id": 25433,
+      "attributes": [
+        {
+          "name": "Selecciona el Color",
+          "value": "cafe",
+          "option": "cafe"
+        },
+        {
+          "name": "Selecciona una Talla",
+          "value": "41",
+          "option": "41"
+        }
+      ],
+      "image": {
+        "id": 86045,
+        "date_created": "2026-07-31T02:09:16",
+        "date_created_gmt": "2026-07-31T02:09:16",
+        "date_modified": "2026-07-31T02:31:39",
+        "date_modified_gmt": "2026-07-31T02:31:39",
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-zapatos-de-cordon-minster-cafe-01.jpg",
+        "name": "winston-and-harry-zapatos-de-cordon-minster-cafe-01",
+        "alt": ""
+      },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -435,6 +478,8 @@
         "name": "winston-and-harry-zapatos-de-cordon-minster-cafe-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -464,6 +509,8 @@
         "name": "winston-and-harry-zapatos-de-cordon-minster-cafe-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -493,6 +540,8 @@
         "name": "winston-and-harry-zapatos-de-cordon-minster-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -522,6 +571,8 @@
         "name": "winston-and-harry-zapatos-de-cordon-minster-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -551,6 +602,8 @@
         "name": "winston-and-harry-zapatos-de-cordon-minster-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -580,6 +633,8 @@
         "name": "winston-and-harry-zapatos-de-cordon-minster-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -609,6 +664,8 @@
         "name": "winston-and-harry-zapatos-de-cordon-minster-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -638,6 +695,8 @@
         "name": "winston-and-harry-zapatos-de-cordon-minster-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -667,6 +726,8 @@
         "name": "winston-and-harry-zapatos-de-cordon-minster-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -696,6 +757,8 @@
         "name": "winston-and-harry-zapatos-de-cordon-minster-miel-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -725,35 +788,8 @@
         "name": "winston-and-harry-zapatos-de-cordon-minster-miel-01",
         "alt": ""
       },
-      "stock_status": "instock",
-      "price": "649000",
-      "regular_price": "649000",
-      "sale_price": ""
-    },
-    {
-      "id": 25456,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "miel",
-          "option": "miel"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "45",
-          "option": "45"
-        }
-      ],
-      "image": {
-        "id": 86048,
-        "date_created": "2026-07-31T02:09:32",
-        "date_created_gmt": "2026-07-31T02:09:32",
-        "date_modified": "2026-07-31T02:32:29",
-        "date_modified_gmt": "2026-07-31T02:32:29",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-zapatos-de-cordon-minster-miel-01.jpg",
-        "name": "winston-and-harry-zapatos-de-cordon-minster-miel-01",
-        "alt": ""
-      },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -825,8 +861,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:47:50",
       "date_created_gmt": "2022-08-25T22:47:50",
-      "date_modified": "2026-07-31T02:32:29",
-      "date_modified_gmt": "2026-07-31T02:32:29",
+      "date_modified": "2026-10-13T15:44:38",
+      "date_modified_gmt": "2026-10-13T15:44:38",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/minster/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=45",
       "sku": "7401026045",
@@ -849,8 +885,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -1336,7 +1372,7 @@
         {
           "id": 2261356,
           "key": "_last_change_time",
-          "value": "1778184382"
+          "value": "1791906278"
         },
         {
           "id": 2314133,
@@ -1667,6 +1703,11 @@
           "id": 2457649,
           "key": "_wc_push_notification_sent_low_stock",
           "value": ""
+        },
+        {
+          "id": 2609343,
+          "key": "_wc_push_notification_sent_out_of_stock",
+          "value": "1791906391"
         }
       ],
       "name": "Miel, 45",
@@ -20141,8 +20182,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:47:44",
       "date_created_gmt": "2022-08-25T22:47:44",
-      "date_modified": "2026-07-31T02:32:31",
-      "date_modified_gmt": "2026-07-31T02:32:31",
+      "date_modified": "2026-11-23T04:36:48",
+      "date_modified_gmt": "2026-11-23T04:36:48",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/minster/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=41",
       "sku": "7401004041",
@@ -20165,8 +20206,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 0,
-      "stock_status": "outofstock",
+      "stock_quantity": 1,
+      "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -20652,7 +20693,7 @@
         {
           "id": 2261343,
           "key": "_last_change_time",
-          "value": "1780421769"
+          "value": "1795408608"
         },
         {
           "id": 2314151,
@@ -24533,7 +24574,11 @@
     "16720": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/02/34-suela-capellada.jpg",
     "16721": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/02/34-lateral.jpg",
     "16750": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/02/45-suela-capellada.jpg",
-    "16751": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/02/45-lateral.jpg"
+    "16751": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/02/45-lateral.jpg",
+    "86049": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-zapatos-de-cordon-minster-miel-02.jpg",
+    "86050": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-zapatos-de-cordon-minster-miel-03.jpg",
+    "86052": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-zapatos-de-cordon-minster-negro-02.jpg",
+    "86053": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-zapatos-de-cordon-minster-negro-03.jpg"
   },
   "stock_status": "instock",
   "variation_images_map": {
@@ -24543,6 +24588,16 @@
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-zapatos-de-cordon-minster-miel-01.jpg",
         "alt": "winston-and-harry-zapatos-de-cordon-minster-miel-01",
         "name": "winston-and-harry-zapatos-de-cordon-minster-miel-01"
+      },
+      {
+        "id": 86049,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-zapatos-de-cordon-minster-miel-02.jpg",
+        "alt": "Minster"
+      },
+      {
+        "id": 86050,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-zapatos-de-cordon-minster-miel-03.jpg",
+        "alt": "Minster"
       },
       {
         "id": 16721,
@@ -24591,6 +24646,16 @@
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-zapatos-de-cordon-minster-negro-01.jpg",
         "alt": "winston-and-harry-zapatos-de-cordon-minster-negro-01",
         "name": "winston-and-harry-zapatos-de-cordon-minster-negro-01"
+      },
+      {
+        "id": 86052,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-zapatos-de-cordon-minster-negro-02.jpg",
+        "alt": "Minster"
+      },
+      {
+        "id": 86053,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-zapatos-de-cordon-minster-negro-03.jpg",
+        "alt": "Minster"
       },
       {
         "id": 16709,

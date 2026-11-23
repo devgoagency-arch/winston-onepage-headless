@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>510,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>510,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -181,6 +181,8 @@
         "name": "winston-and-harry-jean-lucania-regaular-azul-oscuro-dobaldo-frente-completo",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "510000",
       "regular_price": "510000",
@@ -210,6 +212,8 @@
         "name": "winston-and-harry-jean-lucania-regaular-azul-oscuro-dobaldo-frente-completo",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 12,
       "stock_status": "instock",
       "price": "510000",
       "regular_price": "510000",
@@ -239,6 +243,8 @@
         "name": "winston-and-harry-jean-lucania-regaular-azul-oscuro-dobaldo-frente-completo",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 9,
       "stock_status": "instock",
       "price": "510000",
       "regular_price": "510000",
@@ -268,6 +274,8 @@
         "name": "winston-and-harry-jean-lucania-regaular-azul-oscuro-dobaldo-frente-completo",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 13,
       "stock_status": "instock",
       "price": "510000",
       "regular_price": "510000",
@@ -297,6 +305,8 @@
         "name": "winston-and-harry-jean-lucania-regaular-azul-oscuro-dobaldo-frente-completo",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "510000",
       "regular_price": "510000",
@@ -1446,8 +1456,8 @@
       "type": "variation",
       "date_created": "2026-05-08T02:20:59",
       "date_created_gmt": "2026-05-08T02:20:59",
-      "date_modified": "2026-07-27T17:44:42",
-      "date_modified_gmt": "2026-07-27T17:44:42",
+      "date_modified": "2026-11-04T17:55:15",
+      "date_modified_gmt": "2026-11-04T17:55:15",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/jean-lucania-regular/?attribute_pa_selecciona-el-color=azul-oscuro&attribute_pa_selecciona-una-talla=36",
       "sku": "3033737036",
@@ -1470,7 +1480,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 14,
+      "stock_quantity": 13,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -1517,7 +1527,7 @@
         {
           "id": 2341846,
           "key": "_last_change_time",
-          "value": "1785174282"
+          "value": "1793814915"
         },
         {
           "id": 2341847,
@@ -2524,8 +2534,8 @@
       "type": "variation",
       "date_created": "2026-05-08T02:20:59",
       "date_created_gmt": "2026-05-08T02:20:59",
-      "date_modified": "2026-07-16T22:45:12",
-      "date_modified_gmt": "2026-07-16T22:45:12",
+      "date_modified": "2026-10-27T19:17:34",
+      "date_modified_gmt": "2026-10-27T19:17:34",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/jean-lucania-regular/?attribute_pa_selecciona-el-color=azul-oscuro&attribute_pa_selecciona-una-talla=34",
       "sku": "3033737034",
@@ -2548,7 +2558,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 11,
+      "stock_quantity": 9,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -2595,7 +2605,7 @@
         {
           "id": 2341815,
           "key": "_last_change_time",
-          "value": "1784241912"
+          "value": "1793128654"
         },
         {
           "id": 2341816,
@@ -3602,8 +3612,8 @@
       "type": "variation",
       "date_created": "2026-05-08T02:20:59",
       "date_created_gmt": "2026-05-08T02:20:59",
-      "date_modified": "2026-07-11T02:29:02",
-      "date_modified_gmt": "2026-07-11T02:29:02",
+      "date_modified": "2026-11-04T17:55:15",
+      "date_modified_gmt": "2026-11-04T17:55:15",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/jean-lucania-regular/?attribute_pa_selecciona-el-color=azul-oscuro&attribute_pa_selecciona-una-talla=32",
       "sku": "3033737032",
@@ -3626,7 +3636,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 13,
+      "stock_quantity": 12,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -3673,7 +3683,7 @@
         {
           "id": 2341784,
           "key": "_last_change_time",
-          "value": "1780422152"
+          "value": "1793814915"
         },
         {
           "id": 2341785,
@@ -4680,8 +4690,8 @@
       "type": "variation",
       "date_created": "2026-05-08T02:20:59",
       "date_created_gmt": "2026-05-08T02:20:59",
-      "date_modified": "2026-07-11T02:29:02",
-      "date_modified_gmt": "2026-07-11T02:29:02",
+      "date_modified": "2026-10-05T21:48:54",
+      "date_modified_gmt": "2026-10-05T21:48:54",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/jean-lucania-regular/?attribute_pa_selecciona-el-color=azul-oscuro&attribute_pa_selecciona-una-talla=30",
       "sku": "3033737030",
@@ -4704,7 +4714,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 3,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -4751,7 +4761,7 @@
         {
           "id": 2341753,
           "key": "_last_change_time",
-          "value": "1780422152"
+          "value": "1791236934"
         },
         {
           "id": 2341754,

@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>125,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>125,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -126,6 +126,8 @@
         "name": "Calzador-Zapatos-Cuidado-Greande-metalico-winstonandharry-detalle",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 28,
       "stock_status": "instock",
       "price": "125000",
       "regular_price": "125000",
@@ -203,8 +205,8 @@
       "type": "variation",
       "date_created": "2023-12-13T17:47:04",
       "date_created_gmt": "2023-12-13T17:47:04",
-      "date_modified": "2026-08-24T20:31:48",
-      "date_modified_gmt": "2026-08-24T20:31:48",
+      "date_modified": "2026-11-23T04:37:33",
+      "date_modified_gmt": "2026-11-23T04:37:33",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/calzador-metalico/?attribute_pa_selecciona-el-color=gris",
       "sku": "81810100000",
@@ -227,7 +229,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 38,
+      "stock_quantity": 28,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -705,7 +707,7 @@
         {
           "id": 2236211,
           "key": "_last_change_time",
-          "value": "1787603446"
+          "value": "1795408653"
         }
       ],
       "name": "Gris",

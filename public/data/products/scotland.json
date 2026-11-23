@@ -11,9 +11,9 @@
   "description": "<p>Ademas de ser muy comoda, la bota Scotland es una bota hecha a mano por artesanos colombianos. Tiene un estilo irreverente y evoca detalles tradicionales de la manufactura britanica.</p>",
   "on_sale": true,
   "prices": {
-    "price": "531300",
+    "price": "379500",
     "regular_price": "759000",
-    "sale_price": "531300",
+    "sale_price": "379500",
     "price_range": null,
     "currency_code": "COP",
     "currency_symbol": "$",
@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>759,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;759,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>531,300</span></ins><span class=\"screen-reader-text\">Current price is: &#036;531,300.</span>",
+  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>759,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;759,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>379,500</span></ins><span class=\"screen-reader-text\">Current price is: &#036;379,500.</span>",
   "average_rating": "5.00",
   "review_count": 1,
   "images": [
@@ -250,8 +250,10 @@
         "name": "Scotland-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "531300",
+      "price": "379500",
       "regular_price": "759000",
       "sale_price": ""
     },
@@ -279,8 +281,10 @@
         "name": "Scotland-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "531300",
+      "price": "379500",
       "regular_price": "759000",
       "sale_price": ""
     },
@@ -308,8 +312,10 @@
         "name": "Scotland-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
-      "price": "531300",
+      "price": "379500",
       "regular_price": "759000",
       "sale_price": ""
     },
@@ -337,8 +343,10 @@
         "name": "Scotland-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "531300",
+      "price": "379500",
       "regular_price": "759000",
       "sale_price": ""
     }
@@ -408,15 +416,15 @@
       "type": "variation",
       "date_created": "2025-08-25T01:44:05",
       "date_created_gmt": "2025-08-25T01:44:05",
-      "date_modified": "2026-05-08T21:40:29",
-      "date_modified_gmt": "2026-05-08T21:40:29",
+      "date_modified": "2026-11-23T04:33:59",
+      "date_modified_gmt": "2026-11-23T04:33:59",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/scotland/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=45",
       "sku": "7300426045",
       "global_unique_id": "",
-      "price": "531300",
+      "price": "379500",
       "regular_price": "759000",
-      "sale_price": "531300",
+      "sale_price": "379500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -1226,7 +1234,7 @@
         {
           "id": 2260966,
           "key": "_last_change_time",
-          "value": "1778190041"
+          "value": "1795408439"
         },
         {
           "id": 2311231,
@@ -1268,15 +1276,15 @@
       "type": "variation",
       "date_created": "2025-08-25T01:44:05",
       "date_created_gmt": "2025-08-25T01:44:05",
-      "date_modified": "2026-05-08T21:40:29",
-      "date_modified_gmt": "2026-05-08T21:40:29",
+      "date_modified": "2026-11-23T04:33:59",
+      "date_modified_gmt": "2026-11-23T04:33:59",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/scotland/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=44",
       "sku": "7300426044",
       "global_unique_id": "",
-      "price": "531300",
+      "price": "379500",
       "regular_price": "759000",
-      "sale_price": "531300",
+      "sale_price": "379500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -2086,7 +2094,7 @@
         {
           "id": 2260965,
           "key": "_last_change_time",
-          "value": "1778190041"
+          "value": "1795408439"
         },
         {
           "id": 2311229,
@@ -2128,15 +2136,15 @@
       "type": "variation",
       "date_created": "2025-08-25T01:44:05",
       "date_created_gmt": "2025-08-25T01:44:05",
-      "date_modified": "2026-05-08T21:40:29",
-      "date_modified_gmt": "2026-05-08T21:40:29",
+      "date_modified": "2026-11-23T04:33:59",
+      "date_modified_gmt": "2026-11-23T04:33:59",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/scotland/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=43",
       "sku": "7300426043",
       "global_unique_id": "",
-      "price": "531300",
+      "price": "379500",
       "regular_price": "759000",
-      "sale_price": "531300",
+      "sale_price": "379500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -2946,7 +2954,7 @@
         {
           "id": 2260964,
           "key": "_last_change_time",
-          "value": "1778190041"
+          "value": "1795408439"
         },
         {
           "id": 2311228,
@@ -2988,15 +2996,15 @@
       "type": "variation",
       "date_created": "2025-08-25T01:44:05",
       "date_created_gmt": "2025-08-25T01:44:05",
-      "date_modified": "2026-06-02T17:41:18",
-      "date_modified_gmt": "2026-06-02T17:41:18",
+      "date_modified": "2026-11-23T04:33:59",
+      "date_modified_gmt": "2026-11-23T04:33:59",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/scotland/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=42",
       "sku": "7300426042",
       "global_unique_id": "",
-      "price": "531300",
+      "price": "379500",
       "regular_price": "759000",
-      "sale_price": "531300",
+      "sale_price": "379500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -3806,7 +3814,7 @@
         {
           "id": 2260963,
           "key": "_last_change_time",
-          "value": "1780422078"
+          "value": "1795408439"
         },
         {
           "id": 2311227,
@@ -3848,15 +3856,15 @@
       "type": "variation",
       "date_created": "2025-08-25T01:44:05",
       "date_created_gmt": "2025-08-25T01:44:05",
-      "date_modified": "2026-05-08T21:40:29",
-      "date_modified_gmt": "2026-05-08T21:40:29",
+      "date_modified": "2026-11-23T04:33:59",
+      "date_modified_gmt": "2026-11-23T04:33:59",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/scotland/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=41",
       "sku": "7300426041",
       "global_unique_id": "",
-      "price": "531300",
+      "price": "379500",
       "regular_price": "759000",
-      "sale_price": "531300",
+      "sale_price": "379500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -4666,7 +4674,7 @@
         {
           "id": 2233400,
           "key": "_last_change_time",
-          "value": "1778190037"
+          "value": "1795408439"
         },
         {
           "id": 2311226,
@@ -4708,15 +4716,15 @@
       "type": "variation",
       "date_created": "2025-08-25T01:44:05",
       "date_created_gmt": "2025-08-25T01:44:05",
-      "date_modified": "2026-05-08T21:40:29",
-      "date_modified_gmt": "2026-05-08T21:40:29",
+      "date_modified": "2026-11-23T04:33:59",
+      "date_modified_gmt": "2026-11-23T04:33:59",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/scotland/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=40",
       "sku": "7300426040",
       "global_unique_id": "",
-      "price": "531300",
+      "price": "379500",
       "regular_price": "759000",
-      "sale_price": "531300",
+      "sale_price": "379500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -5526,7 +5534,7 @@
         {
           "id": 2219093,
           "key": "_last_change_time",
-          "value": "1778190037"
+          "value": "1795408439"
         },
         {
           "id": 2311225,
@@ -5568,15 +5576,15 @@
       "type": "variation",
       "date_created": "2025-08-25T01:44:05",
       "date_created_gmt": "2025-08-25T01:44:05",
-      "date_modified": "2026-05-08T21:40:29",
-      "date_modified_gmt": "2026-05-08T21:40:29",
+      "date_modified": "2026-11-23T04:33:59",
+      "date_modified_gmt": "2026-11-23T04:33:59",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/scotland/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=39",
       "sku": "7300426039",
       "global_unique_id": "",
-      "price": "531300",
+      "price": "379500",
       "regular_price": "759000",
-      "sale_price": "531300",
+      "sale_price": "379500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -6386,7 +6394,7 @@
         {
           "id": 2260959,
           "key": "_last_change_time",
-          "value": "1778190037"
+          "value": "1795408439"
         },
         {
           "id": 2311224,
@@ -6428,15 +6436,15 @@
       "type": "variation",
       "date_created": "2025-08-25T01:44:05",
       "date_created_gmt": "2025-08-25T01:44:05",
-      "date_modified": "2026-07-27T17:44:07",
-      "date_modified_gmt": "2026-07-27T17:44:07",
+      "date_modified": "2026-11-23T04:33:59",
+      "date_modified_gmt": "2026-11-23T04:33:59",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/scotland/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=38",
       "sku": "7300426038",
       "global_unique_id": "",
-      "price": "531300",
+      "price": "379500",
       "regular_price": "759000",
-      "sale_price": "531300",
+      "sale_price": "379500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -7246,7 +7254,7 @@
         {
           "id": 2257371,
           "key": "_last_change_time",
-          "value": "1785174247"
+          "value": "1795408439"
         },
         {
           "id": 2311223,
@@ -7288,15 +7296,15 @@
       "type": "variation",
       "date_created": "2025-08-25T01:44:05",
       "date_created_gmt": "2025-08-25T01:44:05",
-      "date_modified": "2026-05-08T21:40:29",
-      "date_modified_gmt": "2026-05-08T21:40:29",
+      "date_modified": "2026-11-23T04:33:59",
+      "date_modified_gmt": "2026-11-23T04:33:59",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/scotland/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=37",
       "sku": "7300426037",
       "global_unique_id": "",
-      "price": "531300",
+      "price": "379500",
       "regular_price": "759000",
-      "sale_price": "531300",
+      "sale_price": "379500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -8106,7 +8114,7 @@
         {
           "id": 2260958,
           "key": "_last_change_time",
-          "value": "1778190037"
+          "value": "1795408439"
         },
         {
           "id": 2311230,
@@ -9238,15 +9246,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:44:17",
       "date_created_gmt": "2022-08-25T22:44:17",
-      "date_modified": "2026-05-08T21:40:29",
-      "date_modified_gmt": "2026-05-08T21:40:29",
+      "date_modified": "2026-11-23T04:29:36",
+      "date_modified_gmt": "2026-11-23T04:29:36",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/scotland/?attribute_pa_selecciona-el-color=cognac&attribute_pa_selecciona-una-talla=43",
       "sku": "7300432043",
       "global_unique_id": "",
-      "price": "531300",
+      "price": "379500",
       "regular_price": "759000",
-      "sale_price": "531300",
+      "sale_price": "379500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -9746,7 +9754,7 @@
         {
           "id": 2260973,
           "key": "_last_change_time",
-          "value": "1778190036"
+          "value": "1795408176"
         }
       ],
       "name": "Cognac, 43",
@@ -9783,15 +9791,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:44:17",
       "date_created_gmt": "2022-08-25T22:44:17",
-      "date_modified": "2026-05-08T21:40:29",
-      "date_modified_gmt": "2026-05-08T21:40:29",
+      "date_modified": "2026-11-23T04:29:31",
+      "date_modified_gmt": "2026-11-23T04:29:31",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/scotland/?attribute_pa_selecciona-el-color=cognac&attribute_pa_selecciona-una-talla=42",
       "sku": "7300432042",
       "global_unique_id": "",
-      "price": "531300",
+      "price": "379500",
       "regular_price": "759000",
-      "sale_price": "531300",
+      "sale_price": "379500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -10291,7 +10299,7 @@
         {
           "id": 2260972,
           "key": "_last_change_time",
-          "value": "1778190036"
+          "value": "1795408171"
         }
       ],
       "name": "Cognac, 42",
@@ -10328,15 +10336,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:44:17",
       "date_created_gmt": "2022-08-25T22:44:17",
-      "date_modified": "2026-05-08T21:40:29",
-      "date_modified_gmt": "2026-05-08T21:40:29",
+      "date_modified": "2026-11-23T04:29:31",
+      "date_modified_gmt": "2026-11-23T04:29:31",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/scotland/?attribute_pa_selecciona-el-color=cognac&attribute_pa_selecciona-una-talla=41",
       "sku": "7300432041",
       "global_unique_id": "",
-      "price": "531300",
+      "price": "379500",
       "regular_price": "759000",
-      "sale_price": "531300",
+      "sale_price": "379500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -10836,7 +10844,7 @@
         {
           "id": 2260971,
           "key": "_last_change_time",
-          "value": "1778190036"
+          "value": "1795408171"
         }
       ],
       "name": "Cognac, 41",
@@ -10873,15 +10881,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:44:07",
       "date_created_gmt": "2022-08-25T22:44:07",
-      "date_modified": "2026-05-08T21:40:29",
-      "date_modified_gmt": "2026-05-08T21:40:29",
+      "date_modified": "2026-11-23T04:29:31",
+      "date_modified_gmt": "2026-11-23T04:29:31",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/scotland/?attribute_pa_selecciona-el-color=cognac&attribute_pa_selecciona-una-talla=40",
       "sku": "7300432040",
       "global_unique_id": "",
-      "price": "531300",
+      "price": "379500",
       "regular_price": "759000",
-      "sale_price": "531300",
+      "sale_price": "379500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -11381,7 +11389,7 @@
         {
           "id": 2260970,
           "key": "_last_change_time",
-          "value": "1778190036"
+          "value": "1795408171"
         }
       ],
       "name": "Cognac, 40",
@@ -11418,15 +11426,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:44:07",
       "date_created_gmt": "2022-08-25T22:44:07",
-      "date_modified": "2026-05-08T21:40:29",
-      "date_modified_gmt": "2026-05-08T21:40:29",
+      "date_modified": "2026-11-23T04:29:31",
+      "date_modified_gmt": "2026-11-23T04:29:31",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/scotland/?attribute_pa_selecciona-el-color=cognac&attribute_pa_selecciona-una-talla=39",
       "sku": "7300432039",
       "global_unique_id": "",
-      "price": "531300",
+      "price": "379500",
       "regular_price": "759000",
-      "sale_price": "531300",
+      "sale_price": "379500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -11926,7 +11934,7 @@
         {
           "id": 2260969,
           "key": "_last_change_time",
-          "value": "1778190036"
+          "value": "1795408171"
         }
       ],
       "name": "Cognac, 39",
@@ -11963,15 +11971,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:44:07",
       "date_created_gmt": "2022-08-25T22:44:07",
-      "date_modified": "2026-05-08T21:40:29",
-      "date_modified_gmt": "2026-05-08T21:40:29",
+      "date_modified": "2026-11-23T04:29:31",
+      "date_modified_gmt": "2026-11-23T04:29:31",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/scotland/?attribute_pa_selecciona-el-color=cognac&attribute_pa_selecciona-una-talla=38",
       "sku": "7300432038",
       "global_unique_id": "",
-      "price": "531300",
+      "price": "379500",
       "regular_price": "759000",
-      "sale_price": "531300",
+      "sale_price": "379500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -12471,7 +12479,7 @@
         {
           "id": 2260968,
           "key": "_last_change_time",
-          "value": "1778190036"
+          "value": "1795408171"
         }
       ],
       "name": "Cognac, 38",
@@ -12508,15 +12516,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:44:07",
       "date_created_gmt": "2022-08-25T22:44:07",
-      "date_modified": "2026-05-08T21:40:29",
-      "date_modified_gmt": "2026-05-08T21:40:29",
+      "date_modified": "2026-11-23T04:29:31",
+      "date_modified_gmt": "2026-11-23T04:29:31",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/scotland/?attribute_pa_selecciona-el-color=cognac&attribute_pa_selecciona-una-talla=37",
       "sku": "7300432037",
       "global_unique_id": "",
-      "price": "531300",
+      "price": "379500",
       "regular_price": "759000",
-      "sale_price": "531300",
+      "sale_price": "379500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -13006,7 +13014,7 @@
         {
           "id": 2260967,
           "key": "_last_change_time",
-          "value": "1778190036"
+          "value": "1795408171"
         }
       ],
       "name": "Cognac, 37",

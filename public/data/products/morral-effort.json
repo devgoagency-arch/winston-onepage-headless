@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>836,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;836,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>543,400</span></ins><span class=\"screen-reader-text\">Current price is: &#036;543,400.</span>",
+  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>836,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;836,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>543,400</span></ins><span class=\"screen-reader-text\">Current price is: &#036;543,400.</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -142,6 +142,8 @@
         "name": "Morral-Effort-Cognac-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "price": "543400",
       "regular_price": "836000",
@@ -166,6 +168,8 @@
         "name": "Morral-Effort-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 13,
       "stock_status": "instock",
       "price": "543400",
       "regular_price": "836000",
@@ -243,8 +247,8 @@
       "type": "variation",
       "date_created": "2025-02-13T03:50:59",
       "date_created_gmt": "2025-02-13T03:50:59",
-      "date_modified": "2026-08-13T00:05:18",
-      "date_modified_gmt": "2026-08-13T00:05:18",
+      "date_modified": "2026-10-05T21:51:15",
+      "date_modified_gmt": "2026-10-05T21:51:15",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/morral-effort/?attribute_pa_selecciona-el-color=negro",
       "sku": "15150502000",
@@ -267,7 +271,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 14,
+      "stock_quantity": 13,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -885,7 +889,7 @@
         {
           "id": 2229414,
           "key": "_last_change_time",
-          "value": "1786579518"
+          "value": "1791237075"
         },
         {
           "id": 2312079,
@@ -927,8 +931,8 @@
       "type": "variation",
       "date_created": "2025-02-13T03:50:58",
       "date_created_gmt": "2025-02-13T03:50:58",
-      "date_modified": "2026-07-27T17:43:36",
-      "date_modified_gmt": "2026-07-27T17:43:36",
+      "date_modified": "2026-09-16T21:56:56",
+      "date_modified_gmt": "2026-09-16T21:56:56",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/morral-effort/?attribute_pa_selecciona-el-color=cognac",
       "sku": "15150532000",
@@ -951,7 +955,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 6,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,

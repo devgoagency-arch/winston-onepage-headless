@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>27,500</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>27,500</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -119,6 +119,8 @@
         "name": "Medias-Tiburon-Azul-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 18,
       "stock_status": "instock",
       "price": "27500",
       "regular_price": "27500",
@@ -143,6 +145,8 @@
         "name": "Medias-Tiburon-Gris-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 48,
       "stock_status": "instock",
       "price": "27500",
       "regular_price": "27500",
@@ -214,8 +218,8 @@
       "type": "variation",
       "date_created": "2025-10-31T02:27:01",
       "date_created_gmt": "2025-10-31T02:27:01",
-      "date_modified": "2026-08-13T00:05:18",
-      "date_modified_gmt": "2026-08-13T00:05:18",
+      "date_modified": "2026-11-23T04:39:45",
+      "date_modified_gmt": "2026-11-23T04:39:45",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/medias-tiburon/?attribute_pa_selecciona-el-color=gris",
       "sku": "11113603000",
@@ -238,7 +242,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 54,
+      "stock_quantity": 48,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -1026,7 +1030,7 @@
         {
           "id": 2250472,
           "key": "_last_change_time",
-          "value": "1786579518"
+          "value": "1795408785"
         },
         {
           "id": 2310906,
@@ -1068,8 +1072,8 @@
       "type": "variation",
       "date_created": "2025-10-31T02:27:01",
       "date_created_gmt": "2025-10-31T02:27:01",
-      "date_modified": "2026-08-18T17:46:54",
-      "date_modified_gmt": "2026-08-18T17:46:54",
+      "date_modified": "2026-11-23T04:39:45",
+      "date_modified_gmt": "2026-11-23T04:39:45",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/medias-tiburon/?attribute_pa_selecciona-el-color=azul",
       "sku": "11113601000",
@@ -1092,7 +1096,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 25,
+      "stock_quantity": 18,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -1880,7 +1884,7 @@
         {
           "id": 2219139,
           "key": "_last_change_time",
-          "value": "1787075214"
+          "value": "1795408785"
         },
         {
           "id": 2310905,

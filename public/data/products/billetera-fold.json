@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>165,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;165,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>99,000</span></ins><span class=\"screen-reader-text\">Current price is: &#036;99,000.</span>",
+  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>165,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;165,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>99,000</span></ins><span class=\"screen-reader-text\">Current price is: &#036;99,000.</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -153,6 +153,8 @@
         "name": "Billetera-Fold-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 30,
       "stock_status": "instock",
       "price": "99000",
       "regular_price": "165000",
@@ -177,6 +179,8 @@
         "name": "Billetera-Fold-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 30,
       "stock_status": "instock",
       "price": "99000",
       "regular_price": "165000",
@@ -201,6 +205,8 @@
         "name": "Billetera-Fold-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 30,
       "stock_status": "instock",
       "price": "99000",
       "regular_price": "165000",
@@ -225,6 +231,8 @@
         "name": "Billetera-Fold-Vinotinto-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 27,
       "stock_status": "instock",
       "price": "99000",
       "regular_price": "165000",
@@ -290,8 +298,8 @@
       "type": "variation",
       "date_created": "2024-06-09T19:51:15",
       "date_created_gmt": "2024-06-09T19:51:15",
-      "date_modified": "2026-08-13T00:03:03",
-      "date_modified_gmt": "2026-08-13T00:03:03",
+      "date_modified": "2026-11-23T04:32:37",
+      "date_modified_gmt": "2026-11-23T04:32:37",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/billetera-fold/?attribute_pa_selecciona-el-color=vinotinto",
       "sku": "3033119000",
@@ -314,7 +322,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 30,
+      "stock_quantity": 27,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -907,7 +915,7 @@
         {
           "id": 2250271,
           "key": "_last_change_time",
-          "value": "1786579383"
+          "value": "1793128565"
         },
         {
           "id": 2312312,
@@ -974,8 +982,8 @@
       "type": "variation",
       "date_created": "2024-06-09T19:51:15",
       "date_created_gmt": "2024-06-09T19:51:15",
-      "date_modified": "2026-05-11T20:45:44",
-      "date_modified_gmt": "2026-05-11T20:45:44",
+      "date_modified": "2026-11-23T04:32:37",
+      "date_modified_gmt": "2026-11-23T04:32:37",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/billetera-fold/?attribute_pa_selecciona-el-color=negro",
       "sku": "3033102000",
@@ -1658,8 +1666,8 @@
       "type": "variation",
       "date_created": "2024-06-09T19:51:15",
       "date_created_gmt": "2024-06-09T19:51:15",
-      "date_modified": "2026-05-11T20:45:44",
-      "date_modified_gmt": "2026-05-11T20:45:44",
+      "date_modified": "2026-11-23T04:32:37",
+      "date_modified_gmt": "2026-11-23T04:32:37",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/billetera-fold/?attribute_pa_selecciona-el-color=miel",
       "sku": "3033126000",
@@ -1682,7 +1690,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 31,
+      "stock_quantity": 30,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -2275,7 +2283,7 @@
         {
           "id": 2259043,
           "key": "_last_change_time",
-          "value": "1778532326"
+          "value": "1791236934"
         },
         {
           "id": 2312310,
@@ -2342,8 +2350,8 @@
       "type": "variation",
       "date_created": "2024-06-09T19:51:15",
       "date_created_gmt": "2024-06-09T19:51:15",
-      "date_modified": "2026-07-22T15:10:04",
-      "date_modified_gmt": "2026-07-22T15:10:04",
+      "date_modified": "2026-11-23T04:32:37",
+      "date_modified_gmt": "2026-11-23T04:32:37",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/billetera-fold/?attribute_pa_selecciona-el-color=cafe",
       "sku": "3033104000",

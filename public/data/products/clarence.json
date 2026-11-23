@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>825,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>825,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -218,6 +218,8 @@
         "name": "Clarence-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -247,6 +249,8 @@
         "name": "Clarence-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -276,6 +280,8 @@
         "name": "Clarence-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -305,6 +311,8 @@
         "name": "Clarence-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -334,6 +342,8 @@
         "name": "Clarence-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -363,6 +373,8 @@
         "name": "Clarence-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 10,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -392,6 +404,8 @@
         "name": "Clarence-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -421,6 +435,8 @@
         "name": "Clarence-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -450,6 +466,8 @@
         "name": "Clarence-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -479,6 +497,8 @@
         "name": "Clarence-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -508,6 +528,8 @@
         "name": "Clarence-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -537,6 +559,8 @@
         "name": "Clarence-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -566,6 +590,8 @@
         "name": "Clarence-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 10,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -595,6 +621,8 @@
         "name": "Clarence-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -624,6 +652,8 @@
         "name": "Clarence-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -653,6 +683,8 @@
         "name": "Clarence-Negro-Winstonandharry-120",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -682,6 +714,8 @@
         "name": "Clarence-Negro-Winstonandharry-120",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -711,35 +745,8 @@
         "name": "Clarence-Negro-Winstonandharry-120",
         "alt": ""
       },
-      "stock_status": "instock",
-      "price": "825000",
-      "regular_price": "825000",
-      "sale_price": ""
-    },
-    {
-      "id": 58284,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "negro",
-          "option": "negro"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "40",
-          "option": "40"
-        }
-      ],
-      "image": {
-        "id": 57220,
-        "date_created": "2024-08-01T03:26:14",
-        "date_created_gmt": "2024-08-01T03:26:14",
-        "date_modified": "2025-02-19T17:40:22",
-        "date_modified_gmt": "2025-02-19T17:40:22",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2024/08/Clarence-Negro-Winstonandharry-120.jpg",
-        "name": "Clarence-Negro-Winstonandharry-120",
-        "alt": ""
-      },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -769,6 +776,8 @@
         "name": "Clarence-Negro-Winstonandharry-120",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 7,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -798,6 +807,8 @@
         "name": "Clarence-Negro-Winstonandharry-120",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -827,6 +838,8 @@
         "name": "Clarence-Negro-Winstonandharry-120",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -856,6 +869,8 @@
         "name": "Clarence-Negro-Winstonandharry-120",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -14336,8 +14351,8 @@
       "type": "variation",
       "date_created": "2025-04-21T17:19:22",
       "date_created_gmt": "2025-04-21T17:19:22",
-      "date_modified": "2026-07-27T20:45:53",
-      "date_modified_gmt": "2026-07-27T20:45:53",
+      "date_modified": "2026-11-23T04:38:27",
+      "date_modified_gmt": "2026-11-23T04:38:27",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/clarence/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=39",
       "sku": "7008004039",
@@ -14360,7 +14375,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 4,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -15059,7 +15074,7 @@
         {
           "id": 2250347,
           "key": "_last_change_time",
-          "value": "1780422028"
+          "value": "1795408707"
         },
         {
           "id": 2311650,
@@ -15177,11 +15192,6 @@
           "value": ""
         },
         {
-          "id": 2403725,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2403726,
           "key": "_wc_facebook_product_video_source",
           "value": ""
@@ -15189,11 +15199,6 @@
         {
           "id": 2403727,
           "key": "fb_product_images",
-          "value": ""
-        },
-        {
-          "id": 2403728,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],
@@ -19706,8 +19711,8 @@
       "type": "variation",
       "date_created": "2024-11-06T15:21:40",
       "date_created_gmt": "2024-11-06T15:21:40",
-      "date_modified": "2026-08-13T00:04:04",
-      "date_modified_gmt": "2026-08-13T00:04:04",
+      "date_modified": "2026-09-08T17:14:39",
+      "date_modified_gmt": "2026-09-08T17:14:39",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/clarence/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=42",
       "sku": "7008002042",
@@ -19730,7 +19735,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 7,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -20354,7 +20359,7 @@
         {
           "id": 2259501,
           "key": "_last_change_time",
-          "value": "1786579444"
+          "value": "1788887679"
         },
         {
           "id": 2312183,
@@ -20591,8 +20596,8 @@
       "type": "variation",
       "date_created": "2024-11-06T15:21:40",
       "date_created_gmt": "2024-11-06T15:21:40",
-      "date_modified": "2026-07-27T20:45:53",
-      "date_modified_gmt": "2026-07-27T20:45:53",
+      "date_modified": "2026-11-23T04:37:59",
+      "date_modified_gmt": "2026-11-23T04:37:59",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/clarence/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=41",
       "sku": "7008002041",
@@ -20615,7 +20620,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 9,
+      "stock_quantity": 7,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -21239,7 +21244,7 @@
         {
           "id": 2259500,
           "key": "_last_change_time",
-          "value": "1778177835"
+          "value": "1795408679"
         },
         {
           "id": 2312182,
@@ -21432,11 +21437,6 @@
           "value": ""
         },
         {
-          "id": 2404026,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2404027,
           "key": "_wc_facebook_product_video_source",
           "value": ""
@@ -21444,11 +21444,6 @@
         {
           "id": 2404028,
           "key": "fb_product_images",
-          "value": ""
-        },
-        {
-          "id": 2404029,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],
@@ -21486,8 +21481,8 @@
       "type": "variation",
       "date_created": "2024-11-06T15:21:40",
       "date_created_gmt": "2024-11-06T15:21:40",
-      "date_modified": "2026-08-13T00:04:04",
-      "date_modified_gmt": "2026-08-13T00:04:04",
+      "date_modified": "2026-10-14T06:14:18",
+      "date_modified_gmt": "2026-10-14T06:14:18",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/clarence/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=40",
       "sku": "7008002040",
@@ -21510,8 +21505,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -22134,7 +22129,7 @@
         {
           "id": 2233347,
           "key": "_last_change_time",
-          "value": "1786579444"
+          "value": "1791958458"
         },
         {
           "id": 2312181,
@@ -22376,8 +22371,8 @@
       "type": "variation",
       "date_created": "2024-11-06T15:21:40",
       "date_created_gmt": "2024-11-06T15:21:40",
-      "date_modified": "2026-07-27T20:45:53",
-      "date_modified_gmt": "2026-07-27T20:45:53",
+      "date_modified": "2026-09-08T17:14:39",
+      "date_modified_gmt": "2026-09-08T17:14:39",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/clarence/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=39",
       "sku": "7008002039",
@@ -22400,7 +22395,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 4,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -23024,7 +23019,7 @@
         {
           "id": 2236214,
           "key": "_last_change_time",
-          "value": "1778177835"
+          "value": "1788887679"
         },
         {
           "id": 2312180,
@@ -23217,11 +23212,6 @@
           "value": ""
         },
         {
-          "id": 2403944,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2403945,
           "key": "_wc_facebook_product_video_source",
           "value": ""
@@ -23229,11 +23219,6 @@
         {
           "id": 2403946,
           "key": "fb_product_images",
-          "value": ""
-        },
-        {
-          "id": 2403947,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],
@@ -24166,8 +24151,8 @@
       "type": "variation",
       "date_created": "2024-11-06T15:21:40",
       "date_created_gmt": "2024-11-06T15:21:40",
-      "date_modified": "2026-07-27T20:45:58",
-      "date_modified_gmt": "2026-07-27T20:45:58",
+      "date_modified": "2026-10-05T21:50:15",
+      "date_modified_gmt": "2026-10-05T21:50:15",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/clarence/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=37",
       "sku": "7008002037",
@@ -24814,7 +24799,7 @@
         {
           "id": 2250303,
           "key": "_last_change_time",
-          "value": "1778177835"
+          "value": "1791237015"
         },
         {
           "id": 2312178,
@@ -25019,11 +25004,6 @@
         {
           "id": 2404153,
           "key": "fb_product_images",
-          "value": ""
-        },
-        {
-          "id": 2404154,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],

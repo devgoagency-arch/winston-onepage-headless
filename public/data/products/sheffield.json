@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>825,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>825,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -268,6 +268,8 @@
         "name": "Sheffield-Miel-cuero-zapato-mocasin-winstonandharry-7",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 10,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -297,6 +299,8 @@
         "name": "Sheffield-Miel-cuero-zapato-mocasin-winstonandharry-7",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -326,6 +330,8 @@
         "name": "Sheffield-Miel-cuero-zapato-mocasin-winstonandharry-7",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -355,6 +361,8 @@
         "name": "Sheffield-Miel-cuero-zapato-mocasin-winstonandharry-7",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -384,6 +392,39 @@
         "name": "Sheffield-Miel-cuero-zapato-mocasin-winstonandharry-7",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
+      "stock_status": "instock",
+      "price": "825000",
+      "regular_price": "825000",
+      "sale_price": ""
+    },
+    {
+      "id": 25297,
+      "attributes": [
+        {
+          "name": "Selecciona el Color",
+          "value": "miel",
+          "option": "miel"
+        },
+        {
+          "name": "Selecciona una Talla",
+          "value": "42",
+          "option": "42"
+        }
+      ],
+      "image": {
+        "id": 57253,
+        "date_created": "2024-08-05T15:48:42",
+        "date_created_gmt": "2024-08-05T15:48:42",
+        "date_modified": "2024-09-24T15:53:10",
+        "date_modified_gmt": "2024-09-24T15:53:10",
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2024/08/Sheffield-Miel-cuero-zapato-mocasin-winstonandharry-7.jpg",
+        "name": "Sheffield-Miel-cuero-zapato-mocasin-winstonandharry-7",
+        "alt": ""
+      },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -413,6 +454,8 @@
         "name": "Sheffield-Miel-cuero-zapato-mocasin-winstonandharry-7",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -442,6 +485,8 @@
         "name": "Sheffield-Miel-cuero-zapato-mocasin-winstonandharry-7",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -471,6 +516,8 @@
         "name": "Sheffield-Miel-cuero-zapato-mocasin-winstonandharry-7",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -500,6 +547,8 @@
         "name": "Sheffield-negro-cuero-zapato-mocasin-winstonandharry-7",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -529,6 +578,8 @@
         "name": "Sheffield-negro-cuero-zapato-mocasin-winstonandharry-7",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -558,6 +609,8 @@
         "name": "Sheffield-negro-cuero-zapato-mocasin-winstonandharry-7",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 7,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -587,6 +640,8 @@
         "name": "Sheffield-negro-cuero-zapato-mocasin-winstonandharry-7",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -616,6 +671,8 @@
         "name": "Sheffield-negro-cuero-zapato-mocasin-winstonandharry-7",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 7,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -645,6 +702,8 @@
         "name": "Sheffield-negro-cuero-zapato-mocasin-winstonandharry-7",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -674,6 +733,8 @@
         "name": "Sheffield-negro-cuero-zapato-mocasin-winstonandharry-7",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -703,6 +764,8 @@
         "name": "Sheffield-negro-cuero-zapato-mocasin-winstonandharry-7",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -732,6 +795,8 @@
         "name": "Sheffield-negro-cuero-zapato-mocasin-winstonandharry-7",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -1696,8 +1761,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:45:44",
       "date_created_gmt": "2022-08-25T22:45:44",
-      "date_modified": "2026-07-27T20:49:50",
-      "date_modified_gmt": "2026-07-27T20:49:50",
+      "date_modified": "2026-10-05T21:50:56",
+      "date_modified_gmt": "2026-10-05T21:50:56",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/sheffield/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=44",
       "sku": "7021602044",
@@ -1720,7 +1785,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 5,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -2287,7 +2352,7 @@
         {
           "id": 2259755,
           "key": "_last_change_time",
-          "value": "1778190041"
+          "value": "1791237056"
         },
         {
           "id": 2314247,
@@ -2535,11 +2600,6 @@
           "value": ""
         },
         {
-          "id": 2435973,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2435974,
           "key": "_wc_facebook_product_video_source",
           "value": ""
@@ -2547,11 +2607,6 @@
         {
           "id": 2435975,
           "key": "fb_product_images",
-          "value": ""
-        },
-        {
-          "id": 2435976,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],
@@ -2589,8 +2644,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:45:44",
       "date_created_gmt": "2022-08-25T22:45:44",
-      "date_modified": "2026-08-13T00:04:20",
-      "date_modified_gmt": "2026-08-13T00:04:20",
+      "date_modified": "2026-11-23T04:36:29",
+      "date_modified_gmt": "2026-11-23T04:36:29",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/sheffield/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=43",
       "sku": "7021602043",
@@ -2613,7 +2668,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 6,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -3180,7 +3235,7 @@
         {
           "id": 2259754,
           "key": "_last_change_time",
-          "value": "1786579460"
+          "value": "1795408589"
         },
         {
           "id": 2314246,
@@ -3472,8 +3527,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:45:44",
       "date_created_gmt": "2022-08-25T22:45:44",
-      "date_modified": "2026-07-27T20:49:50",
-      "date_modified_gmt": "2026-07-27T20:49:50",
+      "date_modified": "2026-11-04T17:53:00",
+      "date_modified_gmt": "2026-11-04T17:53:00",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/sheffield/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=42",
       "sku": "7021602042",
@@ -3496,7 +3551,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -4063,7 +4118,7 @@
         {
           "id": 2254709,
           "key": "_last_change_time",
-          "value": "1780421769"
+          "value": "1793814780"
         },
         {
           "id": 2314245,
@@ -4311,11 +4366,6 @@
           "value": ""
         },
         {
-          "id": 2436077,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2436078,
           "key": "_wc_facebook_product_video_source",
           "value": ""
@@ -4323,11 +4373,6 @@
         {
           "id": 2436079,
           "key": "fb_product_images",
-          "value": ""
-        },
-        {
-          "id": 2436080,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],
@@ -4365,8 +4410,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:45:44",
       "date_created_gmt": "2022-08-25T22:45:44",
-      "date_modified": "2026-07-27T20:49:50",
-      "date_modified_gmt": "2026-07-27T20:49:50",
+      "date_modified": "2026-11-04T17:53:00",
+      "date_modified_gmt": "2026-11-04T17:53:00",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/sheffield/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=41",
       "sku": "7021602041",
@@ -4951,7 +4996,7 @@
         {
           "id": 2254708,
           "key": "_last_change_time",
-          "value": "1780421769"
+          "value": "1793814780"
         },
         {
           "id": 2314244,
@@ -5204,11 +5249,6 @@
           "value": ""
         },
         {
-          "id": 2436130,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2436131,
           "key": "_wc_facebook_product_video_source",
           "value": ""
@@ -5216,11 +5256,6 @@
         {
           "id": 2436132,
           "key": "fb_product_images",
-          "value": ""
-        },
-        {
-          "id": 2436133,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],
@@ -5258,8 +5293,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:45:44",
       "date_created_gmt": "2022-08-25T22:45:44",
-      "date_modified": "2026-07-27T20:49:50",
-      "date_modified_gmt": "2026-07-27T20:49:50",
+      "date_modified": "2026-11-23T04:36:29",
+      "date_modified_gmt": "2026-11-23T04:36:29",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/sheffield/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=40",
       "sku": "7021602040",
@@ -5282,7 +5317,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 5,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -5849,7 +5884,7 @@
         {
           "id": 2233283,
           "key": "_last_change_time",
-          "value": "1778190041"
+          "value": "1795408589"
         },
         {
           "id": 2314243,
@@ -6097,11 +6132,6 @@
           "value": ""
         },
         {
-          "id": 2436182,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2436183,
           "key": "_wc_facebook_product_video_source",
           "value": ""
@@ -6109,11 +6139,6 @@
         {
           "id": 2436184,
           "key": "fb_product_images",
-          "value": ""
-        },
-        {
-          "id": 2436185,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],
@@ -6151,8 +6176,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:45:44",
       "date_created_gmt": "2022-08-25T22:45:44",
-      "date_modified": "2026-07-27T20:49:50",
-      "date_modified_gmt": "2026-07-27T20:49:50",
+      "date_modified": "2026-11-04T17:52:59",
+      "date_modified_gmt": "2026-11-04T17:52:59",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/sheffield/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=39",
       "sku": "7021602039",
@@ -6175,7 +6200,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 3,
+      "stock_quantity": 7,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -6727,7 +6752,7 @@
         {
           "id": 2254707,
           "key": "_last_change_time",
-          "value": "1780421769"
+          "value": "1793814779"
         },
         {
           "id": 2314242,
@@ -6990,11 +7015,6 @@
           "value": ""
         },
         {
-          "id": 2436237,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2436238,
           "key": "_wc_facebook_product_video_source",
           "value": ""
@@ -7002,11 +7022,6 @@
         {
           "id": 2436239,
           "key": "fb_product_images",
-          "value": ""
-        },
-        {
-          "id": 2436240,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],
@@ -7044,8 +7059,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:45:44",
       "date_created_gmt": "2022-08-25T22:45:44",
-      "date_modified": "2026-07-27T20:49:51",
-      "date_modified_gmt": "2026-07-27T20:49:51",
+      "date_modified": "2026-11-04T17:52:59",
+      "date_modified_gmt": "2026-11-04T17:52:59",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/sheffield/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=38",
       "sku": "7021602038",
@@ -7635,7 +7650,7 @@
         {
           "id": 2254706,
           "key": "_last_change_time",
-          "value": "1783099293"
+          "value": "1793814779"
         },
         {
           "id": 2314241,
@@ -7883,11 +7898,6 @@
           "value": ""
         },
         {
-          "id": 2436289,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2436290,
           "key": "_wc_facebook_product_video_source",
           "value": ""
@@ -7895,11 +7905,6 @@
         {
           "id": 2436291,
           "key": "fb_product_images",
-          "value": ""
-        },
-        {
-          "id": 2436292,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],
@@ -7937,8 +7942,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:45:44",
       "date_created_gmt": "2022-08-25T22:45:44",
-      "date_modified": "2026-07-27T20:49:51",
-      "date_modified_gmt": "2026-07-27T20:49:51",
+      "date_modified": "2026-11-23T04:36:29",
+      "date_modified_gmt": "2026-11-23T04:36:29",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/sheffield/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=37",
       "sku": "7021602037",
@@ -7961,7 +7966,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -8528,7 +8533,7 @@
         {
           "id": 2250118,
           "key": "_last_change_time",
-          "value": "1780421750"
+          "value": "1795408589"
         },
         {
           "id": 2314240,
@@ -8776,11 +8781,6 @@
           "value": ""
         },
         {
-          "id": 2436341,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2436342,
           "key": "_wc_facebook_product_video_source",
           "value": ""
@@ -8788,11 +8788,6 @@
         {
           "id": 2436343,
           "key": "fb_product_images",
-          "value": ""
-        },
-        {
-          "id": 2436344,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],
@@ -10616,8 +10611,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:45:44",
       "date_created_gmt": "2022-08-25T22:45:44",
-      "date_modified": "2026-07-27T20:49:51",
-      "date_modified_gmt": "2026-07-27T20:49:51",
+      "date_modified": "2026-11-04T17:52:59",
+      "date_modified_gmt": "2026-11-04T17:52:59",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/sheffield/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=43",
       "sku": "7021626043",
@@ -10640,7 +10635,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 2,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -11207,7 +11202,7 @@
         {
           "id": 2257172,
           "key": "_last_change_time",
-          "value": "1780421750"
+          "value": "1793814779"
         },
         {
           "id": 2314253,
@@ -11455,11 +11450,6 @@
           "value": ""
         },
         {
-          "id": 2436497,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2436498,
           "key": "_wc_facebook_product_video_source",
           "value": ""
@@ -11467,11 +11457,6 @@
         {
           "id": 2436499,
           "key": "fb_product_images",
-          "value": ""
-        },
-        {
-          "id": 2436500,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],
@@ -11509,8 +11494,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:45:44",
       "date_created_gmt": "2022-08-25T22:45:44",
-      "date_modified": "2026-07-27T20:49:51",
-      "date_modified_gmt": "2026-07-27T20:49:51",
+      "date_modified": "2026-11-04T17:52:59",
+      "date_modified_gmt": "2026-11-04T17:52:59",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/sheffield/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=42",
       "sku": "7021626042",
@@ -11533,8 +11518,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 0,
-      "stock_status": "outofstock",
+      "stock_quantity": 5,
+      "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -12100,7 +12085,7 @@
         {
           "id": 2218908,
           "key": "_last_change_time",
-          "value": "1780421750"
+          "value": "1793814779"
         },
         {
           "id": 2314252,
@@ -12348,11 +12333,6 @@
           "value": ""
         },
         {
-          "id": 2436549,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2436550,
           "key": "_wc_facebook_product_video_source",
           "value": ""
@@ -12360,11 +12340,6 @@
         {
           "id": 2436551,
           "key": "fb_product_images",
-          "value": ""
-        },
-        {
-          "id": 2436552,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],
@@ -12402,8 +12377,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:45:43",
       "date_created_gmt": "2022-08-25T22:45:43",
-      "date_modified": "2026-07-27T20:49:51",
-      "date_modified_gmt": "2026-07-27T20:49:51",
+      "date_modified": "2026-11-23T04:36:29",
+      "date_modified_gmt": "2026-11-23T04:36:29",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/sheffield/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=41",
       "sku": "7021626041",
@@ -12426,7 +12401,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 2,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -12993,7 +12968,7 @@
         {
           "id": 2233282,
           "key": "_last_change_time",
-          "value": "1781631284"
+          "value": "1795408589"
         },
         {
           "id": 2314258,
@@ -13241,11 +13216,6 @@
           "value": ""
         },
         {
-          "id": 2436601,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2436602,
           "key": "_wc_facebook_product_video_source",
           "value": ""
@@ -13253,11 +13223,6 @@
         {
           "id": 2436603,
           "key": "fb_product_images",
-          "value": ""
-        },
-        {
-          "id": 2436604,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],
@@ -13295,8 +13260,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:45:43",
       "date_created_gmt": "2022-08-25T22:45:43",
-      "date_modified": "2026-08-13T00:04:21",
-      "date_modified_gmt": "2026-08-13T00:04:21",
+      "date_modified": "2026-11-23T04:36:29",
+      "date_modified_gmt": "2026-11-23T04:36:29",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/sheffield/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=40",
       "sku": "7021626040",
@@ -13871,7 +13836,7 @@
         {
           "id": 2233281,
           "key": "_last_change_time",
-          "value": "1786579461"
+          "value": "1795408589"
         },
         {
           "id": 2314257,
@@ -14178,8 +14143,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:45:43",
       "date_created_gmt": "2022-08-25T22:45:43",
-      "date_modified": "2026-08-13T00:04:20",
-      "date_modified_gmt": "2026-08-13T00:04:20",
+      "date_modified": "2026-11-23T04:36:29",
+      "date_modified_gmt": "2026-11-23T04:36:29",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/sheffield/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=39",
       "sku": "7021626039",
@@ -14202,7 +14167,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 3,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -14769,7 +14734,7 @@
         {
           "id": 2233280,
           "key": "_last_change_time",
-          "value": "1786579460"
+          "value": "1795408589"
         },
         {
           "id": 2314256,
@@ -15061,8 +15026,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:45:43",
       "date_created_gmt": "2022-08-25T22:45:43",
-      "date_modified": "2026-07-27T20:49:51",
-      "date_modified_gmt": "2026-07-27T20:49:51",
+      "date_modified": "2026-11-04T17:52:59",
+      "date_modified_gmt": "2026-11-04T17:52:59",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/sheffield/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=38",
       "sku": "7021626038",
@@ -15085,7 +15050,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 4,
+      "stock_quantity": 10,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -15652,7 +15617,7 @@
         {
           "id": 2233279,
           "key": "_last_change_time",
-          "value": "1778190041"
+          "value": "1793814779"
         },
         {
           "id": 2314255,
@@ -15900,11 +15865,6 @@
           "value": ""
         },
         {
-          "id": 2436760,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2436761,
           "key": "_wc_facebook_product_video_source",
           "value": ""
@@ -15912,11 +15872,6 @@
         {
           "id": 2436762,
           "key": "fb_product_images",
-          "value": ""
-        },
-        {
-          "id": 2436763,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],
@@ -15954,8 +15909,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:45:43",
       "date_created_gmt": "2022-08-25T22:45:43",
-      "date_modified": "2026-07-27T20:49:51",
-      "date_modified_gmt": "2026-07-27T20:49:51",
+      "date_modified": "2026-11-04T17:52:59",
+      "date_modified_gmt": "2026-11-04T17:52:59",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/sheffield/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=37",
       "sku": "7021626037",
@@ -15978,7 +15933,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 3,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -16540,7 +16495,7 @@
         {
           "id": 2233278,
           "key": "_last_change_time",
-          "value": "1778190041"
+          "value": "1793814779"
         },
         {
           "id": 2314254,
@@ -16793,11 +16748,6 @@
           "value": ""
         },
         {
-          "id": 2436813,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2436814,
           "key": "_wc_facebook_product_video_source",
           "value": ""
@@ -16805,11 +16755,6 @@
         {
           "id": 2436815,
           "key": "fb_product_images",
-          "value": ""
-        },
-        {
-          "id": 2436816,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],
@@ -16844,6 +16789,10 @@
     }
   ],
   "wpc_resolved_media": {
+    "16786": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/02/57-suela-capellada.jpg",
+    "16787": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/02/57-lateral.jpg",
+    "16789": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/02/58-suela-capellada.jpg",
+    "16790": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/02/58-lateral.jpg",
     "57247": "https://tienda.winstonandharrystore.com/wp-content/uploads/2024/08/Sheffield-Miel-cuero-zapato-mocasin-winstonandharry-.jpg",
     "57248": "https://tienda.winstonandharrystore.com/wp-content/uploads/2024/08/Sheffield-Miel-cuero-zapato-mocasin-winstonandharry-2.jpg",
     "57249": "https://tienda.winstonandharrystore.com/wp-content/uploads/2024/08/Sheffield-Miel-cuero-zapato-mocasin-winstonandharry-3.jpg",
@@ -16866,6 +16815,16 @@
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2024/08/Sheffield-Miel-cuero-zapato-mocasin-winstonandharry-7.jpg",
         "alt": "Sheffield-Miel-cuero-zapato-mocasin-winstonandharry-7",
         "name": "Sheffield-Miel-cuero-zapato-mocasin-winstonandharry-7"
+      },
+      {
+        "id": 16790,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/02/58-lateral.jpg",
+        "alt": "Sheffield"
+      },
+      {
+        "id": 16789,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/02/58-suela-capellada.jpg",
+        "alt": "Sheffield"
       },
       {
         "id": 57247,
@@ -16904,6 +16863,16 @@
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2024/08/Sheffield-negro-cuero-zapato-mocasin-winstonandharry-7.jpg",
         "alt": "Sheffield-negro-cuero-zapato-mocasin-winstonandharry-7",
         "name": "Sheffield-negro-cuero-zapato-mocasin-winstonandharry-7"
+      },
+      {
+        "id": 16787,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/02/57-lateral.jpg",
+        "alt": "Sheffield"
+      },
+      {
+        "id": 16786,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/02/57-suela-capellada.jpg",
+        "alt": "Sheffield"
       },
       {
         "id": 57254,

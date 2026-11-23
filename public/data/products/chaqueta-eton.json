@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>1,600,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>1,600,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -185,6 +185,8 @@
         "name": "Winston-and-Harry-chaqueta-eton-azul-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "1600000",
       "regular_price": "1600000",
@@ -214,6 +216,8 @@
         "name": "Winston-and-Harry-chaqueta-eton-azul-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "1600000",
       "regular_price": "1600000",
@@ -243,6 +247,8 @@
         "name": "Winston-and-Harry-chaqueta-eton-azul-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "1600000",
       "regular_price": "1600000",
@@ -272,6 +278,8 @@
         "name": "Winston-and-Harry-chaqueta-eton-azul-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "1600000",
       "regular_price": "1600000",
@@ -301,6 +309,8 @@
         "name": "Winston-and-Harry-chaqueta-eton-azul-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "1600000",
       "regular_price": "1600000",
@@ -330,6 +340,8 @@
         "name": "Winston-and-Harry-chaqueta-eton-verde-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 8,
       "stock_status": "instock",
       "price": "1600000",
       "regular_price": "1600000",
@@ -359,6 +371,8 @@
         "name": "Winston-and-Harry-chaqueta-eton-verde-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 7,
       "stock_status": "instock",
       "price": "1600000",
       "regular_price": "1600000",
@@ -388,6 +402,8 @@
         "name": "Winston-and-Harry-chaqueta-eton-verde-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "1600000",
       "regular_price": "1600000",
@@ -417,6 +433,8 @@
         "name": "Winston-and-Harry-chaqueta-eton-verde-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "1600000",
       "regular_price": "1600000",
@@ -446,6 +464,8 @@
         "name": "Winston-and-Harry-chaqueta-eton-verde-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "1600000",
       "regular_price": "1600000",
@@ -475,6 +495,8 @@
         "name": "Winston-and-Harry-chaqueta-eton-tabaco-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "1600000",
       "regular_price": "1600000",
@@ -504,6 +526,8 @@
         "name": "Winston-and-Harry-chaqueta-eton-tabaco-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "price": "1600000",
       "regular_price": "1600000",
@@ -533,6 +557,8 @@
         "name": "Winston-and-Harry-chaqueta-eton-tabaco-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "1600000",
       "regular_price": "1600000",
@@ -562,6 +588,8 @@
         "name": "Winston-and-Harry-chaqueta-eton-tabaco-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "1600000",
       "regular_price": "1600000",
@@ -591,6 +619,8 @@
         "name": "Winston-and-Harry-chaqueta-eton-tabaco-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "1600000",
       "regular_price": "1600000",
@@ -8208,8 +8238,8 @@
       "type": "variation",
       "date_created": "2026-05-08T01:14:22",
       "date_created_gmt": "2026-05-08T01:14:22",
-      "date_modified": "2026-08-13T00:05:44",
-      "date_modified_gmt": "2026-08-13T00:05:44",
+      "date_modified": "2026-09-16T16:54:28",
+      "date_modified_gmt": "2026-09-16T16:54:28",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/chaqueta-eton/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=s",
       "sku": "19200401032",
@@ -8232,7 +8262,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 2,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -8279,7 +8309,7 @@
         {
           "id": 2336848,
           "key": "_last_change_time",
-          "value": "1786579544"
+          "value": "1789577668"
         },
         {
           "id": 2336849,
@@ -10364,8 +10394,8 @@
       "type": "variation",
       "date_created": "2026-05-08T01:14:22",
       "date_created_gmt": "2026-05-08T01:14:22",
-      "date_modified": "2026-06-02T17:42:31",
-      "date_modified_gmt": "2026-06-02T17:42:31",
+      "date_modified": "2026-10-27T19:17:34",
+      "date_modified_gmt": "2026-10-27T19:17:34",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/chaqueta-eton/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=l",
       "sku": "19200401036",
@@ -10388,7 +10418,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 3,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -10435,7 +10465,7 @@
         {
           "id": 2336820,
           "key": "_last_change_time",
-          "value": "1780422151"
+          "value": "1793128654"
         },
         {
           "id": 2336821,
@@ -13598,8 +13628,8 @@
       "type": "variation",
       "date_created": "2026-05-08T01:11:42",
       "date_created_gmt": "2026-05-08T01:11:42",
-      "date_modified": "2026-06-02T17:42:31",
-      "date_modified_gmt": "2026-06-02T17:42:31",
+      "date_modified": "2026-10-27T19:17:34",
+      "date_modified_gmt": "2026-10-27T19:17:34",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/chaqueta-eton/?attribute_pa_selecciona-el-color=beige&attribute_pa_selecciona-una-talla=s",
       "sku": "19200406032",
@@ -13622,7 +13652,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 3,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -13669,7 +13699,7 @@
         {
           "id": 2336559,
           "key": "_last_change_time",
-          "value": "1780422151"
+          "value": "1793128654"
         },
         {
           "id": 2336560,
@@ -15754,8 +15784,8 @@
       "type": "variation",
       "date_created": "2026-05-08T01:11:42",
       "date_created_gmt": "2026-05-08T01:11:42",
-      "date_modified": "2026-07-03T17:23:17",
-      "date_modified_gmt": "2026-07-03T17:23:17",
+      "date_modified": "2026-10-27T19:17:34",
+      "date_modified_gmt": "2026-10-27T19:17:34",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/chaqueta-eton/?attribute_pa_selecciona-el-color=beige&attribute_pa_selecciona-una-talla=l",
       "sku": "19200406036",
@@ -15778,7 +15808,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 3,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -15825,7 +15855,7 @@
         {
           "id": 2336495,
           "key": "_last_change_time",
-          "value": "1783099397"
+          "value": "1793128654"
         },
         {
           "id": 2336496,
@@ -16833,6 +16863,8 @@
     "84766": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-chaqueta-eton-azul-bolsillo-1.jpg",
     "84767": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-chaqueta-eton-azul-bolsillo-2.jpg",
     "84768": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-chaqueta-eton-azul-cremallera-inferior.jpg",
+    "84769": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-chaqueta-eton-azul-cuello.jpg",
+    "84770": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-chaqueta-eton-azul-doblada.jpg",
     "84772": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-chaqueta-eton-azul-manga-bolsillo.jpg",
     "84773": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-chaqueta-eton-tabaco-posteior.jpg",
     "84774": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-chaqueta-eton-tabaco-bolsillo-1.jpg",
@@ -16843,7 +16875,9 @@
     "84783": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-chaqueta-eton-verde-bolsillo-interno-1.jpg",
     "84784": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-chaqueta-eton-verde-bolsillo-interno-2.jpg",
     "84785": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-chaqueta-eton-verde-bolsillo-manga.jpg",
-    "84786": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-chaqueta-eton-verde-cierre.jpg"
+    "84786": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-chaqueta-eton-verde-cierre.jpg",
+    "84787": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-chaqueta-eton-verde-cuello.jpg",
+    "84788": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-chaqueta-eton-verde-doblado.jpg"
   },
   "stock_status": "instock",
   "variation_images_map": {
@@ -16853,6 +16887,16 @@
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-chaqueta-eton-azul-frente.jpg",
         "alt": "Winston-and-Harry-chaqueta-eton-azul-frente",
         "name": "Winston-and-Harry-chaqueta-eton-azul-frente"
+      },
+      {
+        "id": 84770,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-chaqueta-eton-azul-doblada.jpg",
+        "alt": "Chaqueta Eton"
+      },
+      {
+        "id": 84769,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-chaqueta-eton-azul-cuello.jpg",
+        "alt": "Chaqueta Eton"
       },
       {
         "id": 84765,
@@ -16886,6 +16930,16 @@
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-chaqueta-eton-verde-frente.jpg",
         "alt": "Winston-and-Harry-chaqueta-eton-verde-frente",
         "name": "Winston-and-Harry-chaqueta-eton-verde-frente"
+      },
+      {
+        "id": 84788,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-chaqueta-eton-verde-doblado.jpg",
+        "alt": "Chaqueta Eton"
+      },
+      {
+        "id": 84787,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-chaqueta-eton-verde-cuello.jpg",
+        "alt": "Chaqueta Eton"
       },
       {
         "id": 84782,

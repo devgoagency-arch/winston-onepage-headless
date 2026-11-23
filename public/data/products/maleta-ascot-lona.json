@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>890,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>890,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -116,6 +116,8 @@
         "name": "winston and harry maleta ascot lona azul 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 7,
       "stock_status": "instock",
       "price": "890000",
       "regular_price": "890000",
@@ -140,6 +142,8 @@
         "name": "winston and harry maleta ascot lona negra 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 8,
       "stock_status": "instock",
       "price": "890000",
       "regular_price": "890000",
@@ -164,6 +168,8 @@
         "name": "winston and harry maleta ascot lona verde 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "890000",
       "regular_price": "890000",
@@ -229,8 +235,8 @@
       "type": "variation",
       "date_created": "2026-09-24T16:26:12",
       "date_created_gmt": "2026-09-24T16:26:12",
-      "date_modified": "2026-09-24T17:11:06",
-      "date_modified_gmt": "2026-09-24T17:11:06",
+      "date_modified": "2026-10-18T14:21:52",
+      "date_modified_gmt": "2026-10-18T14:21:52",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/maleta-ascot-lona/?attribute_pa_selecciona-el-color=verde",
       "sku": "15159005000",
@@ -253,7 +259,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 2,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -344,7 +350,7 @@
         {
           "id": 2596461,
           "key": "_last_change_time",
-          "value": ""
+          "value": "1791237105"
         },
         {
           "id": 2596463,
@@ -1077,16 +1083,6 @@
           "value": ""
         },
         {
-          "id": 2596609,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2596610,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2596611,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -1311,8 +1307,8 @@
       "type": "variation",
       "date_created": "2026-09-24T16:26:12",
       "date_created_gmt": "2026-09-24T16:26:12",
-      "date_modified": "2026-09-24T17:11:06",
-      "date_modified_gmt": "2026-09-24T17:11:06",
+      "date_modified": "2026-10-05T21:51:45",
+      "date_modified_gmt": "2026-10-05T21:51:45",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/maleta-ascot-lona/?attribute_pa_selecciona-el-color=negro",
       "sku": "15159002000",
@@ -1335,7 +1331,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 2,
+      "stock_quantity": 8,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -1426,7 +1422,7 @@
         {
           "id": 2596270,
           "key": "_last_change_time",
-          "value": ""
+          "value": "1791237105"
         },
         {
           "id": 2596272,
@@ -2159,16 +2155,6 @@
           "value": ""
         },
         {
-          "id": 2596418,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2596419,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2596420,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -2393,8 +2379,8 @@
       "type": "variation",
       "date_created": "2026-09-24T16:26:12",
       "date_created_gmt": "2026-09-24T16:26:12",
-      "date_modified": "2026-09-24T17:11:06",
-      "date_modified_gmt": "2026-09-24T17:11:06",
+      "date_modified": "2026-11-08T20:43:24",
+      "date_modified_gmt": "2026-11-08T20:43:24",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/maleta-ascot-lona/?attribute_pa_selecciona-el-color=azul",
       "sku": "15159001000",
@@ -2417,7 +2403,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 2,
+      "stock_quantity": 7,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -2508,7 +2494,7 @@
         {
           "id": 2596079,
           "key": "_last_change_time",
-          "value": ""
+          "value": "1791237104"
         },
         {
           "id": 2596081,
@@ -3241,16 +3227,6 @@
           "value": ""
         },
         {
-          "id": 2596227,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2596228,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2596229,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -3491,6 +3467,8 @@
     "87112": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-maleta-ascot-lona-negra-10.jpg",
     "87113": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-maleta-ascot-lona-negra-11.jpg",
     "87114": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-maleta-ascot-lona-negra-12.jpg",
+    "87116": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-maleta-ascot-lona-negra-02.jpg",
+    "87117": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-maleta-ascot-lona-negra-03.jpg",
     "87118": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-maleta-ascot-lona-negra-04.jpg",
     "87119": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-maleta-ascot-lona-negra-05.jpg"
   },
@@ -3542,6 +3520,16 @@
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-maleta-ascot-lona-negra-01.jpg",
         "alt": "winston and harry maleta ascot lona negra 01",
         "name": "winston and harry maleta ascot lona negra 01"
+      },
+      {
+        "id": 87116,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-maleta-ascot-lona-negra-02.jpg",
+        "alt": "Maleta Ascot Lona"
+      },
+      {
+        "id": 87117,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-maleta-ascot-lona-negra-03.jpg",
+        "alt": "Maleta Ascot Lona"
       },
       {
         "id": 87118,

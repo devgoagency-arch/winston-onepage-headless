@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>950,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>950,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -185,6 +185,8 @@
         "name": "Winston-and-harry-chaqueta-bristol-azul-frente-2",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "950000",
       "regular_price": "950000",
@@ -214,6 +216,8 @@
         "name": "Winston-and-harry-chaqueta-bristol-azul-frente-2",
         "alt": ""
       },
+      "manage_stock": "parent",
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "950000",
       "regular_price": "950000",
@@ -243,6 +247,8 @@
         "name": "Winston-and-harry-chaqueta-bristol-azul-frente-2",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "price": "950000",
       "regular_price": "950000",
@@ -272,6 +278,8 @@
         "name": "Winston-and-harry-chaqueta-bristol-azul-frente-2",
         "alt": ""
       },
+      "manage_stock": "parent",
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "950000",
       "regular_price": "950000",
@@ -301,6 +309,8 @@
         "name": "Winston-and-harry-chaqueta-bristol-azul-frente-2",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "price": "950000",
       "regular_price": "950000",
@@ -330,35 +340,8 @@
         "name": "Winston-and-harry-chaqueta-bristol-azul-frente-2",
         "alt": ""
       },
-      "stock_status": "instock",
-      "price": "950000",
-      "regular_price": "950000",
-      "sale_price": ""
-    },
-    {
-      "id": 87049,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "gris",
-          "option": "gris"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "38",
-          "option": "38"
-        }
-      ],
-      "image": {
-        "id": 86691,
-        "date_created": "2026-08-31T15:16:59",
-        "date_created_gmt": "2026-08-31T15:16:59",
-        "date_modified": "2026-09-08T13:16:40",
-        "date_modified_gmt": "2026-09-08T13:16:40",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-harry-chaqueta-bristol-gris-frente.jpg",
-        "name": "Winston-and-harry-chaqueta-bristol-gris-frente",
-        "alt": ""
-      },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "950000",
       "regular_price": "950000",
@@ -388,6 +371,8 @@
         "name": "Winston-and-harry-chaqueta-bristol-gris-frente",
         "alt": ""
       },
+      "manage_stock": "parent",
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "950000",
       "regular_price": "950000",
@@ -417,6 +402,8 @@
         "name": "Winston-and-harry-chaqueta-bristol-gris-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "950000",
       "regular_price": "950000",
@@ -446,6 +433,8 @@
         "name": "Winston-and-harry-chaqueta-bristol-gris-frente",
         "alt": ""
       },
+      "manage_stock": "parent",
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "950000",
       "regular_price": "950000",
@@ -475,6 +464,8 @@
         "name": "Winston-and-harry-chaqueta-bristol-gris-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "950000",
       "regular_price": "950000",
@@ -504,6 +495,8 @@
         "name": "Winston-and-harry-chaqueta-bristol-gris-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "950000",
       "regular_price": "950000",
@@ -575,8 +568,8 @@
       "type": "variation",
       "date_created": "2026-09-14T15:55:54",
       "date_created_gmt": "2026-09-14T15:55:54",
-      "date_modified": "2026-09-15T17:39:39",
-      "date_modified_gmt": "2026-09-15T17:39:39",
+      "date_modified": "2026-09-16T16:52:32",
+      "date_modified_gmt": "2026-09-16T16:52:32",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/chaqueta-bristol/?attribute_pa_selecciona-el-color=gris&attribute_pa_selecciona-una-talla=44",
       "sku": "2025203044",
@@ -598,8 +591,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -646,7 +639,7 @@
         {
           "id": 2578023,
           "key": "_last_change_time",
-          "value": "1789401488"
+          "value": "1789577552"
         },
         {
           "id": 2578024,
@@ -1429,16 +1422,6 @@
           "value": ""
         },
         {
-          "id": 2581167,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2581168,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2581169,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -1663,8 +1646,8 @@
       "type": "variation",
       "date_created": "2026-09-14T15:55:54",
       "date_created_gmt": "2026-09-14T15:55:54",
-      "date_modified": "2026-09-15T17:39:39",
-      "date_modified_gmt": "2026-09-15T17:39:39",
+      "date_modified": "2026-09-16T16:52:32",
+      "date_modified_gmt": "2026-09-16T16:52:32",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/chaqueta-bristol/?attribute_pa_selecciona-el-color=gris&attribute_pa_selecciona-una-talla=42",
       "sku": "2025203042",
@@ -1686,8 +1669,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -1734,7 +1717,7 @@
         {
           "id": 2578009,
           "key": "_last_change_time",
-          "value": "1789401488"
+          "value": "1789577552"
         },
         {
           "id": 2578010,
@@ -2514,16 +2497,6 @@
         {
           "id": 2580977,
           "key": "_oembed_time_3efc152008105e0533b1d0735c932ef8",
-          "value": ""
-        },
-        {
-          "id": 2580978,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2580979,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         },
         {
@@ -3839,8 +3812,8 @@
       "type": "variation",
       "date_created": "2026-09-14T15:55:53",
       "date_created_gmt": "2026-09-14T15:55:53",
-      "date_modified": "2026-09-15T17:39:39",
-      "date_modified_gmt": "2026-09-15T17:39:39",
+      "date_modified": "2026-11-23T04:40:20",
+      "date_modified_gmt": "2026-11-23T04:40:20",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/chaqueta-bristol/?attribute_pa_selecciona-el-color=gris&attribute_pa_selecciona-una-talla=40",
       "sku": "2025203040",
@@ -3862,8 +3835,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -3910,7 +3883,7 @@
         {
           "id": 2577983,
           "key": "_last_change_time",
-          "value": "1789401487"
+          "value": "1795408820"
         },
         {
           "id": 2577984,
@@ -4690,16 +4663,6 @@
         {
           "id": 2580597,
           "key": "_oembed_time_3efc152008105e0533b1d0735c932ef8",
-          "value": ""
-        },
-        {
-          "id": 2580598,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2580599,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         },
         {
@@ -6015,8 +5978,8 @@
       "type": "variation",
       "date_created": "2026-09-14T15:55:53",
       "date_created_gmt": "2026-09-14T15:55:53",
-      "date_modified": "2026-09-15T17:39:38",
-      "date_modified_gmt": "2026-09-15T17:39:38",
+      "date_modified": "2026-11-23T04:40:20",
+      "date_modified_gmt": "2026-11-23T04:40:20",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/chaqueta-bristol/?attribute_pa_selecciona-el-color=gris&attribute_pa_selecciona-una-talla=38",
       "sku": "2025203038",
@@ -6038,9 +6001,9 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "manage_stock": true,
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -6086,7 +6049,7 @@
         {
           "id": 2577957,
           "key": "_last_change_time",
-          "value": "1789401487"
+          "value": "1795408820"
         },
         {
           "id": 2577958,
@@ -6869,16 +6832,6 @@
           "value": ""
         },
         {
-          "id": 2580218,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2580219,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2580220,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -7103,8 +7056,8 @@
       "type": "variation",
       "date_created": "2026-09-14T15:55:53",
       "date_created_gmt": "2026-09-14T15:55:53",
-      "date_modified": "2026-09-15T17:39:38",
-      "date_modified_gmt": "2026-09-15T17:39:38",
+      "date_modified": "2026-09-16T16:52:31",
+      "date_modified_gmt": "2026-09-16T16:52:31",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/chaqueta-bristol/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=44",
       "sku": "2025201044",
@@ -7126,8 +7079,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -7174,7 +7127,7 @@
         {
           "id": 2577943,
           "key": "_last_change_time",
-          "value": "1789401486"
+          "value": "1789577551"
         },
         {
           "id": 2577944,
@@ -7957,16 +7910,6 @@
           "value": ""
         },
         {
-          "id": 2580029,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2580030,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2580031,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -8191,8 +8134,8 @@
       "type": "variation",
       "date_created": "2026-09-14T15:55:53",
       "date_created_gmt": "2026-09-14T15:55:53",
-      "date_modified": "2026-09-15T17:39:38",
-      "date_modified_gmt": "2026-09-15T17:39:38",
+      "date_modified": "2026-09-16T16:52:31",
+      "date_modified_gmt": "2026-09-16T16:52:31",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/chaqueta-bristol/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=42",
       "sku": "2025201042",
@@ -8214,8 +8157,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -8262,7 +8205,7 @@
         {
           "id": 2577929,
           "key": "_last_change_time",
-          "value": "1789401486"
+          "value": "1789577551"
         },
         {
           "id": 2577930,
@@ -9042,16 +8985,6 @@
         {
           "id": 2579839,
           "key": "_oembed_time_3efc152008105e0533b1d0735c932ef8",
-          "value": ""
-        },
-        {
-          "id": 2579840,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2579841,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         },
         {
@@ -10367,8 +10300,8 @@
       "type": "variation",
       "date_created": "2026-09-14T15:55:53",
       "date_created_gmt": "2026-09-14T15:55:53",
-      "date_modified": "2026-09-15T17:39:37",
-      "date_modified_gmt": "2026-09-15T17:39:37",
+      "date_modified": "2026-09-16T16:52:31",
+      "date_modified_gmt": "2026-09-16T16:52:31",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/chaqueta-bristol/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=40",
       "sku": "2025201040",
@@ -10390,8 +10323,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -10438,7 +10371,7 @@
         {
           "id": 2577903,
           "key": "_last_change_time",
-          "value": "1789401485"
+          "value": "1789577551"
         },
         {
           "id": 2577904,
@@ -11218,16 +11151,6 @@
         {
           "id": 2579459,
           "key": "_oembed_time_3efc152008105e0533b1d0735c932ef8",
-          "value": ""
-        },
-        {
-          "id": 2579460,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2579461,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         },
         {
@@ -12543,8 +12466,8 @@
       "type": "variation",
       "date_created": "2026-09-14T15:55:53",
       "date_created_gmt": "2026-09-14T15:55:53",
-      "date_modified": "2026-09-15T17:39:36",
-      "date_modified_gmt": "2026-09-15T17:39:36",
+      "date_modified": "2026-09-16T16:52:31",
+      "date_modified_gmt": "2026-09-16T16:52:31",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/chaqueta-bristol/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=38",
       "sku": "2025201038",
@@ -12566,8 +12489,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -12614,7 +12537,7 @@
         {
           "id": 2577877,
           "key": "_last_change_time",
-          "value": "1789401485"
+          "value": "1789577551"
         },
         {
           "id": 2577878,
@@ -13397,16 +13320,6 @@
           "value": ""
         },
         {
-          "id": 2579080,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2579081,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2579082,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -13638,7 +13551,8 @@
     "86692": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-harry-chaqueta-bristol-gris-lateral.jpg",
     "86693": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-harry-chaqueta-bristol-gris-lateral-2.jpg",
     "86694": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-harry-chaqueta-bristol-gris-posterior.jpg",
-    "86695": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-harry-chaqueta-bristol-gris-tela-interna.jpg"
+    "86695": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-harry-chaqueta-bristol-gris-tela-interna.jpg",
+    "86696": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-harry-chaqueta-bristol-gris-doblada.jpg"
   },
   "stock_status": "instock",
   "variation_images_map": {
@@ -13693,6 +13607,11 @@
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-harry-chaqueta-bristol-gris-frente.jpg",
         "alt": "Winston-and-harry-chaqueta-bristol-gris-frente",
         "name": "Winston-and-harry-chaqueta-bristol-gris-frente"
+      },
+      {
+        "id": 86696,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-harry-chaqueta-bristol-gris-doblada.jpg",
+        "alt": "Chaqueta Bristol"
       },
       {
         "id": 86690,

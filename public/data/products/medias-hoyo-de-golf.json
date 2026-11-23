@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>27,500</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>27,500</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -119,6 +119,8 @@
         "name": "Medias-Hoyo de Golf-Azul-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "27500",
       "regular_price": "27500",
@@ -143,6 +145,8 @@
         "name": "Medias-Hoyo de Golf-Vino-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 23,
       "stock_status": "instock",
       "price": "27500",
       "regular_price": "27500",
@@ -214,8 +218,8 @@
       "type": "variation",
       "date_created": "2025-10-31T02:12:12",
       "date_created_gmt": "2025-10-31T02:12:12",
-      "date_modified": "2026-08-24T20:32:28",
-      "date_modified_gmt": "2026-08-24T20:32:28",
+      "date_modified": "2026-11-04T17:55:14",
+      "date_modified_gmt": "2026-11-04T17:55:14",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/medias-hoyo-de-golf/?attribute_pa_selecciona-el-color=vinotinto",
       "sku": "11113919000",
@@ -238,7 +242,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 28,
+      "stock_quantity": 23,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -1026,7 +1030,7 @@
         {
           "id": 2219136,
           "key": "_last_change_time",
-          "value": "1787603548"
+          "value": "1793814914"
         },
         {
           "id": 2310914,
@@ -1068,8 +1072,8 @@
       "type": "variation",
       "date_created": "2025-10-31T02:12:12",
       "date_created_gmt": "2025-10-31T02:12:12",
-      "date_modified": "2026-08-22T00:04:26",
-      "date_modified_gmt": "2026-08-22T00:04:26",
+      "date_modified": "2026-11-21T20:03:27",
+      "date_modified_gmt": "2026-11-21T20:03:27",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/medias-hoyo-de-golf/?attribute_pa_selecciona-el-color=azul",
       "sku": "11113901000",
@@ -1092,7 +1096,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 13,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -1880,7 +1884,7 @@
         {
           "id": 2219135,
           "key": "_last_change_time",
-          "value": "1787357066"
+          "value": "1793814914"
         },
         {
           "id": 2310913,

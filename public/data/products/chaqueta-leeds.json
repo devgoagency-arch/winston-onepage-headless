@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>890,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>890,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -180,6 +180,8 @@
         "name": "Winston-and-Harry_Chaqueta-Leeds-Azul_Frente-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "890000",
       "regular_price": "890000",
@@ -209,6 +211,8 @@
         "name": "Winston-and-Harry_Chaqueta-Leeds-Azul_Frente-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "price": "890000",
       "regular_price": "890000",
@@ -238,35 +242,8 @@
         "name": "Winston-and-Harry_Chaqueta-Leeds-Azul_Frente-1",
         "alt": ""
       },
-      "stock_status": "instock",
-      "price": "890000",
-      "regular_price": "890000",
-      "sale_price": ""
-    },
-    {
-      "id": 87431,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "azul",
-          "option": "azul"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "xl",
-          "option": "xl"
-        }
-      ],
-      "image": {
-        "id": 87376,
-        "date_created": "2026-10-02T03:29:24",
-        "date_created_gmt": "2026-10-02T03:29:24",
-        "date_modified": "2026-10-05T18:02:25",
-        "date_modified_gmt": "2026-10-05T18:02:25",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry_Chaqueta-Leeds-Azul_Frente-1.jpg",
-        "name": "Winston-and-Harry_Chaqueta-Leeds-Azul_Frente-1",
-        "alt": ""
-      },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "890000",
       "regular_price": "890000",
@@ -296,6 +273,8 @@
         "name": "Winston-and-Harry_Chaqueta-Leeds-Beige_Frente-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "890000",
       "regular_price": "890000",
@@ -325,6 +304,8 @@
         "name": "Winston-and-Harry_Chaqueta-Leeds-Beige_Frente-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "890000",
       "regular_price": "890000",
@@ -354,6 +335,8 @@
         "name": "Winston-and-Harry_Chaqueta-Leeds-Beige_Frente-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "890000",
       "regular_price": "890000",
@@ -383,6 +366,8 @@
         "name": "Winston-and-Harry_Chaqueta-Leeds-Beige_Frente-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "890000",
       "regular_price": "890000",
@@ -412,6 +397,8 @@
         "name": "Winston-and-Harry_Chaqueta-Leeds-Verde_Frente-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "890000",
       "regular_price": "890000",
@@ -441,6 +428,8 @@
         "name": "Winston-and-Harry_Chaqueta-Leeds-Verde_Frente-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "price": "890000",
       "regular_price": "890000",
@@ -470,6 +459,8 @@
         "name": "Winston-and-Harry_Chaqueta-Leeds-Verde_Frente-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "890000",
       "regular_price": "890000",
@@ -499,6 +490,8 @@
         "name": "Winston-and-Harry_Chaqueta-Leeds-Verde_Frente-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "890000",
       "regular_price": "890000",
@@ -9209,8 +9202,8 @@
       "type": "variation",
       "date_created": "2026-10-05T17:27:24",
       "date_created_gmt": "2026-10-05T17:27:24",
-      "date_modified": "2026-10-05T21:52:05",
-      "date_modified_gmt": "2026-10-05T21:52:05",
+      "date_modified": "2026-10-14T06:15:16",
+      "date_modified_gmt": "2026-10-14T06:15:16",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/chaqueta-leeds/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=xl",
       "sku": "19200601038",
@@ -9233,8 +9226,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -9280,7 +9273,7 @@
         {
           "id": 2603600,
           "key": "_last_change_time",
-          "value": "1791237125"
+          "value": "1791958516"
         },
         {
           "id": 2603601,
@@ -12448,8 +12441,8 @@
       "type": "variation",
       "date_created": "2026-10-05T17:27:23",
       "date_created_gmt": "2026-10-05T17:27:23",
-      "date_modified": "2026-10-05T21:52:05",
-      "date_modified_gmt": "2026-10-05T21:52:05",
+      "date_modified": "2026-10-14T06:14:44",
+      "date_modified_gmt": "2026-10-14T06:14:44",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/chaqueta-leeds/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=s",
       "sku": "19200601032",
@@ -12472,7 +12465,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 3,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -12519,7 +12512,7 @@
         {
           "id": 2603561,
           "key": "_last_change_time",
-          "value": "1791237125"
+          "value": "1791958484"
         },
         {
           "id": 2603562,
@@ -13523,11 +13516,15 @@
     }
   ],
   "wpc_resolved_media": {
+    "87377": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry_Chaqueta-Leeds-Azul_Doblada-2.jpg",
+    "87378": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry_Chaqueta-Leeds-Azul_Cuello-3.jpg",
     "87379": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry_Chaqueta-Leeds-Azul_Posterior-4.jpg",
     "87380": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry_Chaqueta-Leeds-Azul_Cuello-Cerrado-5.jpg",
     "87381": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry_Chaqueta-Leeds-Azul_Interior-Bolsillo-6.jpg",
     "87382": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry_Chaqueta-Leeds-Azul_Interior-Bolsillo-7.jpg",
     "87383": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry_Chaqueta-Leeds-Azul_Bolsillo-Azul-8.jpg",
+    "87385": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry_Chaqueta-Leeds-Verde_Doblada-2.jpg",
+    "87386": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry_Chaqueta-Leeds-Verde_Cuello-3.jpg",
     "87387": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry_Chaqueta-Leeds-Verde_Posterior-4.jpg",
     "87388": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry_Chaqueta-Leeds-Verde_Cuello-Cerrado-5.jpg",
     "87389": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry_Chaqueta-Leeds-Verde_Interior-Bolsillo-6.jpg",
@@ -13547,6 +13544,16 @@
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry_Chaqueta-Leeds-Azul_Frente-1.jpg",
         "alt": "Winston-and-Harry_Chaqueta-Leeds-Azul_Frente-1",
         "name": "Winston-and-Harry_Chaqueta-Leeds-Azul_Frente-1"
+      },
+      {
+        "id": 87377,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry_Chaqueta-Leeds-Azul_Doblada-2.jpg",
+        "alt": "Chaqueta Leeds"
+      },
+      {
+        "id": 87378,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry_Chaqueta-Leeds-Azul_Cuello-3.jpg",
+        "alt": "Chaqueta Leeds"
       },
       {
         "id": 87379,
@@ -13625,6 +13632,16 @@
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry_Chaqueta-Leeds-Verde_Frente-1.jpg",
         "alt": "Winston-and-Harry_Chaqueta-Leeds-Verde_Frente-1",
         "name": "Winston-and-Harry_Chaqueta-Leeds-Verde_Frente-1"
+      },
+      {
+        "id": 87385,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry_Chaqueta-Leeds-Verde_Doblada-2.jpg",
+        "alt": "Chaqueta Leeds"
+      },
+      {
+        "id": 87386,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry_Chaqueta-Leeds-Verde_Cuello-3.jpg",
+        "alt": "Chaqueta Leeds"
       },
       {
         "id": 87387,

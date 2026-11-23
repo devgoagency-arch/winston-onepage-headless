@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>286,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>286,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -185,6 +185,8 @@
         "name": "Striped-Verde-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 7,
       "stock_status": "instock",
       "price": "286000",
       "regular_price": "286000",
@@ -214,6 +216,8 @@
         "name": "Striped-Verde-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 13,
       "stock_status": "instock",
       "price": "286000",
       "regular_price": "286000",
@@ -243,6 +247,8 @@
         "name": "Striped-Verde-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 15,
       "stock_status": "instock",
       "price": "286000",
       "regular_price": "286000",
@@ -272,6 +278,8 @@
         "name": "Striped-Verde-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "286000",
       "regular_price": "286000",
@@ -301,6 +309,8 @@
         "name": "Striped-Azul-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 8,
       "stock_status": "instock",
       "price": "286000",
       "regular_price": "286000",
@@ -330,6 +340,8 @@
         "name": "Striped-Azul-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 15,
       "stock_status": "instock",
       "price": "286000",
       "regular_price": "286000",
@@ -359,6 +371,8 @@
         "name": "Striped-Azul-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 16,
       "stock_status": "instock",
       "price": "286000",
       "regular_price": "286000",
@@ -388,6 +402,8 @@
         "name": "Striped-Azul-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "286000",
       "regular_price": "286000",
@@ -9109,8 +9125,8 @@
       "type": "variation",
       "date_created": "2025-09-04T20:24:44",
       "date_created_gmt": "2025-09-04T20:24:44",
-      "date_modified": "2026-06-02T17:41:19",
-      "date_modified_gmt": "2026-06-02T17:41:19",
+      "date_modified": "2026-11-23T04:39:15",
+      "date_modified_gmt": "2026-11-23T04:39:15",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/sueter-striped/?attribute_pa_selecciona-el-color=verde&attribute_pa_selecciona-una-talla=m",
       "sku": "6160205034",
@@ -9133,7 +9149,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 16,
+      "stock_quantity": 13,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -9932,7 +9948,7 @@
         {
           "id": 2259235,
           "key": "_last_change_time",
-          "value": "1780422079"
+          "value": "1795408755"
         },
         {
           "id": 2311131,

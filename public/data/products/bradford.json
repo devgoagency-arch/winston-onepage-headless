@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>825,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>825,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -268,6 +268,8 @@
         "name": "Bradford-Negro-winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -297,6 +299,8 @@
         "name": "Bradford-Negro-winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -326,6 +330,8 @@
         "name": "Bradford-Negro-winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -355,35 +361,8 @@
         "name": "Bradford-Negro-winstonandharry-1",
         "alt": ""
       },
-      "stock_status": "instock",
-      "price": "825000",
-      "regular_price": "825000",
-      "sale_price": ""
-    },
-    {
-      "id": 24310,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "negro",
-          "option": "negro"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "41",
-          "option": "41"
-        }
-      ],
-      "image": {
-        "id": 62862,
-        "date_created": "2025-04-25T21:57:19",
-        "date_created_gmt": "2025-04-25T21:57:19",
-        "date_modified": "2025-04-26T05:59:38",
-        "date_modified_gmt": "2025-04-26T05:59:38",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/04/Bradford-Negro-winstonandharry-1-e1751479580632.jpg",
-        "name": "Bradford-Negro-winstonandharry-1",
-        "alt": ""
-      },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -413,6 +392,8 @@
         "name": "Bradford-Negro-winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -442,6 +423,8 @@
         "name": "Bradford-Negro-winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -471,6 +454,8 @@
         "name": "Bradford-vino-zapato-brillante-winstonandharry-7",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -500,6 +485,8 @@
         "name": "Bradford-vino-zapato-brillante-winstonandharry-7",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -529,6 +516,8 @@
         "name": "Bradford-vino-zapato-brillante-winstonandharry-7",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -558,6 +547,8 @@
         "name": "Bradford-vino-zapato-brillante-winstonandharry-7",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -587,6 +578,8 @@
         "name": "Bradford-vino-zapato-brillante-winstonandharry-7",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -616,6 +609,8 @@
         "name": "Bradford-vino-zapato-brillante-winstonandharry-7",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -645,6 +640,8 @@
         "name": "Bradford-vino-zapato-brillante-winstonandharry-7",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -674,6 +671,8 @@
         "name": "Bradford-vino-zapato-brillante-winstonandharry-7",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -703,6 +702,8 @@
         "name": "Bradford-vino-zapato-brillante-winstonandharry-7",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -7901,8 +7902,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:29:43",
       "date_created_gmt": "2022-08-25T22:29:43",
-      "date_modified": "2026-06-02T17:35:08",
-      "date_modified_gmt": "2026-06-02T17:35:08",
+      "date_modified": "2026-11-23T04:36:29",
+      "date_modified_gmt": "2026-11-23T04:36:29",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bradford/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=43",
       "sku": "7012702043",
@@ -7925,7 +7926,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 4,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -8614,7 +8615,7 @@
         {
           "id": 2259527,
           "key": "_last_change_time",
-          "value": "1780421708"
+          "value": "1795408589"
         },
         {
           "id": 2314921,
@@ -8656,8 +8657,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:29:43",
       "date_created_gmt": "2022-08-25T22:29:43",
-      "date_modified": "2026-08-13T00:04:05",
-      "date_modified_gmt": "2026-08-13T00:04:05",
+      "date_modified": "2026-10-27T19:15:13",
+      "date_modified_gmt": "2026-10-27T19:15:13",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bradford/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=42",
       "sku": "7012702042",
@@ -8680,7 +8681,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 6,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -9374,7 +9375,7 @@
         {
           "id": 2250063,
           "key": "_last_change_time",
-          "value": "1786579445"
+          "value": "1793122929"
         },
         {
           "id": 2314920,
@@ -9416,8 +9417,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:29:43",
       "date_created_gmt": "2022-08-25T22:29:43",
-      "date_modified": "2026-08-13T00:04:05",
-      "date_modified_gmt": "2026-08-13T00:04:05",
+      "date_modified": "2026-11-23T04:36:28",
+      "date_modified_gmt": "2026-11-23T04:36:28",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bradford/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=41",
       "sku": "7012702041",
@@ -9440,8 +9441,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 6,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -10129,7 +10130,7 @@
         {
           "id": 2259526,
           "key": "_last_change_time",
-          "value": "1786579445"
+          "value": "1795408588"
         },
         {
           "id": 2314919,
@@ -10171,8 +10172,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:29:43",
       "date_created_gmt": "2022-08-25T22:29:43",
-      "date_modified": "2026-08-13T00:04:05",
-      "date_modified_gmt": "2026-08-13T00:04:05",
+      "date_modified": "2026-11-23T04:36:28",
+      "date_modified_gmt": "2026-11-23T04:36:28",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bradford/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=40",
       "sku": "7012702040",
@@ -10195,7 +10196,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 8,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -10884,7 +10885,7 @@
         {
           "id": 2259525,
           "key": "_last_change_time",
-          "value": "1786579445"
+          "value": "1795408588"
         },
         {
           "id": 2314918,
@@ -10926,8 +10927,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:29:42",
       "date_created_gmt": "2022-08-25T22:29:42",
-      "date_modified": "2026-08-13T00:04:05",
-      "date_modified_gmt": "2026-08-13T00:04:05",
+      "date_modified": "2026-10-27T19:15:13",
+      "date_modified_gmt": "2026-10-27T19:15:13",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bradford/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=39",
       "sku": "7012702039",
@@ -10950,7 +10951,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 4,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -11644,7 +11645,7 @@
         {
           "id": 2259524,
           "key": "_last_change_time",
-          "value": "1786579445"
+          "value": "1793122929"
         },
         {
           "id": 2314933,
@@ -11686,8 +11687,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:29:42",
       "date_created_gmt": "2022-08-25T22:29:42",
-      "date_modified": "2026-08-13T00:04:05",
-      "date_modified_gmt": "2026-08-13T00:04:05",
+      "date_modified": "2026-11-04T17:52:59",
+      "date_modified_gmt": "2026-11-04T17:52:59",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bradford/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=38",
       "sku": "7012702038",
@@ -11710,7 +11711,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 9,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -12399,7 +12400,7 @@
         {
           "id": 2259523,
           "key": "_last_change_time",
-          "value": "1786579445"
+          "value": "1793814779"
         },
         {
           "id": 2314932,
@@ -12441,8 +12442,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:29:42",
       "date_created_gmt": "2022-08-25T22:29:42",
-      "date_modified": "2026-05-07T22:58:51",
-      "date_modified_gmt": "2026-05-07T22:58:51",
+      "date_modified": "2026-10-05T21:50:15",
+      "date_modified_gmt": "2026-10-05T21:50:15",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bradford/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=37",
       "sku": "7012702037",
@@ -12465,7 +12466,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 2,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -13159,7 +13160,7 @@
         {
           "id": 2259522,
           "key": "_last_change_time",
-          "value": "1778175647"
+          "value": "1791237015"
         },
         {
           "id": 2314931,
@@ -13198,6 +13199,8 @@
     }
   ],
   "wpc_resolved_media": {
+    "17399": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/04/068-zapato-cenital.jpg",
+    "17400": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/04/068-zapato-lateral.jpg",
     "33116": "https://tienda.winstonandharrystore.com/wp-content/uploads/Bradford-vino-zapato-brillante-winstonandharry-.jpg",
     "33117": "https://tienda.winstonandharrystore.com/wp-content/uploads/Bradford-vino-zapato-brillante-winstonandharry-2.jpg",
     "33118": "https://tienda.winstonandharrystore.com/wp-content/uploads/Bradford-vino-zapato-brillante-winstonandharry-3.jpg",
@@ -13263,6 +13266,16 @@
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Bradford-vino-zapato-brillante-winstonandharry-7.jpg",
         "alt": "Bradford-vino-zapato-brillante-winstonandharry-7",
         "name": "Bradford-vino-zapato-brillante-winstonandharry-7"
+      },
+      {
+        "id": 17400,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/04/068-zapato-lateral.jpg",
+        "alt": "Bradford"
+      },
+      {
+        "id": 17399,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/04/068-zapato-cenital.jpg",
+        "alt": "Bradford"
       },
       {
         "id": 33116,

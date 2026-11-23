@@ -211,8 +211,8 @@
         "name": "winston-and-harry-cinturon-cuero-reata-blanco-2147-01",
         "alt": ""
       },
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 8,
       "stock_status": "instock",
       "price": "245000",
       "regular_price": "245000",
@@ -252,8 +252,8 @@
         "name": "winston-and-harry-cinturon-cuero-reata-blanco-2147-01",
         "alt": ""
       },
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 7,
       "stock_status": "instock",
       "price": "245000",
       "regular_price": "245000",
@@ -293,8 +293,8 @@
         "name": "winston-and-harry-cinturon-cuero-reata-blanco-2147-01",
         "alt": ""
       },
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 10,
       "stock_status": "instock",
       "price": "245000",
       "regular_price": "245000",
@@ -334,8 +334,8 @@
         "name": "winston-and-harry-cinturon-cuero-reata-blanco-2147-01",
         "alt": ""
       },
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 7,
       "stock_status": "instock",
       "price": "245000",
       "regular_price": "245000",
@@ -375,8 +375,8 @@
         "name": "winston-and-harry-cinturon-cuero-reata-blanco-2147-01",
         "alt": ""
       },
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 10,
       "stock_status": "instock",
       "price": "245000",
       "regular_price": "245000",
@@ -442,8 +442,8 @@
       "type": "variation",
       "date_created": "2026-11-19T19:49:28",
       "date_created_gmt": "2026-11-19T19:49:28",
-      "date_modified": "2026-11-22T00:08:33",
-      "date_modified_gmt": "2026-11-22T00:08:33",
+      "date_modified": "2026-11-23T04:40:39",
+      "date_modified_gmt": "2026-11-23T04:40:39",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cuero-reata-2147/?attribute_pa_selecciona-el-color=blanco&attribute_pa_selecciona-una-talla=38&attribute_pa_hebilla=acero-inoxidable&attribute_pa_material=100-cuero",
       "sku": "27214715038",
@@ -465,8 +465,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 10,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -525,7 +525,7 @@
         {
           "id": 2623376,
           "key": "_last_change_time",
-          "value": "1795117828"
+          "value": "1795408839"
         },
         {
           "id": 2623377,
@@ -1308,16 +1308,6 @@
           "value": ""
         },
         {
-          "id": 2642196,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2642197,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2642198,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -1542,8 +1532,8 @@
       "type": "variation",
       "date_created": "2026-11-19T19:49:28",
       "date_created_gmt": "2026-11-19T19:49:28",
-      "date_modified": "2026-11-22T00:08:33",
-      "date_modified_gmt": "2026-11-22T00:08:33",
+      "date_modified": "2026-11-23T04:40:39",
+      "date_modified_gmt": "2026-11-23T04:40:39",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cuero-reata-2147/?attribute_pa_selecciona-el-color=blanco&attribute_pa_selecciona-una-talla=36&attribute_pa_hebilla=acero-inoxidable&attribute_pa_material=100-cuero",
       "sku": "27214715036",
@@ -1565,8 +1555,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 7,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -1625,7 +1615,7 @@
         {
           "id": 2623364,
           "key": "_last_change_time",
-          "value": "1795117828"
+          "value": "1795408839"
         },
         {
           "id": 2623365,
@@ -2408,16 +2398,6 @@
           "value": ""
         },
         {
-          "id": 2642006,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2642007,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2642008,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -2642,8 +2622,8 @@
       "type": "variation",
       "date_created": "2026-11-19T19:49:28",
       "date_created_gmt": "2026-11-19T19:49:28",
-      "date_modified": "2026-11-22T00:08:33",
-      "date_modified_gmt": "2026-11-22T00:08:33",
+      "date_modified": "2026-11-23T04:40:39",
+      "date_modified_gmt": "2026-11-23T04:40:39",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cuero-reata-2147/?attribute_pa_selecciona-el-color=blanco&attribute_pa_selecciona-una-talla=34&attribute_pa_hebilla=acero-inoxidable&attribute_pa_material=100-cuero",
       "sku": "27214715034",
@@ -2665,8 +2645,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 10,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -2725,7 +2705,7 @@
         {
           "id": 2623352,
           "key": "_last_change_time",
-          "value": "1795117828"
+          "value": "1795408839"
         },
         {
           "id": 2623353,
@@ -3508,16 +3488,6 @@
           "value": ""
         },
         {
-          "id": 2641816,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2641817,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2641818,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -3742,8 +3712,8 @@
       "type": "variation",
       "date_created": "2026-11-19T19:49:28",
       "date_created_gmt": "2026-11-19T19:49:28",
-      "date_modified": "2026-11-22T00:08:33",
-      "date_modified_gmt": "2026-11-22T00:08:33",
+      "date_modified": "2026-11-23T04:40:39",
+      "date_modified_gmt": "2026-11-23T04:40:39",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cuero-reata-2147/?attribute_pa_selecciona-el-color=blanco&attribute_pa_selecciona-una-talla=32&attribute_pa_hebilla=acero-inoxidable&attribute_pa_material=100-cuero",
       "sku": "27214715032",
@@ -3765,8 +3735,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 7,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -3825,7 +3795,7 @@
         {
           "id": 2623340,
           "key": "_last_change_time",
-          "value": "1795117828"
+          "value": "1795408839"
         },
         {
           "id": 2623341,
@@ -4608,16 +4578,6 @@
           "value": ""
         },
         {
-          "id": 2641626,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2641627,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2641628,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -4842,8 +4802,8 @@
       "type": "variation",
       "date_created": "2026-11-19T19:49:28",
       "date_created_gmt": "2026-11-19T19:49:28",
-      "date_modified": "2026-11-22T00:08:33",
-      "date_modified_gmt": "2026-11-22T00:08:33",
+      "date_modified": "2026-11-23T04:40:39",
+      "date_modified_gmt": "2026-11-23T04:40:39",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cuero-reata-2147/?attribute_pa_selecciona-el-color=blanco&attribute_pa_selecciona-una-talla=30&attribute_pa_hebilla=acero-inoxidable&attribute_pa_material=100-cuero",
       "sku": "27214715030",
@@ -4865,8 +4825,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 8,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -4925,7 +4885,7 @@
         {
           "id": 2623328,
           "key": "_last_change_time",
-          "value": "1795117828"
+          "value": "1795408839"
         },
         {
           "id": 2623329,
@@ -5705,16 +5665,6 @@
         {
           "id": 2641435,
           "key": "_oembed_time_3efc152008105e0533b1d0735c932ef8",
-          "value": ""
-        },
-        {
-          "id": 2641436,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2641437,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         },
         {

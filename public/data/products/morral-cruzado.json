@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>473,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>473,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -147,6 +147,8 @@
         "name": "Morral-Cruzado-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 7,
       "stock_status": "instock",
       "price": "473000",
       "regular_price": "473000",
@@ -171,6 +173,8 @@
         "name": "Morral-Cruzado-Verde-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "473000",
       "regular_price": "473000",
@@ -248,8 +252,8 @@
       "type": "variation",
       "date_created": "2023-07-10T21:40:34",
       "date_created_gmt": "2023-07-10T21:40:34",
-      "date_modified": "2026-05-07T23:06:58",
-      "date_modified_gmt": "2026-05-07T23:06:58",
+      "date_modified": "2026-11-05T22:16:54",
+      "date_modified_gmt": "2026-11-05T22:16:54",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/morral-cruzado/?attribute_pa_selecciona-el-color=verde",
       "sku": "15150605000",
@@ -272,7 +276,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 4,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -890,7 +894,7 @@
         {
           "id": 2229410,
           "key": "_last_change_time",
-          "value": "1778184395"
+          "value": "1789577667"
         },
         {
           "id": 2312811,
@@ -1606,8 +1610,8 @@
       "type": "variation",
       "date_created": "2023-07-10T21:40:34",
       "date_created_gmt": "2023-07-10T21:40:34",
-      "date_modified": "2026-08-22T00:03:48",
-      "date_modified_gmt": "2026-08-22T00:03:48",
+      "date_modified": "2026-09-23T22:57:41",
+      "date_modified_gmt": "2026-09-23T22:57:41",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/morral-cruzado/?attribute_pa_selecciona-el-color=miel",
       "sku": "15150626000",
@@ -1630,7 +1634,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 8,
+      "stock_quantity": 7,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -2248,7 +2252,7 @@
         {
           "id": 2229406,
           "key": "_last_change_time",
-          "value": "1787357028"
+          "value": "1790204261"
         },
         {
           "id": 2312810,

@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>759,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>759,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -262,6 +262,8 @@
         "name": "Recife-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "759000",
       "regular_price": "759000",
@@ -291,6 +293,8 @@
         "name": "Recife-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "759000",
       "regular_price": "759000",
@@ -320,6 +324,8 @@
         "name": "Recife-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "759000",
       "regular_price": "759000",
@@ -349,6 +355,8 @@
         "name": "Recife-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "759000",
       "regular_price": "759000",
@@ -378,6 +386,8 @@
         "name": "Recife-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "759000",
       "regular_price": "759000",
@@ -407,6 +417,8 @@
         "name": "Recife-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "759000",
       "regular_price": "759000",
@@ -436,6 +448,8 @@
         "name": "Recife-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "759000",
       "regular_price": "759000",
@@ -465,6 +479,8 @@
         "name": "Recife-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "759000",
       "regular_price": "759000",
@@ -494,6 +510,8 @@
         "name": "Recife-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "759000",
       "regular_price": "759000",
@@ -523,6 +541,8 @@
         "name": "Recife-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "759000",
       "regular_price": "759000",
@@ -552,6 +572,8 @@
         "name": "Recife-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "759000",
       "regular_price": "759000",
@@ -581,6 +603,8 @@
         "name": "Recife-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "759000",
       "regular_price": "759000",
@@ -5992,8 +6016,8 @@
       "type": "variation",
       "date_created": "2025-10-30T03:42:43",
       "date_created_gmt": "2025-10-30T03:42:43",
-      "date_modified": "2026-07-27T20:49:10",
-      "date_modified_gmt": "2026-07-27T20:49:10",
+      "date_modified": "2026-11-23T04:39:44",
+      "date_modified_gmt": "2026-11-23T04:39:44",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/recife/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=39",
       "sku": "7003302039",
@@ -6016,7 +6040,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 5,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -6810,7 +6834,7 @@
         {
           "id": 2257399,
           "key": "_last_change_time",
-          "value": "1778184929"
+          "value": "1795408784"
         },
         {
           "id": 2311037,
@@ -6828,11 +6852,6 @@
           "value": ""
         },
         {
-          "id": 2432052,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2432053,
           "key": "_wc_facebook_product_video_source",
           "value": ""
@@ -6840,11 +6859,6 @@
         {
           "id": 2432054,
           "key": "fb_product_images",
-          "value": ""
-        },
-        {
-          "id": 2432055,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],
@@ -6882,8 +6896,8 @@
       "type": "variation",
       "date_created": "2025-10-30T03:42:43",
       "date_created_gmt": "2025-10-30T03:42:43",
-      "date_modified": "2026-07-27T20:49:10",
-      "date_modified_gmt": "2026-07-27T20:49:10",
+      "date_modified": "2026-11-23T04:39:44",
+      "date_modified_gmt": "2026-11-23T04:39:44",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/recife/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=38",
       "sku": "7003302038",
@@ -6906,7 +6920,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 4,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -7700,7 +7714,7 @@
         {
           "id": 2259448,
           "key": "_last_change_time",
-          "value": "1778184928"
+          "value": "1795408784"
         },
         {
           "id": 2311035,
@@ -7718,11 +7732,6 @@
           "value": ""
         },
         {
-          "id": 2432058,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2432059,
           "key": "_wc_facebook_product_video_source",
           "value": ""
@@ -7730,11 +7739,6 @@
         {
           "id": 2432060,
           "key": "fb_product_images",
-          "value": ""
-        },
-        {
-          "id": 2432061,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],
@@ -11332,8 +11336,8 @@
       "type": "variation",
       "date_created": "2025-10-30T03:42:43",
       "date_created_gmt": "2025-10-30T03:42:43",
-      "date_modified": "2026-07-27T20:49:15",
-      "date_modified_gmt": "2026-07-27T20:49:15",
+      "date_modified": "2026-11-23T04:39:16",
+      "date_modified_gmt": "2026-11-23T04:39:16",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/recife/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=42",
       "sku": "7003326042",
@@ -11356,7 +11360,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 3,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -12150,7 +12154,7 @@
         {
           "id": 2259458,
           "key": "_last_change_time",
-          "value": "1778184928"
+          "value": "1795408756"
         },
         {
           "id": 2311046,
@@ -12168,11 +12172,6 @@
           "value": ""
         },
         {
-          "id": 2432090,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2432091,
           "key": "_wc_facebook_product_video_source",
           "value": ""
@@ -12180,11 +12179,6 @@
         {
           "id": 2432092,
           "key": "fb_product_images",
-          "value": ""
-        },
-        {
-          "id": 2432093,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],
@@ -13102,8 +13096,8 @@
       "type": "variation",
       "date_created": "2025-10-30T03:42:43",
       "date_created_gmt": "2025-10-30T03:42:43",
-      "date_modified": "2026-07-27T20:49:15",
-      "date_modified_gmt": "2026-07-27T20:49:15",
+      "date_modified": "2026-09-08T17:15:40",
+      "date_modified_gmt": "2026-09-08T17:15:40",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/recife/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=40",
       "sku": "7003326040",
@@ -13126,7 +13120,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 3,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -13920,7 +13914,7 @@
         {
           "id": 2259456,
           "key": "_last_change_time",
-          "value": "1785174248"
+          "value": "1788887740"
         },
         {
           "id": 2311042,
@@ -13938,11 +13932,6 @@
           "value": ""
         },
         {
-          "id": 2432102,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2432103,
           "key": "_wc_facebook_product_video_source",
           "value": ""
@@ -13950,11 +13939,6 @@
         {
           "id": 2432104,
           "key": "fb_product_images",
-          "value": ""
-        },
-        {
-          "id": 2432105,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],
@@ -13992,8 +13976,8 @@
       "type": "variation",
       "date_created": "2025-10-30T03:42:43",
       "date_created_gmt": "2025-10-30T03:42:43",
-      "date_modified": "2026-07-27T20:49:15",
-      "date_modified_gmt": "2026-07-27T20:49:15",
+      "date_modified": "2026-09-08T17:15:39",
+      "date_modified_gmt": "2026-09-08T17:15:39",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/recife/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=39",
       "sku": "7003326039",
@@ -14016,7 +14000,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 3,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -14810,7 +14794,7 @@
         {
           "id": 2257398,
           "key": "_last_change_time",
-          "value": "1785174248"
+          "value": "1788887739"
         },
         {
           "id": 2311040,
@@ -14828,11 +14812,6 @@
           "value": ""
         },
         {
-          "id": 2432108,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2432109,
           "key": "_wc_facebook_product_video_source",
           "value": ""
@@ -14840,11 +14819,6 @@
         {
           "id": 2432110,
           "key": "fb_product_images",
-          "value": ""
-        },
-        {
-          "id": 2432111,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],
@@ -14882,8 +14856,8 @@
       "type": "variation",
       "date_created": "2025-10-30T03:42:43",
       "date_created_gmt": "2025-10-30T03:42:43",
-      "date_modified": "2026-07-27T20:49:15",
-      "date_modified_gmt": "2026-07-27T20:49:15",
+      "date_modified": "2026-11-23T04:39:16",
+      "date_modified_gmt": "2026-11-23T04:39:16",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/recife/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=38",
       "sku": "7003326038",
@@ -14906,7 +14880,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 4,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -15700,7 +15674,7 @@
         {
           "id": 2259455,
           "key": "_last_change_time",
-          "value": "1780422079"
+          "value": "1795408756"
         },
         {
           "id": 2311038,
@@ -15718,11 +15692,6 @@
           "value": ""
         },
         {
-          "id": 2432114,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2432115,
           "key": "_wc_facebook_product_video_source",
           "value": ""
@@ -15730,11 +15699,6 @@
         {
           "id": 2432116,
           "key": "fb_product_images",
-          "value": ""
-        },
-        {
-          "id": 2432117,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],

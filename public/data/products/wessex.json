@@ -11,9 +11,9 @@
   "description": "",
   "on_sale": true,
   "prices": {
-    "price": "454300",
+    "price": "324500",
     "regular_price": "649000",
-    "sale_price": "454300",
+    "sale_price": "324500",
     "price_range": null,
     "currency_code": "COP",
     "currency_symbol": "$",
@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>649,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;649,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>454,300</span></ins><span class=\"screen-reader-text\">Current price is: &#036;454,300.</span>",
+  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>649,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;649,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>324,500</span></ins><span class=\"screen-reader-text\">Current price is: &#036;324,500.</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -213,8 +213,10 @@
         "name": "winston-and-harry-mocasines-wessex-cafe-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "454300",
+      "price": "324500",
       "regular_price": "649000",
       "sale_price": ""
     }
@@ -278,15 +280,15 @@
       "type": "variation",
       "date_created": "2022-10-27T18:00:37",
       "date_created_gmt": "2022-10-27T18:00:37",
-      "date_modified": "2026-07-27T20:51:13",
-      "date_modified_gmt": "2026-07-27T20:51:13",
+      "date_modified": "2026-11-23T04:31:09",
+      "date_modified_gmt": "2026-11-23T04:31:09",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wessex/?attribute_pa_selecciona-el-color=cafe",
       "sku": "7307504045",
       "global_unique_id": "",
-      "price": "454300",
+      "price": "324500",
       "regular_price": "649000",
-      "sale_price": "454300",
+      "sale_price": "324500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -773,7 +775,7 @@
         {
           "id": 2218614,
           "key": "_last_change_time",
-          "value": "1785172092"
+          "value": "1795408269"
         },
         {
           "id": 2241120,
@@ -1170,15 +1172,15 @@
       "type": "variation",
       "date_created": "2022-10-27T18:00:37",
       "date_created_gmt": "2022-10-27T18:00:37",
-      "date_modified": "2026-07-27T20:51:13",
-      "date_modified_gmt": "2026-07-27T20:51:13",
+      "date_modified": "2026-11-23T04:31:09",
+      "date_modified_gmt": "2026-11-23T04:31:09",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wessex/?attribute_pa_selecciona-el-color=cafe",
       "sku": "7307504044",
       "global_unique_id": "",
-      "price": "454300",
+      "price": "324500",
       "regular_price": "649000",
-      "sale_price": "454300",
+      "sale_price": "324500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -1665,7 +1667,7 @@
         {
           "id": 2218612,
           "key": "_last_change_time",
-          "value": "1785172092"
+          "value": "1795408269"
         },
         {
           "id": 2241112,
@@ -2062,15 +2064,15 @@
       "type": "variation",
       "date_created": "2022-10-27T18:00:37",
       "date_created_gmt": "2022-10-27T18:00:37",
-      "date_modified": "2026-07-27T20:51:13",
-      "date_modified_gmt": "2026-07-27T20:51:13",
+      "date_modified": "2026-11-23T04:31:09",
+      "date_modified_gmt": "2026-11-23T04:31:09",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wessex/?attribute_pa_selecciona-el-color=cafe",
       "sku": "7307504043",
       "global_unique_id": "",
-      "price": "454300",
+      "price": "324500",
       "regular_price": "649000",
-      "sale_price": "454300",
+      "sale_price": "324500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -2557,7 +2559,7 @@
         {
           "id": 2218610,
           "key": "_last_change_time",
-          "value": "1785172091"
+          "value": "1795408269"
         },
         {
           "id": 2241108,
@@ -2954,15 +2956,15 @@
       "type": "variation",
       "date_created": "2022-10-27T18:00:37",
       "date_created_gmt": "2022-10-27T18:00:37",
-      "date_modified": "2026-07-27T20:51:12",
-      "date_modified_gmt": "2026-07-27T20:51:12",
+      "date_modified": "2026-11-23T04:31:03",
+      "date_modified_gmt": "2026-11-23T04:31:03",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wessex/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=42",
       "sku": "7307504042",
       "global_unique_id": "",
-      "price": "454300",
+      "price": "324500",
       "regular_price": "649000",
-      "sale_price": "454300",
+      "sale_price": "324500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -3445,7 +3447,7 @@
         {
           "id": 2218608,
           "key": "_last_change_time",
-          "value": "1785172091"
+          "value": "1795408263"
         },
         {
           "id": 2241116,
@@ -3852,15 +3854,15 @@
       "type": "variation",
       "date_created": "2022-10-27T18:00:37",
       "date_created_gmt": "2022-10-27T18:00:37",
-      "date_modified": "2026-07-27T20:51:12",
-      "date_modified_gmt": "2026-07-27T20:51:12",
+      "date_modified": "2026-11-23T04:31:03",
+      "date_modified_gmt": "2026-11-23T04:31:03",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wessex/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=41",
       "sku": "7307504041",
       "global_unique_id": "",
-      "price": "454300",
+      "price": "324500",
       "regular_price": "649000",
-      "sale_price": "454300",
+      "sale_price": "324500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -4353,7 +4355,7 @@
         {
           "id": 2218606,
           "key": "_last_change_time",
-          "value": "1785172091"
+          "value": "1795408263"
         },
         {
           "id": 2241104,
@@ -4750,15 +4752,15 @@
       "type": "variation",
       "date_created": "2022-10-27T18:00:37",
       "date_created_gmt": "2022-10-27T18:00:37",
-      "date_modified": "2026-07-27T20:51:12",
-      "date_modified_gmt": "2026-07-27T20:51:12",
+      "date_modified": "2026-11-23T04:31:03",
+      "date_modified_gmt": "2026-11-23T04:31:03",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wessex/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=40",
       "sku": "7307504040",
       "global_unique_id": "",
-      "price": "454300",
+      "price": "324500",
       "regular_price": "649000",
-      "sale_price": "454300",
+      "sale_price": "324500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -5241,7 +5243,7 @@
         {
           "id": 2218604,
           "key": "_last_change_time",
-          "value": "1785172091"
+          "value": "1795408263"
         },
         {
           "id": 2241092,
@@ -5648,15 +5650,15 @@
       "type": "variation",
       "date_created": "2022-10-27T18:00:37",
       "date_created_gmt": "2022-10-27T18:00:37",
-      "date_modified": "2026-07-27T20:51:12",
-      "date_modified_gmt": "2026-07-27T20:51:12",
+      "date_modified": "2026-11-23T04:31:03",
+      "date_modified_gmt": "2026-11-23T04:31:03",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wessex/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=39",
       "sku": "7307504039",
       "global_unique_id": "",
-      "price": "454300",
+      "price": "324500",
       "regular_price": "649000",
-      "sale_price": "454300",
+      "sale_price": "324500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -6139,7 +6141,7 @@
         {
           "id": 2218602,
           "key": "_last_change_time",
-          "value": "1785172091"
+          "value": "1795408263"
         },
         {
           "id": 2241100,
@@ -6546,15 +6548,15 @@
       "type": "variation",
       "date_created": "2022-10-27T18:00:37",
       "date_created_gmt": "2022-10-27T18:00:37",
-      "date_modified": "2026-07-27T20:51:12",
-      "date_modified_gmt": "2026-07-27T20:51:12",
+      "date_modified": "2026-11-23T04:31:03",
+      "date_modified_gmt": "2026-11-23T04:31:03",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wessex/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=38",
       "sku": "7307504038",
       "global_unique_id": "",
-      "price": "454300",
+      "price": "324500",
       "regular_price": "649000",
-      "sale_price": "454300",
+      "sale_price": "324500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -7047,7 +7049,7 @@
         {
           "id": 2218600,
           "key": "_last_change_time",
-          "value": "1785172091"
+          "value": "1795408263"
         },
         {
           "id": 2241096,
@@ -7444,15 +7446,15 @@
       "type": "variation",
       "date_created": "2022-10-27T18:00:37",
       "date_created_gmt": "2022-10-27T18:00:37",
-      "date_modified": "2026-07-27T20:51:12",
-      "date_modified_gmt": "2026-07-27T20:51:12",
+      "date_modified": "2026-11-23T04:31:03",
+      "date_modified_gmt": "2026-11-23T04:31:03",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wessex/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=37",
       "sku": "7307504037",
       "global_unique_id": "",
-      "price": "454300",
+      "price": "324500",
       "regular_price": "649000",
-      "sale_price": "454300",
+      "sale_price": "324500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -7945,7 +7947,7 @@
         {
           "id": 2218597,
           "key": "_last_change_time",
-          "value": "1785172091"
+          "value": "1795408263"
         },
         {
           "id": 2241088,

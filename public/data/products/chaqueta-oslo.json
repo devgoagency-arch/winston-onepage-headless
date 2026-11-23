@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>700,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>700,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -195,6 +195,8 @@
         "name": "Chaqueta-Oslo-Azul-Winstonandharry-4",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "700000",
       "regular_price": "700000",
@@ -224,6 +226,8 @@
         "name": "Chaqueta-Oslo-Azul-Winstonandharry-4",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "700000",
       "regular_price": "700000",
@@ -253,6 +257,8 @@
         "name": "Chaqueta-Oslo-Azul-Winstonandharry-4",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "700000",
       "regular_price": "700000",
@@ -282,6 +288,8 @@
         "name": "Chaqueta-Oslo-Beige-Winstonandharry-3",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "700000",
       "regular_price": "700000",
@@ -311,6 +319,8 @@
         "name": "Chaqueta-Oslo-Beige-Winstonandharry-3",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "700000",
       "regular_price": "700000",
@@ -340,6 +350,8 @@
         "name": "Chaqueta-Oslo-Beige-Winstonandharry-3",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "price": "700000",
       "regular_price": "700000",
@@ -369,6 +381,8 @@
         "name": "Chaqueta-Oslo-Beige-Winstonandharry-3",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "700000",
       "regular_price": "700000",
@@ -398,6 +412,8 @@
         "name": "Chaqueta-Oslo-Negro-Winstonandharry-4",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "700000",
       "regular_price": "700000",
@@ -427,6 +443,8 @@
         "name": "Chaqueta-Oslo-Negro-Winstonandharry-4",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "700000",
       "regular_price": "700000",
@@ -456,6 +474,8 @@
         "name": "Chaqueta-Oslo-Negro-Winstonandharry-4",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "700000",
       "regular_price": "700000",
@@ -485,6 +505,8 @@
         "name": "Chaqueta-Oslo-Verde-Winstonandharry-4",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "700000",
       "regular_price": "700000",
@@ -514,6 +536,8 @@
         "name": "Chaqueta-Oslo-Verde-Winstonandharry-4",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "700000",
       "regular_price": "700000",
@@ -543,6 +567,8 @@
         "name": "Chaqueta-Oslo-Verde-Winstonandharry-4",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "700000",
       "regular_price": "700000",
@@ -572,6 +598,8 @@
         "name": "Chaqueta-Oslo-Verde-Winstonandharry-4",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "700000",
       "regular_price": "700000",
@@ -14403,8 +14431,8 @@
       "type": "variation",
       "date_created": "2025-10-31T00:15:51",
       "date_created_gmt": "2025-10-31T00:15:51",
-      "date_modified": "2026-05-07T23:01:14",
-      "date_modified_gmt": "2026-05-07T23:01:14",
+      "date_modified": "2026-10-14T06:14:44",
+      "date_modified_gmt": "2026-10-14T06:14:44",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/chaqueta-oslo/?attribute_pa_selecciona-el-color=beige&attribute_pa_selecciona-una-talla=m",
       "sku": "19200106034",
@@ -14427,7 +14455,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 2,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -15221,7 +15249,7 @@
         {
           "id": 2257417,
           "key": "_last_change_time",
-          "value": "1778177796"
+          "value": "1791958484"
         },
         {
           "id": 2310936,
@@ -16123,8 +16151,8 @@
       "type": "variation",
       "date_created": "2025-10-31T00:15:50",
       "date_created_gmt": "2025-10-31T00:15:50",
-      "date_modified": "2026-05-07T23:01:14",
-      "date_modified_gmt": "2026-05-07T23:01:14",
+      "date_modified": "2026-11-23T04:39:45",
+      "date_modified_gmt": "2026-11-23T04:39:45",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/chaqueta-oslo/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=xxl",
       "sku": "19200101040",
@@ -16941,7 +16969,7 @@
         {
           "id": 2262054,
           "key": "_last_change_time",
-          "value": "1778177796"
+          "value": "1795408785"
         },
         {
           "id": 2310945,

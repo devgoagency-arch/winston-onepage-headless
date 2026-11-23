@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>797,500</span></del> <span class=\"screen-reader-text\">Original price was: &#036;797,500.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>398,750</span></ins><span class=\"screen-reader-text\">Current price is: &#036;398,750.</span>",
+  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>797,500</span></del> <span class=\"screen-reader-text\">Original price was: &#036;797,500.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>398,750</span></ins><span class=\"screen-reader-text\">Current price is: &#036;398,750.</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -111,6 +111,8 @@
         "name": "Maleta-Grand-Lona-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 19,
       "stock_status": "instock",
       "price": "398750",
       "regular_price": "797500",
@@ -135,6 +137,8 @@
         "name": "Maleta-Grand-Lona-Verde-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "398750",
       "regular_price": "797500",
@@ -200,8 +204,8 @@
       "type": "variation",
       "date_created": "2025-02-11T16:18:11",
       "date_created_gmt": "2025-02-11T16:18:11",
-      "date_modified": "2026-08-13T00:05:19",
-      "date_modified_gmt": "2026-08-13T00:05:19",
+      "date_modified": "2026-11-23T04:38:27",
+      "date_modified_gmt": "2026-11-23T04:38:27",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/maleta-grand/?attribute_pa_selecciona-el-color=verde",
       "sku": "15159205000",
@@ -224,7 +228,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 14,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -832,7 +836,7 @@
         {
           "id": 2261964,
           "key": "_last_change_time",
-          "value": "1786579519"
+          "value": "1795408707"
         },
         {
           "id": 2312081,
@@ -894,8 +898,8 @@
       "type": "variation",
       "date_created": "2025-02-11T16:18:11",
       "date_created_gmt": "2025-02-11T16:18:11",
-      "date_modified": "2026-08-13T00:05:19",
-      "date_modified_gmt": "2026-08-13T00:05:19",
+      "date_modified": "2026-11-23T04:38:27",
+      "date_modified_gmt": "2026-11-23T04:38:27",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/maleta-grand/?attribute_pa_selecciona-el-color=cafe",
       "sku": "15159204000",
@@ -918,7 +922,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 25,
+      "stock_quantity": 19,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -1526,7 +1530,7 @@
         {
           "id": 2261963,
           "key": "_last_change_time",
-          "value": "1786579519"
+          "value": "1795408707"
         },
         {
           "id": 2312082,

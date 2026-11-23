@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>560,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>560,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -226,6 +226,8 @@
         "name": "Lincoln-AzulFlo-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "560000",
       "regular_price": "560000",
@@ -255,6 +257,8 @@
         "name": "Lincoln-AzulFlo-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "560000",
       "regular_price": "560000",
@@ -284,6 +288,8 @@
         "name": "Lincoln-AzulFlo-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "price": "560000",
       "regular_price": "560000",
@@ -313,6 +319,8 @@
         "name": "Lincoln-AzulFlo-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "price": "560000",
       "regular_price": "560000",
@@ -342,6 +350,8 @@
         "name": "Lincoln-AzulFlo-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "560000",
       "regular_price": "560000",
@@ -371,6 +381,8 @@
         "name": "Lincoln-AzulFlo-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "price": "560000",
       "regular_price": "560000",
@@ -400,6 +412,8 @@
         "name": "Lincoln-AzulFlo-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "560000",
       "regular_price": "560000",
@@ -429,6 +443,8 @@
         "name": "Lincoln-VinoFlo-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "560000",
       "regular_price": "560000",
@@ -458,6 +474,8 @@
         "name": "Lincoln-VinoFlo-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "560000",
       "regular_price": "560000",
@@ -487,6 +505,8 @@
         "name": "Lincoln-VinoFlo-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "560000",
       "regular_price": "560000",
@@ -516,6 +536,8 @@
         "name": "Lincoln-VinoFlo-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "560000",
       "regular_price": "560000",
@@ -3257,8 +3279,8 @@
       "type": "variation",
       "date_created": "2025-02-21T03:51:21",
       "date_created_gmt": "2025-02-21T03:51:21",
-      "date_modified": "2026-07-27T20:47:23",
-      "date_modified_gmt": "2026-07-27T20:47:23",
+      "date_modified": "2026-11-23T04:38:27",
+      "date_modified_gmt": "2026-11-23T04:38:27",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/lincoln/?attribute_pa_selecciona-el-color=vinotinto-florantik&attribute_pa_selecciona-una-talla=42",
       "sku": "7240140042",
@@ -3910,7 +3932,7 @@
         {
           "id": 2260943,
           "key": "_last_change_time",
-          "value": "1778184244"
+          "value": "1795408707"
         },
         {
           "id": 2311956,
@@ -4098,11 +4120,6 @@
           "value": ""
         },
         {
-          "id": 2417765,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2417766,
           "key": "_wc_facebook_product_video_source",
           "value": ""
@@ -4110,11 +4127,6 @@
         {
           "id": 2417767,
           "key": "fb_product_images",
-          "value": ""
-        },
-        {
-          "id": 2417768,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],

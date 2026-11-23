@@ -11,9 +11,9 @@
   "description": "<p>Inspirada en la “Desert Boot” que usaban los soldados británicos en el desierto, las botas Coventry mantienen las características practicas que combinadas con la suela de goma hacen de un modelo liviano y muy cómodo. La gamuza le aporta toques sofisticados que se ajustan muy bien a atuendos casuales, con seguridad serán tu opción predilecta al elegir unas botas.</p>",
   "on_sale": true,
   "prices": {
-    "price": "389400",
+    "price": "194700",
     "regular_price": "649000",
-    "sale_price": "389400",
+    "sale_price": "194700",
     "price_range": null,
     "currency_code": "COP",
     "currency_symbol": "$",
@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>649,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;649,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>389,400</span></ins><span class=\"screen-reader-text\">Current price is: &#036;389,400.</span>",
+  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>649,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;649,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>194,700</span></ins><span class=\"screen-reader-text\">Current price is: &#036;194,700.</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -230,8 +230,10 @@
         "name": "winston-and-harry-botas-coventry-azul-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "389400",
+      "price": "194700",
       "regular_price": "649000",
       "sale_price": ""
     }
@@ -301,15 +303,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:34:59",
       "date_created_gmt": "2022-08-25T22:34:59",
-      "date_modified": "2026-08-04T16:56:55",
-      "date_modified_gmt": "2026-08-04T16:56:55",
+      "date_modified": "2026-11-23T04:28:36",
+      "date_modified_gmt": "2026-11-23T04:28:36",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/coventry/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=44",
       "sku": "7151102044",
       "global_unique_id": "",
-      "price": "389400",
+      "price": "194700",
       "regular_price": "649000",
-      "sale_price": "389400",
+      "sale_price": "194700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -797,7 +799,7 @@
         {
           "id": 2216411,
           "key": "_last_change_time",
-          "value": "1778275725"
+          "value": "1795408116"
         },
         {
           "id": 2314736,
@@ -1194,15 +1196,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:34:59",
       "date_created_gmt": "2022-08-25T22:34:59",
-      "date_modified": "2026-08-04T16:56:56",
-      "date_modified_gmt": "2026-08-04T16:56:56",
+      "date_modified": "2026-11-23T04:28:36",
+      "date_modified_gmt": "2026-11-23T04:28:36",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/coventry/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=43",
       "sku": "7151102043",
       "global_unique_id": "",
-      "price": "389400",
+      "price": "194700",
       "regular_price": "649000",
-      "sale_price": "389400",
+      "sale_price": "194700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -1690,7 +1692,7 @@
         {
           "id": 2216407,
           "key": "_last_change_time",
-          "value": "1778275725"
+          "value": "1795408116"
         },
         {
           "id": 2314735,
@@ -2087,15 +2089,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:34:59",
       "date_created_gmt": "2022-08-25T22:34:59",
-      "date_modified": "2026-08-04T16:56:56",
-      "date_modified_gmt": "2026-08-04T16:56:56",
+      "date_modified": "2026-11-23T04:28:36",
+      "date_modified_gmt": "2026-11-23T04:28:36",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/coventry/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=42",
       "sku": "7151102042",
       "global_unique_id": "",
-      "price": "389400",
+      "price": "194700",
       "regular_price": "649000",
-      "sale_price": "389400",
+      "sale_price": "194700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -2593,7 +2595,7 @@
         {
           "id": 2216406,
           "key": "_last_change_time",
-          "value": "1778275725"
+          "value": "1795408116"
         },
         {
           "id": 2314734,
@@ -2980,15 +2982,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:34:59",
       "date_created_gmt": "2022-08-25T22:34:59",
-      "date_modified": "2026-08-04T16:56:56",
-      "date_modified_gmt": "2026-08-04T16:56:56",
+      "date_modified": "2026-11-23T04:28:35",
+      "date_modified_gmt": "2026-11-23T04:28:35",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/coventry/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=41",
       "sku": "7151102041",
       "global_unique_id": "",
-      "price": "389400",
+      "price": "194700",
       "regular_price": "649000",
-      "sale_price": "389400",
+      "sale_price": "194700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -3486,7 +3488,7 @@
         {
           "id": 2216405,
           "key": "_last_change_time",
-          "value": "1778275725"
+          "value": "1795408115"
         },
         {
           "id": 2314733,
@@ -3873,15 +3875,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:34:59",
       "date_created_gmt": "2022-08-25T22:34:59",
-      "date_modified": "2026-08-04T16:56:56",
-      "date_modified_gmt": "2026-08-04T16:56:56",
+      "date_modified": "2026-11-23T04:28:35",
+      "date_modified_gmt": "2026-11-23T04:28:35",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/coventry/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=40",
       "sku": "7151102040",
       "global_unique_id": "",
-      "price": "389400",
+      "price": "194700",
       "regular_price": "649000",
-      "sale_price": "389400",
+      "sale_price": "194700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -4369,7 +4371,7 @@
         {
           "id": 2216404,
           "key": "_last_change_time",
-          "value": "1778275725"
+          "value": "1795408115"
         },
         {
           "id": 2314732,
@@ -4766,15 +4768,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:34:59",
       "date_created_gmt": "2022-08-25T22:34:59",
-      "date_modified": "2026-08-04T16:56:56",
-      "date_modified_gmt": "2026-08-04T16:56:56",
+      "date_modified": "2026-11-23T04:28:35",
+      "date_modified_gmt": "2026-11-23T04:28:35",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/coventry/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=39",
       "sku": "7151102039",
       "global_unique_id": "",
-      "price": "389400",
+      "price": "194700",
       "regular_price": "649000",
-      "sale_price": "389400",
+      "sale_price": "194700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -5272,7 +5274,7 @@
         {
           "id": 2216403,
           "key": "_last_change_time",
-          "value": "1778275725"
+          "value": "1795408115"
         },
         {
           "id": 2314731,
@@ -5659,15 +5661,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:34:59",
       "date_created_gmt": "2022-08-25T22:34:59",
-      "date_modified": "2026-08-04T16:56:56",
-      "date_modified_gmt": "2026-08-04T16:56:56",
+      "date_modified": "2026-11-23T04:28:35",
+      "date_modified_gmt": "2026-11-23T04:28:35",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/coventry/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=38",
       "sku": "7151102038",
       "global_unique_id": "",
-      "price": "389400",
+      "price": "194700",
       "regular_price": "649000",
-      "sale_price": "389400",
+      "sale_price": "194700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -6165,7 +6167,7 @@
         {
           "id": 2216402,
           "key": "_last_change_time",
-          "value": "1778275725"
+          "value": "1795408115"
         },
         {
           "id": 2314730,
@@ -6552,15 +6554,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:34:59",
       "date_created_gmt": "2022-08-25T22:34:59",
-      "date_modified": "2026-08-04T16:56:56",
-      "date_modified_gmt": "2026-08-04T16:56:56",
+      "date_modified": "2026-11-23T04:28:35",
+      "date_modified_gmt": "2026-11-23T04:28:35",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/coventry/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=44",
       "sku": "7151104044",
       "global_unique_id": "",
-      "price": "389400",
+      "price": "194700",
       "regular_price": "649000",
-      "sale_price": "389400",
+      "sale_price": "194700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -7058,7 +7060,7 @@
         {
           "id": 2216400,
           "key": "_last_change_time",
-          "value": "1778275725"
+          "value": "1795408115"
         },
         {
           "id": 2314729,
@@ -7445,15 +7447,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:34:59",
       "date_created_gmt": "2022-08-25T22:34:59",
-      "date_modified": "2026-08-04T16:56:55",
-      "date_modified_gmt": "2026-08-04T16:56:55",
+      "date_modified": "2026-11-23T04:28:35",
+      "date_modified_gmt": "2026-11-23T04:28:35",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/coventry/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=43",
       "sku": "7151104043",
       "global_unique_id": "",
-      "price": "389400",
+      "price": "194700",
       "regular_price": "649000",
-      "sale_price": "389400",
+      "sale_price": "194700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -7951,7 +7953,7 @@
         {
           "id": 2216398,
           "key": "_last_change_time",
-          "value": "1778275725"
+          "value": "1795408115"
         },
         {
           "id": 2314728,
@@ -8338,15 +8340,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:34:59",
       "date_created_gmt": "2022-08-25T22:34:59",
-      "date_modified": "2026-08-04T16:56:56",
-      "date_modified_gmt": "2026-08-04T16:56:56",
+      "date_modified": "2026-11-23T04:28:35",
+      "date_modified_gmt": "2026-11-23T04:28:35",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/coventry/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=42",
       "sku": "7151104042",
       "global_unique_id": "",
-      "price": "389400",
+      "price": "194700",
       "regular_price": "649000",
-      "sale_price": "389400",
+      "sale_price": "194700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -8834,7 +8836,7 @@
         {
           "id": 2216396,
           "key": "_last_change_time",
-          "value": "1778275725"
+          "value": "1795408115"
         },
         {
           "id": 2314727,
@@ -9231,15 +9233,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:34:59",
       "date_created_gmt": "2022-08-25T22:34:59",
-      "date_modified": "2026-08-04T16:56:56",
-      "date_modified_gmt": "2026-08-04T16:56:56",
+      "date_modified": "2026-11-23T04:28:28",
+      "date_modified_gmt": "2026-11-23T04:28:28",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/coventry/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=41",
       "sku": "7151104041",
       "global_unique_id": "",
-      "price": "389400",
+      "price": "194700",
       "regular_price": "649000",
-      "sale_price": "389400",
+      "sale_price": "194700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -9742,7 +9744,7 @@
         {
           "id": 2216394,
           "key": "_last_change_time",
-          "value": "1778275725"
+          "value": "1795408108"
         },
         {
           "id": 2314726,
@@ -10124,15 +10126,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:34:58",
       "date_created_gmt": "2022-08-25T22:34:58",
-      "date_modified": "2026-08-04T16:56:56",
-      "date_modified_gmt": "2026-08-04T16:56:56",
+      "date_modified": "2026-11-23T04:28:28",
+      "date_modified_gmt": "2026-11-23T04:28:28",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/coventry/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=40",
       "sku": "7151104040",
       "global_unique_id": "",
-      "price": "389400",
+      "price": "194700",
       "regular_price": "649000",
-      "sale_price": "389400",
+      "sale_price": "194700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -10635,7 +10637,7 @@
         {
           "id": 2216392,
           "key": "_last_change_time",
-          "value": "1778275725"
+          "value": "1795408108"
         },
         {
           "id": 2314741,
@@ -11017,15 +11019,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:34:58",
       "date_created_gmt": "2022-08-25T22:34:58",
-      "date_modified": "2026-08-04T16:57:06",
-      "date_modified_gmt": "2026-08-04T16:57:06",
+      "date_modified": "2026-11-23T04:28:28",
+      "date_modified_gmt": "2026-11-23T04:28:28",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/coventry/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=39",
       "sku": "7151104039",
       "global_unique_id": "",
-      "price": "389400",
+      "price": "194700",
       "regular_price": "649000",
-      "sale_price": "389400",
+      "sale_price": "194700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -11513,7 +11515,7 @@
         {
           "id": 2216390,
           "key": "_last_change_time",
-          "value": "1778275725"
+          "value": "1795408108"
         },
         {
           "id": 2314740,
@@ -11910,15 +11912,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:34:58",
       "date_created_gmt": "2022-08-25T22:34:58",
-      "date_modified": "2026-08-04T16:57:06",
-      "date_modified_gmt": "2026-08-04T16:57:06",
+      "date_modified": "2026-11-23T04:28:28",
+      "date_modified_gmt": "2026-11-23T04:28:28",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/coventry/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=38",
       "sku": "7151104038",
       "global_unique_id": "",
-      "price": "389400",
+      "price": "194700",
       "regular_price": "649000",
-      "sale_price": "389400",
+      "sale_price": "194700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -12421,7 +12423,7 @@
         {
           "id": 2216388,
           "key": "_last_change_time",
-          "value": "1778275725"
+          "value": "1795408108"
         },
         {
           "id": 2314739,
@@ -14589,15 +14591,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:34:58",
       "date_created_gmt": "2022-08-25T22:34:58",
-      "date_modified": "2026-08-04T16:57:06",
-      "date_modified_gmt": "2026-08-04T16:57:06",
+      "date_modified": "2026-11-23T04:28:28",
+      "date_modified_gmt": "2026-11-23T04:28:28",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/coventry/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=42",
       "sku": "7151101042",
       "global_unique_id": "",
-      "price": "389400",
+      "price": "194700",
       "regular_price": "649000",
-      "sale_price": "389400",
+      "sale_price": "194700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -15095,7 +15097,7 @@
         {
           "id": 2216385,
           "key": "_last_change_time",
-          "value": "1778275724"
+          "value": "1795408108"
         },
         {
           "id": 2314745,
@@ -15482,15 +15484,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:34:58",
       "date_created_gmt": "2022-08-25T22:34:58",
-      "date_modified": "2026-08-04T16:57:05",
-      "date_modified_gmt": "2026-08-04T16:57:05",
+      "date_modified": "2026-11-23T04:28:28",
+      "date_modified_gmt": "2026-11-23T04:28:28",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/coventry/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=41",
       "sku": "7151101041",
       "global_unique_id": "",
-      "price": "389400",
+      "price": "194700",
       "regular_price": "649000",
-      "sale_price": "389400",
+      "sale_price": "194700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -15988,7 +15990,7 @@
         {
           "id": 2216384,
           "key": "_last_change_time",
-          "value": "1778275724"
+          "value": "1795408108"
         },
         {
           "id": 2314744,
@@ -16375,15 +16377,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:34:58",
       "date_created_gmt": "2022-08-25T22:34:58",
-      "date_modified": "2026-08-04T16:57:05",
-      "date_modified_gmt": "2026-08-04T16:57:05",
+      "date_modified": "2026-11-23T04:28:27",
+      "date_modified_gmt": "2026-11-23T04:28:27",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/coventry/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=40",
       "sku": "7151101040",
       "global_unique_id": "",
-      "price": "389400",
+      "price": "194700",
       "regular_price": "649000",
-      "sale_price": "389400",
+      "sale_price": "194700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -16881,7 +16883,7 @@
         {
           "id": 2216383,
           "key": "_last_change_time",
-          "value": "1778275724"
+          "value": "1795408107"
         },
         {
           "id": 2314743,
@@ -17268,15 +17270,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:34:58",
       "date_created_gmt": "2022-08-25T22:34:58",
-      "date_modified": "2026-08-04T16:57:05",
-      "date_modified_gmt": "2026-08-04T16:57:05",
+      "date_modified": "2026-11-23T04:28:27",
+      "date_modified_gmt": "2026-11-23T04:28:27",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/coventry/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=39",
       "sku": "7151101039",
       "global_unique_id": "",
-      "price": "389400",
+      "price": "194700",
       "regular_price": "649000",
-      "sale_price": "389400",
+      "sale_price": "194700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -17774,7 +17776,7 @@
         {
           "id": 2216382,
           "key": "_last_change_time",
-          "value": "1778275724"
+          "value": "1795408107"
         },
         {
           "id": 2314742,
@@ -18161,15 +18163,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:34:46",
       "date_created_gmt": "2022-08-25T22:34:46",
-      "date_modified": "2026-08-04T16:57:06",
-      "date_modified_gmt": "2026-08-04T16:57:06",
+      "date_modified": "2026-11-23T04:28:27",
+      "date_modified_gmt": "2026-11-23T04:28:27",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/coventry/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=38",
       "sku": "7151101038",
       "global_unique_id": "",
-      "price": "389400",
+      "price": "194700",
       "regular_price": "649000",
-      "sale_price": "389400",
+      "sale_price": "194700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -18672,7 +18674,7 @@
         {
           "id": 2216380,
           "key": "_last_change_time",
-          "value": "1778275724"
+          "value": "1795408107"
         },
         {
           "id": 2314746,
@@ -19057,7 +19059,11 @@
     "17421": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/04/046-zapato-cenital.jpg",
     "17422": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/04/046-zapato-lateral.jpg",
     "17423": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/04/031-zapato-cenital.jpg",
-    "17424": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/04/031-zapato-lateral.jpg"
+    "17424": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/04/031-zapato-lateral.jpg",
+    "86104": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-botas-coventry-azul-02.jpg",
+    "86105": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-botas-coventry-azul-03.jpg",
+    "86107": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-botas-coventry-cafe-02.jpg",
+    "86108": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-botas-coventry-cafe-03.jpg"
   },
   "stock_status": "instock",
   "variation_images_map": {
@@ -19067,6 +19073,16 @@
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-botas-coventry-azul-01.jpg",
         "alt": "winston-and-harry-botas-coventry-azul-01",
         "name": "winston-and-harry-botas-coventry-azul-01"
+      },
+      {
+        "id": 86104,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-botas-coventry-azul-02.jpg",
+        "alt": "Coventry"
+      },
+      {
+        "id": 86105,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-botas-coventry-azul-03.jpg",
+        "alt": "Coventry"
       },
       {
         "id": 17422,
@@ -19104,6 +19120,16 @@
       }
     ],
     "cafe": [
+      {
+        "id": 86107,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-botas-coventry-cafe-02.jpg",
+        "alt": "Coventry"
+      },
+      {
+        "id": 86108,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-botas-coventry-cafe-03.jpg",
+        "alt": "Coventry"
+      },
       {
         "id": 11720,
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2020/12/025-zapato-lateral.jpg",

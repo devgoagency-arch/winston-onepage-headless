@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>800,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>800,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -185,6 +185,8 @@
         "name": "winston-and-harry-chaqueta-amsterdam-azul-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "800000",
       "regular_price": "800000",
@@ -214,6 +216,8 @@
         "name": "winston-and-harry-chaqueta-amsterdam-azul-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "price": "800000",
       "regular_price": "800000",
@@ -243,6 +247,8 @@
         "name": "winston-and-harry-chaqueta-amsterdam-azul-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "800000",
       "regular_price": "800000",
@@ -272,6 +278,8 @@
         "name": "winston-and-harry-chaqueta-amsterdam-azul-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "800000",
       "regular_price": "800000",
@@ -301,6 +309,8 @@
         "name": "winston-and-harry-chaqueta-amsterdam-azul-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "800000",
       "regular_price": "800000",
@@ -330,6 +340,8 @@
         "name": "winston-and-harry-chaqueta-amsterdam-roja-bolsillo-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "800000",
       "regular_price": "800000",
@@ -359,6 +371,8 @@
         "name": "winston-and-harry-chaqueta-amsterdam-roja-bolsillo-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 7,
       "stock_status": "instock",
       "price": "800000",
       "regular_price": "800000",
@@ -388,6 +402,8 @@
         "name": "winston-and-harry-chaqueta-amsterdam-roja-bolsillo-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "800000",
       "regular_price": "800000",
@@ -417,6 +433,8 @@
         "name": "winston-and-harry-chaqueta-amsterdam-roja-bolsillo-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "800000",
       "regular_price": "800000",
@@ -446,6 +464,8 @@
         "name": "winston-and-harry-chaqueta-amsterdam-roja-bolsillo-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "800000",
       "regular_price": "800000",
@@ -475,6 +495,8 @@
         "name": "winston-and-harry-chaqueta-amsterdam-azul-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "800000",
       "regular_price": "800000",
@@ -504,6 +526,8 @@
         "name": "winston-and-harry-chaqueta-amsterdam-azul-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "price": "800000",
       "regular_price": "800000",
@@ -533,6 +557,8 @@
         "name": "winston-and-harry-chaqueta-amsterdam-azul-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "800000",
       "regular_price": "800000",
@@ -562,6 +588,8 @@
         "name": "winston-and-harry-chaqueta-amsterdam-azul-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "800000",
       "regular_price": "800000",
@@ -591,6 +619,8 @@
         "name": "winston-and-harry-chaqueta-amsterdam-azul-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "800000",
       "regular_price": "800000",
@@ -10364,8 +10394,8 @@
       "type": "variation",
       "date_created": "2026-05-08T00:56:21",
       "date_created_gmt": "2026-05-08T00:56:21",
-      "date_modified": "2026-06-02T17:42:16",
-      "date_modified_gmt": "2026-06-02T17:42:16",
+      "date_modified": "2026-10-05T21:51:50",
+      "date_modified_gmt": "2026-10-05T21:51:50",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/chaqueta-amsterdam/?attribute_pa_selecciona-el-color=rojo&attribute_pa_selecciona-una-talla=l",
       "sku": "19200213036",
@@ -10388,7 +10418,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 4,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -10435,7 +10465,7 @@
         {
           "id": 2335280,
           "key": "_last_change_time",
-          "value": "1780422136"
+          "value": "1791237110"
         },
         {
           "id": 2335281,
@@ -14676,8 +14706,8 @@
       "type": "variation",
       "date_created": "2026-05-08T00:56:21",
       "date_created_gmt": "2026-05-08T00:56:21",
-      "date_modified": "2026-07-27T17:44:42",
-      "date_modified_gmt": "2026-07-27T17:44:42",
+      "date_modified": "2026-10-05T21:51:50",
+      "date_modified_gmt": "2026-10-05T21:51:50",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/chaqueta-amsterdam/?attribute_pa_selecciona-el-color=azul-oscuro&attribute_pa_selecciona-una-talla=m",
       "sku": "19200237034",
@@ -14700,7 +14730,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 6,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -14747,7 +14777,7 @@
         {
           "id": 2335225,
           "key": "_last_change_time",
-          "value": "1785174282"
+          "value": "1791237110"
         },
         {
           "id": 2335226,
@@ -15754,8 +15784,8 @@
       "type": "variation",
       "date_created": "2026-05-08T00:56:21",
       "date_created_gmt": "2026-05-08T00:56:21",
-      "date_modified": "2026-06-16T17:44:55",
-      "date_modified_gmt": "2026-06-16T17:44:55",
+      "date_modified": "2026-10-14T06:14:44",
+      "date_modified_gmt": "2026-10-14T06:14:44",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/chaqueta-amsterdam/?attribute_pa_selecciona-el-color=azul-oscuro&attribute_pa_selecciona-una-talla=l",
       "sku": "19200237036",
@@ -15778,7 +15808,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 2,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -15825,7 +15855,7 @@
         {
           "id": 2335211,
           "key": "_last_change_time",
-          "value": "1781631895"
+          "value": "1791958484"
         },
         {
           "id": 2335212,
@@ -16838,11 +16868,15 @@
     "84928": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-chaqueta-amsterdam-verde-bolsillo-interno-1.jpg",
     "84929": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-chaqueta-amsterdam-verde-bolsillo-manga.jpg",
     "84930": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-chaqueta-amsterdam-verde-cremallera.jpg",
+    "84931": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-chaqueta-amsterdam-verde-cuello.jpg",
+    "84932": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-chaqueta-amsterdam-verde-doblado.jpg",
     "84933": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-chaqueta-amsterdam-verde-posterior.jpg",
     "84934": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-chaqueta-amsterdam-roja-bolsillo-bolsillo-interno-1.jpg",
     "84935": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-chaqueta-amsterdam-roja-bolsillo-bolsillo-interno-2.jpg",
+    "84936": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-chaqueta-amsterdam-roja-bolsillo-doblada.jpg",
     "84938": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-chaqueta-amsterdam-roja-bolsillo-manga.jpg",
-    "84939": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-chaqueta-amsterdam-roja-bolsillo-posterior.jpg"
+    "84939": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-chaqueta-amsterdam-roja-bolsillo-posterior.jpg",
+    "84940": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-chaqueta-amsterdam-roja-cuello.jpg"
   },
   "stock_status": "instock",
   "variation_images_map": {
@@ -16899,6 +16933,16 @@
         "name": "winston-and-harry-chaqueta-amsterdam-roja-bolsillo-frente"
       },
       {
+        "id": 84936,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-chaqueta-amsterdam-roja-bolsillo-doblada.jpg",
+        "alt": "Chaqueta Amsterdam"
+      },
+      {
+        "id": 84940,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-chaqueta-amsterdam-roja-cuello.jpg",
+        "alt": "Chaqueta Amsterdam"
+      },
+      {
         "id": 84939,
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-chaqueta-amsterdam-roja-bolsillo-posterior.jpg",
         "alt": "Chaqueta Amsterdam"
@@ -16925,6 +16969,16 @@
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-chaqueta-amsterdam-azul-frente-1.jpg",
         "alt": "winston-and-harry-chaqueta-amsterdam-azul-frente",
         "name": "winston-and-harry-chaqueta-amsterdam-azul-frente"
+      },
+      {
+        "id": 84932,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-chaqueta-amsterdam-verde-doblado.jpg",
+        "alt": "Chaqueta Amsterdam"
+      },
+      {
+        "id": 84931,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-chaqueta-amsterdam-verde-cuello.jpg",
+        "alt": "Chaqueta Amsterdam"
       },
       {
         "id": 84933,

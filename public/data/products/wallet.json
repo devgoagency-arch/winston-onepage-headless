@@ -9,11 +9,11 @@
   "sku": "320",
   "short_description": "",
   "description": "<p>Dale un toque de W&amp;H a tus necesidades diarias con la billetera Wallet. Este lujoso diseño “bifold” de cuero 100% tiene mucho espacio para tarjetas y billetes y el colorido detalle de rayas en el interior se complementa con el forro insignia escocés de Winston &amp;amp</p>",
-  "on_sale": false,
+  "on_sale": true,
   "prices": {
-    "price": "165000",
+    "price": "99000",
     "regular_price": "165000",
-    "sale_price": "165000",
+    "sale_price": "99000",
     "price_range": null,
     "currency_code": "COP",
     "currency_symbol": "$",
@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>165,000</span>",
+  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>165,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;165,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>99,000</span></ins><span class=\"screen-reader-text\">Current price is: &#036;99,000.</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -164,8 +164,10 @@
         "name": "billetera-miel-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "165000",
+      "price": "99000",
       "regular_price": "165000",
       "sale_price": ""
     }
@@ -229,20 +231,20 @@
       "type": "variation",
       "date_created": "2022-08-25T22:39:58",
       "date_created_gmt": "2022-08-25T22:39:58",
-      "date_modified": "2026-07-16T22:39:21",
-      "date_modified_gmt": "2026-07-16T22:39:21",
+      "date_modified": "2026-11-23T04:29:10",
+      "date_modified_gmt": "2026-11-23T04:29:10",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wallet/?attribute_pa_selecciona-el-color=miel",
       "sku": "33338226000",
       "global_unique_id": "",
-      "price": "165000",
+      "price": "99000",
       "regular_price": "165000",
-      "sale_price": "",
+      "sale_price": "99000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -726,7 +728,7 @@
         {
           "id": 2258471,
           "key": "_last_change_time",
-          "value": "1784241561"
+          "value": "1795408150"
         }
       ],
       "name": "Miel",
@@ -763,20 +765,20 @@
       "type": "variation",
       "date_created": "2022-08-25T22:39:58",
       "date_created_gmt": "2022-08-25T22:39:58",
-      "date_modified": "2026-05-07T23:11:38",
-      "date_modified_gmt": "2026-05-07T23:11:38",
+      "date_modified": "2026-11-23T04:29:10",
+      "date_modified_gmt": "2026-11-23T04:29:10",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wallet/?attribute_pa_selecciona-el-color=negro",
       "sku": "33338202000",
       "global_unique_id": "",
-      "price": "150000",
+      "price": "90000",
       "regular_price": "150000",
-      "sale_price": "",
+      "sale_price": "90000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -1250,7 +1252,7 @@
         {
           "id": 2262272,
           "key": "_last_change_time",
-          "value": "1778190531"
+          "value": "1795408150"
         }
       ],
       "name": "Negro",

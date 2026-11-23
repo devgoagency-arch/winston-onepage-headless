@@ -9,11 +9,11 @@
   "sku": "777",
   "short_description": "<p>Un modelo característico de nosotros, hecho en 100% piel de becerro y suela en cuero. este modelo es muy versátil y fácil de usar.</p>",
   "description": "<p>Los mocasines Bath II son un modelo ideal para ese día que no quieres pensar. Con toques elegantes y atrevidos como las escobillas clásicas, los cordones en cuero y un cerco, estos zapatos son ideales para una reunión de trabajo o para un asado el fin de semana. Es un ejemplo de esos modelos que jamás pasaran de moda. Esta nueva horma es más estilizada perfecto para un pie estilizado.</p>",
-  "on_sale": false,
+  "on_sale": true,
   "prices": {
-    "price": "520000",
+    "price": "312000",
     "regular_price": "520000",
-    "sale_price": "520000",
+    "sale_price": "312000",
     "price_range": null,
     "currency_code": "COP",
     "currency_symbol": "$",
@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>520,000</span>",
+  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>520,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;520,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>312,000</span></ins><span class=\"screen-reader-text\">Current price is: &#036;312,000.</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -256,35 +256,6 @@
   ],
   "variations": [
     {
-      "id": 28729,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "cafe",
-          "option": "cafe"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "38",
-          "option": "38"
-        }
-      ],
-      "image": {
-        "id": 57542,
-        "date_created": "2024-09-06T18:10:39",
-        "date_created_gmt": "2024-09-06T18:10:39",
-        "date_modified": "2024-09-24T16:38:56",
-        "date_modified_gmt": "2024-09-24T16:38:56",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2024/09/Bath-II-Cafe-Winstonandharry-229.jpg",
-        "name": "Bath-II-Cafe-Winstonandharry-229",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "520000",
-      "regular_price": "520000",
-      "sale_price": ""
-    },
-    {
       "id": 28847,
       "attributes": [
         {
@@ -308,8 +279,10 @@
         "name": "Bath-II-Miel-Winstonandharry-238",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "520000",
+      "price": "312000",
       "regular_price": "520000",
       "sale_price": ""
     },
@@ -337,8 +310,10 @@
         "name": "Bath-II-Miel-Winstonandharry-238",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "520000",
+      "price": "312000",
       "regular_price": "520000",
       "sale_price": ""
     },
@@ -366,8 +341,10 @@
         "name": "Bath-II-Miel-Winstonandharry-238",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "520000",
+      "price": "312000",
       "regular_price": "520000",
       "sale_price": ""
     },
@@ -395,8 +372,10 @@
         "name": "Bath II-Negro-Winstonandharry-220",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "520000",
+      "price": "312000",
       "regular_price": "520000",
       "sale_price": ""
     },
@@ -424,8 +403,10 @@
         "name": "Bath-II-Miel-Winstonandharry-238",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
-      "price": "520000",
+      "price": "312000",
       "regular_price": "520000",
       "sale_price": ""
     },
@@ -453,8 +434,10 @@
         "name": "Bath-II-Miel-Winstonandharry-238",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "520000",
+      "price": "312000",
       "regular_price": "520000",
       "sale_price": ""
     },
@@ -482,8 +465,10 @@
         "name": "Bath II-Negro-Winstonandharry-220",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "520000",
+      "price": "312000",
       "regular_price": "520000",
       "sale_price": ""
     },
@@ -511,8 +496,10 @@
         "name": "Bath II-Negro-Winstonandharry-220",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "520000",
+      "price": "312000",
       "regular_price": "520000",
       "sale_price": ""
     },
@@ -540,8 +527,10 @@
         "name": "Bath-II-Cafe-Winstonandharry-229",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "520000",
+      "price": "312000",
       "regular_price": "520000",
       "sale_price": ""
     }
@@ -2391,20 +2380,20 @@
       "type": "variation",
       "date_created": "2023-04-26T15:08:11",
       "date_created_gmt": "2023-04-26T15:08:11",
-      "date_modified": "2026-07-27T20:45:16",
-      "date_modified_gmt": "2026-07-27T20:45:16",
+      "date_modified": "2026-11-23T04:31:28",
+      "date_modified_gmt": "2026-11-23T04:31:28",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bath-ii/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=43",
       "sku": "7305326043",
       "global_unique_id": "",
-      "price": "520000",
+      "price": "312000",
       "regular_price": "520000",
-      "sale_price": "",
+      "sale_price": "312000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -2979,7 +2968,7 @@
         {
           "id": 2250213,
           "key": "_last_change_time",
-          "value": "1778175459"
+          "value": "1795408288"
         },
         {
           "id": 2313225,
@@ -3281,20 +3270,20 @@
       "type": "variation",
       "date_created": "2023-04-26T15:08:11",
       "date_created_gmt": "2023-04-26T15:08:11",
-      "date_modified": "2026-07-27T20:45:16",
-      "date_modified_gmt": "2026-07-27T20:45:16",
+      "date_modified": "2026-11-23T04:31:28",
+      "date_modified_gmt": "2026-11-23T04:31:28",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bath-ii/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=42",
       "sku": "7305326042",
       "global_unique_id": "",
-      "price": "520000",
+      "price": "312000",
       "regular_price": "520000",
-      "sale_price": "",
+      "sale_price": "312000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -3879,7 +3868,7 @@
         {
           "id": 2250212,
           "key": "_last_change_time",
-          "value": "1778175453"
+          "value": "1795408288"
         },
         {
           "id": 2313224,
@@ -4176,20 +4165,20 @@
       "type": "variation",
       "date_created": "2023-04-26T15:08:11",
       "date_created_gmt": "2023-04-26T15:08:11",
-      "date_modified": "2026-07-27T20:45:16",
-      "date_modified_gmt": "2026-07-27T20:45:16",
+      "date_modified": "2026-11-23T04:31:28",
+      "date_modified_gmt": "2026-11-23T04:31:28",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bath-ii/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=41",
       "sku": "7305326041",
       "global_unique_id": "",
-      "price": "520000",
+      "price": "312000",
       "regular_price": "520000",
-      "sale_price": "",
+      "sale_price": "312000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -4774,7 +4763,7 @@
         {
           "id": 2247893,
           "key": "_last_change_time",
-          "value": "1778175453"
+          "value": "1795408288"
         },
         {
           "id": 2313223,
@@ -5071,20 +5060,20 @@
       "type": "variation",
       "date_created": "2023-04-26T15:08:11",
       "date_created_gmt": "2023-04-26T15:08:11",
-      "date_modified": "2026-07-27T20:45:16",
-      "date_modified_gmt": "2026-07-27T20:45:16",
+      "date_modified": "2026-11-23T04:31:28",
+      "date_modified_gmt": "2026-11-23T04:31:28",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bath-ii/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=40",
       "sku": "7305326040",
       "global_unique_id": "",
-      "price": "520000",
+      "price": "312000",
       "regular_price": "520000",
-      "sale_price": "",
+      "sale_price": "312000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -5669,7 +5658,7 @@
         {
           "id": 2250211,
           "key": "_last_change_time",
-          "value": "1778175453"
+          "value": "1795408288"
         },
         {
           "id": 2313222,
@@ -5966,20 +5955,20 @@
       "type": "variation",
       "date_created": "2023-04-26T15:08:11",
       "date_created_gmt": "2023-04-26T15:08:11",
-      "date_modified": "2026-07-27T20:45:16",
-      "date_modified_gmt": "2026-07-27T20:45:16",
+      "date_modified": "2026-11-23T04:31:28",
+      "date_modified_gmt": "2026-11-23T04:31:28",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bath-ii/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=39",
       "sku": "7305326039",
       "global_unique_id": "",
-      "price": "520000",
+      "price": "312000",
       "regular_price": "520000",
-      "sale_price": "",
+      "sale_price": "312000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -5990,7 +5979,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 2,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -6564,7 +6553,7 @@
         {
           "id": 2261047,
           "key": "_last_change_time",
-          "value": "1778175453"
+          "value": "1795408288"
         },
         {
           "id": 2313221,
@@ -6820,11 +6809,6 @@
           "id": 2397697,
           "key": "fb_product_images",
           "value": ""
-        },
-        {
-          "id": 2397698,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
         }
       ],
       "name": "Miel, 39",
@@ -6861,20 +6845,20 @@
       "type": "variation",
       "date_created": "2023-04-26T15:08:11",
       "date_created_gmt": "2023-04-26T15:08:11",
-      "date_modified": "2026-07-27T20:45:16",
-      "date_modified_gmt": "2026-07-27T20:45:16",
+      "date_modified": "2026-11-23T04:31:28",
+      "date_modified_gmt": "2026-11-23T04:31:28",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bath-ii/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=38",
       "sku": "7305326038",
       "global_unique_id": "",
-      "price": "520000",
+      "price": "312000",
       "regular_price": "520000",
-      "sale_price": "",
+      "sale_price": "312000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -7459,7 +7443,7 @@
         {
           "id": 2261046,
           "key": "_last_change_time",
-          "value": "1778175452"
+          "value": "1795408288"
         },
         {
           "id": 2313220,
@@ -7756,20 +7740,20 @@
       "type": "variation",
       "date_created": "2023-04-26T15:08:10",
       "date_created_gmt": "2023-04-26T15:08:10",
-      "date_modified": "2026-07-27T20:45:17",
-      "date_modified_gmt": "2026-07-27T20:45:17",
+      "date_modified": "2026-11-23T04:31:23",
+      "date_modified_gmt": "2026-11-23T04:31:23",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bath-ii/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=37",
       "sku": "7305326037",
       "global_unique_id": "",
-      "price": "520000",
+      "price": "312000",
       "regular_price": "520000",
-      "sale_price": "",
+      "sale_price": "312000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -8354,7 +8338,7 @@
         {
           "id": 2261045,
           "key": "_last_change_time",
-          "value": "1778175452"
+          "value": "1795408283"
         },
         {
           "id": 2313233,
@@ -10431,20 +10415,20 @@
       "type": "variation",
       "date_created": "2023-04-19T20:33:45",
       "date_created_gmt": "2023-04-19T20:33:45",
-      "date_modified": "2026-07-27T20:45:17",
-      "date_modified_gmt": "2026-07-27T20:45:17",
+      "date_modified": "2026-11-23T04:31:23",
+      "date_modified_gmt": "2026-11-23T04:31:23",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bath-ii/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=43",
       "sku": "7305304043",
       "global_unique_id": "",
-      "price": "520000",
+      "price": "312000",
       "regular_price": "520000",
-      "sale_price": "",
+      "sale_price": "312000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -11019,7 +11003,7 @@
         {
           "id": 2261042,
           "key": "_last_change_time",
-          "value": "1778175452"
+          "value": "1795408283"
         },
         {
           "id": 2313264,
@@ -11321,20 +11305,20 @@
       "type": "variation",
       "date_created": "2023-04-19T20:33:45",
       "date_created_gmt": "2023-04-19T20:33:45",
-      "date_modified": "2026-07-27T20:45:17",
-      "date_modified_gmt": "2026-07-27T20:45:17",
+      "date_modified": "2026-11-23T04:31:23",
+      "date_modified_gmt": "2026-11-23T04:31:23",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bath-ii/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=42",
       "sku": "7305304042",
       "global_unique_id": "",
-      "price": "520000",
+      "price": "312000",
       "regular_price": "520000",
-      "sale_price": "",
+      "sale_price": "312000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -11904,7 +11888,7 @@
         {
           "id": 2261041,
           "key": "_last_change_time",
-          "value": "1778175452"
+          "value": "1795408283"
         },
         {
           "id": 2313263,
@@ -12216,20 +12200,20 @@
       "type": "variation",
       "date_created": "2023-04-19T20:33:44",
       "date_created_gmt": "2023-04-19T20:33:44",
-      "date_modified": "2026-07-27T20:45:17",
-      "date_modified_gmt": "2026-07-27T20:45:17",
+      "date_modified": "2026-11-23T04:31:23",
+      "date_modified_gmt": "2026-11-23T04:31:23",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bath-ii/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=41",
       "sku": "7305304041",
       "global_unique_id": "",
-      "price": "520000",
+      "price": "312000",
       "regular_price": "520000",
-      "sale_price": "",
+      "sale_price": "312000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -12814,7 +12798,7 @@
         {
           "id": 2261040,
           "key": "_last_change_time",
-          "value": "1778175452"
+          "value": "1795408283"
         },
         {
           "id": 2313267,
@@ -13111,20 +13095,20 @@
       "type": "variation",
       "date_created": "2023-04-19T20:33:44",
       "date_created_gmt": "2023-04-19T20:33:44",
-      "date_modified": "2026-07-27T20:45:17",
-      "date_modified_gmt": "2026-07-27T20:45:17",
+      "date_modified": "2026-11-23T04:31:23",
+      "date_modified_gmt": "2026-11-23T04:31:23",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bath-ii/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=40",
       "sku": "7305304040",
       "global_unique_id": "",
-      "price": "520000",
+      "price": "312000",
       "regular_price": "520000",
-      "sale_price": "",
+      "sale_price": "312000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -13709,7 +13693,7 @@
         {
           "id": 2261039,
           "key": "_last_change_time",
-          "value": "1778175451"
+          "value": "1795408283"
         },
         {
           "id": 2313280,
@@ -14006,20 +13990,20 @@
       "type": "variation",
       "date_created": "2023-04-19T20:33:44",
       "date_created_gmt": "2023-04-19T20:33:44",
-      "date_modified": "2026-07-27T20:45:23",
-      "date_modified_gmt": "2026-07-27T20:45:23",
+      "date_modified": "2026-11-23T04:31:23",
+      "date_modified_gmt": "2026-11-23T04:31:23",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bath-ii/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=39",
       "sku": "7305304039",
       "global_unique_id": "",
-      "price": "520000",
+      "price": "312000",
       "regular_price": "520000",
-      "sale_price": "",
+      "sale_price": "312000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -14604,7 +14588,7 @@
         {
           "id": 2261038,
           "key": "_last_change_time",
-          "value": "1778175451"
+          "value": "1795408283"
         },
         {
           "id": 2313279,
@@ -14901,20 +14885,20 @@
       "type": "variation",
       "date_created": "2023-04-19T20:33:44",
       "date_created_gmt": "2023-04-19T20:33:44",
-      "date_modified": "2026-07-27T20:45:18",
-      "date_modified_gmt": "2026-07-27T20:45:18",
+      "date_modified": "2026-11-23T04:31:23",
+      "date_modified_gmt": "2026-11-23T04:31:23",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bath-ii/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=38",
       "sku": "7305304038",
       "global_unique_id": "",
-      "price": "520000",
+      "price": "312000",
       "regular_price": "520000",
-      "sale_price": "",
+      "sale_price": "312000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -14925,8 +14909,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 2,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -15499,7 +15483,7 @@
         {
           "id": 2261037,
           "key": "_last_change_time",
-          "value": "1778175451"
+          "value": "1795408283"
         },
         {
           "id": 2313278,
@@ -15755,11 +15739,6 @@
           "id": 2398839,
           "key": "fb_product_images",
           "value": ""
-        },
-        {
-          "id": 2398840,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
         }
       ],
       "name": "Café, 38",
@@ -15796,20 +15775,20 @@
       "type": "variation",
       "date_created": "2023-04-19T20:33:44",
       "date_created_gmt": "2023-04-19T20:33:44",
-      "date_modified": "2026-07-27T20:45:17",
-      "date_modified_gmt": "2026-07-27T20:45:17",
+      "date_modified": "2026-11-23T04:31:23",
+      "date_modified_gmt": "2026-11-23T04:31:23",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bath-ii/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=37",
       "sku": "7305304037",
       "global_unique_id": "",
-      "price": "520000",
+      "price": "312000",
       "regular_price": "520000",
-      "sale_price": "",
+      "sale_price": "312000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -16394,7 +16373,7 @@
         {
           "id": 2261036,
           "key": "_last_change_time",
-          "value": "1778175451"
+          "value": "1795408283"
         },
         {
           "id": 2313277,
@@ -17581,20 +17560,20 @@
       "type": "variation",
       "date_created": "2023-04-19T20:33:44",
       "date_created_gmt": "2023-04-19T20:33:44",
-      "date_modified": "2026-07-27T20:45:17",
-      "date_modified_gmt": "2026-07-27T20:45:17",
+      "date_modified": "2026-11-23T04:31:23",
+      "date_modified_gmt": "2026-11-23T04:31:23",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bath-ii/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=44",
       "sku": "7305302044",
       "global_unique_id": "",
-      "price": "520000",
+      "price": "312000",
       "regular_price": "520000",
-      "sale_price": "",
+      "sale_price": "312000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -18164,7 +18143,7 @@
         {
           "id": 2261034,
           "key": "_last_change_time",
-          "value": "1778175450"
+          "value": "1795408283"
         },
         {
           "id": 2313275,
@@ -18471,20 +18450,20 @@
       "type": "variation",
       "date_created": "2023-04-19T20:33:44",
       "date_created_gmt": "2023-04-19T20:33:44",
-      "date_modified": "2026-07-27T20:45:17",
-      "date_modified_gmt": "2026-07-27T20:45:17",
+      "date_modified": "2026-11-23T04:31:23",
+      "date_modified_gmt": "2026-11-23T04:31:23",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bath-ii/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=43",
       "sku": "7305302043",
       "global_unique_id": "",
-      "price": "520000",
+      "price": "312000",
       "regular_price": "520000",
-      "sale_price": "",
+      "sale_price": "312000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -19059,7 +19038,7 @@
         {
           "id": 2261033,
           "key": "_last_change_time",
-          "value": "1778175450"
+          "value": "1795408283"
         },
         {
           "id": 2313274,
@@ -19361,20 +19340,20 @@
       "type": "variation",
       "date_created": "2023-04-19T20:33:44",
       "date_created_gmt": "2023-04-19T20:33:44",
-      "date_modified": "2026-07-27T20:45:17",
-      "date_modified_gmt": "2026-07-27T20:45:17",
+      "date_modified": "2026-11-23T04:31:23",
+      "date_modified_gmt": "2026-11-23T04:31:23",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bath-ii/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=42",
       "sku": "7305302042",
       "global_unique_id": "",
-      "price": "520000",
+      "price": "312000",
       "regular_price": "520000",
-      "sale_price": "",
+      "sale_price": "312000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -19949,7 +19928,7 @@
         {
           "id": 2261032,
           "key": "_last_change_time",
-          "value": "1778175450"
+          "value": "1795408283"
         },
         {
           "id": 2313273,
@@ -20251,20 +20230,20 @@
       "type": "variation",
       "date_created": "2023-04-19T20:33:44",
       "date_created_gmt": "2023-04-19T20:33:44",
-      "date_modified": "2026-07-27T20:45:17",
-      "date_modified_gmt": "2026-07-27T20:45:17",
+      "date_modified": "2026-11-23T04:31:23",
+      "date_modified_gmt": "2026-11-23T04:31:23",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bath-ii/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=41",
       "sku": "7305302041",
       "global_unique_id": "",
-      "price": "520000",
+      "price": "312000",
       "regular_price": "520000",
-      "sale_price": "",
+      "sale_price": "312000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -20839,7 +20818,7 @@
         {
           "id": 2261031,
           "key": "_last_change_time",
-          "value": "1778175450"
+          "value": "1795408283"
         },
         {
           "id": 2313272,
@@ -21141,20 +21120,20 @@
       "type": "variation",
       "date_created": "2023-04-19T20:33:44",
       "date_created_gmt": "2023-04-19T20:33:44",
-      "date_modified": "2026-07-27T20:45:17",
-      "date_modified_gmt": "2026-07-27T20:45:17",
+      "date_modified": "2026-11-23T04:31:23",
+      "date_modified_gmt": "2026-11-23T04:31:23",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bath-ii/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=40",
       "sku": "7305302040",
       "global_unique_id": "",
-      "price": "520000",
+      "price": "312000",
       "regular_price": "520000",
-      "sale_price": "",
+      "sale_price": "312000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -21724,7 +21703,7 @@
         {
           "id": 2261030,
           "key": "_last_change_time",
-          "value": "1778175449"
+          "value": "1795408283"
         },
         {
           "id": 2313271,
@@ -22031,20 +22010,20 @@
       "type": "variation",
       "date_created": "2023-04-19T20:33:44",
       "date_created_gmt": "2023-04-19T20:33:44",
-      "date_modified": "2026-07-27T20:45:17",
-      "date_modified_gmt": "2026-07-27T20:45:17",
+      "date_modified": "2026-11-23T04:31:23",
+      "date_modified_gmt": "2026-11-23T04:31:23",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bath-ii/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=39",
       "sku": "7305302039",
       "global_unique_id": "",
-      "price": "520000",
+      "price": "312000",
       "regular_price": "520000",
-      "sale_price": "",
+      "sale_price": "312000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -22055,7 +22034,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 2,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -22629,7 +22608,7 @@
         {
           "id": 2250204,
           "key": "_last_change_time",
-          "value": "1778175449"
+          "value": "1795408283"
         },
         {
           "id": 2313270,
@@ -22872,11 +22851,6 @@
           "value": ""
         },
         {
-          "id": 2398420,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2398421,
           "key": "_wc_facebook_product_video_source",
           "value": ""
@@ -22884,11 +22858,6 @@
         {
           "id": 2398422,
           "key": "fb_product_images",
-          "value": ""
-        },
-        {
-          "id": 2398423,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],
@@ -22926,20 +22895,20 @@
       "type": "variation",
       "date_created": "2023-04-19T20:33:44",
       "date_created_gmt": "2023-04-19T20:33:44",
-      "date_modified": "2026-07-27T20:45:17",
-      "date_modified_gmt": "2026-07-27T20:45:17",
+      "date_modified": "2026-11-23T04:31:23",
+      "date_modified_gmt": "2026-11-23T04:31:23",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bath-ii/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=38",
       "sku": "7305302038",
       "global_unique_id": "",
-      "price": "520000",
+      "price": "312000",
       "regular_price": "520000",
-      "sale_price": "",
+      "sale_price": "312000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -23524,7 +23493,7 @@
         {
           "id": 2239411,
           "key": "_last_change_time",
-          "value": "1778175449"
+          "value": "1795408283"
         },
         {
           "id": 2313269,
@@ -23821,20 +23790,20 @@
       "type": "variation",
       "date_created": "2023-04-19T20:33:44",
       "date_created_gmt": "2023-04-19T20:33:44",
-      "date_modified": "2026-07-27T20:45:23",
-      "date_modified_gmt": "2026-07-27T20:45:23",
+      "date_modified": "2026-11-23T04:31:23",
+      "date_modified_gmt": "2026-11-23T04:31:23",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bath-ii/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=37",
       "sku": "7305302037",
       "global_unique_id": "",
-      "price": "520000",
+      "price": "312000",
       "regular_price": "520000",
-      "sale_price": "",
+      "sale_price": "312000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -24414,7 +24383,7 @@
         {
           "id": 2261029,
           "key": "_last_change_time",
-          "value": "1778175449"
+          "value": "1795408283"
         },
         {
           "id": 2313268,
@@ -24737,49 +24706,6 @@
   },
   "stock_status": "instock",
   "variation_images_map": {
-    "cafe": [
-      {
-        "id": 57542,
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2024/09/Bath-II-Cafe-Winstonandharry-229.jpg",
-        "alt": "Bath-II-Cafe-Winstonandharry-229",
-        "name": "Bath-II-Cafe-Winstonandharry-229"
-      },
-      {
-        "id": 57537,
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2024/09/Bath-II-Cafe-Winstonandharry-223.jpg",
-        "alt": "Bath II"
-      },
-      {
-        "id": 57820,
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2024/09/Bath-II-Cafe-Winstonandharry-224.jpeg",
-        "alt": "Bath II"
-      },
-      {
-        "id": 57543,
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2024/09/Bath-II-Cafe-Winstonandharry-230.jpg",
-        "alt": "Bath II"
-      },
-      {
-        "id": 57541,
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2024/09/Bath-II-Cafe-Winstonandharry-228.jpg",
-        "alt": "Bath II"
-      },
-      {
-        "id": 57538,
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2024/09/Bath-II-Cafe-Winstonandharry-225.jpg",
-        "alt": "Bath II"
-      },
-      {
-        "id": 57539,
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2024/09/Bath-II-Cafe-Winstonandharry-226.jpg",
-        "alt": "Bath II"
-      },
-      {
-        "id": 57540,
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2024/09/Bath-II-Cafe-Winstonandharry-227.jpg",
-        "alt": "Bath II"
-      }
-    ],
     "miel": [
       {
         "id": 57550,
@@ -24863,6 +24789,49 @@
       {
         "id": 57556,
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2024/09/Bath-II-Negro-Winstonandharry-218.jpg",
+        "alt": "Bath II"
+      }
+    ],
+    "cafe": [
+      {
+        "id": 57542,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2024/09/Bath-II-Cafe-Winstonandharry-229.jpg",
+        "alt": "Bath-II-Cafe-Winstonandharry-229",
+        "name": "Bath-II-Cafe-Winstonandharry-229"
+      },
+      {
+        "id": 57537,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2024/09/Bath-II-Cafe-Winstonandharry-223.jpg",
+        "alt": "Bath II"
+      },
+      {
+        "id": 57820,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2024/09/Bath-II-Cafe-Winstonandharry-224.jpeg",
+        "alt": "Bath II"
+      },
+      {
+        "id": 57543,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2024/09/Bath-II-Cafe-Winstonandharry-230.jpg",
+        "alt": "Bath II"
+      },
+      {
+        "id": 57541,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2024/09/Bath-II-Cafe-Winstonandharry-228.jpg",
+        "alt": "Bath II"
+      },
+      {
+        "id": 57538,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2024/09/Bath-II-Cafe-Winstonandharry-225.jpg",
+        "alt": "Bath II"
+      },
+      {
+        "id": 57539,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2024/09/Bath-II-Cafe-Winstonandharry-226.jpg",
+        "alt": "Bath II"
+      },
+      {
+        "id": 57540,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2024/09/Bath-II-Cafe-Winstonandharry-227.jpg",
         "alt": "Bath II"
       }
     ]

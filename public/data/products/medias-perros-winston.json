@@ -119,8 +119,8 @@
         "name": "winston-and-harry-medias-perros-winston-azul-01",
         "alt": ""
       },
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 69,
       "stock_status": "instock",
       "price": "27500",
       "regular_price": "27500",
@@ -145,8 +145,8 @@
         "name": "winston-and-harry-medias-perros-winston-negro-01",
         "alt": ""
       },
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 79,
       "stock_status": "instock",
       "price": "27500",
       "regular_price": "27500",
@@ -218,8 +218,8 @@
       "type": "variation",
       "date_created": "2026-11-19T21:04:10",
       "date_created_gmt": "2026-11-19T21:04:10",
-      "date_modified": "2026-11-22T00:08:57",
-      "date_modified_gmt": "2026-11-22T00:08:57",
+      "date_modified": "2026-11-23T04:40:50",
+      "date_modified_gmt": "2026-11-23T04:40:50",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/medias-perros-winston/?attribute_pa_selecciona-el-color=negro",
       "sku": "11189202000",
@@ -241,8 +241,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 79,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -282,7 +282,7 @@
         {
           "id": 2628397,
           "key": "_last_change_time",
-          "value": "1795122269"
+          "value": "1795408850"
         },
         {
           "id": 2628398,
@@ -1065,16 +1065,6 @@
           "value": ""
         },
         {
-          "id": 2649029,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2649030,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2649031,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -1299,8 +1289,8 @@
       "type": "variation",
       "date_created": "2026-11-19T21:04:10",
       "date_created_gmt": "2026-11-19T21:04:10",
-      "date_modified": "2026-11-22T00:08:57",
-      "date_modified_gmt": "2026-11-22T00:08:57",
+      "date_modified": "2026-11-23T04:40:50",
+      "date_modified_gmt": "2026-11-23T04:40:50",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/medias-perros-winston/?attribute_pa_selecciona-el-color=azul",
       "sku": "11189201000",
@@ -1322,8 +1312,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 69,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -1363,7 +1353,7 @@
         {
           "id": 2628384,
           "key": "_last_change_time",
-          "value": "1795122269"
+          "value": "1795408850"
         },
         {
           "id": 2628385,
@@ -2143,16 +2133,6 @@
         {
           "id": 2648838,
           "key": "_oembed_time_3efc152008105e0533b1d0735c932ef8",
-          "value": ""
-        },
-        {
-          "id": 2648839,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2648840,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         },
         {

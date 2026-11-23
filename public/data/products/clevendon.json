@@ -11,9 +11,9 @@
   "description": "<p>El Mocasín Clevendon, es un zapato versatil con una suela ligera y comoda. Su capellada es 100% cuero y ayuda a que el zapato sea muy fresco</p>",
   "on_sale": true,
   "prices": {
-    "price": "422400",
+    "price": "211200",
     "regular_price": "704000",
-    "sale_price": "422400",
+    "sale_price": "211200",
     "price_range": null,
     "currency_code": "COP",
     "currency_symbol": "$",
@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>704,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;704,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>422,400</span></ins><span class=\"screen-reader-text\">Current price is: &#036;422,400.</span>",
+  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>704,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;704,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>211,200</span></ins><span class=\"screen-reader-text\">Current price is: &#036;211,200.</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -256,8 +256,10 @@
         "name": "winston-and-harry-mocasines-clevendon-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "422400",
+      "price": "211200",
       "regular_price": "704000",
       "sale_price": ""
     },
@@ -285,8 +287,10 @@
         "name": "winston-and-harry-mocasines-clevendon-miel-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "422400",
+      "price": "211200",
       "regular_price": "704000",
       "sale_price": ""
     },
@@ -314,8 +318,10 @@
         "name": "winston-and-harry-mocasines-clevendon-miel-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "422400",
+      "price": "211200",
       "regular_price": "704000",
       "sale_price": ""
     }
@@ -385,15 +391,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:46:05",
       "date_created_gmt": "2022-08-25T22:46:05",
-      "date_modified": "2026-07-27T20:46:01",
-      "date_modified_gmt": "2026-07-27T20:46:01",
+      "date_modified": "2026-11-23T04:29:43",
+      "date_modified_gmt": "2026-11-23T04:29:43",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/clevendon/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=45",
       "sku": "7023126045",
       "global_unique_id": "",
-      "price": "422400",
+      "price": "211200",
       "regular_price": "704000",
-      "sale_price": "422400",
+      "sale_price": "211200",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -891,7 +897,7 @@
         {
           "id": 2216373,
           "key": "_last_change_time",
-          "value": "1785171799"
+          "value": "1795408183"
         },
         {
           "id": 2314233,
@@ -1278,15 +1284,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:46:05",
       "date_created_gmt": "2022-08-25T22:46:05",
-      "date_modified": "2026-07-27T20:46:01",
-      "date_modified_gmt": "2026-07-27T20:46:01",
+      "date_modified": "2026-11-23T04:29:43",
+      "date_modified_gmt": "2026-11-23T04:29:43",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/clevendon/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=44",
       "sku": "7023126044",
       "global_unique_id": "",
-      "price": "422400",
+      "price": "211200",
       "regular_price": "704000",
-      "sale_price": "422400",
+      "sale_price": "211200",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -1784,7 +1790,7 @@
         {
           "id": 2216372,
           "key": "_last_change_time",
-          "value": "1785171799"
+          "value": "1795408183"
         },
         {
           "id": 2314232,
@@ -2171,15 +2177,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:45:45",
       "date_created_gmt": "2022-08-25T22:45:45",
-      "date_modified": "2026-07-27T20:46:01",
-      "date_modified_gmt": "2026-07-27T20:46:01",
+      "date_modified": "2026-11-23T04:29:43",
+      "date_modified_gmt": "2026-11-23T04:29:43",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/clevendon/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=43",
       "sku": "7023126043",
       "global_unique_id": "",
-      "price": "422400",
+      "price": "211200",
       "regular_price": "704000",
-      "sale_price": "422400",
+      "sale_price": "211200",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -2677,7 +2683,7 @@
         {
           "id": 2216371,
           "key": "_last_change_time",
-          "value": "1785171799"
+          "value": "1795408183"
         },
         {
           "id": 2314235,
@@ -3064,15 +3070,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:45:45",
       "date_created_gmt": "2022-08-25T22:45:45",
-      "date_modified": "2026-07-27T20:46:01",
-      "date_modified_gmt": "2026-07-27T20:46:01",
+      "date_modified": "2026-11-23T04:29:43",
+      "date_modified_gmt": "2026-11-23T04:29:43",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/clevendon/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=42",
       "sku": "7023126042",
       "global_unique_id": "",
-      "price": "422400",
+      "price": "211200",
       "regular_price": "704000",
-      "sale_price": "422400",
+      "sale_price": "211200",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -3570,7 +3576,7 @@
         {
           "id": 2216370,
           "key": "_last_change_time",
-          "value": "1785171799"
+          "value": "1795408183"
         },
         {
           "id": 2314234,
@@ -3957,15 +3963,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:45:45",
       "date_created_gmt": "2022-08-25T22:45:45",
-      "date_modified": "2026-07-27T20:46:01",
-      "date_modified_gmt": "2026-07-27T20:46:01",
+      "date_modified": "2026-11-23T04:29:43",
+      "date_modified_gmt": "2026-11-23T04:29:43",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/clevendon/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=41",
       "sku": "7023126041",
       "global_unique_id": "",
-      "price": "422400",
+      "price": "211200",
       "regular_price": "704000",
-      "sale_price": "422400",
+      "sale_price": "211200",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -4463,7 +4469,7 @@
         {
           "id": 2216369,
           "key": "_last_change_time",
-          "value": "1785171799"
+          "value": "1795408183"
         },
         {
           "id": 2314237,
@@ -4850,15 +4856,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:45:45",
       "date_created_gmt": "2022-08-25T22:45:45",
-      "date_modified": "2026-07-27T20:46:01",
-      "date_modified_gmt": "2026-07-27T20:46:01",
+      "date_modified": "2026-11-23T04:29:43",
+      "date_modified_gmt": "2026-11-23T04:29:43",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/clevendon/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=40",
       "sku": "7023126040",
       "global_unique_id": "",
-      "price": "422400",
+      "price": "211200",
       "regular_price": "704000",
-      "sale_price": "422400",
+      "sale_price": "211200",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -5356,7 +5362,7 @@
         {
           "id": 2216365,
           "key": "_last_change_time",
-          "value": "1785171799"
+          "value": "1795408183"
         },
         {
           "id": 2314236,
@@ -5743,15 +5749,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:45:44",
       "date_created_gmt": "2022-08-25T22:45:44",
-      "date_modified": "2026-07-27T20:46:01",
-      "date_modified_gmt": "2026-07-27T20:46:01",
+      "date_modified": "2026-11-23T04:29:43",
+      "date_modified_gmt": "2026-11-23T04:29:43",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/clevendon/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=39",
       "sku": "7023126039",
       "global_unique_id": "",
-      "price": "422400",
+      "price": "211200",
       "regular_price": "704000",
-      "sale_price": "422400",
+      "sale_price": "211200",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -6249,7 +6255,7 @@
         {
           "id": 2216364,
           "key": "_last_change_time",
-          "value": "1785171799"
+          "value": "1795408183"
         },
         {
           "id": 2314251,
@@ -6636,15 +6642,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:45:44",
       "date_created_gmt": "2022-08-25T22:45:44",
-      "date_modified": "2026-07-27T20:46:01",
-      "date_modified_gmt": "2026-07-27T20:46:01",
+      "date_modified": "2026-11-23T04:29:43",
+      "date_modified_gmt": "2026-11-23T04:29:43",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/clevendon/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=38",
       "sku": "7023126038",
       "global_unique_id": "",
-      "price": "422400",
+      "price": "211200",
       "regular_price": "704000",
-      "sale_price": "422400",
+      "sale_price": "211200",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -7142,7 +7148,7 @@
         {
           "id": 2216363,
           "key": "_last_change_time",
-          "value": "1785171800"
+          "value": "1795408183"
         },
         {
           "id": 2314250,
@@ -7529,15 +7535,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:45:44",
       "date_created_gmt": "2022-08-25T22:45:44",
-      "date_modified": "2026-07-27T20:46:01",
-      "date_modified_gmt": "2026-07-27T20:46:01",
+      "date_modified": "2026-11-23T04:29:43",
+      "date_modified_gmt": "2026-11-23T04:29:43",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/clevendon/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=37",
       "sku": "7023126037",
       "global_unique_id": "",
-      "price": "422400",
+      "price": "211200",
       "regular_price": "704000",
-      "sale_price": "422400",
+      "sale_price": "211200",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -8035,7 +8041,7 @@
         {
           "id": 2216362,
           "key": "_last_change_time",
-          "value": "1785171800"
+          "value": "1795408183"
         },
         {
           "id": 2314249,
@@ -8422,15 +8428,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:42:58",
       "date_created_gmt": "2022-08-25T22:42:58",
-      "date_modified": "2026-07-27T20:46:02",
-      "date_modified_gmt": "2026-07-27T20:46:02",
+      "date_modified": "2026-11-23T04:29:20",
+      "date_modified_gmt": "2026-11-23T04:29:20",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/clevendon/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=45",
       "sku": "7023102044",
       "global_unique_id": "",
-      "price": "422400",
+      "price": "211200",
       "regular_price": "704000",
-      "sale_price": "422400",
+      "sale_price": "211200",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -8928,7 +8934,7 @@
         {
           "id": 2216361,
           "key": "_last_change_time",
-          "value": "1785171800"
+          "value": "1795408160"
         },
         {
           "id": 2314464,
@@ -9315,15 +9321,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:42:58",
       "date_created_gmt": "2022-08-25T22:42:58",
-      "date_modified": "2026-07-27T20:46:02",
-      "date_modified_gmt": "2026-07-27T20:46:02",
+      "date_modified": "2026-11-23T04:29:20",
+      "date_modified_gmt": "2026-11-23T04:29:20",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/clevendon/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=44",
       "sku": "7023102043",
       "global_unique_id": "",
-      "price": "422400",
+      "price": "211200",
       "regular_price": "704000",
-      "sale_price": "422400",
+      "sale_price": "211200",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -9821,7 +9827,7 @@
         {
           "id": 2216360,
           "key": "_last_change_time",
-          "value": "1785171800"
+          "value": "1795408160"
         },
         {
           "id": 2314463,
@@ -10208,15 +10214,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:42:58",
       "date_created_gmt": "2022-08-25T22:42:58",
-      "date_modified": "2026-07-27T20:46:02",
-      "date_modified_gmt": "2026-07-27T20:46:02",
+      "date_modified": "2026-11-23T04:29:20",
+      "date_modified_gmt": "2026-11-23T04:29:20",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/clevendon/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=43",
       "sku": "7023102042",
       "global_unique_id": "",
-      "price": "422400",
+      "price": "211200",
       "regular_price": "704000",
-      "sale_price": "422400",
+      "sale_price": "211200",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -10714,7 +10720,7 @@
         {
           "id": 2216359,
           "key": "_last_change_time",
-          "value": "1785171800"
+          "value": "1795408160"
         },
         {
           "id": 2314462,
@@ -11101,15 +11107,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:42:58",
       "date_created_gmt": "2022-08-25T22:42:58",
-      "date_modified": "2026-07-27T20:46:02",
-      "date_modified_gmt": "2026-07-27T20:46:02",
+      "date_modified": "2026-11-23T04:29:10",
+      "date_modified_gmt": "2026-11-23T04:29:10",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/clevendon/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=42",
       "sku": "7023102041",
       "global_unique_id": "",
-      "price": "422400",
+      "price": "211200",
       "regular_price": "704000",
-      "sale_price": "422400",
+      "sale_price": "211200",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -11607,7 +11613,7 @@
         {
           "id": 2216358,
           "key": "_last_change_time",
-          "value": "1785171800"
+          "value": "1795408150"
         },
         {
           "id": 2314461,
@@ -11994,15 +12000,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:42:58",
       "date_created_gmt": "2022-08-25T22:42:58",
-      "date_modified": "2026-07-27T20:46:02",
-      "date_modified_gmt": "2026-07-27T20:46:02",
+      "date_modified": "2026-11-23T04:29:10",
+      "date_modified_gmt": "2026-11-23T04:29:10",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/clevendon/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=41",
       "sku": "7023102040",
       "global_unique_id": "",
-      "price": "422400",
+      "price": "211200",
       "regular_price": "704000",
-      "sale_price": "422400",
+      "sale_price": "211200",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -12500,7 +12506,7 @@
         {
           "id": 2216357,
           "key": "_last_change_time",
-          "value": "1785171800"
+          "value": "1795408150"
         },
         {
           "id": 2314460,
@@ -12887,15 +12893,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:42:58",
       "date_created_gmt": "2022-08-25T22:42:58",
-      "date_modified": "2026-07-27T20:46:02",
-      "date_modified_gmt": "2026-07-27T20:46:02",
+      "date_modified": "2026-11-23T04:29:10",
+      "date_modified_gmt": "2026-11-23T04:29:10",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/clevendon/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=40",
       "sku": "7023102039",
       "global_unique_id": "",
-      "price": "422400",
+      "price": "211200",
       "regular_price": "704000",
-      "sale_price": "422400",
+      "sale_price": "211200",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -13393,7 +13399,7 @@
         {
           "id": 2216356,
           "key": "_last_change_time",
-          "value": "1785171800"
+          "value": "1795408150"
         },
         {
           "id": 2314459,
@@ -13780,15 +13786,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:42:58",
       "date_created_gmt": "2022-08-25T22:42:58",
-      "date_modified": "2026-07-27T20:46:02",
-      "date_modified_gmt": "2026-07-27T20:46:02",
+      "date_modified": "2026-11-23T04:29:10",
+      "date_modified_gmt": "2026-11-23T04:29:10",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/clevendon/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=38",
       "sku": "7023102038",
       "global_unique_id": "",
-      "price": "422400",
+      "price": "211200",
       "regular_price": "704000",
-      "sale_price": "422400",
+      "sale_price": "211200",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -14286,7 +14292,7 @@
         {
           "id": 2216355,
           "key": "_last_change_time",
-          "value": "1785171800"
+          "value": "1795408150"
         },
         {
           "id": 2314458,
@@ -14673,15 +14679,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:42:39",
       "date_created_gmt": "2022-08-25T22:42:39",
-      "date_modified": "2026-07-27T20:46:02",
-      "date_modified_gmt": "2026-07-27T20:46:02",
+      "date_modified": "2026-11-23T04:29:10",
+      "date_modified_gmt": "2026-11-23T04:29:10",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/clevendon/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=37",
       "sku": "7023102037",
       "global_unique_id": "",
-      "price": "422400",
+      "price": "211200",
       "regular_price": "704000",
-      "sale_price": "422400",
+      "sale_price": "211200",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -15179,7 +15185,7 @@
         {
           "id": 2216353,
           "key": "_last_change_time",
-          "value": "1785171800"
+          "value": "1795408150"
         },
         {
           "id": 2314465,
@@ -15562,7 +15568,10 @@
       }
     }
   ],
-  "wpc_resolved_media": {},
+  "wpc_resolved_media": {
+    "85874": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-clevendon-negro-03.jpg",
+    "85876": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-clevendon-negro-02.jpg"
+  },
   "stock_status": "instock",
   "variation_images_map": {
     "negro": [
@@ -15571,6 +15580,16 @@
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-clevendon-negro-01.jpg",
         "alt": "winston-and-harry-mocasines-clevendon-negro-01",
         "name": "winston-and-harry-mocasines-clevendon-negro-01"
+      },
+      {
+        "id": 85876,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-clevendon-negro-02.jpg",
+        "alt": "Clevendon"
+      },
+      {
+        "id": 85874,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-clevendon-negro-03.jpg",
+        "alt": "Clevendon"
       }
     ],
     "miel": [

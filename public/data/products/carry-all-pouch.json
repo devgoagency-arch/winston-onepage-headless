@@ -9,11 +9,11 @@
   "sku": "794",
   "short_description": "",
   "description": "<ul>\n<li>Fabricado a mano en cuero y lona.</li>\n<li>Tamaño perfecto para almacenar y mantener organizados los articulos personales y al alcance con esta elegante cosmetiquera.</li>\n<li>La Carry all Pouch es un producto versátil y flexible, ideal para usar como organizador dentro de tu morral.</li>\n</ul>",
-  "on_sale": false,
+  "on_sale": true,
   "prices": {
-    "price": "385000",
+    "price": "231000",
     "regular_price": "385000",
-    "sale_price": "385000",
+    "sale_price": "231000",
     "price_range": null,
     "currency_code": "COP",
     "currency_symbol": "$",
@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>385,000</span>",
+  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>385,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;385,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>231,000</span></ins><span class=\"screen-reader-text\">Current price is: &#036;231,000.</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -161,8 +161,10 @@
         "name": "Cosmetiquera-Lona-Azul-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 39,
       "stock_status": "instock",
-      "price": "385000",
+      "price": "231000",
       "regular_price": "385000",
       "sale_price": ""
     }
@@ -238,20 +240,20 @@
       "type": "variation",
       "date_created": "2024-11-29T20:31:59",
       "date_created_gmt": "2024-11-29T20:31:59",
-      "date_modified": "2026-07-16T22:42:10",
-      "date_modified_gmt": "2026-07-16T22:42:10",
+      "date_modified": "2026-11-23T04:32:54",
+      "date_modified_gmt": "2026-11-23T04:32:54",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/carry-all-pouch/?attribute_pa_selecciona-el-color=azul-lona",
       "sku": "66662801000",
       "global_unique_id": "",
-      "price": "385000",
+      "price": "231000",
       "regular_price": "385000",
-      "sale_price": "",
+      "sale_price": "231000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -855,7 +857,7 @@
         {
           "id": 2257265,
           "key": "_last_change_time",
-          "value": "1784241730"
+          "value": "1795408374"
         },
         {
           "id": 2312172,

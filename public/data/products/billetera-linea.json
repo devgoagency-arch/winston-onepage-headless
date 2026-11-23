@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>165,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;165,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>99,000</span></ins><span class=\"screen-reader-text\">Current price is: &#036;99,000.</span>",
+  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>165,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;165,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>99,000</span></ins><span class=\"screen-reader-text\">Current price is: &#036;99,000.</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -158,6 +158,8 @@
         "name": "Billetera-Linea-Aguamarina-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 42,
       "stock_status": "instock",
       "price": "99000",
       "regular_price": "165000",
@@ -182,6 +184,8 @@
         "name": "Billetera-Linea-Azul-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 26,
       "stock_status": "instock",
       "price": "99000",
       "regular_price": "165000",
@@ -206,6 +210,8 @@
         "name": "Billetera-Linea-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 31,
       "stock_status": "instock",
       "price": "99000",
       "regular_price": "165000",
@@ -230,6 +236,8 @@
         "name": "Billetera-Linea-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 25,
       "stock_status": "instock",
       "price": "99000",
       "regular_price": "165000",
@@ -295,8 +303,8 @@
       "type": "variation",
       "date_created": "2024-11-30T20:08:23",
       "date_created_gmt": "2024-11-30T20:08:23",
-      "date_modified": "2026-07-16T22:42:11",
-      "date_modified_gmt": "2026-07-16T22:42:11",
+      "date_modified": "2026-11-23T04:32:54",
+      "date_modified_gmt": "2026-11-23T04:32:54",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/billetera-linea/?attribute_pa_selecciona-el-color=azul-claro",
       "sku": "33330829000",
@@ -979,8 +987,8 @@
       "type": "variation",
       "date_created": "2024-11-30T19:58:53",
       "date_created_gmt": "2024-11-30T19:58:53",
-      "date_modified": "2026-08-13T00:06:22",
-      "date_modified_gmt": "2026-08-13T00:06:22",
+      "date_modified": "2026-11-23T04:37:59",
+      "date_modified_gmt": "2026-11-23T04:37:59",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/billetera-linea/?attribute_pa_selecciona-el-color=negro",
       "sku": "33330802000",
@@ -1003,7 +1011,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 26,
+      "stock_quantity": 25,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -1596,7 +1604,7 @@
         {
           "id": 2233349,
           "key": "_last_change_time",
-          "value": "1786579582"
+          "value": "1795408679"
         },
         {
           "id": 2312160,
@@ -1663,8 +1671,8 @@
       "type": "variation",
       "date_created": "2024-11-30T19:58:53",
       "date_created_gmt": "2024-11-30T19:58:53",
-      "date_modified": "2026-07-16T22:42:11",
-      "date_modified_gmt": "2026-07-16T22:42:11",
+      "date_modified": "2026-11-23T04:32:54",
+      "date_modified_gmt": "2026-11-23T04:32:54",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/billetera-linea/?attribute_pa_selecciona-el-color=cafe",
       "sku": "33330804000",
@@ -1687,7 +1695,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 32,
+      "stock_quantity": 31,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -2280,7 +2288,7 @@
         {
           "id": 2250306,
           "key": "_last_change_time",
-          "value": "1784241731"
+          "value": "1793814864"
         },
         {
           "id": 2312159,
@@ -2347,8 +2355,8 @@
       "type": "variation",
       "date_created": "2024-11-30T19:58:53",
       "date_created_gmt": "2024-11-30T19:58:53",
-      "date_modified": "2026-07-16T22:42:11",
-      "date_modified_gmt": "2026-07-16T22:42:11",
+      "date_modified": "2026-11-23T04:32:54",
+      "date_modified_gmt": "2026-11-23T04:32:54",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/billetera-linea/?attribute_pa_selecciona-el-color=azul",
       "sku": "33330801000",

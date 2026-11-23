@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>704,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>704,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -255,6 +255,8 @@
         "name": "winston-and-harry-botas-chelsea-iii-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "704000",
       "regular_price": "704000",
@@ -284,6 +286,8 @@
         "name": "winston-and-harry-botas-chelsea-iii-miel-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "704000",
       "regular_price": "704000",
@@ -313,6 +317,8 @@
         "name": "winston-and-harry-botas-chelsea-iii-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "704000",
       "regular_price": "704000",
@@ -342,6 +348,8 @@
         "name": "winston-and-harry-botas-chelsea-iii-miel-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "704000",
       "regular_price": "704000",
@@ -371,6 +379,8 @@
         "name": "winston-and-harry-botas-chelsea-iii-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "price": "704000",
       "regular_price": "704000",
@@ -400,6 +410,8 @@
         "name": "winston-and-harry-botas-chelsea-iii-miel-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "704000",
       "regular_price": "704000",
@@ -429,6 +441,8 @@
         "name": "winston-and-harry-botas-chelsea-iii-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 7,
       "stock_status": "instock",
       "price": "704000",
       "regular_price": "704000",
@@ -458,6 +472,8 @@
         "name": "winston-and-harry-botas-chelsea-iii-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "price": "704000",
       "regular_price": "704000",
@@ -487,6 +503,8 @@
         "name": "winston-and-harry-botas-chelsea-iii-miel-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "704000",
       "regular_price": "704000",
@@ -516,6 +534,8 @@
         "name": "winston-and-harry-botas-chelsea-iii-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "price": "704000",
       "regular_price": "704000",
@@ -545,6 +565,8 @@
         "name": "winston-and-harry-botas-chelsea-iii-miel-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "704000",
       "regular_price": "704000",
@@ -574,6 +596,8 @@
         "name": "winston-and-harry-botas-chelsea-iii-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "704000",
       "regular_price": "704000",
@@ -603,6 +627,8 @@
         "name": "winston-and-harry-botas-chelsea-iii-miel-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "704000",
       "regular_price": "704000",
@@ -632,6 +658,8 @@
         "name": "winston-and-harry-botas-chelsea-iii-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "704000",
       "regular_price": "704000",
@@ -661,6 +689,8 @@
         "name": "winston-and-harry-botas-chelsea-iii-miel-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "704000",
       "regular_price": "704000",
@@ -12331,8 +12361,8 @@
       "type": "variation",
       "date_created": "2023-06-21T21:40:02",
       "date_created_gmt": "2023-06-21T21:40:02",
-      "date_modified": "2026-08-04T16:57:24",
-      "date_modified_gmt": "2026-08-04T16:57:24",
+      "date_modified": "2026-11-23T04:37:16",
+      "date_modified_gmt": "2026-11-23T04:37:16",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/chelsea-iii/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=39",
       "sku": "7414302039",
@@ -12355,7 +12385,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 5,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -12842,7 +12872,7 @@
         {
           "id": 2216195,
           "key": "_last_change_time",
-          "value": "1785174215"
+          "value": "1795408636"
         },
         {
           "id": 2312855,
@@ -13170,11 +13200,6 @@
           "value": ""
         },
         {
-          "id": 2479700,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2479701,
           "key": "fb_product_images",
           "value": ""
@@ -13182,11 +13207,6 @@
         {
           "id": 2479702,
           "key": "_wc_facebook_product_video_source",
-          "value": ""
-        },
-        {
-          "id": 2479703,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],
@@ -15010,7 +15030,9 @@
     "30226": "https://tienda.winstonandharrystore.com/wp-content/uploads/2023/06/MG_5119.jpg",
     "30227": "https://tienda.winstonandharrystore.com/wp-content/uploads/2023/06/MG_5120.jpg",
     "30394": "https://tienda.winstonandharrystore.com/wp-content/uploads/2023/07/MG_5135.jpg",
-    "30395": "https://tienda.winstonandharrystore.com/wp-content/uploads/2023/07/MG_5136.jpg"
+    "30395": "https://tienda.winstonandharrystore.com/wp-content/uploads/2023/07/MG_5136.jpg",
+    "86098": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-botas-chelsea-iii-miel-02.jpg",
+    "86099": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-botas-chelsea-iii-miel-03.jpg"
   },
   "stock_status": "instock",
   "variation_images_map": {
@@ -15050,6 +15072,16 @@
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-botas-chelsea-iii-miel-01.jpg",
         "alt": "winston-and-harry-botas-chelsea-iii-miel-01",
         "name": "winston-and-harry-botas-chelsea-iii-miel-01"
+      },
+      {
+        "id": 86098,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-botas-chelsea-iii-miel-02.jpg",
+        "alt": "Chelsea III"
+      },
+      {
+        "id": 86099,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-botas-chelsea-iii-miel-03.jpg",
+        "alt": "Chelsea III"
       },
       {
         "id": 30394,

@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>682,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;682,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>443,300</span></ins><span class=\"screen-reader-text\">Current price is: &#036;443,300.</span>",
+  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>682,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;682,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>443,300</span></ins><span class=\"screen-reader-text\">Current price is: &#036;443,300.</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -142,6 +142,8 @@
         "name": "Morral-Effort-Lona-Verde-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 12,
       "stock_status": "instock",
       "price": "443300",
       "regular_price": "682000",
@@ -166,6 +168,8 @@
         "name": "Morral-Effort-Lona-Azul-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 17,
       "stock_status": "instock",
       "price": "443300",
       "regular_price": "682000",
@@ -932,8 +936,8 @@
       "type": "variation",
       "date_created": "2023-12-11T16:50:08",
       "date_created_gmt": "2023-12-11T16:50:08",
-      "date_modified": "2026-06-02T17:38:29",
-      "date_modified_gmt": "2026-06-02T17:38:29",
+      "date_modified": "2026-11-22T17:00:22",
+      "date_modified_gmt": "2026-11-22T17:00:22",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/morral-effort-lona/?attribute_pa_selecciona-el-color=verde",
       "sku": "15150405000",
@@ -956,7 +960,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 13,
+      "stock_quantity": 12,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,

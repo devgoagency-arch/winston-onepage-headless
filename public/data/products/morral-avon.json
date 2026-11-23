@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>544,500</span></del> <span class=\"screen-reader-text\">Original price was: &#036;544,500.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>462,825</span></ins><span class=\"screen-reader-text\">Current price is: &#036;462,825.</span>",
+  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>544,500</span></del> <span class=\"screen-reader-text\">Original price was: &#036;544,500.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>462,825</span></ins><span class=\"screen-reader-text\">Current price is: &#036;462,825.</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -159,6 +159,8 @@
         "name": "Manos Libres-Cuero-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 13,
       "stock_status": "instock",
       "price": "462825",
       "regular_price": "544500",
@@ -183,6 +185,8 @@
         "name": "Manos Libres-Cuero-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 13,
       "stock_status": "instock",
       "price": "462825",
       "regular_price": "544500",
@@ -207,6 +211,8 @@
         "name": "Manos Libres-Cuero-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 8,
       "stock_status": "instock",
       "price": "462825",
       "regular_price": "544500",
@@ -973,8 +979,8 @@
       "type": "variation",
       "date_created": "2023-06-08T16:36:19",
       "date_created_gmt": "2023-06-08T16:36:19",
-      "date_modified": "2026-05-08T21:42:16",
-      "date_modified_gmt": "2026-05-08T21:42:16",
+      "date_modified": "2026-09-08T17:13:56",
+      "date_modified_gmt": "2026-09-08T17:13:56",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/morral-avon/?attribute_pa_selecciona-el-color=negro",
       "sku": "15150202000",
@@ -997,7 +1003,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 14,
+      "stock_quantity": 13,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -1600,7 +1606,7 @@
         {
           "id": 2229404,
           "key": "_last_change_time",
-          "value": "1778275821"
+          "value": "1788887636"
         },
         {
           "id": 2313197,

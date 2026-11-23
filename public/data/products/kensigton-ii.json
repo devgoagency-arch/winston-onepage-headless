@@ -9,11 +9,11 @@
   "sku": "734",
   "short_description": "<p>En gamuza, con puntera wing-tip y una horma moderna, la Kensigton II se trabaja en capellada de 100% gamuza, suela de goma y plantilla de confort. La gamuza, con el uso, va revelando una personalidad propia, y la pisada resulta cómoda. Es una bota Chelsea de hombre de caña limpia, de un corte atemporal que se distingue por esa puntera y por un material que cambia con los días. Con los días, la gamuza va revelando un carácter propio, y el corte se afirma sin perder la caña limpia de una Chelsea. Disponible en café y negro, tallas 37 a 45.</p>",
   "description": "<p>Nuestra Bota Kensigton es una interpretación atemporal de la Bota Chelsea. Están hechas en Gamuza, lo cual hace que la bota con cada día de uso vaya revelando su personalidad. Su horma es amplia en la parte delantera y viene con plantilla confort y suela en Caucho. Es un modelo ideal para un atuendo clásico, pero a su vez atrevido.</p>",
-  "on_sale": false,
+  "on_sale": true,
   "prices": {
-    "price": "704000",
+    "price": "422400",
     "regular_price": "704000",
-    "sale_price": "704000",
+    "sale_price": "422400",
     "price_range": null,
     "currency_code": "COP",
     "currency_symbol": "$",
@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>704,000</span>",
+  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>704,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;704,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>422,400</span></ins><span class=\"screen-reader-text\">Current price is: &#036;422,400.</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -250,8 +250,10 @@
         "name": "winston-and-harry-botas-kensigton-ii-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "704000",
+      "price": "422400",
       "regular_price": "704000",
       "sale_price": ""
     },
@@ -279,8 +281,10 @@
         "name": "winston-and-harry-botas-kensigton-ii-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
-      "price": "704000",
+      "price": "422400",
       "regular_price": "704000",
       "sale_price": ""
     },
@@ -308,8 +312,10 @@
         "name": "winston-and-harry-botas-kensigton-ii-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
-      "price": "704000",
+      "price": "422400",
       "regular_price": "704000",
       "sale_price": ""
     },
@@ -337,8 +343,10 @@
         "name": "winston-and-harry-botas-kensigton-ii-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
-      "price": "704000",
+      "price": "422400",
       "regular_price": "704000",
       "sale_price": ""
     },
@@ -366,8 +374,10 @@
         "name": "winston-and-harry-botas-kensigton-ii-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "704000",
+      "price": "422400",
       "regular_price": "704000",
       "sale_price": ""
     },
@@ -395,8 +405,10 @@
         "name": "winston-and-harry-botas-kensigton-ii-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
-      "price": "704000",
+      "price": "422400",
       "regular_price": "704000",
       "sale_price": ""
     },
@@ -424,8 +436,10 @@
         "name": "winston-and-harry-botas-kensigton-ii-cafe-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "704000",
+      "price": "422400",
       "regular_price": "704000",
       "sale_price": ""
     },
@@ -453,8 +467,10 @@
         "name": "winston-and-harry-botas-kensigton-ii-cafe-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
-      "price": "704000",
+      "price": "422400",
       "regular_price": "704000",
       "sale_price": ""
     },
@@ -482,8 +498,10 @@
         "name": "winston-and-harry-botas-kensigton-ii-cafe-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
-      "price": "704000",
+      "price": "422400",
       "regular_price": "704000",
       "sale_price": ""
     }
@@ -2339,20 +2357,20 @@
       "type": "variation",
       "date_created": "2023-06-09T20:28:57",
       "date_created_gmt": "2023-06-09T20:28:57",
-      "date_modified": "2026-08-04T16:57:15",
-      "date_modified_gmt": "2026-08-04T16:57:15",
+      "date_modified": "2026-11-23T04:31:48",
+      "date_modified_gmt": "2026-11-23T04:31:48",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/kensigton-ii/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=42",
       "sku": "7414104042",
       "global_unique_id": "",
-      "price": "704000",
+      "price": "422400",
       "regular_price": "704000",
-      "sale_price": "",
+      "sale_price": "422400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -2835,7 +2853,7 @@
         {
           "id": 2216832,
           "key": "_last_change_time",
-          "value": "1778184106"
+          "value": "1795408308"
         },
         {
           "id": 2313074,
@@ -3232,20 +3250,20 @@
       "type": "variation",
       "date_created": "2023-06-09T20:28:57",
       "date_created_gmt": "2023-06-09T20:28:57",
-      "date_modified": "2026-08-04T16:57:15",
-      "date_modified_gmt": "2026-08-04T16:57:15",
+      "date_modified": "2026-11-23T04:31:48",
+      "date_modified_gmt": "2026-11-23T04:31:48",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/kensigton-ii/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=41",
       "sku": "7414104041",
       "global_unique_id": "",
-      "price": "704000",
+      "price": "422400",
       "regular_price": "704000",
-      "sale_price": "",
+      "sale_price": "422400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -3743,7 +3761,7 @@
         {
           "id": 2216830,
           "key": "_last_change_time",
-          "value": "1778184105"
+          "value": "1795408308"
         },
         {
           "id": 2313073,
@@ -4125,20 +4143,20 @@
       "type": "variation",
       "date_created": "2023-06-09T20:28:57",
       "date_created_gmt": "2023-06-09T20:28:57",
-      "date_modified": "2026-08-04T16:57:16",
-      "date_modified_gmt": "2026-08-04T16:57:16",
+      "date_modified": "2026-11-23T04:31:48",
+      "date_modified_gmt": "2026-11-23T04:31:48",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/kensigton-ii/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=40",
       "sku": "7414104040",
       "global_unique_id": "",
-      "price": "704000",
+      "price": "422400",
       "regular_price": "704000",
-      "sale_price": "",
+      "sale_price": "422400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -4636,7 +4654,7 @@
         {
           "id": 2216828,
           "key": "_last_change_time",
-          "value": "1778184105"
+          "value": "1795408308"
         },
         {
           "id": 2313072,
@@ -5018,20 +5036,20 @@
       "type": "variation",
       "date_created": "2023-06-09T20:28:57",
       "date_created_gmt": "2023-06-09T20:28:57",
-      "date_modified": "2026-08-04T16:57:16",
-      "date_modified_gmt": "2026-08-04T16:57:16",
+      "date_modified": "2026-11-23T04:31:48",
+      "date_modified_gmt": "2026-11-23T04:31:48",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/kensigton-ii/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=39",
       "sku": "7414104039",
       "global_unique_id": "",
-      "price": "704000",
+      "price": "422400",
       "regular_price": "704000",
-      "sale_price": "",
+      "sale_price": "422400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -5524,7 +5542,7 @@
         {
           "id": 2216826,
           "key": "_last_change_time",
-          "value": "1778184105"
+          "value": "1795408308"
         },
         {
           "id": 2313071,
@@ -5911,20 +5929,20 @@
       "type": "variation",
       "date_created": "2023-06-09T20:28:57",
       "date_created_gmt": "2023-06-09T20:28:57",
-      "date_modified": "2026-08-04T16:57:16",
-      "date_modified_gmt": "2026-08-04T16:57:16",
+      "date_modified": "2026-11-23T04:31:48",
+      "date_modified_gmt": "2026-11-23T04:31:48",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/kensigton-ii/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=38",
       "sku": "7414104038",
       "global_unique_id": "",
-      "price": "704000",
+      "price": "422400",
       "regular_price": "704000",
-      "sale_price": "",
+      "sale_price": "422400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -6422,7 +6440,7 @@
         {
           "id": 2216824,
           "key": "_last_change_time",
-          "value": "1778184104"
+          "value": "1795408308"
         },
         {
           "id": 2313070,
@@ -6804,20 +6822,20 @@
       "type": "variation",
       "date_created": "2023-06-09T20:28:57",
       "date_created_gmt": "2023-06-09T20:28:57",
-      "date_modified": "2026-08-04T16:57:16",
-      "date_modified_gmt": "2026-08-04T16:57:16",
+      "date_modified": "2026-11-23T04:31:48",
+      "date_modified_gmt": "2026-11-23T04:31:48",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/kensigton-ii/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=37",
       "sku": "7414104037",
       "global_unique_id": "",
-      "price": "704000",
+      "price": "422400",
       "regular_price": "704000",
-      "sale_price": "",
+      "sale_price": "422400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -7315,7 +7333,7 @@
         {
           "id": 2216819,
           "key": "_last_change_time",
-          "value": "1778184104"
+          "value": "1795408308"
         },
         {
           "id": 2313079,
@@ -10376,20 +10394,20 @@
       "type": "variation",
       "date_created": "2023-01-11T20:51:39",
       "date_created_gmt": "2023-01-11T20:51:39",
-      "date_modified": "2026-08-04T16:57:16",
-      "date_modified_gmt": "2026-08-04T16:57:16",
+      "date_modified": "2026-11-23T04:31:15",
+      "date_modified_gmt": "2026-11-23T04:31:15",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/kensigton-ii/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=42",
       "sku": "7414102042",
       "global_unique_id": "",
-      "price": "704000",
+      "price": "422400",
       "regular_price": "704000",
-      "sale_price": "",
+      "sale_price": "422400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -10887,7 +10905,7 @@
         {
           "id": 2216811,
           "key": "_last_change_time",
-          "value": "1778184104"
+          "value": "1795408275"
         },
         {
           "id": 2478316,
@@ -11269,20 +11287,20 @@
       "type": "variation",
       "date_created": "2023-01-11T20:51:39",
       "date_created_gmt": "2023-01-11T20:51:39",
-      "date_modified": "2026-08-04T16:57:16",
-      "date_modified_gmt": "2026-08-04T16:57:16",
+      "date_modified": "2026-11-23T04:31:10",
+      "date_modified_gmt": "2026-11-23T04:31:10",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/kensigton-ii/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=41",
       "sku": "7414102041",
       "global_unique_id": "",
-      "price": "704000",
+      "price": "422400",
       "regular_price": "704000",
-      "sale_price": "",
+      "sale_price": "422400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -11780,7 +11798,7 @@
         {
           "id": 2216809,
           "key": "_last_change_time",
-          "value": "1778184104"
+          "value": "1795408270"
         },
         {
           "id": 2478386,
@@ -12162,20 +12180,20 @@
       "type": "variation",
       "date_created": "2023-01-11T20:51:39",
       "date_created_gmt": "2023-01-11T20:51:39",
-      "date_modified": "2026-08-18T17:45:43",
-      "date_modified_gmt": "2026-08-18T17:45:43",
+      "date_modified": "2026-11-23T04:31:10",
+      "date_modified_gmt": "2026-11-23T04:31:10",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/kensigton-ii/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=40",
       "sku": "7414102040",
       "global_unique_id": "",
-      "price": "704000",
+      "price": "422400",
       "regular_price": "704000",
-      "sale_price": "",
+      "sale_price": "422400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -12673,7 +12691,7 @@
         {
           "id": 2216807,
           "key": "_last_change_time",
-          "value": "1787071621"
+          "value": "1795408270"
         },
         {
           "id": 2478456,
@@ -13045,20 +13063,20 @@
       "type": "variation",
       "date_created": "2023-01-11T20:51:38",
       "date_created_gmt": "2023-01-11T20:51:38",
-      "date_modified": "2026-08-04T16:57:17",
-      "date_modified_gmt": "2026-08-04T16:57:17",
+      "date_modified": "2026-11-23T04:31:10",
+      "date_modified_gmt": "2026-11-23T04:31:10",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/kensigton-ii/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=39",
       "sku": "7414102039",
       "global_unique_id": "",
-      "price": "704000",
+      "price": "422400",
       "regular_price": "704000",
-      "sale_price": "",
+      "sale_price": "422400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -13069,7 +13087,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 4,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -13556,7 +13574,7 @@
         {
           "id": 2216805,
           "key": "_last_change_time",
-          "value": "1783099295"
+          "value": "1795408270"
         },
         {
           "id": 2478526,
@@ -13884,11 +13902,6 @@
           "value": ""
         },
         {
-          "id": 2478591,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2478592,
           "key": "fb_product_images",
           "value": ""
@@ -13896,11 +13909,6 @@
         {
           "id": 2478593,
           "key": "_wc_facebook_product_video_source",
-          "value": ""
-        },
-        {
-          "id": 2478594,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],
@@ -13938,20 +13946,20 @@
       "type": "variation",
       "date_created": "2023-01-11T20:51:38",
       "date_created_gmt": "2023-01-11T20:51:38",
-      "date_modified": "2026-08-04T16:57:17",
-      "date_modified_gmt": "2026-08-04T16:57:17",
+      "date_modified": "2026-11-23T04:31:10",
+      "date_modified_gmt": "2026-11-23T04:31:10",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/kensigton-ii/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=38",
       "sku": "7414102038",
       "global_unique_id": "",
-      "price": "704000",
+      "price": "422400",
       "regular_price": "704000",
-      "sale_price": "",
+      "sale_price": "422400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -14449,7 +14457,7 @@
         {
           "id": 2216803,
           "key": "_last_change_time",
-          "value": "1778184085"
+          "value": "1795408270"
         },
         {
           "id": 2478596,
@@ -14831,20 +14839,20 @@
       "type": "variation",
       "date_created": "2023-01-11T20:51:26",
       "date_created_gmt": "2023-01-11T20:51:26",
-      "date_modified": "2026-08-04T16:57:17",
-      "date_modified_gmt": "2026-08-04T16:57:17",
+      "date_modified": "2026-11-23T04:31:10",
+      "date_modified_gmt": "2026-11-23T04:31:10",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/kensigton-ii/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=37",
       "sku": "7414102037",
       "global_unique_id": "",
-      "price": "704000",
+      "price": "422400",
       "regular_price": "704000",
-      "sale_price": "",
+      "sale_price": "422400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -15342,7 +15350,7 @@
         {
           "id": 2216800,
           "key": "_last_change_time",
-          "value": "1778184084"
+          "value": "1795408270"
         },
         {
           "id": 2478666,
@@ -15722,7 +15730,9 @@
   ],
   "wpc_resolved_media": {
     "29537": "https://tienda.winstonandharrystore.com/wp-content/uploads/2023/06/MG_4172.jpg",
-    "29539": "https://tienda.winstonandharrystore.com/wp-content/uploads/2023/06/MG_4174.jpg"
+    "29539": "https://tienda.winstonandharrystore.com/wp-content/uploads/2023/06/MG_4174.jpg",
+    "86116": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-botas-kensigton-ii-negro-02.jpg",
+    "86117": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-botas-kensigton-ii-negro-03.jpg"
   },
   "stock_status": "instock",
   "variation_images_map": {
@@ -15732,6 +15742,16 @@
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-botas-kensigton-ii-negro-01.jpg",
         "alt": "winston-and-harry-botas-kensigton-ii-negro-01",
         "name": "winston-and-harry-botas-kensigton-ii-negro-01"
+      },
+      {
+        "id": 86116,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-botas-kensigton-ii-negro-02.jpg",
+        "alt": "Kensigton II"
+      },
+      {
+        "id": 86117,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-botas-kensigton-ii-negro-03.jpg",
+        "alt": "Kensigton II"
       }
     ],
     "cafe": [

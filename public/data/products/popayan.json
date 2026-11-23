@@ -11,9 +11,9 @@
   "description": "<p>Los zapatos Popayán son unos tenis muy sobrios pero que tienen un toque que lo diferencia del resto. Estas dos piezas en contraste son un homenaje al volcán Puracé. Están hecho de cuero liso con piezas en nobuck y cuentan con nuestra plantilla confort. Sin duda se pueden convertir en esa opción que sin importar que te pongas van a complementar tu estilo.</p>",
   "on_sale": true,
   "prices": {
-    "price": "392000",
+    "price": "336000",
     "regular_price": "560000",
-    "sale_price": "392000",
+    "sale_price": "336000",
     "price_range": null,
     "currency_code": "COP",
     "currency_symbol": "$",
@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>560,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;560,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>392,000</span></ins><span class=\"screen-reader-text\">Current price is: &#036;392,000.</span>",
+  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>560,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;560,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>336,000</span></ins><span class=\"screen-reader-text\">Current price is: &#036;336,000.</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -230,8 +230,10 @@
         "name": "Popayan-Verde-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "392000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -259,8 +261,10 @@
         "name": "Popayan-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "392000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -288,8 +292,10 @@
         "name": "Popayan-Verde-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
-      "price": "392000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -317,8 +323,10 @@
         "name": "Popayan-Verde-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
-      "price": "392000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -346,8 +354,10 @@
         "name": "Popayan-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "392000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -375,8 +385,10 @@
         "name": "Popayan-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
-      "price": "392000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -404,8 +416,10 @@
         "name": "Popayan-Verde-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
-      "price": "392000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -433,8 +447,10 @@
         "name": "Popayan-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
-      "price": "392000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -462,8 +478,10 @@
         "name": "Popayan-Verde-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
-      "price": "392000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -491,8 +509,10 @@
         "name": "Popayan-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "392000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -520,8 +540,10 @@
         "name": "Popayan-Azul-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "392000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -549,8 +571,10 @@
         "name": "Popayan-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "392000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -578,8 +602,10 @@
         "name": "Popayan-Azul-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "392000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -607,8 +633,10 @@
         "name": "Popayan-Azul-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "392000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -636,8 +664,10 @@
         "name": "Popayan-Azul-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
-      "price": "392000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -665,8 +695,10 @@
         "name": "Popayan-Azul-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "392000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -694,8 +726,10 @@
         "name": "Popayan-Azul-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "392000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     }
@@ -3545,15 +3579,15 @@
       "type": "variation",
       "date_created": "2023-06-09T19:39:36",
       "date_created_gmt": "2023-06-09T19:39:36",
-      "date_modified": "2026-05-08T21:42:08",
-      "date_modified_gmt": "2026-05-08T21:42:08",
+      "date_modified": "2026-11-23T04:31:42",
+      "date_modified_gmt": "2026-11-23T04:31:42",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/popayan/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=43",
       "sku": "7200001043",
       "global_unique_id": "",
-      "price": "392000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "392000",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -4193,7 +4227,7 @@
         {
           "id": 2217596,
           "key": "_last_change_time",
-          "value": "1778275814"
+          "value": "1795408302"
         },
         {
           "id": 2313107,
@@ -4240,15 +4274,15 @@
       "type": "variation",
       "date_created": "2023-06-09T19:39:36",
       "date_created_gmt": "2023-06-09T19:39:36",
-      "date_modified": "2026-05-08T21:42:08",
-      "date_modified_gmt": "2026-05-08T21:42:08",
+      "date_modified": "2026-11-23T04:31:42",
+      "date_modified_gmt": "2026-11-23T04:31:42",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/popayan/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=42",
       "sku": "7200001042",
       "global_unique_id": "",
-      "price": "392000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "392000",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -4888,7 +4922,7 @@
         {
           "id": 2217594,
           "key": "_last_change_time",
-          "value": "1778275814"
+          "value": "1795408302"
         },
         {
           "id": 2313106,
@@ -4935,15 +4969,15 @@
       "type": "variation",
       "date_created": "2023-06-09T19:39:36",
       "date_created_gmt": "2023-06-09T19:39:36",
-      "date_modified": "2026-06-02T17:37:25",
-      "date_modified_gmt": "2026-06-02T17:37:25",
+      "date_modified": "2026-11-23T04:31:42",
+      "date_modified_gmt": "2026-11-23T04:31:42",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/popayan/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=41",
       "sku": "7200001041",
       "global_unique_id": "",
-      "price": "392000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "392000",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -5583,7 +5617,7 @@
         {
           "id": 2217592,
           "key": "_last_change_time",
-          "value": "1780421845"
+          "value": "1795408302"
         },
         {
           "id": 2313105,
@@ -5630,15 +5664,15 @@
       "type": "variation",
       "date_created": "2023-06-09T19:39:36",
       "date_created_gmt": "2023-06-09T19:39:36",
-      "date_modified": "2026-05-08T21:42:08",
-      "date_modified_gmt": "2026-05-08T21:42:08",
+      "date_modified": "2026-11-23T04:31:42",
+      "date_modified_gmt": "2026-11-23T04:31:42",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/popayan/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=40",
       "sku": "7200001040",
       "global_unique_id": "",
-      "price": "392000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "392000",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -5654,7 +5688,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 4,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -6278,7 +6312,7 @@
         {
           "id": 2217590,
           "key": "_last_change_time",
-          "value": "1778275814"
+          "value": "1795408302"
         },
         {
           "id": 2313109,
@@ -6325,15 +6359,15 @@
       "type": "variation",
       "date_created": "2023-06-09T19:39:35",
       "date_created_gmt": "2023-06-09T19:39:35",
-      "date_modified": "2026-05-08T21:42:08",
-      "date_modified_gmt": "2026-05-08T21:42:08",
+      "date_modified": "2026-11-23T04:31:42",
+      "date_modified_gmt": "2026-11-23T04:31:42",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/popayan/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=39",
       "sku": "7200001039",
       "global_unique_id": "",
-      "price": "392000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "392000",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -6973,7 +7007,7 @@
         {
           "id": 2217588,
           "key": "_last_change_time",
-          "value": "1778275814"
+          "value": "1795408302"
         },
         {
           "id": 2313118,
@@ -7020,15 +7054,15 @@
       "type": "variation",
       "date_created": "2023-06-09T19:39:35",
       "date_created_gmt": "2023-06-09T19:39:35",
-      "date_modified": "2026-05-08T21:42:08",
-      "date_modified_gmt": "2026-05-08T21:42:08",
+      "date_modified": "2026-11-23T04:31:42",
+      "date_modified_gmt": "2026-11-23T04:31:42",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/popayan/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=38",
       "sku": "7200001038",
       "global_unique_id": "",
-      "price": "392000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "392000",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -7668,7 +7702,7 @@
         {
           "id": 2217586,
           "key": "_last_change_time",
-          "value": "1778275814"
+          "value": "1795408302"
         },
         {
           "id": 2313117,
@@ -7715,15 +7749,15 @@
       "type": "variation",
       "date_created": "2023-06-09T19:39:35",
       "date_created_gmt": "2023-06-09T19:39:35",
-      "date_modified": "2026-05-08T21:42:08",
-      "date_modified_gmt": "2026-05-08T21:42:08",
+      "date_modified": "2026-11-23T04:31:42",
+      "date_modified_gmt": "2026-11-23T04:31:42",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/popayan/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=37",
       "sku": "7200001037",
       "global_unique_id": "",
-      "price": "392000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "392000",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -8353,7 +8387,7 @@
         {
           "id": 2217584,
           "key": "_last_change_time",
-          "value": "1778275814"
+          "value": "1795408302"
         },
         {
           "id": 2313116,
@@ -9105,15 +9139,15 @@
       "type": "variation",
       "date_created": "2023-06-09T19:39:35",
       "date_created_gmt": "2023-06-09T19:39:35",
-      "date_modified": "2026-05-08T21:42:08",
-      "date_modified_gmt": "2026-05-08T21:42:08",
+      "date_modified": "2026-11-23T04:31:42",
+      "date_modified_gmt": "2026-11-23T04:31:42",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/popayan/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=43",
       "sku": "7200002043",
       "global_unique_id": "",
-      "price": "392000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "392000",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -9743,7 +9777,7 @@
         {
           "id": 2217580,
           "key": "_last_change_time",
-          "value": "1778275814"
+          "value": "1795408302"
         },
         {
           "id": 2313114,
@@ -9800,15 +9834,15 @@
       "type": "variation",
       "date_created": "2023-06-09T19:39:35",
       "date_created_gmt": "2023-06-09T19:39:35",
-      "date_modified": "2026-06-02T17:37:25",
-      "date_modified_gmt": "2026-06-02T17:37:25",
+      "date_modified": "2026-11-23T04:31:42",
+      "date_modified_gmt": "2026-11-23T04:31:42",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/popayan/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=42",
       "sku": "7200002042",
       "global_unique_id": "",
-      "price": "392000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "392000",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -10438,7 +10472,7 @@
         {
           "id": 2217578,
           "key": "_last_change_time",
-          "value": "1780421845"
+          "value": "1795408302"
         },
         {
           "id": 2313113,
@@ -10495,15 +10529,15 @@
       "type": "variation",
       "date_created": "2023-06-09T19:39:35",
       "date_created_gmt": "2023-06-09T19:39:35",
-      "date_modified": "2026-05-08T21:42:08",
-      "date_modified_gmt": "2026-05-08T21:42:08",
+      "date_modified": "2026-11-23T04:31:42",
+      "date_modified_gmt": "2026-11-23T04:31:42",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/popayan/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=41",
       "sku": "7200002041",
       "global_unique_id": "",
-      "price": "392000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "392000",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -11133,7 +11167,7 @@
         {
           "id": 2217576,
           "key": "_last_change_time",
-          "value": "1778275814"
+          "value": "1795408302"
         },
         {
           "id": 2313112,
@@ -11190,15 +11224,15 @@
       "type": "variation",
       "date_created": "2023-06-09T19:39:35",
       "date_created_gmt": "2023-06-09T19:39:35",
-      "date_modified": "2026-05-08T21:42:08",
-      "date_modified_gmt": "2026-05-08T21:42:08",
+      "date_modified": "2026-11-23T04:31:42",
+      "date_modified_gmt": "2026-11-23T04:31:42",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/popayan/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=40",
       "sku": "7200002040",
       "global_unique_id": "",
-      "price": "392000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "392000",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -11828,7 +11862,7 @@
         {
           "id": 2217574,
           "key": "_last_change_time",
-          "value": "1778275814"
+          "value": "1795408302"
         },
         {
           "id": 2313111,
@@ -11885,15 +11919,15 @@
       "type": "variation",
       "date_created": "2023-06-09T19:39:35",
       "date_created_gmt": "2023-06-09T19:39:35",
-      "date_modified": "2026-05-08T21:42:01",
-      "date_modified_gmt": "2026-05-08T21:42:01",
+      "date_modified": "2026-11-23T04:31:42",
+      "date_modified_gmt": "2026-11-23T04:31:42",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/popayan/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=39",
       "sku": "7200002039",
       "global_unique_id": "",
-      "price": "392000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "392000",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -12523,7 +12557,7 @@
         {
           "id": 2217571,
           "key": "_last_change_time",
-          "value": "1778275805"
+          "value": "1795408302"
         },
         {
           "id": 2313110,
@@ -12580,15 +12614,15 @@
       "type": "variation",
       "date_created": "2023-06-09T19:39:34",
       "date_created_gmt": "2023-06-09T19:39:34",
-      "date_modified": "2026-05-08T21:42:01",
-      "date_modified_gmt": "2026-05-08T21:42:01",
+      "date_modified": "2026-11-23T04:31:42",
+      "date_modified_gmt": "2026-11-23T04:31:42",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/popayan/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=38",
       "sku": "7200002038",
       "global_unique_id": "",
-      "price": "392000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "392000",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -13218,7 +13252,7 @@
         {
           "id": 2217569,
           "key": "_last_change_time",
-          "value": "1778275805"
+          "value": "1795408302"
         },
         {
           "id": 2313120,
@@ -13275,15 +13309,15 @@
       "type": "variation",
       "date_created": "2023-06-09T19:39:34",
       "date_created_gmt": "2023-06-09T19:39:34",
-      "date_modified": "2026-05-08T21:42:01",
-      "date_modified_gmt": "2026-05-08T21:42:01",
+      "date_modified": "2026-11-23T04:31:42",
+      "date_modified_gmt": "2026-11-23T04:31:42",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/popayan/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=37",
       "sku": "7200002037",
       "global_unique_id": "",
-      "price": "392000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "392000",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -13923,7 +13957,7 @@
         {
           "id": 2217567,
           "key": "_last_change_time",
-          "value": "1778275805"
+          "value": "1795408302"
         },
         {
           "id": 2313119,
@@ -14665,15 +14699,15 @@
       "type": "variation",
       "date_created": "2023-01-11T20:51:41",
       "date_created_gmt": "2023-01-11T20:51:41",
-      "date_modified": "2026-05-08T21:42:01",
-      "date_modified_gmt": "2026-05-08T21:42:01",
+      "date_modified": "2026-11-23T04:31:15",
+      "date_modified_gmt": "2026-11-23T04:31:15",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/popayan/?attribute_pa_selecciona-el-color=verde&attribute_pa_selecciona-una-talla=43",
       "sku": "7200005043",
       "global_unique_id": "",
-      "price": "392000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "392000",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -15303,7 +15337,7 @@
         {
           "id": 2217563,
           "key": "_last_change_time",
-          "value": "1778275805"
+          "value": "1795408275"
         },
         {
           "id": 2313410,
@@ -15360,15 +15394,15 @@
       "type": "variation",
       "date_created": "2023-01-11T20:51:41",
       "date_created_gmt": "2023-01-11T20:51:41",
-      "date_modified": "2026-06-02T17:37:12",
-      "date_modified_gmt": "2026-06-02T17:37:12",
+      "date_modified": "2026-11-23T04:31:15",
+      "date_modified_gmt": "2026-11-23T04:31:15",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/popayan/?attribute_pa_selecciona-el-color=verde&attribute_pa_selecciona-una-talla=42",
       "sku": "7200005042",
       "global_unique_id": "",
-      "price": "392000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "392000",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -15998,7 +16032,7 @@
         {
           "id": 2217561,
           "key": "_last_change_time",
-          "value": "1780421832"
+          "value": "1795408275"
         },
         {
           "id": 2313414,
@@ -16055,15 +16089,15 @@
       "type": "variation",
       "date_created": "2023-01-11T20:51:41",
       "date_created_gmt": "2023-01-11T20:51:41",
-      "date_modified": "2026-05-08T21:42:01",
-      "date_modified_gmt": "2026-05-08T21:42:01",
+      "date_modified": "2026-11-23T04:31:15",
+      "date_modified_gmt": "2026-11-23T04:31:15",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/popayan/?attribute_pa_selecciona-el-color=verde&attribute_pa_selecciona-una-talla=41",
       "sku": "7200005041",
       "global_unique_id": "",
-      "price": "392000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "392000",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -16693,7 +16727,7 @@
         {
           "id": 2217559,
           "key": "_last_change_time",
-          "value": "1778275805"
+          "value": "1795408275"
         },
         {
           "id": 2313413,
@@ -16750,15 +16784,15 @@
       "type": "variation",
       "date_created": "2023-01-11T20:51:41",
       "date_created_gmt": "2023-01-11T20:51:41",
-      "date_modified": "2026-05-08T21:42:01",
-      "date_modified_gmt": "2026-05-08T21:42:01",
+      "date_modified": "2026-11-23T04:31:15",
+      "date_modified_gmt": "2026-11-23T04:31:15",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/popayan/?attribute_pa_selecciona-el-color=verde&attribute_pa_selecciona-una-talla=40",
       "sku": "7200005040",
       "global_unique_id": "",
-      "price": "392000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "392000",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -17388,7 +17422,7 @@
         {
           "id": 2217557,
           "key": "_last_change_time",
-          "value": "1778275805"
+          "value": "1795408275"
         },
         {
           "id": 2313412,
@@ -17445,15 +17479,15 @@
       "type": "variation",
       "date_created": "2023-01-11T20:51:40",
       "date_created_gmt": "2023-01-11T20:51:40",
-      "date_modified": "2026-05-08T21:42:00",
-      "date_modified_gmt": "2026-05-08T21:42:00",
+      "date_modified": "2026-11-23T04:31:15",
+      "date_modified_gmt": "2026-11-23T04:31:15",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/popayan/?attribute_pa_selecciona-el-color=verde&attribute_pa_selecciona-una-talla=39",
       "sku": "7200005039",
       "global_unique_id": "",
-      "price": "392000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "392000",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -18083,7 +18117,7 @@
         {
           "id": 2217555,
           "key": "_last_change_time",
-          "value": "1778275805"
+          "value": "1795408275"
         },
         {
           "id": 2313417,
@@ -18140,15 +18174,15 @@
       "type": "variation",
       "date_created": "2023-01-11T20:51:40",
       "date_created_gmt": "2023-01-11T20:51:40",
-      "date_modified": "2026-05-08T21:42:00",
-      "date_modified_gmt": "2026-05-08T21:42:00",
+      "date_modified": "2026-11-23T04:31:15",
+      "date_modified_gmt": "2026-11-23T04:31:15",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/popayan/?attribute_pa_selecciona-el-color=verde&attribute_pa_selecciona-una-talla=38",
       "sku": "7200005038",
       "global_unique_id": "",
-      "price": "392000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "392000",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -18778,7 +18812,7 @@
         {
           "id": 2217553,
           "key": "_last_change_time",
-          "value": "1778275805"
+          "value": "1795408275"
         },
         {
           "id": 2313416,
@@ -18835,15 +18869,15 @@
       "type": "variation",
       "date_created": "2023-01-11T20:51:40",
       "date_created_gmt": "2023-01-11T20:51:40",
-      "date_modified": "2026-05-08T21:42:00",
-      "date_modified_gmt": "2026-05-08T21:42:00",
+      "date_modified": "2026-11-23T04:31:15",
+      "date_modified_gmt": "2026-11-23T04:31:15",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/popayan/?attribute_pa_selecciona-el-color=verde&attribute_pa_selecciona-una-talla=37",
       "sku": "7200005037",
       "global_unique_id": "",
-      "price": "392000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "392000",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -19473,7 +19507,7 @@
         {
           "id": 2217551,
           "key": "_last_change_time",
-          "value": "1778275805"
+          "value": "1795408275"
         },
         {
           "id": 2313415,

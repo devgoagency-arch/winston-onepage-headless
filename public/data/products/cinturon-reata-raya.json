@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>245,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>245,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -216,6 +216,8 @@
         "name": "winston-and-harry-reata-raya-azul-2150-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 10,
       "stock_status": "instock",
       "price": "245000",
       "regular_price": "245000",
@@ -255,6 +257,8 @@
         "name": "winston-and-harry-reata-raya-azul-2150-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 19,
       "stock_status": "instock",
       "price": "245000",
       "regular_price": "245000",
@@ -294,6 +298,8 @@
         "name": "winston-and-harry-reata-raya-azul-2150-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 19,
       "stock_status": "instock",
       "price": "245000",
       "regular_price": "245000",
@@ -333,6 +339,8 @@
         "name": "winston-and-harry-reata-raya-azul-2150-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 20,
       "stock_status": "instock",
       "price": "245000",
       "regular_price": "245000",
@@ -372,6 +380,8 @@
         "name": "winston-and-harry-reata-raya-azul-2150-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 9,
       "stock_status": "instock",
       "price": "245000",
       "regular_price": "245000",
@@ -411,6 +421,8 @@
         "name": "winston-and-harry-cinturon-reata-raya-miel-2150-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 10,
       "stock_status": "instock",
       "price": "245000",
       "regular_price": "245000",
@@ -450,6 +462,8 @@
         "name": "winston-and-harry-cinturon-reata-raya-miel-2150-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 18,
       "stock_status": "instock",
       "price": "245000",
       "regular_price": "245000",
@@ -489,6 +503,8 @@
         "name": "winston-and-harry-cinturon-reata-raya-miel-2150-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 20,
       "stock_status": "instock",
       "price": "245000",
       "regular_price": "245000",
@@ -528,6 +544,8 @@
         "name": "winston-and-harry-cinturon-reata-raya-miel-2150-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 19,
       "stock_status": "instock",
       "price": "245000",
       "regular_price": "245000",
@@ -567,6 +585,8 @@
         "name": "winston-and-harry-cinturon-reata-raya-miel-2150-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 9,
       "stock_status": "instock",
       "price": "245000",
       "regular_price": "245000",
@@ -3902,8 +3922,8 @@
       "type": "variation",
       "date_created": "2026-09-08T16:17:43",
       "date_created_gmt": "2026-09-08T16:17:43",
-      "date_modified": "2026-09-08T17:17:00",
-      "date_modified_gmt": "2026-09-08T17:17:00",
+      "date_modified": "2026-11-04T17:55:38",
+      "date_modified_gmt": "2026-11-04T17:55:38",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cinturon-reata-raya/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=32&attribute_pa_hebilla=acero-inoxidable&attribute_pa_material=100-cuero",
       "sku": "27215026032",
@@ -3926,7 +3946,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 19,
+      "stock_quantity": 18,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -3985,7 +4005,7 @@
         {
           "id": 2572141,
           "key": "_last_change_time",
-          "value": "1788887820"
+          "value": "1793814938"
         },
         {
           "id": 2572142,
@@ -11532,6 +11552,8 @@
     "86718": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-reata-raya-azul-2150-05.jpg",
     "86719": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-reata-raya-azul-2150-06.jpg",
     "86720": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-reata-raya-azul-2150-07.jpg",
+    "86722": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-cinturon-reata-raya-miel-2150-02.jpg",
+    "86723": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-cinturon-reata-raya-miel-2150-03.jpg",
     "86724": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-cinturon-reata-raya-miel-2150-04.jpg",
     "86725": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-cinturon-reata-raya-miel-2150-05.jpg",
     "86726": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-cinturon-reata-raya-miel-2150-06.jpg",
@@ -11580,6 +11602,16 @@
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-cinturon-reata-raya-miel-2150-01.jpg",
         "alt": "winston-and-harry-cinturon-reata-raya-miel-2150-01",
         "name": "winston-and-harry-cinturon-reata-raya-miel-2150-01"
+      },
+      {
+        "id": 86722,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-cinturon-reata-raya-miel-2150-02.jpg",
+        "alt": "Cinturon Reata Raya"
+      },
+      {
+        "id": 86723,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-cinturon-reata-raya-miel-2150-03.jpg",
+        "alt": "Cinturon Reata Raya"
       },
       {
         "id": 86724,

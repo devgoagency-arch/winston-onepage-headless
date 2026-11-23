@@ -11,9 +11,9 @@
   "description": "<p>Nos hemos aliado con unos genios del Huila que han logrado reutilizar la cáscara de arroz. Con esto hemos hecho una suela novedosa, cómoda pero también más sostenible. Al reutilizar el desperdicio reducimos la huella de carbono.</p>",
   "on_sale": true,
   "prices": {
-    "price": "408100",
+    "price": "291500",
     "regular_price": "583000",
-    "sale_price": "408100",
+    "sale_price": "291500",
     "price_range": null,
     "currency_code": "COP",
     "currency_symbol": "$",
@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>583,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;583,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>408,100</span></ins><span class=\"screen-reader-text\">Current price is: &#036;408,100.</span>",
+  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>583,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;583,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>291,500</span></ins><span class=\"screen-reader-text\">Current price is: &#036;291,500.</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -261,8 +261,10 @@
         "name": "winston-and-harry-tenis-huila-blanco-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "408100",
+      "price": "291500",
       "regular_price": "583000",
       "sale_price": ""
     },
@@ -290,8 +292,10 @@
         "name": "winston-and-harry-tenis-huila-miel-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "408100",
+      "price": "291500",
       "regular_price": "583000",
       "sale_price": ""
     },
@@ -319,8 +323,10 @@
         "name": "winston-and-harry-tenis-huila-blanco-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "408100",
+      "price": "291500",
       "regular_price": "583000",
       "sale_price": ""
     },
@@ -348,8 +354,10 @@
         "name": "winston-and-harry-tenis-huila-miel-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "408100",
+      "price": "291500",
       "regular_price": "583000",
       "sale_price": ""
     }
@@ -1515,15 +1523,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:54:27",
       "date_created_gmt": "2022-08-25T22:54:27",
-      "date_modified": "2026-08-24T17:22:43",
-      "date_modified_gmt": "2026-08-24T17:22:43",
+      "date_modified": "2026-11-23T04:30:47",
+      "date_modified_gmt": "2026-11-23T04:30:47",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/huila/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=43",
       "sku": "7220926043",
       "global_unique_id": "",
-      "price": "408100",
+      "price": "291500",
       "regular_price": "583000",
-      "sale_price": "408100",
+      "sale_price": "291500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -2026,7 +2034,7 @@
         {
           "id": 2216643,
           "key": "_last_change_time",
-          "value": "1787590680"
+          "value": "1795408247"
         },
         {
           "id": 2313708,
@@ -2068,15 +2076,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:54:27",
       "date_created_gmt": "2022-08-25T22:54:27",
-      "date_modified": "2026-08-24T17:22:43",
-      "date_modified_gmt": "2026-08-24T17:22:43",
+      "date_modified": "2026-11-23T04:30:47",
+      "date_modified_gmt": "2026-11-23T04:30:47",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/huila/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=42",
       "sku": "7220926042",
       "global_unique_id": "",
-      "price": "408100",
+      "price": "291500",
       "regular_price": "583000",
-      "sale_price": "408100",
+      "sale_price": "291500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -2564,7 +2572,7 @@
         {
           "id": 2216642,
           "key": "_last_change_time",
-          "value": "1787590680"
+          "value": "1795408247"
         },
         {
           "id": 2313707,
@@ -2606,15 +2614,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:54:27",
       "date_created_gmt": "2022-08-25T22:54:27",
-      "date_modified": "2026-08-24T17:22:43",
-      "date_modified_gmt": "2026-08-24T17:22:43",
+      "date_modified": "2026-11-23T04:30:47",
+      "date_modified_gmt": "2026-11-23T04:30:47",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/huila/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=41",
       "sku": "7220926041",
       "global_unique_id": "",
-      "price": "408100",
+      "price": "291500",
       "regular_price": "583000",
-      "sale_price": "408100",
+      "sale_price": "291500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -3112,7 +3120,7 @@
         {
           "id": 2216641,
           "key": "_last_change_time",
-          "value": "1787590680"
+          "value": "1795408247"
         },
         {
           "id": 2313706,
@@ -3154,15 +3162,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:54:27",
       "date_created_gmt": "2022-08-25T22:54:27",
-      "date_modified": "2026-08-24T17:22:43",
-      "date_modified_gmt": "2026-08-24T17:22:43",
+      "date_modified": "2026-11-23T04:30:47",
+      "date_modified_gmt": "2026-11-23T04:30:47",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/huila/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=40",
       "sku": "7220926040",
       "global_unique_id": "",
-      "price": "408100",
+      "price": "291500",
       "regular_price": "583000",
-      "sale_price": "408100",
+      "sale_price": "291500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -3660,7 +3668,7 @@
         {
           "id": 2216640,
           "key": "_last_change_time",
-          "value": "1787590680"
+          "value": "1795408247"
         },
         {
           "id": 2313705,
@@ -3702,15 +3710,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:54:27",
       "date_created_gmt": "2022-08-25T22:54:27",
-      "date_modified": "2026-08-24T17:22:43",
-      "date_modified_gmt": "2026-08-24T17:22:43",
+      "date_modified": "2026-11-23T04:30:47",
+      "date_modified_gmt": "2026-11-23T04:30:47",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/huila/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=39",
       "sku": "7220926039",
       "global_unique_id": "",
-      "price": "408100",
+      "price": "291500",
       "regular_price": "583000",
-      "sale_price": "408100",
+      "sale_price": "291500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -4208,7 +4216,7 @@
         {
           "id": 2216639,
           "key": "_last_change_time",
-          "value": "1787590680"
+          "value": "1795408247"
         },
         {
           "id": 2313704,
@@ -4250,15 +4258,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:54:27",
       "date_created_gmt": "2022-08-25T22:54:27",
-      "date_modified": "2026-08-24T17:22:43",
-      "date_modified_gmt": "2026-08-24T17:22:43",
+      "date_modified": "2026-11-23T04:30:47",
+      "date_modified_gmt": "2026-11-23T04:30:47",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/huila/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=38",
       "sku": "7220926038",
       "global_unique_id": "",
-      "price": "408100",
+      "price": "291500",
       "regular_price": "583000",
-      "sale_price": "408100",
+      "sale_price": "291500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -4756,7 +4764,7 @@
         {
           "id": 2216638,
           "key": "_last_change_time",
-          "value": "1787590680"
+          "value": "1795408247"
         },
         {
           "id": 2313703,
@@ -4798,15 +4806,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:54:27",
       "date_created_gmt": "2022-08-25T22:54:27",
-      "date_modified": "2026-08-24T17:22:43",
-      "date_modified_gmt": "2026-08-24T17:22:43",
+      "date_modified": "2026-11-23T04:30:47",
+      "date_modified_gmt": "2026-11-23T04:30:47",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/huila/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=37",
       "sku": "7220926037",
       "global_unique_id": "",
-      "price": "408100",
+      "price": "291500",
       "regular_price": "583000",
-      "sale_price": "408100",
+      "sale_price": "291500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -5309,7 +5317,7 @@
         {
           "id": 2216637,
           "key": "_last_change_time",
-          "value": "1787590681"
+          "value": "1795408247"
         },
         {
           "id": 2313702,
@@ -6447,15 +6455,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:54:27",
       "date_created_gmt": "2022-08-25T22:54:27",
-      "date_modified": "2026-08-24T17:22:43",
-      "date_modified_gmt": "2026-08-24T17:22:43",
+      "date_modified": "2026-11-23T04:30:47",
+      "date_modified_gmt": "2026-11-23T04:30:47",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/huila/?attribute_pa_selecciona-el-color=blanco&attribute_pa_selecciona-una-talla=43",
       "sku": "7220915043",
       "global_unique_id": "",
-      "price": "408100",
+      "price": "291500",
       "regular_price": "583000",
-      "sale_price": "408100",
+      "sale_price": "291500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -6953,7 +6961,7 @@
         {
           "id": 2216634,
           "key": "_last_change_time",
-          "value": "1787590681"
+          "value": "1795408247"
         },
         {
           "id": 2313699,
@@ -6995,15 +7003,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:54:27",
       "date_created_gmt": "2022-08-25T22:54:27",
-      "date_modified": "2026-08-24T17:22:43",
-      "date_modified_gmt": "2026-08-24T17:22:43",
+      "date_modified": "2026-11-23T04:30:47",
+      "date_modified_gmt": "2026-11-23T04:30:47",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/huila/?attribute_pa_selecciona-el-color=blanco&attribute_pa_selecciona-una-talla=42",
       "sku": "7220915042",
       "global_unique_id": "",
-      "price": "408100",
+      "price": "291500",
       "regular_price": "583000",
-      "sale_price": "408100",
+      "sale_price": "291500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -7506,7 +7514,7 @@
         {
           "id": 2216633,
           "key": "_last_change_time",
-          "value": "1787590681"
+          "value": "1795408247"
         },
         {
           "id": 2313712,
@@ -7548,15 +7556,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:54:27",
       "date_created_gmt": "2022-08-25T22:54:27",
-      "date_modified": "2026-08-24T17:22:43",
-      "date_modified_gmt": "2026-08-24T17:22:43",
+      "date_modified": "2026-11-23T04:30:46",
+      "date_modified_gmt": "2026-11-23T04:30:46",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/huila/?attribute_pa_selecciona-el-color=blanco&attribute_pa_selecciona-una-talla=41",
       "sku": "7220915041",
       "global_unique_id": "",
-      "price": "408100",
+      "price": "291500",
       "regular_price": "583000",
-      "sale_price": "408100",
+      "sale_price": "291500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -8054,7 +8062,7 @@
         {
           "id": 2216632,
           "key": "_last_change_time",
-          "value": "1787590681"
+          "value": "1795408246"
         },
         {
           "id": 2313711,
@@ -8096,15 +8104,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:54:27",
       "date_created_gmt": "2022-08-25T22:54:27",
-      "date_modified": "2026-08-24T17:22:43",
-      "date_modified_gmt": "2026-08-24T17:22:43",
+      "date_modified": "2026-11-23T04:30:46",
+      "date_modified_gmt": "2026-11-23T04:30:46",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/huila/?attribute_pa_selecciona-el-color=blanco&attribute_pa_selecciona-una-talla=40",
       "sku": "7220915040",
       "global_unique_id": "",
-      "price": "408100",
+      "price": "291500",
       "regular_price": "583000",
-      "sale_price": "408100",
+      "sale_price": "291500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -8602,7 +8610,7 @@
         {
           "id": 2216631,
           "key": "_last_change_time",
-          "value": "1787590681"
+          "value": "1795408246"
         },
         {
           "id": 2313710,
@@ -8644,15 +8652,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:54:27",
       "date_created_gmt": "2022-08-25T22:54:27",
-      "date_modified": "2026-08-24T17:22:43",
-      "date_modified_gmt": "2026-08-24T17:22:43",
+      "date_modified": "2026-11-23T04:30:46",
+      "date_modified_gmt": "2026-11-23T04:30:46",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/huila/?attribute_pa_selecciona-el-color=blanco&attribute_pa_selecciona-una-talla=39",
       "sku": "7220915039",
       "global_unique_id": "",
-      "price": "408100",
+      "price": "291500",
       "regular_price": "583000",
-      "sale_price": "408100",
+      "sale_price": "291500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -9155,7 +9163,7 @@
         {
           "id": 2216630,
           "key": "_last_change_time",
-          "value": "1787590681"
+          "value": "1795408246"
         },
         {
           "id": 2313709,
@@ -9197,15 +9205,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:54:26",
       "date_created_gmt": "2022-08-25T22:54:26",
-      "date_modified": "2026-08-24T17:22:43",
-      "date_modified_gmt": "2026-08-24T17:22:43",
+      "date_modified": "2026-11-23T04:30:46",
+      "date_modified_gmt": "2026-11-23T04:30:46",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/huila/?attribute_pa_selecciona-el-color=blanco&attribute_pa_selecciona-una-talla=38",
       "sku": "7220915038",
       "global_unique_id": "",
-      "price": "408100",
+      "price": "291500",
       "regular_price": "583000",
-      "sale_price": "408100",
+      "sale_price": "291500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -9703,7 +9711,7 @@
         {
           "id": 2216629,
           "key": "_last_change_time",
-          "value": "1787590681"
+          "value": "1795408246"
         },
         {
           "id": 2313714,
@@ -9745,15 +9753,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:54:26",
       "date_created_gmt": "2022-08-25T22:54:26",
-      "date_modified": "2026-08-24T17:22:43",
-      "date_modified_gmt": "2026-08-24T17:22:43",
+      "date_modified": "2026-11-23T04:30:46",
+      "date_modified_gmt": "2026-11-23T04:30:46",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/huila/?attribute_pa_selecciona-el-color=blanco&attribute_pa_selecciona-una-talla=37",
       "sku": "7220915037",
       "global_unique_id": "",
-      "price": "408100",
+      "price": "291500",
       "regular_price": "583000",
-      "sale_price": "408100",
+      "sale_price": "291500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -10256,7 +10264,7 @@
         {
           "id": 2216627,
           "key": "_last_change_time",
-          "value": "1787590681"
+          "value": "1795408246"
         },
         {
           "id": 2313713,
@@ -10298,7 +10306,9 @@
     "19698": "https://tienda.winstonandharrystore.com/wp-content/uploads/2022/06/zapatos-13-posicion-3.jpg",
     "19699": "https://tienda.winstonandharrystore.com/wp-content/uploads/2022/06/zapatos-13-posicion-1.jpg",
     "19701": "https://tienda.winstonandharrystore.com/wp-content/uploads/2022/06/zapatos-14-posicion-1.jpg",
-    "19703": "https://tienda.winstonandharrystore.com/wp-content/uploads/2022/06/zapatos-14-posicion-3.jpg"
+    "19703": "https://tienda.winstonandharrystore.com/wp-content/uploads/2022/06/zapatos-14-posicion-3.jpg",
+    "86622": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-tenis-huila-miel-02.jpg",
+    "86623": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-tenis-huila-miel-03.jpg"
   },
   "stock_status": "instock",
   "variation_images_map": {
@@ -10338,6 +10348,16 @@
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-tenis-huila-miel-01.jpg",
         "alt": "winston-and-harry-tenis-huila-miel-01",
         "name": "winston-and-harry-tenis-huila-miel-01"
+      },
+      {
+        "id": 86622,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-tenis-huila-miel-02.jpg",
+        "alt": "Huila"
+      },
+      {
+        "id": 86623,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-tenis-huila-miel-03.jpg",
+        "alt": "Huila"
       },
       {
         "id": 19703,

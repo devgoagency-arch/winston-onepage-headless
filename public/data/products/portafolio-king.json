@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>825,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>825,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -118,6 +118,8 @@
         "name": "Portafolio-King-Azul-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -195,8 +197,8 @@
       "type": "variation",
       "date_created": "2025-10-30T04:50:46",
       "date_created_gmt": "2025-10-30T04:50:46",
-      "date_modified": "2026-08-18T17:46:54",
-      "date_modified_gmt": "2026-08-18T17:46:54",
+      "date_modified": "2026-11-23T04:39:45",
+      "date_modified_gmt": "2026-11-23T04:39:45",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/portafolio-king/?attribute_pa_selecciona-el-color=azul",
       "sku": "17026401000",
@@ -219,7 +221,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 3,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -1007,7 +1009,7 @@
         {
           "id": 2239488,
           "key": "_last_change_time",
-          "value": "1787075214"
+          "value": "1795408785"
         },
         {
           "id": 2310957,

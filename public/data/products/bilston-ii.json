@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>649,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>649,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -274,6 +274,8 @@
         "name": "Winston and Harry mocasines cuero bilston II negros 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -303,6 +305,8 @@
         "name": "Winston and Harry mocasines cuero bilston II negros 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -332,6 +336,8 @@
         "name": "Winston and Harry mocasines cuero bilston II negros 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -361,6 +367,8 @@
         "name": "Winston and Harry mocasines cuero bilston II negros 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 7,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -390,6 +398,8 @@
         "name": "Winston and Harry mocasines cuero bilston II negros 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 8,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -419,6 +429,8 @@
         "name": "Winston and Harry mocasines cuero bilston II negros 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -448,6 +460,8 @@
         "name": "Winston and Harry mocasines cuero bilston II negros 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -477,6 +491,8 @@
         "name": "Winston and Harry mocasines cuero bilston II negros 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -506,6 +522,8 @@
         "name": "Winston and Harry mocasines cuero bilston II negros 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -535,6 +553,8 @@
         "name": "Winston and Harry mocasines cuero bilston II negros 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -564,6 +584,8 @@
         "name": "Winston and Harry mocasines cuero bilston II negros 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 7,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -593,6 +615,8 @@
         "name": "Winston and Harry mocasines cuero bilston II negros 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 8,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -622,6 +646,8 @@
         "name": "Winston and Harry mocasines cuero bilston II negros 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -651,6 +677,8 @@
         "name": "Winston and Harry mocasines cuero bilston II negros 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -6117,8 +6145,8 @@
       "type": "variation",
       "date_created": "2026-08-12T02:53:24",
       "date_created_gmt": "2026-08-12T02:53:24",
-      "date_modified": "2026-08-13T00:04:53",
-      "date_modified_gmt": "2026-08-13T00:04:53",
+      "date_modified": "2026-10-05T21:51:14",
+      "date_modified_gmt": "2026-10-05T21:51:14",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bilston-ii/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=40",
       "sku": "7404702040",
@@ -6141,7 +6169,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 8,
+      "stock_quantity": 7,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -6188,7 +6216,7 @@
         {
           "id": 2490287,
           "key": "_last_change_time",
-          "value": "1786579493"
+          "value": "1791237074"
         },
         {
           "id": 2490288,
@@ -7195,8 +7223,8 @@
       "type": "variation",
       "date_created": "2026-08-12T02:53:24",
       "date_created_gmt": "2026-08-12T02:53:24",
-      "date_modified": "2026-08-13T00:04:53",
-      "date_modified_gmt": "2026-08-13T00:04:53",
+      "date_modified": "2026-10-14T06:14:43",
+      "date_modified_gmt": "2026-10-14T06:14:43",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bilston-ii/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=39",
       "sku": "7404702039",
@@ -7219,7 +7247,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 5,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -7266,7 +7294,7 @@
         {
           "id": 2490275,
           "key": "_last_change_time",
-          "value": "1786579493"
+          "value": "1791958483"
         },
         {
           "id": 2490276,
@@ -12589,8 +12617,8 @@
       "type": "variation",
       "date_created": "2026-08-12T02:53:24",
       "date_created_gmt": "2026-08-12T02:53:24",
-      "date_modified": "2026-08-24T20:32:29",
-      "date_modified_gmt": "2026-08-24T20:32:29",
+      "date_modified": "2026-11-04T17:55:37",
+      "date_modified_gmt": "2026-11-04T17:55:37",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bilston-ii/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=43",
       "sku": "7404704043",
@@ -12613,7 +12641,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 3,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -12657,7 +12685,7 @@
         {
           "id": 2490213,
           "key": "_last_change_time",
-          "value": "1787603549"
+          "value": "1793814937"
         },
         {
           "id": 2490214,
@@ -15814,8 +15842,8 @@
       "type": "variation",
       "date_created": "2026-08-12T02:53:24",
       "date_created_gmt": "2026-08-12T02:53:24",
-      "date_modified": "2026-08-13T00:04:53",
-      "date_modified_gmt": "2026-08-13T00:04:53",
+      "date_modified": "2026-11-04T17:55:37",
+      "date_modified_gmt": "2026-11-04T17:55:37",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bilston-ii/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=40",
       "sku": "7404704040",
@@ -15838,7 +15866,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 9,
+      "stock_quantity": 7,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -15882,7 +15910,7 @@
         {
           "id": 2490177,
           "key": "_last_change_time",
-          "value": "1786579493"
+          "value": "1793814937"
         },
         {
           "id": 2490178,
@@ -16889,8 +16917,8 @@
       "type": "variation",
       "date_created": "2026-08-12T02:53:24",
       "date_created_gmt": "2026-08-12T02:53:24",
-      "date_modified": "2026-08-13T00:04:53",
-      "date_modified_gmt": "2026-08-13T00:04:53",
+      "date_modified": "2026-11-23T04:40:03",
+      "date_modified_gmt": "2026-11-23T04:40:03",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bilston-ii/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=39",
       "sku": "7404704039",
@@ -16913,7 +16941,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 7,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -16957,7 +16985,7 @@
         {
           "id": 2490165,
           "key": "_last_change_time",
-          "value": "1786579493"
+          "value": "1795408803"
         },
         {
           "id": 2490166,
@@ -19039,8 +19067,8 @@
       "type": "variation",
       "date_created": "2026-08-12T02:53:24",
       "date_created_gmt": "2026-08-12T02:53:24",
-      "date_modified": "2026-08-13T00:04:53",
-      "date_modified_gmt": "2026-08-13T00:04:53",
+      "date_modified": "2026-11-04T17:55:16",
+      "date_modified_gmt": "2026-11-04T17:55:16",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bilston-ii/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=37",
       "sku": "7404704037",
@@ -19063,7 +19091,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 2,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -19107,7 +19135,7 @@
         {
           "id": 2490141,
           "key": "_last_change_time",
-          "value": "1786579493"
+          "value": "1793814916"
         },
         {
           "id": 2490142,

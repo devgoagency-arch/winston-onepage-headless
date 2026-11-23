@@ -9,12 +9,15 @@
   "sku": "1142",
   "short_description": "<p>El Mocasín Winsdor V combina un diseño clásico con detalles artesanales y acabados en contraste. Su suela flexible y su estilo versátil lo convierten en una excelente opción para complementar atuendos casuales con comodidad y elegancia.</p>",
   "description": "<p>El Mocasín Winsdor V combina elegancia casual y detalles artesanales en un diseño pensado para quienes buscan comodidad y distinción. Su silueta clásica incorpora una banda decorativa en el empeine con abertura central, acompañada de costuras visibles que realzan su carácter y aportan un acabado tradicional.</p>\n<p>Su diseño tipo mocasín, con construcción de inspiración náutica y detalles en contraste en el contorno del talón, le brinda una apariencia sofisticada y versátil. Cuenta con una suela flexible de diseño segmentado que favorece la comodidad al caminar y lo convierte en una excelente opción para el uso diario.</p>\n<p>Ideal para complementar atuendos casuales y smart casual, el Winsdor V es un calzado que combina personalidad, estilo y funcionalidad, adaptándose con facilidad a diferentes ocasiones.</p>",
-  "on_sale": false,
+  "on_sale": true,
   "prices": {
-    "price": "590000",
+    "price": "354000",
     "regular_price": "590000",
-    "sale_price": "590000",
-    "price_range": null,
+    "sale_price": "354000",
+    "price_range": {
+      "min_amount": "354000",
+      "max_amount": "590000"
+    },
     "currency_code": "COP",
     "currency_symbol": "$",
     "currency_minor_unit": 0,
@@ -23,7 +26,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>590,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\" aria-hidden=\"true\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>354,000</span> <span aria-hidden=\"true\">&ndash;</span> <span class=\"woocommerce-Price-amount amount\" aria-hidden=\"true\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>590,000</span><span class=\"screen-reader-text\">Price range: &#036;354,000 through &#036;590,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -227,10 +230,10 @@
         "name": "winston-and-harry-mocasines-wisdor-cafe-01",
         "alt": ""
       },
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "590000",
+      "price": "354000",
       "regular_price": "590000",
       "sale_price": ""
     },
@@ -258,10 +261,10 @@
         "name": "winston-and-harry-mocasines-wisdor-cafe-01",
         "alt": ""
       },
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "590000",
+      "price": "354000",
       "regular_price": "590000",
       "sale_price": ""
     },
@@ -289,10 +292,10 @@
         "name": "winston-and-harry-mocasines-wisdor-cafe-01",
         "alt": ""
       },
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
-      "price": "590000",
+      "price": "354000",
       "regular_price": "590000",
       "sale_price": ""
     },
@@ -320,10 +323,10 @@
         "name": "winston-and-harry-mocasines-wisdor-cafe-01",
         "alt": ""
       },
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
-      "price": "590000",
+      "price": "354000",
       "regular_price": "590000",
       "sale_price": ""
     },
@@ -351,10 +354,10 @@
         "name": "winston-and-harry-mocasines-wisdor-cafe-01",
         "alt": ""
       },
-      "manage_stock": "parent",
+      "manage_stock": true,
       "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "590000",
+      "price": "354000",
       "regular_price": "590000",
       "sale_price": ""
     },
@@ -385,7 +388,7 @@
       "manage_stock": "parent",
       "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "590000",
+      "price": "354000",
       "regular_price": "590000",
       "sale_price": ""
     },
@@ -416,7 +419,7 @@
       "manage_stock": "parent",
       "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "590000",
+      "price": "354000",
       "regular_price": "590000",
       "sale_price": ""
     },
@@ -447,7 +450,7 @@
       "manage_stock": "parent",
       "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "590000",
+      "price": "354000",
       "regular_price": "590000",
       "sale_price": ""
     },
@@ -478,7 +481,7 @@
       "manage_stock": "parent",
       "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "590000",
+      "price": "354000",
       "regular_price": "590000",
       "sale_price": ""
     }
@@ -4900,20 +4903,20 @@
       "type": "variation",
       "date_created": "2026-11-20T20:33:35",
       "date_created_gmt": "2026-11-20T20:33:35",
-      "date_modified": "2026-11-22T00:09:25",
-      "date_modified_gmt": "2026-11-22T00:09:25",
+      "date_modified": "2026-11-23T04:41:00",
+      "date_modified_gmt": "2026-11-23T04:41:00",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/winsdor-v/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=41",
       "sku": "7100904041",
       "global_unique_id": "",
-      "price": "590000",
+      "price": "354000",
       "regular_price": "590000",
-      "sale_price": "",
+      "sale_price": "354000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -4923,7 +4926,7 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
+      "manage_stock": true,
       "stock_quantity": 1,
       "stock_status": "instock",
       "backorders": "no",
@@ -4971,7 +4974,7 @@
         {
           "id": 2637173,
           "key": "_last_change_time",
-          "value": "1795214608"
+          "value": "1795408860"
         },
         {
           "id": 2637174,
@@ -5759,11 +5762,6 @@
           "value": ""
         },
         {
-          "id": 2653071,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2653072,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -5988,20 +5986,20 @@
       "type": "variation",
       "date_created": "2026-11-20T20:33:35",
       "date_created_gmt": "2026-11-20T20:33:35",
-      "date_modified": "2026-11-22T00:09:25",
-      "date_modified_gmt": "2026-11-22T00:09:25",
+      "date_modified": "2026-11-23T04:41:00",
+      "date_modified_gmt": "2026-11-23T04:41:00",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/winsdor-v/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=40",
       "sku": "7100904040",
       "global_unique_id": "",
-      "price": "590000",
+      "price": "354000",
       "regular_price": "590000",
-      "sale_price": "",
+      "sale_price": "354000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -6011,8 +6009,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -6059,7 +6057,7 @@
         {
           "id": 2637161,
           "key": "_last_change_time",
-          "value": "1795214608"
+          "value": "1795408860"
         },
         {
           "id": 2637162,
@@ -6842,16 +6840,6 @@
           "value": ""
         },
         {
-          "id": 2652880,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2652881,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2652882,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -7076,20 +7064,20 @@
       "type": "variation",
       "date_created": "2026-11-20T20:33:35",
       "date_created_gmt": "2026-11-20T20:33:35",
-      "date_modified": "2026-11-22T00:09:24",
-      "date_modified_gmt": "2026-11-22T00:09:24",
+      "date_modified": "2026-11-23T04:41:00",
+      "date_modified_gmt": "2026-11-23T04:41:00",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/winsdor-v/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=39",
       "sku": "7100904039",
       "global_unique_id": "",
-      "price": "590000",
+      "price": "354000",
       "regular_price": "590000",
-      "sale_price": "",
+      "sale_price": "354000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -7099,8 +7087,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -7147,7 +7135,7 @@
         {
           "id": 2637149,
           "key": "_last_change_time",
-          "value": "1795214608"
+          "value": "1795408860"
         },
         {
           "id": 2637150,
@@ -7930,16 +7918,6 @@
           "value": ""
         },
         {
-          "id": 2652690,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2652691,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2652692,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -8164,20 +8142,20 @@
       "type": "variation",
       "date_created": "2026-11-20T20:33:35",
       "date_created_gmt": "2026-11-20T20:33:35",
-      "date_modified": "2026-11-22T00:09:24",
-      "date_modified_gmt": "2026-11-22T00:09:24",
+      "date_modified": "2026-11-23T04:41:00",
+      "date_modified_gmt": "2026-11-23T04:41:00",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/winsdor-v/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=38",
       "sku": "7100904038",
       "global_unique_id": "",
-      "price": "590000",
+      "price": "354000",
       "regular_price": "590000",
-      "sale_price": "",
+      "sale_price": "354000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -8187,8 +8165,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -8235,7 +8213,7 @@
         {
           "id": 2637137,
           "key": "_last_change_time",
-          "value": "1795214608"
+          "value": "1795408860"
         },
         {
           "id": 2637138,
@@ -9018,16 +8996,6 @@
           "value": ""
         },
         {
-          "id": 2652500,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2652501,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2652502,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -9252,20 +9220,20 @@
       "type": "variation",
       "date_created": "2026-11-20T20:33:35",
       "date_created_gmt": "2026-11-20T20:33:35",
-      "date_modified": "2026-11-22T00:09:24",
-      "date_modified_gmt": "2026-11-22T00:09:24",
+      "date_modified": "2026-11-23T04:41:00",
+      "date_modified_gmt": "2026-11-23T04:41:00",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/winsdor-v/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=37",
       "sku": "7100904037",
       "global_unique_id": "",
-      "price": "590000",
+      "price": "354000",
       "regular_price": "590000",
-      "sale_price": "",
+      "sale_price": "354000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -9275,8 +9243,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -9323,7 +9291,7 @@
         {
           "id": 2637125,
           "key": "_last_change_time",
-          "value": "1795214608"
+          "value": "1795408860"
         },
         {
           "id": 2637126,
@@ -10103,16 +10071,6 @@
         {
           "id": 2652309,
           "key": "_oembed_time_3efc152008105e0533b1d0735c932ef8",
-          "value": ""
-        },
-        {
-          "id": 2652310,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2652311,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         },
         {

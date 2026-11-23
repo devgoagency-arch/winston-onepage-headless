@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>759,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>759,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -262,6 +262,8 @@
         "name": "Fortaleza-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "price": "759000",
       "regular_price": "759000",
@@ -291,6 +293,8 @@
         "name": "Fortaleza-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "price": "759000",
       "regular_price": "759000",
@@ -320,6 +324,8 @@
         "name": "Fortaleza-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 10,
       "stock_status": "instock",
       "price": "759000",
       "regular_price": "759000",
@@ -349,6 +355,8 @@
         "name": "Fortaleza-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "759000",
       "regular_price": "759000",
@@ -378,6 +386,8 @@
         "name": "Fortaleza-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "759000",
       "regular_price": "759000",
@@ -407,6 +417,8 @@
         "name": "Fortaleza-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "759000",
       "regular_price": "759000",
@@ -436,6 +448,8 @@
         "name": "Fortaleza-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "price": "759000",
       "regular_price": "759000",
@@ -465,6 +479,8 @@
         "name": "Fortaleza-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 7,
       "stock_status": "instock",
       "price": "759000",
       "regular_price": "759000",
@@ -494,6 +510,8 @@
         "name": "Fortaleza-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "759000",
       "regular_price": "759000",
@@ -523,6 +541,8 @@
         "name": "Fortaleza-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "price": "759000",
       "regular_price": "759000",
@@ -552,6 +572,8 @@
         "name": "Fortaleza-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "759000",
       "regular_price": "759000",
@@ -5963,8 +5985,8 @@
       "type": "variation",
       "date_created": "2025-10-29T22:11:40",
       "date_created_gmt": "2025-10-29T22:11:40",
-      "date_modified": "2026-07-27T20:47:10",
-      "date_modified_gmt": "2026-07-27T20:47:10",
+      "date_modified": "2026-11-23T04:39:16",
+      "date_modified_gmt": "2026-11-23T04:39:16",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/fortaleza/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=39",
       "sku": "7003202039",
@@ -5987,7 +6009,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 6,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -6781,7 +6803,7 @@
         {
           "id": 2259431,
           "key": "_last_change_time",
-          "value": "1780422079"
+          "value": "1795408756"
         },
         {
           "id": 2311049,
@@ -6799,11 +6821,6 @@
           "value": ""
         },
         {
-          "id": 2416652,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2416653,
           "key": "_wc_facebook_product_video_source",
           "value": ""
@@ -6811,11 +6828,6 @@
         {
           "id": 2416654,
           "key": "fb_product_images",
-          "value": ""
-        },
-        {
-          "id": 2416655,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],

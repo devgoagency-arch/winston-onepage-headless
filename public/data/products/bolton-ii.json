@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>630,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>630,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -225,6 +225,8 @@
         "name": "Winston and harry Tenis Bolton II Cognac 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "630000",
       "regular_price": "630000",
@@ -254,6 +256,8 @@
         "name": "Winston and harry Tenis Bolton II Cognac 01",
         "alt": ""
       },
+      "manage_stock": "parent",
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "630000",
       "regular_price": "630000",
@@ -283,6 +287,8 @@
         "name": "Winston and harry Tenis Bolton II Cognac 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "630000",
       "regular_price": "630000",
@@ -312,6 +318,8 @@
         "name": "Winston and harry Tenis Bolton II Cognac 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "630000",
       "regular_price": "630000",
@@ -341,6 +349,8 @@
         "name": "Winston and harry Tenis Bolton II Cognac 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "price": "630000",
       "regular_price": "630000",
@@ -370,6 +380,8 @@
         "name": "Winston and harry Tenis Bolton II Cognac 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "630000",
       "regular_price": "630000",
@@ -399,6 +411,8 @@
         "name": "Winston and harry Tenis Bolton II Cognac 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "630000",
       "regular_price": "630000",
@@ -428,6 +442,8 @@
         "name": "Winston and harry Tenis Bolton II Cognac 01",
         "alt": ""
       },
+      "manage_stock": "parent",
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "630000",
       "regular_price": "630000",
@@ -457,6 +473,8 @@
         "name": "Winston and harry Tenis Bolton II Cognac 01",
         "alt": ""
       },
+      "manage_stock": "parent",
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "630000",
       "regular_price": "630000",
@@ -486,6 +504,8 @@
         "name": "Winston and Harry Tenis Bolton II negros 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "630000",
       "regular_price": "630000",
@@ -515,6 +535,8 @@
         "name": "Winston and Harry Tenis Bolton II negros 01",
         "alt": ""
       },
+      "manage_stock": "parent",
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "630000",
       "regular_price": "630000",
@@ -544,6 +566,8 @@
         "name": "Winston and Harry Tenis Bolton II negros 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "price": "630000",
       "regular_price": "630000",
@@ -573,6 +597,8 @@
         "name": "Winston and Harry Tenis Bolton II negros 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "630000",
       "regular_price": "630000",
@@ -602,6 +628,8 @@
         "name": "Winston and Harry Tenis Bolton II negros 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 7,
       "stock_status": "instock",
       "price": "630000",
       "regular_price": "630000",
@@ -631,6 +659,8 @@
         "name": "Winston and Harry Tenis Bolton II negros 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "630000",
       "regular_price": "630000",
@@ -660,6 +690,8 @@
         "name": "Winston and Harry Tenis Bolton II negros 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "630000",
       "regular_price": "630000",
@@ -689,6 +721,8 @@
         "name": "Winston and Harry Tenis Bolton II negros 01",
         "alt": ""
       },
+      "manage_stock": "parent",
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "630000",
       "regular_price": "630000",
@@ -718,6 +752,8 @@
         "name": "Winston and Harry Tenis Bolton II negros 01",
         "alt": ""
       },
+      "manage_stock": "parent",
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "630000",
       "regular_price": "630000",
@@ -1540,7 +1576,7 @@
         {
           "id": 2535280,
           "key": "_last_change_time",
-          "value": ""
+          "value": "1790698020"
         },
         {
           "id": 2535281,
@@ -2623,7 +2659,7 @@
         {
           "id": 2535081,
           "key": "_last_change_time",
-          "value": ""
+          "value": "1790698020"
         },
         {
           "id": 2535082,
@@ -8411,7 +8447,7 @@
         {
           "id": 2527387,
           "key": "_last_change_time",
-          "value": "1787248718"
+          "value": "1790698020"
         },
         {
           "id": 2527388,
@@ -10577,7 +10613,7 @@
         {
           "id": 2527362,
           "key": "_last_change_time",
-          "value": "1787248718"
+          "value": "1790698020"
         },
         {
           "id": 2527363,
@@ -11665,7 +11701,7 @@
         {
           "id": 2527349,
           "key": "_last_change_time",
-          "value": "1787248718"
+          "value": "1790698020"
         },
         {
           "id": 2527350,
@@ -15916,8 +15952,8 @@
       "type": "variation",
       "date_created": "2026-08-20T17:57:29",
       "date_created_gmt": "2026-08-20T17:57:29",
-      "date_modified": "2026-08-22T00:04:58",
-      "date_modified_gmt": "2026-08-22T00:04:58",
+      "date_modified": "2026-11-23T04:40:20",
+      "date_modified_gmt": "2026-11-23T04:40:20",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bolton-ii/?attribute_pa_selecciona-el-color=cognac&attribute_pa_selecciona-una-talla=40",
       "sku": "7403432040",
@@ -15940,7 +15976,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 3,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -15987,7 +16023,7 @@
         {
           "id": 2527301,
           "key": "_last_change_time",
-          "value": "1787357098"
+          "value": "1795408820"
         },
         {
           "id": 2527302,
@@ -16994,8 +17030,8 @@
       "type": "variation",
       "date_created": "2026-08-20T17:57:29",
       "date_created_gmt": "2026-08-20T17:57:29",
-      "date_modified": "2026-08-22T00:04:57",
-      "date_modified_gmt": "2026-08-22T00:04:57",
+      "date_modified": "2026-10-27T19:17:59",
+      "date_modified_gmt": "2026-10-27T19:17:59",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bolton-ii/?attribute_pa_selecciona-el-color=cognac&attribute_pa_selecciona-una-talla=39",
       "sku": "7403432039",
@@ -17018,7 +17054,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 3,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -17065,7 +17101,7 @@
         {
           "id": 2527289,
           "key": "_last_change_time",
-          "value": "1787357097"
+          "value": "1793128679"
         },
         {
           "id": 2527290,
@@ -18143,7 +18179,7 @@
         {
           "id": 2527277,
           "key": "_last_change_time",
-          "value": "1787248717"
+          "value": "1790698020"
         },
         {
           "id": 2527278,
@@ -19160,8 +19196,8 @@
       "type": "variation",
       "date_created": "2026-08-20T17:57:29",
       "date_created_gmt": "2026-08-20T17:57:29",
-      "date_modified": "2026-08-22T00:04:57",
-      "date_modified_gmt": "2026-08-22T00:04:57",
+      "date_modified": "2026-09-08T17:16:39",
+      "date_modified_gmt": "2026-09-08T17:16:39",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bolton-ii/?attribute_pa_selecciona-el-color=cognac&attribute_pa_selecciona-una-talla=37",
       "sku": "7403432037",
@@ -19184,7 +19220,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 4,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -19231,7 +19267,7 @@
         {
           "id": 2527265,
           "key": "_last_change_time",
-          "value": "1787357097"
+          "value": "1788887799"
         },
         {
           "id": 2527266,
@@ -20242,6 +20278,8 @@
     "85710": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-harry-Tenis-Bolton-II-Cognac-08.jpg",
     "85711": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-harry-Tenis-Bolton-II-Cognac-09.jpg",
     "85712": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-harry-Tenis-Bolton-II-Cognac-10.jpg",
+    "85714": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-Tenis-Bolton-II-negros-02.jpg",
+    "85715": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-Tenis-Bolton-II-negros-03.jpg",
     "85716": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-Tenis-Bolton-II-negros-04.jpg",
     "85717": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-Tenis-Bolton-II-negros-05.jpg",
     "85718": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-Tenis-Bolton-II-negros-06.jpg",
@@ -20313,6 +20351,16 @@
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-Tenis-Bolton-II-negros-01.jpg",
         "alt": "Winston and Harry Tenis Bolton II negros 01",
         "name": "Winston and Harry Tenis Bolton II negros 01"
+      },
+      {
+        "id": 85714,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-Tenis-Bolton-II-negros-02.jpg",
+        "alt": "Bolton II"
+      },
+      {
+        "id": 85715,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-Tenis-Bolton-II-negros-03.jpg",
+        "alt": "Bolton II"
       },
       {
         "id": 85716,

@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>360,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>360,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -205,6 +205,8 @@
         "name": "Sueter-Braid-Azul-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 8,
       "stock_status": "instock",
       "price": "360000",
       "regular_price": "360000",
@@ -234,6 +236,8 @@
         "name": "Winston-and-Harry-Sueter-Braid-Azul-baby-Frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "360000",
       "regular_price": "360000",
@@ -263,6 +267,8 @@
         "name": "Sueter-Braid-Azul-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 7,
       "stock_status": "instock",
       "price": "360000",
       "regular_price": "360000",
@@ -292,6 +298,8 @@
         "name": "Winston-and-Harry-Sueter-Braid-Azul-baby-Frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "360000",
       "regular_price": "360000",
@@ -321,6 +329,8 @@
         "name": "Sueter-Braid-Azul-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "360000",
       "regular_price": "360000",
@@ -350,6 +360,8 @@
         "name": "Winston-and-Harry-Sueter-Braid-Azul-baby-Frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "360000",
       "regular_price": "360000",
@@ -379,6 +391,8 @@
         "name": "Winston-and-Harry-Sueter-Braid-Gris-Frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "360000",
       "regular_price": "360000",
@@ -408,6 +422,8 @@
         "name": "Winston-and-Harry-Sueter-Braid-Gris-Frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "price": "360000",
       "regular_price": "360000",
@@ -437,6 +453,8 @@
         "name": "Winston-and-Harry-Sueter-Braid-Gris-Frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 7,
       "stock_status": "instock",
       "price": "360000",
       "regular_price": "360000",
@@ -466,6 +484,8 @@
         "name": "Winston-and-Harry-Sueter-Braid-Gris-Frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "360000",
       "regular_price": "360000",
@@ -495,6 +515,8 @@
         "name": "Sueter-Braid-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 11,
       "stock_status": "instock",
       "price": "360000",
       "regular_price": "360000",
@@ -524,6 +546,8 @@
         "name": "Sueter-Braid-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 22,
       "stock_status": "instock",
       "price": "360000",
       "regular_price": "360000",
@@ -553,6 +577,8 @@
         "name": "Sueter-Braid-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 20,
       "stock_status": "instock",
       "price": "360000",
       "regular_price": "360000",
@@ -582,6 +608,8 @@
         "name": "Sueter-Braid-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "360000",
       "regular_price": "360000",
@@ -611,6 +639,8 @@
         "name": "Sueter-Braid-Rojo-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 7,
       "stock_status": "instock",
       "price": "360000",
       "regular_price": "360000",
@@ -640,6 +670,8 @@
         "name": "Sueter-Braid-Rojo-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "price": "360000",
       "regular_price": "360000",
@@ -669,6 +701,8 @@
         "name": "Sueter-Braid-Rojo-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 14,
       "stock_status": "instock",
       "price": "360000",
       "regular_price": "360000",
@@ -698,6 +732,8 @@
         "name": "Sueter-Braid-Rojo-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "360000",
       "regular_price": "360000",
@@ -727,35 +763,8 @@
         "name": "Sueter-Braid-Verde-Winstonandharry-1",
         "alt": ""
       },
-      "stock_status": "instock",
-      "price": "360000",
-      "regular_price": "360000",
-      "sale_price": ""
-    },
-    {
-      "id": 82316,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "verde",
-          "option": "verde"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "m",
-          "option": "m"
-        }
-      ],
-      "image": {
-        "id": 81893,
-        "date_created": "2025-10-29T05:23:05",
-        "date_created_gmt": "2025-10-29T05:23:05",
-        "date_modified": "2025-11-04T17:22:17",
-        "date_modified_gmt": "2025-11-04T17:22:17",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Sueter-Braid-Verde-Winstonandharry-1.jpg",
-        "name": "Sueter-Braid-Verde-Winstonandharry-1",
-        "alt": ""
-      },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "360000",
       "regular_price": "360000",
@@ -2983,8 +2992,8 @@
       "type": "variation",
       "date_created": "2026-05-08T02:50:57",
       "date_created_gmt": "2026-05-08T02:50:57",
-      "date_modified": "2026-07-27T17:45:03",
-      "date_modified_gmt": "2026-07-27T17:45:03",
+      "date_modified": "2026-09-16T16:53:16",
+      "date_modified_gmt": "2026-09-16T16:53:16",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/sueter-braid/?attribute_pa_selecciona-el-color=gris&attribute_pa_selecciona-una-talla=xl",
       "sku": "6160303038",
@@ -3007,7 +3016,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 2,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -3054,7 +3063,7 @@
         {
           "id": 2343150,
           "key": "_last_change_time",
-          "value": "1785174303"
+          "value": "1789577596"
         },
         {
           "id": 2343151,
@@ -5139,8 +5148,8 @@
       "type": "variation",
       "date_created": "2026-05-08T02:50:57",
       "date_created_gmt": "2026-05-08T02:50:57",
-      "date_modified": "2026-08-13T00:03:04",
-      "date_modified_gmt": "2026-08-13T00:03:04",
+      "date_modified": "2026-11-04T17:55:15",
+      "date_modified_gmt": "2026-11-04T17:55:15",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/sueter-braid/?attribute_pa_selecciona-el-color=gris&attribute_pa_selecciona-una-talla=m",
       "sku": "6160303034",
@@ -5163,7 +5172,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 8,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -5210,7 +5219,7 @@
         {
           "id": 2343124,
           "key": "_last_change_time",
-          "value": "1786579384"
+          "value": "1793814915"
         },
         {
           "id": 2343125,
@@ -6217,8 +6226,8 @@
       "type": "variation",
       "date_created": "2026-05-08T02:50:57",
       "date_created_gmt": "2026-05-08T02:50:57",
-      "date_modified": "2026-08-13T00:03:04",
-      "date_modified_gmt": "2026-08-13T00:03:04",
+      "date_modified": "2026-11-23T04:40:02",
+      "date_modified_gmt": "2026-11-23T04:40:02",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/sueter-braid/?attribute_pa_selecciona-el-color=gris&attribute_pa_selecciona-una-talla=l",
       "sku": "6160303036",
@@ -6241,7 +6250,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 7,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -6288,7 +6297,7 @@
         {
           "id": 2343111,
           "key": "_last_change_time",
-          "value": "1786579384"
+          "value": "1795408802"
         },
         {
           "id": 2343112,
@@ -10529,8 +10538,8 @@
       "type": "variation",
       "date_created": "2026-05-08T02:50:57",
       "date_created_gmt": "2026-05-08T02:50:57",
-      "date_modified": "2026-06-02T17:42:45",
-      "date_modified_gmt": "2026-06-02T17:42:45",
+      "date_modified": "2026-10-14T06:13:44",
+      "date_modified_gmt": "2026-10-14T06:13:44",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/sueter-braid/?attribute_pa_selecciona-el-color=azul-claro&attribute_pa_selecciona-una-talla=s",
       "sku": "6160341032",
@@ -10553,7 +10562,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 6,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -10600,7 +10609,7 @@
         {
           "id": 2343056,
           "key": "_last_change_time",
-          "value": "1780422165"
+          "value": "1791958424"
         },
         {
           "id": 2343057,
@@ -11607,8 +11616,8 @@
       "type": "variation",
       "date_created": "2026-05-08T02:50:57",
       "date_created_gmt": "2026-05-08T02:50:57",
-      "date_modified": "2026-08-13T00:03:40",
-      "date_modified_gmt": "2026-08-13T00:03:40",
+      "date_modified": "2026-10-14T06:13:45",
+      "date_modified_gmt": "2026-10-14T06:13:45",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/sueter-braid/?attribute_pa_selecciona-el-color=azul-claro&attribute_pa_selecciona-una-talla=m",
       "sku": "6160341034",
@@ -11631,7 +11640,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 4,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -11678,7 +11687,7 @@
         {
           "id": 2343042,
           "key": "_last_change_time",
-          "value": "1786579420"
+          "value": "1791958425"
         },
         {
           "id": 2343043,
@@ -12685,8 +12694,8 @@
       "type": "variation",
       "date_created": "2026-05-08T02:50:57",
       "date_created_gmt": "2026-05-08T02:50:57",
-      "date_modified": "2026-08-18T17:47:28",
-      "date_modified_gmt": "2026-08-18T17:47:28",
+      "date_modified": "2026-10-14T06:13:45",
+      "date_modified_gmt": "2026-10-14T06:13:45",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/sueter-braid/?attribute_pa_selecciona-el-color=azul-claro&attribute_pa_selecciona-una-talla=l",
       "sku": "6160341036",
@@ -12709,7 +12718,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 5,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -12756,7 +12765,7 @@
         {
           "id": 2343028,
           "key": "_last_change_time",
-          "value": "1787075248"
+          "value": "1791958425"
         },
         {
           "id": 2343029,
@@ -17203,8 +17212,8 @@
       "type": "variation",
       "date_created": "2025-10-30T04:27:38",
       "date_created_gmt": "2025-10-30T04:27:38",
-      "date_modified": "2026-08-13T00:03:38",
-      "date_modified_gmt": "2026-08-13T00:03:38",
+      "date_modified": "2026-10-05T21:49:56",
+      "date_modified_gmt": "2026-10-05T21:49:56",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/sueter-braid/?attribute_pa_selecciona-el-color=verde&attribute_pa_selecciona-una-talla=m",
       "sku": "6160305034",
@@ -17227,8 +17236,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -18021,7 +18030,7 @@
         {
           "id": 2250456,
           "key": "_last_change_time",
-          "value": "1786579418"
+          "value": "1791236996"
         },
         {
           "id": 2310965,
@@ -18063,8 +18072,8 @@
       "type": "variation",
       "date_created": "2025-10-30T04:27:38",
       "date_created_gmt": "2025-10-30T04:27:38",
-      "date_modified": "2026-06-16T17:44:43",
-      "date_modified_gmt": "2026-06-16T17:44:43",
+      "date_modified": "2026-10-05T21:49:56",
+      "date_modified_gmt": "2026-10-05T21:49:56",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/sueter-braid/?attribute_pa_selecciona-el-color=verde&attribute_pa_selecciona-una-talla=s",
       "sku": "6160305032",
@@ -18881,7 +18890,7 @@
         {
           "id": 2250455,
           "key": "_last_change_time",
-          "value": "1781631516"
+          "value": "1791236996"
         },
         {
           "id": 2310984,
@@ -19783,8 +19792,8 @@
       "type": "variation",
       "date_created": "2025-10-30T04:27:38",
       "date_created_gmt": "2025-10-30T04:27:38",
-      "date_modified": "2026-07-27T17:44:08",
-      "date_modified_gmt": "2026-07-27T17:44:08",
+      "date_modified": "2026-10-14T06:13:43",
+      "date_modified_gmt": "2026-10-14T06:13:43",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/sueter-braid/?attribute_pa_selecciona-el-color=rojo&attribute_pa_selecciona-una-talla=xl",
       "sku": "6160313038",
@@ -19807,7 +19816,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 2,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -20601,7 +20610,7 @@
         {
           "id": 2250454,
           "key": "_last_change_time",
-          "value": "1785174248"
+          "value": "1791958423"
         },
         {
           "id": 2310980,
@@ -21503,8 +21512,8 @@
       "type": "variation",
       "date_created": "2025-10-30T04:27:38",
       "date_created_gmt": "2025-10-30T04:27:38",
-      "date_modified": "2026-08-18T17:46:54",
-      "date_modified_gmt": "2026-08-18T17:46:54",
+      "date_modified": "2026-11-23T04:39:45",
+      "date_modified_gmt": "2026-11-23T04:39:45",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/sueter-braid/?attribute_pa_selecciona-el-color=rojo&attribute_pa_selecciona-una-talla=l",
       "sku": "6160313036",
@@ -21527,7 +21536,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 18,
+      "stock_quantity": 14,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -22321,7 +22330,7 @@
         {
           "id": 2250453,
           "key": "_last_change_time",
-          "value": "1787075214"
+          "value": "1795408785"
         },
         {
           "id": 2310977,
@@ -22363,8 +22372,8 @@
       "type": "variation",
       "date_created": "2025-10-30T04:27:38",
       "date_created_gmt": "2025-10-30T04:27:38",
-      "date_modified": "2026-08-13T00:03:39",
-      "date_modified_gmt": "2026-08-13T00:03:39",
+      "date_modified": "2026-11-04T17:55:13",
+      "date_modified_gmt": "2026-11-04T17:55:13",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/sueter-braid/?attribute_pa_selecciona-el-color=rojo&attribute_pa_selecciona-una-talla=m",
       "sku": "6160313034",
@@ -22387,7 +22396,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 10,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -23181,7 +23190,7 @@
         {
           "id": 2233436,
           "key": "_last_change_time",
-          "value": "1786579419"
+          "value": "1793814913"
         },
         {
           "id": 2310976,
@@ -23223,8 +23232,8 @@
       "type": "variation",
       "date_created": "2025-10-30T04:27:38",
       "date_created_gmt": "2025-10-30T04:27:38",
-      "date_modified": "2026-08-13T00:03:39",
-      "date_modified_gmt": "2026-08-13T00:03:39",
+      "date_modified": "2026-10-27T19:17:04",
+      "date_modified_gmt": "2026-10-27T19:17:04",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/sueter-braid/?attribute_pa_selecciona-el-color=rojo&attribute_pa_selecciona-una-talla=s",
       "sku": "6160313032",
@@ -23247,7 +23256,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 9,
+      "stock_quantity": 7,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -24041,7 +24050,7 @@
         {
           "id": 2250452,
           "key": "_last_change_time",
-          "value": "1786579419"
+          "value": "1793128624"
         },
         {
           "id": 2310975,
@@ -24943,8 +24952,8 @@
       "type": "variation",
       "date_created": "2025-10-30T04:27:38",
       "date_created_gmt": "2025-10-30T04:27:38",
-      "date_modified": "2026-08-13T00:03:03",
-      "date_modified_gmt": "2026-08-13T00:03:03",
+      "date_modified": "2026-11-23T04:39:45",
+      "date_modified_gmt": "2026-11-23T04:39:45",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/sueter-braid/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=xl",
       "sku": "6160302038",
@@ -24967,7 +24976,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 6,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -25761,7 +25770,7 @@
         {
           "id": 2250451,
           "key": "_last_change_time",
-          "value": "1786579383"
+          "value": "1795408785"
         },
         {
           "id": 2310973,
@@ -26663,8 +26672,8 @@
       "type": "variation",
       "date_created": "2025-10-30T04:27:38",
       "date_created_gmt": "2025-10-30T04:27:38",
-      "date_modified": "2026-08-13T00:03:03",
-      "date_modified_gmt": "2026-08-13T00:03:03",
+      "date_modified": "2026-11-23T04:39:45",
+      "date_modified_gmt": "2026-11-23T04:39:45",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/sueter-braid/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=l",
       "sku": "6160302036",
@@ -26687,7 +26696,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 23,
+      "stock_quantity": 20,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -27481,7 +27490,7 @@
         {
           "id": 2233435,
           "key": "_last_change_time",
-          "value": "1786579383"
+          "value": "1795408785"
         },
         {
           "id": 2310971,
@@ -27523,8 +27532,8 @@
       "type": "variation",
       "date_created": "2025-10-30T04:27:38",
       "date_created_gmt": "2025-10-30T04:27:38",
-      "date_modified": "2026-07-16T22:44:45",
-      "date_modified_gmt": "2026-07-16T22:44:45",
+      "date_modified": "2026-10-05T21:49:56",
+      "date_modified_gmt": "2026-10-05T21:49:56",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/sueter-braid/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=m",
       "sku": "6160302034",
@@ -27547,7 +27556,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 23,
+      "stock_quantity": 22,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -28341,7 +28350,7 @@
         {
           "id": 2236256,
           "key": "_last_change_time",
-          "value": "1784241885"
+          "value": "1791236996"
         },
         {
           "id": 2310970,
@@ -28383,8 +28392,8 @@
       "type": "variation",
       "date_created": "2025-10-30T04:27:38",
       "date_created_gmt": "2025-10-30T04:27:38",
-      "date_modified": "2026-05-07T23:10:30",
-      "date_modified_gmt": "2026-05-07T23:10:30",
+      "date_modified": "2026-09-16T16:53:16",
+      "date_modified_gmt": "2026-09-16T16:53:16",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/sueter-braid/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=s",
       "sku": "6160302032",
@@ -28407,7 +28416,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 12,
+      "stock_quantity": 11,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -29201,7 +29210,7 @@
         {
           "id": 2250450,
           "key": "_last_change_time",
-          "value": "1778190109"
+          "value": "1789577596"
         },
         {
           "id": 2310969,
@@ -31823,8 +31832,8 @@
       "type": "variation",
       "date_created": "2025-10-30T04:27:38",
       "date_created_gmt": "2025-10-30T04:27:38",
-      "date_modified": "2026-08-24T20:32:28",
-      "date_modified_gmt": "2026-08-24T20:32:28",
+      "date_modified": "2026-10-27T19:17:03",
+      "date_modified_gmt": "2026-10-27T19:17:03",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/sueter-braid/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=l",
       "sku": "6160337036",
@@ -31847,7 +31856,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 3,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -32631,7 +32640,7 @@
         {
           "id": 2233430,
           "key": "_last_change_time",
-          "value": "1787603548"
+          "value": "1793128623"
         },
         {
           "id": 2310983,
@@ -32688,8 +32697,8 @@
       "type": "variation",
       "date_created": "2025-10-30T04:27:38",
       "date_created_gmt": "2025-10-30T04:27:38",
-      "date_modified": "2026-08-22T00:04:26",
-      "date_modified_gmt": "2026-08-22T00:04:26",
+      "date_modified": "2026-11-23T04:39:45",
+      "date_modified_gmt": "2026-11-23T04:39:45",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/sueter-braid/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=m",
       "sku": "6160337034",
@@ -32712,7 +32721,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 8,
+      "stock_quantity": 7,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -33496,7 +33505,7 @@
         {
           "id": 2219110,
           "key": "_last_change_time",
-          "value": "1787357066"
+          "value": "1795408785"
         },
         {
           "id": 2310981,
@@ -34423,7 +34432,9 @@
     "81892": "https://tienda.winstonandharrystore.com/wp-content/uploads/Sueter-Braid-Rojo-Winstonandharry-3.png",
     "81894": "https://tienda.winstonandharrystore.com/wp-content/uploads/Sueter-Braid-Verde-Winstonandharry-2.jpg",
     "81895": "https://tienda.winstonandharrystore.com/wp-content/uploads/Sueter-Braid-Verde-Winstonandharry-3.png",
+    "84617": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-Sueter-Braid-Gris-Cuello.jpg",
     "84618": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-Sueter-Braid-Gris-Cuello-cerrado.jpg",
+    "84619": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-Sueter-Braid-Gris-doblado.jpg",
     "84621": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-Sueter-Braid-Gris-hombro.jpg",
     "84622": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-Sueter-Braid-Gris-manga.jpg",
     "84623": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-Sueter-Braid-Gris-posterior.jpg",
@@ -34505,6 +34516,16 @@
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-Sueter-Braid-Gris-Frente.jpg",
         "alt": "Winston-and-Harry-Sueter-Braid-Gris-Frente",
         "name": "Winston-and-Harry-Sueter-Braid-Gris-Frente"
+      },
+      {
+        "id": 84619,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-Sueter-Braid-Gris-doblado.jpg",
+        "alt": "Sueter Braid"
+      },
+      {
+        "id": 84617,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-Sueter-Braid-Gris-Cuello.jpg",
+        "alt": "Sueter Braid"
       },
       {
         "id": 84623,

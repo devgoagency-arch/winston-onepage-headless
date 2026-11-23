@@ -11,9 +11,9 @@
   "description": "<p>Déjate sorprender con nuestros College. La combinación de microfibra, apliques en cuero y suela en caucho expandido hacen de estos zapatos, nuestro modelo más liviano. Su horma casual representa un estilo de vida relajado e intransigente, ideales para combinarlos con jeans y pantalonetas.</p>",
   "on_sale": true,
   "prices": {
-    "price": "257400",
+    "price": "128700",
     "regular_price": "429000",
-    "sale_price": "257400",
+    "sale_price": "128700",
     "price_range": null,
     "currency_code": "COP",
     "currency_symbol": "$",
@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>429,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;429,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>257,400</span></ins><span class=\"screen-reader-text\">Current price is: &#036;257,400.</span>",
+  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>429,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;429,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>128,700</span></ins><span class=\"screen-reader-text\">Current price is: &#036;128,700.</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -225,8 +225,10 @@
         "name": "winston-and-harry-tenis-college-azul-claro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "257400",
+      "price": "128700",
       "regular_price": "429000",
       "sale_price": ""
     },
@@ -254,8 +256,10 @@
         "name": "winston-and-harry-tenis-college-azul-claro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "257400",
+      "price": "128700",
       "regular_price": "429000",
       "sale_price": ""
     }
@@ -325,15 +329,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:51:31",
       "date_created_gmt": "2022-08-25T22:51:31",
-      "date_modified": "2026-08-24T17:22:42",
-      "date_modified_gmt": "2026-08-24T17:22:42",
+      "date_modified": "2026-11-23T04:30:16",
+      "date_modified_gmt": "2026-11-23T04:30:16",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/college/?attribute_pa_selecciona-el-color=azul-claro&attribute_pa_selecciona-una-talla=42",
       "sku": "7180101042",
       "global_unique_id": "",
-      "price": "257400",
+      "price": "128700",
       "regular_price": "429000",
-      "sale_price": "257400",
+      "sale_price": "128700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -831,7 +835,7 @@
         {
           "id": 2216379,
           "key": "_last_change_time",
-          "value": "1787590680"
+          "value": "1795408216"
         },
         {
           "id": 2313950,
@@ -873,15 +877,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:51:31",
       "date_created_gmt": "2022-08-25T22:51:31",
-      "date_modified": "2026-08-24T17:22:42",
-      "date_modified_gmt": "2026-08-24T17:22:42",
+      "date_modified": "2026-11-23T04:30:16",
+      "date_modified_gmt": "2026-11-23T04:30:16",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/college/?attribute_pa_selecciona-el-color=azul-claro&attribute_pa_selecciona-una-talla=41",
       "sku": "7180101041",
       "global_unique_id": "",
-      "price": "257400",
+      "price": "128700",
       "regular_price": "429000",
-      "sale_price": "257400",
+      "sale_price": "128700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -1369,7 +1373,7 @@
         {
           "id": 2216378,
           "key": "_last_change_time",
-          "value": "1787590680"
+          "value": "1795408216"
         },
         {
           "id": 2313949,
@@ -1411,15 +1415,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:51:25",
       "date_created_gmt": "2022-08-25T22:51:25",
-      "date_modified": "2026-08-24T17:22:43",
-      "date_modified_gmt": "2026-08-24T17:22:43",
+      "date_modified": "2026-11-23T04:30:16",
+      "date_modified_gmt": "2026-11-23T04:30:16",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/college/?attribute_pa_selecciona-el-color=azul-claro&attribute_pa_selecciona-una-talla=40",
       "sku": "7180101040",
       "global_unique_id": "",
-      "price": "257400",
+      "price": "128700",
       "regular_price": "429000",
-      "sale_price": "257400",
+      "sale_price": "128700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -1917,7 +1921,7 @@
         {
           "id": 2216377,
           "key": "_last_change_time",
-          "value": "1787590680"
+          "value": "1795408216"
         },
         {
           "id": 2313953,
@@ -1959,15 +1963,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:51:25",
       "date_created_gmt": "2022-08-25T22:51:25",
-      "date_modified": "2026-08-24T17:22:42",
-      "date_modified_gmt": "2026-08-24T17:22:42",
+      "date_modified": "2026-11-23T04:30:16",
+      "date_modified_gmt": "2026-11-23T04:30:16",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/college/?attribute_pa_selecciona-el-color=azul-claro&attribute_pa_selecciona-una-talla=39",
       "sku": "7180101039",
       "global_unique_id": "",
-      "price": "257400",
+      "price": "128700",
       "regular_price": "429000",
-      "sale_price": "257400",
+      "sale_price": "128700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -2465,7 +2469,7 @@
         {
           "id": 2216376,
           "key": "_last_change_time",
-          "value": "1787590680"
+          "value": "1795408216"
         },
         {
           "id": 2313952,
@@ -2507,15 +2511,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:51:25",
       "date_created_gmt": "2022-08-25T22:51:25",
-      "date_modified": "2026-08-24T17:22:42",
-      "date_modified_gmt": "2026-08-24T17:22:42",
+      "date_modified": "2026-11-23T04:30:16",
+      "date_modified_gmt": "2026-11-23T04:30:16",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/college/?attribute_pa_selecciona-el-color=azul-claro&attribute_pa_selecciona-una-talla=38",
       "sku": "7180101038",
       "global_unique_id": "",
-      "price": "257400",
+      "price": "128700",
       "regular_price": "429000",
-      "sale_price": "257400",
+      "sale_price": "128700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -3013,7 +3017,7 @@
         {
           "id": 2216374,
           "key": "_last_change_time",
-          "value": "1787590680"
+          "value": "1795408216"
         },
         {
           "id": 2313951,

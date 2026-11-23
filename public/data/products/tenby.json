@@ -9,12 +9,15 @@
   "sku": "835",
   "short_description": "<p>En nobuck mate de hechura artesanal, el Tenby lo hacen a mano artesanos colombianos, con capellada de 100% nobuck, suela de goma liviana, forro interior de cuero y plantilla de espuma de látex. El nobuck le da al corte una mano suave; la plantilla y el piso liviano cuidan una pisada cómoda. Se entra sin atar y se entiende como un mocasín versátil, de origen nacional, para el día a día del guardarropa. Queda como un par cotidiano de pala despejada, de esos que se quieren tener a la mano. Disponible en azul, beige y café, tallas 37 a 45.</p>",
   "description": "<p>• Hecho a mano 100% por artesanos colombianos.</p>\n<p>• Capellada en gamuza suave.</p>\n<p>• Forro interior en cuero para mayor frescura.</p>\n<p>• Un mocasin versatil que no te puede faltar.</p>\n<p>• Su construcción y su plantilla en espuma de latex, generan mayor comodidad y cuidado a tu salud.</p>\n<p>• Suela en goma muy liviana. </p>\n<p>• Los mejores materiales para mayor durabilidad.</p>",
-  "on_sale": false,
+  "on_sale": true,
   "prices": {
-    "price": "560000",
+    "price": "336000",
     "regular_price": "560000",
-    "sale_price": "560000",
-    "price_range": null,
+    "sale_price": "336000",
+    "price_range": {
+      "min_amount": "336000",
+      "max_amount": "560000"
+    },
     "currency_code": "COP",
     "currency_symbol": "$",
     "currency_minor_unit": 0,
@@ -23,7 +26,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>560,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\" aria-hidden=\"true\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>336,000</span> <span aria-hidden=\"true\">&ndash;</span> <span class=\"woocommerce-Price-amount amount\" aria-hidden=\"true\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>560,000</span><span class=\"screen-reader-text\">Price range: &#036;336,000 through &#036;560,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -261,8 +264,10 @@
         "name": "Tenby-Beige-Winstonandharry-203",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -290,8 +295,10 @@
         "name": "Tenby-Beige-Winstonandharry-203",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -319,8 +326,10 @@
         "name": "Tenby-Beige-Winstonandharry-203",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -348,8 +357,10 @@
         "name": "Tenby-Beige-Winstonandharry-203",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 8,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -377,8 +388,10 @@
         "name": "Tenby-Beige-Winstonandharry-203",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 6,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -406,8 +419,10 @@
         "name": "Tenby-Beige-Winstonandharry-203",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -435,8 +450,10 @@
         "name": "Tenby-Beige-Winstonandharry-203",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -464,8 +481,10 @@
         "name": "Tenby-Beige-Winstonandharry-203",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -493,8 +512,10 @@
         "name": "Tenby-Beige-Winstonandharry-203",
         "alt": ""
       },
+      "manage_stock": "parent",
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -522,8 +543,10 @@
         "name": "Tenby-Cafe-Winstonandharry-194",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -551,8 +574,10 @@
         "name": "Tenby-Azul-Winstonandharry-211",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -580,8 +605,10 @@
         "name": "Tenby-Cafe-Winstonandharry-194",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -609,8 +636,10 @@
         "name": "Tenby-Azul-Winstonandharry-211",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -638,8 +667,10 @@
         "name": "Tenby-Cafe-Winstonandharry-194",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -667,8 +698,10 @@
         "name": "Tenby-Azul-Winstonandharry-211",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -696,8 +729,10 @@
         "name": "Tenby-Cafe-Winstonandharry-194",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -725,8 +760,10 @@
         "name": "Tenby-Azul-Winstonandharry-211",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -754,8 +791,10 @@
         "name": "Tenby-Cafe-Winstonandharry-194",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -783,8 +822,10 @@
         "name": "Tenby-Azul-Winstonandharry-211",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -812,8 +853,10 @@
         "name": "Tenby-Cafe-Winstonandharry-194",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -841,8 +884,10 @@
         "name": "Tenby-Azul-Winstonandharry-211",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -870,8 +915,10 @@
         "name": "Tenby-Azul-Winstonandharry-211",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -899,8 +946,10 @@
         "name": "Tenby-Cafe-Winstonandharry-194",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -928,8 +977,10 @@
         "name": "Tenby-Azul-Winstonandharry-211",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     }
@@ -1889,20 +1940,20 @@
       "type": "variation",
       "date_created": "2024-09-24T15:28:45",
       "date_created_gmt": "2024-09-24T15:28:45",
-      "date_modified": "2026-07-27T20:50:36",
-      "date_modified_gmt": "2026-07-27T20:50:36",
+      "date_modified": "2026-11-23T04:32:54",
+      "date_modified_gmt": "2026-11-23T04:32:54",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/tenby/?attribute_pa_selecciona-el-color=beige&attribute_pa_selecciona-una-talla=44",
       "sku": "7234306044",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -2477,7 +2528,7 @@
         {
           "id": 2260936,
           "key": "_last_change_time",
-          "value": "1778190465"
+          "value": "1795408374"
         },
         {
           "id": 2312186,
@@ -2779,20 +2830,20 @@
       "type": "variation",
       "date_created": "2024-09-24T15:28:44",
       "date_created_gmt": "2024-09-24T15:28:44",
-      "date_modified": "2026-07-27T20:50:36",
-      "date_modified_gmt": "2026-07-27T20:50:36",
+      "date_modified": "2026-11-23T04:32:54",
+      "date_modified_gmt": "2026-11-23T04:32:54",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/tenby/?attribute_pa_selecciona-el-color=beige&attribute_pa_selecciona-una-talla=43",
       "sku": "7234306043",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -3367,7 +3418,7 @@
         {
           "id": 2260935,
           "key": "_last_change_time",
-          "value": "1778190465"
+          "value": "1795408374"
         },
         {
           "id": 2312193,
@@ -3669,20 +3720,20 @@
       "type": "variation",
       "date_created": "2024-09-24T15:28:44",
       "date_created_gmt": "2024-09-24T15:28:44",
-      "date_modified": "2026-07-27T20:50:36",
-      "date_modified_gmt": "2026-07-27T20:50:36",
+      "date_modified": "2026-11-23T04:32:54",
+      "date_modified_gmt": "2026-11-23T04:32:54",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/tenby/?attribute_pa_selecciona-el-color=beige&attribute_pa_selecciona-una-talla=42",
       "sku": "7234306042",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -3693,7 +3744,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 4,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -4257,7 +4308,7 @@
         {
           "id": 2260934,
           "key": "_last_change_time",
-          "value": "1778190465"
+          "value": "1795408374"
         },
         {
           "id": 2312192,
@@ -4505,11 +4556,6 @@
           "value": ""
         },
         {
-          "id": 2443201,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2443202,
           "key": "_wc_facebook_product_video_source",
           "value": ""
@@ -4517,11 +4563,6 @@
         {
           "id": 2443203,
           "key": "fb_product_images",
-          "value": ""
-        },
-        {
-          "id": 2443204,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],
@@ -4559,20 +4600,20 @@
       "type": "variation",
       "date_created": "2024-09-24T15:28:44",
       "date_created_gmt": "2024-09-24T15:28:44",
-      "date_modified": "2026-08-18T17:45:43",
-      "date_modified_gmt": "2026-08-18T17:45:43",
+      "date_modified": "2026-11-23T04:32:54",
+      "date_modified_gmt": "2026-11-23T04:32:54",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/tenby/?attribute_pa_selecciona-el-color=beige&attribute_pa_selecciona-una-talla=41",
       "sku": "7234306041",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -5147,7 +5188,7 @@
         {
           "id": 2260933,
           "key": "_last_change_time",
-          "value": "1787071622"
+          "value": "1795408374"
         },
         {
           "id": 2312191,
@@ -5439,20 +5480,20 @@
       "type": "variation",
       "date_created": "2024-09-24T15:28:44",
       "date_created_gmt": "2024-09-24T15:28:44",
-      "date_modified": "2026-07-27T20:50:36",
-      "date_modified_gmt": "2026-07-27T20:50:36",
+      "date_modified": "2026-11-23T04:32:54",
+      "date_modified_gmt": "2026-11-23T04:32:54",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/tenby/?attribute_pa_selecciona-el-color=beige&attribute_pa_selecciona-una-talla=40",
       "sku": "7234306040",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -6027,7 +6068,7 @@
         {
           "id": 2260932,
           "key": "_last_change_time",
-          "value": "1778190464"
+          "value": "1795408374"
         },
         {
           "id": 2312190,
@@ -6329,20 +6370,20 @@
       "type": "variation",
       "date_created": "2024-09-24T15:28:44",
       "date_created_gmt": "2024-09-24T15:28:44",
-      "date_modified": "2026-07-27T20:50:36",
-      "date_modified_gmt": "2026-07-27T20:50:36",
+      "date_modified": "2026-11-23T04:32:54",
+      "date_modified_gmt": "2026-11-23T04:32:54",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/tenby/?attribute_pa_selecciona-el-color=beige&attribute_pa_selecciona-una-talla=39",
       "sku": "7234306039",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -6917,7 +6958,7 @@
         {
           "id": 2260931,
           "key": "_last_change_time",
-          "value": "1780421955"
+          "value": "1795408374"
         },
         {
           "id": 2312189,
@@ -7219,20 +7260,20 @@
       "type": "variation",
       "date_created": "2024-09-24T15:28:44",
       "date_created_gmt": "2024-09-24T15:28:44",
-      "date_modified": "2026-07-27T20:50:36",
-      "date_modified_gmt": "2026-07-27T20:50:36",
+      "date_modified": "2026-11-23T04:32:54",
+      "date_modified_gmt": "2026-11-23T04:32:54",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/tenby/?attribute_pa_selecciona-el-color=beige&attribute_pa_selecciona-una-talla=38",
       "sku": "7234306038",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -7807,7 +7848,7 @@
         {
           "id": 2260930,
           "key": "_last_change_time",
-          "value": "1778190464"
+          "value": "1795408374"
         },
         {
           "id": 2312187,
@@ -8109,20 +8150,20 @@
       "type": "variation",
       "date_created": "2024-09-24T15:28:44",
       "date_created_gmt": "2024-09-24T15:28:44",
-      "date_modified": "2026-07-27T20:50:36",
-      "date_modified_gmt": "2026-07-27T20:50:36",
+      "date_modified": "2026-11-23T04:32:54",
+      "date_modified_gmt": "2026-11-23T04:32:54",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/tenby/?attribute_pa_selecciona-el-color=beige&attribute_pa_selecciona-una-talla=37",
       "sku": "7234306037",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -8697,7 +8738,7 @@
         {
           "id": 2260929,
           "key": "_last_change_time",
-          "value": "1778190463"
+          "value": "1795408374"
         },
         {
           "id": 2312188,
@@ -9889,20 +9930,20 @@
       "type": "variation",
       "date_created": "2023-08-17T23:23:40",
       "date_created_gmt": "2023-08-17T23:23:40",
-      "date_modified": "2026-07-27T20:50:37",
-      "date_modified_gmt": "2026-07-27T20:50:37",
+      "date_modified": "2026-11-23T04:32:19",
+      "date_modified_gmt": "2026-11-23T04:32:19",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/tenby/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=44",
       "sku": "7234301044",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -10477,7 +10518,7 @@
         {
           "id": 2260916,
           "key": "_last_change_time",
-          "value": "1778190463"
+          "value": "1795408339"
         },
         {
           "id": 2312619,
@@ -10779,20 +10820,20 @@
       "type": "variation",
       "date_created": "2023-08-17T23:23:40",
       "date_created_gmt": "2023-08-17T23:23:40",
-      "date_modified": "2026-07-27T20:50:42",
-      "date_modified_gmt": "2026-07-27T20:50:42",
+      "date_modified": "2026-11-23T04:32:19",
+      "date_modified_gmt": "2026-11-23T04:32:19",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/tenby/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=43",
       "sku": "7234301043",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -11367,7 +11408,7 @@
         {
           "id": 2260915,
           "key": "_last_change_time",
-          "value": "1778190463"
+          "value": "1795408339"
         },
         {
           "id": 2312618,
@@ -11669,20 +11710,20 @@
       "type": "variation",
       "date_created": "2023-08-17T23:23:40",
       "date_created_gmt": "2023-08-17T23:23:40",
-      "date_modified": "2026-07-27T20:50:42",
-      "date_modified_gmt": "2026-07-27T20:50:42",
+      "date_modified": "2026-11-23T04:32:19",
+      "date_modified_gmt": "2026-11-23T04:32:19",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/tenby/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=42",
       "sku": "7234301042",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -12257,7 +12298,7 @@
         {
           "id": 2260914,
           "key": "_last_change_time",
-          "value": "1778190426"
+          "value": "1795408339"
         },
         {
           "id": 2312617,
@@ -12559,20 +12600,20 @@
       "type": "variation",
       "date_created": "2023-08-17T23:23:40",
       "date_created_gmt": "2023-08-17T23:23:40",
-      "date_modified": "2026-07-27T20:50:42",
-      "date_modified_gmt": "2026-07-27T20:50:42",
+      "date_modified": "2026-11-23T04:32:19",
+      "date_modified_gmt": "2026-11-23T04:32:19",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/tenby/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=41",
       "sku": "7234301041",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -13147,7 +13188,7 @@
         {
           "id": 2250237,
           "key": "_last_change_time",
-          "value": "1778190426"
+          "value": "1795408339"
         },
         {
           "id": 2312616,
@@ -13449,20 +13490,20 @@
       "type": "variation",
       "date_created": "2023-08-17T23:23:40",
       "date_created_gmt": "2023-08-17T23:23:40",
-      "date_modified": "2026-07-27T20:50:42",
-      "date_modified_gmt": "2026-07-27T20:50:42",
+      "date_modified": "2026-11-23T04:32:19",
+      "date_modified_gmt": "2026-11-23T04:32:19",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/tenby/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=40",
       "sku": "7234301040",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -14037,7 +14078,7 @@
         {
           "id": 2260913,
           "key": "_last_change_time",
-          "value": "1778190426"
+          "value": "1795408339"
         },
         {
           "id": 2312615,
@@ -14339,20 +14380,20 @@
       "type": "variation",
       "date_created": "2023-08-17T23:23:40",
       "date_created_gmt": "2023-08-17T23:23:40",
-      "date_modified": "2026-07-27T20:50:42",
-      "date_modified_gmt": "2026-07-27T20:50:42",
+      "date_modified": "2026-11-23T04:32:19",
+      "date_modified_gmt": "2026-11-23T04:32:19",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/tenby/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=39",
       "sku": "7234301039",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -14927,7 +14968,7 @@
         {
           "id": 2260912,
           "key": "_last_change_time",
-          "value": "1778190425"
+          "value": "1795408339"
         },
         {
           "id": 2312614,
@@ -15229,20 +15270,20 @@
       "type": "variation",
       "date_created": "2023-08-17T23:23:40",
       "date_created_gmt": "2023-08-17T23:23:40",
-      "date_modified": "2026-07-27T20:50:42",
-      "date_modified_gmt": "2026-07-27T20:50:42",
+      "date_modified": "2026-11-23T04:32:19",
+      "date_modified_gmt": "2026-11-23T04:32:19",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/tenby/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=38",
       "sku": "7234301038",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -15817,7 +15858,7 @@
         {
           "id": 2260911,
           "key": "_last_change_time",
-          "value": "1778190425"
+          "value": "1795408339"
         },
         {
           "id": 2312613,
@@ -16119,20 +16160,20 @@
       "type": "variation",
       "date_created": "2023-08-17T23:23:40",
       "date_created_gmt": "2023-08-17T23:23:40",
-      "date_modified": "2026-07-27T20:50:42",
-      "date_modified_gmt": "2026-07-27T20:50:42",
+      "date_modified": "2026-11-23T04:32:19",
+      "date_modified_gmt": "2026-11-23T04:32:19",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/tenby/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=37",
       "sku": "7234301037",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -16707,7 +16748,7 @@
         {
           "id": 2260910,
           "key": "_last_change_time",
-          "value": "1778190425"
+          "value": "1795408339"
         },
         {
           "id": 2312627,
@@ -17899,20 +17940,20 @@
       "type": "variation",
       "date_created": "2023-07-17T22:03:28",
       "date_created_gmt": "2023-07-17T22:03:28",
-      "date_modified": "2026-07-27T20:50:42",
-      "date_modified_gmt": "2026-07-27T20:50:42",
+      "date_modified": "2026-11-23T04:32:19",
+      "date_modified_gmt": "2026-11-23T04:32:19",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/tenby/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=44",
       "sku": "7234304044",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -18487,7 +18528,7 @@
         {
           "id": 2260927,
           "key": "_last_change_time",
-          "value": "1778190424"
+          "value": "1795408339"
         },
         {
           "id": 2312667,
@@ -18789,20 +18830,20 @@
       "type": "variation",
       "date_created": "2023-07-17T22:03:28",
       "date_created_gmt": "2023-07-17T22:03:28",
-      "date_modified": "2026-07-27T20:50:42",
-      "date_modified_gmt": "2026-07-27T20:50:42",
+      "date_modified": "2026-11-23T04:32:19",
+      "date_modified_gmt": "2026-11-23T04:32:19",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/tenby/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=43",
       "sku": "7234304043",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -19377,7 +19418,7 @@
         {
           "id": 2260926,
           "key": "_last_change_time",
-          "value": "1778190424"
+          "value": "1795408339"
         },
         {
           "id": 2312666,
@@ -19679,20 +19720,20 @@
       "type": "variation",
       "date_created": "2023-07-17T22:03:27",
       "date_created_gmt": "2023-07-17T22:03:27",
-      "date_modified": "2026-07-27T20:50:42",
-      "date_modified_gmt": "2026-07-27T20:50:42",
+      "date_modified": "2026-11-23T04:32:18",
+      "date_modified_gmt": "2026-11-23T04:32:18",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/tenby/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=42",
       "sku": "7234304042",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -20267,7 +20308,7 @@
         {
           "id": 2260925,
           "key": "_last_change_time",
-          "value": "1778190424"
+          "value": "1795408338"
         },
         {
           "id": 2312673,
@@ -20569,20 +20610,20 @@
       "type": "variation",
       "date_created": "2023-07-17T22:03:27",
       "date_created_gmt": "2023-07-17T22:03:27",
-      "date_modified": "2026-07-27T20:50:42",
-      "date_modified_gmt": "2026-07-27T20:50:42",
+      "date_modified": "2026-11-23T04:32:18",
+      "date_modified_gmt": "2026-11-23T04:32:18",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/tenby/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=41",
       "sku": "7234304041",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -21157,7 +21198,7 @@
         {
           "id": 2254782,
           "key": "_last_change_time",
-          "value": "1780421868"
+          "value": "1795408338"
         },
         {
           "id": 2312672,
@@ -21459,20 +21500,20 @@
       "type": "variation",
       "date_created": "2023-07-17T22:03:27",
       "date_created_gmt": "2023-07-17T22:03:27",
-      "date_modified": "2026-07-27T20:50:42",
-      "date_modified_gmt": "2026-07-27T20:50:42",
+      "date_modified": "2026-11-23T04:32:18",
+      "date_modified_gmt": "2026-11-23T04:32:18",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/tenby/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=40",
       "sku": "7234304040",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -22047,7 +22088,7 @@
         {
           "id": 2260924,
           "key": "_last_change_time",
-          "value": "1780421868"
+          "value": "1795408338"
         },
         {
           "id": 2312671,
@@ -22349,20 +22390,20 @@
       "type": "variation",
       "date_created": "2023-07-17T22:03:27",
       "date_created_gmt": "2023-07-17T22:03:27",
-      "date_modified": "2026-07-27T20:50:43",
-      "date_modified_gmt": "2026-07-27T20:50:43",
+      "date_modified": "2026-11-23T04:32:18",
+      "date_modified_gmt": "2026-11-23T04:32:18",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/tenby/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=39",
       "sku": "7234304039",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -22373,7 +22414,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 2,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -22937,7 +22978,7 @@
         {
           "id": 2260923,
           "key": "_last_change_time",
-          "value": "1778190423"
+          "value": "1795408338"
         },
         {
           "id": 2312670,
@@ -23198,11 +23239,6 @@
           "id": 2444091,
           "key": "fb_product_images",
           "value": ""
-        },
-        {
-          "id": 2444092,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
         }
       ],
       "name": "Café, 39",
@@ -23239,20 +23275,20 @@
       "type": "variation",
       "date_created": "2023-07-17T22:03:27",
       "date_created_gmt": "2023-07-17T22:03:27",
-      "date_modified": "2026-07-27T20:50:43",
-      "date_modified_gmt": "2026-07-27T20:50:43",
+      "date_modified": "2026-11-23T04:32:18",
+      "date_modified_gmt": "2026-11-23T04:32:18",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/tenby/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=38",
       "sku": "7234304038",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -23827,7 +23863,7 @@
         {
           "id": 2260922,
           "key": "_last_change_time",
-          "value": "1778190423"
+          "value": "1795408338"
         },
         {
           "id": 2312669,
@@ -24129,20 +24165,20 @@
       "type": "variation",
       "date_created": "2023-07-17T22:03:27",
       "date_created_gmt": "2023-07-17T22:03:27",
-      "date_modified": "2026-07-27T20:50:43",
-      "date_modified_gmt": "2026-07-27T20:50:43",
+      "date_modified": "2026-11-23T04:32:18",
+      "date_modified_gmt": "2026-11-23T04:32:18",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/tenby/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=37",
       "sku": "7234304037",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -24717,7 +24753,7 @@
         {
           "id": 2260918,
           "key": "_last_change_time",
-          "value": "1778190423"
+          "value": "1795408338"
         },
         {
           "id": 2312668,

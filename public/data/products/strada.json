@@ -11,9 +11,9 @@
   "description": "<p>Los tenis Strada juntan la seriedad de las hebillas con aspectos informales de la suela blanca. Sus materiales hacen que este modelo sea cómodo y duradero, pero ante todo complemente tu estilo. Cuenta con una horma amplia para el pie colombiano.</p>",
   "on_sale": true,
   "prices": {
-    "price": "377300",
+    "price": "269500",
     "regular_price": "539000",
-    "sale_price": "377300",
+    "sale_price": "269500",
     "price_range": null,
     "currency_code": "COP",
     "currency_symbol": "$",
@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>539,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;539,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>377,300</span></ins><span class=\"screen-reader-text\">Current price is: &#036;377,300.</span>",
+  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>539,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;539,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>269,500</span></ins><span class=\"screen-reader-text\">Current price is: &#036;269,500.</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -230,8 +230,10 @@
         "name": "winston-and-harry-tenis-strada-cafe-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "377300",
+      "price": "269500",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -259,8 +261,10 @@
         "name": "winston-and-harry-tenis-strada-azul-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "377300",
+      "price": "269500",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -288,8 +292,10 @@
         "name": "winston-and-harry-tenis-strada-azul-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "377300",
+      "price": "269500",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -317,8 +323,10 @@
         "name": "winston-and-harry-tenis-strada-azul-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "377300",
+      "price": "269500",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -346,8 +354,10 @@
         "name": "winston-and-harry-tenis-strada-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "377300",
+      "price": "269500",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -375,8 +385,10 @@
         "name": "winston-and-harry-tenis-strada-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "377300",
+      "price": "269500",
       "regular_price": "539000",
       "sale_price": ""
     }
@@ -994,15 +1006,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:52:18",
       "date_created_gmt": "2022-08-25T22:52:18",
-      "date_modified": "2026-08-24T17:22:05",
-      "date_modified_gmt": "2026-08-24T17:22:05",
+      "date_modified": "2026-11-23T04:30:25",
+      "date_modified_gmt": "2026-11-23T04:30:25",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/strada/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=44",
       "sku": "7223102044",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "269500",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "269500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -1505,7 +1517,7 @@
         {
           "id": 2218173,
           "key": "_last_change_time",
-          "value": "1787590642"
+          "value": "1795408225"
         },
         {
           "id": 2313883,
@@ -1547,15 +1559,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:52:18",
       "date_created_gmt": "2022-08-25T22:52:18",
-      "date_modified": "2026-08-24T17:22:05",
-      "date_modified_gmt": "2026-08-24T17:22:05",
+      "date_modified": "2026-11-23T04:30:25",
+      "date_modified_gmt": "2026-11-23T04:30:25",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/strada/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=43",
       "sku": "7223102043",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "269500",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "269500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -2058,7 +2070,7 @@
         {
           "id": 2218172,
           "key": "_last_change_time",
-          "value": "1787590641"
+          "value": "1795408225"
         },
         {
           "id": 2313894,
@@ -2100,15 +2112,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:52:18",
       "date_created_gmt": "2022-08-25T22:52:18",
-      "date_modified": "2026-08-24T17:22:05",
-      "date_modified_gmt": "2026-08-24T17:22:05",
+      "date_modified": "2026-11-23T04:30:25",
+      "date_modified_gmt": "2026-11-23T04:30:25",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/strada/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=42",
       "sku": "7223102042",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "269500",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "269500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -2611,7 +2623,7 @@
         {
           "id": 2218171,
           "key": "_last_change_time",
-          "value": "1787590641"
+          "value": "1795408225"
         },
         {
           "id": 2313893,
@@ -2653,15 +2665,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:52:18",
       "date_created_gmt": "2022-08-25T22:52:18",
-      "date_modified": "2026-08-24T17:22:05",
-      "date_modified_gmt": "2026-08-24T17:22:05",
+      "date_modified": "2026-11-23T04:30:25",
+      "date_modified_gmt": "2026-11-23T04:30:25",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/strada/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=41",
       "sku": "7223102041",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "269500",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "269500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -3159,7 +3171,7 @@
         {
           "id": 2218170,
           "key": "_last_change_time",
-          "value": "1787590641"
+          "value": "1795408225"
         },
         {
           "id": 2313892,
@@ -3201,15 +3213,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:52:18",
       "date_created_gmt": "2022-08-25T22:52:18",
-      "date_modified": "2026-08-24T17:22:05",
-      "date_modified_gmt": "2026-08-24T17:22:05",
+      "date_modified": "2026-11-23T04:30:25",
+      "date_modified_gmt": "2026-11-23T04:30:25",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/strada/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=40",
       "sku": "7223102040",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "269500",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "269500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -3707,7 +3719,7 @@
         {
           "id": 2218169,
           "key": "_last_change_time",
-          "value": "1787590641"
+          "value": "1795408225"
         },
         {
           "id": 2313891,
@@ -3749,15 +3761,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:52:18",
       "date_created_gmt": "2022-08-25T22:52:18",
-      "date_modified": "2026-08-24T17:22:05",
-      "date_modified_gmt": "2026-08-24T17:22:05",
+      "date_modified": "2026-11-23T04:30:25",
+      "date_modified_gmt": "2026-11-23T04:30:25",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/strada/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=39",
       "sku": "7223102039",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "269500",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "269500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -4255,7 +4267,7 @@
         {
           "id": 2218168,
           "key": "_last_change_time",
-          "value": "1787590641"
+          "value": "1795408225"
         },
         {
           "id": 2313890,
@@ -4297,15 +4309,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:52:18",
       "date_created_gmt": "2022-08-25T22:52:18",
-      "date_modified": "2026-08-24T17:22:05",
-      "date_modified_gmt": "2026-08-24T17:22:05",
+      "date_modified": "2026-11-23T04:30:25",
+      "date_modified_gmt": "2026-11-23T04:30:25",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/strada/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=38",
       "sku": "7223102038",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "269500",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "269500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -4803,7 +4815,7 @@
         {
           "id": 2218167,
           "key": "_last_change_time",
-          "value": "1787590641"
+          "value": "1795408225"
         },
         {
           "id": 2313889,
@@ -5941,15 +5953,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:52:18",
       "date_created_gmt": "2022-08-25T22:52:18",
-      "date_modified": "2026-08-24T17:22:05",
-      "date_modified_gmt": "2026-08-24T17:22:05",
+      "date_modified": "2026-11-23T04:30:25",
+      "date_modified_gmt": "2026-11-23T04:30:25",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/strada/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=44",
       "sku": "7223101044",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "269500",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "269500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -6452,7 +6464,7 @@
         {
           "id": 2218161,
           "key": "_last_change_time",
-          "value": "1787590641"
+          "value": "1795408225"
         },
         {
           "id": 2313886,
@@ -6494,15 +6506,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:52:18",
       "date_created_gmt": "2022-08-25T22:52:18",
-      "date_modified": "2026-08-24T17:22:05",
-      "date_modified_gmt": "2026-08-24T17:22:05",
+      "date_modified": "2026-11-23T04:30:25",
+      "date_modified_gmt": "2026-11-23T04:30:25",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/strada/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=43",
       "sku": "7223101043",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "269500",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "269500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -7005,7 +7017,7 @@
         {
           "id": 2218160,
           "key": "_last_change_time",
-          "value": "1787590641"
+          "value": "1795408225"
         },
         {
           "id": 2313885,
@@ -7047,15 +7059,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:52:17",
       "date_created_gmt": "2022-08-25T22:52:17",
-      "date_modified": "2026-08-24T17:22:05",
-      "date_modified_gmt": "2026-08-24T17:22:05",
+      "date_modified": "2026-11-23T04:30:25",
+      "date_modified_gmt": "2026-11-23T04:30:25",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/strada/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=42",
       "sku": "7223101042",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "269500",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "269500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -7558,7 +7570,7 @@
         {
           "id": 2218159,
           "key": "_last_change_time",
-          "value": "1787590642"
+          "value": "1795408225"
         },
         {
           "id": 2313899,
@@ -7600,15 +7612,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:52:17",
       "date_created_gmt": "2022-08-25T22:52:17",
-      "date_modified": "2026-08-24T17:22:05",
-      "date_modified_gmt": "2026-08-24T17:22:05",
+      "date_modified": "2026-11-23T04:30:25",
+      "date_modified_gmt": "2026-11-23T04:30:25",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/strada/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=41",
       "sku": "7223101041",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "269500",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "269500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -8106,7 +8118,7 @@
         {
           "id": 2218158,
           "key": "_last_change_time",
-          "value": "1787590642"
+          "value": "1795408225"
         },
         {
           "id": 2313898,
@@ -8148,15 +8160,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:52:17",
       "date_created_gmt": "2022-08-25T22:52:17",
-      "date_modified": "2026-08-24T17:22:05",
-      "date_modified_gmt": "2026-08-24T17:22:05",
+      "date_modified": "2026-11-23T04:30:25",
+      "date_modified_gmt": "2026-11-23T04:30:25",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/strada/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=40",
       "sku": "7223101040",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "269500",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "269500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -8644,7 +8656,7 @@
         {
           "id": 2218157,
           "key": "_last_change_time",
-          "value": "1787590642"
+          "value": "1795408225"
         },
         {
           "id": 2313897,
@@ -8686,15 +8698,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:52:17",
       "date_created_gmt": "2022-08-25T22:52:17",
-      "date_modified": "2026-08-24T17:22:05",
-      "date_modified_gmt": "2026-08-24T17:22:05",
+      "date_modified": "2026-11-23T04:30:24",
+      "date_modified_gmt": "2026-11-23T04:30:24",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/strada/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=39",
       "sku": "7223101039",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "269500",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "269500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -9192,7 +9204,7 @@
         {
           "id": 2218156,
           "key": "_last_change_time",
-          "value": "1787590642"
+          "value": "1795408224"
         },
         {
           "id": 2313896,
@@ -9234,15 +9246,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:52:17",
       "date_created_gmt": "2022-08-25T22:52:17",
-      "date_modified": "2026-08-24T17:22:05",
-      "date_modified_gmt": "2026-08-24T17:22:05",
+      "date_modified": "2026-11-23T04:30:24",
+      "date_modified_gmt": "2026-11-23T04:30:24",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/strada/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=38",
       "sku": "7223101038",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "269500",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "269500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -9745,7 +9757,7 @@
         {
           "id": 2218155,
           "key": "_last_change_time",
-          "value": "1787590642"
+          "value": "1795408224"
         },
         {
           "id": 2313895,
@@ -10883,15 +10895,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:52:10",
       "date_created_gmt": "2022-08-25T22:52:10",
-      "date_modified": "2026-08-24T17:22:06",
-      "date_modified_gmt": "2026-08-24T17:22:06",
+      "date_modified": "2026-11-23T04:30:24",
+      "date_modified_gmt": "2026-11-23T04:30:24",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/strada/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=44",
       "sku": "7223104044",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "269500",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "269500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -11394,7 +11406,7 @@
         {
           "id": 2218152,
           "key": "_last_change_time",
-          "value": "1787590642"
+          "value": "1795408224"
         },
         {
           "id": 2313906,
@@ -11436,15 +11448,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:52:10",
       "date_created_gmt": "2022-08-25T22:52:10",
-      "date_modified": "2026-08-24T17:22:06",
-      "date_modified_gmt": "2026-08-24T17:22:06",
+      "date_modified": "2026-11-23T04:30:24",
+      "date_modified_gmt": "2026-11-23T04:30:24",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/strada/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=43",
       "sku": "7223104043",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "269500",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "269500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -11937,7 +11949,7 @@
         {
           "id": 2218151,
           "key": "_last_change_time",
-          "value": "1787590642"
+          "value": "1795408224"
         },
         {
           "id": 2313905,
@@ -11979,15 +11991,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:52:10",
       "date_created_gmt": "2022-08-25T22:52:10",
-      "date_modified": "2026-08-24T17:22:06",
-      "date_modified_gmt": "2026-08-24T17:22:06",
+      "date_modified": "2026-11-23T04:30:24",
+      "date_modified_gmt": "2026-11-23T04:30:24",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/strada/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=42",
       "sku": "7223104042",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "269500",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "269500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -12485,7 +12497,7 @@
         {
           "id": 2218150,
           "key": "_last_change_time",
-          "value": "1787590642"
+          "value": "1795408224"
         },
         {
           "id": 2313904,
@@ -12527,15 +12539,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:52:10",
       "date_created_gmt": "2022-08-25T22:52:10",
-      "date_modified": "2026-08-24T17:22:06",
-      "date_modified_gmt": "2026-08-24T17:22:06",
+      "date_modified": "2026-11-23T04:30:24",
+      "date_modified_gmt": "2026-11-23T04:30:24",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/strada/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=41",
       "sku": "7223104041",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "269500",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "269500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -13033,7 +13045,7 @@
         {
           "id": 2218149,
           "key": "_last_change_time",
-          "value": "1787590642"
+          "value": "1795408224"
         },
         {
           "id": 2313903,
@@ -13075,15 +13087,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:52:10",
       "date_created_gmt": "2022-08-25T22:52:10",
-      "date_modified": "2026-08-24T17:22:05",
-      "date_modified_gmt": "2026-08-24T17:22:05",
+      "date_modified": "2026-11-23T04:30:17",
+      "date_modified_gmt": "2026-11-23T04:30:17",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/strada/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=40",
       "sku": "7223104040",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "269500",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "269500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -13581,7 +13593,7 @@
         {
           "id": 2218148,
           "key": "_last_change_time",
-          "value": "1787590642"
+          "value": "1795408217"
         },
         {
           "id": 2313902,
@@ -13623,15 +13635,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:52:10",
       "date_created_gmt": "2022-08-25T22:52:10",
-      "date_modified": "2026-08-24T17:22:05",
-      "date_modified_gmt": "2026-08-24T17:22:05",
+      "date_modified": "2026-11-23T04:30:17",
+      "date_modified_gmt": "2026-11-23T04:30:17",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/strada/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=39",
       "sku": "7223104039",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "269500",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "269500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -14129,7 +14141,7 @@
         {
           "id": 2218147,
           "key": "_last_change_time",
-          "value": "1787590642"
+          "value": "1795408217"
         },
         {
           "id": 2313901,
@@ -14171,15 +14183,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:52:09",
       "date_created_gmt": "2022-08-25T22:52:09",
-      "date_modified": "2026-08-24T17:22:12",
-      "date_modified_gmt": "2026-08-24T17:22:12",
+      "date_modified": "2026-11-23T04:30:17",
+      "date_modified_gmt": "2026-11-23T04:30:17",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/strada/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=38",
       "sku": "7223104038",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "269500",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "269500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -14677,7 +14689,7 @@
         {
           "id": 2218146,
           "key": "_last_change_time",
-          "value": "1787590643"
+          "value": "1795408217"
         },
         {
           "id": 2313909,
@@ -15269,7 +15281,11 @@
     "19105": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/10/ZAPATO-02-capellada-suela.jpg",
     "19106": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/10/ZAPATO-02-lateral.jpg",
     "19107": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/10/ZAPATO-03-capellada-suela.jpg",
-    "19109": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/10/ZAPATO-03-lateral.jpg"
+    "19109": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/10/ZAPATO-03-lateral.jpg",
+    "86640": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-tenis-strada-cafe-02.jpg",
+    "86641": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-tenis-strada-cafe-03.jpg",
+    "86643": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-tenis-strada-negro-02.jpg",
+    "86644": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-tenis-strada-negro-03.jpg"
   },
   "stock_status": "instock",
   "variation_images_map": {
@@ -15279,6 +15295,16 @@
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-tenis-strada-cafe-01.jpg",
         "alt": "winston-and-harry-tenis-strada-cafe-01",
         "name": "winston-and-harry-tenis-strada-cafe-01"
+      },
+      {
+        "id": 86640,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-tenis-strada-cafe-02.jpg",
+        "alt": "Strada"
+      },
+      {
+        "id": 86641,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-tenis-strada-cafe-03.jpg",
+        "alt": "Strada"
       },
       {
         "id": 19109,
@@ -15327,6 +15353,16 @@
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-tenis-strada-negro-01.jpg",
         "alt": "winston-and-harry-tenis-strada-negro-01",
         "name": "winston-and-harry-tenis-strada-negro-01"
+      },
+      {
+        "id": 86643,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-tenis-strada-negro-02.jpg",
+        "alt": "Strada"
+      },
+      {
+        "id": 86644,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-tenis-strada-negro-03.jpg",
+        "alt": "Strada"
       },
       {
         "id": 19104,

@@ -11,10 +11,13 @@
   "description": "<ul>\n<li>Hechas en Colombia.</li>\n<li>Cuero 100%.</li>\n<li>Suela en goma .</li>\n<li>Una toque diferente a un estilo calisco.</li>\n<li>Hecho a mano.</li>\n</ul>",
   "on_sale": true,
   "prices": {
-    "price": "346500",
+    "price": "323400",
     "regular_price": "539000",
-    "sale_price": "346500",
-    "price_range": null,
+    "sale_price": "323400",
+    "price_range": {
+      "min_amount": "323400",
+      "max_amount": "346500"
+    },
     "currency_code": "COP",
     "currency_symbol": "$",
     "currency_minor_unit": 0,
@@ -23,7 +26,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>539,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;539,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>346,500</span></ins><span class=\"screen-reader-text\">Current price is: &#036;346,500.</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\" aria-hidden=\"true\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>323,400</span> <span aria-hidden=\"true\">&ndash;</span> <span class=\"woocommerce-Price-amount amount\" aria-hidden=\"true\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>346,500</span><span class=\"screen-reader-text\">Price range: &#036;323,400 through &#036;346,500</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -261,8 +264,10 @@
         "name": "Nautico-III-Miel-Winstonandharry-273",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
-      "price": "346500",
+      "price": "323400",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -290,8 +295,10 @@
         "name": "Nautico-III-Miel-Winstonandharry-273",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
-      "price": "346500",
+      "price": "323400",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -319,8 +326,10 @@
         "name": "Nautico-III-Miel-Winstonandharry-273",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
-      "price": "346500",
+      "price": "323400",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -348,8 +357,10 @@
         "name": "Nautico-III-Miel-Winstonandharry-273",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 9,
       "stock_status": "instock",
-      "price": "346500",
+      "price": "323400",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -377,8 +388,10 @@
         "name": "Nautico-III-Miel-Winstonandharry-273",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 7,
       "stock_status": "instock",
-      "price": "346500",
+      "price": "323400",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -406,8 +419,10 @@
         "name": "Nautico-III-Miel-Winstonandharry-273",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
-      "price": "346500",
+      "price": "323400",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -435,8 +450,10 @@
         "name": "Nautico-III-Miel-Winstonandharry-273",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "346500",
+      "price": "323400",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -464,8 +481,10 @@
         "name": "Nautico-III-Miel-Winstonandharry-273",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
-      "price": "346500",
+      "price": "323400",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -493,8 +512,10 @@
         "name": "Nautico-III-Miel-Winstonandharry-273",
         "alt": ""
       },
+      "manage_stock": "parent",
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "346500",
+      "price": "323400",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -522,8 +543,10 @@
         "name": "NauticoIII-Mocasin-Verde-winstonandharry",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "346500",
+      "price": "323400",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -551,8 +574,10 @@
         "name": "NauticoIII-Mocasin-Verde-winstonandharry",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
-      "price": "346500",
+      "price": "323400",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -580,8 +605,10 @@
         "name": "NauticoIII-Mocasin-Verde-winstonandharry",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
-      "price": "346500",
+      "price": "323400",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -609,8 +636,10 @@
         "name": "NauticoIII-Mocasin-Verde-winstonandharry",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 8,
       "stock_status": "instock",
-      "price": "346500",
+      "price": "323400",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -638,8 +667,10 @@
         "name": "NauticoIII-Mocasin-cognac-winstonandharry (1)",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
-      "price": "346500",
+      "price": "323400",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -667,8 +698,10 @@
         "name": "NauticoIII-Mocasin-Verde-winstonandharry",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
-      "price": "346500",
+      "price": "323400",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -696,8 +729,10 @@
         "name": "NauticoIII-Mocasin-Verde-winstonandharry",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
-      "price": "346500",
+      "price": "323400",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -725,8 +760,10 @@
         "name": "NauticoIII-Mocasin-cognac-winstonandharry (1)",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "346500",
+      "price": "323400",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -754,8 +791,10 @@
         "name": "NauticoIII-Mocasin-Verde-winstonandharry",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "346500",
+      "price": "323400",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -783,8 +822,10 @@
         "name": "NauticoIII-Mocasin-cognac-winstonandharry (1)",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "346500",
+      "price": "323400",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -812,8 +853,10 @@
         "name": "NauticoIII-Mocasin-Verde-winstonandharry",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "346500",
+      "price": "323400",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -841,8 +884,10 @@
         "name": "NauticoIII-Mocasin-cognac-winstonandharry (1)",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "346500",
+      "price": "323400",
       "regular_price": "539000",
       "sale_price": ""
     }
@@ -1807,15 +1852,15 @@
       "type": "variation",
       "date_created": "2024-09-24T15:15:30",
       "date_created_gmt": "2024-09-24T15:15:30",
-      "date_modified": "2026-07-27T20:48:47",
-      "date_modified_gmt": "2026-07-27T20:48:47",
+      "date_modified": "2026-11-23T04:32:54",
+      "date_modified_gmt": "2026-11-23T04:32:54",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/nautico-iii/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=44",
       "sku": "7100326044",
       "global_unique_id": "",
-      "price": "346500",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "346500",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -2390,7 +2435,7 @@
         {
           "id": 2260066,
           "key": "_last_change_time",
-          "value": "1778276716"
+          "value": "1795408374"
         },
         {
           "id": 2312203,
@@ -2702,15 +2747,15 @@
       "type": "variation",
       "date_created": "2024-09-24T15:15:30",
       "date_created_gmt": "2024-09-24T15:15:30",
-      "date_modified": "2026-07-27T20:48:47",
-      "date_modified_gmt": "2026-07-27T20:48:47",
+      "date_modified": "2026-11-23T04:32:54",
+      "date_modified_gmt": "2026-11-23T04:32:54",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/nautico-iii/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=43",
       "sku": "7100326043",
       "global_unique_id": "",
-      "price": "346500",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "346500",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -2726,7 +2771,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 3,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -3285,7 +3330,7 @@
         {
           "id": 2260065,
           "key": "_last_change_time",
-          "value": "1778276716"
+          "value": "1795408374"
         },
         {
           "id": 2312211,
@@ -3551,16 +3596,6 @@
           "id": 2429714,
           "key": "_wc_gla_visibility",
           "value": ""
-        },
-        {
-          "id": 2429715,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2429716,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
         }
       ],
       "name": "Miel, 43",
@@ -3597,15 +3632,15 @@
       "type": "variation",
       "date_created": "2024-09-24T15:15:30",
       "date_created_gmt": "2024-09-24T15:15:30",
-      "date_modified": "2026-07-27T20:48:47",
-      "date_modified_gmt": "2026-07-27T20:48:47",
+      "date_modified": "2026-11-23T04:32:49",
+      "date_modified_gmt": "2026-11-23T04:32:49",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/nautico-iii/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=42",
       "sku": "7100326042",
       "global_unique_id": "",
-      "price": "346500",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "346500",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -4180,7 +4215,7 @@
         {
           "id": 2260064,
           "key": "_last_change_time",
-          "value": "1778276716"
+          "value": "1795408369"
         },
         {
           "id": 2312205,
@@ -4492,15 +4527,15 @@
       "type": "variation",
       "date_created": "2024-09-24T15:15:30",
       "date_created_gmt": "2024-09-24T15:15:30",
-      "date_modified": "2026-07-27T20:48:47",
-      "date_modified_gmt": "2026-07-27T20:48:47",
+      "date_modified": "2026-11-23T04:32:49",
+      "date_modified_gmt": "2026-11-23T04:32:49",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/nautico-iii/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=41",
       "sku": "7100326041",
       "global_unique_id": "",
-      "price": "346500",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "346500",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -5075,7 +5110,7 @@
         {
           "id": 2260063,
           "key": "_last_change_time",
-          "value": "1778276716"
+          "value": "1795408369"
         },
         {
           "id": 2312210,
@@ -5387,15 +5422,15 @@
       "type": "variation",
       "date_created": "2024-09-24T15:15:30",
       "date_created_gmt": "2024-09-24T15:15:30",
-      "date_modified": "2026-07-27T20:48:47",
-      "date_modified_gmt": "2026-07-27T20:48:47",
+      "date_modified": "2026-11-23T04:32:49",
+      "date_modified_gmt": "2026-11-23T04:32:49",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/nautico-iii/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=40",
       "sku": "7100326040",
       "global_unique_id": "",
-      "price": "346500",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "346500",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -5970,7 +6005,7 @@
         {
           "id": 2260062,
           "key": "_last_change_time",
-          "value": "1778276716"
+          "value": "1795408369"
         },
         {
           "id": 2312209,
@@ -6282,15 +6317,15 @@
       "type": "variation",
       "date_created": "2024-09-24T15:15:30",
       "date_created_gmt": "2024-09-24T15:15:30",
-      "date_modified": "2026-07-27T20:48:47",
-      "date_modified_gmt": "2026-07-27T20:48:47",
+      "date_modified": "2026-11-23T04:32:49",
+      "date_modified_gmt": "2026-11-23T04:32:49",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/nautico-iii/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=39",
       "sku": "7100326039",
       "global_unique_id": "",
-      "price": "346500",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "346500",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -6865,7 +6900,7 @@
         {
           "id": 2260061,
           "key": "_last_change_time",
-          "value": "1780421955"
+          "value": "1795408369"
         },
         {
           "id": 2312208,
@@ -7177,15 +7212,15 @@
       "type": "variation",
       "date_created": "2024-09-24T15:15:30",
       "date_created_gmt": "2024-09-24T15:15:30",
-      "date_modified": "2026-07-27T20:48:47",
-      "date_modified_gmt": "2026-07-27T20:48:47",
+      "date_modified": "2026-11-23T04:32:49",
+      "date_modified_gmt": "2026-11-23T04:32:49",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/nautico-iii/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=38",
       "sku": "7100326038",
       "global_unique_id": "",
-      "price": "346500",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "346500",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -7760,7 +7795,7 @@
         {
           "id": 2260060,
           "key": "_last_change_time",
-          "value": "1780421955"
+          "value": "1795408369"
         },
         {
           "id": 2312207,
@@ -8072,15 +8107,15 @@
       "type": "variation",
       "date_created": "2024-09-24T15:15:30",
       "date_created_gmt": "2024-09-24T15:15:30",
-      "date_modified": "2026-07-27T20:48:47",
-      "date_modified_gmt": "2026-07-27T20:48:47",
+      "date_modified": "2026-11-23T04:32:49",
+      "date_modified_gmt": "2026-11-23T04:32:49",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/nautico-iii/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=37",
       "sku": "7100326037",
       "global_unique_id": "",
-      "price": "346500",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "346500",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -8655,7 +8690,7 @@
         {
           "id": 2260059,
           "key": "_last_change_time",
-          "value": "1778276688"
+          "value": "1795408369"
         },
         {
           "id": 2312204,
@@ -9857,15 +9892,15 @@
       "type": "variation",
       "date_created": "2023-07-17T21:14:05",
       "date_created_gmt": "2023-07-17T21:14:05",
-      "date_modified": "2026-07-27T20:48:47",
-      "date_modified_gmt": "2026-07-27T20:48:47",
+      "date_modified": "2026-11-23T04:32:14",
+      "date_modified_gmt": "2026-11-23T04:32:14",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/nautico-iii/?attribute_pa_selecciona-el-color=cognac&attribute_pa_selecciona-una-talla=44",
       "sku": "7100332044",
       "global_unique_id": "",
-      "price": "346500",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "346500",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -10435,7 +10470,7 @@
         {
           "id": 2260078,
           "key": "_last_change_time",
-          "value": "1778276688"
+          "value": "1795408334"
         },
         {
           "id": 2312702,
@@ -10747,15 +10782,15 @@
       "type": "variation",
       "date_created": "2023-07-17T21:14:05",
       "date_created_gmt": "2023-07-17T21:14:05",
-      "date_modified": "2026-07-27T20:48:48",
-      "date_modified_gmt": "2026-07-27T20:48:48",
+      "date_modified": "2026-11-23T04:32:14",
+      "date_modified_gmt": "2026-11-23T04:32:14",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/nautico-iii/?attribute_pa_selecciona-el-color=cognac&attribute_pa_selecciona-una-talla=43",
       "sku": "7100332043",
       "global_unique_id": "",
-      "price": "346500",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "346500",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -11325,7 +11360,7 @@
         {
           "id": 2260077,
           "key": "_last_change_time",
-          "value": "1778276688"
+          "value": "1795408334"
         },
         {
           "id": 2312701,
@@ -11637,15 +11672,15 @@
       "type": "variation",
       "date_created": "2023-07-17T21:14:05",
       "date_created_gmt": "2023-07-17T21:14:05",
-      "date_modified": "2026-07-27T20:48:48",
-      "date_modified_gmt": "2026-07-27T20:48:48",
+      "date_modified": "2026-11-23T04:32:14",
+      "date_modified_gmt": "2026-11-23T04:32:14",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/nautico-iii/?attribute_pa_selecciona-el-color=cognac&attribute_pa_selecciona-una-talla=42",
       "sku": "7100332042",
       "global_unique_id": "",
-      "price": "346500",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "346500",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -12225,7 +12260,7 @@
         {
           "id": 2260076,
           "key": "_last_change_time",
-          "value": "1778276688"
+          "value": "1795408334"
         },
         {
           "id": 2312700,
@@ -12527,15 +12562,15 @@
       "type": "variation",
       "date_created": "2023-07-17T21:14:05",
       "date_created_gmt": "2023-07-17T21:14:05",
-      "date_modified": "2026-07-27T20:48:48",
-      "date_modified_gmt": "2026-07-27T20:48:48",
+      "date_modified": "2026-11-23T04:32:14",
+      "date_modified_gmt": "2026-11-23T04:32:14",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/nautico-iii/?attribute_pa_selecciona-el-color=cognac&attribute_pa_selecciona-una-talla=41",
       "sku": "7100332041",
       "global_unique_id": "",
-      "price": "346500",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "346500",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -13115,7 +13150,7 @@
         {
           "id": 2260075,
           "key": "_last_change_time",
-          "value": "1780421868"
+          "value": "1795408334"
         },
         {
           "id": 2312699,
@@ -13417,15 +13452,15 @@
       "type": "variation",
       "date_created": "2023-07-17T21:14:05",
       "date_created_gmt": "2023-07-17T21:14:05",
-      "date_modified": "2026-07-27T20:48:48",
-      "date_modified_gmt": "2026-07-27T20:48:48",
+      "date_modified": "2026-11-23T04:32:14",
+      "date_modified_gmt": "2026-11-23T04:32:14",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/nautico-iii/?attribute_pa_selecciona-el-color=cognac&attribute_pa_selecciona-una-talla=40",
       "sku": "7100332040",
       "global_unique_id": "",
-      "price": "346500",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "346500",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -14005,7 +14040,7 @@
         {
           "id": 2260074,
           "key": "_last_change_time",
-          "value": "1781631369"
+          "value": "1795408334"
         },
         {
           "id": 2312698,
@@ -14307,15 +14342,15 @@
       "type": "variation",
       "date_created": "2023-07-17T21:14:04",
       "date_created_gmt": "2023-07-17T21:14:04",
-      "date_modified": "2026-07-27T20:48:54",
-      "date_modified_gmt": "2026-07-27T20:48:54",
+      "date_modified": "2026-11-23T04:32:14",
+      "date_modified_gmt": "2026-11-23T04:32:14",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/nautico-iii/?attribute_pa_selecciona-el-color=cognac&attribute_pa_selecciona-una-talla=39",
       "sku": "7100332039",
       "global_unique_id": "",
-      "price": "346500",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "346500",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -14875,7 +14910,7 @@
         {
           "id": 2260073,
           "key": "_last_change_time",
-          "value": "1778276688"
+          "value": "1795408334"
         },
         {
           "id": 2312707,
@@ -15202,15 +15237,15 @@
       "type": "variation",
       "date_created": "2023-07-17T21:14:04",
       "date_created_gmt": "2023-07-17T21:14:04",
-      "date_modified": "2026-07-27T20:48:54",
-      "date_modified_gmt": "2026-07-27T20:48:54",
+      "date_modified": "2026-11-23T04:32:14",
+      "date_modified_gmt": "2026-11-23T04:32:14",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/nautico-iii/?attribute_pa_selecciona-el-color=cognac&attribute_pa_selecciona-una-talla=38",
       "sku": "7100332038",
       "global_unique_id": "",
-      "price": "346500",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "346500",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -15785,7 +15820,7 @@
         {
           "id": 2260072,
           "key": "_last_change_time",
-          "value": "1784602649"
+          "value": "1795408334"
         },
         {
           "id": 2312705,
@@ -16097,15 +16132,15 @@
       "type": "variation",
       "date_created": "2023-07-17T21:14:04",
       "date_created_gmt": "2023-07-17T21:14:04",
-      "date_modified": "2026-07-27T20:48:54",
-      "date_modified_gmt": "2026-07-27T20:48:54",
+      "date_modified": "2026-11-23T04:32:14",
+      "date_modified_gmt": "2026-11-23T04:32:14",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/nautico-iii/?attribute_pa_selecciona-el-color=cognac&attribute_pa_selecciona-una-talla=37",
       "sku": "7100332037",
       "global_unique_id": "",
-      "price": "346500",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "346500",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -16675,7 +16710,7 @@
         {
           "id": 2260071,
           "key": "_last_change_time",
-          "value": "1778276688"
+          "value": "1795408334"
         },
         {
           "id": 2312715,
@@ -17882,15 +17917,15 @@
       "type": "variation",
       "date_created": "2023-07-17T21:14:04",
       "date_created_gmt": "2023-07-17T21:14:04",
-      "date_modified": "2026-07-27T20:48:53",
-      "date_modified_gmt": "2026-07-27T20:48:53",
+      "date_modified": "2026-11-23T04:32:14",
+      "date_modified_gmt": "2026-11-23T04:32:14",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/nautico-iii/?attribute_pa_selecciona-el-color=verde&attribute_pa_selecciona-una-talla=44",
       "sku": "7100305044",
       "global_unique_id": "",
-      "price": "346500",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "346500",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -18470,7 +18505,7 @@
         {
           "id": 2260057,
           "key": "_last_change_time",
-          "value": "1778276688"
+          "value": "1795408334"
         },
         {
           "id": 2312708,
@@ -18772,15 +18807,15 @@
       "type": "variation",
       "date_created": "2023-07-17T21:14:04",
       "date_created_gmt": "2023-07-17T21:14:04",
-      "date_modified": "2026-07-27T20:48:48",
-      "date_modified_gmt": "2026-07-27T20:48:48",
+      "date_modified": "2026-11-23T04:32:14",
+      "date_modified_gmt": "2026-11-23T04:32:14",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/nautico-iii/?attribute_pa_selecciona-el-color=verde&attribute_pa_selecciona-una-talla=43",
       "sku": "7100305043",
       "global_unique_id": "",
-      "price": "346500",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "346500",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -19360,7 +19395,7 @@
         {
           "id": 2260056,
           "key": "_last_change_time",
-          "value": "1778276688"
+          "value": "1795408334"
         },
         {
           "id": 2312713,
@@ -19662,15 +19697,15 @@
       "type": "variation",
       "date_created": "2023-07-17T21:14:04",
       "date_created_gmt": "2023-07-17T21:14:04",
-      "date_modified": "2026-08-13T00:04:31",
-      "date_modified_gmt": "2026-08-13T00:04:31",
+      "date_modified": "2026-11-23T04:32:14",
+      "date_modified_gmt": "2026-11-23T04:32:14",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/nautico-iii/?attribute_pa_selecciona-el-color=verde&attribute_pa_selecciona-una-talla=42",
       "sku": "7100305042",
       "global_unique_id": "",
-      "price": "346500",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "346500",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -20250,7 +20285,7 @@
         {
           "id": 2260055,
           "key": "_last_change_time",
-          "value": "1786579471"
+          "value": "1795408334"
         },
         {
           "id": 2312712,
@@ -20542,15 +20577,15 @@
       "type": "variation",
       "date_created": "2023-07-17T21:14:04",
       "date_created_gmt": "2023-07-17T21:14:04",
-      "date_modified": "2026-07-27T20:48:48",
-      "date_modified_gmt": "2026-07-27T20:48:48",
+      "date_modified": "2026-11-23T04:32:14",
+      "date_modified_gmt": "2026-11-23T04:32:14",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/nautico-iii/?attribute_pa_selecciona-el-color=verde&attribute_pa_selecciona-una-talla=41",
       "sku": "7100305041",
       "global_unique_id": "",
-      "price": "346500",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "346500",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -20566,7 +20601,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 6,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -21130,7 +21165,7 @@
         {
           "id": 2260054,
           "key": "_last_change_time",
-          "value": "1778276688"
+          "value": "1795408334"
         },
         {
           "id": 2312711,
@@ -21378,11 +21413,6 @@
           "value": ""
         },
         {
-          "id": 2430273,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2430274,
           "key": "_wc_facebook_product_video_source",
           "value": ""
@@ -21390,11 +21420,6 @@
         {
           "id": 2430275,
           "key": "fb_product_images",
-          "value": ""
-        },
-        {
-          "id": 2430276,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],
@@ -21432,15 +21457,15 @@
       "type": "variation",
       "date_created": "2023-07-17T21:14:04",
       "date_created_gmt": "2023-07-17T21:14:04",
-      "date_modified": "2026-07-27T20:48:48",
-      "date_modified_gmt": "2026-07-27T20:48:48",
+      "date_modified": "2026-11-23T04:32:14",
+      "date_modified_gmt": "2026-11-23T04:32:14",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/nautico-iii/?attribute_pa_selecciona-el-color=verde&attribute_pa_selecciona-una-talla=40",
       "sku": "7100305040",
       "global_unique_id": "",
-      "price": "346500",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "346500",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -22020,7 +22045,7 @@
         {
           "id": 2260053,
           "key": "_last_change_time",
-          "value": "1778276688"
+          "value": "1795408334"
         },
         {
           "id": 2312710,
@@ -22322,15 +22347,15 @@
       "type": "variation",
       "date_created": "2023-07-17T21:14:04",
       "date_created_gmt": "2023-07-17T21:14:04",
-      "date_modified": "2026-07-27T20:48:48",
-      "date_modified_gmt": "2026-07-27T20:48:48",
+      "date_modified": "2026-11-23T04:32:14",
+      "date_modified_gmt": "2026-11-23T04:32:14",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/nautico-iii/?attribute_pa_selecciona-el-color=verde&attribute_pa_selecciona-una-talla=39",
       "sku": "7100305039",
       "global_unique_id": "",
-      "price": "346500",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "346500",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -22905,7 +22930,7 @@
         {
           "id": 2260052,
           "key": "_last_change_time",
-          "value": "1778276688"
+          "value": "1795408334"
         },
         {
           "id": 2312709,
@@ -23171,16 +23196,6 @@
           "id": 2430172,
           "key": "_wc_gla_visibility",
           "value": ""
-        },
-        {
-          "id": 2430173,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2430174,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
         }
       ],
       "name": "Verde, 39",
@@ -23217,15 +23232,15 @@
       "type": "variation",
       "date_created": "2023-07-17T21:14:04",
       "date_created_gmt": "2023-07-17T21:14:04",
-      "date_modified": "2026-07-27T20:48:48",
-      "date_modified_gmt": "2026-07-27T20:48:48",
+      "date_modified": "2026-11-23T04:32:14",
+      "date_modified_gmt": "2026-11-23T04:32:14",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/nautico-iii/?attribute_pa_selecciona-el-color=verde&attribute_pa_selecciona-una-talla=38",
       "sku": "7100305038",
       "global_unique_id": "",
-      "price": "346500",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "346500",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -23800,7 +23815,7 @@
         {
           "id": 2260051,
           "key": "_last_change_time",
-          "value": "1778276688"
+          "value": "1795408334"
         },
         {
           "id": 2312706,
@@ -24112,15 +24127,15 @@
       "type": "variation",
       "date_created": "2023-07-17T21:14:04",
       "date_created_gmt": "2023-07-17T21:14:04",
-      "date_modified": "2026-07-27T20:48:54",
-      "date_modified_gmt": "2026-07-27T20:48:54",
+      "date_modified": "2026-11-23T04:32:14",
+      "date_modified_gmt": "2026-11-23T04:32:14",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/nautico-iii/?attribute_pa_selecciona-el-color=verde&attribute_pa_selecciona-una-talla=37",
       "sku": "7100305037",
       "global_unique_id": "",
-      "price": "346500",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "346500",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -24695,7 +24710,7 @@
         {
           "id": 2260050,
           "key": "_last_change_time",
-          "value": "1778276688"
+          "value": "1795408334"
         },
         {
           "id": 2312704,

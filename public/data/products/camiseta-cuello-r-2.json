@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>110,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>110,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -252,6 +252,8 @@
         "name": "DSC04638_A",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 27,
       "stock_status": "instock",
       "price": "110000",
       "regular_price": "110000",
@@ -281,6 +283,8 @@
         "name": "DSC04638_A",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "110000",
       "regular_price": "110000",
@@ -310,6 +314,8 @@
         "name": "DSC04638_A",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "110000",
       "regular_price": "110000",
@@ -339,6 +345,8 @@
         "name": "DSC04638_A",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "price": "110000",
       "regular_price": "110000",
@@ -3162,6 +3170,7 @@
     }
   ],
   "wpc_resolved_media": {
+    "16659": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/02/camiseta-06.jpg",
     "30263": "https://tienda.winstonandharrystore.com/wp-content/uploads/2023/06/DSC04638_A.jpg"
   },
   "stock_status": "instock",
@@ -3172,6 +3181,11 @@
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2023/06/DSC04638_A.jpg",
         "alt": "DSC04638_A",
         "name": "DSC04638_A"
+      },
+      {
+        "id": 16659,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/02/camiseta-06.jpg",
+        "alt": "Camiseta Cuello R."
       }
     ]
   }

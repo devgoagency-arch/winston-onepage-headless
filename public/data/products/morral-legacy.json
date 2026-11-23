@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>658,900</span></del> <span class=\"screen-reader-text\">Original price was: &#036;658,900.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>329,450</span></ins><span class=\"screen-reader-text\">Current price is: &#036;329,450.</span>",
+  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>658,900</span></del> <span class=\"screen-reader-text\">Original price was: &#036;658,900.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>329,450</span></ins><span class=\"screen-reader-text\">Current price is: &#036;329,450.</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -152,6 +152,8 @@
         "name": "Morral-Legacy-Azul-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 15,
       "stock_status": "instock",
       "price": "329450",
       "regular_price": "658900",
@@ -176,6 +178,8 @@
         "name": "Morral-Legacy-Beige-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 24,
       "stock_status": "instock",
       "price": "329450",
       "regular_price": "658900",
@@ -200,6 +204,8 @@
         "name": "Morral-Legacy-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 16,
       "stock_status": "instock",
       "price": "329450",
       "regular_price": "658900",
@@ -224,6 +230,8 @@
         "name": "Morral-Legacy-Verde-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 22,
       "stock_status": "instock",
       "price": "329450",
       "regular_price": "658900",
@@ -301,8 +309,8 @@
       "type": "variation",
       "date_created": "2025-02-11T16:12:28",
       "date_created_gmt": "2025-02-11T16:12:28",
-      "date_modified": "2026-05-11T17:49:46",
-      "date_modified_gmt": "2026-05-11T17:49:46",
+      "date_modified": "2026-11-23T04:33:08",
+      "date_modified_gmt": "2026-11-23T04:33:08",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/morral-legacy/?attribute_pa_selecciona-el-color=negro",
       "sku": "15153402000",
@@ -325,7 +333,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 21,
+      "stock_quantity": 16,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -933,7 +941,7 @@
         {
           "id": 2229430,
           "key": "_last_change_time",
-          "value": "1778521760"
+          "value": "1791958484"
         },
         {
           "id": 2312084,
@@ -995,8 +1003,8 @@
       "type": "variation",
       "date_created": "2025-02-11T16:12:28",
       "date_created_gmt": "2025-02-11T16:12:28",
-      "date_modified": "2026-08-10T16:48:38",
-      "date_modified_gmt": "2026-08-10T16:48:38",
+      "date_modified": "2026-11-23T04:33:08",
+      "date_modified_gmt": "2026-11-23T04:33:08",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/morral-legacy/?attribute_pa_selecciona-el-color=beige",
       "sku": "15153406000",
@@ -1019,7 +1027,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 25,
+      "stock_quantity": 24,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -1627,7 +1635,7 @@
         {
           "id": 2229428,
           "key": "_last_change_time",
-          "value": "1778521760"
+          "value": "1793814864"
         },
         {
           "id": 2312083,
@@ -1689,8 +1697,8 @@
       "type": "variation",
       "date_created": "2025-02-11T16:10:48",
       "date_created_gmt": "2025-02-11T16:10:48",
-      "date_modified": "2026-07-27T17:43:36",
-      "date_modified_gmt": "2026-07-27T17:43:36",
+      "date_modified": "2026-11-23T04:33:08",
+      "date_modified_gmt": "2026-11-23T04:33:08",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/morral-legacy/?attribute_pa_selecciona-el-color=azul",
       "sku": "15153401000",
@@ -1713,7 +1721,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 16,
+      "stock_quantity": 15,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -2321,7 +2329,7 @@
         {
           "id": 2229426,
           "key": "_last_change_time",
-          "value": "1785174216"
+          "value": "1791237104"
         },
         {
           "id": 2312086,
@@ -2383,8 +2391,8 @@
       "type": "variation",
       "date_created": "2025-02-11T16:10:48",
       "date_created_gmt": "2025-02-11T16:10:48",
-      "date_modified": "2026-08-19T13:05:35",
-      "date_modified_gmt": "2026-08-19T13:05:35",
+      "date_modified": "2026-11-23T04:33:08",
+      "date_modified_gmt": "2026-11-23T04:33:08",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/morral-legacy/?attribute_pa_selecciona-el-color=verde",
       "sku": "15153405000",
@@ -2407,7 +2415,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 25,
+      "stock_quantity": 22,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -3015,7 +3023,7 @@
         {
           "id": 2229432,
           "key": "_last_change_time",
-          "value": "1781631411"
+          "value": "1791237104"
         },
         {
           "id": 2312085,

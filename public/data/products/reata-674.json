@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>99,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>99,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -196,6 +196,8 @@
         "name": "IMG_2327",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "price": "99000",
       "regular_price": "99000",
@@ -225,6 +227,8 @@
         "name": "IMG_2327",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 13,
       "stock_status": "instock",
       "price": "99000",
       "regular_price": "99000",
@@ -254,6 +258,8 @@
         "name": "IMG_2327",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "price": "99000",
       "regular_price": "99000",
@@ -283,6 +289,8 @@
         "name": "IMG_2327",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 16,
       "stock_status": "instock",
       "price": "99000",
       "regular_price": "99000",
@@ -312,6 +320,8 @@
         "name": "IMG_2327",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 9,
       "stock_status": "instock",
       "price": "99000",
       "regular_price": "99000",
@@ -377,8 +387,8 @@
       "type": "variation",
       "date_created": "2022-08-29T21:09:49",
       "date_created_gmt": "2022-08-29T21:09:49",
-      "date_modified": "2026-07-16T22:40:43",
-      "date_modified_gmt": "2026-07-16T22:40:43",
+      "date_modified": "2026-11-23T04:36:49",
+      "date_modified_gmt": "2026-11-23T04:36:49",
       "description": "<p>Nosotros sabemos que la regla número uno cuando se usa cuero, es siempre combinar los colores &#8211; “match your leathers”. Nuestros cinturones Trent están hechos en piel de becerro de manera artesanal, pintados a mano para llegar a ser el accesorio perfecto al usar con nuestros zapatos. Su diseño sencillo y hebilla clásica le da un toque de elegancia que sobresaltará en cualquier ocasión que te encuentres.</p>\n",
       "permalink": "https://tienda.winstonandharrystore.com/product/reata-674/?attribute_pa_selecciona-el-color=rojo&attribute_pa_selecciona-una-talla=xl",
       "sku": "28670526038",
@@ -401,7 +411,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 10,
+      "stock_quantity": 9,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -870,7 +880,7 @@
         {
           "id": 2262170,
           "key": "_last_change_time",
-          "value": "1784241643"
+          "value": "1795408609"
         }
       ],
       "name": "Rojo, XL",
@@ -1967,8 +1977,8 @@
       "type": "variation",
       "date_created": "2022-08-29T21:09:49",
       "date_created_gmt": "2022-08-29T21:09:49",
-      "date_modified": "2026-07-16T22:40:43",
-      "date_modified_gmt": "2026-07-16T22:40:43",
+      "date_modified": "2026-09-23T22:57:42",
+      "date_modified_gmt": "2026-09-23T22:57:42",
       "description": "<p>Nosotros sabemos que la regla número uno cuando se usa cuero, es siempre combinar los colores &#8211; “match your leathers”. Nuestros cinturones Trent están hechos en piel de becerro de manera artesanal, pintados a mano para llegar a ser el accesorio perfecto al usar con nuestros zapatos. Su diseño sencillo y hebilla clásica le da un toque de elegancia que sobresaltará en cualquier ocasión que te encuentres.</p>\n",
       "permalink": "https://tienda.winstonandharrystore.com/product/reata-674/?attribute_pa_selecciona-el-color=rojo&attribute_pa_selecciona-una-talla=s",
       "sku": "28670526032",
@@ -1991,7 +2001,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 14,
+      "stock_quantity": 13,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -2460,7 +2470,7 @@
         {
           "id": 2262160,
           "key": "_last_change_time",
-          "value": "1784241643"
+          "value": "1790204262"
         }
       ],
       "name": "Rojo, S",

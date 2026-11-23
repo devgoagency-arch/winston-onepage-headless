@@ -9,11 +9,11 @@
   "sku": "800",
   "short_description": "<p>De antifaz de un trazo distinto y vocación formal, el Wear lo hacen a mano artesanos colombianos con capellada de 100% cuero, suela de goma liviana, forro interior de cuero y plantilla de espuma de látex. El antifaz, de un trazo distinto, ordena el frente sin recargar el corte. Se calza sin cordones, se camina con una pisada cómoda y queda a gusto en un look más vestido, sin perder la inmediatez del mocasín. La hechura nacional y el forro de cuero sostienen un mocasín de hombre que se quiere formal, sin dejar de ser liviano. Disponible en miel y negro, tallas 37 a 45.</p>",
   "description": "<p>• Hecho a mano 100% por artesanos colombianos.</p>\n<p>• Capellada en cuero.</p>\n<p>• Forro interior en cuero para mayor frescura.</p>\n<p>• Estilo formal con un antifaz diferente para darle un toque unico.</p>\n<p>• Su construcción y su plantilla en espuma de latex, generan mayor comodidad y cuidado a tu salud.</p>\n<p>• Suela en goma muy liviana.</p>\n<p>• Los mejores materiales para mayor durabilidad.</p>",
-  "on_sale": false,
+  "on_sale": true,
   "prices": {
-    "price": "649000",
+    "price": "389400",
     "regular_price": "649000",
-    "sale_price": "649000",
+    "sale_price": "389400",
     "price_range": null,
     "currency_code": "COP",
     "currency_symbol": "$",
@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>649,000</span>",
+  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>649,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;649,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>389,400</span></ins><span class=\"screen-reader-text\">Current price is: &#036;389,400.</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -256,8 +256,10 @@
         "name": "Wear-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
-      "price": "649000",
+      "price": "389400",
       "regular_price": "649000",
       "sale_price": ""
     },
@@ -285,8 +287,10 @@
         "name": "Wear-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
-      "price": "649000",
+      "price": "389400",
       "regular_price": "649000",
       "sale_price": ""
     },
@@ -314,8 +318,10 @@
         "name": "Wear-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "649000",
+      "price": "389400",
       "regular_price": "649000",
       "sale_price": ""
     },
@@ -343,8 +349,10 @@
         "name": "Wear-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
-      "price": "649000",
+      "price": "389400",
       "regular_price": "649000",
       "sale_price": ""
     },
@@ -372,8 +380,10 @@
         "name": "Wear-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "649000",
+      "price": "389400",
       "regular_price": "649000",
       "sale_price": ""
     },
@@ -401,8 +411,10 @@
         "name": "Wear-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "649000",
+      "price": "389400",
       "regular_price": "649000",
       "sale_price": ""
     },
@@ -430,8 +442,10 @@
         "name": "Wear-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "649000",
+      "price": "389400",
       "regular_price": "649000",
       "sale_price": ""
     },
@@ -459,8 +473,10 @@
         "name": "Wear-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
-      "price": "649000",
+      "price": "389400",
       "regular_price": "649000",
       "sale_price": ""
     },
@@ -488,8 +504,10 @@
         "name": "Wear-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
-      "price": "649000",
+      "price": "389400",
       "regular_price": "649000",
       "sale_price": ""
     },
@@ -517,8 +535,10 @@
         "name": "Wear-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
-      "price": "649000",
+      "price": "389400",
       "regular_price": "649000",
       "sale_price": ""
     },
@@ -546,8 +566,10 @@
         "name": "Wear-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "649000",
+      "price": "389400",
       "regular_price": "649000",
       "sale_price": ""
     },
@@ -575,8 +597,10 @@
         "name": "Wear-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
-      "price": "649000",
+      "price": "389400",
       "regular_price": "649000",
       "sale_price": ""
     },
@@ -604,8 +628,10 @@
         "name": "Wear-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "649000",
+      "price": "389400",
       "regular_price": "649000",
       "sale_price": ""
     },
@@ -633,8 +659,10 @@
         "name": "Wear-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "649000",
+      "price": "389400",
       "regular_price": "649000",
       "sale_price": ""
     },
@@ -662,8 +690,10 @@
         "name": "Wear-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "649000",
+      "price": "389400",
       "regular_price": "649000",
       "sale_price": ""
     }
@@ -1623,20 +1653,20 @@
       "type": "variation",
       "date_created": "2023-06-21T21:10:37",
       "date_created_gmt": "2023-06-21T21:10:37",
-      "date_modified": "2026-07-27T20:50:58",
-      "date_modified_gmt": "2026-07-27T20:50:58",
+      "date_modified": "2026-11-23T04:32:01",
+      "date_modified_gmt": "2026-11-23T04:32:01",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wear/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=44",
       "sku": "7310326044",
       "global_unique_id": "",
-      "price": "649000",
+      "price": "389400",
       "regular_price": "649000",
-      "sale_price": "",
+      "sale_price": "389400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -2341,7 +2371,7 @@
         {
           "id": 2218593,
           "key": "_last_change_time",
-          "value": "1778190600"
+          "value": "1795408321"
         },
         {
           "id": 2312867,
@@ -2513,20 +2543,20 @@
       "type": "variation",
       "date_created": "2023-06-21T21:10:37",
       "date_created_gmt": "2023-06-21T21:10:37",
-      "date_modified": "2026-07-27T20:51:09",
-      "date_modified_gmt": "2026-07-27T20:51:09",
+      "date_modified": "2026-11-23T04:32:01",
+      "date_modified_gmt": "2026-11-23T04:32:01",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wear/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=43",
       "sku": "7310326043",
       "global_unique_id": "",
-      "price": "649000",
+      "price": "389400",
       "regular_price": "649000",
-      "sale_price": "",
+      "sale_price": "389400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -3236,7 +3266,7 @@
         {
           "id": 2218591,
           "key": "_last_change_time",
-          "value": "1778190588"
+          "value": "1795408321"
         },
         {
           "id": 2312866,
@@ -3408,20 +3438,20 @@
       "type": "variation",
       "date_created": "2023-06-21T21:10:37",
       "date_created_gmt": "2023-06-21T21:10:37",
-      "date_modified": "2026-07-27T20:51:09",
-      "date_modified_gmt": "2026-07-27T20:51:09",
+      "date_modified": "2026-11-23T04:32:01",
+      "date_modified_gmt": "2026-11-23T04:32:01",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wear/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=42",
       "sku": "7310326042",
       "global_unique_id": "",
-      "price": "649000",
+      "price": "389400",
       "regular_price": "649000",
-      "sale_price": "",
+      "sale_price": "389400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -4131,7 +4161,7 @@
         {
           "id": 2218589,
           "key": "_last_change_time",
-          "value": "1778190587"
+          "value": "1795408321"
         },
         {
           "id": 2312865,
@@ -4303,20 +4333,20 @@
       "type": "variation",
       "date_created": "2023-06-21T21:10:37",
       "date_created_gmt": "2023-06-21T21:10:37",
-      "date_modified": "2026-07-27T20:51:09",
-      "date_modified_gmt": "2026-07-27T20:51:09",
+      "date_modified": "2026-11-23T04:32:01",
+      "date_modified_gmt": "2026-11-23T04:32:01",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wear/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=41",
       "sku": "7310326041",
       "global_unique_id": "",
-      "price": "649000",
+      "price": "389400",
       "regular_price": "649000",
-      "sale_price": "",
+      "sale_price": "389400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -5026,7 +5056,7 @@
         {
           "id": 2218587,
           "key": "_last_change_time",
-          "value": "1778190587"
+          "value": "1795408321"
         },
         {
           "id": 2312880,
@@ -5198,20 +5228,20 @@
       "type": "variation",
       "date_created": "2023-06-21T21:10:37",
       "date_created_gmt": "2023-06-21T21:10:37",
-      "date_modified": "2026-07-27T20:51:09",
-      "date_modified_gmt": "2026-07-27T20:51:09",
+      "date_modified": "2026-11-23T04:32:01",
+      "date_modified_gmt": "2026-11-23T04:32:01",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wear/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=40",
       "sku": "7310326040",
       "global_unique_id": "",
-      "price": "649000",
+      "price": "389400",
       "regular_price": "649000",
-      "sale_price": "",
+      "sale_price": "389400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -5921,7 +5951,7 @@
         {
           "id": 2218580,
           "key": "_last_change_time",
-          "value": "1778190587"
+          "value": "1795408321"
         },
         {
           "id": 2312879,
@@ -6093,20 +6123,20 @@
       "type": "variation",
       "date_created": "2023-06-21T21:10:37",
       "date_created_gmt": "2023-06-21T21:10:37",
-      "date_modified": "2026-07-27T20:51:09",
-      "date_modified_gmt": "2026-07-27T20:51:09",
+      "date_modified": "2026-11-23T04:31:56",
+      "date_modified_gmt": "2026-11-23T04:31:56",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wear/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=39",
       "sku": "7310326039",
       "global_unique_id": "",
-      "price": "649000",
+      "price": "389400",
       "regular_price": "649000",
-      "sale_price": "",
+      "sale_price": "389400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -6816,7 +6846,7 @@
         {
           "id": 2218578,
           "key": "_last_change_time",
-          "value": "1778190587"
+          "value": "1795408316"
         },
         {
           "id": 2312878,
@@ -6988,20 +7018,20 @@
       "type": "variation",
       "date_created": "2023-06-21T21:10:37",
       "date_created_gmt": "2023-06-21T21:10:37",
-      "date_modified": "2026-07-27T20:51:09",
-      "date_modified_gmt": "2026-07-27T20:51:09",
+      "date_modified": "2026-11-23T04:31:56",
+      "date_modified_gmt": "2026-11-23T04:31:56",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wear/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=38",
       "sku": "7310326038",
       "global_unique_id": "",
-      "price": "649000",
+      "price": "389400",
       "regular_price": "649000",
-      "sale_price": "",
+      "sale_price": "389400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -7711,7 +7741,7 @@
         {
           "id": 2218576,
           "key": "_last_change_time",
-          "value": "1778190586"
+          "value": "1795408316"
         },
         {
           "id": 2312877,
@@ -7883,20 +7913,20 @@
       "type": "variation",
       "date_created": "2023-06-21T21:10:37",
       "date_created_gmt": "2023-06-21T21:10:37",
-      "date_modified": "2026-07-27T20:51:09",
-      "date_modified_gmt": "2026-07-27T20:51:09",
+      "date_modified": "2026-11-23T04:31:56",
+      "date_modified_gmt": "2026-11-23T04:31:56",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wear/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=37",
       "sku": "7310326037",
       "global_unique_id": "",
-      "price": "649000",
+      "price": "389400",
       "regular_price": "649000",
-      "sale_price": "",
+      "sale_price": "389400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -8606,7 +8636,7 @@
         {
           "id": 2218574,
           "key": "_last_change_time",
-          "value": "1778190586"
+          "value": "1795408316"
         },
         {
           "id": 2312876,
@@ -9668,20 +9698,20 @@
       "type": "variation",
       "date_created": "2023-06-21T21:10:37",
       "date_created_gmt": "2023-06-21T21:10:37",
-      "date_modified": "2026-07-27T20:51:09",
-      "date_modified_gmt": "2026-07-27T20:51:09",
+      "date_modified": "2026-11-23T04:31:56",
+      "date_modified_gmt": "2026-11-23T04:31:56",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wear/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=44",
       "sku": "7310302044",
       "global_unique_id": "",
-      "price": "649000",
+      "price": "389400",
       "regular_price": "649000",
-      "sale_price": "",
+      "sale_price": "389400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -10391,7 +10421,7 @@
         {
           "id": 2218570,
           "key": "_last_change_time",
-          "value": "1778190586"
+          "value": "1795408316"
         },
         {
           "id": 2312874,
@@ -10563,20 +10593,20 @@
       "type": "variation",
       "date_created": "2023-06-21T21:10:37",
       "date_created_gmt": "2023-06-21T21:10:37",
-      "date_modified": "2026-07-27T20:51:09",
-      "date_modified_gmt": "2026-07-27T20:51:09",
+      "date_modified": "2026-11-23T04:31:56",
+      "date_modified_gmt": "2026-11-23T04:31:56",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wear/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=43",
       "sku": "7310302043",
       "global_unique_id": "",
-      "price": "649000",
+      "price": "389400",
       "regular_price": "649000",
-      "sale_price": "",
+      "sale_price": "389400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -11281,7 +11311,7 @@
         {
           "id": 2218568,
           "key": "_last_change_time",
-          "value": "1778190585"
+          "value": "1795408316"
         },
         {
           "id": 2312873,
@@ -11458,20 +11488,20 @@
       "type": "variation",
       "date_created": "2023-06-21T21:10:37",
       "date_created_gmt": "2023-06-21T21:10:37",
-      "date_modified": "2026-07-27T20:51:09",
-      "date_modified_gmt": "2026-07-27T20:51:09",
+      "date_modified": "2026-11-23T04:31:56",
+      "date_modified_gmt": "2026-11-23T04:31:56",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wear/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=42",
       "sku": "7310302042",
       "global_unique_id": "",
-      "price": "649000",
+      "price": "389400",
       "regular_price": "649000",
-      "sale_price": "",
+      "sale_price": "389400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -12181,7 +12211,7 @@
         {
           "id": 2218566,
           "key": "_last_change_time",
-          "value": "1778190585"
+          "value": "1795408316"
         },
         {
           "id": 2312872,
@@ -12353,20 +12383,20 @@
       "type": "variation",
       "date_created": "2023-06-21T21:10:37",
       "date_created_gmt": "2023-06-21T21:10:37",
-      "date_modified": "2026-07-27T20:51:09",
-      "date_modified_gmt": "2026-07-27T20:51:09",
+      "date_modified": "2026-11-23T04:31:55",
+      "date_modified_gmt": "2026-11-23T04:31:55",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wear/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=41",
       "sku": "7310302041",
       "global_unique_id": "",
-      "price": "649000",
+      "price": "389400",
       "regular_price": "649000",
-      "sale_price": "",
+      "sale_price": "389400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -12377,7 +12407,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 4,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -13076,7 +13106,7 @@
         {
           "id": 2218564,
           "key": "_last_change_time",
-          "value": "1778190585"
+          "value": "1795408315"
         },
         {
           "id": 2312871,
@@ -13194,11 +13224,6 @@
           "value": ""
         },
         {
-          "id": 2446248,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2446249,
           "key": "_wc_facebook_product_video_source",
           "value": ""
@@ -13206,11 +13231,6 @@
         {
           "id": 2446250,
           "key": "fb_product_images",
-          "value": ""
-        },
-        {
-          "id": 2446251,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],
@@ -13248,20 +13268,20 @@
       "type": "variation",
       "date_created": "2023-06-21T21:10:37",
       "date_created_gmt": "2023-06-21T21:10:37",
-      "date_modified": "2026-07-27T20:51:09",
-      "date_modified_gmt": "2026-07-27T20:51:09",
+      "date_modified": "2026-11-23T04:31:55",
+      "date_modified_gmt": "2026-11-23T04:31:55",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wear/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=40",
       "sku": "7310302040",
       "global_unique_id": "",
-      "price": "649000",
+      "price": "389400",
       "regular_price": "649000",
-      "sale_price": "",
+      "sale_price": "389400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -13971,7 +13991,7 @@
         {
           "id": 2218562,
           "key": "_last_change_time",
-          "value": "1778190584"
+          "value": "1795408315"
         },
         {
           "id": 2312870,
@@ -14143,20 +14163,20 @@
       "type": "variation",
       "date_created": "2023-06-21T21:10:37",
       "date_created_gmt": "2023-06-21T21:10:37",
-      "date_modified": "2026-07-27T20:51:10",
-      "date_modified_gmt": "2026-07-27T20:51:10",
+      "date_modified": "2026-11-23T04:31:55",
+      "date_modified_gmt": "2026-11-23T04:31:55",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wear/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=39",
       "sku": "7310302039",
       "global_unique_id": "",
-      "price": "649000",
+      "price": "389400",
       "regular_price": "649000",
-      "sale_price": "",
+      "sale_price": "389400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -14866,7 +14886,7 @@
         {
           "id": 2218560,
           "key": "_last_change_time",
-          "value": "1778190584"
+          "value": "1795408315"
         },
         {
           "id": 2312869,
@@ -15038,20 +15058,20 @@
       "type": "variation",
       "date_created": "2023-06-21T21:10:36",
       "date_created_gmt": "2023-06-21T21:10:36",
-      "date_modified": "2026-07-27T20:51:10",
-      "date_modified_gmt": "2026-07-27T20:51:10",
+      "date_modified": "2026-11-23T04:31:55",
+      "date_modified_gmt": "2026-11-23T04:31:55",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wear/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=38",
       "sku": "7310302038",
       "global_unique_id": "",
-      "price": "649000",
+      "price": "389400",
       "regular_price": "649000",
-      "sale_price": "",
+      "sale_price": "389400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -15761,7 +15781,7 @@
         {
           "id": 2218558,
           "key": "_last_change_time",
-          "value": "1778190584"
+          "value": "1795408315"
         },
         {
           "id": 2312882,
@@ -15933,20 +15953,20 @@
       "type": "variation",
       "date_created": "2023-06-21T21:10:36",
       "date_created_gmt": "2023-06-21T21:10:36",
-      "date_modified": "2026-07-27T20:51:10",
-      "date_modified_gmt": "2026-07-27T20:51:10",
+      "date_modified": "2026-11-23T04:31:55",
+      "date_modified_gmt": "2026-11-23T04:31:55",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wear/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=37",
       "sku": "7310302037",
       "global_unique_id": "",
-      "price": "649000",
+      "price": "389400",
       "regular_price": "649000",
-      "sale_price": "",
+      "sale_price": "389400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -15957,7 +15977,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 2,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -16656,7 +16676,7 @@
         {
           "id": 2218555,
           "key": "_last_change_time",
-          "value": "1778190583"
+          "value": "1795408315"
         },
         {
           "id": 2312881,
@@ -16786,11 +16806,6 @@
         {
           "id": 2446354,
           "key": "fb_product_images",
-          "value": ""
-        },
-        {
-          "id": 2446355,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],

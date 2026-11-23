@@ -11,9 +11,9 @@
   "description": "<p>Basados en el éxito de los Kohen, los Essex son la evolución con nuevos materiales. Este modelo refleja también una combinación de la tradición con la modernidad, su capellada en nobuk y la suela blanca hacen que los dos materiales jueguen en conjunto, pero resalten sus características naturales. Esta opción complementa tu estilo casual y le da un toque único a tu estilo formal.</p>",
   "on_sale": true,
   "prices": {
-    "price": "377300",
+    "price": "269500",
     "regular_price": "539000",
-    "sale_price": "377300",
+    "sale_price": "269500",
     "price_range": null,
     "currency_code": "COP",
     "currency_symbol": "$",
@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>539,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;539,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>377,300</span></ins><span class=\"screen-reader-text\">Current price is: &#036;377,300.</span>",
+  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>539,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;539,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>269,500</span></ins><span class=\"screen-reader-text\">Current price is: &#036;269,500.</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -229,37 +229,10 @@
         "name": "winston-and-harry-tenis-essex-azul-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "377300",
-      "regular_price": "539000",
-      "sale_price": ""
-    },
-    {
-      "id": 24682,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "negro",
-          "option": "negro"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "38",
-          "option": "38"
-        }
-      ],
-      "image": {
-        "id": 86615,
-        "date_created": "2026-08-24T16:25:22",
-        "date_created_gmt": "2026-08-24T16:25:22",
-        "date_modified": "2026-08-24T16:57:08",
-        "date_modified_gmt": "2026-08-24T16:57:08",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-tenis-essex-negro-01.jpg",
-        "name": "winston-and-harry-tenis-essex-negro-01",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "377300",
+      "price": "269500",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -287,8 +260,10 @@
         "name": "winston-and-harry-tenis-essex-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
-      "price": "377300",
+      "price": "269500",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -316,8 +291,10 @@
         "name": "winston-and-harry-tenis-essex-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "377300",
+      "price": "269500",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -345,8 +322,10 @@
         "name": "winston-and-harry-tenis-essex-miel-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "377300",
+      "price": "269500",
       "regular_price": "539000",
       "sale_price": ""
     }
@@ -416,15 +395,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:36:00",
       "date_created_gmt": "2022-08-25T22:36:00",
-      "date_modified": "2026-08-24T17:21:58",
-      "date_modified_gmt": "2026-08-24T17:21:58",
+      "date_modified": "2026-11-23T04:28:50",
+      "date_modified_gmt": "2026-11-23T04:28:50",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/essex/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=42",
       "sku": "7190202042",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "269500",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "269500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -922,7 +901,7 @@
         {
           "id": 2216454,
           "key": "_last_change_time",
-          "value": "1787590628"
+          "value": "1795408130"
         },
         {
           "id": 2314677,
@@ -964,15 +943,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:36:00",
       "date_created_gmt": "2022-08-25T22:36:00",
-      "date_modified": "2026-08-24T17:21:58",
-      "date_modified_gmt": "2026-08-24T17:21:58",
+      "date_modified": "2026-11-23T04:28:50",
+      "date_modified_gmt": "2026-11-23T04:28:50",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/essex/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=41",
       "sku": "7190202041",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "269500",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "269500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -1460,7 +1439,7 @@
         {
           "id": 2216453,
           "key": "_last_change_time",
-          "value": "1787590629"
+          "value": "1795408130"
         },
         {
           "id": 2314676,
@@ -1502,15 +1481,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:36:00",
       "date_created_gmt": "2022-08-25T22:36:00",
-      "date_modified": "2026-08-24T17:21:58",
-      "date_modified_gmt": "2026-08-24T17:21:58",
+      "date_modified": "2026-11-23T04:28:50",
+      "date_modified_gmt": "2026-11-23T04:28:50",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/essex/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=40",
       "sku": "7190202040",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "269500",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "269500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -2008,7 +1987,7 @@
         {
           "id": 2216452,
           "key": "_last_change_time",
-          "value": "1787590629"
+          "value": "1795408130"
         },
         {
           "id": 2314675,
@@ -2050,15 +2029,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:36:00",
       "date_created_gmt": "2022-08-25T22:36:00",
-      "date_modified": "2026-08-24T17:21:58",
-      "date_modified_gmt": "2026-08-24T17:21:58",
+      "date_modified": "2026-11-23T04:28:50",
+      "date_modified_gmt": "2026-11-23T04:28:50",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/essex/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=39",
       "sku": "7190202039",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "269500",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "269500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -2556,7 +2535,7 @@
         {
           "id": 2216451,
           "key": "_last_change_time",
-          "value": "1787590629"
+          "value": "1795408130"
         },
         {
           "id": 2314674,
@@ -2598,15 +2577,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:36:00",
       "date_created_gmt": "2022-08-25T22:36:00",
-      "date_modified": "2026-08-24T17:21:58",
-      "date_modified_gmt": "2026-08-24T17:21:58",
+      "date_modified": "2026-11-23T04:28:46",
+      "date_modified_gmt": "2026-11-23T04:28:46",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/essex/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=38",
       "sku": "7190202038",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "269500",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "269500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -2622,8 +2601,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -3104,12 +3083,17 @@
         {
           "id": 2216449,
           "key": "_last_change_time",
-          "value": "1787590629"
+          "value": "1795408126"
         },
         {
           "id": 2314673,
           "key": "wpcvi_images",
           "value": "11798,11799"
+        },
+        {
+          "id": 2607996,
+          "key": "_wc_push_notification_sent_out_of_stock",
+          "value": "1791588428"
         }
       ],
       "name": "Negro, 38",
@@ -3146,15 +3130,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:36:00",
       "date_created_gmt": "2022-08-25T22:36:00",
-      "date_modified": "2026-08-24T17:21:58",
-      "date_modified_gmt": "2026-08-24T17:21:58",
+      "date_modified": "2026-11-23T04:28:46",
+      "date_modified_gmt": "2026-11-23T04:28:46",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/essex/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=42",
       "sku": "7190226042",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "269500",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "269500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -3652,7 +3636,7 @@
         {
           "id": 2216448,
           "key": "_last_change_time",
-          "value": "1787590629"
+          "value": "1795408126"
         },
         {
           "id": 2314672,
@@ -3694,15 +3678,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:36:00",
       "date_created_gmt": "2022-08-25T22:36:00",
-      "date_modified": "2026-08-24T17:21:58",
-      "date_modified_gmt": "2026-08-24T17:21:58",
+      "date_modified": "2026-11-23T04:28:46",
+      "date_modified_gmt": "2026-11-23T04:28:46",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/essex/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=41",
       "sku": "7190226041",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "269500",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "269500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -4200,7 +4184,7 @@
         {
           "id": 2216447,
           "key": "_last_change_time",
-          "value": "1787590628"
+          "value": "1795408126"
         },
         {
           "id": 2314671,
@@ -4242,15 +4226,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:36:00",
       "date_created_gmt": "2022-08-25T22:36:00",
-      "date_modified": "2026-08-24T17:21:58",
-      "date_modified_gmt": "2026-08-24T17:21:58",
+      "date_modified": "2026-11-23T04:28:46",
+      "date_modified_gmt": "2026-11-23T04:28:46",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/essex/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=40",
       "sku": "7190226040",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "269500",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "269500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -4748,7 +4732,7 @@
         {
           "id": 2216446,
           "key": "_last_change_time",
-          "value": "1787590628"
+          "value": "1795408126"
         },
         {
           "id": 2314670,
@@ -4790,15 +4774,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:35:59",
       "date_created_gmt": "2022-08-25T22:35:59",
-      "date_modified": "2026-08-24T17:21:58",
-      "date_modified_gmt": "2026-08-24T17:21:58",
+      "date_modified": "2026-11-23T04:28:46",
+      "date_modified_gmt": "2026-11-23T04:28:46",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/essex/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=39",
       "sku": "7190226039",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "269500",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "269500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -5296,7 +5280,7 @@
         {
           "id": 2216445,
           "key": "_last_change_time",
-          "value": "1787590629"
+          "value": "1795408126"
         },
         {
           "id": 2314683,
@@ -5338,15 +5322,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:35:59",
       "date_created_gmt": "2022-08-25T22:35:59",
-      "date_modified": "2026-08-24T17:21:58",
-      "date_modified_gmt": "2026-08-24T17:21:58",
+      "date_modified": "2026-11-23T04:28:46",
+      "date_modified_gmt": "2026-11-23T04:28:46",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/essex/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=38",
       "sku": "7190226038",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "269500",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "269500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -5844,7 +5828,7 @@
         {
           "id": 2216444,
           "key": "_last_change_time",
-          "value": "1787590629"
+          "value": "1795408126"
         },
         {
           "id": 2314682,
@@ -5886,15 +5870,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:35:59",
       "date_created_gmt": "2022-08-25T22:35:59",
-      "date_modified": "2026-08-24T17:21:58",
-      "date_modified_gmt": "2026-08-24T17:21:58",
+      "date_modified": "2026-11-23T04:28:46",
+      "date_modified_gmt": "2026-11-23T04:28:46",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/essex/?attribute_pa_selecciona-el-color=beige&attribute_pa_selecciona-una-talla=42",
       "sku": "7190206042",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "269500",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "269500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -6392,7 +6376,7 @@
         {
           "id": 2216443,
           "key": "_last_change_time",
-          "value": "1787590629"
+          "value": "1795408126"
         },
         {
           "id": 2314681,
@@ -6434,15 +6418,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:35:59",
       "date_created_gmt": "2022-08-25T22:35:59",
-      "date_modified": "2026-08-24T17:21:59",
-      "date_modified_gmt": "2026-08-24T17:21:59",
+      "date_modified": "2026-11-23T04:28:46",
+      "date_modified_gmt": "2026-11-23T04:28:46",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/essex/?attribute_pa_selecciona-el-color=beige&attribute_pa_selecciona-una-talla=41",
       "sku": "7190206041",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "269500",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "269500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -6940,7 +6924,7 @@
         {
           "id": 2216442,
           "key": "_last_change_time",
-          "value": "1787590629"
+          "value": "1795408126"
         },
         {
           "id": 2314680,
@@ -6982,15 +6966,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:35:59",
       "date_created_gmt": "2022-08-25T22:35:59",
-      "date_modified": "2026-08-24T17:21:59",
-      "date_modified_gmt": "2026-08-24T17:21:59",
+      "date_modified": "2026-11-23T04:28:46",
+      "date_modified_gmt": "2026-11-23T04:28:46",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/essex/?attribute_pa_selecciona-el-color=beige&attribute_pa_selecciona-una-talla=40",
       "sku": "7190206040",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "269500",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "269500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -7488,7 +7472,7 @@
         {
           "id": 2216441,
           "key": "_last_change_time",
-          "value": "1787590629"
+          "value": "1795408126"
         },
         {
           "id": 2314679,
@@ -7530,15 +7514,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:35:59",
       "date_created_gmt": "2022-08-25T22:35:59",
-      "date_modified": "2026-08-24T17:21:59",
-      "date_modified_gmt": "2026-08-24T17:21:59",
+      "date_modified": "2026-11-23T04:28:46",
+      "date_modified_gmt": "2026-11-23T04:28:46",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/essex/?attribute_pa_selecciona-el-color=beige&attribute_pa_selecciona-una-talla=39",
       "sku": "7190206039",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "269500",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "269500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -8036,7 +8020,7 @@
         {
           "id": 2216440,
           "key": "_last_change_time",
-          "value": "1787590629"
+          "value": "1795408126"
         },
         {
           "id": 2314678,
@@ -8078,15 +8062,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:35:59",
       "date_created_gmt": "2022-08-25T22:35:59",
-      "date_modified": "2026-08-24T17:21:59",
-      "date_modified_gmt": "2026-08-24T17:21:59",
+      "date_modified": "2026-11-23T04:28:45",
+      "date_modified_gmt": "2026-11-23T04:28:45",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/essex/?attribute_pa_selecciona-el-color=beige&attribute_pa_selecciona-una-talla=38",
       "sku": "7190206038",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "269500",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "269500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -8584,7 +8568,7 @@
         {
           "id": 2216439,
           "key": "_last_change_time",
-          "value": "1787590629"
+          "value": "1795408125"
         },
         {
           "id": 2314689,
@@ -8626,15 +8610,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:35:59",
       "date_created_gmt": "2022-08-25T22:35:59",
-      "date_modified": "2026-08-24T17:21:58",
-      "date_modified_gmt": "2026-08-24T17:21:58",
+      "date_modified": "2026-11-23T04:28:45",
+      "date_modified_gmt": "2026-11-23T04:28:45",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/essex/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=42",
       "sku": "7190201042",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "269500",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "269500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -9132,7 +9116,7 @@
         {
           "id": 2216438,
           "key": "_last_change_time",
-          "value": "1787590629"
+          "value": "1795408125"
         },
         {
           "id": 2314688,
@@ -9174,15 +9158,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:35:59",
       "date_created_gmt": "2022-08-25T22:35:59",
-      "date_modified": "2026-08-24T17:21:58",
-      "date_modified_gmt": "2026-08-24T17:21:58",
+      "date_modified": "2026-11-23T04:28:45",
+      "date_modified_gmt": "2026-11-23T04:28:45",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/essex/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=41",
       "sku": "7190201041",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "269500",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "269500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -9680,7 +9664,7 @@
         {
           "id": 2216437,
           "key": "_last_change_time",
-          "value": "1787590629"
+          "value": "1795408125"
         },
         {
           "id": 2314687,
@@ -9722,15 +9706,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:35:59",
       "date_created_gmt": "2022-08-25T22:35:59",
-      "date_modified": "2026-08-24T17:21:58",
-      "date_modified_gmt": "2026-08-24T17:21:58",
+      "date_modified": "2026-11-23T04:28:45",
+      "date_modified_gmt": "2026-11-23T04:28:45",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/essex/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=40",
       "sku": "7190201040",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "269500",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "269500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -10228,7 +10212,7 @@
         {
           "id": 2216436,
           "key": "_last_change_time",
-          "value": "1787590629"
+          "value": "1795408125"
         },
         {
           "id": 2314686,
@@ -10270,15 +10254,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:35:59",
       "date_created_gmt": "2022-08-25T22:35:59",
-      "date_modified": "2026-08-24T17:21:58",
-      "date_modified_gmt": "2026-08-24T17:21:58",
+      "date_modified": "2026-11-23T04:28:45",
+      "date_modified_gmt": "2026-11-23T04:28:45",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/essex/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=39",
       "sku": "7190201039",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "269500",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "269500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -10776,7 +10760,7 @@
         {
           "id": 2216435,
           "key": "_last_change_time",
-          "value": "1787590629"
+          "value": "1795408125"
         },
         {
           "id": 2314685,
@@ -10818,15 +10802,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:35:59",
       "date_created_gmt": "2022-08-25T22:35:59",
-      "date_modified": "2026-08-24T17:21:59",
-      "date_modified_gmt": "2026-08-24T17:21:59",
+      "date_modified": "2026-11-23T04:28:45",
+      "date_modified_gmt": "2026-11-23T04:28:45",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/essex/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=38",
       "sku": "7190201038",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "269500",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "269500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -11324,7 +11308,7 @@
         {
           "id": 2216433,
           "key": "_last_change_time",
-          "value": "1787590630"
+          "value": "1795408125"
         },
         {
           "id": 2314684,
@@ -11370,7 +11354,13 @@
     "11796": "https://tienda.winstonandharrystore.com/wp-content/uploads/2020/12/042-zapato-cenital.jpg",
     "11798": "https://tienda.winstonandharrystore.com/wp-content/uploads/2020/12/036-zapato-lateral.jpg",
     "11799": "https://tienda.winstonandharrystore.com/wp-content/uploads/2020/12/036-zapato-cenital.jpg",
-    "11803": "https://tienda.winstonandharrystore.com/wp-content/uploads/2020/12/028-zapato-cenital.jpg"
+    "11803": "https://tienda.winstonandharrystore.com/wp-content/uploads/2020/12/028-zapato-cenital.jpg",
+    "86610": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-tenis-essex-beige-02.jpg",
+    "86611": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-tenis-essex-beige-03.jpg",
+    "86613": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-tenis-essex-miel-02.jpg",
+    "86614": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-tenis-essex-miel-03.jpg",
+    "86616": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-tenis-essex-negro-02.jpg",
+    "86617": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-tenis-essex-negro-03.jpg"
   },
   "stock_status": "instock",
   "variation_images_map": {
@@ -11412,6 +11402,16 @@
         "name": "winston-and-harry-tenis-essex-negro-01"
       },
       {
+        "id": 86616,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-tenis-essex-negro-02.jpg",
+        "alt": "Essex"
+      },
+      {
+        "id": 86617,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-tenis-essex-negro-03.jpg",
+        "alt": "Essex"
+      },
+      {
         "id": 11798,
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2020/12/036-zapato-lateral.jpg",
         "alt": "Essex"
@@ -11430,6 +11430,16 @@
         "name": "winston-and-harry-tenis-essex-miel-01"
       },
       {
+        "id": 86613,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-tenis-essex-miel-02.jpg",
+        "alt": "Essex"
+      },
+      {
+        "id": 86614,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-tenis-essex-miel-03.jpg",
+        "alt": "Essex"
+      },
+      {
         "id": 11537,
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2020/12/027-zapato-lateral.jpg",
         "alt": "Essex"
@@ -11441,6 +11451,16 @@
       }
     ],
     "beige": [
+      {
+        "id": 86610,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-tenis-essex-beige-02.jpg",
+        "alt": "Essex"
+      },
+      {
+        "id": 86611,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-tenis-essex-beige-03.jpg",
+        "alt": "Essex"
+      },
       {
         "id": 11794,
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2020/12/028-zapato-lateral.jpg",

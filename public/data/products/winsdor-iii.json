@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>590,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>590,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -226,6 +226,8 @@
         "name": "Winsdor III-Cognac-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "590000",
       "regular_price": "590000",
@@ -255,6 +257,8 @@
         "name": "Winsdor III-Cognac-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "price": "590000",
       "regular_price": "590000",
@@ -284,6 +288,8 @@
         "name": "Winsdor III-Cognac-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "price": "590000",
       "regular_price": "590000",
@@ -313,6 +319,8 @@
         "name": "Winsdor III-Cognac-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "price": "590000",
       "regular_price": "590000",
@@ -342,6 +350,8 @@
         "name": "Winsdor III-Cognac-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "price": "590000",
       "regular_price": "590000",
@@ -371,6 +381,8 @@
         "name": "Winsdor III-Cognac-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "590000",
       "regular_price": "590000",
@@ -400,6 +412,8 @@
         "name": "Winsdor III-Cognac-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "590000",
       "regular_price": "590000",
@@ -429,6 +443,8 @@
         "name": "Winsdor III-Cognac-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "590000",
       "regular_price": "590000",
@@ -458,6 +474,8 @@
         "name": "Winsdor III-Cognac-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": "parent",
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "590000",
       "regular_price": "590000",
@@ -487,6 +505,8 @@
         "name": "Winsdor III-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "590000",
       "regular_price": "590000",
@@ -516,6 +536,8 @@
         "name": "Winsdor III-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "590000",
       "regular_price": "590000",
@@ -545,6 +567,8 @@
         "name": "Winsdor III-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "590000",
       "regular_price": "590000",
@@ -574,6 +598,8 @@
         "name": "Winsdor III-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "590000",
       "regular_price": "590000",
@@ -603,6 +629,8 @@
         "name": "Winsdor III-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "590000",
       "regular_price": "590000",
@@ -632,6 +660,8 @@
         "name": "Winsdor III-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "590000",
       "regular_price": "590000",
@@ -661,6 +691,8 @@
         "name": "Winsdor III-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "590000",
       "regular_price": "590000",
@@ -690,6 +722,8 @@
         "name": "Winsdor III-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": "parent",
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "590000",
       "regular_price": "590000",
@@ -5221,8 +5255,8 @@
       "type": "variation",
       "date_created": "2025-02-27T02:50:27",
       "date_created_gmt": "2025-02-27T02:50:27",
-      "date_modified": "2026-07-27T20:51:36",
-      "date_modified_gmt": "2026-07-27T20:51:36",
+      "date_modified": "2026-09-23T22:56:43",
+      "date_modified_gmt": "2026-09-23T22:56:43",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/winsdor-iii/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=40",
       "sku": "7100526040",
@@ -5245,7 +5279,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 2,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -5864,7 +5898,7 @@
         {
           "id": 2260113,
           "key": "_last_change_time",
-          "value": "1783012240"
+          "value": "1790204203"
         },
         {
           "id": 2311869,
@@ -6074,11 +6108,6 @@
         {
           "id": 2450007,
           "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2450008,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],
@@ -10591,8 +10620,8 @@
       "type": "variation",
       "date_created": "2025-02-27T02:50:27",
       "date_created_gmt": "2025-02-27T02:50:27",
-      "date_modified": "2026-07-27T20:51:37",
-      "date_modified_gmt": "2026-07-27T20:51:37",
+      "date_modified": "2026-09-23T22:56:43",
+      "date_modified_gmt": "2026-09-23T22:56:43",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/winsdor-iii/?attribute_pa_selecciona-el-color=cognac&attribute_pa_selecciona-una-talla=43",
       "sku": "7100532043",
@@ -10615,7 +10644,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 2,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -11229,7 +11258,7 @@
         {
           "id": 2260127,
           "key": "_last_change_time",
-          "value": "1784241766"
+          "value": "1790204203"
         },
         {
           "id": 2311862,
@@ -11445,11 +11474,6 @@
           "id": 2450242,
           "key": "_wc_push_notification_sent_low_stock",
           "value": ""
-        },
-        {
-          "id": 2450243,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
         }
       ],
       "name": "Cognac, 43",
@@ -11486,8 +11510,8 @@
       "type": "variation",
       "date_created": "2025-02-27T02:50:27",
       "date_created_gmt": "2025-02-27T02:50:27",
-      "date_modified": "2026-07-27T20:51:37",
-      "date_modified_gmt": "2026-07-27T20:51:37",
+      "date_modified": "2026-11-04T17:54:24",
+      "date_modified_gmt": "2026-11-04T17:54:24",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/winsdor-iii/?attribute_pa_selecciona-el-color=cognac&attribute_pa_selecciona-una-talla=42",
       "sku": "7100532042",
@@ -11510,7 +11534,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 3,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -12124,7 +12148,7 @@
         {
           "id": 2260126,
           "key": "_last_change_time",
-          "value": "1784241766"
+          "value": "1793814864"
         },
         {
           "id": 2311861,
@@ -12335,16 +12359,6 @@
           "id": 2450281,
           "key": "_wc_gla_visibility",
           "value": ""
-        },
-        {
-          "id": 2450282,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2450283,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
         }
       ],
       "name": "Cognac, 42",
@@ -12381,8 +12395,8 @@
       "type": "variation",
       "date_created": "2025-02-27T02:50:27",
       "date_created_gmt": "2025-02-27T02:50:27",
-      "date_modified": "2026-07-27T20:51:42",
-      "date_modified_gmt": "2026-07-27T20:51:42",
+      "date_modified": "2026-09-08T17:14:40",
+      "date_modified_gmt": "2026-09-08T17:14:40",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/winsdor-iii/?attribute_pa_selecciona-el-color=cognac&attribute_pa_selecciona-una-talla=41",
       "sku": "7100532041",
@@ -12405,7 +12419,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 6,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -13024,7 +13038,7 @@
         {
           "id": 2260125,
           "key": "_last_change_time",
-          "value": "1784241766"
+          "value": "1788887680"
         },
         {
           "id": 2311860,
@@ -13229,16 +13243,6 @@
         {
           "id": 2450322,
           "key": "_wc_gla_visibility",
-          "value": ""
-        },
-        {
-          "id": 2450323,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2450324,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],
@@ -14171,8 +14175,8 @@
       "type": "variation",
       "date_created": "2025-02-27T02:50:27",
       "date_created_gmt": "2025-02-27T02:50:27",
-      "date_modified": "2026-07-27T20:51:42",
-      "date_modified_gmt": "2026-07-27T20:51:42",
+      "date_modified": "2026-10-05T21:50:57",
+      "date_modified_gmt": "2026-10-05T21:50:57",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/winsdor-iii/?attribute_pa_selecciona-el-color=cognac&attribute_pa_selecciona-una-talla=39",
       "sku": "7100532039",
@@ -14195,7 +14199,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 6,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -14814,7 +14818,7 @@
         {
           "id": 2260123,
           "key": "_last_change_time",
-          "value": "1784241766"
+          "value": "1791237057"
         },
         {
           "id": 2311858,
@@ -15019,16 +15023,6 @@
         {
           "id": 2450400,
           "key": "_wc_gla_visibility",
-          "value": ""
-        },
-        {
-          "id": 2450401,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2450402,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],

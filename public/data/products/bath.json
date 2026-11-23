@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>825,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>825,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -261,6 +261,8 @@
         "name": "Bath-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -290,6 +292,8 @@
         "name": "Bath-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -319,6 +323,8 @@
         "name": "Bath-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -348,6 +354,8 @@
         "name": "Bath-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -377,6 +385,8 @@
         "name": "Bath-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -406,6 +416,8 @@
         "name": "Bath-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -435,6 +447,8 @@
         "name": "Bath-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -464,6 +478,8 @@
         "name": "Bath-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -493,6 +509,8 @@
         "name": "Bath-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -522,6 +540,8 @@
         "name": "Bath-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -551,6 +571,8 @@
         "name": "Bath-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -580,6 +602,8 @@
         "name": "Bath-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 8,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -609,6 +633,8 @@
         "name": "Bath-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -638,6 +664,8 @@
         "name": "Bath-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -667,6 +695,8 @@
         "name": "Bath-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -696,35 +726,8 @@
         "name": "Bath-Negro-Winstonandharry-1",
         "alt": ""
       },
-      "stock_status": "instock",
-      "price": "825000",
-      "regular_price": "825000",
-      "sale_price": ""
-    },
-    {
-      "id": 24539,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "negro",
-          "option": "negro"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "44",
-          "option": "44"
-        }
-      ],
-      "image": {
-        "id": 61870,
-        "date_created": "2025-03-04T02:16:37",
-        "date_created_gmt": "2025-03-04T02:16:37",
-        "date_modified": "2025-03-04T07:25:49",
-        "date_modified_gmt": "2025-03-04T07:25:49",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/03/Bath-Negro-Winstonandharry-1-e1752871273733.jpg",
-        "name": "Bath-Negro-Winstonandharry-1",
-        "alt": ""
-      },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -754,6 +757,8 @@
         "name": "Bath-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -783,6 +788,8 @@
         "name": "Bath-Vino-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -812,6 +819,8 @@
         "name": "Bath-Vino-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 7,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -841,6 +850,8 @@
         "name": "Bath-Vino-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 7,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -870,6 +881,8 @@
         "name": "Bath-Vino-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -899,6 +912,8 @@
         "name": "Bath-Vino-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 7,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -928,6 +943,8 @@
         "name": "Bath-Vino-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -957,6 +974,8 @@
         "name": "Bath-Vino-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -986,6 +1005,8 @@
         "name": "Bath-Vino-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -1015,6 +1036,8 @@
         "name": "Bath-Vino-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -5551,8 +5574,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:33:47",
       "date_created_gmt": "2022-08-25T22:33:47",
-      "date_modified": "2026-08-22T00:03:47",
-      "date_modified_gmt": "2026-08-22T00:03:47",
+      "date_modified": "2026-10-05T21:50:55",
+      "date_modified_gmt": "2026-10-05T21:50:55",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bath/?attribute_pa_selecciona-el-color=vinotinto&attribute_pa_selecciona-una-talla=40",
       "sku": "7021519040",
@@ -5575,7 +5598,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 7,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -6272,7 +6295,7 @@
         {
           "id": 2250090,
           "key": "_last_change_time",
-          "value": "1787357027"
+          "value": "1791237055"
         },
         {
           "id": 2314788,
@@ -6434,8 +6457,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:33:47",
       "date_created_gmt": "2022-08-25T22:33:47",
-      "date_modified": "2026-07-27T20:45:07",
-      "date_modified_gmt": "2026-07-27T20:45:07",
+      "date_modified": "2026-09-08T17:13:01",
+      "date_modified_gmt": "2026-09-08T17:13:01",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bath/?attribute_pa_selecciona-el-color=vinotinto&attribute_pa_selecciona-una-talla=39",
       "sku": "7021519039",
@@ -6458,7 +6481,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 8,
+      "stock_quantity": 7,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -7155,7 +7178,7 @@
         {
           "id": 2250089,
           "key": "_last_change_time",
-          "value": "1778175446"
+          "value": "1788887581"
         },
         {
           "id": 2314787,
@@ -7273,11 +7296,6 @@
           "value": ""
         },
         {
-          "id": 2396823,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2396824,
           "key": "_wc_facebook_product_video_source",
           "value": ""
@@ -7285,11 +7303,6 @@
         {
           "id": 2396825,
           "key": "fb_product_images",
-          "value": ""
-        },
-        {
-          "id": 2396826,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],
@@ -10006,8 +10019,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:33:47",
       "date_created_gmt": "2022-08-25T22:33:47",
-      "date_modified": "2026-07-27T20:45:06",
-      "date_modified_gmt": "2026-07-27T20:45:06",
+      "date_modified": "2026-11-23T04:36:29",
+      "date_modified_gmt": "2026-11-23T04:36:29",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bath/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=44",
       "sku": "7021502044",
@@ -10030,8 +10043,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -10657,7 +10670,7 @@
         {
           "id": 2259743,
           "key": "_last_change_time",
-          "value": "1778175437"
+          "value": "1795408589"
         },
         {
           "id": 2314793,
@@ -10899,8 +10912,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:33:47",
       "date_created_gmt": "2022-08-25T22:33:47",
-      "date_modified": "2026-07-27T20:45:06",
-      "date_modified_gmt": "2026-07-27T20:45:06",
+      "date_modified": "2026-10-05T21:50:53",
+      "date_modified_gmt": "2026-10-05T21:50:53",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bath/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=43",
       "sku": "7021502043",
@@ -10923,7 +10936,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 2,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -11550,7 +11563,7 @@
         {
           "id": 2259742,
           "key": "_last_change_time",
-          "value": "1778175436"
+          "value": "1791237053"
         },
         {
           "id": 2314792,
@@ -11738,11 +11751,6 @@
           "value": ""
         },
         {
-          "id": 2396665,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2396666,
           "key": "_wc_facebook_product_video_source",
           "value": ""
@@ -11750,11 +11758,6 @@
         {
           "id": 2396667,
           "key": "fb_product_images",
-          "value": ""
-        },
-        {
-          "id": 2396668,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],
@@ -12690,8 +12693,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:33:47",
       "date_created_gmt": "2022-08-25T22:33:47",
-      "date_modified": "2026-07-27T20:45:07",
-      "date_modified_gmt": "2026-07-27T20:45:07",
+      "date_modified": "2026-10-05T21:50:52",
+      "date_modified_gmt": "2026-10-05T21:50:52",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bath/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=41",
       "sku": "7021502041",
@@ -13341,7 +13344,7 @@
         {
           "id": 2254686,
           "key": "_last_change_time",
-          "value": "1780421732"
+          "value": "1791237053"
         },
         {
           "id": 2314790,
@@ -13534,11 +13537,6 @@
           "value": ""
         },
         {
-          "id": 2396957,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2396958,
           "key": "_wc_facebook_product_video_source",
           "value": ""
@@ -13546,11 +13544,6 @@
         {
           "id": 2396959,
           "key": "fb_product_images",
-          "value": ""
-        },
-        {
-          "id": 2396960,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],
@@ -13588,8 +13581,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:33:46",
       "date_created_gmt": "2022-08-25T22:33:46",
-      "date_modified": "2026-07-27T20:45:07",
-      "date_modified_gmt": "2026-07-27T20:45:07",
+      "date_modified": "2026-10-27T19:15:14",
+      "date_modified_gmt": "2026-10-27T19:15:14",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bath/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=40",
       "sku": "7021502040",
@@ -13612,7 +13605,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 3,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -14239,7 +14232,7 @@
         {
           "id": 2254685,
           "key": "_last_change_time",
-          "value": "1783099257"
+          "value": "1793122930"
         },
         {
           "id": 2314794,
@@ -14432,11 +14425,6 @@
           "value": ""
         },
         {
-          "id": 2396998,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2396999,
           "key": "_wc_facebook_product_video_source",
           "value": ""
@@ -14444,11 +14432,6 @@
         {
           "id": 2397000,
           "key": "fb_product_images",
-          "value": ""
-        },
-        {
-          "id": 2397001,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],
@@ -14486,8 +14469,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:32:41",
       "date_created_gmt": "2022-08-25T22:32:41",
-      "date_modified": "2026-07-27T20:45:13",
-      "date_modified_gmt": "2026-07-27T20:45:13",
+      "date_modified": "2026-10-05T21:50:52",
+      "date_modified_gmt": "2026-10-05T21:50:52",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bath/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=39",
       "sku": "7021502039",
@@ -14510,7 +14493,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 5,
+      "stock_quantity": 8,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -15122,7 +15105,7 @@
         {
           "id": 2254684,
           "key": "_last_change_time",
-          "value": "1781631263"
+          "value": "1791237052"
         },
         {
           "id": 2314805,
@@ -15330,11 +15313,6 @@
           "value": ""
         },
         {
-          "id": 2397458,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2397459,
           "key": "_wc_facebook_product_video_source",
           "value": ""
@@ -15342,11 +15320,6 @@
         {
           "id": 2397460,
           "key": "fb_product_images",
-          "value": ""
-        },
-        {
-          "id": 2397461,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],
@@ -15384,8 +15357,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:32:41",
       "date_created_gmt": "2022-08-25T22:32:41",
-      "date_modified": "2026-07-27T20:45:13",
-      "date_modified_gmt": "2026-07-27T20:45:13",
+      "date_modified": "2026-11-23T04:36:29",
+      "date_modified_gmt": "2026-11-23T04:36:29",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bath/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=38",
       "sku": "7021502038",
@@ -15408,7 +15381,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 4,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -16020,7 +15993,7 @@
         {
           "id": 2254683,
           "key": "_last_change_time",
-          "value": "1780421732"
+          "value": "1795408589"
         },
         {
           "id": 2314804,
@@ -16228,11 +16201,6 @@
           "value": ""
         },
         {
-          "id": 2397414,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2397415,
           "key": "_wc_facebook_product_video_source",
           "value": ""
@@ -16240,11 +16208,6 @@
         {
           "id": 2397416,
           "key": "fb_product_images",
-          "value": ""
-        },
-        {
-          "id": 2397417,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],
@@ -16282,8 +16245,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:32:41",
       "date_created_gmt": "2022-08-25T22:32:41",
-      "date_modified": "2026-07-27T20:45:13",
-      "date_modified_gmt": "2026-07-27T20:45:13",
+      "date_modified": "2026-10-14T06:14:21",
+      "date_modified_gmt": "2026-10-14T06:14:21",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bath/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=37",
       "sku": "7021502037",
@@ -16306,7 +16269,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -16928,7 +16891,7 @@
         {
           "id": 2254682,
           "key": "_last_change_time",
-          "value": "1785174186"
+          "value": "1791958461"
         },
         {
           "id": 2314803,
@@ -17126,11 +17089,6 @@
           "value": ""
         },
         {
-          "id": 2397370,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2397371,
           "key": "_wc_facebook_product_video_source",
           "value": ""
@@ -17138,11 +17096,6 @@
         {
           "id": 2397372,
           "key": "fb_product_images",
-          "value": ""
-        },
-        {
-          "id": 2397373,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],
@@ -18976,8 +18929,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:32:41",
       "date_created_gmt": "2022-08-25T22:32:41",
-      "date_modified": "2026-07-27T20:45:08",
-      "date_modified_gmt": "2026-07-27T20:45:08",
+      "date_modified": "2026-10-05T21:50:55",
+      "date_modified_gmt": "2026-10-05T21:50:55",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bath/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=43",
       "sku": "7021504043",
@@ -19000,7 +18953,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 3,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -19627,7 +19580,7 @@
         {
           "id": 2250087,
           "key": "_last_change_time",
-          "value": "1778175433"
+          "value": "1791237055"
         },
         {
           "id": 2314800,
@@ -19820,11 +19773,6 @@
           "value": ""
         },
         {
-          "id": 2397244,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2397245,
           "key": "_wc_facebook_product_video_source",
           "value": ""
@@ -19832,11 +19780,6 @@
         {
           "id": 2397246,
           "key": "fb_product_images",
-          "value": ""
-        },
-        {
-          "id": 2397247,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],
@@ -19874,8 +19817,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:32:41",
       "date_created_gmt": "2022-08-25T22:32:41",
-      "date_modified": "2026-07-27T20:45:07",
-      "date_modified_gmt": "2026-07-27T20:45:07",
+      "date_modified": "2026-10-27T19:15:14",
+      "date_modified_gmt": "2026-10-27T19:15:14",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bath/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=42",
       "sku": "7021504042",
@@ -19898,7 +19841,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 4,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -20525,7 +20468,7 @@
         {
           "id": 2250077,
           "key": "_last_change_time",
-          "value": "1778175433"
+          "value": "1793122930"
         },
         {
           "id": 2314799,
@@ -20718,11 +20661,6 @@
           "value": ""
         },
         {
-          "id": 2397203,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2397204,
           "key": "_wc_facebook_product_video_source",
           "value": ""
@@ -20730,11 +20668,6 @@
         {
           "id": 2397205,
           "key": "fb_product_images",
-          "value": ""
-        },
-        {
-          "id": 2397206,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],
@@ -20772,8 +20705,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:32:41",
       "date_created_gmt": "2022-08-25T22:32:41",
-      "date_modified": "2026-07-27T20:45:07",
-      "date_modified_gmt": "2026-07-27T20:45:07",
+      "date_modified": "2026-11-23T04:36:29",
+      "date_modified_gmt": "2026-11-23T04:36:29",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bath/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=41",
       "sku": "7021504041",
@@ -21423,7 +21356,7 @@
         {
           "id": 2250076,
           "key": "_last_change_time",
-          "value": "1783099257"
+          "value": "1795408589"
         },
         {
           "id": 2314798,
@@ -21616,11 +21549,6 @@
           "value": ""
         },
         {
-          "id": 2397162,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2397163,
           "key": "_wc_facebook_product_video_source",
           "value": ""
@@ -21628,11 +21556,6 @@
         {
           "id": 2397164,
           "key": "fb_product_images",
-          "value": ""
-        },
-        {
-          "id": 2397165,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],
@@ -21670,8 +21593,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:32:41",
       "date_created_gmt": "2022-08-25T22:32:41",
-      "date_modified": "2026-07-27T20:45:07",
-      "date_modified_gmt": "2026-07-27T20:45:07",
+      "date_modified": "2026-10-27T19:15:14",
+      "date_modified_gmt": "2026-10-27T19:15:14",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bath/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=40",
       "sku": "7021504040",
@@ -21694,7 +21617,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -22321,7 +22244,7 @@
         {
           "id": 2250075,
           "key": "_last_change_time",
-          "value": "1783099257"
+          "value": "1793122930"
         },
         {
           "id": 2314797,
@@ -22514,11 +22437,6 @@
           "value": ""
         },
         {
-          "id": 2397121,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2397122,
           "key": "_wc_facebook_product_video_source",
           "value": ""
@@ -22526,11 +22444,6 @@
         {
           "id": 2397123,
           "key": "fb_product_images",
-          "value": ""
-        },
-        {
-          "id": 2397124,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],
@@ -22568,8 +22481,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:32:41",
       "date_created_gmt": "2022-08-25T22:32:41",
-      "date_modified": "2026-07-27T20:45:07",
-      "date_modified_gmt": "2026-07-27T20:45:07",
+      "date_modified": "2026-11-23T04:36:29",
+      "date_modified_gmt": "2026-11-23T04:36:29",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bath/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=39",
       "sku": "7021504039",
@@ -22592,7 +22505,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 3,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -23219,7 +23132,7 @@
         {
           "id": 2218890,
           "key": "_last_change_time",
-          "value": "1780421731"
+          "value": "1795408589"
         },
         {
           "id": 2314796,
@@ -23412,11 +23325,6 @@
           "value": ""
         },
         {
-          "id": 2397080,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2397081,
           "key": "_wc_facebook_product_video_source",
           "value": ""
@@ -23424,11 +23332,6 @@
         {
           "id": 2397082,
           "key": "fb_product_images",
-          "value": ""
-        },
-        {
-          "id": 2397083,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],
@@ -24354,8 +24257,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:32:41",
       "date_created_gmt": "2022-08-25T22:32:41",
-      "date_modified": "2026-07-27T20:45:13",
-      "date_modified_gmt": "2026-07-27T20:45:13",
+      "date_modified": "2026-10-27T19:15:14",
+      "date_modified_gmt": "2026-10-27T19:15:14",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bath/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=37",
       "sku": "7021504037",
@@ -25005,7 +24908,7 @@
         {
           "id": 2250073,
           "key": "_last_change_time",
-          "value": "1778175432"
+          "value": "1793122930"
         },
         {
           "id": 2314806,
@@ -25198,11 +25101,6 @@
           "value": ""
         },
         {
-          "id": 2397499,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
           "id": 2397500,
           "key": "_wc_facebook_product_video_source",
           "value": ""
@@ -25210,11 +25108,6 @@
         {
           "id": 2397501,
           "key": "fb_product_images",
-          "value": ""
-        },
-        {
-          "id": 2397502,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         }
       ],
@@ -25249,6 +25142,12 @@
     }
   ],
   "wpc_resolved_media": {
+    "11785": "https://tienda.winstonandharrystore.com/wp-content/uploads/2020/12/097-zapato-lateral.jpg",
+    "11786": "https://tienda.winstonandharrystore.com/wp-content/uploads/2020/12/083-zapato-cenital.jpg",
+    "11788": "https://tienda.winstonandharrystore.com/wp-content/uploads/2020/12/097-zapato-cenital.jpg",
+    "11789": "https://tienda.winstonandharrystore.com/wp-content/uploads/2020/12/083-zapato-lateral.jpg",
+    "16054": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/02/14-lateral-215.jpg",
+    "16055": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/02/14-suela-capellada-215.jpg",
     "61863": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/03/Bath-Cafe-Winstonandharry-2-e1752871176291.jpg",
     "61864": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/03/Bath-Cafe-Winstonandharry-3-e1752871185717.jpg",
     "61865": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/03/Bath-Cafe-Winstonandharry-4-e1752871200448.jpg",
@@ -25278,6 +25177,16 @@
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/03/Bath-Cafe-Winstonandharry-1-e1752871164737.jpg",
         "alt": "Bath-Café-Winstonandharry-1",
         "name": "Bath-Café-Winstonandharry-1"
+      },
+      {
+        "id": 11789,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2020/12/083-zapato-lateral.jpg",
+        "alt": "Bath"
+      },
+      {
+        "id": 11786,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2020/12/083-zapato-cenital.jpg",
+        "alt": "Bath"
       },
       {
         "id": 61864,
@@ -25323,6 +25232,16 @@
         "name": "Bath-Negro-Winstonandharry-1"
       },
       {
+        "id": 11785,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2020/12/097-zapato-lateral.jpg",
+        "alt": "Bath"
+      },
+      {
+        "id": 11788,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2020/12/097-zapato-cenital.jpg",
+        "alt": "Bath"
+      },
+      {
         "id": 61871,
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/03/Bath-Negro-Winstonandharry-2-e1752871287288.jpg",
         "alt": "Bath"
@@ -25359,6 +25278,16 @@
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/04/Bath-Vino-Winstonandharry-1-e1751479468159.jpg",
         "alt": "Bath-Vino-Winstonandharry-1",
         "name": "Bath-Vino-Winstonandharry-1"
+      },
+      {
+        "id": 16055,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/02/14-suela-capellada-215.jpg",
+        "alt": "Bath"
+      },
+      {
+        "id": 16054,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/02/14-lateral-215.jpg",
+        "alt": "Bath"
       },
       {
         "id": 62872,

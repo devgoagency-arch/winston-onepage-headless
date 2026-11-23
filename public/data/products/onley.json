@@ -11,9 +11,9 @@
   "description": "<p>Las botas Chelsea han sido un clásico de la historia del calzado. Las botas Onley son una nueva interpretación de las clásicas Chelsea, cuenta con puntera Wing-tip y perforaciones para darle un toque urbano y contemporáneo. Están construidas en cuero graso para que cada zapato vaya cogiendo con el tiempo su propia personalidad.</p>",
   "on_sale": true,
   "prices": {
-    "price": "336000",
+    "price": "168000",
     "regular_price": "560000",
-    "sale_price": "336000",
+    "sale_price": "168000",
     "price_range": null,
     "currency_code": "COP",
     "currency_symbol": "$",
@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>560,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;560,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>336,000</span></ins><span class=\"screen-reader-text\">Current price is: &#036;336,000.</span>",
+  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>560,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;560,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>168,000</span></ins><span class=\"screen-reader-text\">Current price is: &#036;168,000.</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -245,8 +245,10 @@
         "name": "winston-and-harry-botas-onley-cognac-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "336000",
+      "price": "168000",
       "regular_price": "560000",
       "sale_price": ""
     }
@@ -1209,15 +1211,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:48:00",
       "date_created_gmt": "2022-08-25T22:48:00",
-      "date_modified": "2026-08-04T16:57:07",
-      "date_modified_gmt": "2026-08-04T16:57:07",
+      "date_modified": "2026-11-23T04:29:50",
+      "date_modified_gmt": "2026-11-23T04:29:50",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/onley/?attribute_pa_selecciona-el-color=cognac&attribute_pa_selecciona-una-talla=44",
       "sku": "7401832044",
       "global_unique_id": "",
-      "price": "336000",
+      "price": "168000",
       "regular_price": "560000",
-      "sale_price": "336000",
+      "sale_price": "168000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -1715,7 +1717,7 @@
         {
           "id": 2261368,
           "key": "_last_change_time",
-          "value": "1778184453"
+          "value": "1795408190"
         },
         {
           "id": 2475964,
@@ -2102,15 +2104,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:48:00",
       "date_created_gmt": "2022-08-25T22:48:00",
-      "date_modified": "2026-08-04T16:57:06",
-      "date_modified_gmt": "2026-08-04T16:57:06",
+      "date_modified": "2026-11-23T04:29:50",
+      "date_modified_gmt": "2026-11-23T04:29:50",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/onley/?attribute_pa_selecciona-el-color=cognac&attribute_pa_selecciona-una-talla=43",
       "sku": "7401832043",
       "global_unique_id": "",
-      "price": "336000",
+      "price": "168000",
       "regular_price": "560000",
-      "sale_price": "336000",
+      "sale_price": "168000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -2608,7 +2610,7 @@
         {
           "id": 2261367,
           "key": "_last_change_time",
-          "value": "1778184453"
+          "value": "1795408190"
         },
         {
           "id": 2475893,
@@ -2995,15 +2997,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:48:00",
       "date_created_gmt": "2022-08-25T22:48:00",
-      "date_modified": "2026-08-04T16:57:06",
-      "date_modified_gmt": "2026-08-04T16:57:06",
+      "date_modified": "2026-11-23T04:29:50",
+      "date_modified_gmt": "2026-11-23T04:29:50",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/onley/?attribute_pa_selecciona-el-color=cognac&attribute_pa_selecciona-una-talla=42",
       "sku": "7401832042",
       "global_unique_id": "",
-      "price": "336000",
+      "price": "168000",
       "regular_price": "560000",
-      "sale_price": "336000",
+      "sale_price": "168000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -3501,7 +3503,7 @@
         {
           "id": 2261366,
           "key": "_last_change_time",
-          "value": "1778184453"
+          "value": "1795408190"
         },
         {
           "id": 2475822,
@@ -3888,15 +3890,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:48:00",
       "date_created_gmt": "2022-08-25T22:48:00",
-      "date_modified": "2026-08-04T16:57:06",
-      "date_modified_gmt": "2026-08-04T16:57:06",
+      "date_modified": "2026-11-23T04:29:50",
+      "date_modified_gmt": "2026-11-23T04:29:50",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/onley/?attribute_pa_selecciona-el-color=cognac&attribute_pa_selecciona-una-talla=41",
       "sku": "7401832041",
       "global_unique_id": "",
-      "price": "336000",
+      "price": "168000",
       "regular_price": "560000",
-      "sale_price": "336000",
+      "sale_price": "168000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -4394,7 +4396,7 @@
         {
           "id": 2261365,
           "key": "_last_change_time",
-          "value": "1778184452"
+          "value": "1795408190"
         },
         {
           "id": 2475751,
@@ -4781,15 +4783,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:48:00",
       "date_created_gmt": "2022-08-25T22:48:00",
-      "date_modified": "2026-08-04T16:57:06",
-      "date_modified_gmt": "2026-08-04T16:57:06",
+      "date_modified": "2026-11-23T04:29:50",
+      "date_modified_gmt": "2026-11-23T04:29:50",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/onley/?attribute_pa_selecciona-el-color=cognac&attribute_pa_selecciona-una-talla=40",
       "sku": "7401832040",
       "global_unique_id": "",
-      "price": "336000",
+      "price": "168000",
       "regular_price": "560000",
-      "sale_price": "336000",
+      "sale_price": "168000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -5287,7 +5289,7 @@
         {
           "id": 2261364,
           "key": "_last_change_time",
-          "value": "1778184452"
+          "value": "1795408190"
         },
         {
           "id": 2475680,
@@ -5674,15 +5676,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:47:50",
       "date_created_gmt": "2022-08-25T22:47:50",
-      "date_modified": "2026-08-04T16:57:07",
-      "date_modified_gmt": "2026-08-04T16:57:07",
+      "date_modified": "2026-11-23T04:29:50",
+      "date_modified_gmt": "2026-11-23T04:29:50",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/onley/?attribute_pa_selecciona-el-color=cognac&attribute_pa_selecciona-una-talla=39",
       "sku": "7401832039",
       "global_unique_id": "",
-      "price": "336000",
+      "price": "168000",
       "regular_price": "560000",
-      "sale_price": "336000",
+      "sale_price": "168000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -6180,7 +6182,7 @@
         {
           "id": 2261363,
           "key": "_last_change_time",
-          "value": "1778184452"
+          "value": "1795408190"
         },
         {
           "id": 2476248,
@@ -6567,15 +6569,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:47:50",
       "date_created_gmt": "2022-08-25T22:47:50",
-      "date_modified": "2026-08-04T16:57:07",
-      "date_modified_gmt": "2026-08-04T16:57:07",
+      "date_modified": "2026-11-23T04:29:50",
+      "date_modified_gmt": "2026-11-23T04:29:50",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/onley/?attribute_pa_selecciona-el-color=cognac&attribute_pa_selecciona-una-talla=38",
       "sku": "7401832038",
       "global_unique_id": "",
-      "price": "336000",
+      "price": "168000",
       "regular_price": "560000",
-      "sale_price": "336000",
+      "sale_price": "168000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -7073,7 +7075,7 @@
         {
           "id": 2261359,
           "key": "_last_change_time",
-          "value": "1778184451"
+          "value": "1795408190"
         },
         {
           "id": 2476177,
@@ -7460,15 +7462,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:47:50",
       "date_created_gmt": "2022-08-25T22:47:50",
-      "date_modified": "2026-08-04T16:57:07",
-      "date_modified_gmt": "2026-08-04T16:57:07",
+      "date_modified": "2026-11-23T04:29:50",
+      "date_modified_gmt": "2026-11-23T04:29:50",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/onley/?attribute_pa_selecciona-el-color=cognac&attribute_pa_selecciona-una-talla=37",
       "sku": "7401832037",
       "global_unique_id": "",
-      "price": "336000",
+      "price": "168000",
       "regular_price": "560000",
-      "sale_price": "336000",
+      "sale_price": "168000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -7966,7 +7968,7 @@
         {
           "id": 2261357,
           "key": "_last_change_time",
-          "value": "1778184451"
+          "value": "1795408190"
         },
         {
           "id": 2476106,

@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>245,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>245,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -221,6 +221,8 @@
         "name": "winston-and-harry-cinturon-reata-uniclor-azul-2148-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 10,
       "stock_status": "instock",
       "price": "245000",
       "regular_price": "245000",
@@ -260,6 +262,8 @@
         "name": "winston-and-harry-cinturon-reata-uniclor-azul-2148-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 19,
       "stock_status": "instock",
       "price": "245000",
       "regular_price": "245000",
@@ -299,6 +303,8 @@
         "name": "winston-and-harry-cinturon-reata-uniclor-azul-2148-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 20,
       "stock_status": "instock",
       "price": "245000",
       "regular_price": "245000",
@@ -338,6 +344,8 @@
         "name": "winston-and-harry-cinturon-reata-uniclor-azul-2148-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 17,
       "stock_status": "instock",
       "price": "245000",
       "regular_price": "245000",
@@ -377,6 +385,8 @@
         "name": "winston-and-harry-cinturon-reata-uniclor-azul-2148-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 9,
       "stock_status": "instock",
       "price": "245000",
       "regular_price": "245000",
@@ -416,6 +426,8 @@
         "name": "winston-and-harry-cinturon-reata-unicolor-cafe-2148-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 9,
       "stock_status": "instock",
       "price": "245000",
       "regular_price": "245000",
@@ -455,6 +467,8 @@
         "name": "winston-and-harry-cinturon-reata-unicolor-cafe-2148-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 18,
       "stock_status": "instock",
       "price": "245000",
       "regular_price": "245000",
@@ -494,6 +508,8 @@
         "name": "winston-and-harry-cinturon-reata-unicolor-cafe-2148-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 16,
       "stock_status": "instock",
       "price": "245000",
       "regular_price": "245000",
@@ -533,6 +549,8 @@
         "name": "winston-and-harry-cinturon-reata-unicolor-cafe-2148-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 15,
       "stock_status": "instock",
       "price": "245000",
       "regular_price": "245000",
@@ -572,6 +590,8 @@
         "name": "winston-and-harry-cinturon-reata-unicolor-cafe-2148-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 10,
       "stock_status": "instock",
       "price": "245000",
       "regular_price": "245000",
@@ -611,6 +631,8 @@
         "name": "wisnton-and-harry-cinturon-reata-unicolor-negro-2148-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 10,
       "stock_status": "instock",
       "price": "245000",
       "regular_price": "245000",
@@ -650,6 +672,8 @@
         "name": "wisnton-and-harry-cinturon-reata-unicolor-negro-2148-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 20,
       "stock_status": "instock",
       "price": "245000",
       "regular_price": "245000",
@@ -689,6 +713,8 @@
         "name": "wisnton-and-harry-cinturon-reata-unicolor-negro-2148-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 20,
       "stock_status": "instock",
       "price": "245000",
       "regular_price": "245000",
@@ -728,6 +754,8 @@
         "name": "wisnton-and-harry-cinturon-reata-unicolor-negro-2148-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 20,
       "stock_status": "instock",
       "price": "245000",
       "regular_price": "245000",
@@ -767,6 +795,8 @@
         "name": "wisnton-and-harry-cinturon-reata-unicolor-negro-2148-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 10,
       "stock_status": "instock",
       "price": "245000",
       "regular_price": "245000",
@@ -7372,8 +7402,8 @@
       "type": "variation",
       "date_created": "2026-09-08T12:18:21",
       "date_created_gmt": "2026-09-08T12:18:21",
-      "date_modified": "2026-09-08T17:16:40",
-      "date_modified_gmt": "2026-09-08T17:16:40",
+      "date_modified": "2026-11-04T17:55:38",
+      "date_modified_gmt": "2026-11-04T17:55:38",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cinturon-reata-unicolor/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=36&attribute_pa_hebilla=acero-inoxidable&attribute_pa_material=100-cuero",
       "sku": "27214804036",
@@ -7396,7 +7426,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 17,
+      "stock_quantity": 15,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -7455,7 +7485,7 @@
         {
           "id": 2552593,
           "key": "_last_change_time",
-          "value": "1788887800"
+          "value": "1793814938"
         },
         {
           "id": 2552594,
@@ -8462,8 +8492,8 @@
       "type": "variation",
       "date_created": "2026-09-08T12:18:21",
       "date_created_gmt": "2026-09-08T12:18:21",
-      "date_modified": "2026-09-08T17:16:40",
-      "date_modified_gmt": "2026-09-08T17:16:40",
+      "date_modified": "2026-11-23T04:40:20",
+      "date_modified_gmt": "2026-11-23T04:40:20",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cinturon-reata-unicolor/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=34&attribute_pa_hebilla=acero-inoxidable&attribute_pa_material=100-cuero",
       "sku": "27214804034",
@@ -8486,7 +8516,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 18,
+      "stock_quantity": 16,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -8545,7 +8575,7 @@
         {
           "id": 2552581,
           "key": "_last_change_time",
-          "value": "1788887800"
+          "value": "1795408820"
         },
         {
           "id": 2552582,
@@ -9552,8 +9582,8 @@
       "type": "variation",
       "date_created": "2026-09-08T12:18:21",
       "date_created_gmt": "2026-09-08T12:18:21",
-      "date_modified": "2026-09-08T17:16:40",
-      "date_modified_gmt": "2026-09-08T17:16:40",
+      "date_modified": "2026-11-23T04:40:20",
+      "date_modified_gmt": "2026-11-23T04:40:20",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cinturon-reata-unicolor/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=32&attribute_pa_hebilla=acero-inoxidable&attribute_pa_material=100-cuero",
       "sku": "27214804032",
@@ -9576,7 +9606,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 20,
+      "stock_quantity": 18,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -9635,7 +9665,7 @@
         {
           "id": 2552569,
           "key": "_last_change_time",
-          "value": "1788887800"
+          "value": "1795408820"
         },
         {
           "id": 2552570,
@@ -12822,8 +12852,8 @@
       "type": "variation",
       "date_created": "2026-09-08T12:18:20",
       "date_created_gmt": "2026-09-08T12:18:20",
-      "date_modified": "2026-09-08T17:16:39",
-      "date_modified_gmt": "2026-09-08T17:16:39",
+      "date_modified": "2026-11-04T17:55:37",
+      "date_modified_gmt": "2026-11-04T17:55:37",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cinturon-reata-unicolor/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=36&attribute_pa_hebilla=acero-inoxidable&attribute_pa_material=100-cuero",
       "sku": "27214801036",
@@ -12846,7 +12876,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 18,
+      "stock_quantity": 17,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -12905,7 +12935,7 @@
         {
           "id": 2552531,
           "key": "_last_change_time",
-          "value": "1788887799"
+          "value": "1793814937"
         },
         {
           "id": 2552532,
@@ -17182,9 +17212,13 @@
     "86730": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-cinturon-reata-uniclor-azul-2148-03.jpg",
     "86732": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-cinturon-reata-uniclor-azul-2148-05.jpg",
     "86733": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-cinturon-reata-uniclor-azul-2148-06.jpg",
+    "86735": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-cinturon-reata-unicolor-cafe-2148-02.jpg",
+    "86736": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-cinturon-reata-unicolor-cafe-2148-03.jpg",
     "86737": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-cinturon-reata-unicolor-cafe-2148-04.jpg",
     "86738": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-cinturon-reata-unicolor-cafe-2148-05.jpg",
     "86739": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-cinturon-reata-unicolor-cafe-2148-06.jpg",
+    "86764": "https://tienda.winstonandharrystore.com/wp-content/uploads/wisnton-and-harry-cinturon-reata-unicolor-negro-2148-02.jpg",
+    "86765": "https://tienda.winstonandharrystore.com/wp-content/uploads/wisnton-and-harry-cinturon-reata-unicolor-negro-2148-03.jpg",
     "86766": "https://tienda.winstonandharrystore.com/wp-content/uploads/wisnton-and-harry-cinturon-reata-unicolor-negro-2148-04.jpg",
     "86767": "https://tienda.winstonandharrystore.com/wp-content/uploads/wisnton-and-harry-cinturon-reata-unicolor-negro-2148-05.jpg",
     "86768": "https://tienda.winstonandharrystore.com/wp-content/uploads/wisnton-and-harry-cinturon-reata-unicolor-negro-2148-06.jpg"
@@ -17234,6 +17268,16 @@
         "name": "winston-and-harry-cinturon-reata-unicolor-cafe-2148-01"
       },
       {
+        "id": 86735,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-cinturon-reata-unicolor-cafe-2148-02.jpg",
+        "alt": "Cinturon Reata Unicolor"
+      },
+      {
+        "id": 86736,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-cinturon-reata-unicolor-cafe-2148-03.jpg",
+        "alt": "Cinturon Reata Unicolor"
+      },
+      {
         "id": 86737,
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-cinturon-reata-unicolor-cafe-2148-04.jpg",
         "alt": "Cinturon Reata Unicolor"
@@ -17255,6 +17299,16 @@
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/wisnton-and-harry-cinturon-reata-unicolor-negro-2148-01.jpg",
         "alt": "wisnton-and-harry-cinturon-reata-unicolor-negro-2148-01",
         "name": "wisnton-and-harry-cinturon-reata-unicolor-negro-2148-01"
+      },
+      {
+        "id": 86764,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/wisnton-and-harry-cinturon-reata-unicolor-negro-2148-02.jpg",
+        "alt": "Cinturon Reata Unicolor"
+      },
+      {
+        "id": 86765,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/wisnton-and-harry-cinturon-reata-unicolor-negro-2148-03.jpg",
+        "alt": "Cinturon Reata Unicolor"
       },
       {
         "id": 86766,

@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>473,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;473,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>378,400</span></ins><span class=\"screen-reader-text\">Current price is: &#036;378,400.</span>",
+  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>473,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;473,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>378,400</span></ins><span class=\"screen-reader-text\">Current price is: &#036;378,400.</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -171,6 +171,8 @@
         "name": "Technocase-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 9,
       "stock_status": "instock",
       "price": "378400",
       "regular_price": "473000",
@@ -195,6 +197,8 @@
         "name": "Technocase-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 10,
       "stock_status": "instock",
       "price": "378400",
       "regular_price": "473000",
@@ -219,6 +223,8 @@
         "name": "Technocase-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "378400",
       "regular_price": "473000",
@@ -980,8 +986,8 @@
       "type": "variation",
       "date_created": "2023-06-08T16:36:21",
       "date_created_gmt": "2023-06-08T16:36:21",
-      "date_modified": "2026-06-16T17:41:54",
-      "date_modified_gmt": "2026-06-16T17:41:54",
+      "date_modified": "2026-11-04T17:53:44",
+      "date_modified_gmt": "2026-11-04T17:53:44",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/techcase/?attribute_pa_selecciona-el-color=negro",
       "sku": "15150302000",
@@ -1004,7 +1010,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 11,
+      "stock_quantity": 10,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -1626,7 +1632,7 @@
         {
           "id": 2229488,
           "key": "_last_change_time",
-          "value": "1781631340"
+          "value": "1793814824"
         },
         {
           "id": 2313194,
@@ -1668,8 +1674,8 @@
       "type": "variation",
       "date_created": "2023-06-08T16:36:21",
       "date_created_gmt": "2023-06-08T16:36:21",
-      "date_modified": "2026-08-13T00:05:18",
-      "date_modified_gmt": "2026-08-13T00:05:18",
+      "date_modified": "2026-11-04T17:53:43",
+      "date_modified_gmt": "2026-11-04T17:53:43",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/techcase/?attribute_pa_selecciona-el-color=miel",
       "sku": "15150326000",
@@ -1692,7 +1698,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 11,
+      "stock_quantity": 9,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -2313,7 +2319,7 @@
         {
           "id": 2229487,
           "key": "_last_change_time",
-          "value": "1786579518"
+          "value": "1793814823"
         },
         {
           "id": 2313193,

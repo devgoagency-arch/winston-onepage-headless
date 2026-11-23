@@ -11,9 +11,9 @@
   "description": "<p>Test</p>",
   "on_sale": false,
   "prices": {
-    "price": "0",
-    "regular_price": "0",
-    "sale_price": "0",
+    "price": "1000",
+    "regular_price": "1000",
+    "sale_price": "1000",
     "price_range": null,
     "currency_code": "COP",
     "currency_symbol": "$",
@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>1,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>1,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [],
@@ -92,7 +92,5 @@
       }
     ]
   },
-  "stock_status": "instock",
-  "price": "0",
-  "regular_price": "0"
+  "stock_status": "instock"
 }

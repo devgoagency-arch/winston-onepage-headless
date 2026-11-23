@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>825,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>825,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -218,6 +218,8 @@
         "name": "Bristol-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -247,6 +249,8 @@
         "name": "Bristol-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -276,6 +280,8 @@
         "name": "Bristol-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -305,6 +311,8 @@
         "name": "Bristol-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -334,6 +342,8 @@
         "name": "Bristol-Cafe-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -363,6 +373,8 @@
         "name": "Bristol-Cafe-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -392,6 +404,8 @@
         "name": "Bristol-Cafe-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -421,6 +435,8 @@
         "name": "Bristol-Cafe-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -450,6 +466,8 @@
         "name": "Bristol-Cafe-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -479,6 +497,8 @@
         "name": "Bristol-Cafe-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -508,6 +528,8 @@
         "name": "Bristol-Cafe-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "825000",
       "regular_price": "825000",
@@ -3351,8 +3373,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:45:09",
       "date_created_gmt": "2022-08-25T22:45:09",
-      "date_modified": "2026-05-07T22:59:06",
-      "date_modified_gmt": "2026-05-07T22:59:06",
+      "date_modified": "2026-11-23T04:36:29",
+      "date_modified_gmt": "2026-11-23T04:36:29",
       "description": "<p>Estas botas Chukkas se han vuelto muy populares desde los años 40s en el Reino Unido. Nuestro modelo Bristol nos permite hacerle un homenaje a esta ciudad con un estilo que sin importar con que las combines, estas botas le daran un toque de elegancia a tu atuendo.</p>\n",
       "permalink": "https://tienda.winstonandharrystore.com/product/bristol/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=41",
       "sku": "7015804041",
@@ -3375,7 +3397,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 3,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -4002,7 +4024,7 @@
         {
           "id": 2254689,
           "key": "_last_change_time",
-          "value": "1778177558"
+          "value": "1795408589"
         },
         {
           "id": 2314274,
@@ -6123,8 +6145,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:45:09",
       "date_created_gmt": "2022-08-25T22:45:09",
-      "date_modified": "2026-05-07T22:59:06",
-      "date_modified_gmt": "2026-05-07T22:59:06",
+      "date_modified": "2026-10-05T21:50:15",
+      "date_modified_gmt": "2026-10-05T21:50:15",
       "description": "<p>Estas botas Chukkas se han vuelto muy populares desde los años 40s en el Reino Unido. Nuestro modelo Bristol nos permite hacerle un homenaje a esta ciudad con un estilo que sin importar con que las combines, estas botas le daran un toque de elegancia a tu atuendo.</p>\n",
       "permalink": "https://tienda.winstonandharrystore.com/product/bristol/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=37",
       "sku": "7015804037",
@@ -6147,7 +6169,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 3,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -6774,7 +6796,7 @@
         {
           "id": 2259636,
           "key": "_last_change_time",
-          "value": "1778177557"
+          "value": "1791237015"
         },
         {
           "id": 2314285,
@@ -19262,6 +19284,12 @@
     }
   ],
   "wpc_resolved_media": {
+    "11570": "https://tienda.winstonandharrystore.com/wp-content/uploads/2020/12/047-zapato-cenital.jpg",
+    "11572": "https://tienda.winstonandharrystore.com/wp-content/uploads/2020/12/047-zapato-lateral.jpg",
+    "16365": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/02/057-zapato-cenital.jpg",
+    "16366": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/02/057-zapato-lateral.jpg",
+    "16367": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/02/062-zapato-cenital.jpg",
+    "16368": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/02/062-zapato-lateral.jpg",
     "60738": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/03/Bristol-Cafe-Winstonandharry-2-e1752706943374.jpg",
     "60739": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/03/Bristol-Cafe-Winstonandharry-3-e1752706953396.jpg",
     "60740": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/03/Bristol-Cafe-Winstonandharry-4-e1752706967575.jpg",
@@ -19285,6 +19313,16 @@
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/03/Bristol-Negro-Winstonandharry-1-e1752707066862.jpg",
         "alt": "Bristol-Negro-Winstonandharry-1",
         "name": "Bristol-Negro-Winstonandharry-1"
+      },
+      {
+        "id": 11572,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2020/12/047-zapato-lateral.jpg",
+        "alt": "Bristol"
+      },
+      {
+        "id": 11570,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2020/12/047-zapato-cenital.jpg",
+        "alt": "Bristol"
       },
       {
         "id": 60747,
@@ -19330,6 +19368,16 @@
         "name": "Bristol-Cafe-Winstonandharry-1"
       },
       {
+        "id": 16367,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/02/062-zapato-cenital.jpg",
+        "alt": "Bristol"
+      },
+      {
+        "id": 16368,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/02/062-zapato-lateral.jpg",
+        "alt": "Bristol"
+      },
+      {
         "id": 60739,
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/03/Bristol-Cafe-Winstonandharry-3-e1752706953396.jpg",
         "alt": "Bristol"
@@ -19365,6 +19413,17 @@
         "alt": "Bristol"
       }
     ],
-    "azul": []
+    "azul": [
+      {
+        "id": 16365,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/02/057-zapato-cenital.jpg",
+        "alt": "Bristol"
+      },
+      {
+        "id": 16366,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/02/057-zapato-lateral.jpg",
+        "alt": "Bristol"
+      }
+    ]
   }
 }

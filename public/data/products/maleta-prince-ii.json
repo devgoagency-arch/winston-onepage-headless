@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>950,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>950,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -104,6 +104,8 @@
         "name": "winston and harry maleta prince ii azul 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 8,
       "stock_status": "instock",
       "price": "950000",
       "regular_price": "950000",
@@ -128,6 +130,8 @@
         "name": "winston and harry maleta prince ii verde 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 10,
       "stock_status": "instock",
       "price": "950000",
       "regular_price": "950000",
@@ -193,8 +197,8 @@
       "type": "variation",
       "date_created": "2026-09-24T16:26:54",
       "date_created_gmt": "2026-09-24T16:26:54",
-      "date_modified": "2026-09-24T17:11:08",
-      "date_modified_gmt": "2026-09-24T17:11:08",
+      "date_modified": "2026-11-23T04:40:21",
+      "date_modified_gmt": "2026-11-23T04:40:21",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/maleta-prince-ii/?attribute_pa_selecciona-el-color=verde",
       "sku": "15159505000",
@@ -217,7 +221,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 2,
+      "stock_quantity": 10,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -308,7 +312,7 @@
         {
           "id": 2596844,
           "key": "_last_change_time",
-          "value": ""
+          "value": "1795408821"
         },
         {
           "id": 2596846,
@@ -1041,16 +1045,6 @@
           "value": ""
         },
         {
-          "id": 2596992,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2596993,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2596994,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -1275,8 +1269,8 @@
       "type": "variation",
       "date_created": "2026-09-24T16:26:54",
       "date_created_gmt": "2026-09-24T16:26:54",
-      "date_modified": "2026-09-24T17:11:08",
-      "date_modified_gmt": "2026-09-24T17:11:08",
+      "date_modified": "2026-11-04T17:55:38",
+      "date_modified_gmt": "2026-11-04T17:55:38",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/maleta-prince-ii/?attribute_pa_selecciona-el-color=azul",
       "sku": "15159501000",
@@ -1299,7 +1293,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 2,
+      "stock_quantity": 8,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -1390,7 +1384,7 @@
         {
           "id": 2596653,
           "key": "_last_change_time",
-          "value": ""
+          "value": "1793814938"
         },
         {
           "id": 2596655,
@@ -2123,16 +2117,6 @@
           "value": ""
         },
         {
-          "id": 2596801,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2596802,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2596803,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -2363,6 +2347,8 @@
     "87212": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-maleta-prince-ii-azul-10.jpg",
     "87213": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-maleta-prince-ii-azul-11.jpg",
     "87214": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-maleta-prince-ii-azul-12.jpg",
+    "87216": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-maleta-prince-ii-verde-02.jpg",
+    "87217": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-maleta-prince-ii-verde-03.jpg",
     "87218": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-maleta-prince-ii-verde-04.jpg",
     "87219": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-maleta-prince-ii-verde-05.jpg",
     "87220": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-maleta-prince-ii-verde-06.jpg",
@@ -2444,6 +2430,16 @@
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-maleta-prince-ii-verde-01.jpg",
         "alt": "winston and harry maleta prince ii verde 01",
         "name": "winston and harry maleta prince ii verde 01"
+      },
+      {
+        "id": 87216,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-maleta-prince-ii-verde-02.jpg",
+        "alt": "Maleta Prince II"
+      },
+      {
+        "id": 87217,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-maleta-prince-ii-verde-03.jpg",
+        "alt": "Maleta Prince II"
       },
       {
         "id": 87218,

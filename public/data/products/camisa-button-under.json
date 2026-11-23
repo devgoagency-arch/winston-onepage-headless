@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>310,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>310,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -180,6 +180,8 @@
         "name": "2501-Btt Under-Blanco-Winstonandharry-3",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "310000",
       "regular_price": "310000",
@@ -209,6 +211,8 @@
         "name": "2501-Btt Under-Blanco-Winstonandharry-3",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "310000",
       "regular_price": "310000",
@@ -238,6 +242,8 @@
         "name": "2501-Btt Under-Blanco-Winstonandharry-3",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "310000",
       "regular_price": "310000",
@@ -267,6 +273,8 @@
         "name": "2501-Btt Under-Blanco-Winstonandharry-3",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "310000",
       "regular_price": "310000",
@@ -296,6 +304,8 @@
         "name": "2501-Btt Under-Blanco-Winstonandharry-3",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "310000",
       "regular_price": "310000",
@@ -367,11 +377,11 @@
       "type": "variation",
       "date_created": "2025-10-31T05:03:46",
       "date_created_gmt": "2025-10-31T05:03:46",
-      "date_modified": "2026-05-07T22:59:51",
-      "date_modified_gmt": "2026-05-07T22:59:51",
+      "date_modified": "2026-10-05T21:49:41",
+      "date_modified_gmt": "2026-10-05T21:49:41",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/camisa-button-under/?attribute_pa_selecciona-el-color=blanco&attribute_pa_selecciona-una-talla=xxl",
-      "sku": "5250115040",
+      "sku": "5250115044",
       "global_unique_id": "",
       "price": "310000",
       "regular_price": "310000",
@@ -391,7 +401,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 2,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -1185,7 +1195,7 @@
         {
           "id": 2259181,
           "key": "_last_change_time",
-          "value": "1778177697"
+          "value": "1791236981"
         },
         {
           "id": 2310853,
@@ -1227,11 +1237,11 @@
       "type": "variation",
       "date_created": "2025-10-31T05:03:46",
       "date_created_gmt": "2025-10-31T05:03:46",
-      "date_modified": "2026-06-16T17:44:43",
-      "date_modified_gmt": "2026-06-16T17:44:43",
+      "date_modified": "2026-10-05T21:49:41",
+      "date_modified_gmt": "2026-10-05T21:49:41",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/camisa-button-under/?attribute_pa_selecciona-el-color=blanco&attribute_pa_selecciona-una-talla=xl",
-      "sku": "5250115038",
+      "sku": "5250115042",
       "global_unique_id": "",
       "price": "310000",
       "regular_price": "310000",
@@ -2045,7 +2055,7 @@
         {
           "id": 2259180,
           "key": "_last_change_time",
-          "value": "1781631516"
+          "value": "1791236981"
         },
         {
           "id": 2310852,
@@ -2087,11 +2097,11 @@
       "type": "variation",
       "date_created": "2025-10-31T05:03:46",
       "date_created_gmt": "2025-10-31T05:03:46",
-      "date_modified": "2026-07-16T22:44:57",
-      "date_modified_gmt": "2026-07-16T22:44:57",
+      "date_modified": "2026-09-08T22:19:42",
+      "date_modified_gmt": "2026-09-08T22:19:42",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/camisa-button-under/?attribute_pa_selecciona-el-color=blanco&attribute_pa_selecciona-una-talla=xs",
-      "sku": "5250115030",
+      "sku": "5250115034",
       "global_unique_id": "",
       "price": "310000",
       "regular_price": "310000",
@@ -2947,11 +2957,11 @@
       "type": "variation",
       "date_created": "2025-10-31T05:03:46",
       "date_created_gmt": "2025-10-31T05:03:46",
-      "date_modified": "2026-05-07T22:59:50",
-      "date_modified_gmt": "2026-05-07T22:59:50",
+      "date_modified": "2026-11-23T04:40:01",
+      "date_modified_gmt": "2026-11-23T04:40:01",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/camisa-button-under/?attribute_pa_selecciona-el-color=blanco&attribute_pa_selecciona-una-talla=l",
-      "sku": "5250115036",
+      "sku": "5250115040",
       "global_unique_id": "",
       "price": "310000",
       "regular_price": "310000",
@@ -2971,7 +2981,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 2,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -3765,7 +3775,7 @@
         {
           "id": 2219146,
           "key": "_last_change_time",
-          "value": "1778177696"
+          "value": "1795408801"
         },
         {
           "id": 2310856,
@@ -3807,11 +3817,11 @@
       "type": "variation",
       "date_created": "2025-10-31T05:03:46",
       "date_created_gmt": "2025-10-31T05:03:46",
-      "date_modified": "2026-05-07T22:59:44",
-      "date_modified_gmt": "2026-05-07T22:59:44",
+      "date_modified": "2026-10-31T15:36:38",
+      "date_modified_gmt": "2026-10-31T15:36:38",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/camisa-button-under/?attribute_pa_selecciona-el-color=blanco&attribute_pa_selecciona-una-talla=m",
-      "sku": "5250115034",
+      "sku": "5250115038",
       "global_unique_id": "",
       "price": "310000",
       "regular_price": "310000",
@@ -3831,7 +3841,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 2,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -4625,7 +4635,7 @@
         {
           "id": 2259179,
           "key": "_last_change_time",
-          "value": "1778177653"
+          "value": "1788905746"
         },
         {
           "id": 2310855,
@@ -4667,11 +4677,11 @@
       "type": "variation",
       "date_created": "2025-10-31T05:03:46",
       "date_created_gmt": "2025-10-31T05:03:46",
-      "date_modified": "2026-06-16T17:44:43",
-      "date_modified_gmt": "2026-06-16T17:44:43",
+      "date_modified": "2026-09-08T22:19:42",
+      "date_modified_gmt": "2026-09-08T22:19:42",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/camisa-button-under/?attribute_pa_selecciona-el-color=blanco&attribute_pa_selecciona-una-talla=s",
-      "sku": "5250115032",
+      "sku": "5250115036",
       "global_unique_id": "",
       "price": "310000",
       "regular_price": "310000",
@@ -5485,7 +5495,7 @@
         {
           "id": 2250494,
           "key": "_last_change_time",
-          "value": "1781631516"
+          "value": "1788905982"
         },
         {
           "id": 2310854,

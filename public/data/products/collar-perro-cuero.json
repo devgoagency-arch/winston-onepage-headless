@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>90,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;90,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>54,000</span></ins><span class=\"screen-reader-text\">Current price is: &#036;54,000.</span>",
+  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>90,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;90,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>54,000</span></ins><span class=\"screen-reader-text\">Current price is: &#036;54,000.</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -190,6 +190,8 @@
         "name": "collares-perro-02",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "54000",
       "regular_price": "90000",
@@ -219,6 +221,8 @@
         "name": "collares-perro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "54000",
       "regular_price": "90000",
@@ -248,6 +252,8 @@
         "name": "collares-perro-03",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "54000",
       "regular_price": "90000",
@@ -277,6 +283,8 @@
         "name": "collares-perro-02",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "54000",
       "regular_price": "90000",
@@ -306,6 +314,8 @@
         "name": "collares-perro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "54000",
       "regular_price": "90000",
@@ -335,6 +345,8 @@
         "name": "collares-perro-02",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "54000",
       "regular_price": "90000",
@@ -364,6 +376,8 @@
         "name": "collares-perro-03",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "54000",
       "regular_price": "90000",
@@ -393,6 +407,8 @@
         "name": "collares-perro-02",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "54000",
       "regular_price": "90000",
@@ -422,6 +438,8 @@
         "name": "collares-perro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "54000",
       "regular_price": "90000",
@@ -451,6 +469,8 @@
         "name": "collar-perro-lado-08",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "54000",
       "regular_price": "90000",
@@ -480,6 +500,8 @@
         "name": "collares-perro-02",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "54000",
       "regular_price": "90000",
@@ -509,6 +531,8 @@
         "name": "collares-perro-03",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "54000",
       "regular_price": "90000",
@@ -2235,8 +2259,8 @@
       "type": "variation",
       "date_created": "2022-08-29T17:36:59",
       "date_created_gmt": "2022-08-29T17:36:59",
-      "date_modified": "2026-07-16T22:39:59",
-      "date_modified_gmt": "2026-07-16T22:39:59",
+      "date_modified": "2026-10-05T21:52:30",
+      "date_modified_gmt": "2026-10-05T21:52:30",
       "description": "<p>Collar para tu mejor amigo en 100% cuero, acolchado y reforzado.</p>\n",
       "permalink": "https://tienda.winstonandharrystore.com/product/collar-perro-cuero/?attribute_pa_selecciona-el-color=verde&attribute_pa_selecciona-una-talla=s",
       "sku": "82820205032",
@@ -2259,7 +2283,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 2,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -2738,7 +2762,7 @@
         {
           "id": 2262353,
           "key": "_last_change_time",
-          "value": "1784241599"
+          "value": "1791237150"
         },
         {
           "id": 2313654,
@@ -5065,8 +5089,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:41:35",
       "date_created_gmt": "2022-08-25T22:41:35",
-      "date_modified": "2026-07-27T17:43:06",
-      "date_modified_gmt": "2026-07-27T17:43:06",
+      "date_modified": "2026-10-14T06:15:18",
+      "date_modified_gmt": "2026-10-14T06:15:18",
       "description": "<p>Collar para tu mejor amigo en 100% cuero, acolchado y reforzado.</p>\n",
       "permalink": "https://tienda.winstonandharrystore.com/product/collar-perro-cuero/?attribute_pa_selecciona-el-color=vinotinto&attribute_pa_selecciona-una-talla=s",
       "sku": "82820219032",
@@ -5089,7 +5113,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 3,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -5568,7 +5592,7 @@
         {
           "id": 2262373,
           "key": "_last_change_time",
-          "value": "1785174186"
+          "value": "1791958518"
         },
         {
           "id": 2314540,
@@ -7330,8 +7354,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:41:35",
       "date_created_gmt": "2022-08-25T22:41:35",
-      "date_modified": "2026-07-16T22:39:22",
-      "date_modified_gmt": "2026-07-16T22:39:22",
+      "date_modified": "2026-10-05T21:52:30",
+      "date_modified_gmt": "2026-10-05T21:52:30",
       "description": "<p>Collar para tu mejor amigo en 100% cuero, acolchado y reforzado.</p>\n",
       "permalink": "https://tienda.winstonandharrystore.com/product/collar-perro-cuero/?attribute_pa_selecciona-el-color=rosa&attribute_pa_selecciona-una-talla=m",
       "sku": "82820216034",
@@ -7354,7 +7378,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 2,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -7833,7 +7857,7 @@
         {
           "id": 2257150,
           "key": "_last_change_time",
-          "value": "1784241562"
+          "value": "1791237150"
         },
         {
           "id": 2314536,

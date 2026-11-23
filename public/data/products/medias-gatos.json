@@ -124,8 +124,8 @@
         "name": "winston-and-harry-medias-gatos-azul-01",
         "alt": ""
       },
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 78,
       "stock_status": "instock",
       "price": "27500",
       "regular_price": "27500",
@@ -150,8 +150,8 @@
         "name": "winston-and-harry-medias-gatos-gris-01",
         "alt": ""
       },
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 72,
       "stock_status": "instock",
       "price": "27500",
       "regular_price": "27500",
@@ -176,8 +176,8 @@
         "name": "winston-and-harry-medias-gatos-negros-01",
         "alt": ""
       },
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 66,
       "stock_status": "instock",
       "price": "27500",
       "regular_price": "27500",
@@ -249,8 +249,8 @@
       "type": "variation",
       "date_created": "2026-11-19T21:07:34",
       "date_created_gmt": "2026-11-19T21:07:34",
-      "date_modified": "2026-11-22T00:09:03",
-      "date_modified_gmt": "2026-11-22T00:09:03",
+      "date_modified": "2026-11-23T04:40:50",
+      "date_modified_gmt": "2026-11-23T04:40:50",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/medias-gatos/?attribute_pa_selecciona-el-color=negro",
       "sku": "11186102000",
@@ -272,8 +272,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 66,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -313,7 +313,7 @@
         {
           "id": 2629000,
           "key": "_last_change_time",
-          "value": "1795122488"
+          "value": "1795408850"
         },
         {
           "id": 2629001,
@@ -1096,16 +1096,6 @@
           "value": ""
         },
         {
-          "id": 2649973,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2649974,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2649975,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -1330,8 +1320,8 @@
       "type": "variation",
       "date_created": "2026-11-19T21:07:34",
       "date_created_gmt": "2026-11-19T21:07:34",
-      "date_modified": "2026-11-22T00:09:02",
-      "date_modified_gmt": "2026-11-22T00:09:02",
+      "date_modified": "2026-11-23T04:40:50",
+      "date_modified_gmt": "2026-11-23T04:40:50",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/medias-gatos/?attribute_pa_selecciona-el-color=gris",
       "sku": "11186103000",
@@ -1353,8 +1343,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 72,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -1394,7 +1384,7 @@
         {
           "id": 2628987,
           "key": "_last_change_time",
-          "value": "1795122488"
+          "value": "1795408850"
         },
         {
           "id": 2628988,
@@ -2177,16 +2167,6 @@
           "value": ""
         },
         {
-          "id": 2649783,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2649784,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2649785,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -2411,8 +2391,8 @@
       "type": "variation",
       "date_created": "2026-11-19T21:07:34",
       "date_created_gmt": "2026-11-19T21:07:34",
-      "date_modified": "2026-11-22T00:09:02",
-      "date_modified_gmt": "2026-11-22T00:09:02",
+      "date_modified": "2026-11-23T04:40:50",
+      "date_modified_gmt": "2026-11-23T04:40:50",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/medias-gatos/?attribute_pa_selecciona-el-color=azul",
       "sku": "11186101000",
@@ -2434,8 +2414,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 78,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -2475,7 +2455,7 @@
         {
           "id": 2628974,
           "key": "_last_change_time",
-          "value": "1795122488"
+          "value": "1795408850"
         },
         {
           "id": 2628975,
@@ -3255,16 +3235,6 @@
         {
           "id": 2649592,
           "key": "_oembed_time_3efc152008105e0533b1d0735c932ef8",
-          "value": ""
-        },
-        {
-          "id": 2649593,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2649594,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         },
         {

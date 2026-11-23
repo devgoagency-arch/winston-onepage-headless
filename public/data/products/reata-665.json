@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>99,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>99,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -196,6 +196,8 @@
         "name": "IMG_2360",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "99000",
       "regular_price": "99000",
@@ -225,6 +227,8 @@
         "name": "IMG_2360",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "99000",
       "regular_price": "99000",
@@ -254,6 +258,8 @@
         "name": "IMG_2360",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "99000",
       "regular_price": "99000",
@@ -283,6 +289,8 @@
         "name": "IMG_2360",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "99000",
       "regular_price": "99000",
@@ -348,8 +356,8 @@
       "type": "variation",
       "date_created": "2022-08-29T21:08:43",
       "date_created_gmt": "2022-08-29T21:08:43",
-      "date_modified": "2026-07-16T22:40:29",
-      "date_modified_gmt": "2026-07-16T22:40:29",
+      "date_modified": "2026-11-23T04:36:48",
+      "date_modified_gmt": "2026-11-23T04:36:48",
       "description": "<p>Nosotros sabemos que la regla número uno cuando se usa cuero, es siempre combinar los colores &#8211; “match your leathers”. Nuestros cinturones Trent están hechos en piel de becerro de manera artesanal, pintados a mano para llegar a ser el accesorio perfecto al usar con nuestros zapatos. Su diseño sencillo y hebilla clásica le da un toque de elegancia que sobresaltará en cualquier ocasión que te encuentres.</p>\n",
       "permalink": "https://tienda.winstonandharrystore.com/product/reata-665/?attribute_pa_selecciona-el-color=naranja&attribute_pa_selecciona-una-talla=xl",
       "sku": "28833202038",
@@ -841,7 +849,7 @@
         {
           "id": 2262228,
           "key": "_last_change_time",
-          "value": "1784241629"
+          "value": "1795408608"
         }
       ],
       "name": "Naranja, XL",

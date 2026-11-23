@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>560,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>560,000</span>",
   "average_rating": "5.00",
   "review_count": 1,
   "images": [
@@ -234,6 +234,8 @@
         "name": "Hope-tenis-blanco-winstonandharry",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "price": "560000",
       "regular_price": "560000",
@@ -263,6 +265,8 @@
         "name": "Hope-tenis-azul-winstonandharry",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "560000",
       "regular_price": "560000",
@@ -292,6 +296,8 @@
         "name": "Hope-Verde-Winstonandharry-32",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "560000",
       "regular_price": "560000",
@@ -321,6 +327,8 @@
         "name": "zap-003-posi-2",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "560000",
       "regular_price": "560000",
@@ -350,6 +358,8 @@
         "name": "zap-004-posi-2",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "560000",
       "regular_price": "560000",
@@ -379,6 +389,8 @@
         "name": "Hope-tenis-blanco-winstonandharry",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "560000",
       "regular_price": "560000",
@@ -408,6 +420,8 @@
         "name": "Hope-tenis-azul-winstonandharry",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "560000",
       "regular_price": "560000",
@@ -437,6 +451,8 @@
         "name": "Hope-Verde-Winstonandharry-32",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "560000",
       "regular_price": "560000",
@@ -466,6 +482,8 @@
         "name": "Hope-tenis-blanco-winstonandharry",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "560000",
       "regular_price": "560000",
@@ -495,6 +513,8 @@
         "name": "Hope-tenis-azul-winstonandharry",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "560000",
       "regular_price": "560000",
@@ -524,6 +544,8 @@
         "name": "Hope-Verde-Winstonandharry-32",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "560000",
       "regular_price": "560000",
@@ -553,6 +575,8 @@
         "name": "zap-004-posi-2",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "560000",
       "regular_price": "560000",
@@ -582,6 +606,8 @@
         "name": "Hope-tenis-blanco-winstonandharry",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "560000",
       "regular_price": "560000",
@@ -611,6 +637,8 @@
         "name": "Hope-Verde-Winstonandharry-32",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "560000",
       "regular_price": "560000",
@@ -640,6 +668,8 @@
         "name": "Hope-tenis-blanco-winstonandharry",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "560000",
       "regular_price": "560000",
@@ -669,6 +699,8 @@
         "name": "Hope-tenis-azul-winstonandharry",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "560000",
       "regular_price": "560000",
@@ -698,6 +730,8 @@
         "name": "Hope-Verde-Winstonandharry-32",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "560000",
       "regular_price": "560000",
@@ -727,6 +761,8 @@
         "name": "Hope-tenis-blanco-winstonandharry",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "560000",
       "regular_price": "560000",
@@ -756,6 +792,8 @@
         "name": "Hope-tenis-azul-winstonandharry",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "560000",
       "regular_price": "560000",
@@ -785,6 +823,8 @@
         "name": "Hope-Verde-Winstonandharry-32",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "560000",
       "regular_price": "560000",
@@ -814,6 +854,8 @@
         "name": "Hope-tenis-blanco-winstonandharry",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "560000",
       "regular_price": "560000",
@@ -843,6 +885,8 @@
         "name": "Hope-tenis-azul-winstonandharry",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "560000",
       "regular_price": "560000",
@@ -872,6 +916,8 @@
         "name": "Hope-Verde-Winstonandharry-32",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "560000",
       "regular_price": "560000",
@@ -901,6 +947,8 @@
         "name": "Hope-Verde-Winstonandharry-32",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "560000",
       "regular_price": "560000",
@@ -930,6 +978,8 @@
         "name": "zap-003-posi-2",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "560000",
       "regular_price": "560000",
@@ -959,6 +1009,8 @@
         "name": "zap-003-posi-2",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "560000",
       "regular_price": "560000",
@@ -4810,8 +4862,8 @@
       "type": "variation",
       "date_created": "2023-06-21T21:27:30",
       "date_created_gmt": "2023-06-21T21:27:30",
-      "date_modified": "2026-06-16T17:41:54",
-      "date_modified_gmt": "2026-06-16T17:41:54",
+      "date_modified": "2026-09-23T22:57:13",
+      "date_modified_gmt": "2026-09-23T22:57:13",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/hope/?attribute_pa_selecciona-el-color=verde&attribute_pa_selecciona-una-talla=39",
       "sku": "7411305039",
@@ -4834,7 +4886,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 2,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -5398,7 +5450,7 @@
         {
           "id": 2216614,
           "key": "_last_change_time",
-          "value": "1781631340"
+          "value": "1790204233"
         },
         {
           "id": 2312862,

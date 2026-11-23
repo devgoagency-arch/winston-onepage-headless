@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>165,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>165,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -233,6 +233,8 @@
         "name": "Gamuza-Pride-Azul-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 18,
       "stock_status": "instock",
       "price": "165000",
       "regular_price": "165000",
@@ -272,6 +274,8 @@
         "name": "Gamuza-Pride-Azul-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 18,
       "stock_status": "instock",
       "price": "165000",
       "regular_price": "165000",
@@ -311,6 +315,8 @@
         "name": "Gamuza-Pride-Azul-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 18,
       "stock_status": "instock",
       "price": "165000",
       "regular_price": "165000",
@@ -350,6 +356,8 @@
         "name": "Gamuza-Pride-Azul-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "price": "165000",
       "regular_price": "165000",
@@ -389,6 +397,8 @@
         "name": "Gamuza-Pride-Azul-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "price": "165000",
       "regular_price": "165000",
@@ -428,6 +438,8 @@
         "name": "Gamuza-Pride-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 16,
       "stock_status": "instock",
       "price": "165000",
       "regular_price": "165000",
@@ -467,6 +479,8 @@
         "name": "Gamuza-Pride-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 16,
       "stock_status": "instock",
       "price": "165000",
       "regular_price": "165000",
@@ -506,6 +520,8 @@
         "name": "Gamuza-Pride-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 10,
       "stock_status": "instock",
       "price": "165000",
       "regular_price": "165000",
@@ -545,6 +561,8 @@
         "name": "Gamuza-Pride-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 11,
       "stock_status": "instock",
       "price": "165000",
       "regular_price": "165000",
@@ -584,6 +602,8 @@
         "name": "Gamuza-Pride-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "165000",
       "regular_price": "165000",
@@ -623,6 +643,8 @@
         "name": "Gamuza-Pride-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "165000",
       "regular_price": "165000",
@@ -662,6 +684,8 @@
         "name": "Gamuza-Pride-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "165000",
       "regular_price": "165000",
@@ -701,6 +725,8 @@
         "name": "Gamuza-Pride-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "price": "165000",
       "regular_price": "165000",
@@ -740,6 +766,8 @@
         "name": "Gamuza-Pride-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "165000",
       "regular_price": "165000",
@@ -779,6 +807,8 @@
         "name": "Gamuza-Pride-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "price": "165000",
       "regular_price": "165000",
@@ -3612,8 +3642,8 @@
       "type": "variation",
       "date_created": "2024-12-02T02:43:32",
       "date_created_gmt": "2024-12-02T02:43:32",
-      "date_modified": "2026-05-07T23:01:45",
-      "date_modified_gmt": "2026-05-07T23:01:45",
+      "date_modified": "2026-09-23T22:57:42",
+      "date_modified_gmt": "2026-09-23T22:57:42",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cinturon-gamuza-pride/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=32&attribute_pa_hebilla=acero-inoxidable&attribute_pa_material=100-gamuza",
       "sku": "27211702032",
@@ -3636,7 +3666,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 5,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -4257,7 +4287,7 @@
         {
           "id": 2262080,
           "key": "_last_change_time",
-          "value": "1778177828"
+          "value": "1790204262"
         },
         {
           "id": 2312139,
@@ -5688,8 +5718,8 @@
       "type": "variation",
       "date_created": "2024-12-02T02:43:32",
       "date_created_gmt": "2024-12-02T02:43:32",
-      "date_modified": "2026-06-16T17:43:06",
-      "date_modified_gmt": "2026-06-16T17:43:06",
+      "date_modified": "2026-11-23T04:37:59",
+      "date_modified_gmt": "2026-11-23T04:37:59",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cinturon-gamuza-pride/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=36&attribute_pa_hebilla=acero-inoxidable&attribute_pa_material=100-gamuza",
       "sku": "27211704036",
@@ -5712,7 +5742,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 14,
+      "stock_quantity": 10,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -6333,7 +6363,7 @@
         {
           "id": 2250313,
           "key": "_last_change_time",
-          "value": "1781631410"
+          "value": "1795408679"
         },
         {
           "id": 2312136,
@@ -6380,8 +6410,8 @@
       "type": "variation",
       "date_created": "2024-12-02T02:43:32",
       "date_created_gmt": "2024-12-02T02:43:32",
-      "date_modified": "2026-06-02T17:39:38",
-      "date_modified_gmt": "2026-06-02T17:39:38",
+      "date_modified": "2026-10-27T19:16:33",
+      "date_modified_gmt": "2026-10-27T19:16:33",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cinturon-gamuza-pride/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=34&attribute_pa_hebilla=acero-inoxidable&attribute_pa_material=100-gamuza",
       "sku": "27211704034",
@@ -6404,7 +6434,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 17,
+      "stock_quantity": 16,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -7025,7 +7055,7 @@
         {
           "id": 2250312,
           "key": "_last_change_time",
-          "value": "1780421978"
+          "value": "1793128593"
         },
         {
           "id": 2312135,
@@ -9143,8 +9173,8 @@
       "type": "variation",
       "date_created": "2024-12-02T02:43:32",
       "date_created_gmt": "2024-12-02T02:43:32",
-      "date_modified": "2026-07-16T22:42:29",
-      "date_modified_gmt": "2026-07-16T22:42:29",
+      "date_modified": "2026-09-08T17:14:39",
+      "date_modified_gmt": "2026-09-08T17:14:39",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cinturon-gamuza-pride/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=36&attribute_pa_hebilla=acero-inoxidable&attribute_pa_material=100-gamuza",
       "sku": "27211701036",
@@ -9167,7 +9197,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 19,
+      "stock_quantity": 18,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -9788,7 +9818,7 @@
         {
           "id": 2250310,
           "key": "_last_change_time",
-          "value": "1784241749"
+          "value": "1788887679"
         },
         {
           "id": 2312146,
@@ -9835,8 +9865,8 @@
       "type": "variation",
       "date_created": "2024-12-02T02:43:32",
       "date_created_gmt": "2024-12-02T02:43:32",
-      "date_modified": "2026-06-02T17:39:15",
-      "date_modified_gmt": "2026-06-02T17:39:15",
+      "date_modified": "2026-10-27T19:16:33",
+      "date_modified_gmt": "2026-10-27T19:16:33",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cinturon-gamuza-pride/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=34&attribute_pa_hebilla=acero-inoxidable&attribute_pa_material=100-gamuza",
       "sku": "27211701034",
@@ -9859,7 +9889,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 20,
+      "stock_quantity": 18,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -10480,7 +10510,7 @@
         {
           "id": 2239443,
           "key": "_last_change_time",
-          "value": "1780421955"
+          "value": "1793128593"
         },
         {
           "id": 2312145,

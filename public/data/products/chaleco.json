@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>210,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>210,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -195,6 +195,8 @@
         "name": "Chaleco Unifondo-Gris-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 9,
       "stock_status": "instock",
       "price": "210000",
       "regular_price": "210000",
@@ -224,6 +226,8 @@
         "name": "Chaleco Unifondo-Gris-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "price": "210000",
       "regular_price": "210000",
@@ -253,6 +257,8 @@
         "name": "Chaleco Unifondo-Gris-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "price": "210000",
       "regular_price": "210000",
@@ -282,6 +288,8 @@
         "name": "Chaleco Unifondo-Gris-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "210000",
       "regular_price": "210000",
@@ -311,6 +319,8 @@
         "name": "Chaleco Unifondo-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 12,
       "stock_status": "instock",
       "price": "210000",
       "regular_price": "210000",
@@ -340,6 +350,8 @@
         "name": "Chaleco Unifondo-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 7,
       "stock_status": "instock",
       "price": "210000",
       "regular_price": "210000",
@@ -369,6 +381,8 @@
         "name": "Chaleco Unifondo-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 8,
       "stock_status": "instock",
       "price": "210000",
       "regular_price": "210000",
@@ -398,6 +412,8 @@
         "name": "Chaleco Unifondo-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "210000",
       "regular_price": "210000",
@@ -427,6 +443,8 @@
         "name": "Chaleco Unifondo-Vino-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "210000",
       "regular_price": "210000",
@@ -456,6 +474,8 @@
         "name": "Chaleco Unifondo-Vino-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "210000",
       "regular_price": "210000",
@@ -485,6 +505,8 @@
         "name": "Chaleco Unifondo-Vino-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "price": "210000",
       "regular_price": "210000",
@@ -514,6 +536,8 @@
         "name": "Chaleco Unifondo-Vino-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "price": "210000",
       "regular_price": "210000",
@@ -543,6 +567,8 @@
         "name": "Chaleco Unifondo-Azul-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "210000",
       "regular_price": "210000",
@@ -572,6 +598,8 @@
         "name": "Chaleco Unifondo-Azul-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "price": "210000",
       "regular_price": "210000",
@@ -601,6 +629,8 @@
         "name": "Chaleco Unifondo-Azul-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "210000",
       "regular_price": "210000",
@@ -630,6 +660,8 @@
         "name": "Chaleco Unifondo-Azul-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "price": "210000",
       "regular_price": "210000",
@@ -3296,8 +3328,8 @@
       "type": "variation",
       "date_created": "2025-07-30T21:29:24",
       "date_created_gmt": "2025-07-30T21:29:24",
-      "date_modified": "2026-08-22T00:04:26",
-      "date_modified_gmt": "2026-08-22T00:04:26",
+      "date_modified": "2026-10-05T21:52:30",
+      "date_modified_gmt": "2026-10-05T21:52:30",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/chaleco/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=l",
       "sku": "36364701036",
@@ -3320,7 +3352,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 7,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -4119,7 +4151,7 @@
         {
           "id": 2258731,
           "key": "_last_change_time",
-          "value": "1787357066"
+          "value": "1791237150"
         },
         {
           "id": 2311342,
@@ -8486,8 +8518,8 @@
       "type": "variation",
       "date_created": "2025-07-30T21:29:23",
       "date_created_gmt": "2025-07-30T21:29:23",
-      "date_modified": "2026-07-16T22:44:05",
-      "date_modified_gmt": "2026-07-16T22:44:05",
+      "date_modified": "2026-11-23T04:39:15",
+      "date_modified_gmt": "2026-11-23T04:39:15",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/chaleco/?attribute_pa_selecciona-el-color=vinotinto&attribute_pa_selecciona-una-talla=l",
       "sku": "36364719036",
@@ -8510,7 +8542,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 3,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -9309,7 +9341,7 @@
         {
           "id": 2236247,
           "key": "_last_change_time",
-          "value": "1784241845"
+          "value": "1795408755"
         },
         {
           "id": 2311347,
@@ -11081,8 +11113,8 @@
       "type": "variation",
       "date_created": "2025-07-30T21:29:23",
       "date_created_gmt": "2025-07-30T21:29:23",
-      "date_modified": "2026-07-16T22:44:05",
-      "date_modified_gmt": "2026-07-16T22:44:05",
+      "date_modified": "2026-09-08T17:15:08",
+      "date_modified_gmt": "2026-09-08T17:15:08",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/chaleco/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=xxl",
       "sku": "36364702040",
@@ -11105,7 +11137,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 4,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -11904,7 +11936,7 @@
         {
           "id": 2254915,
           "key": "_last_change_time",
-          "value": "1784241845"
+          "value": "1788887708"
         },
         {
           "id": 2311344,
@@ -11946,8 +11978,8 @@
       "type": "variation",
       "date_created": "2025-07-30T21:29:22",
       "date_created_gmt": "2025-07-30T21:29:22",
-      "date_modified": "2026-07-16T22:44:05",
-      "date_modified_gmt": "2026-07-16T22:44:05",
+      "date_modified": "2026-11-23T04:39:15",
+      "date_modified_gmt": "2026-11-23T04:39:15",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/chaleco/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=xl",
       "sku": "36364702038",
@@ -11970,7 +12002,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 9,
+      "stock_quantity": 8,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -12769,7 +12801,7 @@
         {
           "id": 2262291,
           "key": "_last_change_time",
-          "value": "1784241845"
+          "value": "1795408755"
         },
         {
           "id": 2311351,
@@ -13676,8 +13708,8 @@
       "type": "variation",
       "date_created": "2025-07-30T21:29:21",
       "date_created_gmt": "2025-07-30T21:29:21",
-      "date_modified": "2026-07-27T17:44:07",
-      "date_modified_gmt": "2026-07-27T17:44:07",
+      "date_modified": "2026-09-16T16:55:04",
+      "date_modified_gmt": "2026-09-16T16:55:04",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/chaleco/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=l",
       "sku": "36364702036",
@@ -13700,7 +13732,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 8,
+      "stock_quantity": 7,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -14499,7 +14531,7 @@
         {
           "id": 2219085,
           "key": "_last_change_time",
-          "value": "1785174247"
+          "value": "1789577704"
         },
         {
           "id": 2311352,
@@ -17136,8 +17168,8 @@
       "type": "variation",
       "date_created": "2025-07-30T21:29:19",
       "date_created_gmt": "2025-07-30T21:29:19",
-      "date_modified": "2026-07-16T22:44:05",
-      "date_modified_gmt": "2026-07-16T22:44:05",
+      "date_modified": "2026-11-23T04:39:15",
+      "date_modified_gmt": "2026-11-23T04:39:15",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/chaleco/?attribute_pa_selecciona-el-color=gris&attribute_pa_selecciona-una-talla=xl",
       "sku": "36364703038",
@@ -17160,7 +17192,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 6,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -17959,7 +17991,7 @@
         {
           "id": 2254914,
           "key": "_last_change_time",
-          "value": "1784241845"
+          "value": "1795408755"
         },
         {
           "id": 2311358,
@@ -18866,8 +18898,8 @@
       "type": "variation",
       "date_created": "2025-07-30T21:29:19",
       "date_created_gmt": "2025-07-30T21:29:19",
-      "date_modified": "2026-07-16T22:44:05",
-      "date_modified_gmt": "2026-07-16T22:44:05",
+      "date_modified": "2026-11-23T04:39:15",
+      "date_modified_gmt": "2026-11-23T04:39:15",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/chaleco/?attribute_pa_selecciona-el-color=gris&attribute_pa_selecciona-una-talla=l",
       "sku": "36364703036",
@@ -18890,7 +18922,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 6,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -19689,7 +19721,7 @@
         {
           "id": 2262294,
           "key": "_last_change_time",
-          "value": "1784241845"
+          "value": "1795408755"
         },
         {
           "id": 2311356,

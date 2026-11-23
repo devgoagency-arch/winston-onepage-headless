@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>979,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>979,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -123,6 +123,8 @@
         "name": "Portafolio-Lord-Cognac-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "979000",
       "regular_price": "979000",
@@ -147,6 +149,8 @@
         "name": "Portafolio-Lord-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "979000",
       "regular_price": "979000",
@@ -1078,8 +1082,8 @@
       "type": "variation",
       "date_created": "2025-10-30T04:59:10",
       "date_created_gmt": "2025-10-30T04:59:10",
-      "date_modified": "2026-08-13T00:05:19",
-      "date_modified_gmt": "2026-08-13T00:05:19",
+      "date_modified": "2026-11-04T17:55:13",
+      "date_modified_gmt": "2026-11-04T17:55:13",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/portafolio-lord/?attribute_pa_selecciona-el-color=cognac",
       "sku": "17236232000",
@@ -1102,7 +1106,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 7,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -1890,7 +1894,7 @@
         {
           "id": 2261984,
           "key": "_last_change_time",
-          "value": "1786579519"
+          "value": "1793814913"
         },
         {
           "id": 2310955,

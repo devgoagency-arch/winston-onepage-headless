@@ -11,9 +11,9 @@
   "description": "<p><span data-sheets-value=\"{&quot;1&quot;:2,&quot;2&quot;:&quot;Nuestro Cumbria es un mocasín de gamuza minimalista para la mente informal. Es perfecto para un atuendo casual durante la semana o incluso durante el fin de semana. La comodidad, la flexibilidad y la simplicidad sin esfuerzo se encuentran en el núcleo del concepto del diseño. Aquellos con buen ojo, notarán que este nuevo mocasín de corte entero está irrevocablemente vinculado a nuestro modelo icónico del Cornwall.&quot;}\" data-sheets-userformat=\"{&quot;2&quot;:513,&quot;3&quot;:{&quot;1&quot;:0},&quot;12&quot;:0}\">Nuestro Cumbria es un mocasín de gamuza minimalista para la mente informal. Es perfecto para un atuendo casual durante la semana o incluso durante el fin de semana. La comodidad, la flexibilidad y la simplicidad sin esfuerzo se encuentran en el núcleo del concepto del diseño. Aquellos con buen ojo, notarán que este nuevo mocasín de corte entero está irrevocablemente vinculado a nuestro modelo icónico del Cornwall.</span></p>",
   "on_sale": true,
   "prices": {
-    "price": "495000",
+    "price": "247500",
     "regular_price": "825000",
-    "sale_price": "495000",
+    "sale_price": "247500",
     "price_range": null,
     "currency_code": "COP",
     "currency_symbol": "$",
@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>825,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;825,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>495,000</span></ins><span class=\"screen-reader-text\">Current price is: &#036;495,000.</span>",
+  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>825,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;825,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>247,500</span></ins><span class=\"screen-reader-text\">Current price is: &#036;247,500.</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -252,35 +252,6 @@
   ],
   "variations": [
     {
-      "id": 26484,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "cafe",
-          "option": "cafe"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "42",
-          "option": "42"
-        }
-      ],
-      "image": {
-        "id": 85878,
-        "date_created": "2026-07-27T14:42:05",
-        "date_created_gmt": "2026-07-27T14:42:05",
-        "date_modified": "2026-07-27T17:03:49",
-        "date_modified_gmt": "2026-07-27T17:03:49",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-cumbria-cafe-01.jpg",
-        "name": "winston-and-harry-mocasines-cumbria-cafe-01",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "495000",
-      "regular_price": "825000",
-      "sale_price": ""
-    },
-    {
       "id": 26485,
       "attributes": [
         {
@@ -304,8 +275,10 @@
         "name": "winston-and-harry-mocasines-cumbria-cafe-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "495000",
+      "price": "247500",
       "regular_price": "825000",
       "sale_price": ""
     },
@@ -333,8 +306,10 @@
         "name": "winston-and-harry-mocasines-cumbria-cafe-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "495000",
+      "price": "247500",
       "regular_price": "825000",
       "sale_price": ""
     }
@@ -404,15 +379,15 @@
       "type": "variation",
       "date_created": "2022-09-16T17:29:52",
       "date_created_gmt": "2022-09-16T17:29:52",
-      "date_modified": "2026-07-27T20:46:31",
-      "date_modified_gmt": "2026-07-27T20:46:31",
+      "date_modified": "2026-11-23T04:31:02",
+      "date_modified_gmt": "2026-11-23T04:31:02",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cumbria/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=45",
       "sku": "7025204045",
       "global_unique_id": "",
-      "price": "495000",
+      "price": "247500",
       "regular_price": "825000",
-      "sale_price": "495000",
+      "sale_price": "247500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -910,7 +885,7 @@
         {
           "id": 2259831,
           "key": "_last_change_time",
-          "value": "1785171831"
+          "value": "1795408262"
         },
         {
           "id": 2409398,
@@ -1297,15 +1272,15 @@
       "type": "variation",
       "date_created": "2022-09-16T17:29:52",
       "date_created_gmt": "2022-09-16T17:29:52",
-      "date_modified": "2026-07-27T20:46:31",
-      "date_modified_gmt": "2026-07-27T20:46:31",
+      "date_modified": "2026-11-23T04:31:02",
+      "date_modified_gmt": "2026-11-23T04:31:02",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cumbria/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=44",
       "sku": "7025204044",
       "global_unique_id": "",
-      "price": "495000",
+      "price": "247500",
       "regular_price": "825000",
-      "sale_price": "495000",
+      "sale_price": "247500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -1793,7 +1768,7 @@
         {
           "id": 2259830,
           "key": "_last_change_time",
-          "value": "1785171831"
+          "value": "1795408262"
         },
         {
           "id": 2409326,
@@ -2190,15 +2165,15 @@
       "type": "variation",
       "date_created": "2022-09-16T17:29:51",
       "date_created_gmt": "2022-09-16T17:29:51",
-      "date_modified": "2026-07-27T20:46:31",
-      "date_modified_gmt": "2026-07-27T20:46:31",
+      "date_modified": "2026-11-23T04:31:02",
+      "date_modified_gmt": "2026-11-23T04:31:02",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cumbria/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=43",
       "sku": "7025204043",
       "global_unique_id": "",
-      "price": "495000",
+      "price": "247500",
       "regular_price": "825000",
-      "sale_price": "495000",
+      "sale_price": "247500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -2696,7 +2671,7 @@
         {
           "id": 2259829,
           "key": "_last_change_time",
-          "value": "1785171831"
+          "value": "1795408262"
         },
         {
           "id": 2409898,
@@ -3083,15 +3058,15 @@
       "type": "variation",
       "date_created": "2022-09-16T17:29:51",
       "date_created_gmt": "2022-09-16T17:29:51",
-      "date_modified": "2026-07-27T20:46:31",
-      "date_modified_gmt": "2026-07-27T20:46:31",
+      "date_modified": "2026-11-23T04:31:02",
+      "date_modified_gmt": "2026-11-23T04:31:02",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cumbria/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=42",
       "sku": "7025204042",
       "global_unique_id": "",
-      "price": "495000",
+      "price": "247500",
       "regular_price": "825000",
-      "sale_price": "495000",
+      "sale_price": "247500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -3107,8 +3082,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -3589,7 +3564,7 @@
         {
           "id": 2259828,
           "key": "_last_change_time",
-          "value": "1785171831"
+          "value": "1795408262"
         },
         {
           "id": 2409828,
@@ -3976,15 +3951,15 @@
       "type": "variation",
       "date_created": "2022-09-16T17:29:51",
       "date_created_gmt": "2022-09-16T17:29:51",
-      "date_modified": "2026-07-27T20:46:31",
-      "date_modified_gmt": "2026-07-27T20:46:31",
+      "date_modified": "2026-11-23T04:31:02",
+      "date_modified_gmt": "2026-11-23T04:31:02",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cumbria/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=41",
       "sku": "7025204041",
       "global_unique_id": "",
-      "price": "495000",
+      "price": "247500",
       "regular_price": "825000",
-      "sale_price": "495000",
+      "sale_price": "247500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -4472,7 +4447,7 @@
         {
           "id": 2259827,
           "key": "_last_change_time",
-          "value": "1785171831"
+          "value": "1795408262"
         },
         {
           "id": 2409756,
@@ -4869,15 +4844,15 @@
       "type": "variation",
       "date_created": "2022-09-16T17:29:51",
       "date_created_gmt": "2022-09-16T17:29:51",
-      "date_modified": "2026-07-27T20:46:31",
-      "date_modified_gmt": "2026-07-27T20:46:31",
+      "date_modified": "2026-11-23T04:31:02",
+      "date_modified_gmt": "2026-11-23T04:31:02",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cumbria/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=40",
       "sku": "7025204040",
       "global_unique_id": "",
-      "price": "495000",
+      "price": "247500",
       "regular_price": "825000",
-      "sale_price": "495000",
+      "sale_price": "247500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -5365,7 +5340,7 @@
         {
           "id": 2259826,
           "key": "_last_change_time",
-          "value": "1785171831"
+          "value": "1795408262"
         },
         {
           "id": 2409684,
@@ -5762,15 +5737,15 @@
       "type": "variation",
       "date_created": "2022-09-16T17:29:51",
       "date_created_gmt": "2022-09-16T17:29:51",
-      "date_modified": "2026-07-27T20:46:31",
-      "date_modified_gmt": "2026-07-27T20:46:31",
+      "date_modified": "2026-11-23T04:31:02",
+      "date_modified_gmt": "2026-11-23T04:31:02",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cumbria/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=39",
       "sku": "7025204039",
       "global_unique_id": "",
-      "price": "495000",
+      "price": "247500",
       "regular_price": "825000",
-      "sale_price": "495000",
+      "sale_price": "247500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -6258,7 +6233,7 @@
         {
           "id": 2259825,
           "key": "_last_change_time",
-          "value": "1785171831"
+          "value": "1795408262"
         },
         {
           "id": 2409612,
@@ -6655,15 +6630,15 @@
       "type": "variation",
       "date_created": "2022-09-16T17:29:51",
       "date_created_gmt": "2022-09-16T17:29:51",
-      "date_modified": "2026-07-27T20:46:31",
-      "date_modified_gmt": "2026-07-27T20:46:31",
+      "date_modified": "2026-11-23T04:30:57",
+      "date_modified_gmt": "2026-11-23T04:30:57",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cumbria/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=38",
       "sku": "7025204038",
       "global_unique_id": "",
-      "price": "495000",
+      "price": "247500",
       "regular_price": "825000",
-      "sale_price": "495000",
+      "sale_price": "247500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -7151,7 +7126,7 @@
         {
           "id": 2259824,
           "key": "_last_change_time",
-          "value": "1785171831"
+          "value": "1795408257"
         },
         {
           "id": 2409540,
@@ -7548,15 +7523,15 @@
       "type": "variation",
       "date_created": "2022-09-16T17:29:51",
       "date_created_gmt": "2022-09-16T17:29:51",
-      "date_modified": "2026-07-27T20:46:31",
-      "date_modified_gmt": "2026-07-27T20:46:31",
+      "date_modified": "2026-11-23T04:30:57",
+      "date_modified_gmt": "2026-11-23T04:30:57",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cumbria/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=37",
       "sku": "7025204037",
       "global_unique_id": "",
-      "price": "495000",
+      "price": "247500",
       "regular_price": "825000",
-      "sale_price": "495000",
+      "sale_price": "247500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -8044,7 +8019,7 @@
         {
           "id": 2259820,
           "key": "_last_change_time",
-          "value": "1785171831"
+          "value": "1795408257"
         },
         {
           "id": 2409468,

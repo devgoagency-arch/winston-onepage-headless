@@ -9,11 +9,11 @@
   "sku": "870",
   "short_description": "",
   "description": "<p>Dale un toque de W&amp;H a tus necesidades diarias con la Billetera Coin. Este diseño de cuero 100% tiene mucho espacio para tarjetas y billetes pero adicional a eso cuenta con un monedero integrado. Cuenta con forro RFID para proteger tu información.</p>",
-  "on_sale": false,
+  "on_sale": true,
   "prices": {
-    "price": "165000",
+    "price": "99000",
     "regular_price": "165000",
-    "sale_price": "165000",
+    "sale_price": "99000",
     "price_range": null,
     "currency_code": "COP",
     "currency_symbol": "$",
@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>165,000</span>",
+  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>165,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;165,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>99,000</span></ins><span class=\"screen-reader-text\">Current price is: &#036;99,000.</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -143,8 +143,10 @@
         "name": "Billetera-Monedero-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 27,
       "stock_status": "instock",
-      "price": "165000",
+      "price": "99000",
       "regular_price": "165000",
       "sale_price": ""
     },
@@ -167,8 +169,10 @@
         "name": "Billetera-Monedero-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 28,
       "stock_status": "instock",
-      "price": "165000",
+      "price": "99000",
       "regular_price": "165000",
       "sale_price": ""
     }
@@ -232,20 +236,20 @@
       "type": "variation",
       "date_created": "2024-06-09T22:08:01",
       "date_created_gmt": "2024-06-09T22:08:01",
-      "date_modified": "2026-07-16T22:41:50",
-      "date_modified_gmt": "2026-07-16T22:41:50",
+      "date_modified": "2026-11-23T04:32:37",
+      "date_modified_gmt": "2026-11-23T04:32:37",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/coin/?attribute_pa_selecciona-el-color=negro",
       "sku": "33026702000",
       "global_unique_id": "",
-      "price": "165000",
+      "price": "99000",
       "regular_price": "165000",
-      "sale_price": "",
+      "sale_price": "99000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -256,7 +260,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 30,
+      "stock_quantity": 28,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -854,7 +858,7 @@
         {
           "id": 2233343,
           "key": "_last_change_time",
-          "value": "1784241710"
+          "value": "1795408357"
         },
         {
           "id": 2312305,
@@ -896,20 +900,20 @@
       "type": "variation",
       "date_created": "2024-06-09T22:08:01",
       "date_created_gmt": "2024-06-09T22:08:01",
-      "date_modified": "2026-07-16T22:41:50",
-      "date_modified_gmt": "2026-07-16T22:41:50",
+      "date_modified": "2026-11-23T04:32:37",
+      "date_modified_gmt": "2026-11-23T04:32:37",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/coin/?attribute_pa_selecciona-el-color=cafe",
       "sku": "33026704000",
       "global_unique_id": "",
-      "price": "165000",
+      "price": "99000",
       "regular_price": "165000",
-      "sale_price": "",
+      "sale_price": "99000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -1518,7 +1522,7 @@
         {
           "id": 2236212,
           "key": "_last_change_time",
-          "value": "1784241710"
+          "value": "1795408357"
         },
         {
           "id": 2312304,

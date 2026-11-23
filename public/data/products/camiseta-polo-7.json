@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>150,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>150,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -210,6 +210,8 @@
         "name": "_MG_5226",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "price": "150000",
       "regular_price": "150000",
@@ -239,6 +241,8 @@
         "name": "_MG_5226",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 8,
       "stock_status": "instock",
       "price": "150000",
       "regular_price": "150000",
@@ -268,6 +272,8 @@
         "name": "_MG_5226",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "150000",
       "regular_price": "150000",
@@ -297,6 +303,8 @@
         "name": "_MG_5226",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "150000",
       "regular_price": "150000",
@@ -1458,8 +1466,8 @@
       "type": "variation",
       "date_created": "2023-06-22T21:54:00",
       "date_created_gmt": "2023-06-22T21:54:00",
-      "date_modified": "2026-08-22T00:03:48",
-      "date_modified_gmt": "2026-08-22T00:03:48",
+      "date_modified": "2026-09-16T16:52:32",
+      "date_modified_gmt": "2026-09-16T16:52:32",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/camiseta-polo-7/?attribute_pa_selecciona-el-color=rosado&attribute_pa_selecciona-una-talla=m",
       "sku": "5056116034",
@@ -1482,7 +1490,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 4,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -1966,7 +1974,7 @@
         {
           "id": 2236206,
           "key": "_last_change_time",
-          "value": "1787357028"
+          "value": "1789577552"
         },
         {
           "id": 2312845,

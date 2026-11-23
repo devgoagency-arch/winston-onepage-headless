@@ -9,11 +9,11 @@
   "sku": "945",
   "short_description": "",
   "description": "<p>• Morral hecho 100% en cuero de alta calidad, combinando elegancia y resistencia.</p>\n<p>• Su interior forrado con material impermeable para proteger pertenencias.</p>\n<p>• Incluye un bolsillo frontal con cremallera para un acceso rapido.</p>\n<p>• Correas reforzadas que ofrecen una gran comodidad al transportarla.</p>",
-  "on_sale": false,
+  "on_sale": true,
   "prices": {
-    "price": "836000",
+    "price": "501600",
     "regular_price": "836000",
-    "sale_price": "836000",
+    "sale_price": "501600",
     "price_range": null,
     "currency_code": "COP",
     "currency_symbol": "$",
@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>836,000</span>",
+  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>836,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;836,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>501,600</span></ins><span class=\"screen-reader-text\">Current price is: &#036;501,600.</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -153,8 +153,10 @@
         "name": "Morral-EssexII-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 7,
       "stock_status": "instock",
-      "price": "836000",
+      "price": "501600",
       "regular_price": "836000",
       "sale_price": ""
     },
@@ -177,8 +179,10 @@
         "name": "Morral-EssexII-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 15,
       "stock_status": "instock",
-      "price": "836000",
+      "price": "501600",
       "regular_price": "836000",
       "sale_price": ""
     },
@@ -201,8 +205,10 @@
         "name": "Morral-EssexII-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 21,
       "stock_status": "instock",
-      "price": "836000",
+      "price": "501600",
       "regular_price": "836000",
       "sale_price": ""
     }
@@ -278,20 +284,20 @@
       "type": "variation",
       "date_created": "2025-02-11T16:07:17",
       "date_created_gmt": "2025-02-11T16:07:17",
-      "date_modified": "2026-05-07T23:06:59",
-      "date_modified_gmt": "2026-05-07T23:06:59",
+      "date_modified": "2026-11-23T04:38:27",
+      "date_modified_gmt": "2026-11-23T04:38:27",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/morral-essex-ii/?attribute_pa_selecciona-el-color=cafe",
       "sku": "15150804000",
       "global_unique_id": "",
-      "price": "836000",
+      "price": "501600",
       "regular_price": "836000",
-      "sale_price": "",
+      "sale_price": "501600",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -915,7 +921,7 @@
         {
           "id": 2229420,
           "key": "_last_change_time",
-          "value": "1778184396"
+          "value": "1795408707"
         },
         {
           "id": 2312089,
@@ -957,20 +963,20 @@
       "type": "variation",
       "date_created": "2025-02-11T16:07:17",
       "date_created_gmt": "2025-02-11T16:07:17",
-      "date_modified": "2026-05-07T23:06:59",
-      "date_modified_gmt": "2026-05-07T23:06:59",
+      "date_modified": "2026-11-23T04:38:27",
+      "date_modified_gmt": "2026-11-23T04:38:27",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/morral-essex-ii/?attribute_pa_selecciona-el-color=negro",
       "sku": "15150802000",
       "global_unique_id": "",
-      "price": "836000",
+      "price": "501600",
       "regular_price": "836000",
-      "sale_price": "",
+      "sale_price": "501600",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -981,7 +987,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 17,
+      "stock_quantity": 15,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -1594,7 +1600,7 @@
         {
           "id": 2229424,
           "key": "_last_change_time",
-          "value": "1778184396"
+          "value": "1795408707"
         },
         {
           "id": 2312088,
@@ -1636,20 +1642,20 @@
       "type": "variation",
       "date_created": "2025-02-11T16:07:17",
       "date_created_gmt": "2025-02-11T16:07:17",
-      "date_modified": "2026-05-07T23:06:59",
-      "date_modified_gmt": "2026-05-07T23:06:59",
+      "date_modified": "2026-11-23T04:33:08",
+      "date_modified_gmt": "2026-11-23T04:33:08",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/morral-essex-ii/?attribute_pa_selecciona-el-color=miel",
       "sku": "15150826000",
       "global_unique_id": "",
-      "price": "836000",
+      "price": "501600",
       "regular_price": "836000",
-      "sale_price": "",
+      "sale_price": "501600",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -2273,7 +2279,7 @@
         {
           "id": 2229422,
           "key": "_last_change_time",
-          "value": "1778184396"
+          "value": "1795408388"
         },
         {
           "id": 2312087,

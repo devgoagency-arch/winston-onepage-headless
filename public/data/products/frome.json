@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>649,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>649,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -256,6 +256,8 @@
         "name": "winston-and-harry-zapatos-de-cordon-frome-cafe-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -285,6 +287,8 @@
         "name": "winston-and-harry-zapatos-de-cordon-frome-cafe-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -314,6 +318,8 @@
         "name": "winston-and-harry-zapatos-de-cordon-frome-cafe-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -343,6 +349,8 @@
         "name": "winston-and-harry-zapatos-de-cordon-frome-cafe-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -372,6 +380,8 @@
         "name": "winston-and-harry-zapatos-de-cordon-frome-cafe-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -401,6 +411,8 @@
         "name": "winston-and-harry-zapatos-de-cordon-frome-cafe-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -430,6 +442,8 @@
         "name": "winston-and-harry-zapatos-de-cordon-frome-cafe-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -459,6 +473,8 @@
         "name": "winston-and-harry-zapatos-de-cordon-frome-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -488,6 +504,8 @@
         "name": "winston-and-harry-zapatos-de-cordon-frome-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -517,6 +535,8 @@
         "name": "winston-and-harry-zapatos-de-cordon-frome-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -546,6 +566,8 @@
         "name": "winston-and-harry-zapatos-de-cordon-frome-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -575,6 +597,8 @@
         "name": "winston-and-harry-zapatos-de-cordon-frome-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -604,6 +628,8 @@
         "name": "winston-and-harry-zapatos-de-cordon-frome-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "649000",
       "regular_price": "649000",
@@ -16479,7 +16505,9 @@
     "16714": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/02/31-suela-capellada.jpg",
     "16715": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/02/31-lateral.jpg",
     "16723": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/02/35-suela-capellada.jpg",
-    "16724": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/02/35-lateral.jpg"
+    "16724": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/02/35-lateral.jpg",
+    "86030": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-zapatos-de-cordon-frome-negro-03.jpg",
+    "86032": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-zapatos-de-cordon-frome-negro-02.jpg"
   },
   "stock_status": "instock",
   "variation_images_map": {
@@ -16519,6 +16547,16 @@
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-zapatos-de-cordon-frome-negro-01.jpg",
         "alt": "winston-and-harry-zapatos-de-cordon-frome-negro-01",
         "name": "winston-and-harry-zapatos-de-cordon-frome-negro-01"
+      },
+      {
+        "id": 86032,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-zapatos-de-cordon-frome-negro-02.jpg",
+        "alt": "Frome"
+      },
+      {
+        "id": 86030,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-zapatos-de-cordon-frome-negro-03.jpg",
+        "alt": "Frome"
       },
       {
         "id": 16715,

@@ -9,11 +9,11 @@
   "sku": "714-Rojo",
   "short_description": "<p>• Para un estilo casual y formal.</p>\n<p>• Hecho a mano 100% por artesanos colombianos.</p>\n<p>• 95% Acrilico &#8211; 5% Nylon.</p>",
   "description": "<p>Este suéter combina estilo y comodidad en una prenda versátil ideal para los días fríos. Confeccionado en tejido de punto de alta calidad, presenta un diseño texturizado en relieve estilo escalera que le aporta un toque moderno sin perder elegancia. Su cuello redondo, puños y dobladillo acanalados aseguran un ajuste cómodo y duradero. Perfecto para combinar con jeans o pantalones formales, este suéter es una prenda básica que no puede faltar en tu guardarropa.</p>",
-  "on_sale": false,
+  "on_sale": true,
   "prices": {
-    "price": "245000",
+    "price": "122500",
     "regular_price": "245000",
-    "sale_price": "245000",
+    "sale_price": "122500",
     "price_range": null,
     "currency_code": "COP",
     "currency_symbol": "$",
@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>245,000</span>",
+  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>245,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;245,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>122,500</span></ins><span class=\"screen-reader-text\">Current price is: &#036;122,500.</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -175,8 +175,10 @@
         "name": "Sueter-tejido-escalera-rojo-winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 15,
       "stock_status": "instock",
-      "price": "245000",
+      "price": "122500",
       "regular_price": "245000",
       "sale_price": ""
     },
@@ -204,8 +206,10 @@
         "name": "Sueter-tejido-escalera-rojo-winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
-      "price": "245000",
+      "price": "122500",
       "regular_price": "245000",
       "sale_price": ""
     },
@@ -233,8 +237,10 @@
         "name": "Sueter-tejido-escalera-rojo-winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 14,
       "stock_status": "instock",
-      "price": "245000",
+      "price": "122500",
       "regular_price": "245000",
       "sale_price": ""
     },
@@ -262,8 +268,10 @@
         "name": "Sueter-tejido-escalera-rojo-winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "245000",
+      "price": "122500",
       "regular_price": "245000",
       "sale_price": ""
     }
@@ -333,8 +341,8 @@
       "type": "variation",
       "date_created": "2025-04-22T23:32:41",
       "date_created_gmt": "2025-04-22T23:32:41",
-      "date_modified": "2026-05-07T23:10:45",
-      "date_modified_gmt": "2026-05-07T23:10:45",
+      "date_modified": "2026-11-23T04:33:48",
+      "date_modified_gmt": "2026-11-23T04:33:48",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/sueter-tejido-escalera-rojo/?attribute_pa_selecciona-el-color=rojo&attribute_pa_selecciona-una-talla=xxl",
       "sku": "6060113040",
@@ -1051,7 +1059,7 @@
         {
           "id": 2259200,
           "key": "_last_change_time",
-          "value": "1778190190"
+          "value": "1795408428"
         },
         {
           "id": 2311548,
@@ -1093,20 +1101,20 @@
       "type": "variation",
       "date_created": "2025-04-22T23:32:41",
       "date_created_gmt": "2025-04-22T23:32:41",
-      "date_modified": "2026-05-07T22:57:08",
-      "date_modified_gmt": "2026-05-07T22:57:08",
+      "date_modified": "2026-11-23T04:33:48",
+      "date_modified_gmt": "2026-11-23T04:33:48",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/sueter-tejido-escalera-rojo/?attribute_pa_selecciona-el-color=rojo&attribute_pa_selecciona-una-talla=xl",
       "sku": "6060113038",
       "global_unique_id": "",
-      "price": "245000",
+      "price": "122500",
       "regular_price": "245000",
-      "sale_price": "",
+      "sale_price": "122500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -1117,7 +1125,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 2,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -1816,7 +1824,7 @@
         {
           "id": 2239447,
           "key": "_last_change_time",
-          "value": "1778175329"
+          "value": "1795408428"
         },
         {
           "id": 2311547,
@@ -1858,8 +1866,8 @@
       "type": "variation",
       "date_created": "2025-04-22T23:32:41",
       "date_created_gmt": "2025-04-22T23:32:41",
-      "date_modified": "2026-07-16T22:43:11",
-      "date_modified_gmt": "2026-07-16T22:43:11",
+      "date_modified": "2026-09-06T04:32:23",
+      "date_modified_gmt": "2026-09-06T04:32:23",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/sueter-tejido-escalera-rojo/?attribute_pa_selecciona-el-color=rojo&attribute_pa_selecciona-una-talla=xs",
       "sku": "6060113030",
@@ -2581,7 +2589,7 @@
         {
           "id": 2259199,
           "key": "_last_change_time",
-          "value": "1784241791"
+          "value": "1788669143"
         },
         {
           "id": 2311546,
@@ -2623,20 +2631,20 @@
       "type": "variation",
       "date_created": "2025-04-22T23:32:41",
       "date_created_gmt": "2025-04-22T23:32:41",
-      "date_modified": "2026-07-03T17:22:30",
-      "date_modified_gmt": "2026-07-03T17:22:30",
+      "date_modified": "2026-11-23T04:33:37",
+      "date_modified_gmt": "2026-11-23T04:33:37",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/sueter-tejido-escalera-rojo/?attribute_pa_selecciona-el-color=rojo&attribute_pa_selecciona-una-talla=l",
       "sku": "6060113036",
       "global_unique_id": "",
-      "price": "245000",
+      "price": "122500",
       "regular_price": "245000",
-      "sale_price": "",
+      "sale_price": "122500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -2647,7 +2655,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 18,
+      "stock_quantity": 14,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -3346,7 +3354,7 @@
         {
           "id": 2219040,
           "key": "_last_change_time",
-          "value": "1783099350"
+          "value": "1795408417"
         },
         {
           "id": 2311545,
@@ -3388,20 +3396,20 @@
       "type": "variation",
       "date_created": "2025-04-22T23:32:41",
       "date_created_gmt": "2025-04-22T23:32:41",
-      "date_modified": "2026-05-07T22:57:08",
-      "date_modified_gmt": "2026-05-07T22:57:08",
+      "date_modified": "2026-11-23T04:33:37",
+      "date_modified_gmt": "2026-11-23T04:33:37",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/sueter-tejido-escalera-rojo/?attribute_pa_selecciona-el-color=rojo&attribute_pa_selecciona-una-talla=m",
       "sku": "6060113034",
       "global_unique_id": "",
-      "price": "245000",
+      "price": "122500",
       "regular_price": "245000",
-      "sale_price": "",
+      "sale_price": "122500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -3412,7 +3420,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 5,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -4111,7 +4119,7 @@
         {
           "id": 2233384,
           "key": "_last_change_time",
-          "value": "1778175329"
+          "value": "1795408417"
         },
         {
           "id": 2311544,
@@ -4153,20 +4161,20 @@
       "type": "variation",
       "date_created": "2025-04-22T23:32:41",
       "date_created_gmt": "2025-04-22T23:32:41",
-      "date_modified": "2026-08-13T00:03:03",
-      "date_modified_gmt": "2026-08-13T00:03:03",
+      "date_modified": "2026-11-23T04:33:37",
+      "date_modified_gmt": "2026-11-23T04:33:37",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/sueter-tejido-escalera-rojo/?attribute_pa_selecciona-el-color=rojo&attribute_pa_selecciona-una-talla=s",
       "sku": "6060113032",
       "global_unique_id": "",
-      "price": "245000",
+      "price": "122500",
       "regular_price": "245000",
-      "sale_price": "",
+      "sale_price": "122500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -4876,7 +4884,7 @@
         {
           "id": 2250367,
           "key": "_last_change_time",
-          "value": "1786579383"
+          "value": "1795408417"
         },
         {
           "id": 2311543,

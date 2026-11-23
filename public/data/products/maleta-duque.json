@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>1,067,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>1,067,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -133,6 +133,8 @@
         "name": "1 bolso fontal",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "1067000",
       "regular_price": "1067000",
@@ -727,8 +729,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:39:26",
       "date_created_gmt": "2022-08-25T22:39:26",
-      "date_modified": "2026-08-18T17:45:43",
-      "date_modified_gmt": "2026-08-18T17:45:43",
+      "date_modified": "2026-11-23T04:36:29",
+      "date_modified_gmt": "2026-11-23T04:36:29",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/maleta-duque/?attribute_pa_selecciona-el-color=miel",
       "sku": "15158926000",
@@ -751,7 +753,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 4,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -1232,7 +1234,7 @@
         {
           "id": 2250094,
           "key": "_last_change_time",
-          "value": "1787071621"
+          "value": "1795408589"
         },
         {
           "id": 2314575,

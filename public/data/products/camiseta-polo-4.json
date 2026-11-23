@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>150,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>150,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -210,6 +210,8 @@
         "name": "_MG_5183",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "price": "150000",
       "regular_price": "150000",
@@ -239,6 +241,8 @@
         "name": "_MG_5183",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "150000",
       "regular_price": "150000",
@@ -268,6 +272,8 @@
         "name": "_MG_5183",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "150000",
       "regular_price": "150000",
@@ -297,6 +303,8 @@
         "name": "_MG_5183",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 10,
       "stock_status": "instock",
       "price": "150000",
       "regular_price": "150000",
@@ -3098,8 +3106,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:42:25",
       "date_created_gmt": "2022-08-25T22:42:25",
-      "date_modified": "2026-07-16T22:39:54",
-      "date_modified_gmt": "2026-07-16T22:39:54",
+      "date_modified": "2026-09-08T17:13:01",
+      "date_modified_gmt": "2026-09-08T17:13:01",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/camiseta-polo-4/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=s",
       "sku": "5056102032",
@@ -3122,7 +3130,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 6,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -3606,7 +3614,7 @@
         {
           "id": 2259063,
           "key": "_last_change_time",
-          "value": "1784241594"
+          "value": "1788887581"
         },
         {
           "id": 2314501,

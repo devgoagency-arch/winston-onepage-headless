@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>676,500</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>676,500</span>",
   "average_rating": "5.00",
   "review_count": 1,
   "images": [
@@ -130,30 +130,8 @@
         "name": "Morral-Edimburgo-Cuero-Cognac-Winstonandharry-1",
         "alt": ""
       },
-      "stock_status": "instock",
-      "price": "676500",
-      "regular_price": "676500",
-      "sale_price": ""
-    },
-    {
-      "id": 25558,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "cognac",
-          "option": "cognac"
-        }
-      ],
-      "image": {
-        "id": 59722,
-        "date_created": "2025-02-13T01:42:26",
-        "date_created_gmt": "2025-02-13T01:42:26",
-        "date_modified": "2025-02-18T22:11:12",
-        "date_modified_gmt": "2025-02-18T22:11:12",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/02/Morral-Edimburgo-Cuero-Cognac-Winstonandharry-1-e1752523052335.jpg",
-        "name": "Morral-Edimburgo-Cuero-Cognac-Winstonandharry-1",
-        "alt": ""
-      },
+      "manage_stock": true,
+      "stock_quantity": 9,
       "stock_status": "instock",
       "price": "676500",
       "regular_price": "676500",
@@ -219,8 +197,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:49:10",
       "date_created_gmt": "2022-08-25T22:49:10",
-      "date_modified": "2026-06-16T17:41:06",
-      "date_modified_gmt": "2026-06-16T17:41:06",
+      "date_modified": "2026-10-27T19:15:35",
+      "date_modified_gmt": "2026-10-27T19:15:35",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/morral-edimburgo/?attribute_pa_selecciona-el-color=verde",
       "sku": "15151005000",
@@ -243,7 +221,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 13,
+      "stock_quantity": 9,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -864,7 +842,7 @@
         {
           "id": 2236156,
           "key": "_last_change_time",
-          "value": "1781631284"
+          "value": "1793122979"
         },
         {
           "id": 2314058,
@@ -906,8 +884,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:49:10",
       "date_created_gmt": "2022-08-25T22:49:10",
-      "date_modified": "2026-08-13T00:05:18",
-      "date_modified_gmt": "2026-08-13T00:05:18",
+      "date_modified": "2026-09-21T06:40:09",
+      "date_modified_gmt": "2026-09-21T06:40:09",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/morral-edimburgo/?attribute_pa_selecciona-el-color=cognac",
       "sku": "15151032000",
@@ -930,8 +908,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 2,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -1548,12 +1526,17 @@
         {
           "id": 2254710,
           "key": "_last_change_time",
-          "value": "1786579518"
+          "value": "1789972809"
         },
         {
           "id": 2314057,
           "key": "wpcvi_images",
           "value": "59723,59724,59725,59726,59727,59728"
+        },
+        {
+          "id": 2583795,
+          "key": "_wc_push_notification_sent_out_of_stock",
+          "value": "1789972952"
         }
       ],
       "name": "Cognac",
@@ -1587,6 +1570,8 @@
     }
   ],
   "wpc_resolved_media": {
+    "17325": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/03/9-edinburgo-verde-2.jpg",
+    "17326": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/03/9-edimburgo-detalle-b.jpg",
     "59723": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/02/Morral-Edimburgo-Cuero-Cognac-Winstonandharry-2-e1752523072839.jpg",
     "59724": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/02/Morral-Edimburgo-Cuero-Cognac-Winstonandharry-3-e1752523086339.jpg",
     "59725": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/02/Morral-Edimburgo-Cuero-Cognac-Winstonandharry-4-e1752523164465.jpg",
@@ -1608,6 +1593,16 @@
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/02/Morral-Edimburgo-Cuero-Cognac-Winstonandharry-1-1-e1752523237513.jpg",
         "alt": "Morral-Edimburgo-Cuero-Cognac-Winstonandharry-1",
         "name": "Morral-Edimburgo-Cuero-Cognac-Winstonandharry-1"
+      },
+      {
+        "id": 17325,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/03/9-edinburgo-verde-2.jpg",
+        "alt": "Morral Edimburgo"
+      },
+      {
+        "id": 17326,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/03/9-edimburgo-detalle-b.jpg",
+        "alt": "Morral Edimburgo"
       },
       {
         "id": 59730,
@@ -1641,12 +1636,6 @@
       }
     ],
     "cognac": [
-      {
-        "id": 59722,
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/02/Morral-Edimburgo-Cuero-Cognac-Winstonandharry-1-e1752523052335.jpg",
-        "alt": "Morral-Edimburgo-Cuero-Cognac-Winstonandharry-1",
-        "name": "Morral-Edimburgo-Cuero-Cognac-Winstonandharry-1"
-      },
       {
         "id": 59723,
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/02/Morral-Edimburgo-Cuero-Cognac-Winstonandharry-2-e1752523072839.jpg",

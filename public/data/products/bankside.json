@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>759,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>759,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -218,6 +218,8 @@
         "name": "Bankside-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "759000",
       "regular_price": "759000",
@@ -247,6 +249,8 @@
         "name": "Bankside-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "759000",
       "regular_price": "759000",
@@ -276,6 +280,8 @@
         "name": "Bankside-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "759000",
       "regular_price": "759000",
@@ -305,6 +311,8 @@
         "name": "Bankside-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "759000",
       "regular_price": "759000",
@@ -334,6 +342,8 @@
         "name": "Bankside-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "759000",
       "regular_price": "759000",
@@ -363,6 +373,8 @@
         "name": "Bankside-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "759000",
       "regular_price": "759000",
@@ -392,6 +404,8 @@
         "name": "Bankside-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "759000",
       "regular_price": "759000",
@@ -421,6 +435,8 @@
         "name": "Bankside-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "759000",
       "regular_price": "759000",
@@ -450,6 +466,8 @@
         "name": "Bankside-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "759000",
       "regular_price": "759000",
@@ -479,6 +497,8 @@
         "name": "Bankside-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "759000",
       "regular_price": "759000",
@@ -508,6 +528,8 @@
         "name": "Bankside-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "759000",
       "regular_price": "759000",
@@ -537,6 +559,8 @@
         "name": "Bankside-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "759000",
       "regular_price": "759000",
@@ -566,6 +590,8 @@
         "name": "Bankside-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "759000",
       "regular_price": "759000",
@@ -595,6 +621,8 @@
         "name": "Bankside-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "price": "759000",
       "regular_price": "759000",
@@ -624,6 +652,8 @@
         "name": "Bankside-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "759000",
       "regular_price": "759000",
@@ -653,6 +683,8 @@
         "name": "Bankside-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "759000",
       "regular_price": "759000",
@@ -682,6 +714,8 @@
         "name": "Bankside-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "759000",
       "regular_price": "759000",
@@ -3513,8 +3547,8 @@
       "type": "variation",
       "date_created": "2025-02-21T04:23:43",
       "date_created_gmt": "2025-02-21T04:23:43",
-      "date_modified": "2026-05-07T22:57:46",
-      "date_modified_gmt": "2026-05-07T22:57:46",
+      "date_modified": "2026-11-23T04:38:27",
+      "date_modified_gmt": "2026-11-23T04:38:27",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bankside/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=41",
       "sku": "7600102041",
@@ -3537,7 +3571,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 7,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -4161,7 +4195,7 @@
         {
           "id": 2261905,
           "key": "_last_change_time",
-          "value": "1778175375"
+          "value": "1795408707"
         },
         {
           "id": 2311899,
@@ -4203,8 +4237,8 @@
       "type": "variation",
       "date_created": "2025-02-21T04:23:42",
       "date_created_gmt": "2025-02-21T04:23:42",
-      "date_modified": "2026-05-07T22:57:46",
-      "date_modified_gmt": "2026-05-07T22:57:46",
+      "date_modified": "2026-09-08T17:14:40",
+      "date_modified_gmt": "2026-09-08T17:14:40",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bankside/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=40",
       "sku": "7600102040",
@@ -4227,7 +4261,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 4,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -4851,7 +4885,7 @@
         {
           "id": 2261904,
           "key": "_last_change_time",
-          "value": "1778175374"
+          "value": "1788887680"
         },
         {
           "id": 2311910,
@@ -15983,8 +16017,8 @@
       "type": "variation",
       "date_created": "2025-02-21T04:23:42",
       "date_created_gmt": "2025-02-21T04:23:42",
-      "date_modified": "2026-05-07T22:57:45",
-      "date_modified_gmt": "2026-05-07T22:57:45",
+      "date_modified": "2026-10-27T19:16:33",
+      "date_modified_gmt": "2026-10-27T19:16:33",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/bankside/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=41",
       "sku": "7600104041",
@@ -16007,7 +16041,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 2,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -16636,7 +16670,7 @@
         {
           "id": 2261911,
           "key": "_last_change_time",
-          "value": "1778175370"
+          "value": "1793128593"
         },
         {
           "id": 2311913,

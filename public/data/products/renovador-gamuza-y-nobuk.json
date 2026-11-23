@@ -11,13 +11,10 @@
   "description": "<p>• Ideal para el cuiado de productos de cuero como maletas y zapatos<br />\n• Trae Picmento color miel para ayudar a cubrir imperfecciones como rayones superficiales<br />\n• Aplicar de manera regular segun el uso del producto especial cuando se ve reseco • Esencial para el cuidado de los cueros<br />\n• Ayuda a mantener el color y el brillo del cuero natural<br />\n• Aplicar regularmente segun el uso</p>",
   "on_sale": false,
   "prices": {
-    "price": "55000",
-    "regular_price": "55000",
-    "sale_price": "55000",
-    "price_range": {
-      "min_amount": "55000",
-      "max_amount": "60000"
-    },
+    "price": "60000",
+    "regular_price": "60000",
+    "sale_price": "60000",
+    "price_range": null,
     "currency_code": "COP",
     "currency_symbol": "$",
     "currency_minor_unit": 0,
@@ -26,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\" aria-hidden=\"true\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>55,000</span> <span aria-hidden=\"true\">&ndash;</span> <span class=\"woocommerce-Price-amount amount\" aria-hidden=\"true\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>60,000</span><span class=\"screen-reader-text\">Price range: &#036;55,000 through &#036;60,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>60,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -121,30 +118,6 @@
   ],
   "variations": [
     {
-      "id": 32529,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "neutro",
-          "option": "neutro"
-        }
-      ],
-      "image": {
-        "id": 32505,
-        "date_created": "2023-12-13T16:35:44",
-        "date_created_gmt": "2023-12-13T16:35:44",
-        "date_modified": "2023-12-13T16:35:44",
-        "date_modified_gmt": "2023-12-13T16:35:44",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2023/12/Renovador-cuiado-gamuza-winstonandharry-negro.jpg",
-        "name": "Renovador-cuiado-gamuza-winstonandharry-negro",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "55000",
-      "regular_price": "55000",
-      "sale_price": ""
-    },
-    {
       "id": 32531,
       "attributes": [
         {
@@ -163,9 +136,11 @@
         "name": "Renovador-cuiado-gamuza-winstonandharry-negro",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 19,
       "stock_status": "instock",
-      "price": "55000",
-      "regular_price": "55000",
+      "price": "60000",
+      "regular_price": "60000",
       "sale_price": ""
     }
   ],
@@ -240,8 +215,8 @@
       "type": "variation",
       "date_created": "2023-12-13T17:36:59",
       "date_created_gmt": "2023-12-13T17:36:59",
-      "date_modified": "2026-08-22T00:03:48",
-      "date_modified_gmt": "2026-08-22T00:03:48",
+      "date_modified": "2026-11-23T04:37:33",
+      "date_modified_gmt": "2026-11-23T04:37:33",
       "description": "<p>• Ideal para el cuidado de productos de Gamuza y nobuk </p>\n<p>• No trae picmento para usarlo sobre cualquier color de gamuza y renovar el color de la piel </p>\n<p>• Aplicar de manera regular segun el uso del producto especial cuando se vea necesario /n• Esencial para el cuidado de los Gamuzas </p>\n<p>• </p>\n",
       "permalink": "https://tienda.winstonandharrystore.com/product/renovador-gamuza-y-nobuk/?attribute_pa_selecciona-el-color=cafe",
       "sku": "81811204000",
@@ -264,7 +239,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 30,
+      "stock_quantity": 19,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -742,7 +717,7 @@
         {
           "id": 2250262,
           "key": "_last_change_time",
-          "value": "1787357028"
+          "value": "1795408653"
         },
         {
           "id": 2312513,
@@ -1328,8 +1303,8 @@
       "type": "variation",
       "date_created": "2023-12-13T17:36:59",
       "date_created_gmt": "2023-12-13T17:36:59",
-      "date_modified": "2026-08-13T00:06:22",
-      "date_modified_gmt": "2026-08-13T00:06:22",
+      "date_modified": "2026-11-04T11:53:41",
+      "date_modified_gmt": "2026-11-04T11:53:41",
       "description": "<p>• Ideal para el cuidado de productos de Gamuza y nobuk </p>\n<p>• No trae picmento para usarlo sobre cualquier color de gamuza y renovar el color de la piel </p>\n<p>• Aplicar de manera regular segun el uso del producto especial cuando se vea necesario /n• Esencial para el cuidado de los Gamuzas </p>\n<p>• </p>\n",
       "permalink": "https://tienda.winstonandharrystore.com/product/renovador-gamuza-y-nobuk/?attribute_pa_selecciona-el-color=neutro",
       "sku": "81811100000",
@@ -1352,8 +1327,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 8,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -1830,7 +1805,7 @@
         {
           "id": 2236210,
           "key": "_last_change_time",
-          "value": "1786579582"
+          "value": "1793793221"
         },
         {
           "id": 2312511,
@@ -1875,19 +1850,6 @@
   },
   "stock_status": "instock",
   "variation_images_map": {
-    "neutro": [
-      {
-        "id": 32505,
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2023/12/Renovador-cuiado-gamuza-winstonandharry-negro.jpg",
-        "alt": "Renovador-cuiado-gamuza-winstonandharry-negro",
-        "name": "Renovador-cuiado-gamuza-winstonandharry-negro"
-      },
-      {
-        "id": 32499,
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2023/12/Renovador-gamuza-nobuck-cuiado-cuero-winstonandharry-neutro.jpg",
-        "alt": "Renovador Gamuza y Nobuk"
-      }
-    ],
     "cafe": [
       {
         "id": 32505,
@@ -1905,6 +1867,13 @@
       {
         "id": 32498,
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2023/12/Renovador-gamuza-cuiado-cuero-winstonandharry-negro-revez.jpg",
+        "alt": "Renovador Gamuza y Nobuk"
+      }
+    ],
+    "neutro": [
+      {
+        "id": 32499,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2023/12/Renovador-gamuza-nobuck-cuiado-cuero-winstonandharry-neutro.jpg",
         "alt": "Renovador Gamuza y Nobuk"
       }
     ]

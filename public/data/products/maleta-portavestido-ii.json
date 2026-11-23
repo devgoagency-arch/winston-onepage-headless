@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>1,331,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>1,331,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -104,6 +104,8 @@
         "name": "winston-and-harry-maleta-portavestido-II-cognac-frente",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 17,
       "stock_status": "instock",
       "price": "1331000",
       "regular_price": "1331000",
@@ -128,6 +130,8 @@
         "name": "winston and harry portavestido ii negro 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 17,
       "stock_status": "instock",
       "price": "1331000",
       "regular_price": "1331000",
@@ -193,8 +197,8 @@
       "type": "variation",
       "date_created": "2026-10-05T16:52:03",
       "date_created_gmt": "2026-10-05T16:52:03",
-      "date_modified": "2026-10-05T21:51:47",
-      "date_modified_gmt": "2026-10-05T21:51:47",
+      "date_modified": "2026-11-04T17:55:38",
+      "date_modified_gmt": "2026-11-04T17:55:38",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/maleta-portavestido-ii/?attribute_pa_selecciona-el-color=negro",
       "sku": "15159402000",
@@ -217,7 +221,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 18,
+      "stock_quantity": 17,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -308,7 +312,7 @@
         {
           "id": 2603720,
           "key": "_last_change_time",
-          "value": "1791237107"
+          "value": "1793814938"
         },
         {
           "id": 2603722,
@@ -1265,8 +1269,8 @@
       "type": "variation",
       "date_created": "2026-10-05T16:52:03",
       "date_created_gmt": "2026-10-05T16:52:03",
-      "date_modified": "2026-10-05T21:51:47",
-      "date_modified_gmt": "2026-10-05T21:51:47",
+      "date_modified": "2026-11-23T04:40:21",
+      "date_modified_gmt": "2026-11-23T04:40:21",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/maleta-portavestido-ii/?attribute_pa_selecciona-el-color=cognac",
       "sku": "15159432000",
@@ -1289,7 +1293,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 18,
+      "stock_quantity": 17,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -1380,7 +1384,7 @@
         {
           "id": 2606806,
           "key": "_last_change_time",
-          "value": "1791237107"
+          "value": "1795408821"
         },
         {
           "id": 2606808,
@@ -2340,6 +2344,8 @@
     "87313": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-maleta-portavestido-II-cognac-07.jpg",
     "87315": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-maleta-portavestido-II-cognac-01.jpg",
     "87316": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-maleta-portavestido-II-cognac-08.jpg",
+    "87328": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-portavestido-ii-negro-02.jpg",
+    "87329": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-portavestido-ii-negro-03.jpg",
     "87330": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-portavestido-ii-negro-04.jpg",
     "87331": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-portavestido-ii-negro-05.jpg",
     "87332": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-portavestido-ii-negro-06.jpg",
@@ -2406,6 +2412,16 @@
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-portavestido-ii-negro-01.jpg",
         "alt": "winston and harry portavestido ii negro 01",
         "name": "winston and harry portavestido ii negro 01"
+      },
+      {
+        "id": 87328,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-portavestido-ii-negro-02.jpg",
+        "alt": "Maleta Portavestido II"
+      },
+      {
+        "id": 87329,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-portavestido-ii-negro-03.jpg",
+        "alt": "Maleta Portavestido II"
       },
       {
         "id": 87330,

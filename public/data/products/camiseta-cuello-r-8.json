@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>110,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>110,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -208,6 +208,8 @@
         "name": "04-vinotinto",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 16,
       "stock_status": "instock",
       "price": "110000",
       "regular_price": "110000",
@@ -237,6 +239,8 @@
         "name": "04-vinotinto",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 16,
       "stock_status": "instock",
       "price": "110000",
       "regular_price": "110000",
@@ -266,6 +270,8 @@
         "name": "04-vinotinto",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 10,
       "stock_status": "instock",
       "price": "110000",
       "regular_price": "110000",
@@ -295,6 +301,8 @@
         "name": "04-vinotinto",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 12,
       "stock_status": "instock",
       "price": "110000",
       "regular_price": "110000",
@@ -916,8 +924,8 @@
       "type": "variation",
       "date_created": "2023-07-12T23:09:19",
       "date_created_gmt": "2023-07-12T23:09:19",
-      "date_modified": "2026-06-02T17:37:48",
-      "date_modified_gmt": "2026-06-02T17:37:48",
+      "date_modified": "2026-09-08T17:14:18",
+      "date_modified_gmt": "2026-09-08T17:14:18",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/camiseta-cuello-r-8/?attribute_pa_selecciona-el-color=rojo&attribute_pa_selecciona-una-talla=l",
       "sku": "5056013036",
@@ -940,7 +948,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 13,
+      "stock_quantity": 10,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -1424,7 +1432,7 @@
         {
           "id": 2239413,
           "key": "_last_change_time",
-          "value": "1780421868"
+          "value": "1788887658"
         },
         {
           "id": 2312717,
@@ -1466,8 +1474,8 @@
       "type": "variation",
       "date_created": "2023-07-12T23:09:19",
       "date_created_gmt": "2023-07-12T23:09:19",
-      "date_modified": "2026-05-07T22:59:59",
-      "date_modified_gmt": "2026-05-07T22:59:59",
+      "date_modified": "2026-09-16T16:52:32",
+      "date_modified_gmt": "2026-09-16T16:52:32",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/camiseta-cuello-r-8/?attribute_pa_selecciona-el-color=rojo&attribute_pa_selecciona-una-talla=m",
       "sku": "5056013034",
@@ -1490,7 +1498,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 17,
+      "stock_quantity": 16,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -1974,7 +1982,7 @@
         {
           "id": 2250230,
           "key": "_last_change_time",
-          "value": "1778177719"
+          "value": "1789577552"
         },
         {
           "id": 2312716,

@@ -9,11 +9,11 @@
   "sku": "714-Naranja",
   "short_description": "<p>• Para un estilo casual y formal.</p>\n<p>• Hecho a mano 100% por artesanos colombianos.</p>\n<p>• 95% Acrilico &#8211; 5% Nylon.</p>",
   "description": "<p>Este suéter combina estilo y comodidad en una prenda versátil ideal para los días fríos. Confeccionado en tejido de punto de alta calidad, presenta un diseño texturizado en relieve estilo escalera que le aporta un toque moderno sin perder elegancia. Su cuello redondo, puños y dobladillo acanalados aseguran un ajuste cómodo y duradero. Perfecto para combinar con jeans o pantalones formales, este suéter es una prenda básica que no puede faltar en tu guardarropa.</p>",
-  "on_sale": false,
+  "on_sale": true,
   "prices": {
-    "price": "245000",
+    "price": "122500",
     "regular_price": "245000",
-    "sale_price": "245000",
+    "sale_price": "122500",
     "price_range": null,
     "currency_code": "COP",
     "currency_symbol": "$",
@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>245,000</span>",
+  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>245,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;245,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>122,500</span></ins><span class=\"screen-reader-text\">Current price is: &#036;122,500.</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -175,8 +175,10 @@
         "name": "Sueter-tejido-escalera-naranja-winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 23,
       "stock_status": "instock",
-      "price": "245000",
+      "price": "122500",
       "regular_price": "245000",
       "sale_price": ""
     },
@@ -204,37 +206,10 @@
         "name": "Sueter-tejido-escalera-naranja-winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 23,
       "stock_status": "instock",
-      "price": "245000",
-      "regular_price": "245000",
-      "sale_price": ""
-    },
-    {
-      "id": 62559,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "naranja",
-          "option": "naranja"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "xl",
-          "option": "xl"
-        }
-      ],
-      "image": {
-        "id": 62995,
-        "date_created": "2025-04-25T23:38:40",
-        "date_created_gmt": "2025-04-25T23:38:40",
-        "date_modified": "2025-04-26T03:23:20",
-        "date_modified_gmt": "2025-04-26T03:23:20",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/04/Sueter-tejido-escalera-naranja-winstonandharry-1-e1750284442271.jpg",
-        "name": "Sueter-tejido-escalera-naranja-winstonandharry-1",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "245000",
+      "price": "122500",
       "regular_price": "245000",
       "sale_price": ""
     }
@@ -304,8 +279,8 @@
       "type": "variation",
       "date_created": "2025-04-22T23:35:16",
       "date_created_gmt": "2025-04-22T23:35:16",
-      "date_modified": "2026-07-16T22:43:11",
-      "date_modified_gmt": "2026-07-16T22:43:11",
+      "date_modified": "2026-09-06T17:46:49",
+      "date_modified_gmt": "2026-09-06T17:46:49",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/sueter-tejido-escalera-naranja/?attribute_pa_selecciona-el-color=naranja&attribute_pa_selecciona-una-talla=xxl",
       "sku": "6060121040",
@@ -393,16 +368,6 @@
           "id": 1810531,
           "key": "fb_visibility",
           "value": "no"
-        },
-        {
-          "id": 1810532,
-          "key": "fb_product_description",
-          "value": ""
-        },
-        {
-          "id": 1810533,
-          "key": "fb_rich_text_description",
-          "value": ""
         },
         {
           "id": 1810534,
@@ -1027,12 +992,27 @@
         {
           "id": 2259210,
           "key": "_last_change_time",
-          "value": "1784241791"
+          "value": "1788716809"
         },
         {
           "id": 2311538,
           "key": "wpcvi_images",
           "value": "62996,62997,62998"
+        },
+        {
+          "id": 2539895,
+          "key": "_wc_facebook_product_video_source",
+          "value": "upload"
+        },
+        {
+          "id": 2539896,
+          "key": "fb_product_images",
+          "value": ""
+        },
+        {
+          "id": 2539897,
+          "key": "_wc_facebook_sync_enabled_v2",
+          "value": "yes"
         }
       ],
       "name": "Naranja, XXL",
@@ -1069,20 +1049,20 @@
       "type": "variation",
       "date_created": "2025-04-22T23:35:16",
       "date_created_gmt": "2025-04-22T23:35:16",
-      "date_modified": "2026-08-18T17:46:53",
-      "date_modified_gmt": "2026-08-18T17:46:53",
+      "date_modified": "2026-11-23T04:38:53",
+      "date_modified_gmt": "2026-11-23T04:38:53",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/sueter-tejido-escalera-naranja/?attribute_pa_selecciona-el-color=naranja&attribute_pa_selecciona-una-talla=xl",
       "sku": "6060121038",
       "global_unique_id": "",
-      "price": "245000",
+      "price": "122500",
       "regular_price": "245000",
-      "sale_price": "",
+      "sale_price": "122500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -1093,8 +1073,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 3,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -1158,16 +1138,6 @@
           "id": 1810499,
           "key": "fb_visibility",
           "value": "no"
-        },
-        {
-          "id": 1810500,
-          "key": "fb_product_description",
-          "value": ""
-        },
-        {
-          "id": 1810501,
-          "key": "fb_rich_text_description",
-          "value": ""
         },
         {
           "id": 1810502,
@@ -1792,12 +1762,27 @@
         {
           "id": 2219041,
           "key": "_last_change_time",
-          "value": "1787075213"
+          "value": "1795408733"
         },
         {
           "id": 2311537,
           "key": "wpcvi_images",
           "value": "62996,62997,62998"
+        },
+        {
+          "id": 2539892,
+          "key": "_wc_facebook_product_video_source",
+          "value": "upload"
+        },
+        {
+          "id": 2539893,
+          "key": "fb_product_images",
+          "value": ""
+        },
+        {
+          "id": 2539894,
+          "key": "_wc_facebook_sync_enabled_v2",
+          "value": "yes"
         }
       ],
       "name": "Naranja, XL",
@@ -1834,8 +1819,8 @@
       "type": "variation",
       "date_created": "2025-04-22T23:35:16",
       "date_created_gmt": "2025-04-22T23:35:16",
-      "date_modified": "2026-07-16T22:43:11",
-      "date_modified_gmt": "2026-07-16T22:43:11",
+      "date_modified": "2026-09-06T17:46:49",
+      "date_modified_gmt": "2026-09-06T17:46:49",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/sueter-tejido-escalera-naranja/?attribute_pa_selecciona-el-color=naranja&attribute_pa_selecciona-una-talla=xs",
       "sku": "6060121030",
@@ -1923,16 +1908,6 @@
           "id": 1810468,
           "key": "fb_visibility",
           "value": "no"
-        },
-        {
-          "id": 1810469,
-          "key": "fb_product_description",
-          "value": ""
-        },
-        {
-          "id": 1810470,
-          "key": "fb_rich_text_description",
-          "value": ""
         },
         {
           "id": 1810471,
@@ -2557,12 +2532,27 @@
         {
           "id": 2259201,
           "key": "_last_change_time",
-          "value": "1784241791"
+          "value": "1788716775"
         },
         {
           "id": 2311542,
           "key": "wpcvi_images",
           "value": "62996,62997,62998"
+        },
+        {
+          "id": 2539889,
+          "key": "_wc_facebook_product_video_source",
+          "value": "upload"
+        },
+        {
+          "id": 2539890,
+          "key": "fb_product_images",
+          "value": ""
+        },
+        {
+          "id": 2539891,
+          "key": "_wc_facebook_sync_enabled_v2",
+          "value": "yes"
         }
       ],
       "name": "Naranja, XS",
@@ -2599,20 +2589,20 @@
       "type": "variation",
       "date_created": "2025-04-22T23:35:16",
       "date_created_gmt": "2025-04-22T23:35:16",
-      "date_modified": "2026-06-02T17:40:28",
-      "date_modified_gmt": "2026-06-02T17:40:28",
+      "date_modified": "2026-11-23T04:33:48",
+      "date_modified_gmt": "2026-11-23T04:33:48",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/sueter-tejido-escalera-naranja/?attribute_pa_selecciona-el-color=naranja&attribute_pa_selecciona-una-talla=l",
       "sku": "6060121036",
       "global_unique_id": "",
-      "price": "245000",
+      "price": "122500",
       "regular_price": "245000",
-      "sale_price": "",
+      "sale_price": "122500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -2623,7 +2613,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 26,
+      "stock_quantity": 23,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -2688,16 +2678,6 @@
           "id": 1810437,
           "key": "fb_visibility",
           "value": "no"
-        },
-        {
-          "id": 1810438,
-          "key": "fb_product_description",
-          "value": ""
-        },
-        {
-          "id": 1810439,
-          "key": "fb_rich_text_description",
-          "value": ""
         },
         {
           "id": 1810440,
@@ -3322,12 +3302,27 @@
         {
           "id": 2250368,
           "key": "_last_change_time",
-          "value": "1780422028"
+          "value": "1795408428"
         },
         {
           "id": 2311541,
           "key": "wpcvi_images",
           "value": "62996,62997,62998"
+        },
+        {
+          "id": 2539886,
+          "key": "_wc_facebook_product_video_source",
+          "value": "upload"
+        },
+        {
+          "id": 2539887,
+          "key": "fb_product_images",
+          "value": ""
+        },
+        {
+          "id": 2539888,
+          "key": "_wc_facebook_sync_enabled_v2",
+          "value": "yes"
         }
       ],
       "name": "Naranja, L",
@@ -3364,20 +3359,20 @@
       "type": "variation",
       "date_created": "2025-04-22T23:35:16",
       "date_created_gmt": "2025-04-22T23:35:16",
-      "date_modified": "2026-05-07T22:57:08",
-      "date_modified_gmt": "2026-05-07T22:57:08",
+      "date_modified": "2026-11-23T04:33:48",
+      "date_modified_gmt": "2026-11-23T04:33:48",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/sueter-tejido-escalera-naranja/?attribute_pa_selecciona-el-color=naranja&attribute_pa_selecciona-una-talla=m",
       "sku": "6060121034",
       "global_unique_id": "",
-      "price": "245000",
+      "price": "122500",
       "regular_price": "245000",
-      "sale_price": "",
+      "sale_price": "122500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -3388,7 +3383,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 25,
+      "stock_quantity": 23,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -3453,16 +3448,6 @@
           "id": 1810406,
           "key": "fb_visibility",
           "value": "no"
-        },
-        {
-          "id": 1810407,
-          "key": "fb_product_description",
-          "value": ""
-        },
-        {
-          "id": 1810408,
-          "key": "fb_rich_text_description",
-          "value": ""
         },
         {
           "id": 1810409,
@@ -4087,12 +4072,27 @@
         {
           "id": 2233385,
           "key": "_last_change_time",
-          "value": "1778175329"
+          "value": "1795408428"
         },
         {
           "id": 2311540,
           "key": "wpcvi_images",
           "value": "62996,62997,62998"
+        },
+        {
+          "id": 2539883,
+          "key": "_wc_facebook_product_video_source",
+          "value": "upload"
+        },
+        {
+          "id": 2539884,
+          "key": "fb_product_images",
+          "value": ""
+        },
+        {
+          "id": 2539885,
+          "key": "_wc_facebook_sync_enabled_v2",
+          "value": "yes"
         }
       ],
       "name": "Naranja, M",
@@ -4129,20 +4129,20 @@
       "type": "variation",
       "date_created": "2025-04-22T23:35:16",
       "date_created_gmt": "2025-04-22T23:35:16",
-      "date_modified": "2026-05-07T22:57:08",
-      "date_modified_gmt": "2026-05-07T22:57:08",
+      "date_modified": "2026-11-23T04:33:48",
+      "date_modified_gmt": "2026-11-23T04:33:48",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/sueter-tejido-escalera-naranja/?attribute_pa_selecciona-el-color=naranja&attribute_pa_selecciona-una-talla=s",
       "sku": "6060121032",
       "global_unique_id": "",
-      "price": "245000",
+      "price": "122500",
       "regular_price": "245000",
-      "sale_price": "",
+      "sale_price": "122500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -4218,16 +4218,6 @@
           "id": 1810375,
           "key": "fb_visibility",
           "value": "no"
-        },
-        {
-          "id": 1810376,
-          "key": "fb_product_description",
-          "value": ""
-        },
-        {
-          "id": 1810377,
-          "key": "fb_rich_text_description",
-          "value": ""
         },
         {
           "id": 1810378,
@@ -4847,12 +4837,27 @@
         {
           "id": 2259202,
           "key": "_last_change_time",
-          "value": "1778175329"
+          "value": "1795408428"
         },
         {
           "id": 2311539,
           "key": "wpcvi_images",
           "value": "62996,62997,62998"
+        },
+        {
+          "id": 2539880,
+          "key": "_wc_facebook_product_video_source",
+          "value": "upload"
+        },
+        {
+          "id": 2539881,
+          "key": "fb_product_images",
+          "value": ""
+        },
+        {
+          "id": 2539882,
+          "key": "_wc_facebook_sync_enabled_v2",
+          "value": "yes"
         }
       ],
       "name": "Naranja, S",

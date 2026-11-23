@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>590,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>590,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -277,6 +277,8 @@
         "name": "Winston and Harry tenis dublin cafe 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 7,
       "stock_status": "instock",
       "price": "590000",
       "regular_price": "590000",
@@ -306,6 +308,8 @@
         "name": "Winston and Harry tenis dublin cafe 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "590000",
       "regular_price": "590000",
@@ -335,6 +339,8 @@
         "name": "Winston and Harry tenis dublin cafe 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "590000",
       "regular_price": "590000",
@@ -364,6 +370,8 @@
         "name": "Winston and Harry tenis dublin cafe 01",
         "alt": ""
       },
+      "manage_stock": "parent",
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "590000",
       "regular_price": "590000",
@@ -393,6 +401,8 @@
         "name": "Winston and Harry tenis dublin cafe 01",
         "alt": ""
       },
+      "manage_stock": "parent",
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "590000",
       "regular_price": "590000",
@@ -422,6 +432,8 @@
         "name": "Winston and Harry tenis dublin miel 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "590000",
       "regular_price": "590000",
@@ -451,6 +463,8 @@
         "name": "Winston and Harry tenis dublin miel 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "590000",
       "regular_price": "590000",
@@ -480,6 +494,8 @@
         "name": "Winston and Harry tenis dublin miel 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 7,
       "stock_status": "instock",
       "price": "590000",
       "regular_price": "590000",
@@ -509,6 +525,8 @@
         "name": "Winston and Harry tenis dublin miel 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 8,
       "stock_status": "instock",
       "price": "590000",
       "regular_price": "590000",
@@ -538,6 +556,8 @@
         "name": "Winston and Harry tenis dublin miel 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 8,
       "stock_status": "instock",
       "price": "590000",
       "regular_price": "590000",
@@ -567,6 +587,8 @@
         "name": "Winston and Harry tenis dublin miel 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "price": "590000",
       "regular_price": "590000",
@@ -596,6 +618,8 @@
         "name": "Winston and Harry tenis dublin miel 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "590000",
       "regular_price": "590000",
@@ -625,6 +649,8 @@
         "name": "Winston and Harry tenis dublin miel 01",
         "alt": ""
       },
+      "manage_stock": "parent",
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "590000",
       "regular_price": "590000",
@@ -654,6 +680,8 @@
         "name": "Winston and Harry tenis dublin miel 01",
         "alt": ""
       },
+      "manage_stock": "parent",
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "590000",
       "regular_price": "590000",
@@ -683,6 +711,8 @@
         "name": "Winston and Harry tenis dublin verde 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "590000",
       "regular_price": "590000",
@@ -712,35 +742,8 @@
         "name": "Winston and Harry tenis dublin verde 01",
         "alt": ""
       },
-      "stock_status": "instock",
-      "price": "590000",
-      "regular_price": "590000",
-      "sale_price": ""
-    },
-    {
-      "id": 86502,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "verde",
-          "option": "verde"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "39",
-          "option": "39"
-        }
-      ],
-      "image": {
-        "id": 85734,
-        "date_created": "2026-07-14T22:03:43",
-        "date_created_gmt": "2026-07-14T22:03:43",
-        "date_modified": "2026-08-12T17:51:03",
-        "date_modified_gmt": "2026-08-12T17:51:03",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-tenis-dublin-verde-01.jpg",
-        "name": "Winston and Harry tenis dublin verde 01",
-        "alt": ""
-      },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "590000",
       "regular_price": "590000",
@@ -770,6 +773,8 @@
         "name": "Winston and Harry tenis dublin verde 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "price": "590000",
       "regular_price": "590000",
@@ -799,6 +804,8 @@
         "name": "Winston and Harry tenis dublin verde 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "590000",
       "regular_price": "590000",
@@ -828,6 +835,8 @@
         "name": "Winston and Harry tenis dublin verde 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "590000",
       "regular_price": "590000",
@@ -857,6 +866,8 @@
         "name": "Winston and Harry tenis dublin verde 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "590000",
       "regular_price": "590000",
@@ -886,6 +897,8 @@
         "name": "Winston and Harry tenis dublin verde 01",
         "alt": ""
       },
+      "manage_stock": "parent",
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "590000",
       "regular_price": "590000",
@@ -915,6 +928,8 @@
         "name": "Winston and Harry tenis dublin verde 01",
         "alt": ""
       },
+      "manage_stock": "parent",
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "590000",
       "regular_price": "590000",
@@ -944,35 +959,8 @@
         "name": "Winston and Harru tenis dublin azul 01",
         "alt": ""
       },
-      "stock_status": "instock",
-      "price": "590000",
-      "regular_price": "590000",
-      "sale_price": ""
-    },
-    {
-      "id": 86298,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "azul",
-          "option": "azul"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "38",
-          "option": "38"
-        }
-      ],
-      "image": {
-        "id": 85733,
-        "date_created": "2026-07-14T21:37:47",
-        "date_created_gmt": "2026-07-14T21:37:47",
-        "date_modified": "2026-08-12T17:50:51",
-        "date_modified_gmt": "2026-08-12T17:50:51",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harru-tenis-dublin-azul-01.jpg",
-        "name": "Winston and Harru tenis dublin azul 01",
-        "alt": ""
-      },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "590000",
       "regular_price": "590000",
@@ -1002,6 +990,8 @@
         "name": "Winston and Harru tenis dublin azul 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "590000",
       "regular_price": "590000",
@@ -1031,6 +1021,8 @@
         "name": "Winston and Harru tenis dublin azul 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "price": "590000",
       "regular_price": "590000",
@@ -1060,6 +1052,8 @@
         "name": "Winston and Harru tenis dublin azul 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "590000",
       "regular_price": "590000",
@@ -1089,6 +1083,8 @@
         "name": "Winston and Harru tenis dublin azul 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "price": "590000",
       "regular_price": "590000",
@@ -1118,6 +1114,8 @@
         "name": "Winston and Harru tenis dublin azul 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "590000",
       "regular_price": "590000",
@@ -1147,6 +1145,8 @@
         "name": "Winston and Harry Tenis Dublin Blanco 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "590000",
       "regular_price": "590000",
@@ -1176,6 +1176,8 @@
         "name": "Winston and Harry Tenis Dublin Blanco 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "590000",
       "regular_price": "590000",
@@ -1205,6 +1207,8 @@
         "name": "Winston and Harry Tenis Dublin Blanco 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 7,
       "stock_status": "instock",
       "price": "590000",
       "regular_price": "590000",
@@ -1234,6 +1238,8 @@
         "name": "Winston and Harry Tenis Dublin Blanco 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 8,
       "stock_status": "instock",
       "price": "590000",
       "regular_price": "590000",
@@ -1263,6 +1269,8 @@
         "name": "Winston and Harry Tenis Dublin Blanco 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 7,
       "stock_status": "instock",
       "price": "590000",
       "regular_price": "590000",
@@ -1292,6 +1300,8 @@
         "name": "Winston and Harry Tenis Dublin Blanco 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "price": "590000",
       "regular_price": "590000",
@@ -1321,6 +1331,8 @@
         "name": "Winston and Harry Tenis Dublin Blanco 01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "590000",
       "regular_price": "590000",
@@ -4646,8 +4658,8 @@
       "type": "variation",
       "date_created": "2026-08-19T15:40:11",
       "date_created_gmt": "2026-08-19T15:40:11",
-      "date_modified": "2026-08-24T20:32:29",
-      "date_modified_gmt": "2026-08-24T20:32:29",
+      "date_modified": "2026-11-23T04:40:20",
+      "date_modified_gmt": "2026-11-23T04:40:20",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/dublin/?attribute_pa_selecciona-el-color=verde&attribute_pa_selecciona-una-talla=42",
       "sku": "7417405042",
@@ -4670,7 +4682,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 4,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -4717,7 +4729,7 @@
         {
           "id": 2526630,
           "key": "_last_change_time",
-          "value": "1787603549"
+          "value": "1795408820"
         },
         {
           "id": 2526631,
@@ -5724,8 +5736,8 @@
       "type": "variation",
       "date_created": "2026-08-19T15:40:11",
       "date_created_gmt": "2026-08-19T15:40:11",
-      "date_modified": "2026-08-24T20:32:29",
-      "date_modified_gmt": "2026-08-24T20:32:29",
+      "date_modified": "2026-10-27T19:17:59",
+      "date_modified_gmt": "2026-10-27T19:17:59",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/dublin/?attribute_pa_selecciona-el-color=verde&attribute_pa_selecciona-una-talla=41",
       "sku": "7417405041",
@@ -5748,7 +5760,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 4,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -5795,7 +5807,7 @@
         {
           "id": 2526618,
           "key": "_last_change_time",
-          "value": "1787603549"
+          "value": "1793128679"
         },
         {
           "id": 2526619,
@@ -6802,8 +6814,8 @@
       "type": "variation",
       "date_created": "2026-08-19T15:40:11",
       "date_created_gmt": "2026-08-19T15:40:11",
-      "date_modified": "2026-08-22T00:04:57",
-      "date_modified_gmt": "2026-08-22T00:04:57",
+      "date_modified": "2026-09-08T17:16:39",
+      "date_modified_gmt": "2026-09-08T17:16:39",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/dublin/?attribute_pa_selecciona-el-color=verde&attribute_pa_selecciona-una-talla=40",
       "sku": "7417405040",
@@ -6826,7 +6838,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 6,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -6873,7 +6885,7 @@
         {
           "id": 2526606,
           "key": "_last_change_time",
-          "value": "1787357097"
+          "value": "1788887799"
         },
         {
           "id": 2526607,
@@ -7880,8 +7892,8 @@
       "type": "variation",
       "date_created": "2026-08-19T15:40:11",
       "date_created_gmt": "2026-08-19T15:40:11",
-      "date_modified": "2026-08-22T00:04:57",
-      "date_modified_gmt": "2026-08-22T00:04:57",
+      "date_modified": "2026-11-23T04:40:20",
+      "date_modified_gmt": "2026-11-23T04:40:20",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/dublin/?attribute_pa_selecciona-el-color=verde&attribute_pa_selecciona-una-talla=39",
       "sku": "7417405039",
@@ -7904,8 +7916,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 3,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -7951,7 +7963,7 @@
         {
           "id": 2526594,
           "key": "_last_change_time",
-          "value": "1787357097"
+          "value": "1795408820"
         },
         {
           "id": 2526595,
@@ -8958,8 +8970,8 @@
       "type": "variation",
       "date_created": "2026-08-19T15:40:11",
       "date_created_gmt": "2026-08-19T15:40:11",
-      "date_modified": "2026-08-22T00:04:57",
-      "date_modified_gmt": "2026-08-22T00:04:57",
+      "date_modified": "2026-09-23T22:57:13",
+      "date_modified_gmt": "2026-09-23T22:57:13",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/dublin/?attribute_pa_selecciona-el-color=verde&attribute_pa_selecciona-una-talla=38",
       "sku": "7417405038",
@@ -8982,7 +8994,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 3,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -9029,7 +9041,7 @@
         {
           "id": 2526582,
           "key": "_last_change_time",
-          "value": "1787357097"
+          "value": "1790204233"
         },
         {
           "id": 2526583,
@@ -10036,8 +10048,8 @@
       "type": "variation",
       "date_created": "2026-08-19T15:40:11",
       "date_created_gmt": "2026-08-19T15:40:11",
-      "date_modified": "2026-08-22T00:04:57",
-      "date_modified_gmt": "2026-08-22T00:04:57",
+      "date_modified": "2026-10-05T21:51:15",
+      "date_modified_gmt": "2026-10-05T21:51:15",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/dublin/?attribute_pa_selecciona-el-color=verde&attribute_pa_selecciona-una-talla=37",
       "sku": "7417405037",
@@ -10060,7 +10072,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 2,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -10107,7 +10119,7 @@
         {
           "id": 2526568,
           "key": "_last_change_time",
-          "value": "1787357097"
+          "value": "1791237075"
         },
         {
           "id": 2526569,
@@ -13290,8 +13302,8 @@
       "type": "variation",
       "date_created": "2026-08-19T15:40:11",
       "date_created_gmt": "2026-08-19T15:40:11",
-      "date_modified": "2026-08-22T00:04:57",
-      "date_modified_gmt": "2026-08-22T00:04:57",
+      "date_modified": "2026-10-27T19:17:59",
+      "date_modified_gmt": "2026-10-27T19:17:59",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/dublin/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=43",
       "sku": "7417426043",
@@ -13314,7 +13326,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 4,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -13361,7 +13373,7 @@
         {
           "id": 2526530,
           "key": "_last_change_time",
-          "value": "1787357097"
+          "value": "1793128679"
         },
         {
           "id": 2526531,
@@ -19758,8 +19770,8 @@
       "type": "variation",
       "date_created": "2026-08-19T15:40:11",
       "date_created_gmt": "2026-08-19T15:40:11",
-      "date_modified": "2026-08-22T00:04:56",
-      "date_modified_gmt": "2026-08-22T00:04:56",
+      "date_modified": "2026-10-05T21:51:15",
+      "date_modified_gmt": "2026-10-05T21:51:15",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/dublin/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=37",
       "sku": "7417426037",
@@ -19782,7 +19794,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 3,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -19829,7 +19841,7 @@
         {
           "id": 2526455,
           "key": "_last_change_time",
-          "value": "1787357096"
+          "value": "1791237075"
         },
         {
           "id": 2526456,
@@ -28422,8 +28434,8 @@
       "type": "variation",
       "date_created": "2026-08-12T05:33:19",
       "date_created_gmt": "2026-08-12T05:33:19",
-      "date_modified": "2026-08-13T00:05:17",
-      "date_modified_gmt": "2026-08-13T00:05:17",
+      "date_modified": "2026-11-23T04:40:20",
+      "date_modified_gmt": "2026-11-23T04:40:20",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/dublin/?attribute_pa_selecciona-el-color=blanco&attribute_pa_selecciona-una-talla=43",
       "sku": "7417415043",
@@ -28446,7 +28458,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 4,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -28493,7 +28505,7 @@
         {
           "id": 2498929,
           "key": "_last_change_time",
-          "value": "1786579517"
+          "value": "1795408820"
         },
         {
           "id": 2498930,
@@ -30568,8 +30580,8 @@
       "type": "variation",
       "date_created": "2026-08-12T05:33:19",
       "date_created_gmt": "2026-08-12T05:33:19",
-      "date_modified": "2026-08-19T15:40:15",
-      "date_modified_gmt": "2026-08-19T15:40:15",
+      "date_modified": "2026-11-23T04:40:20",
+      "date_modified_gmt": "2026-11-23T04:40:20",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/dublin/?attribute_pa_selecciona-el-color=blanco&attribute_pa_selecciona-una-talla=41",
       "sku": "7417415041",
@@ -30592,7 +30604,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 8,
+      "stock_quantity": 7,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -30639,7 +30651,7 @@
         {
           "id": 2498905,
           "key": "_last_change_time",
-          "value": "1786579509"
+          "value": "1795408820"
         },
         {
           "id": 2498906,
@@ -38064,8 +38076,8 @@
       "type": "variation",
       "date_created": "2026-08-12T05:33:19",
       "date_created_gmt": "2026-08-12T05:33:19",
-      "date_modified": "2026-08-19T15:48:38",
-      "date_modified_gmt": "2026-08-19T15:48:38",
+      "date_modified": "2026-11-23T04:40:20",
+      "date_modified_gmt": "2026-11-23T04:40:20",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/dublin/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=43",
       "sku": "7417401043",
@@ -38088,7 +38100,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 4,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -38135,7 +38147,7 @@
         {
           "id": 2498819,
           "key": "_last_change_time",
-          "value": "1786579508"
+          "value": "1795408820"
         },
         {
           "id": 2498820,
@@ -39132,8 +39144,8 @@
       "type": "variation",
       "date_created": "2026-08-12T05:33:19",
       "date_created_gmt": "2026-08-12T05:33:19",
-      "date_modified": "2026-08-19T15:48:38",
-      "date_modified_gmt": "2026-08-19T15:48:38",
+      "date_modified": "2026-11-06T18:40:51",
+      "date_modified_gmt": "2026-11-06T18:40:51",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/dublin/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=42",
       "sku": "7417401042",
@@ -40200,8 +40212,8 @@
       "type": "variation",
       "date_created": "2026-08-12T05:33:19",
       "date_created_gmt": "2026-08-12T05:33:19",
-      "date_modified": "2026-08-19T15:48:38",
-      "date_modified_gmt": "2026-08-19T15:48:38",
+      "date_modified": "2026-09-16T16:54:05",
+      "date_modified_gmt": "2026-09-16T16:54:05",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/dublin/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=41",
       "sku": "7417401041",
@@ -40224,7 +40236,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 5,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -40271,7 +40283,7 @@
         {
           "id": 2498795,
           "key": "_last_change_time",
-          "value": "1786579508"
+          "value": "1789577645"
         },
         {
           "id": 2498796,
@@ -41268,8 +41280,8 @@
       "type": "variation",
       "date_created": "2026-08-12T05:33:19",
       "date_created_gmt": "2026-08-12T05:33:19",
-      "date_modified": "2026-08-19T15:48:38",
-      "date_modified_gmt": "2026-08-19T15:48:38",
+      "date_modified": "2026-11-06T18:40:51",
+      "date_modified_gmt": "2026-11-06T18:40:51",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/dublin/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=40",
       "sku": "7417401040",
@@ -41292,7 +41304,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 6,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -41339,7 +41351,7 @@
         {
           "id": 2498783,
           "key": "_last_change_time",
-          "value": "1786579508"
+          "value": "1791958483"
         },
         {
           "id": 2498784,
@@ -42336,8 +42348,8 @@
       "type": "variation",
       "date_created": "2026-08-12T05:33:18",
       "date_created_gmt": "2026-08-12T05:33:18",
-      "date_modified": "2026-08-19T15:48:38",
-      "date_modified_gmt": "2026-08-19T15:48:38",
+      "date_modified": "2026-09-16T16:54:05",
+      "date_modified_gmt": "2026-09-16T16:54:05",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/dublin/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=39",
       "sku": "7417401039",
@@ -42360,7 +42372,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 2,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -42407,7 +42419,7 @@
         {
           "id": 2498771,
           "key": "_last_change_time",
-          "value": "1787075248"
+          "value": "1789577645"
         },
         {
           "id": 2498772,
@@ -43404,8 +43416,8 @@
       "type": "variation",
       "date_created": "2026-08-12T05:33:18",
       "date_created_gmt": "2026-08-12T05:33:18",
-      "date_modified": "2026-08-24T20:32:29",
-      "date_modified_gmt": "2026-08-24T20:32:29",
+      "date_modified": "2026-11-04T17:55:37",
+      "date_modified_gmt": "2026-11-04T17:55:37",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/dublin/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=38",
       "sku": "7417401038",
@@ -43428,8 +43440,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -43475,7 +43487,7 @@
         {
           "id": 2498759,
           "key": "_last_change_time",
-          "value": "1787603549"
+          "value": "1793814937"
         },
         {
           "id": 2498760,
@@ -44472,8 +44484,8 @@
       "type": "variation",
       "date_created": "2026-08-12T05:33:18",
       "date_created_gmt": "2026-08-12T05:33:18",
-      "date_modified": "2026-08-19T15:48:38",
-      "date_modified_gmt": "2026-08-19T15:48:38",
+      "date_modified": "2026-10-05T21:51:14",
+      "date_modified_gmt": "2026-10-05T21:51:14",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/dublin/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=37",
       "sku": "7417401037",
@@ -44496,7 +44508,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 2,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -44543,7 +44555,7 @@
         {
           "id": 2498747,
           "key": "_last_change_time",
-          "value": "1787075248"
+          "value": "1791237074"
         },
         {
           "id": 2498748,
@@ -45544,6 +45556,8 @@
     "85730": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harru-tenis-dublin-azul-08.jpg",
     "85731": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harru-tenis-dublin-azul-09.jpg",
     "85732": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harru-tenis-dublin-azul-10.jpg",
+    "85735": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-tenis-dublin-verde-02.jpg",
+    "85736": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-tenis-dublin-verde-03.jpg",
     "85737": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-tenis-dublin-verde-04.jpg",
     "85738": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-tenis-dublin-verde-05.jpg",
     "85739": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-tenis-dublin-verde-06.jpg",
@@ -45551,12 +45565,16 @@
     "85741": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-tenis-dublin-verde-08.jpg",
     "85742": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-tenis-dublin-verde-09.jpg",
     "85743": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-tenis-dublin-verde-10.jpg",
+    "85745": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-Tenis-Dublin-Blanco-02.jpg",
+    "85746": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-Tenis-Dublin-Blanco-03.jpg",
     "85747": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-Tenis-Dublin-Blanco-04.jpg",
     "85748": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-Tenis-Dublin-Blanco-05.jpg",
     "85749": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-Tenis-Dublin-Blanco-06.jpg",
     "85750": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-Tenis-Dublin-Blanco-07-scaled.jpg",
     "85751": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-Tenis-Dublin-Blanco-08.jpg",
     "85752": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-Tenis-Dublin-Blanco-09.jpg",
+    "85754": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-tenis-dublin-cafe-02.jpg",
+    "85755": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-tenis-dublin-cafe-03.jpg",
     "85756": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-tenis-dublin-cafe-04.jpg",
     "85757": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-tenis-dublin-cafe-05.jpg",
     "85758": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-tenis-dublin-cafe-06.jpg",
@@ -45564,6 +45582,8 @@
     "85760": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-tenis-dublin-cafe-08.jpg",
     "85761": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-tenis-dublin-cafe-09.jpg",
     "85762": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-tenis-dublin-cafe-10.jpg",
+    "85764": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-tenis-dublin-miel-02.jpg",
+    "85765": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-tenis-dublin-miel-03.jpg",
     "85766": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-tenis-dublin-miel-04.jpg",
     "85767": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-tenis-dublin-miel-05.jpg",
     "85768": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-tenis-dublin-miel-06.jpg",
@@ -45579,6 +45599,16 @@
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-tenis-dublin-cafe-01.jpg",
         "alt": "Winston and Harry tenis dublin cafe 01",
         "name": "Winston and Harry tenis dublin cafe 01"
+      },
+      {
+        "id": 85754,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-tenis-dublin-cafe-02.jpg",
+        "alt": "Dublin"
+      },
+      {
+        "id": 85755,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-tenis-dublin-cafe-03.jpg",
+        "alt": "Dublin"
       },
       {
         "id": 85756,
@@ -45624,6 +45654,16 @@
         "name": "Winston and Harry tenis dublin miel 01"
       },
       {
+        "id": 85764,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-tenis-dublin-miel-02.jpg",
+        "alt": "Dublin"
+      },
+      {
+        "id": 85765,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-tenis-dublin-miel-03.jpg",
+        "alt": "Dublin"
+      },
+      {
         "id": 85766,
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-tenis-dublin-miel-04.jpg",
         "alt": "Dublin"
@@ -45660,6 +45700,16 @@
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-tenis-dublin-verde-01.jpg",
         "alt": "Winston and Harry tenis dublin verde 01",
         "name": "Winston and Harry tenis dublin verde 01"
+      },
+      {
+        "id": 85735,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-tenis-dublin-verde-02.jpg",
+        "alt": "Dublin"
+      },
+      {
+        "id": 85736,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-tenis-dublin-verde-03.jpg",
+        "alt": "Dublin"
       },
       {
         "id": 85737,
@@ -45758,6 +45808,16 @@
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-Tenis-Dublin-Blanco-01.jpg",
         "alt": "Winston and Harry Tenis Dublin Blanco 01",
         "name": "Winston and Harry Tenis Dublin Blanco 01"
+      },
+      {
+        "id": 85745,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-Tenis-Dublin-Blanco-02.jpg",
+        "alt": "Dublin"
+      },
+      {
+        "id": 85746,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/Winston-and-Harry-Tenis-Dublin-Blanco-03.jpg",
+        "alt": "Dublin"
       },
       {
         "id": 85747,

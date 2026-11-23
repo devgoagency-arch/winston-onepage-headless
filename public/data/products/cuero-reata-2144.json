@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>245,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>245,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -211,6 +211,8 @@
         "name": "Cuero-Reata-Azul-2144-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 12,
       "stock_status": "instock",
       "price": "245000",
       "regular_price": "245000",
@@ -250,6 +252,8 @@
         "name": "Cuero-Reata-Azul-2144-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 27,
       "stock_status": "instock",
       "price": "245000",
       "regular_price": "245000",
@@ -289,6 +293,8 @@
         "name": "Cuero-Reata-Azul-2144-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 16,
       "stock_status": "instock",
       "price": "245000",
       "regular_price": "245000",
@@ -328,6 +334,8 @@
         "name": "Cuero-Reata-Azul-2144-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 15,
       "stock_status": "instock",
       "price": "245000",
       "regular_price": "245000",
@@ -367,6 +375,8 @@
         "name": "Cuero-Reata-Azul-2144-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 14,
       "stock_status": "instock",
       "price": "245000",
       "regular_price": "245000",
@@ -1119,8 +1129,8 @@
       "type": "variation",
       "date_created": "2024-12-02T17:31:54",
       "date_created_gmt": "2024-12-02T17:31:54",
-      "date_modified": "2026-06-16T17:43:06",
-      "date_modified_gmt": "2026-06-16T17:43:06",
+      "date_modified": "2026-09-08T17:14:40",
+      "date_modified_gmt": "2026-09-08T17:14:40",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cuero-reata-2144/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=36&attribute_pa_hebilla=acero-inoxidable&attribute_pa_material=100-cuero",
       "sku": "27214401036",
@@ -1143,7 +1153,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 16,
+      "stock_quantity": 15,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -1764,7 +1774,7 @@
         {
           "id": 2250317,
           "key": "_last_change_time",
-          "value": "1781631411"
+          "value": "1788887680"
         },
         {
           "id": 2312110,
@@ -1806,8 +1816,8 @@
       "type": "variation",
       "date_created": "2024-12-02T17:31:54",
       "date_created_gmt": "2024-12-02T17:31:54",
-      "date_modified": "2026-06-02T17:39:39",
-      "date_modified_gmt": "2026-06-02T17:39:39",
+      "date_modified": "2026-11-23T04:37:59",
+      "date_modified_gmt": "2026-11-23T04:37:59",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cuero-reata-2144/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=34&attribute_pa_hebilla=acero-inoxidable&attribute_pa_material=100-cuero",
       "sku": "27214401034",
@@ -1830,7 +1840,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 18,
+      "stock_quantity": 16,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -2451,7 +2461,7 @@
         {
           "id": 2233352,
           "key": "_last_change_time",
-          "value": "1780421979"
+          "value": "1795408679"
         },
         {
           "id": 2312114,
@@ -3180,8 +3190,8 @@
       "type": "variation",
       "date_created": "2024-12-02T17:31:54",
       "date_created_gmt": "2024-12-02T17:31:54",
-      "date_modified": "2026-06-02T17:39:39",
-      "date_modified_gmt": "2026-06-02T17:39:39",
+      "date_modified": "2026-09-23T22:57:42",
+      "date_modified_gmt": "2026-09-23T22:57:42",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/cuero-reata-2144/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=30&attribute_pa_hebilla=acero-inoxidable&attribute_pa_material=100-cuero",
       "sku": "27214401030",
@@ -3204,7 +3214,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 13,
+      "stock_quantity": 12,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -3825,7 +3835,7 @@
         {
           "id": 2254847,
           "key": "_last_change_time",
-          "value": "1780421979"
+          "value": "1790204262"
         },
         {
           "id": 2312112,

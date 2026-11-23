@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>99,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>99,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -196,6 +196,8 @@
         "name": "Reata-8341-winstonandharry-2",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "99000",
       "regular_price": "99000",
@@ -225,6 +227,8 @@
         "name": "Reata-8341-winstonandharry-2",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "99000",
       "regular_price": "99000",
@@ -254,6 +258,8 @@
         "name": "Reata-8341-winstonandharry-2",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "99000",
       "regular_price": "99000",
@@ -283,6 +289,8 @@
         "name": "Reata-8341-winstonandharry-2",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "99000",
       "regular_price": "99000",
@@ -312,6 +320,8 @@
         "name": "Reata-8341-winstonandharry-2",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "99000",
       "regular_price": "99000",
@@ -1907,8 +1917,8 @@
       "type": "variation",
       "date_created": "2025-04-24T05:01:01",
       "date_created_gmt": "2025-04-24T05:01:01",
-      "date_modified": "2026-08-13T00:06:22",
-      "date_modified_gmt": "2026-08-13T00:06:22",
+      "date_modified": "2026-10-05T21:52:06",
+      "date_modified_gmt": "2026-10-05T21:52:06",
       "description": "<p>Nosotros sabemos que la regla número uno cuando se usa cuero, es siempre combinar los colores &#8211; “match your leathers”. Nuestros cinturones Trent están hechos en piel de becerro de manera artesanal, pintados a mano para llegar a ser el accesorio perfecto al usar con nuestros zapatos. Su diseño sencillo y hebilla clásica le da un toque de elegancia que sobresaltará en cualquier ocasión que te encuentres.</p>\n",
       "permalink": "https://tienda.winstonandharrystore.com/product/reata-8341-26/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=s",
       "sku": "28834126032",
@@ -1931,7 +1941,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 3,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -2630,7 +2640,7 @@
         {
           "id": 2257325,
           "key": "_last_change_time",
-          "value": "1786579582"
+          "value": "1791237126"
         },
         {
           "id": 2311439,

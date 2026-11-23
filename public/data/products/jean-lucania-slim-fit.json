@@ -12,8 +12,8 @@
   "on_sale": false,
   "prices": {
     "price": "510000",
-    "regular_price": "0",
-    "sale_price": "0",
+    "regular_price": "510000",
+    "sale_price": "510000",
     "price_range": null,
     "currency_code": "COP",
     "currency_symbol": "$",
@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>510,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -156,7 +156,163 @@
       ]
     }
   ],
-  "variations": [],
+  "variations": [
+    {
+      "id": 87055,
+      "attributes": [
+        {
+          "name": "Selecciona el Color",
+          "value": "blanco",
+          "option": "blanco"
+        },
+        {
+          "name": "Selecciona una Talla",
+          "value": "30",
+          "option": "30"
+        }
+      ],
+      "image": {
+        "id": 85996,
+        "date_created": "2026-07-29T21:33:30",
+        "date_created_gmt": "2026-07-29T21:33:30",
+        "date_modified": "2026-08-12T17:51:29",
+        "date_modified_gmt": "2026-08-12T17:51:29",
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-jean-lucania-slim-blanco-frente-.jpg",
+        "name": "winston and harry jean lucania slim blanco frente",
+        "alt": ""
+      },
+      "manage_stock": true,
+      "stock_quantity": 3,
+      "stock_status": "instock",
+      "price": "510000",
+      "regular_price": "510000",
+      "sale_price": ""
+    },
+    {
+      "id": 87056,
+      "attributes": [
+        {
+          "name": "Selecciona el Color",
+          "value": "blanco",
+          "option": "blanco"
+        },
+        {
+          "name": "Selecciona una Talla",
+          "value": "32",
+          "option": "32"
+        }
+      ],
+      "image": {
+        "id": 85996,
+        "date_created": "2026-07-29T21:33:30",
+        "date_created_gmt": "2026-07-29T21:33:30",
+        "date_modified": "2026-08-12T17:51:29",
+        "date_modified_gmt": "2026-08-12T17:51:29",
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-jean-lucania-slim-blanco-frente-.jpg",
+        "name": "winston and harry jean lucania slim blanco frente",
+        "alt": ""
+      },
+      "manage_stock": true,
+      "stock_quantity": 4,
+      "stock_status": "instock",
+      "price": "510000",
+      "regular_price": "510000",
+      "sale_price": ""
+    },
+    {
+      "id": 87057,
+      "attributes": [
+        {
+          "name": "Selecciona el Color",
+          "value": "blanco",
+          "option": "blanco"
+        },
+        {
+          "name": "Selecciona una Talla",
+          "value": "34",
+          "option": "34"
+        }
+      ],
+      "image": {
+        "id": 85996,
+        "date_created": "2026-07-29T21:33:30",
+        "date_created_gmt": "2026-07-29T21:33:30",
+        "date_modified": "2026-08-12T17:51:29",
+        "date_modified_gmt": "2026-08-12T17:51:29",
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-jean-lucania-slim-blanco-frente-.jpg",
+        "name": "winston and harry jean lucania slim blanco frente",
+        "alt": ""
+      },
+      "manage_stock": true,
+      "stock_quantity": 6,
+      "stock_status": "instock",
+      "price": "510000",
+      "regular_price": "510000",
+      "sale_price": ""
+    },
+    {
+      "id": 87058,
+      "attributes": [
+        {
+          "name": "Selecciona el Color",
+          "value": "blanco",
+          "option": "blanco"
+        },
+        {
+          "name": "Selecciona una Talla",
+          "value": "36",
+          "option": "36"
+        }
+      ],
+      "image": {
+        "id": 85996,
+        "date_created": "2026-07-29T21:33:30",
+        "date_created_gmt": "2026-07-29T21:33:30",
+        "date_modified": "2026-08-12T17:51:29",
+        "date_modified_gmt": "2026-08-12T17:51:29",
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-jean-lucania-slim-blanco-frente-.jpg",
+        "name": "winston and harry jean lucania slim blanco frente",
+        "alt": ""
+      },
+      "manage_stock": true,
+      "stock_quantity": 4,
+      "stock_status": "instock",
+      "price": "510000",
+      "regular_price": "510000",
+      "sale_price": ""
+    },
+    {
+      "id": 87059,
+      "attributes": [
+        {
+          "name": "Selecciona el Color",
+          "value": "blanco",
+          "option": "blanco"
+        },
+        {
+          "name": "Selecciona una Talla",
+          "value": "38",
+          "option": "38"
+        }
+      ],
+      "image": {
+        "id": 85996,
+        "date_created": "2026-07-29T21:33:30",
+        "date_created_gmt": "2026-07-29T21:33:30",
+        "date_modified": "2026-08-12T17:51:29",
+        "date_modified_gmt": "2026-08-12T17:51:29",
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-jean-lucania-slim-blanco-frente-.jpg",
+        "name": "winston and harry jean lucania slim blanco frente",
+        "alt": ""
+      },
+      "manage_stock": true,
+      "stock_quantity": 3,
+      "stock_status": "instock",
+      "price": "510000",
+      "regular_price": "510000",
+      "sale_price": ""
+    }
+  ],
   "grouped_products": [],
   "has_options": true,
   "is_purchasable": true,
@@ -164,8 +320,8 @@
   "is_on_backorder": false,
   "low_stock_remaining": null,
   "stock_availability": {
-    "text": "Agotado",
-    "class": "out-of-stock"
+    "text": "Hay existencias",
+    "class": "in-stock"
   },
   "sold_individually": false,
   "weight": "",
@@ -210,6 +366,792 @@
       }
     ]
   },
-  "variations_data": [],
-  "stock_status": "instock"
+  "variations_data": [
+    {
+      "id": 87059,
+      "type": "variation",
+      "date_created": "2026-09-14T15:56:08",
+      "date_created_gmt": "2026-09-14T15:56:08",
+      "date_modified": "2026-09-16T16:52:32",
+      "date_modified_gmt": "2026-09-16T16:52:32",
+      "description": "",
+      "permalink": "https://tienda.winstonandharrystore.com/product/jean-lucania-slim-fit/?attribute_pa_selecciona-el-color=blanco&attribute_pa_selecciona-una-talla=38",
+      "sku": "3033815038",
+      "global_unique_id": "",
+      "price": "510000",
+      "regular_price": "510000",
+      "sale_price": "",
+      "date_on_sale_from": null,
+      "date_on_sale_from_gmt": null,
+      "date_on_sale_to": null,
+      "date_on_sale_to_gmt": null,
+      "on_sale": false,
+      "status": "publish",
+      "purchasable": true,
+      "virtual": false,
+      "downloadable": false,
+      "downloads": [],
+      "download_limit": -1,
+      "download_expiry": -1,
+      "tax_status": "taxable",
+      "tax_class": "",
+      "manage_stock": true,
+      "stock_quantity": 3,
+      "stock_status": "instock",
+      "backorders": "no",
+      "backorders_allowed": false,
+      "backordered": false,
+      "low_stock_amount": null,
+      "weight": "",
+      "dimensions": {
+        "length": "",
+        "width": "",
+        "height": ""
+      },
+      "shipping_class": "",
+      "shipping_class_id": 0,
+      "image": {
+        "id": 85996,
+        "date_created": "2026-07-29T21:33:30",
+        "date_created_gmt": "2026-07-29T21:33:30",
+        "date_modified": "2026-08-12T17:51:29",
+        "date_modified_gmt": "2026-08-12T17:51:29",
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-jean-lucania-slim-blanco-frente-.jpg",
+        "name": "winston and harry jean lucania slim blanco frente",
+        "alt": ""
+      },
+      "gallery_image_ids": [],
+      "attributes": [
+        {
+          "id": 3,
+          "name": "Selecciona el Color",
+          "slug": "pa_selecciona-el-color",
+          "option": "Blanco"
+        },
+        {
+          "id": 4,
+          "name": "Selecciona una Talla",
+          "slug": "pa_selecciona-una-talla",
+          "option": "38"
+        }
+      ],
+      "menu_order": 5,
+      "meta_data": [
+        {
+          "id": 2578149,
+          "key": "_last_change_time",
+          "value": "1789577552"
+        },
+        {
+          "id": 2578150,
+          "key": "wpcvi_images",
+          "value": ""
+        },
+        {
+          "id": 2578151,
+          "key": "_wc_facebook_product_image_source",
+          "value": "product"
+        },
+        {
+          "id": 2578152,
+          "key": "fb_mpn",
+          "value": ""
+        },
+        {
+          "id": 2578153,
+          "key": "fb_product_image",
+          "value": ""
+        },
+        {
+          "id": 2578154,
+          "key": "_wc_facebook_product_video_source",
+          "value": "upload"
+        },
+        {
+          "id": 2578155,
+          "key": "fb_product_video",
+          "value": []
+        },
+        {
+          "id": 2578156,
+          "key": "fb_product_images",
+          "value": ""
+        },
+        {
+          "id": 2578157,
+          "key": "fb_product_price",
+          "value": ""
+        },
+        {
+          "id": 2578158,
+          "key": "_wc_facebook_sync_enabled_v2",
+          "value": "yes"
+        },
+        {
+          "id": 2578159,
+          "key": "fb_visibility",
+          "value": "yes"
+        }
+      ],
+      "name": "Blanco, 38",
+      "parent_id": 86385,
+      "_links": {
+        "self": [
+          {
+            "href": "https://tienda.winstonandharrystore.com/wp-json/wc/v3/products/86385/variations/87059",
+            "targetHints": {
+              "allow": [
+                "GET",
+                "POST",
+                "PUT",
+                "PATCH",
+                "DELETE"
+              ]
+            }
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://tienda.winstonandharrystore.com/wp-json/wc/v3/products/86385/variations"
+          }
+        ],
+        "up": [
+          {
+            "href": "https://tienda.winstonandharrystore.com/wp-json/wc/v3/products/86385"
+          }
+        ]
+      }
+    },
+    {
+      "id": 87058,
+      "type": "variation",
+      "date_created": "2026-09-14T15:56:08",
+      "date_created_gmt": "2026-09-14T15:56:08",
+      "date_modified": "2026-09-16T16:52:32",
+      "date_modified_gmt": "2026-09-16T16:52:32",
+      "description": "",
+      "permalink": "https://tienda.winstonandharrystore.com/product/jean-lucania-slim-fit/?attribute_pa_selecciona-el-color=blanco&attribute_pa_selecciona-una-talla=36",
+      "sku": "3033815036",
+      "global_unique_id": "",
+      "price": "510000",
+      "regular_price": "510000",
+      "sale_price": "",
+      "date_on_sale_from": null,
+      "date_on_sale_from_gmt": null,
+      "date_on_sale_to": null,
+      "date_on_sale_to_gmt": null,
+      "on_sale": false,
+      "status": "publish",
+      "purchasable": true,
+      "virtual": false,
+      "downloadable": false,
+      "downloads": [],
+      "download_limit": -1,
+      "download_expiry": -1,
+      "tax_status": "taxable",
+      "tax_class": "",
+      "manage_stock": true,
+      "stock_quantity": 4,
+      "stock_status": "instock",
+      "backorders": "no",
+      "backorders_allowed": false,
+      "backordered": false,
+      "low_stock_amount": null,
+      "weight": "",
+      "dimensions": {
+        "length": "",
+        "width": "",
+        "height": ""
+      },
+      "shipping_class": "",
+      "shipping_class_id": 0,
+      "image": {
+        "id": 85996,
+        "date_created": "2026-07-29T21:33:30",
+        "date_created_gmt": "2026-07-29T21:33:30",
+        "date_modified": "2026-08-12T17:51:29",
+        "date_modified_gmt": "2026-08-12T17:51:29",
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-jean-lucania-slim-blanco-frente-.jpg",
+        "name": "winston and harry jean lucania slim blanco frente",
+        "alt": ""
+      },
+      "gallery_image_ids": [],
+      "attributes": [
+        {
+          "id": 3,
+          "name": "Selecciona el Color",
+          "slug": "pa_selecciona-el-color",
+          "option": "Blanco"
+        },
+        {
+          "id": 4,
+          "name": "Selecciona una Talla",
+          "slug": "pa_selecciona-una-talla",
+          "option": "36"
+        }
+      ],
+      "menu_order": 4,
+      "meta_data": [
+        {
+          "id": 2578136,
+          "key": "_last_change_time",
+          "value": "1789577552"
+        },
+        {
+          "id": 2578137,
+          "key": "wpcvi_images",
+          "value": ""
+        },
+        {
+          "id": 2578138,
+          "key": "_wc_facebook_product_image_source",
+          "value": "product"
+        },
+        {
+          "id": 2578139,
+          "key": "fb_mpn",
+          "value": ""
+        },
+        {
+          "id": 2578140,
+          "key": "fb_product_image",
+          "value": ""
+        },
+        {
+          "id": 2578141,
+          "key": "_wc_facebook_product_video_source",
+          "value": "upload"
+        },
+        {
+          "id": 2578142,
+          "key": "fb_product_video",
+          "value": []
+        },
+        {
+          "id": 2578143,
+          "key": "fb_product_images",
+          "value": ""
+        },
+        {
+          "id": 2578144,
+          "key": "fb_product_price",
+          "value": ""
+        },
+        {
+          "id": 2578145,
+          "key": "_wc_facebook_sync_enabled_v2",
+          "value": "yes"
+        },
+        {
+          "id": 2578146,
+          "key": "fb_visibility",
+          "value": "yes"
+        }
+      ],
+      "name": "Blanco, 36",
+      "parent_id": 86385,
+      "_links": {
+        "self": [
+          {
+            "href": "https://tienda.winstonandharrystore.com/wp-json/wc/v3/products/86385/variations/87058",
+            "targetHints": {
+              "allow": [
+                "GET",
+                "POST",
+                "PUT",
+                "PATCH",
+                "DELETE"
+              ]
+            }
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://tienda.winstonandharrystore.com/wp-json/wc/v3/products/86385/variations"
+          }
+        ],
+        "up": [
+          {
+            "href": "https://tienda.winstonandharrystore.com/wp-json/wc/v3/products/86385"
+          }
+        ]
+      }
+    },
+    {
+      "id": 87057,
+      "type": "variation",
+      "date_created": "2026-09-14T15:56:08",
+      "date_created_gmt": "2026-09-14T15:56:08",
+      "date_modified": "2026-09-16T16:52:32",
+      "date_modified_gmt": "2026-09-16T16:52:32",
+      "description": "",
+      "permalink": "https://tienda.winstonandharrystore.com/product/jean-lucania-slim-fit/?attribute_pa_selecciona-el-color=blanco&attribute_pa_selecciona-una-talla=34",
+      "sku": "3033815034",
+      "global_unique_id": "",
+      "price": "510000",
+      "regular_price": "510000",
+      "sale_price": "",
+      "date_on_sale_from": null,
+      "date_on_sale_from_gmt": null,
+      "date_on_sale_to": null,
+      "date_on_sale_to_gmt": null,
+      "on_sale": false,
+      "status": "publish",
+      "purchasable": true,
+      "virtual": false,
+      "downloadable": false,
+      "downloads": [],
+      "download_limit": -1,
+      "download_expiry": -1,
+      "tax_status": "taxable",
+      "tax_class": "",
+      "manage_stock": true,
+      "stock_quantity": 6,
+      "stock_status": "instock",
+      "backorders": "no",
+      "backorders_allowed": false,
+      "backordered": false,
+      "low_stock_amount": null,
+      "weight": "",
+      "dimensions": {
+        "length": "",
+        "width": "",
+        "height": ""
+      },
+      "shipping_class": "",
+      "shipping_class_id": 0,
+      "image": {
+        "id": 85996,
+        "date_created": "2026-07-29T21:33:30",
+        "date_created_gmt": "2026-07-29T21:33:30",
+        "date_modified": "2026-08-12T17:51:29",
+        "date_modified_gmt": "2026-08-12T17:51:29",
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-jean-lucania-slim-blanco-frente-.jpg",
+        "name": "winston and harry jean lucania slim blanco frente",
+        "alt": ""
+      },
+      "gallery_image_ids": [],
+      "attributes": [
+        {
+          "id": 3,
+          "name": "Selecciona el Color",
+          "slug": "pa_selecciona-el-color",
+          "option": "Blanco"
+        },
+        {
+          "id": 4,
+          "name": "Selecciona una Talla",
+          "slug": "pa_selecciona-una-talla",
+          "option": "34"
+        }
+      ],
+      "menu_order": 3,
+      "meta_data": [
+        {
+          "id": 2578124,
+          "key": "_last_change_time",
+          "value": "1789577552"
+        },
+        {
+          "id": 2578125,
+          "key": "wpcvi_images",
+          "value": ""
+        },
+        {
+          "id": 2578126,
+          "key": "_wc_facebook_product_image_source",
+          "value": "product"
+        },
+        {
+          "id": 2578127,
+          "key": "fb_mpn",
+          "value": ""
+        },
+        {
+          "id": 2578128,
+          "key": "fb_product_image",
+          "value": ""
+        },
+        {
+          "id": 2578129,
+          "key": "_wc_facebook_product_video_source",
+          "value": "upload"
+        },
+        {
+          "id": 2578130,
+          "key": "fb_product_video",
+          "value": []
+        },
+        {
+          "id": 2578131,
+          "key": "fb_product_images",
+          "value": ""
+        },
+        {
+          "id": 2578132,
+          "key": "fb_product_price",
+          "value": ""
+        },
+        {
+          "id": 2578133,
+          "key": "_wc_facebook_sync_enabled_v2",
+          "value": "yes"
+        },
+        {
+          "id": 2578134,
+          "key": "fb_visibility",
+          "value": "yes"
+        }
+      ],
+      "name": "Blanco, 34",
+      "parent_id": 86385,
+      "_links": {
+        "self": [
+          {
+            "href": "https://tienda.winstonandharrystore.com/wp-json/wc/v3/products/86385/variations/87057",
+            "targetHints": {
+              "allow": [
+                "GET",
+                "POST",
+                "PUT",
+                "PATCH",
+                "DELETE"
+              ]
+            }
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://tienda.winstonandharrystore.com/wp-json/wc/v3/products/86385/variations"
+          }
+        ],
+        "up": [
+          {
+            "href": "https://tienda.winstonandharrystore.com/wp-json/wc/v3/products/86385"
+          }
+        ]
+      }
+    },
+    {
+      "id": 87056,
+      "type": "variation",
+      "date_created": "2026-09-14T15:56:08",
+      "date_created_gmt": "2026-09-14T15:56:08",
+      "date_modified": "2026-09-16T16:52:32",
+      "date_modified_gmt": "2026-09-16T16:52:32",
+      "description": "",
+      "permalink": "https://tienda.winstonandharrystore.com/product/jean-lucania-slim-fit/?attribute_pa_selecciona-el-color=blanco&attribute_pa_selecciona-una-talla=32",
+      "sku": "3033815032",
+      "global_unique_id": "",
+      "price": "510000",
+      "regular_price": "510000",
+      "sale_price": "",
+      "date_on_sale_from": null,
+      "date_on_sale_from_gmt": null,
+      "date_on_sale_to": null,
+      "date_on_sale_to_gmt": null,
+      "on_sale": false,
+      "status": "publish",
+      "purchasable": true,
+      "virtual": false,
+      "downloadable": false,
+      "downloads": [],
+      "download_limit": -1,
+      "download_expiry": -1,
+      "tax_status": "taxable",
+      "tax_class": "",
+      "manage_stock": true,
+      "stock_quantity": 4,
+      "stock_status": "instock",
+      "backorders": "no",
+      "backorders_allowed": false,
+      "backordered": false,
+      "low_stock_amount": null,
+      "weight": "",
+      "dimensions": {
+        "length": "",
+        "width": "",
+        "height": ""
+      },
+      "shipping_class": "",
+      "shipping_class_id": 0,
+      "image": {
+        "id": 85996,
+        "date_created": "2026-07-29T21:33:30",
+        "date_created_gmt": "2026-07-29T21:33:30",
+        "date_modified": "2026-08-12T17:51:29",
+        "date_modified_gmt": "2026-08-12T17:51:29",
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-jean-lucania-slim-blanco-frente-.jpg",
+        "name": "winston and harry jean lucania slim blanco frente",
+        "alt": ""
+      },
+      "gallery_image_ids": [],
+      "attributes": [
+        {
+          "id": 3,
+          "name": "Selecciona el Color",
+          "slug": "pa_selecciona-el-color",
+          "option": "Blanco"
+        },
+        {
+          "id": 4,
+          "name": "Selecciona una Talla",
+          "slug": "pa_selecciona-una-talla",
+          "option": "32"
+        }
+      ],
+      "menu_order": 2,
+      "meta_data": [
+        {
+          "id": 2578112,
+          "key": "_last_change_time",
+          "value": "1789577552"
+        },
+        {
+          "id": 2578113,
+          "key": "wpcvi_images",
+          "value": ""
+        },
+        {
+          "id": 2578114,
+          "key": "_wc_facebook_product_image_source",
+          "value": "product"
+        },
+        {
+          "id": 2578115,
+          "key": "fb_mpn",
+          "value": ""
+        },
+        {
+          "id": 2578116,
+          "key": "fb_product_image",
+          "value": ""
+        },
+        {
+          "id": 2578117,
+          "key": "_wc_facebook_product_video_source",
+          "value": "upload"
+        },
+        {
+          "id": 2578118,
+          "key": "fb_product_video",
+          "value": []
+        },
+        {
+          "id": 2578119,
+          "key": "fb_product_images",
+          "value": ""
+        },
+        {
+          "id": 2578120,
+          "key": "fb_product_price",
+          "value": ""
+        },
+        {
+          "id": 2578121,
+          "key": "_wc_facebook_sync_enabled_v2",
+          "value": "yes"
+        },
+        {
+          "id": 2578122,
+          "key": "fb_visibility",
+          "value": "yes"
+        }
+      ],
+      "name": "Blanco, 32",
+      "parent_id": 86385,
+      "_links": {
+        "self": [
+          {
+            "href": "https://tienda.winstonandharrystore.com/wp-json/wc/v3/products/86385/variations/87056",
+            "targetHints": {
+              "allow": [
+                "GET",
+                "POST",
+                "PUT",
+                "PATCH",
+                "DELETE"
+              ]
+            }
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://tienda.winstonandharrystore.com/wp-json/wc/v3/products/86385/variations"
+          }
+        ],
+        "up": [
+          {
+            "href": "https://tienda.winstonandharrystore.com/wp-json/wc/v3/products/86385"
+          }
+        ]
+      }
+    },
+    {
+      "id": 87055,
+      "type": "variation",
+      "date_created": "2026-09-14T15:56:08",
+      "date_created_gmt": "2026-09-14T15:56:08",
+      "date_modified": "2026-09-16T16:52:32",
+      "date_modified_gmt": "2026-09-16T16:52:32",
+      "description": "",
+      "permalink": "https://tienda.winstonandharrystore.com/product/jean-lucania-slim-fit/?attribute_pa_selecciona-el-color=blanco&attribute_pa_selecciona-una-talla=30",
+      "sku": "3033815030",
+      "global_unique_id": "",
+      "price": "510000",
+      "regular_price": "510000",
+      "sale_price": "",
+      "date_on_sale_from": null,
+      "date_on_sale_from_gmt": null,
+      "date_on_sale_to": null,
+      "date_on_sale_to_gmt": null,
+      "on_sale": false,
+      "status": "publish",
+      "purchasable": true,
+      "virtual": false,
+      "downloadable": false,
+      "downloads": [],
+      "download_limit": -1,
+      "download_expiry": -1,
+      "tax_status": "taxable",
+      "tax_class": "",
+      "manage_stock": true,
+      "stock_quantity": 3,
+      "stock_status": "instock",
+      "backorders": "no",
+      "backorders_allowed": false,
+      "backordered": false,
+      "low_stock_amount": null,
+      "weight": "",
+      "dimensions": {
+        "length": "",
+        "width": "",
+        "height": ""
+      },
+      "shipping_class": "",
+      "shipping_class_id": 0,
+      "image": {
+        "id": 85996,
+        "date_created": "2026-07-29T21:33:30",
+        "date_created_gmt": "2026-07-29T21:33:30",
+        "date_modified": "2026-08-12T17:51:29",
+        "date_modified_gmt": "2026-08-12T17:51:29",
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-jean-lucania-slim-blanco-frente-.jpg",
+        "name": "winston and harry jean lucania slim blanco frente",
+        "alt": ""
+      },
+      "gallery_image_ids": [],
+      "attributes": [
+        {
+          "id": 3,
+          "name": "Selecciona el Color",
+          "slug": "pa_selecciona-el-color",
+          "option": "Blanco"
+        },
+        {
+          "id": 4,
+          "name": "Selecciona una Talla",
+          "slug": "pa_selecciona-una-talla",
+          "option": "30"
+        }
+      ],
+      "menu_order": 1,
+      "meta_data": [
+        {
+          "id": 2578100,
+          "key": "_last_change_time",
+          "value": "1789577552"
+        },
+        {
+          "id": 2578101,
+          "key": "wpcvi_images",
+          "value": ""
+        },
+        {
+          "id": 2578102,
+          "key": "_wc_facebook_product_image_source",
+          "value": "product"
+        },
+        {
+          "id": 2578103,
+          "key": "fb_mpn",
+          "value": ""
+        },
+        {
+          "id": 2578104,
+          "key": "fb_product_image",
+          "value": ""
+        },
+        {
+          "id": 2578105,
+          "key": "_wc_facebook_product_video_source",
+          "value": "upload"
+        },
+        {
+          "id": 2578106,
+          "key": "fb_product_video",
+          "value": []
+        },
+        {
+          "id": 2578107,
+          "key": "fb_product_images",
+          "value": ""
+        },
+        {
+          "id": 2578108,
+          "key": "fb_product_price",
+          "value": ""
+        },
+        {
+          "id": 2578109,
+          "key": "_wc_facebook_sync_enabled_v2",
+          "value": "yes"
+        },
+        {
+          "id": 2578110,
+          "key": "fb_visibility",
+          "value": "yes"
+        }
+      ],
+      "name": "Blanco, 30",
+      "parent_id": 86385,
+      "_links": {
+        "self": [
+          {
+            "href": "https://tienda.winstonandharrystore.com/wp-json/wc/v3/products/86385/variations/87055",
+            "targetHints": {
+              "allow": [
+                "GET",
+                "POST",
+                "PUT",
+                "PATCH",
+                "DELETE"
+              ]
+            }
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://tienda.winstonandharrystore.com/wp-json/wc/v3/products/86385/variations"
+          }
+        ],
+        "up": [
+          {
+            "href": "https://tienda.winstonandharrystore.com/wp-json/wc/v3/products/86385"
+          }
+        ]
+      }
+    }
+  ],
+  "stock_status": "instock",
+  "variation_images_map": {
+    "blanco": [
+      {
+        "id": 85996,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-jean-lucania-slim-blanco-frente-.jpg",
+        "alt": "winston and harry jean lucania slim blanco frente",
+        "name": "winston and harry jean lucania slim blanco frente"
+      }
+    ]
+  }
 }

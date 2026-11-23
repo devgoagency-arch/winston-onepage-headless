@@ -212,8 +212,8 @@
         "name": "winston-and-harry-reatas-azul-1469-01",
         "alt": ""
       },
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 22,
       "stock_status": "instock",
       "price": "99000",
       "regular_price": "99000",
@@ -243,8 +243,8 @@
         "name": "winston-and-harry-reatas-azul-1469-01",
         "alt": ""
       },
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 20,
       "stock_status": "instock",
       "price": "99000",
       "regular_price": "99000",
@@ -274,8 +274,8 @@
         "name": "winston-and-harry-reatas-azul-1469-01",
         "alt": ""
       },
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 24,
       "stock_status": "instock",
       "price": "99000",
       "regular_price": "99000",
@@ -305,8 +305,8 @@
         "name": "winston-and-harry-reatas-azul-1469-01",
         "alt": ""
       },
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 12,
       "stock_status": "instock",
       "price": "99000",
       "regular_price": "99000",
@@ -336,8 +336,8 @@
         "name": "winston-and-harry-reatas-azul-1469-01",
         "alt": ""
       },
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 10,
       "stock_status": "instock",
       "price": "99000",
       "regular_price": "99000",
@@ -367,8 +367,8 @@
         "name": "winston-and-harry-reatas-negro-1469-01",
         "alt": ""
       },
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 22,
       "stock_status": "instock",
       "price": "99000",
       "regular_price": "99000",
@@ -398,8 +398,8 @@
         "name": "winston-and-harry-reatas-negro-1469-01",
         "alt": ""
       },
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 23,
       "stock_status": "instock",
       "price": "99000",
       "regular_price": "99000",
@@ -429,8 +429,8 @@
         "name": "winston-and-harry-reatas-negro-1469-01",
         "alt": ""
       },
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 25,
       "stock_status": "instock",
       "price": "99000",
       "regular_price": "99000",
@@ -460,8 +460,8 @@
         "name": "winston-and-harry-reatas-negro-1469-01",
         "alt": ""
       },
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 12,
       "stock_status": "instock",
       "price": "99000",
       "regular_price": "99000",
@@ -491,8 +491,8 @@
         "name": "winston-and-harry-reatas-negro-1469-01",
         "alt": ""
       },
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 9,
       "stock_status": "instock",
       "price": "99000",
       "regular_price": "99000",
@@ -558,8 +558,8 @@
       "type": "variation",
       "date_created": "2026-11-19T20:44:04",
       "date_created_gmt": "2026-11-19T20:44:04",
-      "date_modified": "2026-11-22T00:08:54",
-      "date_modified_gmt": "2026-11-22T00:08:54",
+      "date_modified": "2026-11-23T04:40:50",
+      "date_modified_gmt": "2026-11-23T04:40:50",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/reata-1469/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=xl",
       "sku": "28146902038",
@@ -581,8 +581,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 9,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -629,7 +629,7 @@
         {
           "id": 2627246,
           "key": "_last_change_time",
-          "value": "1795121128"
+          "value": "1795408850"
         },
         {
           "id": 2627247,
@@ -1412,16 +1412,6 @@
           "value": ""
         },
         {
-          "id": 2648170,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2648171,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2648172,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -1646,8 +1636,8 @@
       "type": "variation",
       "date_created": "2026-11-19T20:44:04",
       "date_created_gmt": "2026-11-19T20:44:04",
-      "date_modified": "2026-11-22T00:08:54",
-      "date_modified_gmt": "2026-11-22T00:08:54",
+      "date_modified": "2026-11-23T04:40:50",
+      "date_modified_gmt": "2026-11-23T04:40:50",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/reata-1469/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=xs",
       "sku": "28146902030",
@@ -1669,8 +1659,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 12,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -1717,7 +1707,7 @@
         {
           "id": 2627234,
           "key": "_last_change_time",
-          "value": "1795121128"
+          "value": "1795408850"
         },
         {
           "id": 2627235,
@@ -2500,16 +2490,6 @@
           "value": ""
         },
         {
-          "id": 2647980,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2647981,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2647982,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -2734,8 +2714,8 @@
       "type": "variation",
       "date_created": "2026-11-19T20:44:04",
       "date_created_gmt": "2026-11-19T20:44:04",
-      "date_modified": "2026-11-22T00:08:54",
-      "date_modified_gmt": "2026-11-22T00:08:54",
+      "date_modified": "2026-11-23T04:40:50",
+      "date_modified_gmt": "2026-11-23T04:40:50",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/reata-1469/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=l",
       "sku": "28146902036",
@@ -2757,8 +2737,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 25,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -2805,7 +2785,7 @@
         {
           "id": 2627222,
           "key": "_last_change_time",
-          "value": "1795121128"
+          "value": "1795408850"
         },
         {
           "id": 2627223,
@@ -3588,16 +3568,6 @@
           "value": ""
         },
         {
-          "id": 2647790,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2647791,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2647792,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -3822,8 +3792,8 @@
       "type": "variation",
       "date_created": "2026-11-19T20:44:04",
       "date_created_gmt": "2026-11-19T20:44:04",
-      "date_modified": "2026-11-22T00:08:54",
-      "date_modified_gmt": "2026-11-22T00:08:54",
+      "date_modified": "2026-11-23T04:40:50",
+      "date_modified_gmt": "2026-11-23T04:40:50",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/reata-1469/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=m",
       "sku": "28146902034",
@@ -3845,8 +3815,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 23,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -3893,7 +3863,7 @@
         {
           "id": 2627210,
           "key": "_last_change_time",
-          "value": "1795121128"
+          "value": "1795408850"
         },
         {
           "id": 2627211,
@@ -4676,16 +4646,6 @@
           "value": ""
         },
         {
-          "id": 2647600,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2647601,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2647602,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -4910,8 +4870,8 @@
       "type": "variation",
       "date_created": "2026-11-19T20:44:04",
       "date_created_gmt": "2026-11-19T20:44:04",
-      "date_modified": "2026-11-22T00:08:54",
-      "date_modified_gmt": "2026-11-22T00:08:54",
+      "date_modified": "2026-11-23T04:40:50",
+      "date_modified_gmt": "2026-11-23T04:40:50",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/reata-1469/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=s",
       "sku": "28146902032",
@@ -4933,8 +4893,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 22,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -4981,7 +4941,7 @@
         {
           "id": 2627198,
           "key": "_last_change_time",
-          "value": "1795121128"
+          "value": "1795408850"
         },
         {
           "id": 2627199,
@@ -5764,16 +5724,6 @@
           "value": ""
         },
         {
-          "id": 2647410,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2647411,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2647412,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -5998,8 +5948,8 @@
       "type": "variation",
       "date_created": "2026-11-19T20:44:04",
       "date_created_gmt": "2026-11-19T20:44:04",
-      "date_modified": "2026-11-22T00:08:54",
-      "date_modified_gmt": "2026-11-22T00:08:54",
+      "date_modified": "2026-11-23T04:40:50",
+      "date_modified_gmt": "2026-11-23T04:40:50",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/reata-1469/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=xl",
       "sku": "28146901038",
@@ -6021,8 +5971,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 10,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -6069,7 +6019,7 @@
         {
           "id": 2627186,
           "key": "_last_change_time",
-          "value": "1795121128"
+          "value": "1795408850"
         },
         {
           "id": 2627187,
@@ -6852,16 +6802,6 @@
           "value": ""
         },
         {
-          "id": 2647220,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2647221,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2647222,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -7086,8 +7026,8 @@
       "type": "variation",
       "date_created": "2026-11-19T20:44:04",
       "date_created_gmt": "2026-11-19T20:44:04",
-      "date_modified": "2026-11-22T00:08:53",
-      "date_modified_gmt": "2026-11-22T00:08:53",
+      "date_modified": "2026-11-23T04:40:50",
+      "date_modified_gmt": "2026-11-23T04:40:50",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/reata-1469/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=xs",
       "sku": "28146901030",
@@ -7109,8 +7049,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 12,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -7157,7 +7097,7 @@
         {
           "id": 2627174,
           "key": "_last_change_time",
-          "value": "1795121128"
+          "value": "1795408850"
         },
         {
           "id": 2627175,
@@ -7940,16 +7880,6 @@
           "value": ""
         },
         {
-          "id": 2647030,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2647031,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2647032,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -8174,8 +8104,8 @@
       "type": "variation",
       "date_created": "2026-11-19T20:44:04",
       "date_created_gmt": "2026-11-19T20:44:04",
-      "date_modified": "2026-11-22T00:08:53",
-      "date_modified_gmt": "2026-11-22T00:08:53",
+      "date_modified": "2026-11-23T04:40:50",
+      "date_modified_gmt": "2026-11-23T04:40:50",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/reata-1469/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=l",
       "sku": "28146901036",
@@ -8197,8 +8127,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 24,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -8245,7 +8175,7 @@
         {
           "id": 2627162,
           "key": "_last_change_time",
-          "value": "1795121128"
+          "value": "1795408850"
         },
         {
           "id": 2627163,
@@ -9028,16 +8958,6 @@
           "value": ""
         },
         {
-          "id": 2646840,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2646841,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2646842,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -9262,8 +9182,8 @@
       "type": "variation",
       "date_created": "2026-11-19T20:44:04",
       "date_created_gmt": "2026-11-19T20:44:04",
-      "date_modified": "2026-11-22T00:08:44",
-      "date_modified_gmt": "2026-11-22T00:08:44",
+      "date_modified": "2026-11-23T04:40:50",
+      "date_modified_gmt": "2026-11-23T04:40:50",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/reata-1469/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=m",
       "sku": "28146901034",
@@ -9285,8 +9205,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 20,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -9333,7 +9253,7 @@
         {
           "id": 2627150,
           "key": "_last_change_time",
-          "value": "1795121128"
+          "value": "1795408850"
         },
         {
           "id": 2627151,
@@ -10116,16 +10036,6 @@
           "value": ""
         },
         {
-          "id": 2646646,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2646647,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2646648,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -10350,8 +10260,8 @@
       "type": "variation",
       "date_created": "2026-11-19T20:44:04",
       "date_created_gmt": "2026-11-19T20:44:04",
-      "date_modified": "2026-11-22T00:08:44",
-      "date_modified_gmt": "2026-11-22T00:08:44",
+      "date_modified": "2026-11-23T04:40:50",
+      "date_modified_gmt": "2026-11-23T04:40:50",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/reata-1469/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=s",
       "sku": "28146901032",
@@ -10373,8 +10283,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 22,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -10421,7 +10331,7 @@
         {
           "id": 2627138,
           "key": "_last_change_time",
-          "value": "1795121128"
+          "value": "1795408850"
         },
         {
           "id": 2627139,
@@ -11201,16 +11111,6 @@
         {
           "id": 2646455,
           "key": "_oembed_time_3efc152008105e0533b1d0735c932ef8",
-          "value": ""
-        },
-        {
-          "id": 2646456,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2646457,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         },
         {

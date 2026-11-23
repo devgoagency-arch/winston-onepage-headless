@@ -218,8 +218,8 @@
         "name": "winston-and-harry-tshirt-basic-azul-frente-01",
         "alt": ""
       },
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 20,
       "stock_status": "instock",
       "price": "110000",
       "regular_price": "110000",
@@ -249,8 +249,8 @@
         "name": "winston-and-harry-tshirt-basic-azul-frente-01",
         "alt": ""
       },
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 25,
       "stock_status": "instock",
       "price": "110000",
       "regular_price": "110000",
@@ -280,8 +280,8 @@
         "name": "winston-and-harry-tshirt-basic-azul-frente-01",
         "alt": ""
       },
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 24,
       "stock_status": "instock",
       "price": "110000",
       "regular_price": "110000",
@@ -311,8 +311,8 @@
         "name": "winston-and-harry-tshirt-basic-azul-frente-01",
         "alt": ""
       },
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 17,
       "stock_status": "instock",
       "price": "110000",
       "regular_price": "110000",
@@ -342,8 +342,8 @@
         "name": "winston-and-harry-tshirt-basic-blanco-frente-01",
         "alt": ""
       },
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 19,
       "stock_status": "instock",
       "price": "110000",
       "regular_price": "110000",
@@ -373,8 +373,8 @@
         "name": "winston-and-harry-tshirt-basic-blanco-frente-01",
         "alt": ""
       },
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 23,
       "stock_status": "instock",
       "price": "110000",
       "regular_price": "110000",
@@ -404,8 +404,8 @@
         "name": "winston-and-harry-tshirt-basic-blanco-frente-01",
         "alt": ""
       },
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 18,
       "stock_status": "instock",
       "price": "110000",
       "regular_price": "110000",
@@ -435,8 +435,8 @@
         "name": "winston-and-harry-tshirt-basic-blanco-frente-01",
         "alt": ""
       },
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 15,
       "stock_status": "instock",
       "price": "110000",
       "regular_price": "110000",
@@ -466,8 +466,8 @@
         "name": "winston-and-harry-tshirt-basic-negro-frente-01",
         "alt": ""
       },
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 17,
       "stock_status": "instock",
       "price": "110000",
       "regular_price": "110000",
@@ -497,8 +497,8 @@
         "name": "winston-and-harry-tshirt-basic-negro-frente-01",
         "alt": ""
       },
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 25,
       "stock_status": "instock",
       "price": "110000",
       "regular_price": "110000",
@@ -528,8 +528,8 @@
         "name": "winston-and-harry-tshirt-basic-negro-frente-01",
         "alt": ""
       },
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 24,
       "stock_status": "instock",
       "price": "110000",
       "regular_price": "110000",
@@ -559,8 +559,8 @@
         "name": "winston-and-harry-tshirt-basic-negro-frente-01",
         "alt": ""
       },
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 18,
       "stock_status": "instock",
       "price": "110000",
       "regular_price": "110000",
@@ -632,8 +632,8 @@
       "type": "variation",
       "date_created": "2026-11-21T18:29:27",
       "date_created_gmt": "2026-11-21T18:29:27",
-      "date_modified": "2026-11-22T00:09:28",
-      "date_modified_gmt": "2026-11-22T00:09:28",
+      "date_modified": "2026-11-23T04:41:00",
+      "date_modified_gmt": "2026-11-23T04:41:00",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/t-shirt-basic/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=xl",
       "sku": "5056702038",
@@ -655,8 +655,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 18,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -703,7 +703,7 @@
         {
           "id": 2638141,
           "key": "_last_change_time",
-          "value": "1795286213"
+          "value": "1795408860"
         },
         {
           "id": 2638142,
@@ -1486,16 +1486,6 @@
           "value": ""
         },
         {
-          "id": 2656220,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2656221,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2656222,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -1720,8 +1710,8 @@
       "type": "variation",
       "date_created": "2026-11-21T18:29:27",
       "date_created_gmt": "2026-11-21T18:29:27",
-      "date_modified": "2026-11-22T00:09:28",
-      "date_modified_gmt": "2026-11-22T00:09:28",
+      "date_modified": "2026-11-23T04:41:00",
+      "date_modified_gmt": "2026-11-23T04:41:00",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/t-shirt-basic/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=l",
       "sku": "5056702036",
@@ -1743,8 +1733,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 24,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -1791,7 +1781,7 @@
         {
           "id": 2638128,
           "key": "_last_change_time",
-          "value": "1795286213"
+          "value": "1795408860"
         },
         {
           "id": 2638129,
@@ -2574,16 +2564,6 @@
           "value": ""
         },
         {
-          "id": 2656030,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2656031,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2656032,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -2808,8 +2788,8 @@
       "type": "variation",
       "date_created": "2026-11-21T18:29:27",
       "date_created_gmt": "2026-11-21T18:29:27",
-      "date_modified": "2026-11-22T00:09:28",
-      "date_modified_gmt": "2026-11-22T00:09:28",
+      "date_modified": "2026-11-23T04:41:00",
+      "date_modified_gmt": "2026-11-23T04:41:00",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/t-shirt-basic/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=m",
       "sku": "5056702034",
@@ -2831,8 +2811,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 25,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -2879,7 +2859,7 @@
         {
           "id": 2638115,
           "key": "_last_change_time",
-          "value": "1795286213"
+          "value": "1795408860"
         },
         {
           "id": 2638116,
@@ -3662,16 +3642,6 @@
           "value": ""
         },
         {
-          "id": 2655840,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2655841,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2655842,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -3896,8 +3866,8 @@
       "type": "variation",
       "date_created": "2026-11-21T18:29:27",
       "date_created_gmt": "2026-11-21T18:29:27",
-      "date_modified": "2026-11-22T00:09:28",
-      "date_modified_gmt": "2026-11-22T00:09:28",
+      "date_modified": "2026-11-23T04:41:00",
+      "date_modified_gmt": "2026-11-23T04:41:00",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/t-shirt-basic/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=s",
       "sku": "5056702032",
@@ -3919,8 +3889,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 17,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -3967,7 +3937,7 @@
         {
           "id": 2638102,
           "key": "_last_change_time",
-          "value": "1795286213"
+          "value": "1795408860"
         },
         {
           "id": 2638103,
@@ -4750,16 +4720,6 @@
           "value": ""
         },
         {
-          "id": 2655650,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2655651,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2655652,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -4984,8 +4944,8 @@
       "type": "variation",
       "date_created": "2026-11-21T18:29:27",
       "date_created_gmt": "2026-11-21T18:29:27",
-      "date_modified": "2026-11-22T00:09:28",
-      "date_modified_gmt": "2026-11-22T00:09:28",
+      "date_modified": "2026-11-23T04:41:00",
+      "date_modified_gmt": "2026-11-23T04:41:00",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/t-shirt-basic/?attribute_pa_selecciona-el-color=blanco&attribute_pa_selecciona-una-talla=xl",
       "sku": "5056715038",
@@ -5007,8 +4967,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 15,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -5055,7 +5015,7 @@
         {
           "id": 2638089,
           "key": "_last_change_time",
-          "value": "1795286213"
+          "value": "1795408860"
         },
         {
           "id": 2638090,
@@ -5838,16 +5798,6 @@
           "value": ""
         },
         {
-          "id": 2655460,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2655461,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2655462,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -6072,8 +6022,8 @@
       "type": "variation",
       "date_created": "2026-11-21T18:29:27",
       "date_created_gmt": "2026-11-21T18:29:27",
-      "date_modified": "2026-11-22T00:09:28",
-      "date_modified_gmt": "2026-11-22T00:09:28",
+      "date_modified": "2026-11-23T04:41:00",
+      "date_modified_gmt": "2026-11-23T04:41:00",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/t-shirt-basic/?attribute_pa_selecciona-el-color=blanco&attribute_pa_selecciona-una-talla=l",
       "sku": "5056715036",
@@ -6095,8 +6045,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 18,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -6143,7 +6093,7 @@
         {
           "id": 2638076,
           "key": "_last_change_time",
-          "value": "1795286213"
+          "value": "1795408860"
         },
         {
           "id": 2638077,
@@ -6926,16 +6876,6 @@
           "value": ""
         },
         {
-          "id": 2655270,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2655271,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2655272,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -7160,8 +7100,8 @@
       "type": "variation",
       "date_created": "2026-11-21T18:29:27",
       "date_created_gmt": "2026-11-21T18:29:27",
-      "date_modified": "2026-11-22T00:09:27",
-      "date_modified_gmt": "2026-11-22T00:09:27",
+      "date_modified": "2026-11-23T04:41:00",
+      "date_modified_gmt": "2026-11-23T04:41:00",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/t-shirt-basic/?attribute_pa_selecciona-el-color=blanco&attribute_pa_selecciona-una-talla=m",
       "sku": "5056715034",
@@ -7183,8 +7123,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 23,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -7231,7 +7171,7 @@
         {
           "id": 2638063,
           "key": "_last_change_time",
-          "value": "1795286213"
+          "value": "1795408860"
         },
         {
           "id": 2638064,
@@ -8014,16 +7954,6 @@
           "value": ""
         },
         {
-          "id": 2655080,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2655081,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2655082,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -8248,8 +8178,8 @@
       "type": "variation",
       "date_created": "2026-11-21T18:29:27",
       "date_created_gmt": "2026-11-21T18:29:27",
-      "date_modified": "2026-11-22T00:09:27",
-      "date_modified_gmt": "2026-11-22T00:09:27",
+      "date_modified": "2026-11-23T04:41:00",
+      "date_modified_gmt": "2026-11-23T04:41:00",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/t-shirt-basic/?attribute_pa_selecciona-el-color=blanco&attribute_pa_selecciona-una-talla=s",
       "sku": "5056715032",
@@ -8271,8 +8201,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 19,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -8319,7 +8249,7 @@
         {
           "id": 2638050,
           "key": "_last_change_time",
-          "value": "1795286213"
+          "value": "1795408860"
         },
         {
           "id": 2638051,
@@ -9102,16 +9032,6 @@
           "value": ""
         },
         {
-          "id": 2654890,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2654891,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2654892,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -9336,8 +9256,8 @@
       "type": "variation",
       "date_created": "2026-11-21T18:29:27",
       "date_created_gmt": "2026-11-21T18:29:27",
-      "date_modified": "2026-11-22T00:09:27",
-      "date_modified_gmt": "2026-11-22T00:09:27",
+      "date_modified": "2026-11-23T04:41:00",
+      "date_modified_gmt": "2026-11-23T04:41:00",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/t-shirt-basic/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=xl",
       "sku": "5056701038",
@@ -9359,8 +9279,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 17,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -9407,7 +9327,7 @@
         {
           "id": 2638037,
           "key": "_last_change_time",
-          "value": "1795286213"
+          "value": "1795408860"
         },
         {
           "id": 2638038,
@@ -10190,16 +10110,6 @@
           "value": ""
         },
         {
-          "id": 2654700,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2654701,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2654702,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -10424,8 +10334,8 @@
       "type": "variation",
       "date_created": "2026-11-21T18:29:27",
       "date_created_gmt": "2026-11-21T18:29:27",
-      "date_modified": "2026-11-22T00:09:27",
-      "date_modified_gmt": "2026-11-22T00:09:27",
+      "date_modified": "2026-11-23T04:41:00",
+      "date_modified_gmt": "2026-11-23T04:41:00",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/t-shirt-basic/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=l",
       "sku": "5056701036",
@@ -10447,8 +10357,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 24,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -10495,7 +10405,7 @@
         {
           "id": 2638024,
           "key": "_last_change_time",
-          "value": "1795286213"
+          "value": "1795408860"
         },
         {
           "id": 2638025,
@@ -11278,16 +11188,6 @@
           "value": ""
         },
         {
-          "id": 2654510,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2654511,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2654512,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -11512,8 +11412,8 @@
       "type": "variation",
       "date_created": "2026-11-21T18:29:27",
       "date_created_gmt": "2026-11-21T18:29:27",
-      "date_modified": "2026-11-22T00:09:27",
-      "date_modified_gmt": "2026-11-22T00:09:27",
+      "date_modified": "2026-11-23T04:41:00",
+      "date_modified_gmt": "2026-11-23T04:41:00",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/t-shirt-basic/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=m",
       "sku": "5056701034",
@@ -11535,8 +11435,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 25,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -11583,7 +11483,7 @@
         {
           "id": 2638011,
           "key": "_last_change_time",
-          "value": "1795286213"
+          "value": "1795408860"
         },
         {
           "id": 2638012,
@@ -12366,16 +12266,6 @@
           "value": ""
         },
         {
-          "id": 2654320,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2654321,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
-        },
-        {
           "id": 2654322,
           "key": "_wc_facebook_enhanced_catalog_attributes_style",
           "value": ""
@@ -12600,8 +12490,8 @@
       "type": "variation",
       "date_created": "2026-11-21T18:29:27",
       "date_created_gmt": "2026-11-21T18:29:27",
-      "date_modified": "2026-11-22T00:09:27",
-      "date_modified_gmt": "2026-11-22T00:09:27",
+      "date_modified": "2026-11-23T04:41:00",
+      "date_modified_gmt": "2026-11-23T04:41:00",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/t-shirt-basic/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=s",
       "sku": "5056701032",
@@ -12623,8 +12513,8 @@
       "download_expiry": -1,
       "tax_status": "taxable",
       "tax_class": "",
-      "manage_stock": "parent",
-      "stock_quantity": 1,
+      "manage_stock": true,
+      "stock_quantity": 20,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -12671,7 +12561,7 @@
         {
           "id": 2637998,
           "key": "_last_change_time",
-          "value": "1795286213"
+          "value": "1795408860"
         },
         {
           "id": 2637999,
@@ -13451,16 +13341,6 @@
         {
           "id": 2654129,
           "key": "_oembed_time_3efc152008105e0533b1d0735c932ef8",
-          "value": ""
-        },
-        {
-          "id": 2654130,
-          "key": "_wc_push_notification_sent_low_stock",
-          "value": ""
-        },
-        {
-          "id": 2654131,
-          "key": "_wc_push_notification_sent_out_of_stock",
           "value": ""
         },
         {

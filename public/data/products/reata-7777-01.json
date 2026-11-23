@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>99,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>99,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -196,6 +196,8 @@
         "name": "Reata-7777-winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "price": "99000",
       "regular_price": "99000",
@@ -225,6 +227,8 @@
         "name": "Reata-7777-winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "price": "99000",
       "regular_price": "99000",
@@ -254,6 +258,8 @@
         "name": "Reata-7777-winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 8,
       "stock_status": "instock",
       "price": "99000",
       "regular_price": "99000",
@@ -283,6 +289,8 @@
         "name": "Reata-7777-winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "99000",
       "regular_price": "99000",
@@ -1108,8 +1116,8 @@
       "type": "variation",
       "date_created": "2025-04-24T04:42:16",
       "date_created_gmt": "2025-04-24T04:42:16",
-      "date_modified": "2026-08-24T20:32:28",
-      "date_modified_gmt": "2026-08-24T20:32:28",
+      "date_modified": "2026-09-23T22:58:30",
+      "date_modified_gmt": "2026-09-23T22:58:30",
       "description": "<p>Nosotros sabemos que la regla número uno cuando se usa cuero, es siempre combinar los colores &#8211; “match your leathers”. Nuestros cinturones Trent están hechos en piel de becerro de manera artesanal, pintados a mano para llegar a ser el accesorio perfecto al usar con nuestros zapatos. Su diseño sencillo y hebilla clásica le da un toque de elegancia que sobresaltará en cualquier ocasión que te encuentres.</p>\n",
       "permalink": "https://tienda.winstonandharrystore.com/product/reata-7777-01/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=m",
       "sku": "28777701034",
@@ -1132,7 +1140,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 9,
+      "stock_quantity": 8,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -1826,7 +1834,7 @@
         {
           "id": 2262224,
           "key": "_last_change_time",
-          "value": "1787603548"
+          "value": "1790204310"
         },
         {
           "id": 2311470,
@@ -1868,8 +1876,8 @@
       "type": "variation",
       "date_created": "2025-04-24T04:42:16",
       "date_created_gmt": "2025-04-24T04:42:16",
-      "date_modified": "2026-07-16T22:43:29",
-      "date_modified_gmt": "2026-07-16T22:43:29",
+      "date_modified": "2026-10-27T19:17:02",
+      "date_modified_gmt": "2026-10-27T19:17:02",
       "description": "<p>Nosotros sabemos que la regla número uno cuando se usa cuero, es siempre combinar los colores &#8211; “match your leathers”. Nuestros cinturones Trent están hechos en piel de becerro de manera artesanal, pintados a mano para llegar a ser el accesorio perfecto al usar con nuestros zapatos. Su diseño sencillo y hebilla clásica le da un toque de elegancia que sobresaltará en cualquier ocasión que te encuentres.</p>\n",
       "permalink": "https://tienda.winstonandharrystore.com/product/reata-7777-01/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=s",
       "sku": "28777701032",
@@ -1892,7 +1900,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 7,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -2586,7 +2594,7 @@
         {
           "id": 2219052,
           "key": "_last_change_time",
-          "value": "1784241809"
+          "value": "1793128622"
         },
         {
           "id": 2311469,

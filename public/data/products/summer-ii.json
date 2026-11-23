@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>539,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>539,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -231,6 +231,8 @@
         "name": "Summer II-Azul-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "539000",
       "regular_price": "539000",
@@ -260,6 +262,8 @@
         "name": "Summer II-Azul-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "539000",
       "regular_price": "539000",
@@ -289,6 +293,8 @@
         "name": "Summer II-Azul-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "price": "539000",
       "regular_price": "539000",
@@ -318,35 +324,8 @@
         "name": "Summer II-Azul-Winstonandharry-1",
         "alt": ""
       },
-      "stock_status": "instock",
-      "price": "539000",
-      "regular_price": "539000",
-      "sale_price": ""
-    },
-    {
-      "id": 60632,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "azul",
-          "option": "azul"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "41",
-          "option": "41"
-        }
-      ],
-      "image": {
-        "id": 60923,
-        "date_created": "2025-03-02T05:18:01",
-        "date_created_gmt": "2025-03-02T05:18:01",
-        "date_modified": "2025-03-03T03:16:58",
-        "date_modified_gmt": "2025-03-03T03:16:58",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/2025/03/Summer-II-Azul-Winstonandharry-1-e1752872353671.jpg",
-        "name": "Summer II-Azul-Winstonandharry-1",
-        "alt": ""
-      },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "539000",
       "regular_price": "539000",
@@ -376,6 +355,8 @@
         "name": "Summer II-Azul-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "539000",
       "regular_price": "539000",
@@ -405,6 +386,8 @@
         "name": "Summer II-Azul-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": "parent",
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "539000",
       "regular_price": "539000",
@@ -434,6 +417,8 @@
         "name": "Summer II-Azul-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": "parent",
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "539000",
       "regular_price": "539000",
@@ -463,6 +448,8 @@
         "name": "Summer II-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "539000",
       "regular_price": "539000",
@@ -492,6 +479,8 @@
         "name": "Summer II-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "price": "539000",
       "regular_price": "539000",
@@ -521,6 +510,8 @@
         "name": "Summer II-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "539000",
       "regular_price": "539000",
@@ -550,6 +541,8 @@
         "name": "Summer II-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "539000",
       "regular_price": "539000",
@@ -579,6 +572,8 @@
         "name": "Summer II-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "539000",
       "regular_price": "539000",
@@ -608,6 +603,8 @@
         "name": "Summer II-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "539000",
       "regular_price": "539000",
@@ -637,6 +634,8 @@
         "name": "Summer II-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "539000",
       "regular_price": "539000",
@@ -666,6 +665,8 @@
         "name": "Summer II-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": "parent",
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "539000",
       "regular_price": "539000",
@@ -695,6 +696,8 @@
         "name": "Summer II-Café-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": "parent",
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "539000",
       "regular_price": "539000",
@@ -724,6 +727,8 @@
         "name": "Summer II-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "539000",
       "regular_price": "539000",
@@ -753,6 +758,8 @@
         "name": "Summer II-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "price": "539000",
       "regular_price": "539000",
@@ -782,6 +789,8 @@
         "name": "Summer II-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "price": "539000",
       "regular_price": "539000",
@@ -811,6 +820,8 @@
         "name": "Summer II-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "price": "539000",
       "regular_price": "539000",
@@ -840,6 +851,8 @@
         "name": "Summer II-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "539000",
       "regular_price": "539000",
@@ -869,6 +882,8 @@
         "name": "Summer II-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "539000",
       "regular_price": "539000",
@@ -898,6 +913,8 @@
         "name": "Summer II-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "539000",
       "regular_price": "539000",
@@ -927,6 +944,8 @@
         "name": "Summer II-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": "parent",
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "539000",
       "regular_price": "539000",
@@ -956,6 +975,8 @@
         "name": "Summer II-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": "parent",
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "539000",
       "regular_price": "539000",
@@ -10757,8 +10778,8 @@
       "type": "variation",
       "date_created": "2025-02-27T03:12:49",
       "date_created_gmt": "2025-02-27T03:12:49",
-      "date_modified": "2026-05-07T23:11:02",
-      "date_modified_gmt": "2026-05-07T23:11:02",
+      "date_modified": "2026-09-16T16:54:04",
+      "date_modified_gmt": "2026-09-16T16:54:04",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/summer-ii/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=40",
       "sku": "7100604040",
@@ -11410,7 +11431,7 @@
         {
           "id": 2218357,
           "key": "_last_change_time",
-          "value": "1778190278"
+          "value": "1789577644"
         },
         {
           "id": 2311847,
@@ -16317,8 +16338,8 @@
       "type": "variation",
       "date_created": "2025-02-27T03:12:49",
       "date_created_gmt": "2025-02-27T03:12:49",
-      "date_modified": "2026-08-18T17:46:53",
-      "date_modified_gmt": "2026-08-18T17:46:53",
+      "date_modified": "2026-09-08T17:14:40",
+      "date_modified_gmt": "2026-09-08T17:14:40",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/summer-ii/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=41",
       "sku": "7100601041",
@@ -16341,8 +16362,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -16970,7 +16991,7 @@
         {
           "id": 2218341,
           "key": "_last_change_time",
-          "value": "1787075213"
+          "value": "1788887681"
         },
         {
           "id": 2311832,

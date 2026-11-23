@@ -11,9 +11,9 @@
   "description": "<p>Este modelo Derby llamado Looe es ideal para ocasiones casuales. La textura de su piel semejante a pequeñas escamas de pescado y su sutil brillo, le dan un toque de rebeldía y elegancia única para dichas situaciones. Si estas buscando marcar la diferencia, pero a la vez conservar un estilo clásico elegante, éste es el modelo a escoger.</p>",
   "on_sale": true,
   "prices": {
-    "price": "377300",
+    "price": "161700",
     "regular_price": "539000",
-    "sale_price": "377300",
+    "sale_price": "161700",
     "price_range": null,
     "currency_code": "COP",
     "currency_symbol": "$",
@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>539,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;539,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>377,300</span></ins><span class=\"screen-reader-text\">Current price is: &#036;377,300.</span>",
+  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>539,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;539,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>161,700</span></ins><span class=\"screen-reader-text\">Current price is: &#036;161,700.</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -219,8 +219,10 @@
         "name": "winston-and-harry-zapatos-de-cordon-looe-azul-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "377300",
+      "price": "161700",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -248,8 +250,10 @@
         "name": "winston-and-harry-zapatos-de-cordon-looe-azul-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "377300",
+      "price": "161700",
       "regular_price": "539000",
       "sale_price": ""
     }
@@ -319,15 +323,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:31:27",
       "date_created_gmt": "2022-08-25T22:31:27",
-      "date_modified": "2026-07-31T02:32:54",
-      "date_modified_gmt": "2026-07-31T02:32:54",
+      "date_modified": "2026-11-23T04:28:27",
+      "date_modified_gmt": "2026-11-23T04:28:27",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/looe/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=42",
       "sku": "7018002042",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "161700",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "161700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -815,7 +819,7 @@
         {
           "id": 2216960,
           "key": "_last_change_time",
-          "value": "1778184323"
+          "value": "1795408107"
         },
         {
           "id": 2314885,
@@ -1197,15 +1201,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:31:27",
       "date_created_gmt": "2022-08-25T22:31:27",
-      "date_modified": "2026-07-31T02:32:47",
-      "date_modified_gmt": "2026-07-31T02:32:47",
+      "date_modified": "2026-11-23T04:28:27",
+      "date_modified_gmt": "2026-11-23T04:28:27",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/looe/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=41",
       "sku": "7018002041",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "161700",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "161700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -1708,7 +1712,7 @@
         {
           "id": 2216959,
           "key": "_last_change_time",
-          "value": "1778184323"
+          "value": "1795408107"
         },
         {
           "id": 2314884,
@@ -2075,15 +2079,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:31:27",
       "date_created_gmt": "2022-08-25T22:31:27",
-      "date_modified": "2026-07-31T02:32:47",
-      "date_modified_gmt": "2026-07-31T02:32:47",
+      "date_modified": "2026-11-23T04:28:27",
+      "date_modified_gmt": "2026-11-23T04:28:27",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/looe/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=40",
       "sku": "7018002040",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "161700",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "161700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -2581,7 +2585,7 @@
         {
           "id": 2216958,
           "key": "_last_change_time",
-          "value": "1778184323"
+          "value": "1795408107"
         },
         {
           "id": 2314883,
@@ -2953,15 +2957,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:31:27",
       "date_created_gmt": "2022-08-25T22:31:27",
-      "date_modified": "2026-07-31T02:32:47",
-      "date_modified_gmt": "2026-07-31T02:32:47",
+      "date_modified": "2026-11-23T04:28:27",
+      "date_modified_gmt": "2026-11-23T04:28:27",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/looe/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=39",
       "sku": "7018002039",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "161700",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "161700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -3464,7 +3468,7 @@
         {
           "id": 2216957,
           "key": "_last_change_time",
-          "value": "1778184323"
+          "value": "1795408107"
         },
         {
           "id": 2314882,
@@ -3831,15 +3835,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:31:27",
       "date_created_gmt": "2022-08-25T22:31:27",
-      "date_modified": "2026-07-31T02:32:47",
-      "date_modified_gmt": "2026-07-31T02:32:47",
+      "date_modified": "2026-11-23T04:28:27",
+      "date_modified_gmt": "2026-11-23T04:28:27",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/looe/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=38",
       "sku": "7018002038",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "161700",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "161700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -4342,7 +4346,7 @@
         {
           "id": 2216956,
           "key": "_last_change_time",
-          "value": "1780421708"
+          "value": "1795408107"
         },
         {
           "id": 2314881,
@@ -4709,15 +4713,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:31:27",
       "date_created_gmt": "2022-08-25T22:31:27",
-      "date_modified": "2026-07-31T02:32:47",
-      "date_modified_gmt": "2026-07-31T02:32:47",
+      "date_modified": "2026-11-23T04:28:27",
+      "date_modified_gmt": "2026-11-23T04:28:27",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/looe/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=42",
       "sku": "7018001042",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "161700",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "161700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -5220,7 +5224,7 @@
         {
           "id": 2216955,
           "key": "_last_change_time",
-          "value": "1780421708"
+          "value": "1795408107"
         },
         {
           "id": 2314880,
@@ -5587,15 +5591,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:31:27",
       "date_created_gmt": "2022-08-25T22:31:27",
-      "date_modified": "2026-07-31T02:32:47",
-      "date_modified_gmt": "2026-07-31T02:32:47",
+      "date_modified": "2026-11-23T04:28:27",
+      "date_modified_gmt": "2026-11-23T04:28:27",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/looe/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=41",
       "sku": "7018001041",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "161700",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "161700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -6098,7 +6102,7 @@
         {
           "id": 2216954,
           "key": "_last_change_time",
-          "value": "1780421708"
+          "value": "1795408107"
         },
         {
           "id": 2314879,
@@ -6465,15 +6469,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:31:27",
       "date_created_gmt": "2022-08-25T22:31:27",
-      "date_modified": "2026-07-31T02:32:47",
-      "date_modified_gmt": "2026-07-31T02:32:47",
+      "date_modified": "2026-11-23T04:28:26",
+      "date_modified_gmt": "2026-11-23T04:28:26",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/looe/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=40",
       "sku": "7018001040",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "161700",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "161700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -6976,7 +6980,7 @@
         {
           "id": 2216953,
           "key": "_last_change_time",
-          "value": "1778184323"
+          "value": "1795408106"
         },
         {
           "id": 2314888,
@@ -7343,15 +7347,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:31:27",
       "date_created_gmt": "2022-08-25T22:31:27",
-      "date_modified": "2026-07-31T02:32:47",
-      "date_modified_gmt": "2026-07-31T02:32:47",
+      "date_modified": "2026-11-23T04:28:26",
+      "date_modified_gmt": "2026-11-23T04:28:26",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/looe/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=39",
       "sku": "7018001039",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "161700",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "161700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -7849,7 +7853,7 @@
         {
           "id": 2216952,
           "key": "_last_change_time",
-          "value": "1778184322"
+          "value": "1795408106"
         },
         {
           "id": 2314887,
@@ -8221,15 +8225,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:31:27",
       "date_created_gmt": "2022-08-25T22:31:27",
-      "date_modified": "2026-07-31T02:32:47",
-      "date_modified_gmt": "2026-07-31T02:32:47",
+      "date_modified": "2026-11-23T04:28:26",
+      "date_modified_gmt": "2026-11-23T04:28:26",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/looe/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=38",
       "sku": "7018001038",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "161700",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "161700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -8732,7 +8736,7 @@
         {
           "id": 2216950,
           "key": "_last_change_time",
-          "value": "1778184322"
+          "value": "1795408106"
         },
         {
           "id": 2314886,
@@ -9099,7 +9103,9 @@
     "11588": "https://tienda.winstonandharrystore.com/wp-content/uploads/2020/12/055-zapato-cenital.jpg",
     "11590": "https://tienda.winstonandharrystore.com/wp-content/uploads/2020/12/055-zapato-lateral.jpg",
     "17405": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/04/056-zapato-cenital.jpg",
-    "17406": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/04/056-zapato-lateral.jpg"
+    "17406": "https://tienda.winstonandharrystore.com/wp-content/uploads/2021/04/056-zapato-lateral.jpg",
+    "86040": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-zapatos-de-cordon-looe-azul-02.jpg",
+    "86041": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-zapatos-de-cordon-looe-azul-03.jpg"
   },
   "stock_status": "instock",
   "variation_images_map": {
@@ -9109,6 +9115,16 @@
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-zapatos-de-cordon-looe-azul-01.jpg",
         "alt": "winston-and-harry-zapatos-de-cordon-looe-azul-01",
         "name": "winston-and-harry-zapatos-de-cordon-looe-azul-01"
+      },
+      {
+        "id": 86040,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-zapatos-de-cordon-looe-azul-02.jpg",
+        "alt": "Looe"
+      },
+      {
+        "id": 86041,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-zapatos-de-cordon-looe-azul-03.jpg",
+        "alt": "Looe"
       },
       {
         "id": 17406,

@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>704,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>704,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -255,6 +255,8 @@
         "name": "Chelsea II-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "704000",
       "regular_price": "704000",
@@ -284,6 +286,8 @@
         "name": "Chelsea II-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "704000",
       "regular_price": "704000",
@@ -313,6 +317,8 @@
         "name": "Chelsea II-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": "parent",
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "704000",
       "regular_price": "704000",
@@ -342,6 +348,8 @@
         "name": "Chelsea II-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "704000",
       "regular_price": "704000",
@@ -371,6 +379,8 @@
         "name": "Chelsea II-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "price": "704000",
       "regular_price": "704000",
@@ -400,6 +410,8 @@
         "name": "Chelsea II-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": "parent",
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "704000",
       "regular_price": "704000",
@@ -429,6 +441,8 @@
         "name": "Chelsea II-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "704000",
       "regular_price": "704000",
@@ -458,6 +472,8 @@
         "name": "Chelsea II-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "price": "704000",
       "regular_price": "704000",
@@ -487,6 +503,8 @@
         "name": "Chelsea II-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 7,
       "stock_status": "instock",
       "price": "704000",
       "regular_price": "704000",
@@ -516,6 +534,8 @@
         "name": "Chelsea II-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "price": "704000",
       "regular_price": "704000",
@@ -545,6 +565,8 @@
         "name": "Chelsea II-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "704000",
       "regular_price": "704000",
@@ -574,6 +596,8 @@
         "name": "Chelsea II-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "price": "704000",
       "regular_price": "704000",
@@ -603,6 +627,8 @@
         "name": "Chelsea II-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "704000",
       "regular_price": "704000",
@@ -632,6 +658,8 @@
         "name": "Chelsea II-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "price": "704000",
       "regular_price": "704000",
@@ -661,6 +689,8 @@
         "name": "Chelsea II-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "704000",
       "regular_price": "704000",
@@ -690,6 +720,8 @@
         "name": "Chelsea II-Miel-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "704000",
       "regular_price": "704000",
@@ -14561,8 +14593,8 @@
       "type": "variation",
       "date_created": "2023-07-11T17:12:38",
       "date_created_gmt": "2023-07-11T17:12:38",
-      "date_modified": "2026-05-07T23:01:30",
-      "date_modified_gmt": "2026-05-07T23:01:30",
+      "date_modified": "2026-11-23T04:37:16",
+      "date_modified_gmt": "2026-11-23T04:37:16",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/chelsea-ii/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=43",
       "sku": "7414226043",
@@ -14585,7 +14617,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 2,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -15214,7 +15246,7 @@
         {
           "id": 2215932,
           "key": "_last_change_time",
-          "value": "1778177812"
+          "value": "1795408636"
         },
         {
           "id": 2312795,
@@ -18731,8 +18763,8 @@
       "type": "variation",
       "date_created": "2023-07-11T17:12:37",
       "date_created_gmt": "2023-07-11T17:12:37",
-      "date_modified": "2026-05-07T23:01:30",
-      "date_modified_gmt": "2026-05-07T23:01:30",
+      "date_modified": "2026-10-05T21:51:14",
+      "date_modified_gmt": "2026-10-05T21:51:14",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/chelsea-ii/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=37",
       "sku": "7414226037",
@@ -19384,7 +19416,7 @@
         {
           "id": 2215920,
           "key": "_last_change_time",
-          "value": "1778177812"
+          "value": "1791237074"
         },
         {
           "id": 2312809,

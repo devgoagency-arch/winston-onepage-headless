@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>99,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>99,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -196,6 +196,8 @@
         "name": "Reata-0031-winstonandharry-2",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 8,
       "stock_status": "instock",
       "price": "99000",
       "regular_price": "99000",
@@ -225,6 +227,8 @@
         "name": "Reata-0031-winstonandharry-2",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 6,
       "stock_status": "instock",
       "price": "99000",
       "regular_price": "99000",
@@ -254,6 +258,8 @@
         "name": "Reata-0031-winstonandharry-2",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 16,
       "stock_status": "instock",
       "price": "99000",
       "regular_price": "99000",
@@ -283,6 +289,8 @@
         "name": "Reata-0031-winstonandharry-2",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 19,
       "stock_status": "instock",
       "price": "99000",
       "regular_price": "99000",
@@ -312,6 +320,8 @@
         "name": "Reata-0031-winstonandharry-2",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 10,
       "stock_status": "instock",
       "price": "99000",
       "regular_price": "99000",
@@ -1137,8 +1147,8 @@
       "type": "variation",
       "date_created": "2025-04-24T03:36:13",
       "date_created_gmt": "2025-04-24T03:36:13",
-      "date_modified": "2026-07-16T22:43:12",
-      "date_modified_gmt": "2026-07-16T22:43:12",
+      "date_modified": "2026-10-05T21:52:06",
+      "date_modified_gmt": "2026-10-05T21:52:06",
       "description": "<p>Nosotros sabemos que la regla número uno cuando se usa cuero, es siempre combinar los colores &#8211; “match your leathers”. Nuestros cinturones Trent están hechos en piel de becerro de manera artesanal, pintados a mano para llegar a ser el accesorio perfecto al usar con nuestros zapatos. Su diseño sencillo y hebilla clásica le da un toque de elegancia que sobresaltará en cualquier ocasión que te encuentres.</p>\n",
       "permalink": "https://tienda.winstonandharrystore.com/product/reata-0031-04/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=m",
       "sku": "28003104034",
@@ -1161,7 +1171,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 21,
+      "stock_quantity": 19,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -1855,7 +1865,7 @@
         {
           "id": 2258703,
           "key": "_last_change_time",
-          "value": "1784241792"
+          "value": "1791237126"
         },
         {
           "id": 2311505,
@@ -3417,8 +3427,8 @@
       "type": "variation",
       "date_created": "2025-04-24T03:36:13",
       "date_created_gmt": "2025-04-24T03:36:13",
-      "date_modified": "2026-07-16T22:43:12",
-      "date_modified_gmt": "2026-07-16T22:43:12",
+      "date_modified": "2026-11-23T04:38:54",
+      "date_modified_gmt": "2026-11-23T04:38:54",
       "description": "<p>Nosotros sabemos que la regla número uno cuando se usa cuero, es siempre combinar los colores &#8211; “match your leathers”. Nuestros cinturones Trent están hechos en piel de becerro de manera artesanal, pintados a mano para llegar a ser el accesorio perfecto al usar con nuestros zapatos. Su diseño sencillo y hebilla clásica le da un toque de elegancia que sobresaltará en cualquier ocasión que te encuentres.</p>\n",
       "permalink": "https://tienda.winstonandharrystore.com/product/reata-0031-04/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=xs",
       "sku": "28003104030",
@@ -3441,7 +3451,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 7,
+      "stock_quantity": 8,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -4135,7 +4145,7 @@
         {
           "id": 2250370,
           "key": "_last_change_time",
-          "value": "1784241792"
+          "value": "1795408734"
         },
         {
           "id": 2311502,

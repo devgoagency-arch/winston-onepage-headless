@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>99,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>99,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -202,6 +202,8 @@
         "name": "IMG_2316",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 19,
       "stock_status": "instock",
       "price": "99000",
       "regular_price": "99000",
@@ -231,6 +233,8 @@
         "name": "IMG_2316",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 26,
       "stock_status": "instock",
       "price": "99000",
       "regular_price": "99000",
@@ -260,6 +264,8 @@
         "name": "IMG_2316",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
       "price": "99000",
       "regular_price": "99000",
@@ -870,8 +876,8 @@
       "type": "variation",
       "date_created": "2022-08-29T21:08:40",
       "date_created_gmt": "2022-08-29T21:08:40",
-      "date_modified": "2026-07-16T22:40:28",
-      "date_modified_gmt": "2026-07-16T22:40:28",
+      "date_modified": "2026-09-23T22:57:42",
+      "date_modified_gmt": "2026-09-23T22:57:42",
       "description": "<p>Nosotros sabemos que la regla número uno cuando se usa cuero, es siempre combinar los colores &#8211; “match your leathers”. Nuestros cinturones Trent están hechos en piel de becerro de manera artesanal, pintados a mano para llegar a ser el accesorio perfecto al usar con nuestros zapatos. Su diseño sencillo y hebilla clásica le da un toque de elegancia que sobresaltará en cualquier ocasión que te encuentres.</p>\n",
       "permalink": "https://tienda.winstonandharrystore.com/product/reata-663/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=l",
       "sku": "28013902036",
@@ -894,7 +900,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 28,
+      "stock_quantity": 26,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -1368,7 +1374,7 @@
         {
           "id": 2262127,
           "key": "_last_change_time",
-          "value": "1784241628"
+          "value": "1790204262"
         }
       ],
       "name": "Azul, L",
@@ -1945,8 +1951,8 @@
       "type": "variation",
       "date_created": "2022-08-29T21:08:40",
       "date_created_gmt": "2022-08-29T21:08:40",
-      "date_modified": "2026-07-16T22:40:28",
-      "date_modified_gmt": "2026-07-16T22:40:28",
+      "date_modified": "2026-11-23T04:36:48",
+      "date_modified_gmt": "2026-11-23T04:36:48",
       "description": "<p>Nosotros sabemos que la regla número uno cuando se usa cuero, es siempre combinar los colores &#8211; “match your leathers”. Nuestros cinturones Trent están hechos en piel de becerro de manera artesanal, pintados a mano para llegar a ser el accesorio perfecto al usar con nuestros zapatos. Su diseño sencillo y hebilla clásica le da un toque de elegancia que sobresaltará en cualquier ocasión que te encuentres.</p>\n",
       "permalink": "https://tienda.winstonandharrystore.com/product/reata-663/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=s",
       "sku": "28013902032",
@@ -1969,7 +1975,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 23,
+      "stock_quantity": 19,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -2443,7 +2449,7 @@
         {
           "id": 2218920,
           "key": "_last_change_time",
-          "value": "1784241628"
+          "value": "1795408608"
         }
       ],
       "name": "Azul, S",

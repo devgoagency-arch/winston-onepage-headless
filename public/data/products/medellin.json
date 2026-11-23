@@ -11,9 +11,9 @@
   "description": "<p>Los Tenis Medellin están hechos a mano por artesanos colombianos. Tiene una pieza en contraste que evoca la grandeza de las montañas en sus tierras. Combina los grises y los negros para poder darle un toque único a tu atuendo. Estos zapatos están hechos en 100% cuero y son extremadamente livianos.</p>",
   "on_sale": true,
   "prices": {
-    "price": "377300",
+    "price": "323400",
     "regular_price": "539000",
-    "sale_price": "377300",
+    "sale_price": "323400",
     "price_range": null,
     "currency_code": "COP",
     "currency_symbol": "$",
@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>539,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;539,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>377,300</span></ins><span class=\"screen-reader-text\">Current price is: &#036;377,300.</span>",
+  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>539,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;539,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>323,400</span></ins><span class=\"screen-reader-text\">Current price is: &#036;323,400.</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -231,8 +231,10 @@
         "name": "Medellin-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
-      "price": "377300",
+      "price": "323400",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -260,8 +262,10 @@
         "name": "Medellin-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
-      "price": "377300",
+      "price": "323400",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -289,8 +293,10 @@
         "name": "Medellin-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
-      "price": "377300",
+      "price": "323400",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -318,8 +324,10 @@
         "name": "Medellin-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
-      "price": "377300",
+      "price": "323400",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -347,8 +355,10 @@
         "name": "Medellin-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 6,
       "stock_status": "instock",
-      "price": "377300",
+      "price": "323400",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -376,8 +386,10 @@
         "name": "Medellin-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "377300",
+      "price": "323400",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -405,8 +417,10 @@
         "name": "Medellin-Negro-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "377300",
+      "price": "323400",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -434,8 +448,10 @@
         "name": "Medellin-Gris-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
-      "price": "377300",
+      "price": "323400",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -463,8 +479,10 @@
         "name": "Medellin-Gris-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
-      "price": "377300",
+      "price": "323400",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -492,8 +510,10 @@
         "name": "Medellin-Gris-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 6,
       "stock_status": "instock",
-      "price": "377300",
+      "price": "323400",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -521,8 +541,10 @@
         "name": "Medellin-Gris-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 6,
       "stock_status": "instock",
-      "price": "377300",
+      "price": "323400",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -550,8 +572,10 @@
         "name": "Medellin-Gris-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 5,
       "stock_status": "instock",
-      "price": "377300",
+      "price": "323400",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -579,8 +603,10 @@
         "name": "Medellin-Gris-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
-      "price": "377300",
+      "price": "323400",
       "regular_price": "539000",
       "sale_price": ""
     },
@@ -608,8 +634,10 @@
         "name": "Medellin-Gris-Winstonandharry-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "377300",
+      "price": "323400",
       "regular_price": "539000",
       "sale_price": ""
     }
@@ -2764,15 +2792,15 @@
       "type": "variation",
       "date_created": "2023-01-11T20:52:54",
       "date_created_gmt": "2023-01-11T20:52:54",
-      "date_modified": "2026-05-08T21:44:37",
-      "date_modified_gmt": "2026-05-08T21:44:37",
+      "date_modified": "2026-11-23T04:31:23",
+      "date_modified_gmt": "2026-11-23T04:31:23",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/medellin/?attribute_pa_selecciona-el-color=gris&attribute_pa_selecciona-una-talla=43",
       "sku": "7501203043",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -3407,7 +3435,7 @@
         {
           "id": 2217141,
           "key": "_last_change_time",
-          "value": "1778276677"
+          "value": "1795408283"
         },
         {
           "id": 2313310,
@@ -3464,15 +3492,15 @@
       "type": "variation",
       "date_created": "2023-01-11T20:52:54",
       "date_created_gmt": "2023-01-11T20:52:54",
-      "date_modified": "2026-05-08T21:44:37",
-      "date_modified_gmt": "2026-05-08T21:44:37",
+      "date_modified": "2026-11-23T04:31:23",
+      "date_modified_gmt": "2026-11-23T04:31:23",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/medellin/?attribute_pa_selecciona-el-color=gris&attribute_pa_selecciona-una-talla=42",
       "sku": "7501203042",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -4107,7 +4135,7 @@
         {
           "id": 2217140,
           "key": "_last_change_time",
-          "value": "1778276677"
+          "value": "1795408283"
         },
         {
           "id": 2313309,
@@ -4164,15 +4192,15 @@
       "type": "variation",
       "date_created": "2023-01-11T20:52:54",
       "date_created_gmt": "2023-01-11T20:52:54",
-      "date_modified": "2026-05-08T21:44:37",
-      "date_modified_gmt": "2026-05-08T21:44:37",
+      "date_modified": "2026-11-23T04:31:23",
+      "date_modified_gmt": "2026-11-23T04:31:23",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/medellin/?attribute_pa_selecciona-el-color=gris&attribute_pa_selecciona-una-talla=41",
       "sku": "7501203041",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -4807,7 +4835,7 @@
         {
           "id": 2217139,
           "key": "_last_change_time",
-          "value": "1778276677"
+          "value": "1795408283"
         },
         {
           "id": 2313308,
@@ -4864,15 +4892,15 @@
       "type": "variation",
       "date_created": "2023-01-11T20:52:54",
       "date_created_gmt": "2023-01-11T20:52:54",
-      "date_modified": "2026-05-08T21:44:37",
-      "date_modified_gmt": "2026-05-08T21:44:37",
+      "date_modified": "2026-11-23T04:31:23",
+      "date_modified_gmt": "2026-11-23T04:31:23",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/medellin/?attribute_pa_selecciona-el-color=gris&attribute_pa_selecciona-una-talla=40",
       "sku": "7501203040",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -5507,7 +5535,7 @@
         {
           "id": 2217138,
           "key": "_last_change_time",
-          "value": "1778276677"
+          "value": "1795408283"
         },
         {
           "id": 2313307,
@@ -5564,15 +5592,15 @@
       "type": "variation",
       "date_created": "2023-01-11T20:52:54",
       "date_created_gmt": "2023-01-11T20:52:54",
-      "date_modified": "2026-05-08T21:44:37",
-      "date_modified_gmt": "2026-05-08T21:44:37",
+      "date_modified": "2026-11-23T04:31:23",
+      "date_modified_gmt": "2026-11-23T04:31:23",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/medellin/?attribute_pa_selecciona-el-color=gris&attribute_pa_selecciona-una-talla=39",
       "sku": "7501203039",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -6207,7 +6235,7 @@
         {
           "id": 2217137,
           "key": "_last_change_time",
-          "value": "1778276677"
+          "value": "1795408283"
         },
         {
           "id": 2313306,
@@ -6264,15 +6292,15 @@
       "type": "variation",
       "date_created": "2023-01-11T20:52:53",
       "date_created_gmt": "2023-01-11T20:52:53",
-      "date_modified": "2026-05-08T21:44:37",
-      "date_modified_gmt": "2026-05-08T21:44:37",
+      "date_modified": "2026-11-23T04:31:23",
+      "date_modified_gmt": "2026-11-23T04:31:23",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/medellin/?attribute_pa_selecciona-el-color=gris&attribute_pa_selecciona-una-talla=38",
       "sku": "7501203038",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -6907,7 +6935,7 @@
         {
           "id": 2217136,
           "key": "_last_change_time",
-          "value": "1778276677"
+          "value": "1795408283"
         },
         {
           "id": 2313315,
@@ -6964,15 +6992,15 @@
       "type": "variation",
       "date_created": "2023-01-11T20:52:53",
       "date_created_gmt": "2023-01-11T20:52:53",
-      "date_modified": "2026-05-08T21:44:37",
-      "date_modified_gmt": "2026-05-08T21:44:37",
+      "date_modified": "2026-11-23T04:31:23",
+      "date_modified_gmt": "2026-11-23T04:31:23",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/medellin/?attribute_pa_selecciona-el-color=gris&attribute_pa_selecciona-una-talla=37",
       "sku": "7501203037",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -7607,7 +7635,7 @@
         {
           "id": 2217135,
           "key": "_last_change_time",
-          "value": "1778276677"
+          "value": "1795408283"
         },
         {
           "id": 2313314,
@@ -8359,15 +8387,15 @@
       "type": "variation",
       "date_created": "2023-01-11T20:52:53",
       "date_created_gmt": "2023-01-11T20:52:53",
-      "date_modified": "2026-05-08T21:44:37",
-      "date_modified_gmt": "2026-05-08T21:44:37",
+      "date_modified": "2026-11-23T04:31:23",
+      "date_modified_gmt": "2026-11-23T04:31:23",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/medellin/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=43",
       "sku": "7501202043",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -9002,7 +9030,7 @@
         {
           "id": 2217133,
           "key": "_last_change_time",
-          "value": "1778276677"
+          "value": "1795408283"
         },
         {
           "id": 2313312,
@@ -9059,15 +9087,15 @@
       "type": "variation",
       "date_created": "2023-01-11T20:52:53",
       "date_created_gmt": "2023-01-11T20:52:53",
-      "date_modified": "2026-05-08T21:44:37",
-      "date_modified_gmt": "2026-05-08T21:44:37",
+      "date_modified": "2026-11-23T04:31:23",
+      "date_modified_gmt": "2026-11-23T04:31:23",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/medellin/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=42",
       "sku": "7501202042",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -9702,7 +9730,7 @@
         {
           "id": 2217132,
           "key": "_last_change_time",
-          "value": "1778276677"
+          "value": "1795408283"
         },
         {
           "id": 2313321,
@@ -9759,15 +9787,15 @@
       "type": "variation",
       "date_created": "2023-01-11T20:52:53",
       "date_created_gmt": "2023-01-11T20:52:53",
-      "date_modified": "2026-05-08T21:44:37",
-      "date_modified_gmt": "2026-05-08T21:44:37",
+      "date_modified": "2026-11-23T04:31:23",
+      "date_modified_gmt": "2026-11-23T04:31:23",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/medellin/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=41",
       "sku": "7501202041",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -10402,7 +10430,7 @@
         {
           "id": 2217131,
           "key": "_last_change_time",
-          "value": "1778276677"
+          "value": "1795408283"
         },
         {
           "id": 2313320,
@@ -10459,15 +10487,15 @@
       "type": "variation",
       "date_created": "2023-01-11T20:52:53",
       "date_created_gmt": "2023-01-11T20:52:53",
-      "date_modified": "2026-05-08T21:44:37",
-      "date_modified_gmt": "2026-05-08T21:44:37",
+      "date_modified": "2026-11-23T04:31:23",
+      "date_modified_gmt": "2026-11-23T04:31:23",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/medellin/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=40",
       "sku": "7501202040",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -11102,7 +11130,7 @@
         {
           "id": 2217130,
           "key": "_last_change_time",
-          "value": "1778276677"
+          "value": "1795408283"
         },
         {
           "id": 2313319,
@@ -11159,15 +11187,15 @@
       "type": "variation",
       "date_created": "2023-01-11T20:52:53",
       "date_created_gmt": "2023-01-11T20:52:53",
-      "date_modified": "2026-05-08T21:44:37",
-      "date_modified_gmt": "2026-05-08T21:44:37",
+      "date_modified": "2026-11-23T04:31:23",
+      "date_modified_gmt": "2026-11-23T04:31:23",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/medellin/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=39",
       "sku": "7501202039",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -11802,7 +11830,7 @@
         {
           "id": 2217129,
           "key": "_last_change_time",
-          "value": "1778276677"
+          "value": "1795408283"
         },
         {
           "id": 2313318,
@@ -11859,15 +11887,15 @@
       "type": "variation",
       "date_created": "2023-01-11T20:52:53",
       "date_created_gmt": "2023-01-11T20:52:53",
-      "date_modified": "2026-05-08T21:44:37",
-      "date_modified_gmt": "2026-05-08T21:44:37",
+      "date_modified": "2026-11-23T04:31:23",
+      "date_modified_gmt": "2026-11-23T04:31:23",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/medellin/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=38",
       "sku": "7501202038",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -12502,7 +12530,7 @@
         {
           "id": 2217128,
           "key": "_last_change_time",
-          "value": "1778276677"
+          "value": "1795408283"
         },
         {
           "id": 2313317,
@@ -12559,15 +12587,15 @@
       "type": "variation",
       "date_created": "2023-01-11T20:52:53",
       "date_created_gmt": "2023-01-11T20:52:53",
-      "date_modified": "2026-05-08T21:44:37",
-      "date_modified_gmt": "2026-05-08T21:44:37",
+      "date_modified": "2026-11-23T04:31:23",
+      "date_modified_gmt": "2026-11-23T04:31:23",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/medellin/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=37",
       "sku": "7501202037",
       "global_unique_id": "",
-      "price": "377300",
+      "price": "323400",
       "regular_price": "539000",
-      "sale_price": "377300",
+      "sale_price": "323400",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -13202,7 +13230,7 @@
         {
           "id": 2217127,
           "key": "_last_change_time",
-          "value": "1778276677"
+          "value": "1795408283"
         },
         {
           "id": 2313316,

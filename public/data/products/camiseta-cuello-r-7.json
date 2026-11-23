@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>110,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>110,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -263,6 +263,8 @@
         "name": "cami-3-posi-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 11,
       "stock_status": "instock",
       "price": "110000",
       "regular_price": "110000",
@@ -292,6 +294,8 @@
         "name": "cami-3-posi-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 10,
       "stock_status": "instock",
       "price": "110000",
       "regular_price": "110000",
@@ -321,6 +325,8 @@
         "name": "cami-3-posi-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "110000",
       "regular_price": "110000",
@@ -350,6 +356,8 @@
         "name": "cami-3-posi-1",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 17,
       "stock_status": "instock",
       "price": "110000",
       "regular_price": "110000",
@@ -971,8 +979,8 @@
       "type": "variation",
       "date_created": "2022-08-25T22:52:48",
       "date_created_gmt": "2022-08-25T22:52:48",
-      "date_modified": "2026-05-26T17:50:07",
-      "date_modified_gmt": "2026-05-26T17:50:07",
+      "date_modified": "2026-11-23T04:36:48",
+      "date_modified_gmt": "2026-11-23T04:36:48",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/camiseta-cuello-r-7/?attribute_pa_selecciona-el-color=morado&attribute_pa_selecciona-una-talla=m",
       "sku": "5056022034",
@@ -995,7 +1003,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 5,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -1479,7 +1487,7 @@
         {
           "id": 2250125,
           "key": "_last_change_time",
-          "value": "1778177719"
+          "value": "1795408608"
         },
         {
           "id": 2313835,

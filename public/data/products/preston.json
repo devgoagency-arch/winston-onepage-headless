@@ -11,9 +11,9 @@
   "description": "<p>Los derbies han sido por definición el modelo casual con cordones. Los Preston mezclan tendencias, materiales, modernidad y tradición. El paño utilizado es un Harrys Tweed, tejido típico escoces que le da un toque diferente. La combinación de cuero, paño y goma en la suela hacen que estos zapatos sean livianos y muy cómodos. Puedes tener la certeza de que estos zapatos no pasarán desapercibidos y le darán un toque de elegancia y estilo vanguardista a tu atuendo.</p>",
   "on_sale": true,
   "prices": {
-    "price": "323400",
+    "price": "161700",
     "regular_price": "539000",
-    "sale_price": "323400",
+    "sale_price": "161700",
     "price_range": null,
     "currency_code": "COP",
     "currency_symbol": "$",
@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>539,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;539,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>323,400</span></ins><span class=\"screen-reader-text\">Current price is: &#036;323,400.</span>",
+  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>539,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;539,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>161,700</span></ins><span class=\"screen-reader-text\">Current price is: &#036;161,700.</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -220,8 +220,10 @@
         "name": "winston-and-harry-zapatos-de-cordon-preston-negro-gris-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "323400",
+      "price": "161700",
       "regular_price": "539000",
       "sale_price": ""
     }
@@ -1169,15 +1171,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:35:38",
       "date_created_gmt": "2022-08-25T22:35:38",
-      "date_modified": "2026-07-31T02:32:54",
-      "date_modified_gmt": "2026-07-31T02:32:54",
+      "date_modified": "2026-11-23T04:28:36",
+      "date_modified_gmt": "2026-11-23T04:28:36",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/preston/?attribute_pa_selecciona-el-color=negro-gris&attribute_pa_selecciona-una-talla=42",
       "sku": "7181602042",
       "global_unique_id": "",
-      "price": "323400",
+      "price": "161700",
       "regular_price": "539000",
-      "sale_price": "323400",
+      "sale_price": "161700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -1675,7 +1677,7 @@
         {
           "id": 2217620,
           "key": "_last_change_time",
-          "value": "1778184510"
+          "value": "1795408116"
         },
         {
           "id": 2463875,
@@ -2047,15 +2049,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:35:38",
       "date_created_gmt": "2022-08-25T22:35:38",
-      "date_modified": "2026-07-31T02:32:54",
-      "date_modified_gmt": "2026-07-31T02:32:54",
+      "date_modified": "2026-11-23T04:28:36",
+      "date_modified_gmt": "2026-11-23T04:28:36",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/preston/?attribute_pa_selecciona-el-color=negro-gris&attribute_pa_selecciona-una-talla=41",
       "sku": "7181602041",
       "global_unique_id": "",
-      "price": "323400",
+      "price": "161700",
       "regular_price": "539000",
-      "sale_price": "323400",
+      "sale_price": "161700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -2553,7 +2555,7 @@
         {
           "id": 2217619,
           "key": "_last_change_time",
-          "value": "1778184509"
+          "value": "1795408116"
         },
         {
           "id": 2463807,
@@ -2925,15 +2927,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:35:38",
       "date_created_gmt": "2022-08-25T22:35:38",
-      "date_modified": "2026-07-31T02:32:54",
-      "date_modified_gmt": "2026-07-31T02:32:54",
+      "date_modified": "2026-11-23T04:28:36",
+      "date_modified_gmt": "2026-11-23T04:28:36",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/preston/?attribute_pa_selecciona-el-color=negro-gris&attribute_pa_selecciona-una-talla=40",
       "sku": "7181602040",
       "global_unique_id": "",
-      "price": "323400",
+      "price": "161700",
       "regular_price": "539000",
-      "sale_price": "323400",
+      "sale_price": "161700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -3431,7 +3433,7 @@
         {
           "id": 2217609,
           "key": "_last_change_time",
-          "value": "1778184509"
+          "value": "1795408116"
         },
         {
           "id": 2463739,
@@ -3803,15 +3805,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:35:38",
       "date_created_gmt": "2022-08-25T22:35:38",
-      "date_modified": "2026-07-31T02:32:54",
-      "date_modified_gmt": "2026-07-31T02:32:54",
+      "date_modified": "2026-11-23T04:28:36",
+      "date_modified_gmt": "2026-11-23T04:28:36",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/preston/?attribute_pa_selecciona-el-color=negro-gris&attribute_pa_selecciona-una-talla=39",
       "sku": "7181602039",
       "global_unique_id": "",
-      "price": "323400",
+      "price": "161700",
       "regular_price": "539000",
-      "sale_price": "323400",
+      "sale_price": "161700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -4299,7 +4301,7 @@
         {
           "id": 2217608,
           "key": "_last_change_time",
-          "value": "1778184509"
+          "value": "1795408116"
         },
         {
           "id": 2463669,
@@ -4681,15 +4683,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:35:38",
       "date_created_gmt": "2022-08-25T22:35:38",
-      "date_modified": "2026-07-31T02:32:54",
-      "date_modified_gmt": "2026-07-31T02:32:54",
+      "date_modified": "2026-11-23T04:28:36",
+      "date_modified_gmt": "2026-11-23T04:28:36",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/preston/?attribute_pa_selecciona-el-color=negro-gris&attribute_pa_selecciona-una-talla=38",
       "sku": "7181602038",
       "global_unique_id": "",
-      "price": "323400",
+      "price": "161700",
       "regular_price": "539000",
-      "sale_price": "323400",
+      "sale_price": "161700",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -5187,7 +5189,7 @@
         {
           "id": 2217606,
           "key": "_last_change_time",
-          "value": "1778184508"
+          "value": "1795408116"
         },
         {
           "id": 2463601,

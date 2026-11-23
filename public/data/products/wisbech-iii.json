@@ -9,12 +9,15 @@
   "sku": "738",
   "short_description": "<p>Mocasín clásico con un piso más contemporáneo, el Wisbech III lo hacen a mano artesanos colombianos con capellada de 100% cuero, suela de goma liviana, forro interior de cuero y plantilla de espuma de látex, de un perfil más bien grueso. Esa plantilla cuida una pisada cómoda, y el corte se calza sin cordones. Es un mocasín de hombre de hechura nacional, en el que la tradición de la pala dialoga con una suela de vocación actual. Hecho en Colombia, este mocasín de hombre une una pala clásica con un piso liviano y una plantilla más presente, de calce inmediato y vocación cotidiana. Disponible en café, miel y negro, tallas 37 a 45.</p>",
   "description": "<p>• Hecho a mano 100% por artesanos colombianos.<br />\n• Capellada en cuero.<br />\n• Forro interior en cuero para mayor frescura.<br />\n• Un estilo de mocasin clasico con una suela moderna.<br />\n• Su plantilla en espuma de latex gruesa, generan mayor comodidad y cuidado a tu salud.<br />\n• Suela en goma muy liviana.<br />\n• Los mejores materiales para mayor durabilidad.</p>",
-  "on_sale": false,
+  "on_sale": true,
   "prices": {
-    "price": "560000",
+    "price": "336000",
     "regular_price": "560000",
-    "sale_price": "560000",
-    "price_range": null,
+    "sale_price": "336000",
+    "price_range": {
+      "min_amount": "336000",
+      "max_amount": "560000"
+    },
     "currency_code": "COP",
     "currency_symbol": "$",
     "currency_minor_unit": 0,
@@ -23,7 +26,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>560,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\" aria-hidden=\"true\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>336,000</span> <span aria-hidden=\"true\">&ndash;</span> <span class=\"woocommerce-Price-amount amount\" aria-hidden=\"true\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>560,000</span><span class=\"screen-reader-text\">Price range: &#036;336,000 through &#036;560,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -231,8 +234,10 @@
         "name": "winston-and-harry-mocasines-Wisbech III-miel-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -260,8 +265,10 @@
         "name": "winston-and-harry-mocasines-Wisbech III-miel-01",
         "alt": ""
       },
+      "manage_stock": "parent",
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -289,8 +296,10 @@
         "name": "winston-and-harry-mocasines-wisbech-III-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -318,8 +327,10 @@
         "name": "winston-and-harry-mocasines-Wisbech III-miel-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -347,8 +358,10 @@
         "name": "winston-and-harry-mocasines-Wisbech III-miel-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -376,8 +389,10 @@
         "name": "winston-and-harry-mocasines-Wisbech III Cafe-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -405,8 +420,10 @@
         "name": "winston-and-harry-mocasines-Wisbech III Cafe-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -434,8 +451,10 @@
         "name": "winston-and-harry-mocasines-wisbech-III-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -463,8 +482,10 @@
         "name": "winston-and-harry-mocasines-Wisbech III Cafe-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -492,8 +513,10 @@
         "name": "winston-and-harry-mocasines-wisbech-III-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -521,8 +544,10 @@
         "name": "winston-and-harry-mocasines-Wisbech III-miel-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -550,8 +575,10 @@
         "name": "winston-and-harry-mocasines-Wisbech III-miel-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -579,8 +606,10 @@
         "name": "winston-and-harry-mocasines-Wisbech III Cafe-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -608,8 +637,10 @@
         "name": "winston-and-harry-mocasines-Wisbech III Cafe-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     },
@@ -637,8 +668,10 @@
         "name": "winston-and-harry-mocasines-wisbech-III-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
       "sale_price": ""
     }
@@ -1606,20 +1639,20 @@
       "type": "variation",
       "date_created": "2025-03-03T07:32:25",
       "date_created_gmt": "2025-03-03T07:32:25",
-      "date_modified": "2026-07-27T20:52:08",
-      "date_modified_gmt": "2026-07-27T20:52:08",
+      "date_modified": "2026-11-23T04:33:31",
+      "date_modified_gmt": "2026-11-23T04:33:31",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wisbech-iii/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=43",
       "sku": "7308726043",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -1737,7 +1770,7 @@
         {
           "id": 2322546,
           "key": "_last_change_time",
-          "value": "1785172142"
+          "value": "1795408411"
         },
         {
           "id": 2454464,
@@ -4300,20 +4333,20 @@
       "type": "variation",
       "date_created": "2023-06-09T22:22:28",
       "date_created_gmt": "2023-06-09T22:22:28",
-      "date_modified": "2026-07-27T20:52:13",
-      "date_modified_gmt": "2026-07-27T20:52:13",
+      "date_modified": "2026-11-23T04:31:55",
+      "date_modified_gmt": "2026-11-23T04:31:55",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wisbech-iii/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=43",
       "sku": "7308704043",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -4811,7 +4844,7 @@
         {
           "id": 2261172,
           "key": "_last_change_time",
-          "value": "1785172147"
+          "value": "1795408315"
         },
         {
           "id": 2313007,
@@ -5198,20 +5231,20 @@
       "type": "variation",
       "date_created": "2023-06-09T22:22:28",
       "date_created_gmt": "2023-06-09T22:22:28",
-      "date_modified": "2026-07-27T20:52:13",
-      "date_modified_gmt": "2026-07-27T20:52:13",
+      "date_modified": "2026-11-23T04:31:55",
+      "date_modified_gmt": "2026-11-23T04:31:55",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wisbech-iii/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=42",
       "sku": "7308704042",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -5724,7 +5757,7 @@
         {
           "id": 2261171,
           "key": "_last_change_time",
-          "value": "1785172147"
+          "value": "1795408315"
         },
         {
           "id": 2313006,
@@ -6096,20 +6129,20 @@
       "type": "variation",
       "date_created": "2023-06-09T22:22:28",
       "date_created_gmt": "2023-06-09T22:22:28",
-      "date_modified": "2026-07-27T20:52:13",
-      "date_modified_gmt": "2026-07-27T20:52:13",
+      "date_modified": "2026-11-23T04:31:55",
+      "date_modified_gmt": "2026-11-23T04:31:55",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wisbech-iii/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=41",
       "sku": "7308704041",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -6120,7 +6153,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 2,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -6607,7 +6640,7 @@
         {
           "id": 2261170,
           "key": "_last_change_time",
-          "value": "1785174215"
+          "value": "1795408315"
         },
         {
           "id": 2313005,
@@ -6948,11 +6981,6 @@
           "id": 2455016,
           "key": "fb_product_images",
           "value": ""
-        },
-        {
-          "id": 2455017,
-          "key": "_wc_push_notification_sent_out_of_stock",
-          "value": ""
         }
       ],
       "name": "Café, 41",
@@ -6989,20 +7017,20 @@
       "type": "variation",
       "date_created": "2023-06-09T22:22:28",
       "date_created_gmt": "2023-06-09T22:22:28",
-      "date_modified": "2026-07-27T20:52:13",
-      "date_modified_gmt": "2026-07-27T20:52:13",
+      "date_modified": "2026-11-23T04:31:55",
+      "date_modified_gmt": "2026-11-23T04:31:55",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wisbech-iii/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=40",
       "sku": "7308704040",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -7500,7 +7528,7 @@
         {
           "id": 2261169,
           "key": "_last_change_time",
-          "value": "1785172147"
+          "value": "1795408315"
         },
         {
           "id": 2313004,
@@ -7882,20 +7910,20 @@
       "type": "variation",
       "date_created": "2023-06-09T22:22:28",
       "date_created_gmt": "2023-06-09T22:22:28",
-      "date_modified": "2026-07-27T20:52:13",
-      "date_modified_gmt": "2026-07-27T20:52:13",
+      "date_modified": "2026-11-23T04:31:55",
+      "date_modified_gmt": "2026-11-23T04:31:55",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wisbech-iii/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=39",
       "sku": "7308704039",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -8393,7 +8421,7 @@
         {
           "id": 2261168,
           "key": "_last_change_time",
-          "value": "1785172147"
+          "value": "1795408315"
         },
         {
           "id": 2313003,
@@ -8775,20 +8803,20 @@
       "type": "variation",
       "date_created": "2023-06-09T22:22:28",
       "date_created_gmt": "2023-06-09T22:22:28",
-      "date_modified": "2026-07-27T20:52:13",
-      "date_modified_gmt": "2026-07-27T20:52:13",
+      "date_modified": "2026-11-23T04:31:55",
+      "date_modified_gmt": "2026-11-23T04:31:55",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wisbech-iii/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=38",
       "sku": "7308704038",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -9301,7 +9329,7 @@
         {
           "id": 2218956,
           "key": "_last_change_time",
-          "value": "1785172147"
+          "value": "1795408315"
         },
         {
           "id": 2313002,
@@ -9673,20 +9701,20 @@
       "type": "variation",
       "date_created": "2023-06-09T22:22:28",
       "date_created_gmt": "2023-06-09T22:22:28",
-      "date_modified": "2026-07-27T20:52:13",
-      "date_modified_gmt": "2026-07-27T20:52:13",
+      "date_modified": "2026-11-23T04:31:55",
+      "date_modified_gmt": "2026-11-23T04:31:55",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wisbech-iii/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=37",
       "sku": "7308704037",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -10194,7 +10222,7 @@
         {
           "id": 2261167,
           "key": "_last_change_time",
-          "value": "1785172147"
+          "value": "1795408315"
         },
         {
           "id": 2313001,
@@ -11469,20 +11497,20 @@
       "type": "variation",
       "date_created": "2023-06-09T22:22:27",
       "date_created_gmt": "2023-06-09T22:22:27",
-      "date_modified": "2026-07-27T20:52:14",
-      "date_modified_gmt": "2026-07-27T20:52:14",
+      "date_modified": "2026-11-23T04:31:55",
+      "date_modified_gmt": "2026-11-23T04:31:55",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wisbech-iii/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=42",
       "sku": "7308726042",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -11995,7 +12023,7 @@
         {
           "id": 2261180,
           "key": "_last_change_time",
-          "value": "1785172148"
+          "value": "1795408315"
         },
         {
           "id": 2313012,
@@ -12367,20 +12395,20 @@
       "type": "variation",
       "date_created": "2023-06-09T22:22:27",
       "date_created_gmt": "2023-06-09T22:22:27",
-      "date_modified": "2026-07-27T20:52:14",
-      "date_modified_gmt": "2026-07-27T20:52:14",
+      "date_modified": "2026-11-23T04:31:55",
+      "date_modified_gmt": "2026-11-23T04:31:55",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wisbech-iii/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=41",
       "sku": "7308726041",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -12878,7 +12906,7 @@
         {
           "id": 2261179,
           "key": "_last_change_time",
-          "value": "1785172148"
+          "value": "1795408315"
         },
         {
           "id": 2313011,
@@ -13260,20 +13288,20 @@
       "type": "variation",
       "date_created": "2023-06-09T22:22:27",
       "date_created_gmt": "2023-06-09T22:22:27",
-      "date_modified": "2026-07-27T20:52:14",
-      "date_modified_gmt": "2026-07-27T20:52:14",
+      "date_modified": "2026-11-23T04:31:55",
+      "date_modified_gmt": "2026-11-23T04:31:55",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wisbech-iii/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=40",
       "sku": "7308726040",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -13771,7 +13799,7 @@
         {
           "id": 2261178,
           "key": "_last_change_time",
-          "value": "1785172148"
+          "value": "1795408315"
         },
         {
           "id": 2313010,
@@ -14158,20 +14186,20 @@
       "type": "variation",
       "date_created": "2023-06-09T22:22:27",
       "date_created_gmt": "2023-06-09T22:22:27",
-      "date_modified": "2026-07-27T20:52:14",
-      "date_modified_gmt": "2026-07-27T20:52:14",
+      "date_modified": "2026-11-23T04:31:55",
+      "date_modified_gmt": "2026-11-23T04:31:55",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wisbech-iii/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=39",
       "sku": "7308726039",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -14669,7 +14697,7 @@
         {
           "id": 2261177,
           "key": "_last_change_time",
-          "value": "1785172148"
+          "value": "1795408315"
         },
         {
           "id": 2313015,
@@ -15051,20 +15079,20 @@
       "type": "variation",
       "date_created": "2023-06-09T22:22:27",
       "date_created_gmt": "2023-06-09T22:22:27",
-      "date_modified": "2026-07-27T20:52:14",
-      "date_modified_gmt": "2026-07-27T20:52:14",
+      "date_modified": "2026-11-23T04:31:49",
+      "date_modified_gmt": "2026-11-23T04:31:49",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wisbech-iii/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=38",
       "sku": "7308726038",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -15577,7 +15605,7 @@
         {
           "id": 2261176,
           "key": "_last_change_time",
-          "value": "1785172148"
+          "value": "1795408309"
         },
         {
           "id": 2313014,
@@ -15949,20 +15977,20 @@
       "type": "variation",
       "date_created": "2023-06-09T22:22:27",
       "date_created_gmt": "2023-06-09T22:22:27",
-      "date_modified": "2026-07-27T20:52:14",
-      "date_modified_gmt": "2026-07-27T20:52:14",
+      "date_modified": "2026-11-23T04:31:49",
+      "date_modified_gmt": "2026-11-23T04:31:49",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wisbech-iii/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=37",
       "sku": "7308726037",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -16460,7 +16488,7 @@
         {
           "id": 2261175,
           "key": "_last_change_time",
-          "value": "1785172148"
+          "value": "1795408309"
         },
         {
           "id": 2313013,
@@ -18633,20 +18661,20 @@
       "type": "variation",
       "date_created": "2023-06-09T22:02:17",
       "date_created_gmt": "2023-06-09T22:02:17",
-      "date_modified": "2026-07-27T20:52:15",
-      "date_modified_gmt": "2026-07-27T20:52:15",
+      "date_modified": "2026-11-23T04:31:49",
+      "date_modified_gmt": "2026-11-23T04:31:49",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wisbech-iii/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=43",
       "sku": "7308702043",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -19129,7 +19157,7 @@
         {
           "id": 2261161,
           "key": "_last_change_time",
-          "value": "1785172148"
+          "value": "1795408309"
         },
         {
           "id": 2313026,
@@ -19526,20 +19554,20 @@
       "type": "variation",
       "date_created": "2023-06-09T22:02:17",
       "date_created_gmt": "2023-06-09T22:02:17",
-      "date_modified": "2026-07-27T20:52:15",
-      "date_modified_gmt": "2026-07-27T20:52:15",
+      "date_modified": "2026-11-23T04:31:49",
+      "date_modified_gmt": "2026-11-23T04:31:49",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wisbech-iii/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=42",
       "sku": "7308702042",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -20037,7 +20065,7 @@
         {
           "id": 2261160,
           "key": "_last_change_time",
-          "value": "1785172148"
+          "value": "1795408309"
         },
         {
           "id": 2313025,
@@ -20419,20 +20447,20 @@
       "type": "variation",
       "date_created": "2023-06-09T22:02:17",
       "date_created_gmt": "2023-06-09T22:02:17",
-      "date_modified": "2026-07-27T20:52:15",
-      "date_modified_gmt": "2026-07-27T20:52:15",
+      "date_modified": "2026-11-23T04:31:49",
+      "date_modified_gmt": "2026-11-23T04:31:49",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wisbech-iii/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=41",
       "sku": "7308702041",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -20930,7 +20958,7 @@
         {
           "id": 2261159,
           "key": "_last_change_time",
-          "value": "1785172148"
+          "value": "1795408309"
         },
         {
           "id": 2313033,
@@ -21312,20 +21340,20 @@
       "type": "variation",
       "date_created": "2023-06-09T22:02:17",
       "date_created_gmt": "2023-06-09T22:02:17",
-      "date_modified": "2026-07-27T20:52:14",
-      "date_modified_gmt": "2026-07-27T20:52:14",
+      "date_modified": "2026-11-23T04:31:49",
+      "date_modified_gmt": "2026-11-23T04:31:49",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wisbech-iii/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=40",
       "sku": "7308702040",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -21838,7 +21866,7 @@
         {
           "id": 2257223,
           "key": "_last_change_time",
-          "value": "1785172148"
+          "value": "1795408309"
         },
         {
           "id": 2313032,
@@ -22210,20 +22238,20 @@
       "type": "variation",
       "date_created": "2023-06-09T22:02:17",
       "date_created_gmt": "2023-06-09T22:02:17",
-      "date_modified": "2026-07-27T20:52:14",
-      "date_modified_gmt": "2026-07-27T20:52:14",
+      "date_modified": "2026-11-23T04:31:49",
+      "date_modified_gmt": "2026-11-23T04:31:49",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wisbech-iii/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=39",
       "sku": "7308702039",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -22721,7 +22749,7 @@
         {
           "id": 2261158,
           "key": "_last_change_time",
-          "value": "1785172148"
+          "value": "1795408309"
         },
         {
           "id": 2313031,
@@ -23103,20 +23131,20 @@
       "type": "variation",
       "date_created": "2023-06-09T22:02:17",
       "date_created_gmt": "2023-06-09T22:02:17",
-      "date_modified": "2026-07-27T20:52:14",
-      "date_modified_gmt": "2026-07-27T20:52:14",
+      "date_modified": "2026-11-23T04:31:49",
+      "date_modified_gmt": "2026-11-23T04:31:49",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wisbech-iii/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=38",
       "sku": "7308702038",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -23629,7 +23657,7 @@
         {
           "id": 2261157,
           "key": "_last_change_time",
-          "value": "1785172148"
+          "value": "1795408309"
         },
         {
           "id": 2313030,
@@ -24001,20 +24029,20 @@
       "type": "variation",
       "date_created": "2023-06-09T22:02:17",
       "date_created_gmt": "2023-06-09T22:02:17",
-      "date_modified": "2026-07-27T20:52:15",
-      "date_modified_gmt": "2026-07-27T20:52:15",
+      "date_modified": "2026-11-23T04:31:49",
+      "date_modified_gmt": "2026-11-23T04:31:49",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/wisbech-iii/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=37",
       "sku": "7308702037",
       "global_unique_id": "",
-      "price": "560000",
+      "price": "336000",
       "regular_price": "560000",
-      "sale_price": "",
+      "sale_price": "336000",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
       "date_on_sale_to_gmt": null,
-      "on_sale": false,
+      "on_sale": true,
       "status": "publish",
       "purchasable": true,
       "virtual": false,
@@ -24512,7 +24540,7 @@
         {
           "id": 2261156,
           "key": "_last_change_time",
-          "value": "1785172148"
+          "value": "1795408309"
         },
         {
           "id": 2313029,
@@ -24896,7 +24924,11 @@
     }
   ],
   "wpc_resolved_media": {
-    "29": "https://tienda.winstonandharrystore.com/wp-content/uploads/2017/06/swatch-main-demo-1-3.jpg"
+    "29": "https://tienda.winstonandharrystore.com/wp-content/uploads/2017/06/swatch-main-demo-1-3.jpg",
+    "85974": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-Wisbech-III-miel-02.jpg",
+    "85975": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-Wisbech-III-miel-03.jpg",
+    "85980": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-wisbech-III-negro-02.jpg",
+    "85981": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-wisbech-III-negro-03.jpg"
   },
   "stock_status": "instock",
   "variation_images_map": {
@@ -24906,6 +24938,16 @@
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-Wisbech-III-miel-01.jpg",
         "alt": "winston-and-harry-mocasines-Wisbech III-miel-01",
         "name": "winston-and-harry-mocasines-Wisbech III-miel-01"
+      },
+      {
+        "id": 85974,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-Wisbech-III-miel-02.jpg",
+        "alt": "Wisbech III"
+      },
+      {
+        "id": 85975,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-Wisbech-III-miel-03.jpg",
+        "alt": "Wisbech III"
       }
     ],
     "negro": [
@@ -24914,6 +24956,16 @@
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-wisbech-III-negro-01.jpg",
         "alt": "winston-and-harry-mocasines-wisbech-III-negro-01",
         "name": "winston-and-harry-mocasines-wisbech-III-negro-01"
+      },
+      {
+        "id": 85980,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-wisbech-III-negro-02.jpg",
+        "alt": "Wisbech III"
+      },
+      {
+        "id": 85981,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-wisbech-III-negro-03.jpg",
+        "alt": "Wisbech III"
       }
     ],
     "cafe": [

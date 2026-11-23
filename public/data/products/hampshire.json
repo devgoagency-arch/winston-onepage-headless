@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>385,000</span>",
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>385,000</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -238,6 +238,8 @@
         "name": "Hampshire-Azul-Winstonandharry-317",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "385000",
       "regular_price": "385000",
@@ -267,6 +269,8 @@
         "name": "Hampshire-Azul-Winstonandharry-317",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "385000",
       "regular_price": "385000",
@@ -296,6 +300,8 @@
         "name": "Hampshire-Azul-Winstonandharry-317",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "385000",
       "regular_price": "385000",
@@ -325,6 +331,8 @@
         "name": "Hampshire-Azul-Winstonandharry-317",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 3,
       "stock_status": "instock",
       "price": "385000",
       "regular_price": "385000",
@@ -354,6 +362,8 @@
         "name": "Hampshire-Azul-Winstonandharry-317",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "385000",
       "regular_price": "385000",
@@ -383,6 +393,8 @@
         "name": "Hampshire-Azul-Winstonandharry-317",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "385000",
       "regular_price": "385000",
@@ -412,6 +424,8 @@
         "name": "Hampshire-Cafe-Winstonandharry-324",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
       "price": "385000",
       "regular_price": "385000",
@@ -441,6 +455,8 @@
         "name": "Hampshire-Cafe-Winstonandharry-324",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "385000",
       "regular_price": "385000",
@@ -470,6 +486,8 @@
         "name": "Hampshire-Cafe-Winstonandharry-324",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "385000",
       "regular_price": "385000",
@@ -499,6 +517,8 @@
         "name": "Hampshire-Cafe-Winstonandharry-324",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "price": "385000",
       "regular_price": "385000",
@@ -528,6 +548,8 @@
         "name": "Hampshire-Cafe-Winstonandharry-324",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
       "price": "385000",
       "regular_price": "385000",
@@ -3714,8 +3736,8 @@
       "type": "variation",
       "date_created": "2024-05-28T18:04:27",
       "date_created_gmt": "2024-05-28T18:04:27",
-      "date_modified": "2026-05-07T23:04:32",
-      "date_modified_gmt": "2026-05-07T23:04:32",
+      "date_modified": "2026-10-27T19:16:05",
+      "date_modified_gmt": "2026-10-27T19:16:05",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/hampshire/?attribute_pa_selecciona-el-color=cafe&attribute_pa_selecciona-una-talla=40",
       "sku": "7001304040",
@@ -3738,7 +3760,7 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 5,
+      "stock_quantity": 4,
       "stock_status": "instock",
       "backorders": "no",
       "backorders_allowed": false,
@@ -4295,7 +4317,7 @@
         {
           "id": 2216523,
           "key": "_last_change_time",
-          "value": "1778178512"
+          "value": "1793128565"
         },
         {
           "id": 2312394,

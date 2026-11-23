@@ -11,9 +11,9 @@
   "description": "<p>Los Mocasines Tyne son unos mocasines con hebilla en Cromo, están hechos en cuero por artesanos colombianos y cuentan con la boca amplia para pies con empeine alto. Su horma redonda refleja un estilo casual a pesar de tener toques formales. Sin duda será tu mejor elección para esos días en los que no quieres pensar mucho que ponerte.</p>",
   "on_sale": true,
   "prices": {
-    "price": "315700",
+    "price": "225500",
     "regular_price": "451000",
-    "sale_price": "315700",
+    "sale_price": "225500",
     "price_range": null,
     "currency_code": "COP",
     "currency_symbol": "$",
@@ -23,7 +23,7 @@
     "currency_prefix": "$",
     "currency_suffix": ""
   },
-  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>451,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;451,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>315,700</span></ins><span class=\"screen-reader-text\">Current price is: &#036;315,700.</span>",
+  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>451,000</span></del> <span class=\"screen-reader-text\">Original price was: &#036;451,000.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\" dir=\"auto\">&#036;</span>225,500</span></ins><span class=\"screen-reader-text\">Current price is: &#036;225,500.</span>",
   "average_rating": "0",
   "review_count": 0,
   "images": [
@@ -230,8 +230,10 @@
         "name": "winston-and-harry-mocasines-tyne-azul-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 2,
       "stock_status": "instock",
-      "price": "315700",
+      "price": "225500",
       "regular_price": "451000",
       "sale_price": ""
     },
@@ -259,8 +261,10 @@
         "name": "winston-and-harry-mocasines-tyne-azul-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "315700",
+      "price": "225500",
       "regular_price": "451000",
       "sale_price": ""
     },
@@ -288,37 +292,10 @@
         "name": "winston-and-harry-mocasines-tyne-azul-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "315700",
-      "regular_price": "451000",
-      "sale_price": ""
-    },
-    {
-      "id": 24699,
-      "attributes": [
-        {
-          "name": "Selecciona el Color",
-          "value": "miel",
-          "option": "miel"
-        },
-        {
-          "name": "Selecciona una Talla",
-          "value": "38",
-          "option": "38"
-        }
-      ],
-      "image": {
-        "id": 85941,
-        "date_created": "2026-07-27T16:17:58",
-        "date_created_gmt": "2026-07-27T16:17:58",
-        "date_modified": "2026-07-27T17:07:58",
-        "date_modified_gmt": "2026-07-27T17:07:58",
-        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-tyne-miel-01.jpg",
-        "name": "winston-and-harry-mocasines-tyne-miel-01",
-        "alt": ""
-      },
-      "stock_status": "instock",
-      "price": "315700",
+      "price": "225500",
       "regular_price": "451000",
       "sale_price": ""
     },
@@ -346,8 +323,10 @@
         "name": "winston-and-harry-mocasines-tyne-miel-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "315700",
+      "price": "225500",
       "regular_price": "451000",
       "sale_price": ""
     },
@@ -375,8 +354,10 @@
         "name": "winston-and-harry-mocasines-tyne-negro-01",
         "alt": ""
       },
+      "manage_stock": true,
+      "stock_quantity": 1,
       "stock_status": "instock",
-      "price": "315700",
+      "price": "225500",
       "regular_price": "451000",
       "sale_price": ""
     }
@@ -446,15 +427,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:36:29",
       "date_created_gmt": "2022-08-25T22:36:29",
-      "date_modified": "2026-07-27T20:50:54",
-      "date_modified_gmt": "2026-07-27T20:50:54",
+      "date_modified": "2026-11-23T04:28:51",
+      "date_modified_gmt": "2026-11-23T04:28:51",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/tyne/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=44",
       "sku": "7191402044",
       "global_unique_id": "",
-      "price": "315700",
+      "price": "225500",
       "regular_price": "451000",
-      "sale_price": "315700",
+      "sale_price": "225500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -952,7 +933,7 @@
         {
           "id": 2218507,
           "key": "_last_change_time",
-          "value": "1785172078"
+          "value": "1795408131"
         },
         {
           "id": 2314644,
@@ -1339,15 +1320,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:36:29",
       "date_created_gmt": "2022-08-25T22:36:29",
-      "date_modified": "2026-07-27T20:50:54",
-      "date_modified_gmt": "2026-07-27T20:50:54",
+      "date_modified": "2026-11-23T04:28:51",
+      "date_modified_gmt": "2026-11-23T04:28:51",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/tyne/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=43",
       "sku": "7191402043",
       "global_unique_id": "",
-      "price": "315700",
+      "price": "225500",
       "regular_price": "451000",
-      "sale_price": "315700",
+      "sale_price": "225500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -1845,7 +1826,7 @@
         {
           "id": 2218505,
           "key": "_last_change_time",
-          "value": "1785172078"
+          "value": "1795408131"
         },
         {
           "id": 2314643,
@@ -2232,15 +2213,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:36:29",
       "date_created_gmt": "2022-08-25T22:36:29",
-      "date_modified": "2026-07-27T20:50:54",
-      "date_modified_gmt": "2026-07-27T20:50:54",
+      "date_modified": "2026-11-23T04:28:51",
+      "date_modified_gmt": "2026-11-23T04:28:51",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/tyne/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=42",
       "sku": "7191402042",
       "global_unique_id": "",
-      "price": "315700",
+      "price": "225500",
       "regular_price": "451000",
-      "sale_price": "315700",
+      "sale_price": "225500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -2738,7 +2719,7 @@
         {
           "id": 2218503,
           "key": "_last_change_time",
-          "value": "1785172078"
+          "value": "1795408131"
         },
         {
           "id": 2314642,
@@ -3125,15 +3106,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:36:29",
       "date_created_gmt": "2022-08-25T22:36:29",
-      "date_modified": "2026-07-27T20:50:54",
-      "date_modified_gmt": "2026-07-27T20:50:54",
+      "date_modified": "2026-11-23T04:28:51",
+      "date_modified_gmt": "2026-11-23T04:28:51",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/tyne/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=41",
       "sku": "7191402041",
       "global_unique_id": "",
-      "price": "315700",
+      "price": "225500",
       "regular_price": "451000",
-      "sale_price": "315700",
+      "sale_price": "225500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -3631,7 +3612,7 @@
         {
           "id": 2218501,
           "key": "_last_change_time",
-          "value": "1785172078"
+          "value": "1795408131"
         },
         {
           "id": 2314653,
@@ -4018,15 +3999,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:36:29",
       "date_created_gmt": "2022-08-25T22:36:29",
-      "date_modified": "2026-07-27T20:50:54",
-      "date_modified_gmt": "2026-07-27T20:50:54",
+      "date_modified": "2026-11-23T04:28:51",
+      "date_modified_gmt": "2026-11-23T04:28:51",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/tyne/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=40",
       "sku": "7191402040",
       "global_unique_id": "",
-      "price": "315700",
+      "price": "225500",
       "regular_price": "451000",
-      "sale_price": "315700",
+      "sale_price": "225500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -4524,7 +4505,7 @@
         {
           "id": 2218499,
           "key": "_last_change_time",
-          "value": "1785172078"
+          "value": "1795408131"
         },
         {
           "id": 2314652,
@@ -4911,15 +4892,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:36:28",
       "date_created_gmt": "2022-08-25T22:36:28",
-      "date_modified": "2026-07-27T20:50:55",
-      "date_modified_gmt": "2026-07-27T20:50:55",
+      "date_modified": "2026-11-23T04:28:51",
+      "date_modified_gmt": "2026-11-23T04:28:51",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/tyne/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=39",
       "sku": "7191402039",
       "global_unique_id": "",
-      "price": "315700",
+      "price": "225500",
       "regular_price": "451000",
-      "sale_price": "315700",
+      "sale_price": "225500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -5417,7 +5398,7 @@
         {
           "id": 2218497,
           "key": "_last_change_time",
-          "value": "1785172079"
+          "value": "1795408131"
         },
         {
           "id": 2314662,
@@ -5804,15 +5785,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:36:28",
       "date_created_gmt": "2022-08-25T22:36:28",
-      "date_modified": "2026-07-27T20:50:55",
-      "date_modified_gmt": "2026-07-27T20:50:55",
+      "date_modified": "2026-11-23T04:28:51",
+      "date_modified_gmt": "2026-11-23T04:28:51",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/tyne/?attribute_pa_selecciona-el-color=negro&attribute_pa_selecciona-una-talla=38",
       "sku": "7191402038",
       "global_unique_id": "",
-      "price": "315700",
+      "price": "225500",
       "regular_price": "451000",
-      "sale_price": "315700",
+      "sale_price": "225500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -6310,7 +6291,7 @@
         {
           "id": 2218495,
           "key": "_last_change_time",
-          "value": "1785172079"
+          "value": "1795408131"
         },
         {
           "id": 2314661,
@@ -6697,15 +6678,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:36:28",
       "date_created_gmt": "2022-08-25T22:36:28",
-      "date_modified": "2026-07-27T20:50:54",
-      "date_modified_gmt": "2026-07-27T20:50:54",
+      "date_modified": "2026-11-23T04:28:51",
+      "date_modified_gmt": "2026-11-23T04:28:51",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/tyne/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=44",
       "sku": "7191426044",
       "global_unique_id": "",
-      "price": "315700",
+      "price": "225500",
       "regular_price": "451000",
-      "sale_price": "315700",
+      "sale_price": "225500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -7203,7 +7184,7 @@
         {
           "id": 2218493,
           "key": "_last_change_time",
-          "value": "1785172078"
+          "value": "1795408131"
         },
         {
           "id": 2314660,
@@ -7590,15 +7571,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:36:28",
       "date_created_gmt": "2022-08-25T22:36:28",
-      "date_modified": "2026-07-27T20:50:54",
-      "date_modified_gmt": "2026-07-27T20:50:54",
+      "date_modified": "2026-11-23T04:28:51",
+      "date_modified_gmt": "2026-11-23T04:28:51",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/tyne/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=43",
       "sku": "7191426043",
       "global_unique_id": "",
-      "price": "315700",
+      "price": "225500",
       "regular_price": "451000",
-      "sale_price": "315700",
+      "sale_price": "225500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -8096,7 +8077,7 @@
         {
           "id": 2218491,
           "key": "_last_change_time",
-          "value": "1785172078"
+          "value": "1795408131"
         },
         {
           "id": 2314659,
@@ -8483,15 +8464,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:36:28",
       "date_created_gmt": "2022-08-25T22:36:28",
-      "date_modified": "2026-07-27T20:50:55",
-      "date_modified_gmt": "2026-07-27T20:50:55",
+      "date_modified": "2026-11-23T04:28:51",
+      "date_modified_gmt": "2026-11-23T04:28:51",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/tyne/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=42",
       "sku": "7191426042",
       "global_unique_id": "",
-      "price": "315700",
+      "price": "225500",
       "regular_price": "451000",
-      "sale_price": "315700",
+      "sale_price": "225500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -8989,7 +8970,7 @@
         {
           "id": 2218489,
           "key": "_last_change_time",
-          "value": "1785172079"
+          "value": "1795408131"
         },
         {
           "id": 2314658,
@@ -9376,15 +9357,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:36:28",
       "date_created_gmt": "2022-08-25T22:36:28",
-      "date_modified": "2026-07-27T20:50:55",
-      "date_modified_gmt": "2026-07-27T20:50:55",
+      "date_modified": "2026-11-23T04:28:51",
+      "date_modified_gmt": "2026-11-23T04:28:51",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/tyne/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=41",
       "sku": "7191426041",
       "global_unique_id": "",
-      "price": "315700",
+      "price": "225500",
       "regular_price": "451000",
-      "sale_price": "315700",
+      "sale_price": "225500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -9882,7 +9863,7 @@
         {
           "id": 2218487,
           "key": "_last_change_time",
-          "value": "1785172079"
+          "value": "1795408131"
         },
         {
           "id": 2314657,
@@ -10269,15 +10250,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:36:28",
       "date_created_gmt": "2022-08-25T22:36:28",
-      "date_modified": "2026-07-27T20:50:55",
-      "date_modified_gmt": "2026-07-27T20:50:55",
+      "date_modified": "2026-11-23T04:28:51",
+      "date_modified_gmt": "2026-11-23T04:28:51",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/tyne/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=40",
       "sku": "7191426040",
       "global_unique_id": "",
-      "price": "315700",
+      "price": "225500",
       "regular_price": "451000",
-      "sale_price": "315700",
+      "sale_price": "225500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -10775,7 +10756,7 @@
         {
           "id": 2218485,
           "key": "_last_change_time",
-          "value": "1785172079"
+          "value": "1795408131"
         },
         {
           "id": 2314656,
@@ -11162,15 +11143,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:36:28",
       "date_created_gmt": "2022-08-25T22:36:28",
-      "date_modified": "2026-07-27T20:50:55",
-      "date_modified_gmt": "2026-07-27T20:50:55",
+      "date_modified": "2026-11-23T04:28:51",
+      "date_modified_gmt": "2026-11-23T04:28:51",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/tyne/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=39",
       "sku": "7191426039",
       "global_unique_id": "",
-      "price": "315700",
+      "price": "225500",
       "regular_price": "451000",
-      "sale_price": "315700",
+      "sale_price": "225500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -11668,7 +11649,7 @@
         {
           "id": 2218483,
           "key": "_last_change_time",
-          "value": "1785172079"
+          "value": "1795408131"
         },
         {
           "id": 2314655,
@@ -12055,15 +12036,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:36:28",
       "date_created_gmt": "2022-08-25T22:36:28",
-      "date_modified": "2026-07-27T20:50:55",
-      "date_modified_gmt": "2026-07-27T20:50:55",
+      "date_modified": "2026-11-23T04:28:51",
+      "date_modified_gmt": "2026-11-23T04:28:51",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/tyne/?attribute_pa_selecciona-el-color=miel&attribute_pa_selecciona-una-talla=38",
       "sku": "7191426038",
       "global_unique_id": "",
-      "price": "315700",
+      "price": "225500",
       "regular_price": "451000",
-      "sale_price": "315700",
+      "sale_price": "225500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -12079,8 +12060,8 @@
       "tax_status": "taxable",
       "tax_class": "",
       "manage_stock": true,
-      "stock_quantity": 1,
-      "stock_status": "instock",
+      "stock_quantity": 0,
+      "stock_status": "outofstock",
       "backorders": "no",
       "backorders_allowed": false,
       "backordered": false,
@@ -12561,7 +12542,7 @@
         {
           "id": 2218481,
           "key": "_last_change_time",
-          "value": "1785172079"
+          "value": "1795408131"
         },
         {
           "id": 2314654,
@@ -12948,15 +12929,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:36:27",
       "date_created_gmt": "2022-08-25T22:36:27",
-      "date_modified": "2026-07-27T20:50:56",
-      "date_modified_gmt": "2026-07-27T20:50:56",
+      "date_modified": "2026-11-23T04:28:51",
+      "date_modified_gmt": "2026-11-23T04:28:51",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/tyne/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=44",
       "sku": "7191401044",
       "global_unique_id": "",
-      "price": "315700",
+      "price": "225500",
       "regular_price": "451000",
-      "sale_price": "315700",
+      "sale_price": "225500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -13454,7 +13435,7 @@
         {
           "id": 2218479,
           "key": "_last_change_time",
-          "value": "1785172079"
+          "value": "1795408131"
         },
         {
           "id": 2314667,
@@ -13841,15 +13822,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:36:27",
       "date_created_gmt": "2022-08-25T22:36:27",
-      "date_modified": "2026-07-27T20:50:56",
-      "date_modified_gmt": "2026-07-27T20:50:56",
+      "date_modified": "2026-11-23T04:28:51",
+      "date_modified_gmt": "2026-11-23T04:28:51",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/tyne/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=43",
       "sku": "7191401043",
       "global_unique_id": "",
-      "price": "315700",
+      "price": "225500",
       "regular_price": "451000",
-      "sale_price": "315700",
+      "sale_price": "225500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -14347,7 +14328,7 @@
         {
           "id": 2218477,
           "key": "_last_change_time",
-          "value": "1785172079"
+          "value": "1795408131"
         },
         {
           "id": 2314666,
@@ -14734,15 +14715,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:36:27",
       "date_created_gmt": "2022-08-25T22:36:27",
-      "date_modified": "2026-07-27T20:50:55",
-      "date_modified_gmt": "2026-07-27T20:50:55",
+      "date_modified": "2026-11-23T04:28:51",
+      "date_modified_gmt": "2026-11-23T04:28:51",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/tyne/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=42",
       "sku": "7191401042",
       "global_unique_id": "",
-      "price": "315700",
+      "price": "225500",
       "regular_price": "451000",
-      "sale_price": "315700",
+      "sale_price": "225500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -15240,7 +15221,7 @@
         {
           "id": 2218475,
           "key": "_last_change_time",
-          "value": "1785172079"
+          "value": "1795408131"
         },
         {
           "id": 2314665,
@@ -15627,15 +15608,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:36:27",
       "date_created_gmt": "2022-08-25T22:36:27",
-      "date_modified": "2026-07-27T20:50:55",
-      "date_modified_gmt": "2026-07-27T20:50:55",
+      "date_modified": "2026-11-23T04:28:51",
+      "date_modified_gmt": "2026-11-23T04:28:51",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/tyne/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=41",
       "sku": "7191401041",
       "global_unique_id": "",
-      "price": "315700",
+      "price": "225500",
       "regular_price": "451000",
-      "sale_price": "315700",
+      "sale_price": "225500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -16133,7 +16114,7 @@
         {
           "id": 2218473,
           "key": "_last_change_time",
-          "value": "1785172079"
+          "value": "1795408131"
         },
         {
           "id": 2314664,
@@ -16520,15 +16501,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:36:27",
       "date_created_gmt": "2022-08-25T22:36:27",
-      "date_modified": "2026-07-27T20:50:55",
-      "date_modified_gmt": "2026-07-27T20:50:55",
+      "date_modified": "2026-11-23T04:28:51",
+      "date_modified_gmt": "2026-11-23T04:28:51",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/tyne/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=40",
       "sku": "7191401040",
       "global_unique_id": "",
-      "price": "315700",
+      "price": "225500",
       "regular_price": "451000",
-      "sale_price": "315700",
+      "sale_price": "225500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -17026,7 +17007,7 @@
         {
           "id": 2218471,
           "key": "_last_change_time",
-          "value": "1785172079"
+          "value": "1795408131"
         },
         {
           "id": 2314663,
@@ -17413,15 +17394,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:36:27",
       "date_created_gmt": "2022-08-25T22:36:27",
-      "date_modified": "2026-07-27T20:50:55",
-      "date_modified_gmt": "2026-07-27T20:50:55",
+      "date_modified": "2026-11-23T04:28:51",
+      "date_modified_gmt": "2026-11-23T04:28:51",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/tyne/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=39",
       "sku": "7191401039",
       "global_unique_id": "",
-      "price": "315700",
+      "price": "225500",
       "regular_price": "451000",
-      "sale_price": "315700",
+      "sale_price": "225500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -17919,7 +17900,7 @@
         {
           "id": 2218469,
           "key": "_last_change_time",
-          "value": "1785172079"
+          "value": "1795408131"
         },
         {
           "id": 2314669,
@@ -18306,15 +18287,15 @@
       "type": "variation",
       "date_created": "2022-08-25T22:36:27",
       "date_created_gmt": "2022-08-25T22:36:27",
-      "date_modified": "2026-07-27T20:50:56",
-      "date_modified_gmt": "2026-07-27T20:50:56",
+      "date_modified": "2026-11-23T04:28:51",
+      "date_modified_gmt": "2026-11-23T04:28:51",
       "description": "",
       "permalink": "https://tienda.winstonandharrystore.com/product/tyne/?attribute_pa_selecciona-el-color=azul&attribute_pa_selecciona-una-talla=38",
       "sku": "7191401038",
       "global_unique_id": "",
-      "price": "315700",
+      "price": "225500",
       "regular_price": "451000",
-      "sale_price": "315700",
+      "sale_price": "225500",
       "date_on_sale_from": null,
       "date_on_sale_from_gmt": null,
       "date_on_sale_to": null,
@@ -18812,7 +18793,7 @@
         {
           "id": 2218466,
           "key": "_last_change_time",
-          "value": "1785172079"
+          "value": "1795408131"
         },
         {
           "id": 2314668,
@@ -19195,7 +19176,12 @@
       }
     }
   ],
-  "wpc_resolved_media": {},
+  "wpc_resolved_media": {
+    "85940": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-tyne-miel-03.jpg",
+    "85942": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-tyne-miel-02.jpg",
+    "85943": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-tyne-negro-03.jpg",
+    "85945": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-tyne-negro-02.jpg"
+  },
   "stock_status": "instock",
   "variation_images_map": {
     "azul": [
@@ -19224,6 +19210,16 @@
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-tyne-miel-01.jpg",
         "alt": "winston-and-harry-mocasines-tyne-miel-01",
         "name": "winston-and-harry-mocasines-tyne-miel-01"
+      },
+      {
+        "id": 85942,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-tyne-miel-02.jpg",
+        "alt": "Tyne"
+      },
+      {
+        "id": 85940,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-tyne-miel-03.jpg",
+        "alt": "Tyne"
       }
     ],
     "negro": [
@@ -19232,6 +19228,16 @@
         "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-tyne-negro-01.jpg",
         "alt": "winston-and-harry-mocasines-tyne-negro-01",
         "name": "winston-and-harry-mocasines-tyne-negro-01"
+      },
+      {
+        "id": 85945,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-tyne-negro-02.jpg",
+        "alt": "Tyne"
+      },
+      {
+        "id": 85943,
+        "src": "https://tienda.winstonandharrystore.com/wp-content/uploads/winston-and-harry-mocasines-tyne-negro-03.jpg",
+        "alt": "Tyne"
       }
     ]
   }

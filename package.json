@@ -6,6 +6,7 @@
     "dev": "astro dev",
     "fetch:menus": "node scripts/fetch-menus.mjs",
     "catalog": "node scripts/generate-catalog.mjs",
+    "products:refresh": "node scripts/refresh-products.mjs",
     "prebuild": "node scripts/fetch-menus.mjs",
     "build": "astro build",
     "preview": "astro preview",
