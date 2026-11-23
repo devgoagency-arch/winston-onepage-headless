@@ -45,6 +45,11 @@ const activeAtBuild = dev || (preview ? Astro.url.pathname.startsWith('/black-da
     :root:not(.black-days-active) :is(.black-chip, .black-price-note, .black-pdp-note, .black-menu-item, .black-menu-sep, .bd-home-hero, .bd-popup) { display: none !important; }
     .black-chip-info { display: block; width: fit-content; max-width: 100%; margin-top: 6px; padding: 3px 8px; font-family: var(--font-paragraphs); font-size: 11px; font-weight: 700; line-height: 1.3; letter-spacing: .04em; text-transform: uppercase; }
     .black-price-note { display: block; margin-top: 2px; font-family: var(--font-paragraphs); font-size: 12px; font-weight: 700; color: #8a6a1f; letter-spacing: .01em; }
+    /* Solo escritorio: etiqueta y nota de Arma tu Black 15 % más grandes (móvil igual). */
+    @media (min-width: 769px) {
+        .black-chip-info { margin-top: 6.9px; padding: 3.45px 9.2px; font-size: 12.65px; }
+        .black-price-note { margin-top: 2.3px; font-size: 13.8px; }
+    }
     .black-days-active .home-hero-slot { display: none; }
     .black-chip { background: #000; color: #D4A853; border: 1px solid #D4A853; }
     .black-pdp-note { margin: 12px 0 0; padding: 10px 12px; background: #000; color: #fff; font-family: var(--font-paragraphs); font-size: 13px; line-height: 1.5; }
