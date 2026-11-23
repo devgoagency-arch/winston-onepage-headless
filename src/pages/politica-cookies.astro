@@ -1,8 +1,8 @@
 ---
 import LegalLayout from "../layouts/LegalLayout.astro";
-import { getPageById } from "../lib/woocommerce";
+import { getSnapshotPageById } from "../lib/snapshot";
 
-const page = await getPageById(14680);
+const page = getSnapshotPageById(14680);
 
 let title = "POLÍTICA DE COOKIES";
 let subtitle = "";

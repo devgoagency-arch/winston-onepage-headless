@@ -1,5 +1,6 @@
 ---
 import { Image } from "astro:assets";
+import logoImg from "../assets/logo-w-h-vertical.png";
 import ReviewsSection from "./ReviewsSection";
 import BlogHome from "./BlogHome.astro";
 
@@ -174,10 +175,9 @@ function flattenCategoryUrl(url: string) {
             <div class="footer-logo">
                 <a href="/" class="logo">
                     <Image
-                        src="https://tienda.winstonandharrystore.com/wp-content/uploads/2020/12/logo-w-h-vertical.png"
+                        src={logoImg}
                         alt="Winston & Harry Logo"
-                        inferSize
-                        referrerpolicy="no-referrer"
+                        format="webp"
                         loading="lazy"
                         decoding="async"
                     />

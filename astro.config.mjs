@@ -4,59 +4,37 @@ import react from '@astrojs/react';
 import vercel from '@astrojs/vercel';
 import sitemap from '@astrojs/sitemap';
 import partytown from '@astrojs/partytown';
-import { loadEnv } from 'vite';
-
-// Cargamos variables del .env (sin hardcoding)
-const { WC_CONSUMER_KEY, WC_CONSUMER_SECRET, WC_URL } = loadEnv(process.env.NODE_ENV || 'development', process.cwd(), '');
 
 import fs from "node:fs";
 import path from "node:path";
 import { EXCLUDED_SLUGS } from "./src/lib/menuCategories.ts";
 
-/** Función para obtener todas las URLs de productos dinámicamente */
-async function getDynamicProductPages() {
-  if (!WC_CONSUMER_KEY || !WC_CONSUMER_SECRET) return [];
-
-  const cachePath = path.join(process.cwd(), '.astro-sitemap-cache.json');
-  if (process.env.NODE_ENV !== 'production' && fs.existsSync(cachePath)) {
-      try {
-          return JSON.parse(fs.readFileSync(cachePath, 'utf-8'));
-      } catch (e) {}
+/** Obtiene todas las URLs de productos para el sitemap exclusivamente desde el snapshot commiteado (cero red) */
+function getSnapshotProductPages() {
+  const snapshotPath = path.join(process.cwd(), 'src', 'data', 'snapshot', 'products.json');
+  if (!fs.existsSync(snapshotPath)) {
+    throw new Error(
+      `[Sitemap] Falta el snapshot de productos (${snapshotPath}). Ejecuta "npm run snapshot" antes del build.`
+    );
+  }
+  const products = JSON.parse(fs.readFileSync(snapshotPath, 'utf-8'));
+  if (!Array.isArray(products) || products.length === 0) {
+    throw new Error('[Sitemap] El snapshot src/data/snapshot/products.json está vacío.');
   }
 
-  const baseUrl = (WC_URL || "https://tienda.winstonandharrystore.com").replace(/\/$/, "");
-  let allUrls = [];
-  let page = 1;
-
-  try {
-    while (true) {
-      const res = await fetch(`${baseUrl}/wp-json/wc/v3/products?page=${page}&per_page=100&consumer_key=${WC_CONSUMER_KEY}&consumer_secret=${WC_CONSUMER_SECRET}&status=publish&_fields=slug`);
-      const products = await res.json();
-
-      if (!Array.isArray(products) || products.length === 0) break;
-
-      products.forEach(p => {
-        if (p && p.slug && typeof p.slug === 'string') {
-          const cleanSlug = p.slug.trim();
-          if (cleanSlug && !cleanSlug.includes('undefined') && !cleanSlug.includes('null') && !cleanSlug.includes('[object')) {
-            // Se asegura de construir las URLs usando siempre el dominio maestro www
-            allUrls.push(`https://www.winstonandharrystore.com/productos/${cleanSlug}`);
-          }
-        }
-      });
-      page++;
+  const allUrls = [];
+  for (const p of products) {
+    if (p && p.slug && typeof p.slug === 'string') {
+      const cleanSlug = p.slug.trim();
+      if (cleanSlug && !cleanSlug.includes('undefined') && !cleanSlug.includes('null') && !cleanSlug.includes('[object')) {
+        allUrls.push(`https://www.winstonandharrystore.com/productos/${cleanSlug}`);
+      }
     }
-  } catch (e) {
-    console.warn("[Sitemap] Error cargando productos:", e.message);
-  }
-  
-  if (process.env.NODE_ENV !== 'production') {
-      fs.writeFileSync(cachePath, JSON.stringify(allUrls), 'utf-8');
   }
   return allUrls;
 }
 
-const productPages = await getDynamicProductPages();
+const productPages = getSnapshotProductPages();
 
 const categoryPages = []; // Ya no se mapean estáticamente
 

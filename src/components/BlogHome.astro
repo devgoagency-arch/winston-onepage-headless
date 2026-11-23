@@ -1,29 +1,8 @@
 ---
-import { PUBLIC_WP_URL, wcFetch } from "../lib/woocommerce";
+import { getSnapshotBlogPosts, getSnapshotBeholdPosts } from "../lib/snapshot";
 
-const perPage = 4;
-const postsUrl = `${PUBLIC_WP_URL}/wp-json/wp/v2/posts?per_page=${perPage}&status=publish&_embed`;
-const beholdUrl = "https://feeds.behold.so/RVqh8VIima5lSF9u1b3q?limit=50";
-
-let posts = [];
-let beholdPosts = [];
-
-try {
-  const beholdRes = await fetch(beholdUrl).catch(() => null);
-
-  const [wpData] = await Promise.all([
-    wcFetch(`wp/v2/posts?per_page=${perPage}&status=publish&_embed`),
-  ]);
-
-  if (wpData) posts = wpData;
-
-  if (beholdRes && beholdRes.ok) {
-    const data = await beholdRes.json();
-    beholdPosts = data.posts || [];
-  }
-} catch (e) {
-  console.error("Error fetching blog posts for home:", e);
-}
+const posts = getSnapshotBlogPosts();
+const beholdPosts = getSnapshotBeholdPosts();
 
 // Improved matching logic for multiple platforms
 function getShortcode(url: string) {

@@ -1,8 +1,8 @@
 ---
 import LegalLayout from "../layouts/LegalLayout.astro";
-import { getPageById } from "../lib/woocommerce";
+import { getSnapshotPageById } from "../lib/snapshot";
 
-const page = await getPageById(14599);
+const page = getSnapshotPageById(14599);
 
 let title = "POLÍTICAS DE ENVÍO";
 let subtitle = "";

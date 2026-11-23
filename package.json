@@ -3,14 +3,15 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
-    "fetch:menus": "node scripts/fetch-menus.mjs",
-    "catalog": "node scripts/generate-catalog.mjs",
-    "products:refresh": "node scripts/refresh-products.mjs",
-    "prebuild": "node scripts/fetch-menus.mjs",
-    "build": "astro build",
+    "dev": "node scripts/prepare-from-snapshot.mjs && astro dev",
+    "snapshot": "node scripts/snapshot-wc.mjs",
+    "snapshot:prepare": "node scripts/prepare-from-snapshot.mjs",
+    "fetch:menus": "node scripts/prepare-from-snapshot.mjs",
+    "catalog": "node scripts/prepare-from-snapshot.mjs",
+    "products:refresh": "node scripts/snapshot-wc.mjs",
+    "build": "node scripts/prepare-from-snapshot.mjs && astro build",
     "preview": "astro preview",
-    "dev:local": "astro dev --port 4322",
+    "dev:local": "node scripts/prepare-from-snapshot.mjs && astro dev --port 4322",
     "astro": "astro"
   },
   "dependencies": {

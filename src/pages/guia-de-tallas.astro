@@ -1,18 +1,8 @@
 ---
 import LegalLayout from "../layouts/LegalLayout.astro";
-import { getPageById, PUBLIC_WP_URL } from "../lib/woocommerce";
+import { getSnapshotPageById } from "../lib/snapshot";
 
-let page = await getPageById(14662);
-
-if (!page) {
-    try {
-        const url = `https://tienda.winstonandharrystore.com/wp-json/wp/v2/pages/14662`;
-        const res = await fetch(url);
-        if (res.ok) page = await res.json();
-    } catch(e: any) {
-        console.error("Main domain fetch failed:", e.message);
-    }
-}
+const page = getSnapshotPageById(14662);
 
 let title = "GUÍA DE TALLAS";
 let subtitle = "";

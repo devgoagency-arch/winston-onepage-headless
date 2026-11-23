@@ -85,6 +85,7 @@ if (WC_URL_ENV.includes("winstonandharrystore.com") && !WC_URL_ENV.includes("tie
 }
 
 import { EXCLUDED_SLUGS } from "./menuCategories";
+import menusSnapshot from "../data/snapshot/menus.json";
 export { EXCLUDED_SLUGS };
 
 const WP_JSON_BASE = `${PUBLIC_WP_URL}/wp-json`;
@@ -2006,118 +2007,29 @@ export async function getPageById(id: number | string) {
 }
 
 /**
- * Menús: Lee primero desde archivos JSON estáticos (descargados en build-time).
- * Solo llama a WordPress como fallback si el archivo no existe o viene vacío.
- * Esto garantiza menús consistentes en Vercel serverless (sin caché compartida entre lambdas).
+ * Menús: Lee exclusivamente desde el snapshot commiteado (src/data/snapshot/menus.json),
+ * empaquetado en el bundle tanto en SSG como en Vercel Serverless Functions (SSR).
+ * Así nunca hace fetch a /data/menus/*.json por URL ni devuelve HTML ("Unexpected token '<'"),
+ * y el build nunca depende de WordPress.
  */
-
-// Mapa de archivos JSON por slug (cargados en build-time vía import() dinámico)
-const MENU_JSON_FILES: Record<string, string> = {
-    'menu-principal':    '/data/menus/menu-principal.json',
-    'atencion-al-cliente': '/data/menus/atencion-al-cliente.json',
-    'nosotros':          '/data/menus/nosotros.json',
-    'legal':             '/data/menus/legal.json',
-};
-
 export async function getMenu(slug: string) {
     const cacheKey = `menu_${slug}`;
     const cached = getStaticCached(cacheKey);
     if (cached) return cached;
 
-    // ── FUENTE 1: Archivo JSON estático (build-time) ─────────────────────
-    // Los archivos viven en public/data/menus/ y se sirven como assets estáticos.
-    // En SSR/Vercel leemos desde fetch al propio origen (evita fs en edge).
-    try {
-        const filePath = MENU_JSON_FILES[slug];
-        if (filePath) {
-            // Intentamos leer el archivo JSON estático que fue creado en pre-build
-            // via scripts/fetch-menus.mjs. En Vercel SSR usamos fetch al asset público.
-            const vercelUrl = import.meta.env.VERCEL_URL;
-            const siteUrl = import.meta.env.PUBLIC_SITE_URL;
-            const origin = vercelUrl
-                ? `https://${vercelUrl}`
-                : (siteUrl || 'http://localhost:4321');
-            
-            const jsonUrl = `${origin}${filePath}`;
-            
-            const jsonRes = await fetch(jsonUrl, {
-                signal: AbortSignal.timeout(5000),
-                headers: { 'Accept': 'application/json' }
-            });
-            
-            if (jsonRes.ok) {
-                const jsonData = await jsonRes.json();
-                const items = jsonData?.items;
-                if (Array.isArray(items) && items.length > 0) {
-                    console.log(`[Menu] ✅ Cargado desde JSON estático: "${slug}" (${items.length} items)`);
-                    setStaticCached(cacheKey, items);
-                    return items;
-                }
-            }
-        }
-    } catch (e: any) {
-        console.warn(`[Menu] Archivo estático no disponible para "${slug}": ${e.message}`);
+    const menus = menusSnapshot as Record<string, any[]>;
+    let items = Array.isArray(menus?.[slug]) && menus[slug].length > 0 ? menus[slug] : null;
+    if (!items && slug === "menu-principal" && Array.isArray(menus?.["principal"]) && menus["principal"].length > 0) {
+        items = menus["principal"];
     }
 
-    // ── FUENTE 2: WordPress REST API (fallback) ───────────────────────────
-    const WP_USER = import.meta.env.WP_APP_USER || "";
-    const WP_PASS = import.meta.env.WP_APP_PASS || "";
-    const CK = (import.meta.env.WC_CONSUMER_KEY || import.meta.env.WP_CONSUMER_KEY || "").trim();
-    const authString = (WP_USER && WP_PASS) 
-        ? safeBtoa(`${WP_USER}:${WP_PASS}`)
-        : null;
-
-    async function fetchMenuData(targetSlug: string) {
-        try {
-            const controller = new AbortController();
-            const timeout = setTimeout(() => controller.abort(), 8000);
-            
-            const url = `${PUBLIC_WP_URL}/wp-json/wh/v1/menu/${targetSlug}`;
-            console.log(`[Menu] ⚠️ Usando fallback WP API para "${targetSlug}"`);
-            
-            const reqHeaders: Record<string, string> = {
-                'Accept': 'application/json'
-            };
-            if (authString) {
-                reqHeaders['Authorization'] = `Basic ${authString}`;
-            }
-
-            const res = await fetch(url, {
-                signal: controller.signal,
-                headers: reqHeaders
-            });
-            clearTimeout(timeout);
-            
-            if (res.ok) {
-                const data = await res.json();
-                if (Array.isArray(data) && data.length > 0) return data;
-            }
-        } catch (e: any) {
-            console.warn(`[Menu] Intento fallido para slug "${targetSlug}":`, e.message);
-        }
-        return null; // si falla o viene vacío
+    if (items) {
+        setStaticCached(cacheKey, items);
+        return items;
     }
 
-    try {
-        // Intento 1: Slug original
-        let menuItems = await fetchMenuData(slug);
-
-        // Fallback para el menú principal si el primero falló
-        if (!menuItems && slug === "menu-principal") {
-            console.log("[Menu] Reintentando con slug alternativo 'principal'...");
-            menuItems = await fetchMenuData("principal");
-        }
-
-        if (menuItems && Array.isArray(menuItems) && menuItems.length > 0) {
-            setStaticCached(cacheKey, menuItems);
-            return menuItems;
-        }
-
-        return [];
-    } catch (error) {
-        console.error(`[Menu] Error crítico al obtener menú "${slug}":`, error);
-        return [];
-    }
+    console.warn(`[Menu] Menú "${slug}" no encontrado o vacío en el snapshot (src/data/snapshot/menus.json).`);
+    return [];
 }
 
 export async function getAttributes() {

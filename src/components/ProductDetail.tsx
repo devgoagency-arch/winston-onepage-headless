@@ -633,18 +633,19 @@ export default function ProductDetail({ initialProduct }: Props) {
   }, [selectedVariation]);
 
   const isOutOfStock = useMemo(() => {
-    if (product.type === 'simple') {
-      return product.stock_status === 'outofstock';
+    if (currentProduct.type === 'simple') {
+      return currentProduct.stock_status === 'outofstock';
     }
-    if (product.type === 'variable') {
+    if (currentProduct.type === 'variable') {
+      const vars = Array.isArray(currentProduct.variations) ? currentProduct.variations : [];
       // Si no hay variación seleccionada todavía, solo es outofstock si TODAS las variaciones lo están
       if (!selectedColor || (hasSize && !selectedSize)) {
-        return product.variations?.every((v: any) => v.stock_status === 'outofstock') || false;
+        return vars.length > 0 && vars.every((v: any) => v.stock_status === 'outofstock');
       }
       return selectedVariation?.stock_status === 'outofstock';
     }
-    return product.stock_status === 'outofstock';
-  }, [product, selectedVariation, selectedColor, selectedSize, hasSize]);
+    return currentProduct.stock_status === 'outofstock';
+  }, [currentProduct, selectedVariation, selectedColor, selectedSize, hasSize]);
 
   const formatPrice = (price: string | number | undefined) => {
     if (price === undefined || price === null) return "$ 0";
@@ -952,18 +953,18 @@ export default function ProductDetail({ initialProduct }: Props) {
                     <span className="sale-price highlight">
                       {selectedVariation.price && Number(selectedVariation.price) > 0
                         ? formatPrice(selectedVariation.price)
-                        : formatPrice(product.prices.price)}
+                        : formatPrice(currentProduct.prices.price)}
                     </span>
                   </div>
-                ) : product.on_sale ? (
+                ) : currentProduct.on_sale ? (
                   <div className="price-wrapper">
-                    {Number(product.prices.regular_price || 0) > Number(product.prices.price || 0) && (
-                      <span className="old-price">{formatPrice(product.prices.regular_price)}</span>
+                    {Number(currentProduct.prices.regular_price || 0) > Number(currentProduct.prices.price || 0) && (
+                      <span className="old-price">{formatPrice(currentProduct.prices.regular_price)}</span>
                     )}
-                    <span className="sale-price highlight">{formatPrice(product.prices.price)}</span>
+                    <span className="sale-price highlight">{formatPrice(currentProduct.prices.price)}</span>
                   </div>
                 ) : (
-                  <p className="product-price">{formatPrice(product.prices.price)}</p>
+                  <p className="product-price">{formatPrice(currentProduct.prices.price)}</p>
                 )}
               </div>
 
@@ -1308,18 +1309,18 @@ export default function ProductDetail({ initialProduct }: Props) {
                 <span className="sticky-sale-price">
                   {selectedVariation.price && Number(selectedVariation.price) > 0
                     ? formatPrice(selectedVariation.price)
-                    : formatPrice(product.prices.price)}
+                    : formatPrice(currentProduct.prices.price)}
                 </span>
               </>
-            ) : product.on_sale ? (
+            ) : currentProduct.on_sale ? (
               <>
-                {Number(product.prices.regular_price || 0) > Number(product.prices.price || 0) && (
-                  <span className="sticky-old-price">{formatPrice(product.prices.regular_price)}</span>
+                {Number(currentProduct.prices.regular_price || 0) > Number(currentProduct.prices.price || 0) && (
+                  <span className="sticky-old-price">{formatPrice(currentProduct.prices.regular_price)}</span>
                 )}
-                <span className="sticky-sale-price">{formatPrice(product.prices.price)}</span>
+                <span className="sticky-sale-price">{formatPrice(currentProduct.prices.price)}</span>
               </>
             ) : (
-              <span className="sticky-sale-price">{formatPrice(product.prices.price)}</span>
+              <span className="sticky-sale-price">{formatPrice(currentProduct.prices.price)}</span>
             )}
           </div>
 
@@ -1375,11 +1376,11 @@ export default function ProductDetail({ initialProduct }: Props) {
                   <span className="bs-current-price">
                     {selectedVariation.price && Number(selectedVariation.price) > 0
                       ? formatPrice(selectedVariation.price)
-                      : formatPrice(product.prices.price)}
+                      : formatPrice(currentProduct.prices.price)}
                   </span>
                 </>
               ) : (
-                <span className="bs-current-price">{formatPrice(product.prices.price)}</span>
+                <span className="bs-current-price">{formatPrice(currentProduct.prices.price)}</span>
               )}
             </div>
 

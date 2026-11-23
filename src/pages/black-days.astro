@@ -7,7 +7,7 @@ import CampaignStickyFavorites from '../components/CampaignStickyFavorites';
 import LookOfTheWeek from '../components/LookOfTheWeek.astro';
 import { getLookOfTheWeekData } from '../lib/look';
 import { getHomeBanner } from '../lib/homeBanner';
-import { getAllProducts, getProductsByCategory } from '../lib/woocommerce';
+import { getSnapshotAllProducts, getSnapshotProductsByCategory } from '../lib/snapshot';
 import { BLACK_DAYS_END } from '../lib/blackDays';
 // Arte nuevo pendiente: configurar una ruta local cuando esté aprobado.
 const BLACK_DAYS_HERO_IMAGE: string = '';
@@ -67,17 +67,18 @@ const stores = [
 ];
 
 
-const [lookData, productsAll, ofertas, zapatos, zapatos2, ropa, maletas, accesorios, sueteres, banner] = await Promise.all([
-    getLookOfTheWeekData(), getAllProducts(100, 1, 'menu_order', 'asc'),
-    getAllProducts(100, 1, 'price', 'asc', true),
-    getProductsByCategory('63', 100, 1, 'menu_order', 'asc'),
-    getProductsByCategory('63', 100, 2, 'menu_order', 'asc').catch(() => []),
-    getProductsByCategory('249', 100, 1, 'menu_order', 'asc'),
-    getProductsByCategory('190', 100, 1, 'menu_order', 'asc'),
-    getProductsByCategory('126', 100, 1, 'menu_order', 'asc'),
-    getProductsByCategory('955', 100, 1, 'menu_order', 'asc'),
+const [lookData, banner] = await Promise.all([
+    getLookOfTheWeekData(),
     getHomeBanner(),
 ]);
+const productsAll = getSnapshotAllProducts(100, 1, 'menu_order', 'asc');
+const ofertas = getSnapshotAllProducts(100, 1, 'price', 'asc', true);
+const zapatos = getSnapshotProductsByCategory('63', 100, 1, 'menu_order', 'asc');
+const zapatos2 = getSnapshotProductsByCategory('63', 100, 2, 'menu_order', 'asc');
+const ropa = getSnapshotProductsByCategory('249', 100, 1, 'menu_order', 'asc');
+const maletas = getSnapshotProductsByCategory('190', 100, 1, 'menu_order', 'asc');
+const accesorios = getSnapshotProductsByCategory('126', 100, 1, 'menu_order', 'asc');
+const sueteres = getSnapshotProductsByCategory('955', 100, 1, 'menu_order', 'asc');
 const heroDesktop = BLACK_DAYS_HERO_IMAGE || banner.hero.image_desktop;
 const heroMobile = BLACK_DAYS_HERO_IMAGE || banner.hero.image_mobile || heroDesktop;
 // Pestaña "Hasta 70 % off": todo lo que tiene descuento, de cualquier categoría, de mayor a menor %.

@@ -3,134 +3,35 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import {
-    getAllProducts,
-    getCategoryTree,
-    PUBLIC_WP_URL
-} from "../lib/woocommerce";
+    getSnapshotSaleProducts,
+    getSnapshotCategoryTree,
+    toLightweightProduct,
+} from "../lib/snapshot";
 import FilteredProductList from "../components/FilteredProductList";
-import { isOnSale, isInStock, getProductPrice, getProductRegularPrice } from "../lib/productFilters";
-import fs from "node:fs";
-import path from "node:path";
 
-// Pre-generar los archivos JSON del catálogo de ofertas durante el build-time (SSG)
-const catalogDir = path.join(process.cwd(), "public", "data", "catalog");
-if (!fs.existsSync(catalogDir)) {
-    fs.mkdirSync(catalogDir, { recursive: true });
-}
-
-console.log("[SSG Sale] Iniciando pre-generación de catálogos estáticos para SALE...");
-
-let page = 1;
-let hasMore = true;
-let products: any[] = [];
-let allSaleProducts: any[] = [];
+// Productos en oferta y con stock desde el snapshot commiteado (cero red).
+// Los archivos public/data/catalog/sale-all.json y sale-home.json ya los generó
+// scripts/prepare-from-snapshot.mjs antes de `astro build`.
+const allSaleProducts = getSnapshotSaleProducts();
 
 // Acumulador para extraer todas las categorías que tengan productos en SALE
 const seenCategories = new Map<number, { id: number, name: string, slug: string }>();
-
-// IMPORTANTE: NO usamos on_sale=true de WooCommerce. Ese filtro omite productos variables
-// cuyas variaciones están en oferta pero el padre no está marcado. Descargamos TODO el
-// catálogo publicado y filtramos aquí con isOnSale() (revisa producto y variaciones).
-// Tampoco se reutiliza caché de disco: congelaba listas viejas de ofertas.
-while (hasMore) {
-    try {
-        console.log(`[SSG Sale] Descargando catálogo - página ${page}`);
-        const rawPage = await getAllProducts(50, page, "menu_order", "asc", false);
-        // Solo ofertas reales y con stock: lo agotado en todos sus colores no se muestra.
-        // Es automático: cuando se carga inventario, el siguiente build lo vuelve a incluir.
-        const pageProducts = Array.isArray(rawPage) ? rawPage.filter((p: any) => isOnSale(p) && isInStock(p)) : [];
-
-        allSaleProducts = allSaleProducts.concat(pageProducts);
-
-        // Acumulamos las categorías de todos los productos en sale
-        pageProducts.forEach(product => {
-            if (Array.isArray(product.categories)) {
-                product.categories.forEach((cat: any) => {
-                    if (cat && cat.id && cat.name && cat.slug) {
-                        seenCategories.set(cat.id, {
-                            id: cat.id,
-                            name: cat.name,
-                            slug: cat.slug
-                        });
-                    }
+allSaleProducts.forEach((product: any) => {
+    if (Array.isArray(product.categories)) {
+        product.categories.forEach((cat: any) => {
+            if (cat && cat.id && cat.name && cat.slug) {
+                seenCategories.set(cat.id, {
+                    id: cat.id,
+                    name: cat.name,
+                    slug: cat.slug
                 });
             }
         });
-
-        // Fin: la API devolvió una página vacía (la API ya no tiene más productos)
-        if (!Array.isArray(rawPage) || rawPage.length === 0) {
-            hasMore = false;
-        } else {
-            page++;
-        }
-
-        if (page > 40) break; // Límite de seguridad
-        await new Promise((r) => setTimeout(r, 200));
-    } catch (err: any) {
-        console.error(`[SSG Sale] Error pre-generando página ${page}:`, err.message);
-        hasMore = false;
     }
-}
+});
 
 // Los primeros 16 productos en oferta se renderizan en el HTML inicial
-products = allSaleProducts.slice(0, 16);
-
-// Las 12 ofertas con mayor descuento para la sección SALE del home (src/components/SaleHome.tsx).
-// Se ordena por % de descuento real (desempate: el orden del catálogo) y se descartan las que no tengan descuento.
-const discountRatio = (p: any) => {
-    const regular = getProductRegularPrice(p);
-    const price = getProductPrice(p);
-    return regular > 0 && price > 0 ? (regular - price) / regular : 0;
-};
-// Para que la fila tenga variedad, se admiten máximo 2 productos del mismo tipo (primera palabra del
-// nombre: "Billetera", "Collar"...). Si así no se llegan a 12, se completa con los que quedaron fuera.
-const rankedSale = allSaleProducts
-    .map((p, index) => ({ p, index, d: discountRatio(p) }))
-    .filter((x) => x.d > 0)
-    .sort((a, b) => b.d - a.d || a.index - b.index);
-const typeCount = new Map<string, number>();
-const diverse: any[] = [];
-const leftovers: any[] = [];
-for (const x of rankedSale) {
-    const type = String(x.p.name || "").trim().split(/\s+/)[0].toLowerCase();
-    const n = typeCount.get(type) || 0;
-    if (n < 2) {
-        typeCount.set(type, n + 1);
-        diverse.push(x);
-    } else {
-        leftovers.push(x);
-    }
-}
-const saleHomeProducts = [...diverse, ...leftovers]
-    .slice(0, 12)
-    .sort((a, b) => b.d - a.d || a.index - b.index)
-    .map((x) => x.p);
-
-// Guardar los archivos que usa el cliente de React: el unificado (paginar y filtrar) y el del home
-const catalogFiles: Record<string, string> = {
-    "sale-all.json": JSON.stringify(allSaleProducts),
-    "sale-home.json": JSON.stringify(saleHomeProducts),
-};
-for (const [fileName, json] of Object.entries(catalogFiles)) {
-    fs.writeFileSync(path.join(catalogDir, fileName), json, "utf-8");
-}
-
-// INYECCIÓN PARA PRODUCCIÓN: Astro copia `public` antes de renderizar, así que lo escrito arriba
-// NO llega a Vercel (sale-all.json daba 404 y la página se quedaba en los primeros 16 productos).
-// Se escribe también en la carpeta de salida, igual que hace categoria/[slug].astro.
-if (!import.meta.env.DEV) {
-    for (const baseDir of ["dist", "dist/client", ".vercel/output/static"]) {
-        const base = path.join(process.cwd(), ...baseDir.split("/"));
-        if (!fs.existsSync(base)) continue;
-        const outCatalogDir = path.join(base, "data", "catalog");
-        fs.mkdirSync(outCatalogDir, { recursive: true });
-        for (const [fileName, json] of Object.entries(catalogFiles)) {
-            fs.writeFileSync(path.join(outCatalogDir, fileName), json, "utf-8");
-        }
-    }
-}
-
-console.log(`[SSG Sale] ✓ Catálogos estáticos de SALE pre-generados exitosamente. Total productos: ${allSaleProducts.length}`);
+const products = allSaleProducts.slice(0, 16).map(toLightweightProduct);
 
 // Slugs de categorías que no deben mostrarse en los filtros
 const IGNORED_CATEGORY_SLUGS = [
@@ -161,7 +62,7 @@ const category = {
     name: "Sale",
     description: "Aprovecha precios especiales en nuestras últimas piezas. La misma calidad de cuero artesanal de Winston & Harry a un precio de oportunidad."
 };
-const navigationTree = await getCategoryTree();
+const navigationTree = getSnapshotCategoryTree();
 
 const activeSort = {
     key: "descuentos",

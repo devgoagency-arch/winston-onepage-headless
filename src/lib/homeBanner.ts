@@ -1,4 +1,4 @@
-import { PUBLIC_WP_URL, wcFetch } from './woocommerce';
+import { getSnapshotHomeBannerRaw } from './snapshot';
 
 export interface HomeBannerData {
     hero: {
@@ -97,34 +97,9 @@ function parsePost(post: any): HomeBannerData {
 }
 
 export async function getHomeBanner(): Promise<HomeBannerData> {
-    try {
-        // Intento 1: wcFetch (autenticado)
-        const data = await wcFetch('wp/v2/home_banner?per_page=1&_fields=meta');
-        if (data && Array.isArray(data) && data.length > 0) {
-            console.log('[HomeBanner] ✅ Datos cargados desde WP (autenticado)');
-            return parsePost(data[0]);
-        }
-    } catch (e) {
-        console.warn('[HomeBanner] wcFetch falló, intentando público:', e);
+    const raw = getSnapshotHomeBannerRaw();
+    if (raw) {
+        return parsePost(raw);
     }
-
-    try {
-        // Intento 2: fetch público
-        const res = await fetch(
-            `${PUBLIC_WP_URL}/wp-json/wp/v2/home_banner?per_page=1&_fields=meta`,
-            { signal: AbortSignal.timeout(4000) }
-        );
-        if (res.ok) {
-            const data = await res.json();
-            if (data && Array.isArray(data) && data.length > 0) {
-                console.log('[HomeBanner] ✅ Datos cargados desde WP (público)');
-                return parsePost(data[0]);
-            }
-        }
-    } catch (e) {
-        console.warn('[HomeBanner] API pública falló, usando fallback:', e);
-    }
-
-    console.log('[HomeBanner] ⚠️ Usando fallback hardcodeado');
     return FALLBACK;
 }

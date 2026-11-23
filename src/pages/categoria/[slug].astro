@@ -3,190 +3,21 @@ import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import ProductCard from "../../components/ProductCard";
+import { EXCLUDED_SLUGS } from "../../lib/woocommerce";
 import {
-    getCategoryBySlug,
-    getProductsByCategory,
-    getChildCategories,
-    getCategoryTree,
-    getAttributeTerms,
-    getCategoryById,
-    PUBLIC_WP_URL,
-    wcFetch,
-    getAllProducts,
-    ASTRO_TO_WP_SLUG_MAP,
-    mapWpToAstroSlug,
-    mapAstroToWpSlug,
-    STRICT_CATEGORIES,
-    EXCLUDED_SLUGS
-} from "../../lib/woocommerce";
+    getSnapshotPublishableCategories,
+    getSnapshotCategoryBySlug,
+    getSnapshotProductsByCategory,
+    getSnapshotChildCategories,
+    getSnapshotCategoryTree,
+} from "../../lib/snapshot";
 import FilteredProductList from "../../components/FilteredProductList";
 
 export async function getStaticPaths() {
-    const fs = await import('node:fs');
-    const path = await import('node:path');
-    
-    // 1. Híbrido: Obtener TODAS las categorías dinámicamente desde WooCommerce
-    let allWooCategories = [];
-    try {
-        const rawCats = await wcFetch("/products/categories?per_page=100");
-        if (Array.isArray(rawCats)) {
-            allWooCategories = rawCats;
-        }
-    } catch (e) {
-        console.error("Error fetching categories for SSG:", e);
-    }
-
-    const strictMap = new Map();
-    STRICT_CATEGORIES.forEach(cat => strictMap.set(cat.id, cat));
-
-    const validWooCategories = allWooCategories.filter((c: any) => !EXCLUDED_SLUGS.includes(c.slug));
-
-    const astroSlugsToGen = validWooCategories.map((wooCat: any) => {
-        const strictCat = strictMap.get(wooCat.id);
-        if (strictCat) {
-            return {
-                id: wooCat.id,
-                slug: strictCat.slug,
-                name: strictCat.name,
-                description: strictCat.description || '',
-                image: strictCat.image || ''
-            };
-        }
-        return {
-            id: wooCat.id,
-            slug: wooCat.slug,
-            name: wooCat.name,
-            description: '',
-            image: ''
-        };
-    });
-
-    // Directorio de salida para los catálogos estáticos
-    const catalogDir = path.join(process.cwd(), 'public', 'data', 'catalog');
-    if (!fs.existsSync(catalogDir)) {
-        fs.mkdirSync(catalogDir, { recursive: true });
-    }
-
-    // 2. Pre-generar los archivos JSON de catálogo para cada categoría
-    console.log(`[SSG Total] Iniciando pre-generación de catálogos estáticos para ${astroSlugsToGen.length} categorías...`);
-    
-    // También agregamos "all" para la tienda completa
-    // "tienda" va primero: es el índice del buscador y el catálogo más importante.
-    const categoriesToGen = [{ id: 'all', slug: 'tienda', name: 'Tienda' }, ...astroSlugsToGen];
-
-    // Si WooCommerce va lento, el build no puede quedarse horas esperando: presupuesto de tiempo y corte tras 3 fallos seguidos.
-    // Un catálogo omitido se pide en vivo por /api/products; un catálogo vacío nunca se escribe.
-    const catalogStartedAt = Date.now();
-    const CATALOG_BUDGET_MS = 8 * 60 * 1000;
-    let consecutiveFailures = 0;
-
-    for (const cat of categoriesToGen) {
-        if (Date.now() - catalogStartedAt > CATALOG_BUDGET_MS || consecutiveFailures >= 3) {
-            console.warn(`[SSG Total] Presupuesto de tiempo agotado o WooCommerce no responde: se omite ${cat.slug}`);
-            continue;
-        }
-        try {
-            console.log(`[SSG Total] Pre-generando catálogo para: ${cat.slug}`);
-            let allCategoryProducts: any[] = [];
-            let page = 1;
-            let hasMore = true;
-            
-            const filePath = path.join(catalogDir, `${cat.slug}-all.json`);
-            
-            // Si ya existe el JSON en caché (dev o prod), lo usamos directamente
-            if (fs.existsSync(filePath)) {
-                console.log(`[SSG Total] Caché encontrado para ${cat.slug}, omitiendo descarga.`);
-            } else {
-                while (hasMore) {
-                    let products = null;
-                    if (cat.id === 'all') {
-                        products = await getAllProducts(100, page, 'menu_order', 'asc', false);
-                    } else {
-                        products = await getProductsByCategory(cat.id, 100, page, 'menu_order', 'asc', false);
-                    }
-
-                    if (products && products.length > 0) {
-                        allCategoryProducts = allCategoryProducts.concat(products);
-                        page++;
-                    } else {
-                        hasMore = false;
-                    }
-
-                    if (page > 10) break; // Límite de seguridad
-                    await new Promise(r => setTimeout(r, 300));
-                }
-
-                if (allCategoryProducts.length === 0) {
-                    throw new Error('WooCommerce no devolvió productos: no se escribe un catálogo vacío');
-                }
-                consecutiveFailures = 0;
-
-                // Mapeo ligero para reducir el tamaño del JSON
-                const lightweightProducts = allCategoryProducts
-                  .filter(p => {
-                    const price = p.prices?.price;
-                    return price && price !== '0' && price !== '';
-                  })
-                  .map(p => ({
-                    id: p.id,
-                    name: p.name,
-                    slug: p.slug,
-                    type: p.type,
-                    price: p.price,
-                    regular_price: p.regular_price,
-                    sale_price: p.sale_price,
-                    prices: p.prices,
-                    images: p.images?.slice(0, 2),
-                    categories: p.categories,
-                    attributes: p.attributes,
-                    stock_status: p.stock_status,
-                    on_sale: p.on_sale,
-                    featured: p.featured,
-                    date_created: p.date_created,
-                    variation_images_map: p.variation_images_map
-                  }));
-
-                // Escribir el array completo en public (para dev)
-                fs.writeFileSync(filePath, JSON.stringify(lightweightProducts), 'utf-8');
-
-                const wpSlug = mapAstroToWpSlug(cat.slug);
-                if (wpSlug !== cat.slug) {
-                    const wpFilePath = path.join(catalogDir, `${wpSlug}-all.json`);
-                    fs.writeFileSync(wpFilePath, JSON.stringify(lightweightProducts), 'utf-8');
-                }
-
-                // INYECCIÓN PARA PRODUCCIÓN: Astro copia `public` antes de ejecutar getStaticPaths,
-                // así que los archivos generados en public NO llegan a Vercel. Hay que inyectarlos en el output.
-                if (!import.meta.env.DEV) {
-                    const writeToOutDir = (baseDir: string) => {
-                        const base = path.join(process.cwd(), ...baseDir.split('/'));
-                        if (fs.existsSync(base)) {
-                            const fullDir = path.join(base, 'data', 'catalog');
-                            if (!fs.existsSync(fullDir)) fs.mkdirSync(fullDir, { recursive: true });
-                            fs.writeFileSync(path.join(fullDir, `${cat.slug}-all.json`), JSON.stringify(lightweightProducts), 'utf-8');
-                            if (wpSlug !== cat.slug) {
-                                fs.writeFileSync(path.join(fullDir, `${wpSlug}-all.json`), JSON.stringify(lightweightProducts), 'utf-8');
-                            }
-                        }
-                    };
-                    writeToOutDir('dist');
-                    writeToOutDir('dist/client');
-                    writeToOutDir('.vercel/output/static');
-                }
-            }
-
-            // Retardo entre categorías para dar respiro al servidor
-            await new Promise(r => setTimeout(r, 500));
-
-        } catch (catErr: any) {
-            consecutiveFailures++;
-            console.error(`[SSG Total] Error pre-generando catálogo para ${cat.slug}:`, catErr.message);
-        }
-    }
-
-    console.log("[SSG Total] ✓ Catálogos estáticos pre-generados exitosamente.");
-
-    return astroSlugsToGen.map(cat => ({
+    // Lee exclusivamente del snapshot validado (cero red).
+    // Excluye EXCLUDED_SLUGS y categorías sin productos para nunca publicar páginas vacías.
+    const publishableCategories = getSnapshotPublishableCategories();
+    return publishableCategories.map((cat: any) => ({
         params: { slug: cat.slug }
     }));
 }
@@ -196,7 +27,7 @@ const sortParam = "destacado";
 const colorParam = null;
 const tallaParam = null;
 
-// Mapeo del param de URL a los parámetros de la API WooCommerce
+// Mapeo del param de URL a los parámetros de ordenamiento
 const SORT_OPTIONS = [
     {
         key: "recientes",
@@ -239,7 +70,6 @@ const activeSort =
     SORT_OPTIONS.find((o) => o.key === sortParam) || SORT_OPTIONS[0];
 
 let category: any = null;
-let wpCategory: any = null;
 let products: any[] = [];
 let error: string | null = null;
 let colorTerms: any[] = [];
@@ -248,151 +78,59 @@ let tallaTerms: any[] = [];
 let subcategories: any[] = [];
 let navigationTree: any[] = [];
 
-try {
-    // 1. Buscamos la categoría en WooCommerce (para productos e ID)
-    category = await getCategoryBySlug(slug as string);
-    
-    if (category) {
-        // 2. Buscamos la categoría en WP API pública (para obtener ACF/Banners sin problemas de Auth)
-        try {
-            const wpRes = await fetch(`${PUBLIC_WP_URL}/wp-json/wp/v2/product_cat?slug=${slug}`);
-            if (wpRes.ok) {
-                const wpData = await wpRes.json();
-                if (Array.isArray(wpData) && wpData.length > 0) {
-                    wpCategory = wpData[0];
-                }
-            }
-        } catch (e) {
-            console.warn("Error fetching public WP category:", e);
-        }
-
-        // 3. Cargamos los productos iniciales (leemos del JSON pre-generado localmente para evitar llamadas repetidas a WooCommerce)
-        try {
-            const fs = await import('node:fs');
-            const path = await import('node:path');
-            const filePath = path.join(process.cwd(), 'public', 'data', 'catalog', `${slug}-all.json`);
-            if (fs.existsSync(filePath)) {
-                const allProducts = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
-                // Pasamos solo los primeros 16 al HTML para que la página cargue instantáneamente
-                products = allProducts.slice(0, 16);
-            } else {
-                // Fallback si no hay caché local
-                products = await getProductsByCategory(
-                    category.id,
-                    16,
-                    1,
-                    activeSort.orderBy,
-                    activeSort.order,
-                    activeSort.onSale
-                );
-            }
-        } catch (err) {
-            products = await getProductsByCategory(
-                category.id,
-                16,
-                1,
-                activeSort.orderBy,
-                activeSort.order,
-                activeSort.onSale
-            );
-        }
-
-        // 4. Cargamos subcategorías REALES para el panel de filtros lateral
-        let currentSubcats = await getChildCategories(category.id);
-        
-        // Si no tiene hijos, mostramos sus hermanos (hijos del padre) + el padre para volver
-        if (currentSubcats.length === 0 && category.parent !== 0) {
-            const siblings = await getChildCategories(category.parent);
-            const parentCat = await getCategoryById(category.parent);
-            
-            subcategories = siblings;
-        } else {
-            subcategories = currentSubcats;
-        }
-
-        // 5. Cargamos el árbol completo de navegación para el dropdown superior y el panel de filtros lateral
-        const rawTree = await getCategoryTree();
-        
-        // Filtramos recursivamente las categorías internas para no exponerlas al cliente
-        const filterTree = (nodes: any[]): any[] => {
-            return nodes
-                .filter(n => !EXCLUDED_SLUGS.includes(n.slug))
-                .map(n => ({
-                    ...n,
-                    children: filterTree(n.children || [])
-                }));
-        };
-        
-        navigationTree = filterTree(rawTree);
-
-        if (tallaParam) {
-            products = products.filter((p) =>
-                p.attributes?.some(
-                    (a: any) => a.name.toLowerCase() === "talla" && a.options.includes(tallaParam),
-                ),
-            );
-        }
-    } else {
-        error = "Categoría no encontrada";
-    }
-} catch (e) {
-    console.error("Error en categoria/[slug].astro:", e);
-    error = "Hubo un problema al cargar los productos.";
+category = getSnapshotCategoryBySlug(slug as string);
+if (!category) {
+    throw new Error(`[Snapshot Guard] Categoría "${slug}" no encontrada en el snapshot.`);
 }
 
-if (!category && !error) {
-    return Astro.redirect("/404");
+products = getSnapshotProductsByCategory(
+    category.id,
+    16,
+    1,
+    activeSort.orderBy,
+    activeSort.order,
+    activeSort.onSale
+);
+
+if (products.length === 0) {
+    throw new Error(
+        `[Snapshot Guard] La categoría "${slug}" (id=${category.id}) no tiene productos en el snapshot. Se aborta el build para no publicar una página vacía.`
+    );
+}
+
+// Subcategorías reales desde el snapshot
+let currentSubcats = getSnapshotChildCategories(category.id);
+if (currentSubcats.length === 0 && category.parent !== 0) {
+    subcategories = getSnapshotChildCategories(category.parent);
+} else {
+    subcategories = currentSubcats;
+}
+
+// Árbol de navegación desde el snapshot
+const rawTree = getSnapshotCategoryTree();
+const filterTree = (nodes: any[]): any[] => {
+    return nodes
+        .filter(n => !EXCLUDED_SLUGS.includes(n.slug))
+        .map(n => ({
+            ...n,
+            children: filterTree(n.children || [])
+        }));
+};
+navigationTree = filterTree(rawTree);
+
+if (tallaParam) {
+    products = products.filter((p) =>
+        p.attributes?.some(
+            (a: any) => a.name.toLowerCase() === "talla" && a.options?.includes(tallaParam),
+        ),
+    );
 }
 
 const bannerImage = category?.image?.src || null;
-const metaData = category?.meta_data || [];
-const acfData = wpCategory?.acf || {};
 
-async function getBannerUrl(keys: string[]) {
-    // 1. Prioridad: Buscar en ACF (traído de la API pública)
-    for (const key of keys) {
-        const val = acfData[key];
-        if (!val) continue;
-
-        if (typeof val === 'string' && val.startsWith('http')) return val;
-        if (typeof val === 'object' && val.url) return val.url;
-        if (!isNaN(Number(val)) && Number(val) > 0) {
-            try {
-                const res = await fetch(`${PUBLIC_WP_URL}/wp-json/wp/v2/media/${val}`);
-                if (res.ok) {
-                    const data = await res.json();
-                    return data.source_url;
-                }
-            } catch (e) {}
-        }
-    }
-
-    // 2. Fallback: Buscar en meta_data de WooCommerce
-    for (const key of keys) {
-        const meta = metaData.find((m: any) => m.key === key);
-        if (!meta || !meta.value) continue;
-        
-        const val = meta.value;
-        if (typeof val === 'string' && val.startsWith('http')) return val;
-        if (typeof val === 'object' && val.url) return val.url;
-        if (!isNaN(Number(val)) && Number(val) > 0) {
-            try {
-                const res = await fetch(`${PUBLIC_WP_URL}/wp-json/wp/v2/media/${val}`);
-                if (res.ok) {
-                    const data = await res.json();
-                    return data.source_url;
-                }
-            } catch (e) {}
-        }
-    }
-    return null;
-}
-
-// Desktop: Prioridad al campo de banner, luego a la imagen principal de WC
-const desktopBanner = (await getBannerUrl(['banner_categoria_desktop', 'banner_desktop', 'banner_categoria'])) || bannerImage;
-
-// Móvil: Prioridad al campo de móvil, si no existe usa la de desktop
-const mobileBanner = (await getBannerUrl(['imagen_categoria_movil', 'banner_mobile', 'banner_movil'])) || desktopBanner;
+// Banners ya resueltos en el snapshot (cero peticiones a wp/v2/product_cat o wp/v2/media)
+const desktopBanner = category?.desktop_banner || bannerImage;
+const mobileBanner = category?.mobile_banner || desktopBanner;
 
 const desktopBannerValue = desktopBanner ? `url('${desktopBanner}')` : 'none';
 const mobileBannerValue = mobileBanner ? `url('${mobileBanner}')` : 'none';

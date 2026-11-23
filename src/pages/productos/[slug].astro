@@ -3,132 +3,35 @@ import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import ProductDetail from "../../components/ProductDetail";
-import { getProductBySlug, getProductsPool, getAllProducts, wcFetch } from "../../lib/woocommerce";
+import {
+    getSnapshotAllPublishedProducts,
+    getSnapshotProductBySlug,
+    getSnapshotProductsPool,
+} from "../../lib/snapshot";
 import { productSchemaImages, fullSizeImageUrl } from "../../lib/structuredImages";
-import fs from 'node:fs';
-import path from 'node:path';
 
 export async function getStaticPaths() {
-    const fs = await import('node:fs');
-    const path = await import('node:path');
-    
-    // Directorio de salida para detalles de producto
-    const productsDir = path.join(process.cwd(), 'public', 'data', 'products');
-    if (!fs.existsSync(productsDir)) {
-        fs.mkdirSync(productsDir, { recursive: true });
-    }
-
-    let allProducts: any[] = [];
-    let page = 1;
-    let hasMore = true;
-
-    console.log("[SSG Total] Obteniendo lista de todos los productos para getStaticPaths...");
-
-    while (hasMore) {
-        try {
-            // Obtenemos los productos de la API usando getAllProducts
-            const products = await getAllProducts(100, page);
-            if (Array.isArray(products) && products.length > 0) {
-                allProducts = [...allProducts, ...products];
-                page++;
-            } else {
-                hasMore = false;
-            }
-        } catch (e: any) {
-            console.error(`[getStaticPaths - Productos] Error en página ${page}:`, e.message);
-            hasMore = false;
-        }
-        
-        // Límite de seguridad
-        if (page > 15) break;
-    }
-
-    console.log(`[SSG Total] Encontrados ${allProducts.length} productos. Pre-generando JSONs de variaciones y detalles...`);
-
-    // Inyección forzada del producto de prueba para que siempre tenga URL generada
-    // incluso si en WooCommerce lo marcan como "Oculto" (Visibilidad de catálogo: Oculto)
-    if (!allProducts.some(p => p.slug === 'test')) {
-        allProducts.push({ slug: 'test' });
-    }
-
-    // 2. Pre-generar los archivos JSON de detalle para cada producto (CON CONCURRENCIA CONTROLADA A 5 EN PARALELO Y DESCANSO DE 200ms)
-    const CONCURRENCY = 5;
-    const chunks: any[][] = [];
-    for (let i = 0; i < allProducts.length; i += CONCURRENCY) {
-        chunks.push(allProducts.slice(i, i + CONCURRENCY));
-    }
-
-    console.log(`[SSG Total] Iniciando pre-generación en ${chunks.length} lotes de ${CONCURRENCY} productos en paralelo...`);
-
-    let completedCount = 0;
-    for (const chunk of chunks) {
-        await Promise.all(chunk.map(async (p) => {
-            if (!p.slug) return;
-            try {
-                const filePath = path.join(productsDir, `${p.slug}.json`);
-                // Si el archivo JSON ya existe (en dev o en prod), usarlo como caché.
-                // Solo descargamos si NO existe (producto nuevo o primer build).
-                if (fs.existsSync(filePath)) {
-                    return;
-                }
-
-                // Obtenemos el producto completo (con variaciones y WPC media)
-                const fullProduct = await getProductBySlug(p.slug);
-                if (fullProduct) {
-                    const filePath = path.join(productsDir, `${p.slug}.json`);
-                    fs.writeFileSync(filePath, JSON.stringify(fullProduct, null, 2), 'utf-8');
-                }
-            } catch (err: any) {
-                console.error(`[SSG Total] Error guardando JSON para producto ${p.slug}:`, err.message);
-            }
+    // Lee exclusivamente del snapshot validado (cero llamadas a WooCommerce).
+    // Los productos 404/sin stock/precio 0 ya fueron omitidos al generar el snapshot.
+    const allProducts = getSnapshotAllPublishedProducts();
+    return allProducts
+        .filter((p: any) => p && p.slug)
+        .map((p: any) => ({
+            params: { slug: p.slug }
         }));
-        completedCount += chunk.length;
-        console.log(`[SSG Total] Progreso: ${completedCount}/${allProducts.length} productos procesados.`);
-        // Descanso de 200ms entre bloques para dar respiro al servidor
-        await new Promise(r => setTimeout(r, 200));
-    }
-
-    console.log("[SSG Total] ✓ JSONs de productos pre-generados exitosamente.");
-
-    return allProducts.filter(p => p.slug).map(p => ({
-        params: { slug: p.slug },
-        // Precios vigentes de WooCommerce: el JSON guardado puede traer precios viejos.
-        props: { live: { prices: p.prices, on_sale: p.on_sale } }
-    }));
 }
 
 const { slug } = Astro.params;
-const { live } = Astro.props as any;
 
 let product: any = null;
 let error: any = null;
 
 try {
-    // 1. Cargar el producto desde el JSON pre-generado localmente para evitar llamadas repetidas a la red durante el renderizado
-    const jsonPath = path.join(process.cwd(), 'public', 'data', 'products', `${slug}.json`);
-    if (fs.existsSync(jsonPath)) {
-        product = JSON.parse(fs.readFileSync(jsonPath, 'utf-8'));
-    } else {
-        // Fallback dinámico si no existe el archivo (p. ej. en desarrollo)
-        product = await getProductBySlug(slug as string);
-    }
+    const baseProduct = getSnapshotProductBySlug(slug as string);
+    product = baseProduct ? { ...baseProduct } : null;
 
-    // Los JSON de productos se guardan una sola vez: se renuevan precio y oferta con los datos vigentes del listado.
-    if (product && live?.prices?.price) {
-        const old = product.prices || {};
-        const fresh = live.prices;
-        if (Array.isArray(product.variations)) {
-            product.variations = product.variations.map((v: any) =>
-                v && v.price === old.price && v.regular_price === old.regular_price
-                    ? { ...v, price: fresh.price, regular_price: fresh.regular_price }
-                    : v);
-        }
-        product.prices = { ...old, price: fresh.price, regular_price: fresh.regular_price, sale_price: fresh.sale_price ?? '' };
-        product.on_sale = live.on_sale ?? product.on_sale;
-    }
-    
     if (product) {
-        // --- FETCH RELATED PRODUCTS & FBT ---
+        // --- FETCH RELATED PRODUCTS & FBT (desde el pool en memoria del snapshot) ---
         let relatedProducts: any[] = [];
         let fbtProducts: any[] = [];
         
@@ -138,12 +41,9 @@ try {
             const clothingCats = [249, 951, 952, 251, 1022, 250];        
             const accessoryCats = [126, 172, 190];             
             
-            // Usamos el pool de productos con caché de 10 minutos (Optimizado)
-            // Usamos el pool de productos con caché de 10 minutos (Optimizado)
-            const rawProducts = await getProductsPool();
+            const rawProducts = getSnapshotProductsPool(60);
             
             if (rawProducts && rawProducts.length > 0) {
-                // Usamos directamente los productos del pool, ya están mapeados por getProductsPool
                 const allStoreProducts = rawProducts;
                 
                 const currentCats = product.categories?.map((c: any) => c.id) || [];
@@ -155,7 +55,7 @@ try {
                 const isCurrentClothing = currentCats.some((id: any) => clothingCats.includes(id)) || 
                                           pName.includes('chaqueta') || pName.includes('sueter') || pName.includes('suéter') || pName.includes('camisa') || pName.includes('pantalon');
 
-                // 1. Completa tu look (Preferimos relacionados definidos en WC, si no, aleatorios)
+                // 1. Completa tu look (Preferimos relacionados definidos en WC, si no, del pool)
                 const wcRelatedIds = [...(product.upsell_ids || []), ...(product.related_ids || [])];
                 
                 if (wcRelatedIds.length > 0) {
@@ -165,7 +65,6 @@ try {
                 if (relatedProducts.length < 4) {
                     const extra = allStoreProducts
                         .filter((p: any) => p.id !== product.id && !relatedProducts.some(rp => rp.id === p.id))
-                        .sort(() => Math.random() - 0.5)
                         .slice(0, 4 - relatedProducts.length);
                     relatedProducts = [...relatedProducts, ...extra];
                 }
@@ -182,7 +81,7 @@ try {
                 }
             }
         } catch (e) {
-            console.error("Error fetching related products:", e);
+            console.error("Error resolviendo productos relacionados:", e);
         }
 
         product.fbt_products = fbtProducts.filter(Boolean);

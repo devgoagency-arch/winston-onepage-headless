@@ -16,22 +16,22 @@ import FeaturesBanner from "../components/FeaturesBanner.astro";
 import LookOfTheWeek from "../components/LookOfTheWeek.astro";
 import CategoryGrid from "../components/CategoryGrid.astro";
 import BlogHome from "../components/BlogHome.astro";
-import { getHomePageData, getProductsByCategory } from "../lib/woocommerce";
+import { getSnapshotHomePage, getSnapshotProductsByCategory } from "../lib/snapshot";
 import { getHeroSlides } from "../lib/hero";
 import { getLookOfTheWeekData } from "../lib/look";
 import { getHomeBanner } from "../lib/homeBanner";
 
-// Pre-cargar todos los datos de la página del Home en una única petición (ID 83750)
-const homePage = await getHomePageData();
+// Pre-cargar todos los datos de la página del Home desde el snapshot commiteado (cero red)
+const homePage = getSnapshotHomePage();
 const homeSeo = homePage?.yoast_head_json || homePage?.rank_math_seo || null;
 
 // Extraer el video mp4 de fondo de WordPress (si existe)
 const aboutVideoUrl = homePage?.acf?.video_mp4_fondo || homePage?.acf?.about_video_url || "https://tienda.winstonandharrystore.com/wp-content/uploads/WINSTON-HARRY-STORE.mp4";
 
-// Pre-cargar las 3 categorías principales para evitar peticiones del lado del cliente
-const productsZapatos = await getProductsByCategory("63", 24, 1, "menu_order", "asc");
-const productsRopa = await getProductsByCategory("249", 24, 1, "menu_order", "asc");
-const productsMaletas = await getProductsByCategory("190", 24, 1, "menu_order", "asc");
+// Pre-cargar las 3 categorías principales desde el snapshot
+const productsZapatos = getSnapshotProductsByCategory("63", 24, 1, "menu_order", "asc");
+const productsRopa = getSnapshotProductsByCategory("249", 24, 1, "menu_order", "asc");
+const productsMaletas = getSnapshotProductsByCategory("190", 24, 1, "menu_order", "asc");
 
 const initialCache = {
 	'63': productsZapatos,
