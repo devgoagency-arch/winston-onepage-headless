@@ -38,8 +38,8 @@ Se expanden las cantidades, se excluyen rebajados (`on_sale` o precio menor al r
 | 1 | 100000 | 15 % | $15000 |
 | 2 | 100000, 80000 | 0 %, 50 % | $40000 |
 | 3 | 100000, 80000, 60000 | 0 %, 15 %, 50 % | $42000 |
-| 4 | 100000, 80000, 60000, 40000 | 0 %, 15 %, 50 %, 50 % | $62000 |
-| 5 | 100000, 80000, 60000, 40000, 20000 | 0 %, 15 %, 50 %, 50 %, 0 % | $62000 |
+| 4 | 100000, 80000, 60000, 40000 | 0 %, 0 %, 50 %, 50 % | $50000 |
+| 5 | 100000, 80000, 60000, 40000, 20000 | 0 %, 0 %, 50 %, 50 %, 0 % | $50000 |
 
 Ejecutar `node --test tests/black-days.test.mjs`. Repetir casos en Woo, incluyendo variaciones, cantidades, empate, redondeo, zapatos en oferta y suéteres con tag 937. Verificar límites de fecha y carrito abierto al cambio de ventana.
 

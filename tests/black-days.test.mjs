@@ -5,8 +5,8 @@ import { readFileSync } from 'node:fs';
 import { runInNewContext } from 'node:vm';
 import { isArmaLowPriority, isArmaCatalogProduct, allocateArmaTuBlack, calculateArmaTuBlack, getArmaTuBlackHint, isBlackDaysActive, isBlackDaysPreviewBuild, EXTRA_UNITS_DISCOUNT } from '../src/lib/blackDays.ts';
 const prices = [100000, 80000, 60000, 40000, 20000];
-const discounts = [0, 15000, 40000, 42000, 62000, 62000];
-const rates = [[], [15], [0, 50], [0, 15, 50], [0, 15, 50, 50], [0, 15, 50, 50, 0]];
+const discounts = [0, 15000, 40000, 42000, 50000, 50000];
+const rates = [[], [15], [0, 50], [0, 15, 50], [0, 0, 50, 50], [0, 0, 50, 50, 0]];
 for (let n = 0; n <= 5; n++) {
     test(`N=${n}: tasas, importe y progreso`, () => {
         const input = prices.slice(0, n).reverse().map(price => ({ price }));
@@ -23,10 +23,10 @@ for (let n = 0; n <= 5; n++) {
 }
 test('empates, cantidades y redondeo por unidad', () => {
     const result = calculateArmaTuBlack([{ price: 101, quantity: 4 }]);
-    assert.deepEqual(result.lines.map(l => l.amount), [0, 15, 51, 51]);
-    assert.equal(result.discount, 117);
+    assert.deepEqual(result.lines.map(l => l.amount), [0, 0, 51, 51]);
+    assert.equal(result.discount, 102);
     assert.equal(EXTRA_UNITS_DISCOUNT, 0);
-    assert.equal(calculateArmaTuBlack([{ price: 100, quantity: 8 }]).discount, 115);
+    assert.equal(calculateArmaTuBlack([{ price: 100, quantity: 8 }]).discount, 100);
 });
 test('excluye ofertas, Escalera y tag 937; admite carritos antiguos', () => {
     const result = calculateArmaTuBlack([

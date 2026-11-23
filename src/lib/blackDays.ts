@@ -35,7 +35,7 @@ export function getArmaTuBlackHint(n: number): string {
         'Arma tu Black: agrega productos sin descuento y empieza con 15 % off.',
         'Llevas 15 % off. Agrega otro y el de menor precio lleva 50 % off',
         'Agrega un 3.º: 15 % al 2.º y 50 % al 3.º',
-        'Agrega un 4.º: 50 % al 3.º y 4.º',
+        'Agrega un 4.º: 50 % a los 2 de menor precio',
         '¡Máximo beneficio Arma tu Black!',
     ][Math.min(4, Math.max(0, Math.floor(n)))];
 }
@@ -62,7 +62,7 @@ export function isArmaCatalogProduct(p: { slug?: string; name?: string; on_sale?
 
 // Escalera de descuentos, de mayor a menor precio: el de menor precio lleva el descuento más hondo.
 function ladderRates(eligibleCount: number): number[] {
-    return eligibleCount === 1 ? [15] : eligibleCount === 2 ? [0, 50] : [0, 15, 50, 50];
+    return eligibleCount === 1 ? [15] : eligibleCount === 2 ? [0, 50] : eligibleCount === 3 ? [0, 15, 50] : [0, 0, 50, 50];
 }
 
 // Reparte el descuento entre las líneas del carrito (mismo orden que `items`).
