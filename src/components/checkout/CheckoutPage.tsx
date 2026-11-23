@@ -1,7 +1,7 @@
 import ArmaTuBlackProgress, { ArmaTuBlackGroupHeading, ArmaTuBlackLineBadge, ArmaTuBlackLinePrice, sortForArmaTuBlack, useArmaTuBlack } from '../ArmaTuBlackProgress';
 import { useStore } from '@nanostores/react';
 import { Fragment, useState, useMemo, useEffect, useRef } from 'react';
-import { cartItems, clearCart, isCartOpen, calculateComboDiscount, type CartItem } from '../../store/cart';
+import { cartItems, clearCart, isCartOpen, calculateComboDiscount, refreshCartPrices, type CartItem } from '../../store/cart';
 import { userSession } from '../../store/user';
 import colombiaCities from '../../lib/colombiaCities.json';
 import { trackMetaEvent } from '../../utils/metaPixel';
@@ -171,6 +171,9 @@ export default function CheckoutPage() {
     const hasRestoredRef = useRef(false);
     const lastSentAbandonedSigRef = useRef<string>('');
     const abandonedDebounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+    // Precios vigentes antes de mostrar el resumen del pedido.
+    useEffect(() => { refreshCartPrices(true); }, []);
 
     // Restore cart on checkout mount if ?restore= is present (idempotent)
     useEffect(() => {

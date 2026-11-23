@@ -1,3 +1,4 @@
+import PriceWas from './PriceWas';
 import React, { useState, useEffect, useRef } from 'react';
 import { useStore } from '@nanostores/react';
 import { isSearchOpen } from '../store/cart';
@@ -110,6 +111,7 @@ const SearchDrawer: React.FC = () => {
                                         <div className="result-info">
                                             <h4>{product.name}</h4>
                                             <p className="result-price">
+                                                <PriceWas price={Number(product.prices.price)} regular={Number(product.prices.regular_price)} />
                                                 ${parseInt(product.prices.price).toLocaleString('es-CO')}
                                             </p>
                                         </div>

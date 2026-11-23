@@ -2,7 +2,8 @@ import ArmaTuBlackProgress, { ArmaTuBlackGroupHeading, ArmaTuBlackLineBadge, Arm
 
 import React, { useMemo } from 'react';
 import { useStore } from '@nanostores/react';
-import { cartItems, removeFromCart, updateQuantity, updateCartItemVariation, calculateComboDiscount, type CartItem } from '../store/cart';
+import PriceWas from './PriceWas';
+import { cartItems, removeFromCart, updateQuantity, updateCartItemVariation, calculateComboDiscount, refreshCartPrices, type CartItem } from '../store/cart';
 import { userSession } from '../store/user';
 import { redirectToCheckout } from '../utils/checkout';
 import { trackMetaEvent } from '../utils/metaPixel';
@@ -27,6 +28,8 @@ export default function CartView() {
 
     const [shippingSettings, setShippingSettings] = React.useState({ flat_rate: 21008, free_shipping_threshold: 100000 });
     const [couponCode, setCouponCode] = React.useState('');
+
+    React.useEffect(() => { refreshCartPrices(true); }, []);
 
     React.useEffect(() => {
         fetch('/api/shipping-settings')
@@ -366,7 +369,7 @@ React.useEffect(() => {
                                                         <button onClick={() => updateQuantity(item.key, item.quantity + 1)}>+</button>
                                                     </div>
                                                     <div className="item-price-mobile">
-                                                        × <span>${new Intl.NumberFormat('es-CO').format(item.price)}</span>
+                                                        × <PriceWas price={item.price} regular={item.regular_price} /><span>${new Intl.NumberFormat('es-CO').format(item.price)}</span>
                                                         {lineDiscount > 0 && <> = <span><ArmaTuBlackLinePrice total={item.price * item.quantity} discount={lineDiscount} /></span></>}
                                                     </div>
                                                 </div>

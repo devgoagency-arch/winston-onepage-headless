@@ -512,7 +512,8 @@ export default function ProductCard({ product, isSelected, onSelectionToggle, on
     // Desactivamos el efecto de hover secundario si el usuario está tocando un punto de color
     const isHoverActive = isCardHovered && !!effectiveHoverSrc && !hoveredColor;
 
-    const priceData = enrichedProduct?.prices || product.prices;
+    // Precio y oferta salen del listado (datos vigentes); el JSON guardado solo aporta variaciones e imágenes.
+    const priceData = product.prices;
     const currencyMinorUnit = priceData.currency_minor_unit || 0;
 
     const regularPrice = Number(priceData.regular_price || 0);
@@ -610,7 +611,7 @@ export default function ProductCard({ product, isSelected, onSelectionToggle, on
     const handleQuickAdd = () => {
         if (!quickReady || !quickSize) return;
         const base: any = enrichedProduct || product;
-        const cartProduct = { ...base, variations: quickVariations };
+        const cartProduct = { ...base, prices: product.prices, on_sale: product.on_sale, tags: product.tags || base.tags, variations: quickVariations };
         addToCart(cartProduct, 1, quickColor, quickSize, mainImage?.src || product.images[0]?.src || ''); // abre el carrito lateral
 
         const price = Number(base.prices?.price || 0) / (10 ** (base.prices?.currency_minor_unit || 0));

@@ -165,6 +165,52 @@ function createCartItem(id: number, product_id: number, product: any, price: num
     };
 }
 
+let lastCartRefresh = 0;
+let refreshingCart = false;
+
+/**
+ * Actualiza precio, precio normal, oferta y etiquetas de cada línea con los datos vigentes de WooCommerce.
+ * El carrito guarda esos datos al agregar; sin esto una oferta nueva (o vencida) no se refleja en el carrito.
+ */
+export async function refreshCartPrices(force = false) {
+    if (typeof window === 'undefined' || refreshingCart) return;
+    if (!force && Date.now() - lastCartRefresh < 30000) return;
+    const slugs = [...new Set(Object.values(cartItems.get()).map(raw => {
+        try { return (JSON.parse(raw as string) as CartItem).slug; } catch { return ''; }
+    }).filter(Boolean))];
+    if (slugs.length === 0) return;
+    refreshingCart = true;
+    try {
+        const fresh: Record<string, any> = {};
+        await Promise.all(slugs.map(async slug => {
+            try {
+                const res = await fetch(`/api/products?slug=${encodeURIComponent(slug)}`, { cache: 'no-store' });
+                if (!res.ok) return;
+                const p = await res.json();
+                if (p?.prices?.price) fresh[slug] = p;
+            } catch { /* se conserva el dato guardado */ }
+        }));
+        Object.entries(cartItems.get()).forEach(([key, raw]) => {
+            if (!raw) return;
+            try {
+                const item = JSON.parse(raw as string) as CartItem;
+                const p = fresh[item.slug];
+                if (!p) return;
+                const minor = 10 ** (p.prices.currency_minor_unit || 0);
+                const price = Number(p.prices.price) / minor;
+                const regular = p.prices.regular_price ? Number(p.prices.regular_price) / minor : undefined;
+                if (!(price > 0)) return;
+                if (item.price !== price || item.regular_price !== regular || item.on_sale !== p.on_sale) {
+                    cartItems.setKey(key, JSON.stringify({ ...item, price, regular_price: regular, on_sale: p.on_sale, tags: p.tags || item.tags || [] }));
+                }
+            } catch { /* línea inválida: se ignora */ }
+        });
+        lastCartRefresh = Date.now();
+    } finally {
+        refreshingCart = false;
+    }
+}
+
 export function removeFromCart(itemId: string) {
     cartItems.setKey(itemId, undefined as any);
 }

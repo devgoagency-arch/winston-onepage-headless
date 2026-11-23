@@ -91,11 +91,14 @@ export async function getStaticPaths() {
     console.log("[SSG Total] ✓ JSONs de productos pre-generados exitosamente.");
 
     return allProducts.filter(p => p.slug).map(p => ({
-        params: { slug: p.slug }
+        params: { slug: p.slug },
+        // Precios vigentes de WooCommerce: el JSON guardado puede traer precios viejos.
+        props: { live: { prices: p.prices, on_sale: p.on_sale } }
     }));
 }
 
 const { slug } = Astro.params;
+const { live } = Astro.props as any;
 
 let product: any = null;
 let error: any = null;
@@ -108,6 +111,20 @@ try {
     } else {
         // Fallback dinámico si no existe el archivo (p. ej. en desarrollo)
         product = await getProductBySlug(slug as string);
+    }
+
+    // Los JSON de productos se guardan una sola vez: se renuevan precio y oferta con los datos vigentes del listado.
+    if (product && live?.prices?.price) {
+        const old = product.prices || {};
+        const fresh = live.prices;
+        if (Array.isArray(product.variations)) {
+            product.variations = product.variations.map((v: any) =>
+                v && v.price === old.price && v.regular_price === old.regular_price
+                    ? { ...v, price: fresh.price, regular_price: fresh.regular_price }
+                    : v);
+        }
+        product.prices = { ...old, price: fresh.price, regular_price: fresh.regular_price, sale_price: fresh.sale_price ?? '' };
+        product.on_sale = live.on_sale ?? product.on_sale;
     }
     
     if (product) {

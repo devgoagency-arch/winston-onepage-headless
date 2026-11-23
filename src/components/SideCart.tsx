@@ -1,6 +1,7 @@
 import ArmaTuBlackProgress, { ArmaTuBlackGroupHeading, ArmaTuBlackLineBadge, ArmaTuBlackLinePrice, goToArmaTuBlack, sortForArmaTuBlack, useArmaTuBlack } from './ArmaTuBlackProgress';
 import { useStore } from '@nanostores/react';
-import { cartItems, isCartOpen, removeFromCart, updateQuantity, updateCartItemVariation, calculateComboDiscount, type CartItem } from '../store/cart';
+import PriceWas from './PriceWas';
+import { cartItems, isCartOpen, removeFromCart, updateQuantity, updateCartItemVariation, calculateComboDiscount, refreshCartPrices, type CartItem } from '../store/cart';
 import { Fragment, useEffect, useState, useMemo } from 'react';
 import { redirectToCheckout } from '../utils/checkout';
 
@@ -39,6 +40,10 @@ export default function SideCart() {
     const totalDiscount = discount + armaTuBlackDiscount;
 
     const total = subtotal - totalDiscount;
+
+    useEffect(() => {
+        if ($isCartOpen) refreshCartPrices();
+    }, [$isCartOpen]);
 
     useEffect(() => {
         if ($isCartOpen) {
@@ -198,7 +203,7 @@ export default function SideCart() {
                                                 <button onClick={() => updateQuantity(item.key, item.quantity + 1)}>+</button>
                                             </div>
                                             <div className="item-price-calc">
-                                                × <span>${new Intl.NumberFormat('es-CO').format(item.price)}</span>
+                                                × <PriceWas price={item.price} regular={item.regular_price} /><span>${new Intl.NumberFormat('es-CO').format(item.price)}</span>
                                                 {lineDiscount > 0 && <> = <span><ArmaTuBlackLinePrice total={item.price * item.quantity} discount={lineDiscount} /></span></>}
                                             </div>
                                         </div>
