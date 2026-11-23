@@ -603,6 +603,12 @@ export default function ProductCard({ product, isSelected, onSelectionToggle, on
         return filtered.length > 0 ? filtered : colorAttribute.terms;
     }, [colorAttribute, quickVariations]);
 
+    // Si solo queda un color con stock, la foto y los puntos pasan a ese color (antes la foto era de un color agotado).
+    useEffect(() => {
+        if (!quickReady || quickVariations.length === 0 || selectedColor || hoveredColor) return;
+        if (quickColorTerms.length === 1) setSelectedColor(quickColorTerms[0].slug);
+    }, [quickReady, quickVariations, quickColorTerms, selectedColor, hoveredColor]);
+
     // Si cambia el color y la talla elegida ya no está disponible, se limpia
     useEffect(() => {
         if (quickSize && !quickSizes.some(s => s.slug === quickSize && s.inStock)) setQuickSize(null);
@@ -853,7 +859,7 @@ export default function ProductCard({ product, isSelected, onSelectionToggle, on
                                 <p className="quick-add-title">
                                     Elige tu talla{quickColorName ? <span> · {quickColorName}</span> : null}
                                 </p>
-                                {quickColorTerms.length > 1 && (
+                                {quickColorTerms.length >= 1 && (
                                     <div className="quick-add-colors">
                                         {quickColorTerms.map((term: any) => (
                                             <button
