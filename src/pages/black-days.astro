@@ -8,8 +8,11 @@ import LookOfTheWeek from '../components/LookOfTheWeek.astro';
 import { getLookOfTheWeekData } from '../lib/look';
 import { getHomeBanner } from '../lib/homeBanner';
 import { getAllProducts, getProductsByCategory } from '../lib/woocommerce';
+import { BLACK_DAYS_END } from '../lib/blackDays';
 // Arte nuevo pendiente: configurar una ruta local cuando esté aprobado.
 const BLACK_DAYS_HERO_IMAGE: string = '';
+// Pasada la campaña (30 nov 23:59:59, Bogotá) la página manda a la home sola, sin necesitar otro deploy.
+const campaignEnd = Date.parse(BLACK_DAYS_END) + 1000;
 const stores = [
     {
         name: "C.C. Unicentro",
@@ -89,6 +92,16 @@ const cards = [
 ];
 ---
 <Layout title="Black Friday 2026 · Black Days hasta 70 % off | Winston & Harry" description="Black Friday en Winston & Harry: Black Days del 23 al 30 de noviembre de 2026. Hasta 70 % off en zapatos de cuero y Arma tu Black en todo lo demás." canonical="https://www.winstonandharrystore.com/black-days">
+    <script slot="head" is:inline define:vars={{ campaignEnd }}>
+        // Redirección automática a la home al terminar Black Days (también si la página queda abierta).
+        (() => {
+            const go = () => { if (Date.now() >= campaignEnd) location.replace('/'); };
+            go();
+            const left = campaignEnd - Date.now();
+            if (left > 0 && left < 2147483647) setTimeout(go, left);
+            document.addEventListener('visibilitychange', go);
+        })();
+    </script>
     <Header />
     <main class="black-days-main">
         <section class="black-hero">

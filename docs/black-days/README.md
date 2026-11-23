@@ -17,7 +17,7 @@ Los precios de oferta de zapatos de las bandas 30/50/70 % se cargan en `sale_pri
 
 ## Vista previa para el cliente vs. modo campaña
 
-`/black-days` siempre se genera y puede compartirse en producción. Es indexable (sin `noindex`) y está en el sitemap, con "Black Friday" en título, descripción y hero para captar esa búsqueda. Después del 30 de noviembre: dejarla como página fija reutilizable o redirigirla a la home.
+`/black-days` siempre se genera y puede compartirse en producción. Es indexable (sin `noindex`) y está en el sitemap, con "Black Friday" en título, descripción y hero para captar esa búsqueda. Después del 30 de noviembre a las 23:59:59 (Bogotá) la página redirige sola a la home con un script del navegador, sin necesitar deploy. Más adelante se puede reemplazar por una redirección real 302 (renombrar a `_black-days.astro` y añadir `'/black-days': { status: 302, destination: '/' }` en `redirects`) o dejarla como página fija reutilizable.
 
 Cualquier build anterior a `BLACK_DAYS_PREVIEW_START` (22 de noviembre de 2026, 23:00 Bogotá) es vista previa: el cintillo aparece solo en rutas que empiezan por `/black-days`, sin depender del reloj. La ruta se reevalúa con View Transitions antes del intercambio y en `astro:page-load`.
 
