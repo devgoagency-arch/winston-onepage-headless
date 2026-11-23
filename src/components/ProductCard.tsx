@@ -1103,14 +1103,16 @@ export default function ProductCard({ product, isSelected, onSelectionToggle, on
                         {isArmaEligible && (
                             // Debajo del precio y no sobre la foto: en el celular tapaba el producto.
                             <span className="black-chip black-chip-info">
-                                {armaSaving.inCart === 0
+                                {onSelectionToggle
+                                    ? '🖤 ARMA TU BLACK'
+                                    : armaSaving.inCart === 0
                                     ? '🖤 ARMA TU BLACK · 15 % OFF'
                                     : armaSaving.saving > 0
                                         ? `🖤 SÚMALO Y AHORRAS $${new Intl.NumberFormat('es-CO').format(armaSaving.saving)}`
                                         : '🖤 ARMA TU BLACK'}
                             </span>
                         )}
-                        {isArmaEligible && armaSaving.inCart === 0 && armaSaving.saving > 0 && (
+                        {isArmaEligible && !onSelectionToggle && armaSaving.inCart === 0 && armaSaving.saving > 0 && (
                             <span className="black-price-note">
                                 {currencySymbol}{new Intl.NumberFormat('es-CO').format(renderPrice - armaSaving.saving)} con Arma tu Black
                             </span>
