@@ -1,6 +1,6 @@
 import ArmaTuBlackProgress, { ArmaTuBlackGroupHeading, ArmaTuBlackLineBadge, ArmaTuBlackLinePrice, goToArmaTuBlack, sortForArmaTuBlack, useArmaTuBlack } from './ArmaTuBlackProgress';
 import { useStore } from '@nanostores/react';
-import { cartItems, isCartOpen, removeFromCart, updateQuantity, updateCartItemVariation, calculateComboDiscount, calculateSweater2x1Discount, type CartItem } from '../store/cart';
+import { cartItems, isCartOpen, removeFromCart, updateQuantity, updateCartItemVariation, calculateComboDiscount, type CartItem } from '../store/cart';
 import { Fragment, useEffect, useState, useMemo } from 'react';
 import { redirectToCheckout } from '../utils/checkout';
 
@@ -34,13 +34,9 @@ export default function SideCart() {
         return calculateComboDiscount(items);
     }, [items]);
 
-    const sweater2x1Discount = useMemo(() => {
-        return calculateSweater2x1Discount(items);
-    }, [items]);
-
     const black = useArmaTuBlack(items);
     const armaTuBlackDiscount = black.active ? black.discount : 0;
-    const totalDiscount = discount + sweater2x1Discount + armaTuBlackDiscount;
+    const totalDiscount = discount + armaTuBlackDiscount;
 
     const total = subtotal - totalDiscount;
 
@@ -240,16 +236,6 @@ export default function SideCart() {
                             <div style={{ display: 'flex', justifyContent: 'space-between', gap: 12, padding: '10px 0', fontFamily: 'var(--font-paragraphs)' }}>
                                 <span>🖤 Arma tu Black</span>
                                 <span>−${new Intl.NumberFormat('es-CO').format(armaTuBlackDiscount)}</span>
-                            </div>
-                        )}
-                        {sweater2x1Discount > 0 && (
-                            <div className="footer-top discount-row">
-                                <span className="subtotal-label">🎁 2x1 Suéter Escalera:</span>
-                                <div className="price-stack">
-                                    <span className="subtotal-value" style={{ color: '#d9534f' }}>
-                                        -${new Intl.NumberFormat('es-CO').format(sweater2x1Discount)}
-                                    </span>
-                                </div>
                             </div>
                         )}
                         {totalDiscount > 0 && (

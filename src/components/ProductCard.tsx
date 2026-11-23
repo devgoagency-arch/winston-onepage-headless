@@ -689,11 +689,6 @@ export default function ProductCard({ product, isSelected, onSelectionToggle, on
                             )}
                         </div>
                         
-                        {isEscalera && (
-                            <div className="promo-2x1-badge">
-                                2x1
-                            </div>
-                        )}
 
                         <picture className="primary-image">
                             <img

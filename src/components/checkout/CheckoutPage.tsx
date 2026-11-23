@@ -1,7 +1,7 @@
 import ArmaTuBlackProgress, { ArmaTuBlackGroupHeading, ArmaTuBlackLineBadge, ArmaTuBlackLinePrice, sortForArmaTuBlack, useArmaTuBlack } from '../ArmaTuBlackProgress';
 import { useStore } from '@nanostores/react';
 import { Fragment, useState, useMemo, useEffect, useRef } from 'react';
-import { cartItems, clearCart, isCartOpen, calculateComboDiscount, calculateSweater2x1Discount, type CartItem } from '../../store/cart';
+import { cartItems, clearCart, isCartOpen, calculateComboDiscount, type CartItem } from '../../store/cart';
 import { userSession } from '../../store/user';
 import colombiaCities from '../../lib/colombiaCities.json';
 import { trackMetaEvent } from '../../utils/metaPixel';
@@ -368,13 +368,9 @@ export default function CheckoutPage() {
         return calculateComboDiscount(items);
     }, [items]);
 
-    const sweater2x1Discount = useMemo(() => {
-        return calculateSweater2x1Discount(items);
-    }, [items]);
-
     const black = useArmaTuBlack(items);
     const armaTuBlackDiscount = black.active ? black.discount : 0;
-    const totalDiscount = discount + sweater2x1Discount + armaTuBlackDiscount;
+    const totalDiscount = discount + armaTuBlackDiscount;
 
     const couponDiscount = appliedCoupon ? appliedCoupon.discount : 0;
     const FREE_SHIPPING_THRESHOLD = shippingSettings.free_shipping_threshold;
@@ -1121,12 +1117,6 @@ export default function CheckoutPage() {
                                 <span>−${new Intl.NumberFormat('es-CO').format(armaTuBlackDiscount)}</span>
                             </div>
                         )}
-                        {sweater2x1Discount > 0 && (
-                                    <div className="summary-row" style={{ color: '#d9534f' }}>
-                                        <span>🎁 2x1 Suéter Escalera</span>
-                                        <span>-{fmt(sweater2x1Discount)}</span>
-                                    </div>
-                                )}
                                 <div className="summary-row">
                                     <span>ENVÍO</span>
                                     {shippingCost === 0 ? (

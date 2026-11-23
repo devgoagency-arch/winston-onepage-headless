@@ -19,7 +19,7 @@ export interface BlackUnit {
     tags?: { id: number }[];
 }
 
-// Misma detección histórica que calculateSweater2x1Discount.
+// Detección por nombre/slug del suéter Escalera (antes 2x1, hoy con precio rebajado propio).
 export function isSweaterEscalera(item: BlackUnit): boolean {
     return `${item.slug || ''} ${item.name || ''}`.toLowerCase().includes('escalera');
 }

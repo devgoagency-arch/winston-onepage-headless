@@ -124,6 +124,8 @@ export default defineConfig({
     })
   ],
   redirects: {
+    // Ya no hay 2x1 en el suéter Escalera (está rebajado 50 %): la página promo redirige a la categoría.
+    '/2x1-sueter-tejido-escalera': { status: 302, destination: '/categoria/sueteres-chalecos-hombre' },
     '/review-unicentro': 'https://g.page/r/CUpXPMxMDYUWEBM/review',
     '/review-palatino': 'https://g.page/r/CVqAdcaz3jkUEBM/review',
     '/review-santabarbara': 'https://g.page/r/CfogiOsEUdgVEBM/review',

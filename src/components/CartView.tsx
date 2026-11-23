@@ -2,7 +2,7 @@ import ArmaTuBlackProgress, { ArmaTuBlackGroupHeading, ArmaTuBlackLineBadge, Arm
 
 import React, { useMemo } from 'react';
 import { useStore } from '@nanostores/react';
-import { cartItems, removeFromCart, updateQuantity, updateCartItemVariation, calculateComboDiscount, calculateSweater2x1Discount, type CartItem } from '../store/cart';
+import { cartItems, removeFromCart, updateQuantity, updateCartItemVariation, calculateComboDiscount, type CartItem } from '../store/cart';
 import { userSession } from '../store/user';
 import { redirectToCheckout } from '../utils/checkout';
 import { trackMetaEvent } from '../utils/metaPixel';
@@ -81,13 +81,9 @@ React.useEffect(() => {
         return calculateComboDiscount(items);
     }, [items]);
 
-    const sweater2x1Discount = useMemo(() => {
-        return calculateSweater2x1Discount(items);
-    }, [items]);
-
     const black = useArmaTuBlack(items);
     const armaTuBlackDiscount = black.active ? black.discount : 0;
-    const totalDiscount = discount + sweater2x1Discount + armaTuBlackDiscount;
+    const totalDiscount = discount + armaTuBlackDiscount;
 
     const FREE_SHIPPING_THRESHOLD = shippingSettings.free_shipping_threshold;
     const SHIPPING_COST = shippingSettings.flat_rate;
@@ -433,12 +429,6 @@ React.useEffect(() => {
                                 <span>−${new Intl.NumberFormat('es-CO').format(armaTuBlackDiscount)}</span>
                             </div>
                         )}
-                        {sweater2x1Discount > 0 && (
-                                <div className="summary-row" style={{ color: '#d9534f' }}>
-                                    <span>🎁 2x1 Suéter Escalera</span>
-                                    <span>-${new Intl.NumberFormat('es-CO').format(sweater2x1Discount)}</span>
-                                </div>
-                            )}
                             <div className="summary-row">
                                 <span>Envío</span>
                                 {shippingCost === 0 ? (
