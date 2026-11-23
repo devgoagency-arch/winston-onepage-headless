@@ -698,15 +698,6 @@ export default function ProductCard({ product, isSelected, onSelectionToggle, on
                                     HOT
                                 </div>
                             )}
-                            {isArmaEligible && (
-                                <div className="badge black-chip">
-                                    {armaSaving.inCart === 0
-                                        ? '🖤 ARMA TU BLACK · 15 % OFF'
-                                        : armaSaving.saving > 0
-                                            ? `🖤 SÚMALO Y AHORRAS $${new Intl.NumberFormat('es-CO').format(armaSaving.saving)}`
-                                            : '🖤 ARMA TU BLACK'}
-                                </div>
-                            )}
                         </div>
                         
 
@@ -1107,6 +1098,16 @@ export default function ProductCard({ product, isSelected, onSelectionToggle, on
                         ) : (
                             <span className="current-price">
                                 {currencySymbol}{new Intl.NumberFormat('es-CO').format(renderPrice)}
+                            </span>
+                        )}
+                        {isArmaEligible && (
+                            // Debajo del precio y no sobre la foto: en el celular tapaba el producto.
+                            <span className="black-chip black-chip-info">
+                                {armaSaving.inCart === 0
+                                    ? '🖤 ARMA TU BLACK · 15 % OFF'
+                                    : armaSaving.saving > 0
+                                        ? `🖤 SÚMALO Y AHORRAS $${new Intl.NumberFormat('es-CO').format(armaSaving.saving)}`
+                                        : '🖤 ARMA TU BLACK'}
                             </span>
                         )}
                         {isArmaEligible && armaSaving.inCart === 0 && armaSaving.saving > 0 && (
