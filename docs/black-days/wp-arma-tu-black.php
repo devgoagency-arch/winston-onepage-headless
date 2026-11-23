@@ -17,7 +17,7 @@ function wh_arma_tu_black_amount($prices) {
     $EXTRA_UNITS_DISCOUNT = 0; // por confirmar con negocio
     rsort($prices, SORT_NUMERIC);
     $n = count($prices);
-    $rates = $n === 1 ? array(15) : ($n === 2 ? array(15, 50) : ($n === 3 ? array(15, 15, 50) : array(15, 15, 50, 50)));
+    $rates = $n === 1 ? array(15) : ($n === 2 ? array(0, 50) : array(0, 15, 50, 50));
     $discount = 0;
     foreach ($prices as $index => $price) {
         $pct = $rates[$index] ?? $EXTRA_UNITS_DISCOUNT;

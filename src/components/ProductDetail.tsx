@@ -974,7 +974,7 @@ export default function ProductDetail({ initialProduct }: Props) {
                     ? `15 % off en este producto: queda en $${new Intl.NumberFormat('es-CO').format(Math.round(Number(product.prices?.price || 0) / (10 ** (product.prices?.currency_minor_unit || 0))) - armaSaving.saving)}. Suma otro y el de menor precio lleva 50 %.`
                     : armaSaving.saving > 0
                       ? `Súmalo a tu carrito y ahorras $${new Intl.NumberFormat('es-CO').format(armaSaving.saving)} en total.`
-                      : '15 % off en tu producto; si llevas 2, el de menor precio lleva 50 %.'}{' '}
+                      : '15 % off en tu producto y 50 % en el de menor precio si llevas 2.'}{' '}
                   <a href="/black-days?campaigntab=249#favoritos-sticky">Ver cómo →</a>
                 </p>
               )}
