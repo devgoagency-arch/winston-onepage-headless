@@ -189,26 +189,20 @@ function readJsonStrict(filePath, label) {
 }
 
 /**
- * Valida la integridad completa del snapshot en `snapshotDir`.
+ * Valida la integridad completa de los datos del snapshot ya cargados en memoria
+ * ({ 'manifest.json': ..., 'products.json': ..., ... }).
  * Lanza Error descriptivo si cualquier condición crítica falla.
  */
-export function validateSnapshot(
-  snapshotDir = path.join(process.cwd(), 'src', 'data', 'snapshot'),
+export function validateSnapshotData(
+  loaded,
   {
     allowedEmptySlugs = ALLOWED_EMPTY_CATEGORY_SLUGS,
     coreCategorySlugs = CORE_CATEGORY_SLUGS,
     minInStockProducts = 1,
   } = {}
 ) {
-  if (!fs.existsSync(snapshotDir)) {
-    throw new Error(
-      `[Snapshot Guard] No existe el directorio de snapshot (${snapshotDir}). Ejecuta "npm run snapshot" para generar el snapshot antes del build.`
-    );
-  }
-
-  const loaded = {};
-  for (const fileName of REQUIRED_SNAPSHOT_FILES) {
-    loaded[fileName] = readJsonStrict(path.join(snapshotDir, fileName), fileName);
+  if (!loaded || typeof loaded !== 'object') {
+    throw new Error('[Snapshot Guard] Los datos del snapshot son inválidos.');
   }
 
   const manifest = loaded['manifest.json'];
@@ -307,4 +301,26 @@ export function validateSnapshot(
     parentMap,
     categoryProductCounts,
   };
+}
+
+/**
+ * Valida la integridad completa del snapshot en `snapshotDir`.
+ * Lanza Error descriptivo si cualquier condición crítica falla.
+ */
+export function validateSnapshot(
+  snapshotDir = path.join(process.cwd(), 'src', 'data', 'snapshot'),
+  opts = {}
+) {
+  if (!fs.existsSync(snapshotDir)) {
+    throw new Error(
+      `[Snapshot Guard] No existe el directorio de snapshot (${snapshotDir}). Ejecuta "npm run snapshot" para generar el snapshot antes del build.`
+    );
+  }
+
+  const loaded = {};
+  for (const fileName of REQUIRED_SNAPSHOT_FILES) {
+    loaded[fileName] = readJsonStrict(path.join(snapshotDir, fileName), fileName);
+  }
+
+  return validateSnapshotData(loaded, opts);
 }

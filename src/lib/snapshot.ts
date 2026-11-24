@@ -2,18 +2,21 @@
  * src/lib/snapshot.ts
  *
  * Lectura 100% offline del snapshot commiteado en src/data/snapshot/*.json.
- * - menus.json y cms.json se importan estáticamente para que también estén
- *   disponibles en Vercel Serverless Functions (rutas prerender=false como /blog, /buscar, /carrito, /checkout)
+ * - Todos los JSON del snapshot se importan estáticamente para que estén
+ *   disponibles tanto en SSG (build-time) como en Vercel Serverless Functions
+ *   (rutas prerender=false como /api/products, /blog, /buscar, /carrito, /checkout)
  *   sin hacer fetch HTTP ni leer del sistema de archivos en runtime.
- * - products.json, categories.json y attributes.json se cargan y validan en build-time
- *   via validateSnapshot() con caché en memoria.
+ * - Los datos se validan una sola vez via validateSnapshotData() con caché en memoria.
  */
 
-import path from 'node:path';
+import manifestJson from '../data/snapshot/manifest.json';
+import productsJson from '../data/snapshot/products.json';
+import categoriesJson from '../data/snapshot/categories.json';
 import menusJson from '../data/snapshot/menus.json';
+import attributesJson from '../data/snapshot/attributes.json';
 import cmsJson from '../data/snapshot/cms.json';
 import {
-  validateSnapshot,
+  validateSnapshotData,
   EXCLUDED_CATEGORY_SLUGS,
   mapAstroToWpSlug,
   mapWpToAstroSlug,
@@ -24,13 +27,18 @@ import {
 import { STRICT_CATEGORIES } from './woocommerce';
 import { isOnSale, isInStock, getProductPrice } from './productFilters';
 
-const SNAPSHOT_DIR = path.join(process.cwd(), 'src', 'data', 'snapshot');
-
-let cachedSnapshot: ReturnType<typeof validateSnapshot> | null = null;
+let cachedSnapshot: ReturnType<typeof validateSnapshotData> | null = null;
 
 export function getSnapshotData() {
   if (!cachedSnapshot) {
-    cachedSnapshot = validateSnapshot(SNAPSHOT_DIR);
+    cachedSnapshot = validateSnapshotData({
+      'manifest.json': manifestJson,
+      'products.json': productsJson,
+      'categories.json': categoriesJson,
+      'menus.json': menusJson,
+      'attributes.json': attributesJson,
+      'cms.json': cmsJson,
+    });
   }
   return cachedSnapshot;
 }
