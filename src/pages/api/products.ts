@@ -11,7 +11,10 @@ export const config = {
     maxDuration: 10,
 };
 
-const LIVE_TIMEOUT_MS = 3500;
+// El detalle por slug se pide en segundo plano (la página ya se ve con el snapshot) y Woo tarda ~4 s.
+// La búsqueda espera en línea al visitante, así que usa un límite más corto.
+const SLUG_TIMEOUT_MS = 8000;
+const SEARCH_TIMEOUT_MS = 3500;
 
 function withTimeout<T>(promise: Promise<T>, ms: number, label: string): Promise<T> {
     let timer: ReturnType<typeof setTimeout> | undefined;
@@ -38,7 +41,7 @@ export const GET: APIRoute = async ({ url }) => {
             try {
                 const results = await withTimeout(
                     searchProducts(search, perPage),
-                    LIVE_TIMEOUT_MS,
+                    SEARCH_TIMEOUT_MS,
                     'searchProducts'
                 );
                 return new Response(JSON.stringify(results), {
@@ -62,13 +65,13 @@ export const GET: APIRoute = async ({ url }) => {
             }
         }
 
-        // 1. DETALLE DEL PRODUCTO INDIVIDUAL (en vivo con respaldo del snapshot)
+        // 1. DETALLE DEL PRODUCTO INDIVIDUAL (en vivo hasta 8 s con respaldo del snapshot)
         if (slug) {
             let liveProduct: any = null;
             try {
                 liveProduct = await withTimeout(
                     getProductBySlug(slug),
-                    LIVE_TIMEOUT_MS,
+                    SLUG_TIMEOUT_MS,
                     `getProductBySlug(${slug})`
                 );
             } catch (liveErr: any) {
