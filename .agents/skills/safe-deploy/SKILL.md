@@ -1,14 +1,22 @@
 ---
-name: "Safe Deploy / Bloqueo de Git Push"
-description: "Se activa cada vez que se vaya a realizar un deploy, git push, o subir código a producción. Obliga al agente a pedir confirmación al usuario antes de ejecutar el comando."
+name: "Safe Deploy / Push a Main Validado"
+description: "Se activa antes de hacer commit, git push o deploy a main. Permite push directo sin confirmación extra cuando build y tests pasan, cuidando costos de Vercel y reglas de seguridad."
 ---
 
-# Reglas Estrictas de Despliegue Seguro
+# Reglas de Despliegue Seguro a `main`
 
-Cuando vayas a ejecutar un comando que involucre subir código a producción (como `git push origin main`, despliegues en Vercel, o similares), ESTÁS OBLIGADO a seguir este protocolo ANTES de ejecutar el comando:
+Cuando vayas a subir cambios a producción (`git push origin main`), sigue estas reglas:
 
-1. **Verificar Autorización Explícita**: Verifica en el mensaje del usuario si ha escrito explícitamente la palabra **'deploy'** o **'commit a main y deploy'**. Si NO lo ha hecho, responde inmediatamente diciendo que tienes bloqueado el acceso a producción sin esa palabra y no ejecutes nada.
-2. **Pedir Confirmación (Ask Question)**: Si el usuario sí usó la palabra 'deploy', detente y usa la herramienta `ask_question` para mostrarle un modal interactivo con el resumen de los commits que vas a hacer.
-   - Pregunta: "¿Confirmas el pase a producción (git push) con los siguientes cambios?"
-   - Opciones: "Sí, hacer deploy a main", "No, cancelar"
-3. **Bloqueo Físico**: Solo podrás proceder a usar la herramienta `run_command` con `git push` si el usuario ha seleccionado la opción afirmativa en la pregunta interactiva.
+1. **Validación obligatoria antes del push**:
+   - Ejecuta `node --test tests/*.mjs` y `npm run build`.
+   - Si ambos pasan, puedes hacer `git push origin main` directamente sin pedir confirmación adicional.
+   - Si el build o los tests fallan, **NO hagas push** y reporta el error a Nestor.
+2. **Restricciones de Git**:
+   - Prohibido usar `--force` o `--no-verify`.
+   - No cambiar de rama; trabajar siempre en `main`.
+3. **Control de costos en Vercel**:
+   - Cada deploy de producción en Vercel cuesta dinero. Evita deploys especulativos o repetidos: agrupa los cambios y sube una sola vez cuando estén listos y probados.
+4. **Seguridad y alcance**:
+   - Nunca escribas claves, contraseñas ni secretos en el repositorio o en el chat.
+   - No cambies variables de entorno de Vercel.
+   - No modifiques ni refactorices archivos, configuraciones o lógica que no hayan sido pedidos.
