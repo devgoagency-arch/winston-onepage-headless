@@ -371,7 +371,8 @@ export default function CheckoutPage() {
         return calculateComboDiscount(items);
     }, [items]);
 
-    const black = useArmaTuBlack(items);
+    // Con cupón aplicado solo cuenta el cupón: Arma tu Black queda en 0 y no se muestra en el resumen.
+    const black = useArmaTuBlack(items, !!appliedCoupon);
     const armaTuBlackDiscount = black.active ? black.discount : 0;
     const totalDiscount = discount + armaTuBlackDiscount;
 

@@ -342,13 +342,13 @@ export function calculateComboDiscount(items: (CartItem & { key?: string })[]) {
  * Calcula el total de todos los descuentos activos en el carrito.
  * Incluye: combo jean+camisa+cinturón (25%) y Arma tu Black.
  */
-export function calculateTotalDiscount(items: (CartItem & { key?: string })[]): {
+export function calculateTotalDiscount(items: (CartItem & { key?: string })[], hasCoupon = false): {
     comboDiscount: number;
     armaTuBlackDiscount: number;
     total: number;
 } {
     const comboDiscount = calculateComboDiscount(items);
-    const armaTuBlackDiscount = calculateArmaTuBlackDiscount(items);
+    const armaTuBlackDiscount = calculateArmaTuBlackDiscount(items, new Date(), hasCoupon);
     return {
         armaTuBlackDiscount,
         comboDiscount,
@@ -356,6 +356,8 @@ export function calculateTotalDiscount(items: (CartItem & { key?: string })[]): 
     };
 }
 
-export function calculateArmaTuBlackDiscount(items: CartItem[], now = new Date()): number {
+// Con un cupón aplicado solo cuenta el cupón: Arma tu Black no se suma (misma regla que WooCommerce desde el 23 nov, 3:03 p. m.).
+export function calculateArmaTuBlackDiscount(items: CartItem[], now = new Date(), hasCoupon = false): number {
+    if (hasCoupon) return 0;
     return isBlackDaysActive(now) ? calculateArmaTuBlack(items).discount : 0;
 }

@@ -12,7 +12,8 @@ export function goToArmaTuBlack(source = 'carrito') {
     }
 }
 
-export function useArmaTuBlack(items: BlackUnit[]) {
+// hasCoupon: con un cupón aplicado Arma tu Black no se suma; el hook se comporta como fuera de campaña (sin descuento ni avisos).
+export function useArmaTuBlack(items: BlackUnit[], hasCoupon = false) {
     // Evita diferencias entre HTML estático e hidratación.
     const [active, setActive] = useState(false);
     useEffect(() => {
@@ -35,7 +36,7 @@ export function useArmaTuBlack(items: BlackUnit[]) {
     }, []);
     // `byItem` va en el mismo orden que `items`: descuento de cada línea del carrito.
     const byItem = useMemo(() => allocateArmaTuBlack(items), [items]);
-    return { ...calculateArmaTuBlack(items), active, byItem };
+    return { ...calculateArmaTuBlack(items), active: active && !hasCoupon, byItem };
 }
 
 // Ordena las líneas para que se lea la escalera: primero los productos con descuento Arma tu Black
