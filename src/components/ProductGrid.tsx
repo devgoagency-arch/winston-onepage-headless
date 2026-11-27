@@ -1,7 +1,7 @@
 import { useState, useEffect, useMemo, useRef } from 'react';
 import ProductCard from './ProductCard';
 import { MENU_CATEGORIES, EXCLUDED_SLUGS } from '../lib/menuCategories';
-import { applyFiltersAndSort } from '../lib/productFilters';
+import { applyFiltersAndSort, pickMatchedTalla } from '../lib/productFilters';
 
 interface Product {
   id: number;
@@ -450,7 +450,11 @@ export default function ProductGrid({
 
         <div className="grid-4x3">
           {displayedProducts.map((product) => (
-            <ProductCard key={product.id} product={product} />
+            <ProductCard
+              key={product.id}
+              product={product}
+              selectedTalla={pickMatchedTalla(product, selectedTallas)}
+            />
           ))}
         </div>
 

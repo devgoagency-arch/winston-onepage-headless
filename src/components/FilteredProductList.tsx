@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import ProductCard from './ProductCard';
 import { MENU_CATEGORIES, EXCLUDED_SLUGS } from '../lib/menuCategories';
-import { applyFiltersAndSort } from '../lib/productFilters';
+import { applyFiltersAndSort, pickMatchedTalla } from '../lib/productFilters';
 
 interface FilteredProductListProps {
     initialProducts: any[];
@@ -492,7 +492,11 @@ const FilteredProductList: React.FC<FilteredProductListProps> = ({
                     ) : filteredProducts && filteredProducts.length > 0 ? (
                         <div className="grid-4x3">
                             {filteredProducts.slice(0, visibleCount).map((product) => (
-                                <ProductCard key={product.id} product={product} />
+                                <ProductCard
+                                    key={product.id}
+                                    product={product}
+                                    selectedTalla={pickMatchedTalla(product, selectedTallas)}
+                                />
                             ))}
                         </div>
                     ) : !error && (

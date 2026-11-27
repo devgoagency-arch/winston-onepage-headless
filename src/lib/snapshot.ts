@@ -26,6 +26,7 @@ import {
 } from './snapshotGuard.mjs';
 import { STRICT_CATEGORIES } from './woocommerce';
 import { isOnSale, isInStock, getProductPrice } from './productFilters';
+import { getFromPrice, getSizesInStock, getColorsInStock } from './variationPricing';
 
 let cachedSnapshot: ReturnType<typeof validateSnapshotData> | null = null;
 
@@ -145,26 +146,64 @@ function sortList(products: any[], orderBy = 'menu_order', order = 'asc'): any[]
 }
 
 export function toLightweightProduct(p: any): any {
-  return {
+  const vars =
+    Array.isArray(p?.variations) && p.variations.length > 0 && typeof p.variations[0] === 'object' && p.variations[0] !== null
+      ? p.variations
+      : Array.isArray(p?.variations_data) && p.variations_data.length > 0
+        ? p.variations_data
+        : [];
+  const hasVariations = vars.length > 0 && p?.type !== 'simple';
+
+  let price = p.price || p.prices?.price || '0';
+  let regularPrice = p.regular_price || p.prices?.regular_price || '0';
+  let salePrice = p.sale_price || p.prices?.sale_price || '';
+  let prices = p.prices;
+  let onSale = Boolean(p.on_sale);
+
+  if (hasVariations) {
+    const from = getFromPrice(p);
+    if (from.price > 0) {
+      price = String(Math.round(from.price));
+      regularPrice = String(Math.round(from.regular > 0 ? from.regular : from.price));
+      const hasDiscount = from.regular > from.price;
+      salePrice = hasDiscount ? price : '';
+      onSale = hasDiscount;
+      prices = {
+        ...(p.prices || {}),
+        price,
+        regular_price: regularPrice,
+        sale_price: salePrice,
+      };
+    }
+  }
+
+  const item: any = {
     id: p.id,
     name: p.name,
     slug: p.slug,
     type: p.type,
     menu_order: Number(p.menu_order || 0),
-    price: p.price || p.prices?.price || '0',
-    regular_price: p.regular_price || p.prices?.regular_price || '0',
-    sale_price: p.sale_price || p.prices?.sale_price || '',
-    prices: p.prices,
+    price,
+    regular_price: regularPrice,
+    sale_price: salePrice,
+    prices,
     images: (p.images || []).slice(0, 2),
     categories: p.categories || [],
     attributes: p.attributes || [],
     tags: p.tags || [],
     stock_status: p.stock_status,
-    on_sale: Boolean(p.on_sale),
+    on_sale: onSale,
     featured: Boolean(p.featured),
     date_created: p.date_created || null,
     variation_images_map: p.variation_images_map || null,
   };
+
+  if (hasVariations) {
+    item.sizes_in_stock = getSizesInStock(p);
+    item.colors_in_stock = getColorsInStock(p);
+  }
+
+  return item;
 }
 
 export function getSnapshotAllPublishedProducts(): any[] {

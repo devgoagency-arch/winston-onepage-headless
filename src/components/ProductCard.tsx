@@ -58,9 +58,10 @@ interface Props {
     onVariationChange?: (id: number, color: string | null, size: string | null, variationId?: number | null) => void;
     initialColor?: string | null;
     initialSize?: string | null;
+    selectedTalla?: string | null;
 }
 
-export default function ProductCard({ product, isSelected, onSelectionToggle, onVariationChange, initialColor, initialSize }: Props) {
+export default function ProductCard({ product, isSelected, onSelectionToggle, onVariationChange, initialColor, initialSize, selectedTalla }: Props) {
     const [isFavorite, setIsFavorite] = useState(false);
     const [selectedColor, setSelectedColor] = useState<string | null>(initialColor || null);
     const [hoveredColor, setHoveredColor] = useState<string | null>(null);
@@ -658,6 +659,14 @@ export default function ProductCard({ product, isSelected, onSelectionToggle, on
         }, 1200);
     };
 
+    const buildProductHref = (color?: string | null, talla?: string | null) => {
+        const params = new URLSearchParams();
+        if (color) params.set('color', color);
+        if (talla) params.set('talla', talla);
+        const qs = params.toString();
+        return `/productos/${product.slug}${qs ? `?${qs}` : ''}`;
+    };
+
     return (
         <div
             className="product-card"
@@ -665,7 +674,7 @@ export default function ProductCard({ product, isSelected, onSelectionToggle, on
             onMouseLeave={() => setIsCardHovered(false)}
         >
             <div className="card-content">
-                <a href={`/productos/${product.slug}${selectedColor ? `?color=${selectedColor}` : ''}`} className="image-link">
+                <a href={buildProductHref(selectedColor, selectedTalla)} className="image-link">
                     <div className={`product-image ${isHoverActive ? 'hover-active' : ''}`}>
                         <div className="badges-container">
                             {(() => {
@@ -904,7 +913,7 @@ export default function ProductCard({ product, isSelected, onSelectionToggle, on
                                         ))}
                                     </div>
                                     <div className="quick-add-actions">
-                                        <a href={`/productos/${product.slug}${quickColor ? `?color=${quickColor}` : ''}`} className="quick-add-details">
+                                        <a href={buildProductHref(quickColor, quickSize || selectedTalla)} className="quick-add-details">
                                             Ver detalles
                                         </a>
                                         <button
@@ -986,7 +995,7 @@ export default function ProductCard({ product, isSelected, onSelectionToggle, on
                             >
                                 Añadir al carrito
                             </button>
-                            <a href={`/productos/${product.slug}${quickColor ? `?color=${quickColor}` : ''}`} className="qa-sheet-details">
+                            <a href={buildProductHref(quickColor, quickSize || selectedTalla)} className="qa-sheet-details">
                                 Ver detalles del producto
                             </a>
                         </div>
@@ -1016,7 +1025,7 @@ export default function ProductCard({ product, isSelected, onSelectionToggle, on
                 <div className="product-info">
                     <div className="info-top-row">
                         <h3>
-                            <a href={`/productos/${product.slug}${selectedColor ? `?color=${selectedColor}` : ''}`}>{product.name}</a>
+                            <a href={buildProductHref(selectedColor, selectedTalla)}>{product.name}</a>
                         </h3>
                     </div>
 

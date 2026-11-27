@@ -6,6 +6,7 @@ import { redirectToCheckout } from '../utils/checkout';
 import { trackMetaEvent } from '../utils/metaPixel';
 import { isArmaCatalogProduct } from '../lib/blackDays';
 import { useArmaSaving } from '../lib/armaSaving';
+import { getFromPrice, getDiscountPct, parsePrice } from '../lib/variationPricing';
 // Función de normalización robusta para comparar slugs/nombres con acentos
 function normalizeAttr(str: any): string {
   if (!str) return '';
@@ -314,6 +315,7 @@ export default function ProductDetail({ initialProduct }: Props) {
       : (currentProduct.variations_data || []);
       
     if (!variations || variations.length === 0) return null;
+    if (hasSize && !selectedSize) return null;
     if (!selectedColor && !selectedSize) return null;
 
     const targetColor = normalizeAttr(selectedColor);
@@ -349,7 +351,42 @@ export default function ProductDetail({ initialProduct }: Props) {
 
       return matchesColor && matchesSize;
     });
-  }, [currentProduct.variations, selectedColor, selectedSize]);
+  }, [currentProduct.variations, currentProduct.variations_data, selectedColor, selectedSize, hasSize]);
+
+  const fromPrice = useMemo(() => getFromPrice(currentProduct), [currentProduct]);
+
+  const isVariableProduct = useMemo(() => {
+    if (currentProduct.type === 'variable') return true;
+    const vars = (Array.isArray(currentProduct.variations) && typeof currentProduct.variations[0] === 'object')
+      ? currentProduct.variations
+      : ((currentProduct as any).variations_data || []);
+    return Array.isArray(vars) && vars.length > 0;
+  }, [currentProduct]);
+
+  const displayPricing = useMemo(() => {
+    if (selectedVariation) {
+      const varPrice = parsePrice(selectedVariation.price);
+      const price = varPrice > 0 ? Math.round(varPrice) : Math.round(fromPrice.price);
+      const varRegular = Math.round(parsePrice(selectedVariation.regular_price));
+      const hasDiscount = varRegular > price && price > 0;
+      return {
+        price,
+        regular: hasDiscount ? varRegular : 0,
+        discountPct: hasDiscount ? getDiscountPct(price, varRegular) : 0,
+        showFromPrefix: false,
+      };
+    }
+
+    const price = Math.round(fromPrice.price);
+    const regular = Math.round(fromPrice.regular);
+    const hasDiscount = regular > price && price > 0;
+    return {
+      price,
+      regular: hasDiscount ? regular : 0,
+      discountPct: fromPrice.discountPct,
+      showFromPrefix: isVariableProduct && fromPrice.hasRange,
+    };
+  }, [selectedVariation, fromPrice, isVariableProduct]);
 
   /* Galería de imágenes: filtra por color seleccionado, con p.images como fallback */
   const filteredImages = useMemo(() => {
@@ -936,35 +973,30 @@ export default function ProductDetail({ initialProduct }: Props) {
                 <h1 className="product-title">{product.name}</h1>
                 <div className="detail-badges">
                   {product.featured && <span className="badge hot-badge">HOT</span>}
-                  {product.on_sale && Number(product.prices.regular_price || 0) > Number(product.prices.price || 0) && (
+                  {displayPricing.discountPct > 0 && (
                     <span className="badge discount-badge">
-                      -{Math.round(((Number(product.prices.regular_price) - Number(product.prices.price)) / Number(product.prices.regular_price)) * 100)}%
+                      -{displayPricing.discountPct}%
                     </span>
                   )}
                 </div>
               </div>
 
               <div className="product-price-container">
-                {selectedVariation ? (
+                {displayPricing.regular > 0 ? (
                   <div className="price-wrapper">
-                    {Number(selectedVariation.regular_price || 0) > Number(selectedVariation.price || 0) && (
-                      <span className="old-price">{formatPrice(selectedVariation.regular_price)}</span>
-                    )}
+                    <span className="old-price">{formatPrice(displayPricing.regular)}</span>
                     <span className="sale-price highlight">
-                      {selectedVariation.price && Number(selectedVariation.price) > 0
-                        ? formatPrice(selectedVariation.price)
-                        : formatPrice(currentProduct.prices.price)}
+                      {displayPricing.showFromPrefix ? 'Desde ' : ''}{formatPrice(displayPricing.price)}
                     </span>
                   </div>
-                ) : currentProduct.on_sale ? (
+                ) : selectedVariation ? (
                   <div className="price-wrapper">
-                    {Number(currentProduct.prices.regular_price || 0) > Number(currentProduct.prices.price || 0) && (
-                      <span className="old-price">{formatPrice(currentProduct.prices.regular_price)}</span>
-                    )}
-                    <span className="sale-price highlight">{formatPrice(currentProduct.prices.price)}</span>
+                    <span className="sale-price highlight">{formatPrice(displayPricing.price)}</span>
                   </div>
                 ) : (
-                  <p className="product-price">{formatPrice(currentProduct.prices.price)}</p>
+                  <p className="product-price">
+                    {displayPricing.showFromPrefix ? 'Desde ' : ''}{formatPrice(displayPricing.price)}
+                  </p>
                 )}
               </div>
 
@@ -1301,27 +1333,12 @@ export default function ProductDetail({ initialProduct }: Props) {
         <div className="sticky-bar-row">
           {/* Precio */}
           <div className="sticky-bar-price">
-            {selectedVariation ? (
-              <>
-                {Number(selectedVariation.regular_price || 0) > Number(selectedVariation.price || 0) && (
-                  <span className="sticky-old-price">{formatPrice(selectedVariation.regular_price)}</span>
-                )}
-                <span className="sticky-sale-price">
-                  {selectedVariation.price && Number(selectedVariation.price) > 0
-                    ? formatPrice(selectedVariation.price)
-                    : formatPrice(currentProduct.prices.price)}
-                </span>
-              </>
-            ) : currentProduct.on_sale ? (
-              <>
-                {Number(currentProduct.prices.regular_price || 0) > Number(currentProduct.prices.price || 0) && (
-                  <span className="sticky-old-price">{formatPrice(currentProduct.prices.regular_price)}</span>
-                )}
-                <span className="sticky-sale-price">{formatPrice(currentProduct.prices.price)}</span>
-              </>
-            ) : (
-              <span className="sticky-sale-price">{formatPrice(currentProduct.prices.price)}</span>
+            {displayPricing.regular > 0 && (
+              <span className="sticky-old-price">{formatPrice(displayPricing.regular)}</span>
             )}
+            <span className="sticky-sale-price">
+              {displayPricing.showFromPrefix ? 'Desde ' : ''}{formatPrice(displayPricing.price)}
+            </span>
           </div>
 
           {/* Caso A: selección completa → resumen + agregar */}
@@ -1368,20 +1385,12 @@ export default function ProductDetail({ initialProduct }: Props) {
 
             {/* Precio dentro del bottom sheet */}
             <div className="bs-price">
-              {selectedVariation ? (
-                <>
-                  {Number(selectedVariation.regular_price || 0) > Number(selectedVariation.price || 0) && (
-                    <span className="bs-old-price">{formatPrice(selectedVariation.regular_price)}</span>
-                  )}
-                  <span className="bs-current-price">
-                    {selectedVariation.price && Number(selectedVariation.price) > 0
-                      ? formatPrice(selectedVariation.price)
-                      : formatPrice(currentProduct.prices.price)}
-                  </span>
-                </>
-              ) : (
-                <span className="bs-current-price">{formatPrice(currentProduct.prices.price)}</span>
+              {displayPricing.regular > 0 && (
+                <span className="bs-old-price">{formatPrice(displayPricing.regular)}</span>
               )}
+              <span className="bs-current-price">
+                {displayPricing.showFromPrefix ? 'Desde ' : ''}{formatPrice(displayPricing.price)}
+              </span>
             </div>
 
             <div className="bs-body">

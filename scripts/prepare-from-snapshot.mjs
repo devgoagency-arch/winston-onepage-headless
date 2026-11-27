@@ -25,7 +25,7 @@ import {
   mapWpToAstroSlug,
   filterProductsForCategory,
 } from '../src/lib/snapshotGuard.mjs';
-import { stripHtml } from '../src/lib/wcMapper.mjs';
+import { stripHtml, normalizeSlug } from '../src/lib/wcMapper.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
@@ -112,27 +112,148 @@ function sortByMenuOrderAndNew(products) {
   return sortNewProductsFirst(byMenu);
 }
 
-function toLightweightCatalogProduct(p, includeSearchText = false) {
+function getProductVariations(p) {
+  if (Array.isArray(p?.variations) && p.variations.length > 0 && typeof p.variations[0] === 'object' && p.variations[0] !== null) {
+    return p.variations;
+  }
+  if (Array.isArray(p?.variations_data) && p.variations_data.length > 0) {
+    return p.variations_data;
+  }
+  return [];
+}
+
+function getInStockVariations(p) {
+  const vars = getProductVariations(p);
+  if (vars.length === 0) return [];
+  const hasStockData = vars.some((v) => variationInStock(v) !== undefined);
+  if (!hasStockData) return vars;
+  return vars.filter((v) => variationInStock(v) === true);
+}
+
+function isColorAttr(a) {
+  const n = String(a?.name || '').toLowerCase();
+  const s = String(a?.slug || '').toLowerCase();
+  const id = String(a?.id || '').toLowerCase();
+  return n.includes('color') || s.includes('color') || n.includes('selecciona-el-color') || id.includes('color');
+}
+
+function isSizeAttr(a) {
+  const n = String(a?.name || '').toLowerCase();
+  const s = String(a?.slug || '').toLowerCase();
+  const id = String(a?.id || '').toLowerCase();
+  return (
+    n.includes('talla') ||
+    n.includes('tamaño') ||
+    n.includes('tamano') ||
+    n.includes('size') ||
+    n.includes('numero') ||
+    n.includes('nmero') ||
+    n.includes('selecciona-una-talla') ||
+    s.includes('talla') ||
+    s.includes('size') ||
+    id.includes('talla') ||
+    id.includes('size')
+  );
+}
+
+function getCheapestInStockPrice(p) {
+  const inStock = p?.type === 'simple' ? [] : getInStockVariations(p);
+  const priced = inStock
+    .map((v) => {
+      const price = parsePrice(v?.price || v?.sale_price || v?.regular_price);
+      const regularRaw = parsePrice(v?.regular_price);
+      return { price, regular: regularRaw > 0 ? regularRaw : price };
+    })
+    .filter((v) => v.price > 0);
+  if (priced.length === 0) return null;
+  let best = priced[0];
+  for (const item of priced) {
+    if (item.price < best.price || (item.price === best.price && item.regular > best.regular)) {
+      best = item;
+    }
+  }
+  return best;
+}
+
+function getInStockAttrSlugs(p, predicate) {
+  const inStock = getInStockVariations(p);
+  if (inStock.length === 0) return [];
+  const collected = new Set();
+  const parentAttr = Array.isArray(p?.attributes) ? p.attributes.find(predicate) : null;
+  const parentTerms = Array.isArray(parentAttr?.terms)
+    ? parentAttr.terms
+    : Array.isArray(parentAttr?.options)
+      ? parentAttr.options.map((o) => ({ slug: o, name: o }))
+      : [];
+
+  for (const v of inStock) {
+    const matched = (Array.isArray(v?.attributes) ? v.attributes : []).find(predicate);
+    if (!matched) continue;
+    const raw = matched.value ?? matched.option ?? matched.text ?? '';
+    const slug = normalizeSlug(String(raw).trim());
+    if (slug) {
+      collected.add(slug);
+    } else if (parentTerms.length > 0) {
+      for (const term of parentTerms) {
+        const termSlug = normalizeSlug(String(term?.slug || term?.name || term).trim());
+        if (termSlug) collected.add(termSlug);
+      }
+    }
+  }
+  return Array.from(collected);
+}
+
+export function toLightweightCatalogProduct(p, includeSearchText = false) {
+  const vars = getProductVariations(p);
+  const hasVariations = vars.length > 0 && p?.type !== 'simple';
+
+  let price = p.price || p.prices?.price || '0';
+  let regularPrice = p.regular_price || p.prices?.regular_price || '0';
+  let salePrice = p.sale_price || p.prices?.sale_price || '';
+  let prices = p.prices;
+  let onSale = Boolean(p.on_sale);
+
+  if (hasVariations) {
+    const cheapest = getCheapestInStockPrice(p);
+    if (cheapest && cheapest.price > 0) {
+      price = String(Math.round(cheapest.price));
+      regularPrice = String(Math.round(cheapest.regular > 0 ? cheapest.regular : cheapest.price));
+      const hasDiscount = cheapest.regular > cheapest.price;
+      salePrice = hasDiscount ? price : '';
+      onSale = hasDiscount;
+      prices = {
+        ...(p.prices || {}),
+        price,
+        regular_price: regularPrice,
+        sale_price: salePrice,
+      };
+    }
+  }
+
   const item = {
     id: p.id,
     name: p.name,
     slug: p.slug,
     type: p.type,
     menu_order: Number(p.menu_order || 0),
-    price: p.price || p.prices?.price || '0',
-    regular_price: p.regular_price || p.prices?.regular_price || '0',
-    sale_price: p.sale_price || p.prices?.sale_price || '',
-    prices: p.prices,
+    price,
+    regular_price: regularPrice,
+    sale_price: salePrice,
+    prices,
     images: (p.images || []).slice(0, includeSearchText ? 3 : 2),
     categories: p.categories || [],
     attributes: p.attributes || [],
     tags: p.tags || [],
     stock_status: p.stock_status,
-    on_sale: Boolean(p.on_sale),
+    on_sale: onSale,
     featured: Boolean(p.featured),
     date_created: p.date_created || null,
     variation_images_map: p.variation_images_map || null,
   };
+  if (hasVariations) {
+    item.sizes_in_stock = getInStockAttrSlugs(p, isSizeAttr);
+    item.colors_in_stock = getInStockAttrSlugs(p, isColorAttr);
+  }
   if (includeSearchText) {
     item.short_description = stripHtml(p.short_description, 400);
     item.description = stripHtml(p.description, 800);
@@ -279,4 +400,8 @@ function main() {
   );
 }
 
-main();
+const isMain =
+  process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url);
+if (isMain) {
+  main();
+}

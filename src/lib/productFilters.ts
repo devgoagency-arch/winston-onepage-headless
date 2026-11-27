@@ -81,11 +81,27 @@ export function isOnSale(p: any): boolean {
 
 // ─── Filtros ─────────────────────────────────────────────────────────────────
 
-/** Filtra por colores seleccionados. */
+function normalizeFilterSlug(text: unknown): string {
+    if (text === undefined || text === null) return '';
+    return String(text)
+        .trim()
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .replace(/\s+/g, '-')
+        .replace(/[^\w-]+/g, '');
+}
+
+/** Filtra por colores seleccionados (usa colors_in_stock si viene en el producto; fallback a atributos). */
 export function filterByColors(products: any[], selectedColors: string[]): any[] {
     if (!selectedColors.length) return products;
-    return products.filter(p =>
-        p.attributes?.some((a: any) => {
+    const normalizedSelected = selectedColors.map(c => normalizeFilterSlug(c));
+    return products.filter(p => {
+        if (Array.isArray(p?.colors_in_stock)) {
+            const inStockSet = new Set(p.colors_in_stock.map((c: any) => normalizeFilterSlug(c)));
+            return normalizedSelected.some(c => c && inStockSet.has(c));
+        }
+        return p.attributes?.some((a: any) => {
             const name = (a.name || '').toLowerCase();
             const slug = (a.slug || '').toLowerCase();
             if (!name.includes('color') && !slug.includes('color')) return false;
@@ -94,15 +110,20 @@ export function filterByColors(products: any[], selectedColors: string[]): any[]
                 const val = typeof t === 'string' ? t : (t.slug || t.name || '');
                 return val && selectedColors.includes(val.toLowerCase());
             });
-        })
-    );
+        });
+    });
 }
 
-/** Filtra por tallas seleccionadas. */
+/** Filtra por tallas seleccionadas (usa sizes_in_stock si viene en el producto; fallback a atributos). */
 export function filterByTallas(products: any[], selectedTallas: string[]): any[] {
     if (!selectedTallas.length) return products;
-    return products.filter(p =>
-        p.attributes?.some((a: any) => {
+    const normalizedSelected = selectedTallas.map(t => normalizeFilterSlug(t));
+    return products.filter(p => {
+        if (Array.isArray(p?.sizes_in_stock)) {
+            const inStockSet = new Set(p.sizes_in_stock.map((s: any) => normalizeFilterSlug(s)));
+            return normalizedSelected.some(t => t && inStockSet.has(t));
+        }
+        return p.attributes?.some((a: any) => {
             const name = (a.name || '').toLowerCase();
             const slug = (a.slug || '').toLowerCase();
             const isSizeAttr =
@@ -116,8 +137,46 @@ export function filterByTallas(products: any[], selectedTallas: string[]): any[]
                 const val = typeof t === 'string' ? t : (t.slug || t.name || '');
                 return val && selectedTallas.includes(val.toLowerCase());
             });
-        })
-    );
+        });
+    });
+}
+
+/**
+ * Devuelve la primera talla filtrada que el producto tiene con stock
+ * (normalizada como slug para ?talla=), o undefined si no hay filtro/match.
+ */
+export function pickMatchedTalla(product: any, selectedTallas: string[]): string | undefined {
+    if (!selectedTallas || selectedTallas.length === 0) return undefined;
+    if (Array.isArray(product?.sizes_in_stock)) {
+        const inStockSet = new Set(product.sizes_in_stock.map((s: any) => normalizeFilterSlug(s)));
+        for (const t of selectedTallas) {
+            const norm = normalizeFilterSlug(t);
+            if (norm && inStockSet.has(norm)) return norm;
+        }
+        return undefined;
+    }
+    const attrValues = new Set<string>();
+    product?.attributes?.forEach((a: any) => {
+        const name = (a.name || '').toLowerCase();
+        const slug = (a.slug || '').toLowerCase();
+        const isSizeAttr =
+            name.includes('talla') || name.includes('tamaño') ||
+            name.includes('size')  || name.includes('numero') ||
+            name.includes('nmero') || slug.includes('talla') ||
+            slug.includes('size');
+        if (!isSizeAttr) return;
+        const terms = a.terms || (a.options ? a.options.map((o: any) => ({ name: o })) : []);
+        terms.forEach((t: any) => {
+            const val = typeof t === 'string' ? t : (t.slug || t.name || '');
+            const norm = normalizeFilterSlug(val);
+            if (norm) attrValues.add(norm);
+        });
+    });
+    for (const t of selectedTallas) {
+        const norm = normalizeFilterSlug(t);
+        if (norm && attrValues.has(norm)) return norm;
+    }
+    return undefined;
 }
 
 /** Filtra por rango de precio [min, max]. */

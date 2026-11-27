@@ -3,6 +3,7 @@ import ProductCard from './ProductCard';
 import { ArmaTuBlackStrip } from './ArmaTuBlackProgress';
 import { isArmaLowPriority } from '../lib/blackDays';
 import { MENU_CATEGORIES, EXCLUDED_SLUGS } from '../lib/menuCategories';
+import { filterByColors, filterByTallas, pickMatchedTalla } from '../lib/productFilters';
 
 // Black Days: con descuento primero (mayor %), luego el resto; las medias siempre al final (siguen disponibles).
 // Mismo criterio que la tarjeta (precio menor al normal): así el orden y la pestaña coinciden con lo que se ve.
@@ -569,34 +570,14 @@ export default function CampaignStickyFavorites({
       );
     }
 
-    // 1. Filtrar por Colores
+    // 1. Filtrar por Colores (prioriza colors_in_stock si viene en el producto)
     if (selectedColors.length > 0) {
-      result = result.filter(p =>
-        p.attributes?.some((a: any) => {
-          const name = (a.name || "").toLowerCase();
-          const slug = (a.slug || "").toLowerCase();
-          if (name.includes('color') || slug.includes('color')) {
-            const terms = a.terms || [];
-            return terms.some((t: any) => selectedColors.includes(t.slug.toLowerCase()));
-          }
-          return false;
-        })
-      );
+      result = filterByColors(result, selectedColors);
     }
 
-    // 2. Filtrar por Tallas
+    // 2. Filtrar por Tallas (prioriza sizes_in_stock si viene en el producto)
     if (selectedTallas.length > 0) {
-      result = result.filter(p =>
-        p.attributes?.some((a: any) => {
-          const name = (a.name || "").toLowerCase();
-          const slug = (a.slug || "").toLowerCase();
-          if (name.includes('talla') || name.includes('tamaño') || name.includes('size') || slug.includes('talla') || slug.includes('size') || name.includes('numero') || name.includes('nmero')) {
-            const terms = a.terms || [];
-            return terms.some((t: any) => selectedTallas.includes(t.slug.toLowerCase()));
-          }
-          return false;
-        })
-      );
+      result = filterByTallas(result, selectedTallas);
     }
 
     // 3. Filtrar por Rango de Precio
@@ -781,7 +762,11 @@ export default function CampaignStickyFavorites({
         {!loading && filteredAndSortedProducts.length > 0 && (
           <div className="grid-4x3">
             {displayedProducts.map((product) => (
-              <ProductCard key={product.id} product={product} />
+              <ProductCard
+                key={product.id}
+                product={product}
+                selectedTalla={pickMatchedTalla(product, selectedTallas)}
+              />
             ))}
           </div>
         )}
@@ -1423,17 +1408,24 @@ export default function CampaignStickyFavorites({
           .category-filters { 
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 0.6rem;
+            gap: 0.4rem;
             padding: 0 1rem;
           }
           .filter-btn { 
             width: 100%;
             max-width: 100%;
-            padding: 0.8rem 0.5rem;
-            font-size: 0.75rem;
+            padding: 0.55rem 0.4rem;
+            font-size: 0.68rem;
             letter-spacing: 1px;
           }
-          .category-filters-wrapper { top: calc(64px + var(--global-banner-height, 0px)); } 
+          .category-filters .filter-btn:last-child:nth-child(3n+1) {
+            grid-column: 1 / -1;
+          }
+          .category-filters-wrapper {
+            top: calc(64px + var(--global-banner-height, 0px));
+            padding: 0.6rem 0;
+            margin-bottom: 1rem;
+          } 
 
           .filter-bar {
             padding: 1rem 1rem 0;
@@ -1456,12 +1448,16 @@ export default function CampaignStickyFavorites({
 
         @media (max-width: 480px) {
           .category-filters {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 0.5rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.35rem;
+            padding: 0 0.75rem;
           }
           .filter-btn {
-            font-size: 0.7rem;
-            padding: 0.75rem 0.4rem;
+            font-size: 0.62rem;
+            padding: 0.45rem 0.3rem;
+            letter-spacing: 0.5px;
+            line-height: 1.2;
+            min-height: 34px;
           }
           .filter-drawer {
             width: 100%;
