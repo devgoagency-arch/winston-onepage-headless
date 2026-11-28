@@ -82,6 +82,44 @@ function findVariation(variations: any[], color: string | null, size: string | n
     return found;
 }
 
+export function getCartLinePricing(product: any, variation?: any | null): {
+    price: number;
+    regular_price: number | undefined;
+    on_sale: boolean | undefined;
+} {
+    const currencyMinorUnit = product?.prices?.currency_minor_unit || 0;
+    const divisor = 10 ** currencyMinorUnit;
+    const rawParentPrice = product?.prices?.price || '0';
+    const parentPrice = (typeof rawParentPrice === 'string' ? parseFloat(rawParentPrice) : Number(rawParentPrice)) / divisor;
+    const parentRegular = product?.prices?.regular_price
+        ? Number(product.prices.regular_price) / divisor
+        : undefined;
+
+    if (!variation) {
+        return {
+            price: parentPrice,
+            regular_price: parentRegular,
+            on_sale: product?.on_sale,
+        };
+    }
+
+    const parseUnitPrice = (val: unknown): number => {
+        if (val === undefined || val === null || val === '') return 0;
+        const num = typeof val === 'string' ? parseFloat(val) : Number(val);
+        return Number.isFinite(num) && num > 0 ? num : 0;
+    };
+
+    // Los precios de variación ya vienen normalizados en unidades COP (sin minor_unit)
+    const varPrice = parseUnitPrice(variation.price);
+    const varRegular = parseUnitPrice(variation.regular_price);
+
+    const price = varPrice > 0 ? varPrice : parentPrice;
+    const regular_price = varRegular > 0 ? varRegular : parentRegular;
+    const on_sale = Boolean(regular_price !== undefined && price > 0 && regular_price > price);
+
+    return { price, regular_price, on_sale };
+}
+
 export function addToCart(product: any, quantity: number, color: string | null, size: string | null, image: string) {
     try {
         const cart = cartItems.get();
@@ -93,8 +131,9 @@ export function addToCart(product: any, quantity: number, color: string | null, 
 
         // Si es un producto variable, intentamos encontrar el ID de la variación específica
         let finalId = product.id;
+        let found: any = null;
         if (product.variations && product.variations.length > 0 && (color || size)) {
-            const found = findVariation(product.variations, color, size);
+            found = findVariation(product.variations, color, size);
             if (found) {
                 finalId = found.id;
                 console.log(`[Cart Store] Variación detectada: ${finalId} para ${color}/${size}`);
@@ -104,10 +143,7 @@ export function addToCart(product: any, quantity: number, color: string | null, 
         }
 
         const itemId = `${product.id}-${String(color || 'no-color').toLowerCase()}-${String(size || 'no-size').toLowerCase()}`;
-
-        const rawPrice = product.prices.price || '0';
-        const currencyMinorUnit = product.prices.currency_minor_unit || 0;
-        const processedPrice = (typeof rawPrice === 'string' ? parseFloat(rawPrice) : rawPrice) / (10 ** currencyMinorUnit);
+        const pricing = getCartLinePricing(product, found);
 
         if (cart[itemId]) {
             try {
@@ -115,16 +151,17 @@ export function addToCart(product: any, quantity: number, color: string | null, 
                 item.quantity += quantity;
                 // Actualizamos el ID por si acaso
                 item.id = finalId;
-                item.regular_price = product.prices.regular_price ? Number(product.prices.regular_price) / (10 ** currencyMinorUnit) : undefined;
-                item.on_sale = product.on_sale;
+                item.price = pricing.price;
+                item.regular_price = pricing.regular_price;
+                item.on_sale = pricing.on_sale;
                 item.tags = product.tags || [];
                 cartItems.setKey(itemId, JSON.stringify(item));
             } catch (e) {
-                const newItem = createCartItem(finalId, product.id, product, processedPrice, color, size, quantity, image);
+                const newItem = createCartItem(finalId, product.id, product, pricing.price, color, size, quantity, image, pricing.regular_price, pricing.on_sale);
                 cartItems.setKey(itemId, JSON.stringify(newItem));
             }
         } else {
-            const newItem = createCartItem(finalId, product.id, product, processedPrice, color, size, quantity, image);
+            const newItem = createCartItem(finalId, product.id, product, pricing.price, color, size, quantity, image, pricing.regular_price, pricing.on_sale);
             cartItems.setKey(itemId, JSON.stringify(newItem));
         }
 
@@ -136,7 +173,7 @@ export function addToCart(product: any, quantity: number, color: string | null, 
                 content_name: product.name,
                 content_ids: [finalId.toString()],
                 content_type: 'product',
-                value: processedPrice * quantity,
+                value: pricing.price * quantity,
                 currency: product?.prices?.currency_code || 'COP'
             });
         }
@@ -145,14 +182,28 @@ export function addToCart(product: any, quantity: number, color: string | null, 
     }
 }
 
-function createCartItem(id: number, product_id: number, product: any, price: number, color: string | null, size: string | null, quantity: number, image: string): CartItem {
+function createCartItem(
+    id: number,
+    product_id: number,
+    product: any,
+    price: number,
+    color: string | null,
+    size: string | null,
+    quantity: number,
+    image: string,
+    regular_price?: number,
+    on_sale?: boolean
+): CartItem {
+    const fallbackRegular = product.prices.regular_price
+        ? Number(product.prices.regular_price) / (10 ** (product.prices.currency_minor_unit || 0))
+        : undefined;
     return {
         id,
         product_id,
         name: product.name,
         price,
-        regular_price: product.prices.regular_price ? Number(product.prices.regular_price) / (10 ** (product.prices.currency_minor_unit || 0)) : undefined,
-        on_sale: product.on_sale,
+        regular_price: regular_price !== undefined ? regular_price : fallbackRegular,
+        on_sale: on_sale !== undefined ? on_sale : product.on_sale,
         tags: product.tags || [],
         color,
         size,

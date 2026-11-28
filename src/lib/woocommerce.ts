@@ -433,6 +433,51 @@ export async function getProductsPool() {
 }
 
 /**
+ * Resuelve price, regular_price y sale_price de una variación de Store API con prioridad:
+ * 1) vPrices (Store API, normalizado con normalize si != 0)
+ * 2) vDetails (REST v3, p.variations_data: enteros COP sin minor unit)
+ * 3) parentPrices (fallback al padre)
+ */
+export function resolveVariationPrices(
+    vPrices: any,
+    vDetails: any,
+    parentPrices: any,
+    normalize: (val: string | undefined | null) => string = (val) => {
+        if (!val || val === "0") return "0";
+        const num = Number(val);
+        if (isNaN(num)) return "0";
+        return Math.round(num).toString();
+    }
+): { price: string; regular_price: string; sale_price: string } {
+    const pickStore = (val: any): string => {
+        if (val === undefined || val === null || val === "") return "";
+        const norm = normalize(String(val));
+        return norm && norm !== "0" ? norm : "";
+    };
+    const pickV3 = (val: any): string => {
+        if (val === undefined || val === null || val === "") return "";
+        const num = Number(val);
+        if (!Number.isFinite(num) || num <= 0) return "";
+        const rounded = Math.round(num);
+        return rounded > 0 ? rounded.toString() : "";
+    };
+
+    const storePrice = pickStore(vPrices?.price);
+    const storeRegular = pickStore(vPrices?.regular_price);
+    const storeSale = pickStore(vPrices?.sale_price);
+
+    const v3Price = pickV3(vDetails?.price);
+    const v3Regular = pickV3(vDetails?.regular_price);
+    const v3Sale = pickV3(vDetails?.sale_price);
+
+    const price = storePrice || v3Price || parentPrices?.price || "0";
+    const regular_price = storeRegular || v3Regular || storePrice || v3Price || parentPrices?.regular_price || "";
+    const sale_price = storeSale || v3Sale || "";
+
+    return { price, regular_price, sale_price };
+}
+
+/**
  * Maps wc/v3 structure to wc/store/v1 structure for frontend compatibility
  * If the input is already from Store API, it will pass through or be slightly adjusted.
  */
@@ -502,6 +547,7 @@ function mapV3ToStore(p: any, isLightweight = true) {
             p.variations = p.variations.map((v: any) => {
                 const vPrices = v.prices || {};
                 const vDetails = p.variations_data?.find((vd: any) => Number(vd.id) === Number(v.id));
+                const resolvedPrices = resolveVariationPrices(vPrices, vDetails, p.prices, normalizePriceStr);
                 
                 return {
                     ...v,
@@ -513,9 +559,9 @@ function mapV3ToStore(p: any, isLightweight = true) {
                         ? (v.is_in_stock ? 'instock' : 'outofstock') 
                         : (v.stock_status || 'instock')),
                     // Normalize variation prices
-                    price: (vPrices.price && normalizePriceStr(vPrices.price) !== "0") ? normalizePriceStr(vPrices.price) : p.prices.price,
-                    regular_price: (vPrices.regular_price && normalizePriceStr(vPrices.regular_price) !== "0") ? normalizePriceStr(vPrices.regular_price) : (vPrices.price ? normalizePriceStr(vPrices.price) : p.prices.regular_price),
-                    sale_price: vPrices.sale_price ? normalizePriceStr(vPrices.sale_price) : "",
+                    price: resolvedPrices.price,
+                    regular_price: resolvedPrices.regular_price,
+                    sale_price: resolvedPrices.sale_price,
                     attributes: (v.attributes || []).map((a: any) => ({
                         ...a,
                         option: a.value || a.option || '',
