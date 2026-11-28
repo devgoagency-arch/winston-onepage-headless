@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-11-28T00:02:27.274Z",
-  "durationSeconds": 95.3,
+  "generatedAt": "2026-11-28T13:15:59.573Z",
+  "durationSeconds": 94.9,
   "totalHttpRequests": 475,
   "productsPublishable": 330,
   "omittedTotal": 34,
@@ -316,42 +316,5 @@
       "reason": "all_variations_out_of_stock_store_api_404"
     }
   ],
-  "staleOr404SlugsRemoved": [
-    {
-      "slug": "amberly-ii",
-      "id": 24115,
-      "name": "Amberly II",
-      "reason": "all_variations_out_of_stock_store_api_404"
-    },
-    {
-      "slug": "armenia",
-      "id": 29419,
-      "name": "Armenia",
-      "reason": "all_variations_out_of_stock_store_api_404"
-    },
-    {
-      "slug": "bogota",
-      "id": 25927,
-      "name": "Bogotá",
-      "reason": "all_variations_out_of_stock_store_api_404"
-    },
-    {
-      "slug": "bury",
-      "id": 24559,
-      "name": "Bury",
-      "reason": "all_variations_out_of_stock_store_api_404"
-    },
-    {
-      "slug": "maidstone",
-      "id": 25047,
-      "name": "Maidstone",
-      "reason": "all_variations_out_of_stock_store_api_404"
-    },
-    {
-      "slug": "northwich",
-      "id": 24125,
-      "name": "Northwich",
-      "reason": "all_variations_out_of_stock_store_api_404"
-    }
-  ]
+  "staleOr404SlugsRemoved": []
 }
