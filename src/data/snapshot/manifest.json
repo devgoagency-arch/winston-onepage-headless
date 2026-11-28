@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-23T21:40:02.324Z",
+  "generatedAt": "2026-11-28T00:02:27.274Z",
   "sourceUrl": "https://tienda.winstonandharrystore.com",
   "counts": {
-    "products": 336,
-    "productsInStock": 336,
-    "omittedProducts": 28,
-    "omittedAllVariationsOutOfStock": 11,
+    "products": 330,
+    "productsInStock": 330,
+    "omittedProducts": 34,
+    "omittedAllVariationsOutOfStock": 17,
     "categories": 38,
     "attributes": 16,
     "menus": {
@@ -18,6 +18,6 @@
     "blogPosts": 4,
     "pages": 3,
     "skipped404": 0,
-    "staleOr404SlugsRemoved": 28
+    "staleOr404SlugsRemoved": 6
   }
 }
